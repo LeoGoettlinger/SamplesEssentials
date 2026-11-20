@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&4Fork of the Wake'
+lore:
+- '&4Three black points above a silver collar.'
+- '&4An unwelcome guest at any feast.'

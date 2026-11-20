@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Dwarven Boots'
+material: DIAMOND_BOOTS
+level: 30
+lore:
+- '&fNice and sturdy.'
+enchantments:
+- PROTECTION_FALL,3
+- PROTECTION_ENVIRONMENTAL,4
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

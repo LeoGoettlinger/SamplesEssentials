@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&f[Normal] Spun Netherite Boots'
+material: NETHERITE_BOOTS
+level: 20
+lore:
+- '&fAs dark as the soul it was made from.'
+enchantments:
+- DAMAGE_ALL,3
+- DAMAGE_ARTHROPODS,5
+- PROTECTION_ENVIRONMENTAL,2
+potionEffects:
+- ABSORPTION,0,self,onHit
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

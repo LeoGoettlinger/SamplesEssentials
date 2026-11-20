@@ -1,0 +1,7 @@
+name: Summon Merchant
+message: Jeeves!
+isEnabled: true
+maxLevelV2: 1
+value: 10.0
+isEnabledForProcedurallyGeneratedItems: false
+playersSayMessage: true

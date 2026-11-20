@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&7Wallward Crossbow'
+lore:
+- '&7The winding handle has been polished by generations.'

@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&c[Normal] Dark Cleaver'
+material: NETHERITE_AXE
+level: 45
+lore:
+- '&cThis axe was crafted out of wood,'
+- '&cyet it''s durability and sharpness'
+- '&cequal the finest steel.'
+enchantments:
+- DAMAGE_ALL,8
+- DURABILITY,7
+potionEffects:
+- INCREASE_DAMAGE,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

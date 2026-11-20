@@ -1,0 +1,21 @@
+isEnabled: true
+name: '&d[Hard] Nether Infused Barrier'
+material: SHIELD
+level: 50
+lore:
+- '&dYou have never seen a shield like this before. When equipped, it'
+- '&dlooks no bigger than a large bracer. However, when activated, the'
+- '&dfour corners of the bracer expand outward, creating a magical'
+- '&dbarrier that connects the bracer to the corners.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,8
+- PROTECTION_PROJECTILE,6
+- PROTECTION_EXPLOSIONS,5
+- DURABILITY,4
+- MENDING,3
+- elitemobs:loud_strikes,2
+potionEffects:
+- DAMAGE_RESISTANCE,0,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

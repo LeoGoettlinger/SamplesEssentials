@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&2Smuggler''s Crossbow'
+lore:
+- '&2No customs officer has signed for this one.'

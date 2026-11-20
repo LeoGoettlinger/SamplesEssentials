@@ -1,0 +1,290 @@
+trackingSinceVersion: 10.8.0
+lastObservedVersion: 10.9.8
+cache:
+  plugin:
+    targetVersion: 10.9.8
+    releases:
+    - version: 10.8.1
+      changelog: |-
+        EliteMobs 10.8.1:
+        - [Fix] `/em quest track` now works on dynamically-generated Adventurer's Guild quests instead of crashing from the second quest onward
+        - [Fix] Abandoning a quest now correctly stops its quest tracking
+        - [Fix] Boss script teleports and zone effects inside instanced dungeons no longer fail with "Target world cannot be null"
+      releasedAt: '2026-08-17T01:08:19.321Z'
+    - version: 10.9.0
+      changelog: "EliteMobs 10.9.0:\n- [New] Added the optional [Alpha] Advanced Combat\
+        \ System with 76 classes, class progression, passives, and mobility, signature,\
+        \ and utility abilities.\r\n- [New] Added Adventurer’s Guild class instructors\
+        \ and solo challenges for unlocking classes, plus starter training and onboarding\
+        \ quests.\r\n- [New] Added a graphical combat HUD through ResourcePackManager,\
+        \ with a config toggle and text fallback. Press F, then F for mobility, left-click\
+        \ for signature, or right-click for utility.\r\n- [New] Added class-aware\
+        \ equipment drops, staff and wand integration, and loot inspection commands.\r\
+        \n- [New] Added configurable NPC patrols, reusable mob behaviors, and mounted\
+        \ transport routes.\r\n- [New] Added a dismissible admin announcement linking\
+        \ to the developer’s combat-system message.\r\n- [Tweak] Adventurer starts\
+        \ with Dodge, Haste, and Resistance. Gillian continues to handle skill bonuses.\r\
+        \n- [Tweak] Improved quest onboarding, personal quest markers, vertical compass\
+        \ guidance, NPC labels, and dungeon party formation.\r\n- [Fix] Corrected\
+        \ class targeting, resource recovery, damage attribution, delayed effects,\
+        \ and cleanup when players leave combat or change worlds.\r\n- [Fix] Corrected\
+        \ custom enchantment handling, item lore preservation, scroll ownership, soulbinding,\
+        \ and unbinding with a full inventory.\r\n- [Fix] Corrected dungeon ownership,\
+        \ deferred spawns, persistent mob behavior, and quest interaction cleanup.\r\
+        \n- [Fix] Prevented modeled NPC contact damage and improved model interactions\
+        \ and nameplate positioning.\r\n- [Fix] Kept Nightbreak setup menus responsive\
+        \ during Bedrock refreshes and corrected mixed-case instance world handling."
+      releasedAt: '2026-09-11T05:26:10.968Z'
+    - version: 10.9.1
+      changelog: |-
+        EliteMobs 10.9.1:
+        - [Fix] Fixed training dummies failing to spawn when their chunk first loads.
+        - [Fix] Fixed boss phase blocks and final dungeon unlocks, including The Mines platform.
+        - [Fix] Fixed neutral elite mobs fighting each other and elite slimes splitting after death.
+        - [Fix] Fixed quest turn-ins consuming the wrong item amounts or awarding duplicate rewards.
+        - [Fix] Fixed player and class data loading incorrectly after quick reconnects.
+        - [Fix] Fixed imported models and debug magic weapons being unavailable during startup.
+        - [Fix] Fixed crossbow ammunition initialization on Minecraft 26.2.
+        - [Fix] Fixed custom enchantment upgrades, missing defaults, and compatibility with other plugins' enchantments.
+        - [Fix] Fixed equipment effect errors repeatedly interrupting other players' effects.
+        - [Fix] Fixed knockback passives on Paper and combat HUD fallback for Bedrock players.
+        - [Fix] Fixed dungeon updates failing while players were inside the world.
+        - [Fix] Fixed command suggestions showing commands the sender cannot use.
+        - [Tweak] Added smoother player combat labels with a configurable following-text option.
+        - [Tweak] Updated dialogue artwork and standardized NPC nameplate size and spacing.
+        - [Tweak] Reduced misleading WorldGuard, retired item, and unpublished DLC warnings.
+      releasedAt: '2026-09-13T19:47:56.660Z'
+    - version: 10.9.2
+      changelog: |-
+        EliteMobs 10.9.2:
+        - [Fix] Fixed NPC startup failures and repeated patrol errors on Paper 26.2 while retaining Spigot support.
+        - [Fix] Restored visibility of your own player combat label.
+        - [Fix] Restored custom enchantments to their configured item lore section.
+        - [Fix] Regenerated obsolete bundled scrap and item defaults while preserving the old files.
+        - [Fix] Fixed lingering boss bodies, health displays and scripted actions after phase changes or removal.
+        - [Fix] Fixed failed loot entries preventing valid rewards and incorrect treasure chest reward messages.
+        - [Fix] Fixed NPC interaction handling and interference with unrelated merchants.
+        - [Fix] Prevented a malformed boss script from disabling its other scripts.
+        - [Fix] Removed the unavailable Scotty objective from the Adventurers Guild welcome quest.
+        - [Tweak] Missing FreeMinecraftModels now produces one startup notice and disables its optional content without repeated warnings.
+      releasedAt: '2026-09-14T19:32:29.718Z'
+    - version: 10.9.3
+      changelog: "EliteMobs 10.9.3:\n- [New] Added an opt-in permission for command\
+        \ and plugin teleports within an active instance.\r\n- [New] Added a configuration\
+        \ toggle for the combat-system join notice.\r\n- [Fix] Show the combat-system\
+        \ join notice only to players with an unlocked class.\r\n- [Fix] Fixed death\
+        \ durability errors when equipped items reach their damage limit.\r\n- [Fix]\
+        \ Fixed quest-dialog cleanup when taking damage on Paper.\r\n- [Fix] Load\
+        \ target chunks when applying boss block transitions.\r\n- [Fix] Support legacy\
+        \ terrain-only and modern dungeon world blueprints.\r\n- [Fix] Restored vanilla\
+        \ targeting for neutral bosses.\r\n- [Fix] Prevented random vanilla jockey\
+        \ mounts when spawning custom bosses."
+      releasedAt: '2026-09-15T11:21:55.676Z'
+    - version: 10.9.4
+      changelog: |-
+        EliteMobs 10.9.4:
+        - [Fix] Fixed mob pathfinding, fleeing, and returning home on Minecraft 26.1 servers.
+        - [Fix] Fixed damage indicator particle limits on Minecraft 1.21 servers.
+        - [Fix] Load newly imported mob powers before initializing dungeon bosses.
+      releasedAt: '2026-09-15T17:06:53.476Z'
+    - version: 10.9.5
+      changelog: |-
+        EliteMobs 10.9.5:
+        - [Fix] Preserved boss phase destinations when spawning is deferred.
+        - [Fix] Added translation support for custom quest objective name and item name overrides.
+        - [Fix] Improved Bedrock player detection behind proxies for menus and displays.
+        - [Fix] Fixed combat hit cooldown handling on Minecraft 26.3.
+        - [Tweak] Reduced server-thread work while loading and refreshing custom items.
+        - [Tweak] Reduced configuration import and cleanup overhead.
+      releasedAt: '2026-09-16T20:09:11.941Z'
+    - version: 10.9.7
+      changelog: "EliteMobs 10.9.7:\n- [New] Added pagination to quest lists, objectives\
+        \ and reward previews.\n- [New] Added a world list for hiding class labels,\
+        \ absolute NPC patrol coordinates and a looping Guild instructor patrol.\n\
+        - [Fix] Fixed dungeon entry, re-entry, countdowns, party health and cleanup\
+        \ after failed cancellations.\n- [Fix] Fixed boss phase transitions, leash\
+        \ regeneration, Enderman provocation and entity cleanup across reloads.\n\
+        - [Fix] Fixed skill unlock requirements, class displays, temporary effects,\
+        \ healing and combat cleanup.\n- [Fix] Preserved player data and skill selections\
+        \ when loading or database writes fail.\n- [Fix] Fixed shop, gambling and\
+        \ wormhole payments when delivery or travel fails.\n- [Fix] Fixed quest permissions,\
+        \ cooldowns, inventory updates and zero-weight custom item handling.\n- [Fix]\
+        \ Fixed explosion cancellation, temporary block restoration, fluid updates\
+        \ and grappling hook attachment.\n- [Fix] Refreshed obsolete Casus quest assignments\
+        \ while preserving customized lists.\n- [Fix] Preserved configuration and\
+        \ recovery files after failed saves or imports, and cleared stale Nightbreak\
+        \ results after reloads.\n- [Tweak] Reduced repeated combat, quest, item and\
+        \ display work, and spread dragon shockwave preparation across ticks.\r\n\
+        - [Tweak] Clarified Adventurer training directions, rewards and Story Mode/Primis\
+        \ quest choices."
+      releasedAt: '2026-09-29T15:17:34.461Z'
+    - version: 10.9.8
+      changelog: |-
+        EliteMobs 10.9.8:
+        - [New] Added ten skills each for staves and wands.
+        - [New] Added Dali's combat HUD, class badge, class diamond, Paladin ability icons and weapon menu artwork, with greyed ability icons while a skill is unaffordable.
+        - [New] The weapon menu's Staves and Wands entries show FreeMinecraftModels' bundled staff and wand when installed.
+        - [New] Plugin updates can be applied without a restart with /em applypluginupdate or the nightbreak.applyPluginUpdatesWithoutRestart setting.
+        - [New] Patrols can rest at their first node with patrol.startNodeWaitSeconds.
+        - [Tweak] Death's Embrace now revives at 10% health on a 120s cooldown that shortens with level to 60s.
+        - [Tweak] Combat labels now default to text that follows the player, so player names stay visible.
+        - [Fix] Charles, the Guild combat instructor, appears again and rests at his chair.
+        - [Fix] Grappling hooks now lift players over platform rims instead of refusing the pull.
+        - [Fix] Spear skills no longer apply while holding a staff, Spellweave works with Multicast and the Berserker leap no longer roots players.
+        - [Fix] Bosses in other plugins' instances now use that instance's difficulty for powers and loot, keep their loot in its world and stay removed after world reloads.
+        - [Fix] Permission-gated loot no longer drops when nobody can receive it.
+        - [Fix] Custom events and spawns stay out of dungeons, arenas and class trials again.
+        - [Fix] Both /em loot debug variants now unlock classes, or explain why they can't.
+        - [Fix] Fixed 10.9.7 startup warnings for Quick Reload text, translations, arena wave messages and Alaric's skin, and stopped correct $prefix translations falling back to English.
+        - [Fix] Upgraded servers no longer give Scroll Applier and Scrapper the same skin or disable Spears First Strike.
+        - [Fix] Unedited earlier premade Lua powers, enchantment scripts, weapon menus and Death's Embrace text now update to the current defaults; customized files stay.
+        - [Fix] Arrow enchantment scripts still run when the bow carries an unregistered enchantment.
+        - [Fix] Reloads and plugin updates no longer leave old copies of the plugin running.
+        - [Tweak] Outdated translation placeholders are reported once per boot at info level, and byte-identical duplicate content files no longer warn.
+      releasedAt: '2026-10-02T16:40:29.876Z'
+    complete: true
+  content:
+    fireworks:
+      targetVersion: '14'
+      releases:
+      - version: '14'
+        changelog: |-
+          - [New] Added themed class loot rewards across all 19 equipment families.
+          - [Tweak] Eligible encounters award class loot while preserving existing custom rewards.
+          - [Fix] Updated existing reward enchantments for the current item system.
+          - [Tweak] Sparky's sword uses the supported maximum Hunter level.
+        releasedAt: '2026-09-12T08:15:34.211Z'
+      complete: true
+    the-sewers:
+      targetVersion: '13'
+      releases:
+      - version: '13'
+        changelog: |-
+          - [New] Added themed class loot rewards across all 19 equipment families.
+          - [Tweak] Eligible encounters award class loot while preserving existing custom rewards.
+        releasedAt: '2026-09-12T08:15:34.147Z'
+      complete: true
+    hallosseum:
+      targetVersion: '11'
+      releases:
+      - version: '11'
+        changelog: |-
+          - [New] Added themed class loot rewards across all 19 equipment families.
+          - [Tweak] Eligible encounters award class loot while preserving existing custom rewards.
+        releasedAt: '2026-09-12T08:17:16.163Z'
+      complete: true
+    story-mode-dungeons:
+      targetVersion: '23'
+      releases:
+      - version: '22'
+        changelog: |-
+          - [New] Added themed class loot rewards across all 19 equipment families.
+          - [Tweak] Eligible encounters award class loot while preserving existing custom rewards.
+          - [Fix] Updated existing reward enchantments for the current item system.
+        releasedAt: '2026-09-11T05:27:58.086Z'
+      - version: '23'
+        changelog: '- fixed boss scripts not working properly'
+        releasedAt: '2026-09-16T12:25:48.168Z'
+      complete: true
+    the-dark-cathedral:
+      targetVersion: '16'
+      releases:
+      - version: '16'
+        changelog: |-
+          - [New] Added themed class loot rewards across all 19 equipment families.
+          - [Tweak] Eligible encounters award class loot while preserving existing custom rewards.
+          - [Fix] Updated existing reward enchantments for the current item system.
+          - [Tweak] The Mythic sword uses the supported maximum Critical Strikes level.
+        releasedAt: '2026-09-12T08:16:34.377Z'
+      complete: true
+    the-steamworks:
+      targetVersion: '12'
+      releases:
+      - version: '12'
+        changelog: |-
+          - [New] Added themed class loot rewards across all 19 equipment families.
+          - [Tweak] Eligible encounters award class loot while preserving existing custom rewards.
+          - [Fix] Updated existing reward enchantments for the current item system.
+          - [Fix] Removed the incompatible hand-activated Flamethrower enchantment from Hard and Mythic boots.
+        releasedAt: '2026-09-12T08:16:15.046Z'
+      complete: true
+    north-pole:
+      targetVersion: '12'
+      releases:
+      - version: '12'
+        changelog: |-
+          - [New] Added themed class loot rewards across all 19 equipment families.
+          - [Tweak] Eligible encounters award class loot while preserving existing custom rewards.
+        releasedAt: '2026-09-12T08:15:34.192Z'
+      complete: true
+    free-enchantment-challenge-sanctums:
+      targetVersion: '9'
+      releases:
+      - version: '9'
+        changelog: |-
+          - [New] Added themed class loot rewards across all 19 equipment families.
+          - [Tweak] Eligible encounters award class loot while preserving existing custom rewards.
+        releasedAt: '2026-09-12T08:18:21.241Z'
+      complete: true
+    the-adventurers-guild:
+      targetVersion: '18'
+      releases:
+      - version: '18'
+        changelog: '- [Fix] Restored hitboxes for the affected Adventurers Guild training
+          dummies.'
+        releasedAt: '2026-08-13T16:07:03.923Z'
+      complete: true
+    the-knights-castle:
+      targetVersion: '14'
+      releases:
+      - version: '14'
+        changelog: |-
+          - [New] Added themed class loot rewards across all 19 equipment families.
+          - [Tweak] Eligible encounters award class loot while preserving existing custom rewards.
+        releasedAt: '2026-09-12T08:17:16.144Z'
+      complete: true
+    binder-of-worlds:
+      targetVersion: '14'
+      releases:
+      - version: '14'
+        changelog: |-
+          - [New] Added themed class loot rewards across all 19 equipment families.
+          - [Tweak] Eligible encounters award class loot while preserving existing custom rewards.
+          - [Fix] Updated existing reward enchantments for the current item system.
+          - [Fix] Removed invalid level-zero enchantments from Normal tank rewards.
+        releasedAt: '2026-09-12T08:17:23.935Z'
+      complete: true
+content:
+  fireworks:
+    trackingSinceVersion: '12'
+    lastObservedVersion: '14'
+  the-sewers:
+    trackingSinceVersion: '12'
+    lastObservedVersion: '13'
+  hallosseum:
+    trackingSinceVersion: '10'
+    lastObservedVersion: '11'
+  story-mode-dungeons:
+    trackingSinceVersion: '20'
+    lastObservedVersion: '23'
+  the-dark-cathedral:
+    trackingSinceVersion: '14'
+    lastObservedVersion: '16'
+  the-steamworks:
+    trackingSinceVersion: '10'
+    lastObservedVersion: '12'
+  north-pole:
+    trackingSinceVersion: '11'
+    lastObservedVersion: '12'
+  free-enchantment-challenge-sanctums:
+    trackingSinceVersion: '8'
+    lastObservedVersion: '9'
+  the-adventurers-guild:
+    trackingSinceVersion: '18'
+    lastObservedVersion: '18'
+  the-knights-castle:
+    trackingSinceVersion: '13'
+    lastObservedVersion: '14'
+  binder-of-worlds:
+    trackingSinceVersion: '12'
+    lastObservedVersion: '14'

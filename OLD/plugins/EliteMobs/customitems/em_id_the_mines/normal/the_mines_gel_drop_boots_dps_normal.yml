@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Normal] Gellers'
+material: DIAMOND_BOOTS
+level: 20
+lore:
+- '&2You feel like you could stand in place for days.'
+enchantments:
+- DAMAGE_ALL,2
+- PROTECTION_ENVIRONMENTAL,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

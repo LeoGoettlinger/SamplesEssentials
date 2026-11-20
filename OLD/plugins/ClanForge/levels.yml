@@ -1,0 +1,35 @@
+levels:
+  1:
+    cost: 0
+    max_members: 10
+    max_bases: 1
+    max_claims: 5
+    perks: []
+  2:
+    cost: 1000.0
+    max_members: 15
+    max_bases: 2
+    max_claims: 10
+    perks:
+      - "Can set clan color"
+  3:
+    cost: 5000.0
+    max_members: 20
+    max_bases: 3
+    max_claims: 15
+    perks:
+      - "Can set clan tag"
+  4:
+    cost: 10000.0
+    max_members: 30
+    max_bases: 4
+    max_claims: 20
+    perks:
+      - "Can use clan chest"
+  5:
+    cost: 25000.0
+    max_members: 50
+    max_bases: 5
+    max_claims: 30
+    perks:
+      - "Can declare war"

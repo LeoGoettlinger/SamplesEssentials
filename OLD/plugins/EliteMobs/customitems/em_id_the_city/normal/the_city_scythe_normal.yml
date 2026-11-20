@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Executioner Scythe'
+material: NETHERITE_HOE
+level: 30
+lore:
+- '&cOnce used for the city''s most'
+- '&cgrim sentences. Its edge still'
+- '&csings with authority.'
+enchantments:
+- DAMAGE_ALL,5
+- SWEEPING_EDGE,2
+- DURABILITY,3
+itemType: unique
+scalability: scalable

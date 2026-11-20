@@ -1,0 +1,548 @@
+# Message: This config file isn't completely finished yet (it is a work in progress)
+# Reload your server to make these changes happen in your server. (restarting it works too)
+# Once a newer version of this plugin is released, you may need to delete the old config file so a newer version can be generated.
+# Making a backup copy of this config file is recommended so you can keep track of any changes you make to it, and so you don't lose your changes if you ever delete it
+#
+#This config file is quite lengthy, so using CTRL+F to find things is highly recommended.
+#
+# LANGUAGE ON LANG FOLDER:
+lang: "en"
+# ENABLE OR DISABLE THE RESOURCE PACK==================================================================================
+# PUT TRUE OR FALSE
+ResourcePack: false
+CustomResourcePack: false
+#CHANGE THE RESOURCE PACK: (to change it, replace the link with your own link)
+# default pack is updated for Minecraft 1.21.11 and is backwards compatible to 1.16+
+PackLink: https://www.dropbox.com/scl/fi/dhgubahgx3z0phg4wnbw3/cwp-texture-pack-1.5.7.zip?rlkey=cxtqp9575bk28qr90vyxb2tdv&dl=1
+#Original pack link for if you change it and want to know what the original is:
+# https://www.dropbox.com/scl/fi/dhgubahgx3z0phg4wnbw3/cwp-texture-pack-1.5.7.zip?rlkey=cxtqp9575bk28qr90vyxb2tdv&dl=1
+#
+#SHIELD PARRYING:
+# Enable/Disable Shield Parrying =======================================================================================
+# (ONLY applies to shields in offhand, shields in main hand will continue to function as normal.)
+# What it does: When right clicking with a shield, there will be a short window of time where damage taken from entities will be negated.
+# There are two different windows of time. When hit during the first window, a "perfect parry" will be performed, negating damage taken and giving buffs for 2 seconds. (Haste, Speed, Regen)
+# After the first window ends, the second window will start. When hit during the second window, a "late parry" will be performed, negating damage taken and giving debuffs for 1 second. (Mining Fatigue, Weakness)
+# The first window is 4 ticks long, and the second is 6 ticks. (Total 10 ticks where a hit will be parried.)
+# When both windows of time pass wthout being hit, continuing to hold down right click will keep holding up the shield (works same as regular shield) until releasing right click or blocking a hit.
+# Upon blocking a hit, shield will enter a cooldown of 20 ticks (1 second).
+# On a "perfect parry," shield will enter a cooldown of 2 ticks.
+# On a "late parry," shield will enter a cooldown of 15 ticks.
+#
+#Disabled on default.
+ShieldParry: false
+#
+# ENABLE OR DISABLE RECIPES============================================================================================
+# PUT TRUE OR FALSE
+# READ THIS: These options ONLY enable/disable the crafting recipes or method of obtaining the item.
+#            Disabling the recipe of an item will not remove preexisting items that have already been crafted/obtained.
+# Armor
+Chainmail: true
+PlatedChainmail: true
+Emerald: true
+#the redstone chestplate makes weapons that need redstone no longer need redstone.
+RedstoneCore: true
+# Emerald Sword/Tools/Weapons
+EmeraldGear: true
+# Miscellaneous Items
+ChorusBlade: true
+ObsidianPickaxe: true
+FeatherCharm: true
+BlazeCharm: true
+EmeraldCharm: true
+GoldCharm: true
+StarCharm: true
+FrostCharm: true
+# Basic Weapons
+Knives: true
+Rapiers: true
+Katanas: true
+Scythes: true
+Longswords: true
+Spears: true
+Sabers: true
+Cleavers: true
+#DualWieldSaberOnly true makes it so a saber can only be used in the offhand when also holding a saber in the main hand
+DualWieldSaberOnly: false
+# ENABLE OR DISABLE ALL PRISMARINE ARMOR/WEAPON RECIPES (true: enables, false: disables)
+Prismarine: true
+# Bows
+SwordBow: true
+HeavySwordBow: true
+Longbow: true
+Recurvebow: true
+Compoundbow: true
+RepeatingCrossbow: true
+LongswordBow: true
+BurstCrossbow: true
+RedstoneBow: true
+#Shields
+DiamondShield: true
+NetheriteShield: true
+#Enable or disable special items:======================================================================================
+#These items are disabled on default because some people might not like them.
+# the vessel is a sword that is a rare drop (1/100 chance) from wither skeletons
+# changing this setting to false will stop it from being dropped
+Vessel: false
+# the infused vessel is gained after killing a wither with a vessel
+# changing this setting to false will stop it from being gained
+InfusedVessel: false
+# the cursed vessel is gained after killing an ender dragon with a vessel
+# changing this setting to false will stop it from being gained
+CursedVessel: false
+#
+# EXPERIMENTAL ITEMS (these recipes will be disabled on default, put true to enable)===================================
+# The wither armor works but I am unsure if it is balanced or not
+WitherArmor: false
+Eelytra: false
+JumpElytra: false
+VolcanicBlade: false
+VolcanicSpear: false
+VolcanicAxe: false
+VolcanicCleaver: false
+#enable or disable wither skeleton bones (they will drop from wither skeletons)
+# wither skeleton bones are used to craft the wither armor
+WitherBones: false
+# obtained by combining the infused and cursed vessels in a smithing table
+# the order of the vessels put in determines the outcome
+AwakenedVesselWhite: false
+AwakenedVesselPurple: false
+#
+# ENCHANTS=============================================================================================================
+# You are unable to change which enchants are on the items, but you can change the level of enchants.
+# You can also enable/disable enchants on the items
+# editing the enchants will only work on the items below, it does not work on other items.
+EnchantmentsOnEmeraldArmor: false
+EmeraldArmorEnchantLevels:
+  Unbreaking: 10
+  Mending: 1
+#
+EnchantmentsOnEmeraldGear: false
+# THIS INCLUDES ALL EMERALD WEAPONS AND TOOLS
+EmeraldGearEnchantLevels:
+  Unbreaking: 10
+  Mending: 1
+#
+EnchantsChorusBlade: true
+ChorusEnchantLevels:
+  Unbreaking: 5
+  Knockback: 2
+#
+EnchantsSwordBow: true
+SwordBowEnchantLevels:
+  Smite: 5
+  Unbreaking: 3
+  Mending: 1
+#
+EnchantsHeavySwordBow: true
+HeavySwordBowEnchantLevels:
+  Smite: 5
+  Power: 3
+  Unbreaking: 5
+  Mending: 1
+#
+EnchantsPlatedChainmail: true
+PlatedChainmailEnchantLevels:
+  Unbreaking: 5
+#
+EnchantsObsidianPickaxe: true
+ObsidianPickEnchantLevels:
+  Unbreaking: 10
+#
+EnchantsDiamondShield: true
+DiamondShieldEnchantLevels:
+  Unbreaking: 5
+#
+EnchantsNetheriteShield: true
+NetheriteShieldEnchantLevels:
+  Unbreaking: 10
+#
+#==============================================================================================================================
+#READ THIS:
+# Any changes made to weapon attributes, descriptions, or enchants will only apply to newly crafted items.
+# Any preexisting items will not be affected by changes in the config.
+# However, the "ADJUST DAMAGE MULTIPLIERS" option above is able to affect preexisting items.
+#==============================================================================================================================
+#
+#CUSTOMIZE ITEM ATTRIBUTE NUMBERS (damage, attack speed, etc)==================================================================
+#DESCRIPTION:
+#Damage: player have 20HP and 10 hearts, this option will affect HP (1 heart = 2HP)
+#Speed: attack speed, higher = more fast (be careful with negative, higher value is more near to 0)
+# (This is still a work in progress)
+# REMEMBER: after changing the attribute numbers, you will also have to change the numbers in the item descriptions (you might not have to do this with some items though)
+UseCustomValues: false
+#set UseCustomValues to false to make the plugin use the default numbers instead of the numbers below
+#ARMOR: ==================================================================================================================================================================
+Armors_RedstoneCore:
+  Armor: 2.0
+Armors_EmeraldHelmet:
+  Armor: 2.0
+  BonusHealth: 1.0
+Armors_EmeraldChestplate:
+  Armor: 6.0
+  BonusHealth: 1.0
+Armors_EmeraldLeggings:
+  Armor: 5.0
+  BonusHealth: 1.0
+Armors_EmeraldBoots:
+  Armor: 2.0
+  BonusHealth: 1.0
+Armors_PlateChainHelmet:
+  Armor: 4.0
+Armors_PlateChainChestplate:
+  Armor: 6.0
+Armors_PlateChainLeggings:
+  Armor: 6.0
+Armors_PlateChainBoots:
+  Armor: 4.0
+Armors_PrismarineHelmet:
+  Armor: 4.0
+  ArmorToughness: 3.0
+  KBResist: 1.0
+  BonusHealth: 1.0
+Armors_PrismarineChestplate:
+  Armor: 9.0
+  ArmorToughness: 3.0
+  KBResist: 1.0
+  BonusHealth: 2.0
+Armors_PrismarineLeggings:
+  Armor: 7.0
+  ArmorToughness: 3.0
+  KBResist: 1.0
+  BonusHealth: 2.0
+Armors_PrismarineBoots:
+  Armor: 4.0
+  ArmorToughness: 3.0
+  KBResist: 1.0
+  BonusHealth: 1.0
+Armors_WitherHelmet:
+  KBResist: 2.0
+  BonusHealth: 5.0
+Armors_WitherChestplate:
+  KBResist: 2.0
+  BonusHealth: 5.0
+Armors_WitherLeggings:
+  KBResist: 2.0
+  BonusHealth: 5.0
+Armors_WitherBoots:
+  KBResist: 2.0
+  BonusHealth: 5.0
+#BOWS: ============================================================================================================
+Bows_SwordBow:
+  Damage: 9
+  Speed: 1
+Bows_HeavySwordBow:
+  Damage: 11
+  Speed: 0.8
+  MoveSpeed: -0.05
+  OffhandMoveSpeed: -0.05
+  KBResist: 5
+  OffhandKBResist: 5
+Bows_LongswordBow:
+  Damage: 8
+  Speed: 1.4
+#increasing arrow speed also increases the damage as well
+#use dmgMultiplier to increase or decrease arrow damage (arrow damage will be multiplied by that number)
+Bows_LongBow:
+  ArrowSpeed: 4
+  DmgMultiplier: 1
+Bows_RecurveBow:
+  ArrowSpeed: 5
+  DmgMultiplier: 1
+Bows_CompoundBow:
+  ArrowSpeed: 6
+  DmgMultiplier: 1
+#CHARMS: ============================================================================================================
+Charms_EmeraldCharm:
+  BonusHealth: 4
+  BonusArmor: -2
+Charms_BlazeCharm:
+  BonusDamage: 4
+  BonusHealth: -2
+Charms_GoldCharm:
+  BonusAttackSpeedPercent: 30
+  BonusMoveSpeedPercent: -15
+#OTHER: ============================================================================================================
+Others_InfusedVessel:
+  Damage: 10.0
+  Speed: 1.6
+Others_CursedVessel:
+  Damage: 10.0
+  Speed: 1.6
+Others_AwakenedVesselPurple:
+  Damage: 12.0
+  Speed: 1.4
+Others_AwakenedVesselWhite:
+  Damage: 12.0
+  Speed: 1.4
+Others_VolcanicBlade:
+  Damage: 8.0
+  Speed: 1.6
+Others_VolcanicSpear:
+  Damage: 5.0
+  Speed: 2.5
+Others_VolcanicAxe:
+  Damage: 10.0
+  Speed: 1.0
+Others_VolcanicCleaver:
+  Damage: 13.0
+  Speed: 0.4
+PrismarinePickaxe:
+  Damage: 7.0
+  Speed: 1.2
+PrismarineAxe:
+  Damage: 11.0
+  Speed: 1.0
+PrismarineShovel:
+  Damage: 7.5
+  Speed: 1.0
+PrismarineHoe:
+  Damage: 2.0
+  Speed: 4.0
+#SWORDS: ============================================================================================================
+EmeraldSword:
+  Damage: 6.0
+  Speed: 1.8
+Swords_ChorusBlade:
+  Damage: 4.0
+  Speed: 10.0
+PrismarineSword:
+  Damage: 9.0
+  Speed: 1.6
+#======================================================================================================================================================
+# MAKE NETHERITE WEAPONS REQUIRE INGOTS INSTEAD OF SCRAP TO CRAFT (in the crafting table recipe)
+# PUT TRUE OR FALSE
+NetheriteIngots: false
+#======================================================================================================================================================
+#
+# Customize item descriptions===========================================================================================
+# The &number (example: &6, or &2) in front of the text indicates the color of the text
+# You can search up minecraft color codes to see what the colors are
+# Changing the item attribute numbers here will not do anything, it only changes what it says in the description
+# Also, you can't add more lines in the descriptions
+#
+#The ones below are the ones I've gotten done so far
+#(This is still a work in progress)
+#BOWS: ============================================================================================================
+DescriptionSwordBow:
+  Name: "Sword Bow"
+  Line1: ""
+  Line2: "&7Combination of a sword and bow"
+  Line3: ""
+DescriptionHeavySwordBow:
+  Name: "Heavy Sword Bow"
+  Line1: ""
+  Line2: "&7The Ultimate Bow"
+  Line3: ""
+DescriptionLongswordBow:
+  Name: "Longsword Bow"
+  Line1: ""
+  Line2: "&7- Slightly increased arrow velocity"
+  Line3: ""
+  Line4: "&7When in Main Hand:"
+  Line5: "&9 8 Attack Damage"
+  Line6: "&9 1.4 Attack Speed"
+DescriptionLongBow:
+  Name: "Longbow"
+  Line1: ""
+  Line2: "&6Strong Shot"
+  Line3: "&7- Slightly increased arrow velocity"
+  Line4: ""
+DescriptionRecurveBow:
+  Name: "Recurve Bow"
+  Line1: ""
+  Line2: "&6Sharp Shot"
+  Line3: "&7- Increased arrow velocity"
+  Line4: ""
+DescriptionCompoundBow:
+  Name: "Compound Bow"
+  Line1: ""
+  Line2: "&6Strike Shot"
+  Line3: "&7- Greatly increased arrow velocity"
+  Line4: ""
+DescriptionRepeatingCrossbow:
+  Name: "Repeating Crossbow"
+  Line1: ""
+  Line2: "&6Redstone Powered"
+  Line3: "&7- Hold redstone dust in offhand"
+  Line4: "&7- Fires 4 more arrows after the first arrow"
+  Line5: ""
+DescriptionBurstCrossbow:
+  Name: "Burst Crossbow"
+  Line1: ""
+  Line2: "&6Redstone Powered"
+  Line3: "&7- Hold redstone dust in offhand"
+  Line4: "&7- Fires an additional arrow above and below"
+  Line5: ""
+DescriptionRedstoneBow:
+  Name: "Redstone Bow"
+  Line1: ""
+  Line2: "&6Redstone Powered"
+  Line3: "&7- Hold redstone dust in offhand"
+  Line4: "&7- Increases arrow speed and makes arrow piercing"
+  Line5: "&7- Also decreases arrow damage"
+  Line6: ""
+#CHARMS: ============================================================================================================
+DescriptionFeatherCharm:
+  Name: "&fFeather Charm"
+  Line1: ""
+  Line2: "&7Negates fall damage when held in offhand"
+DescriptionEmeraldCharm:
+  Name: "&2Emerald Charm"
+  Line1: ""
+  Line2: "&7When held in offhand,"
+  Line3: "&7exchanges armor for more health"
+DescriptionBlazeCharm:
+  Name: "&6Blaze Charm"
+  Line1: ""
+  Line2: "&7When held in offhand,"
+  Line3: "&7exchanges health for more damage"
+DescriptionGoldCharm:
+  Name: "&eGold Charm"
+  Line1: ""
+  Line2: "&7When held in offhand,"
+  Line3: "&7exchanges move speed for more attack speed"
+DescriptionStarCharm:
+  Name: "&dStar Charm"
+  Line1: ""
+  Line2: "&7Increases xp gained from mobs when held in offhand"
+DescriptionFrostCharm:
+  Name: "&bFrost Charm"
+  Line1: ""
+  Line2: "&6Freeze"
+  Line3: "&7- When this item is held in offhand,"
+  Line4: "&7  attacks will inflict slowness for 1 second"
+#OTHER: ============================================================================================================
+DescriptionVessel:
+  Name: "&eVessel"
+  Line1: ""
+  Line2: "&6Parry"
+  Line3: "&7- Right click"
+  Line4: "&7  (1 second cooldown)"
+DescriptionInfusedVessel:
+  Name: "&eInfused Vessel"
+  Line1: ""
+  Line2: "&6Wither's Evil"
+  Line3: "&7- Inflicts wither"
+  Line4: "&7  on opponents"
+  Line5: "&6Parry"
+  Line6: "&7- Right click"
+  Line7: "&7  (1 second cooldown)"
+  Line8: ""
+  Line9: "&7When in Main Hand:"
+  Line10: "&9 10 Attack Damage"
+  Line11: "&9 1.6 Attack Speed"
+DescriptionCursedVessel:
+  Name: "&eCursed Vessel"
+  Line1: ""
+  Line2: "&6Dragon's Curse"
+  Line3: "&7- +50% damage dealt"
+  Line4: "&7  +50% damage taken"
+  Line5: "&6Parry"
+  Line6: "&7- Right click"
+  Line7: "&7  (1 second cooldown)"
+  Line8: ""
+  Line9: "&7When in Main Hand:"
+  Line10: "&9 10 Attack Damage"
+  Line11: "&9 1.6 Attack Speed"
+DescriptionAwakenedVesselPurple:
+  Name: "&dAwakened Vessel"
+  Line1: ""
+  Line2: "&6Evocation"
+  Line3: "&7- Summons fangs to attack"
+  Line4: "&7  all mobs within a 5 block"
+  Line5: "&7  radius, dealing 6 damage"
+  Line6: "&7  Shift + Right click to toggle"
+  Line7: "&7- (Activates on a"
+  Line8: "&7  fully charged attack)"
+  Line9: "&7- Uses up 1 xp level each use"
+  Line10: "&6Parry"
+  Line11: "&7- Right click"
+  Line12: "&7  (1 second cooldown)"
+  Line13: ""
+  Line14: "&7When in Main Hand:"
+  Line15: "&9 12 Attack Damage"
+  Line16: "&9 1.4 Attack Speed"
+DescriptionAwakenedVesselWhite:
+  Name: "&dAwakened Vessel"
+  Line1: ""
+  Line2: "&6Magic Aura"
+  Line3: "&7- Inflicts 6 magic damage"
+  Line4: "&7  on all mobs within"
+  Line5: "&7  a 5 block radius"
+  Line6: "&7  Shift + Right click to toggle"
+  Line7: "&7- (Activates on a"
+  Line8: "&7  fully charged attack)"
+  Line9: "&7- Uses up 1 xp level each use"
+  Line10: "&6Parry"
+  Line11: "&7- Right click"
+  Line12: "&7  (1 second cooldown)"
+  Line13: ""
+  Line14: "&7When in Main Hand:"
+  Line15: "&9 12 Attack Damage"
+  Line16: "&9 1.4 Attack Speed"
+DescriptionVolcanicBlade:
+  Name: "Volcanic Blade"
+  Line1: ""
+  Line2: "&6Eruption"
+  Line3: "&7- When an attack hits an opponent,"
+  Line4: "&7  damage nearby entities within 1"
+  Line5: "&7  block, setting them on fire"
+  Line6: "&9   5 Attack Damage"
+  Line7: "&9   3s of Fire"
+  Line8: ""
+  Line9: "&7When in Main Hand:"
+  Line10: "&9 8 Attack Damage"
+  Line11: "&9 1.6 Attack Speed"
+DescriptionVolcanicSpear:
+  Name: "Volcanic Spear"
+  Line1: ""
+  Line2: "&6Eruption"
+  Line3: "&7- When an attack hits an opponent,"
+  Line4: "&7  damage nearby entities within 1"
+  Line5: "&7  block, setting them on fire"
+  Line6: "&9   5 Attack Damage"
+  Line7: "&9   3s of Fire"
+  Line8: ""
+  Line9: "&7When in Main Hand:"
+  Line10: "&9 5 Attack Damage"
+  Line11: "&9 2.5 Attack Speed"
+DescriptionVolcanicAxe:
+  Name: "Volcanic Axe"
+  Line1: ""
+  Line2: "&6Eruption"
+  Line3: "&7- When an attack hits an opponent,"
+  Line4: "&7  damage nearby entities within 1"
+  Line5: "&7  block, setting them on fire"
+  Line6: "&9   5 Attack Damage"
+  Line7: "&9   3s of Fire"
+  Line8: ""
+  Line9: "&7When in Main Hand:"
+  Line10: "&9 10 Attack Damage"
+  Line11: "&9 1 Attack Speed"
+DescriptionVolcanicCleaver:
+  Name: "Volcanic Cleaver"
+  Line1: ""
+  Line2: "&6Eruption"
+  Line3: "&7- When an attack hits an opponent,"
+  Line4: "&7  damage nearby entities within 1"
+  Line5: "&7  block, setting them on fire"
+  Line6: "&9   5 Attack Damage"
+  Line7: "&9   3s of Fire"
+  Line8: ""
+  Line9: "&7When in Main Hand:"
+  Line10: "&9 13 Attack Damage"
+  Line11: "&9 0.4 Attack Speed"
+
+#SWORDS: ============================================================================================================
+DescriptionChorusBlade:
+  Name: "Chorus Blade"
+  Line1: ""
+  Line2: "&6Teleport"
+  Line3: "&7- Shoot an ender pearl"
+  Line4: "&7 (Right click)"
+  Line5: "&7 (2 second cooldown)"
+  Line6: ""
+  Line7: "&7When in Main Hand:"
+  Line8: "&9 4 Attack Damage"
+  Line9: "&9 10 Attack Speed"

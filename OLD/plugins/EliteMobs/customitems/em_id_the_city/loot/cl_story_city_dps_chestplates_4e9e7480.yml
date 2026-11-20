@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Patrol Front'
+lore:
+- '&7The insignia is worn smooth across the chest.'
+classLootFamily: DPS_CHESTPLATES

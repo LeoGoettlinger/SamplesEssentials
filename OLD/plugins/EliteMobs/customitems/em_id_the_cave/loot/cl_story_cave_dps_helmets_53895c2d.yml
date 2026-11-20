@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Scorched Brow'
+lore:
+- '&7The rim carries the shape of a blast of hot air.'
+classLootFamily: DPS_HELMETS

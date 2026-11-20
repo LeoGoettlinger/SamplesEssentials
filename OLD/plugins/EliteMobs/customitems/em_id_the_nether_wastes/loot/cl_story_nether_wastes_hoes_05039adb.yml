@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&c[$difficulty] Desolation Harvester'
+lore:
+- '&cA scythe that reaps across'
+- '&cthe barren wastes. It cuts'
+- '&cthrough life itself.'

@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_HELMET
+name: '&b[Mythical] Frostbite Helmet'
+lore:
+- '&bOffers decent protection'
+- '&beven though taken from a corpse.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- DAMAGE_ALL,5
+itemType: unique
+scalability: scalable
+level: 10

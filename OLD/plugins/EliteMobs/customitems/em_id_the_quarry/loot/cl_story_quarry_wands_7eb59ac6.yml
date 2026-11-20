@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&7Survey Pin'
+lore:
+- '&7The smallest tool in an oversized expedition.'
+weaponType: WANDS

@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Wasteland Bow'
+material: BOW
+level: 50
+lore:
+- '&cA bow forged in the desolate'
+- '&cwastes. Arrows leave trails'
+- '&cof ash and fire.'
+enchantments:
+- ARROW_DAMAGE,4
+- ARROW_FIRE,2
+- DURABILITY,4
+itemType: unique
+scalability: scalable

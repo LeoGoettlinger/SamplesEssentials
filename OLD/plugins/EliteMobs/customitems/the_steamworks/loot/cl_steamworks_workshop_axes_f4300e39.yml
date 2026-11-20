@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&bScrap Shear'
+lore:
+- '&bIts two former handles have been welded together.'
+- '&bOne still has a machinist''s glove stuck to it.'

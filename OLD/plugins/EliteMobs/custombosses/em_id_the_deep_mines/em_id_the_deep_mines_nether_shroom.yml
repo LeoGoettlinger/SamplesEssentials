@@ -1,0 +1,91 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: ZOMBIE
+isBaby: true
+name: $normalLevel &eNether Shroom
+level: dynamic # 45
+healthMultiplier: 1.2
+damageMultiplier: 0.5
+movementSpeedAttribute: 0.35
+powers:
+- invulnerability_arrow.yml
+- invulnerability_fire.yml
+- filename: attack_blinding.yml
+  difficultyID:
+  - 1
+  - 2
+- filename: attack_gravity.yml
+  difficultyID:
+  - 2
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+frozen: false
+followDistance: 15
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+disguise: custom:em_id_the_deep_mines_nether_shroom
+customDisguiseData: player em_id_the_deep_mines_nether_shroom setskin {"id":"ebc6f487-4973-4941-9f41-30f957de3a00","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY4OTI2NjE1MjExMSwKICAicHJvZmlsZUlkIiA6ICJlOWRlMDE0NjExZDI0NGY5OTVjNmNiMjhkMDk5MWExNSIsCiAgInByb2ZpbGVOYW1lIiA6ICJFbGl6YWJldGhUcnVzcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS80MzZhYzQzNzhjOTlhMGIxYWQ1NjcyNjE4ODIxMGZhNGU2ZDI4YTRhYjk1MWQzYmFlZTM1OTEyNjcwNTI3MGM1IgogICAgfQogIH0KfQ==","signature":"Z057s/MMryjQI0zTUrZDMCSS9+U1pnfY4Gfy1hdZPYBbuZlhOIAxIIRUoeP5fvRBOA6OlOuqsWvH1ihDNhX/KSAmJzIaaCyuCG4yb6ps63v/3mzdO4oJLR2pzB8iOMOBIsBRaEhf6CDhko2C3Moz5SC6Evn9AClt0E8NCXiINOciGU8i8tMM7JYk3JTswW2KWoBC05AO4c6I/FptYIoASpFZuy9Ie3CefRmTNsFfrSXhocWMNiYici9CB6iyz2Fm491U0imJpqx2i20iCuk8J9VbrGpu94i7sbzkZwCl7983RSa+u5k36q3TNmEg03xUlqoB4icOWN+kQc50MJs81IYnvnLqGwLYukiTExPlJ+CmoUE6bLIOQV8g/P8O1OecLw4IXQx9pSKdoUwb/eNNUsQ8Uk7yHtkgCBKN8CCLbN+s5hZ84+zLa1T5ITnrDfm3BBpjJ5yOFq6pK3WF7YuyOfwxrzs69vi/AMTQ68t8UVWzjHOG2nzQKIA3mlSbZ1RIpy5RgpGM3axwzJeTo1rLP4YGewf6XHStPeQkehotbUKcIzuq4hbdMHAZfpcCq0he7oXw6T5ulA4by9cDCLOgQZpZfDZdI4rvgZUkN12jH0WmrfHGqde2qRcoGS4u3tlw3YCXXQCa3UuhGEtkdCDBYQSbhs2i5DTcm7zaTGp38Bg="}],"legacy":false}
+spawnLocations:
+- em_id_the_deep_mines,-0.5,103.5,100.5,0.0,0.0
+- em_id_the_deep_mines,6.5,97.5,88.5,0.0,0.0
+- em_id_the_deep_mines,-91.5,113.5,118.5,0.0,0.0
+- em_id_the_deep_mines,-88.5,106.5,142.5,0.0,0.0
+- em_id_the_deep_mines,-78.5,98.5,175.5,0.0,0.0
+- em_id_the_deep_mines,-122.5,106.5,146.5,0.0,0.0
+- em_id_the_deep_mines,-133.5,108.5,136.5,0.0,0.0
+- em_id_the_deep_mines,-141.5,107.5,137.5,0.0,0.0
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: em_id_the_deep_mines_nether_charm_normal.yml
+  chance: 0.04
+  difficultyID: 0
+- filename: em_id_the_deep_mines_nether_charm_hard.yml
+  chance: 0.04
+  difficultyID: 1
+- filename: em_id_the_deep_mines_nether_charm_mythical.yml
+  chance: 0.04
+  difficultyID: 2
+- filename: cl_story_deep_mines_swords_8d15cf02.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_axes_cedd4aa4.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_bows_b6c8d98d.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_crossbows_30ddf671.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tridents_ef892282.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_hoes_1230f16b.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_maces_26754aa4.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_spears_d7ace56c.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_staves_ddb894eb.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_wands_508977f6.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_helmets_e5cd2ef5.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_chestplates_2a0f5219.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_leggings_1965d4e3.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_boots_35d9f72a.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_helmets_2c10cdd9.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_chestplates_d332b108.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_leggings_00e66b52.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_boots_e2e4be2e.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_shields_a907d85d.yml
+  chance: 1.0

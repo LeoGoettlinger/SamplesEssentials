@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&bRivet Driver'
+lore:
+- '&bRows of flattened rivets mark the head.'
+- '&bOne of them still carries a serial number.'

@@ -1,0 +1,130 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Aura:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: RUN_SCRIPT
+      onlyRunOneScript: true
+      scripts:
+      - Slow
+      - Poison
+      - Wither
+      repeatEvery: 101
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    Cooldowns:
+      local: 99999
+      global: 1
+  Slow:
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SNOWFLAKE
+        speed: 0.1
+      Target:
+        targetType: SELF
+        offset: 0,2,0
+      repeatEvery: 2
+      times: 50
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 2
+      duration: 100
+      Target:
+        targetType: DIRECT_TARGET
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLAY_SOUND
+      sValue: minecraft:block.snow.place
+      Target:
+        targetType: SELF
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  Poison:
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SLIME
+        speed: 0.1
+      Target:
+        targetType: SELF
+        offset: 0,2,0
+      repeatEvery: 2
+      times: 50
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 2
+      duration: 100
+      Target:
+        targetType: DIRECT_TARGET
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.slime.jump
+      Target:
+        targetType: SELF
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  Wither:
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+        speed: 0.1
+      Target:
+        targetType: SELF
+        offset: 0,2,0
+      repeatEvery: 2
+      times: 50
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      potionEffectType: WITHER
+      amplifier: 1
+      duration: 140
+      Target:
+        targetType: DIRECT_TARGET
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.wither.ambient
+      Target:
+        targetType: SELF
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF

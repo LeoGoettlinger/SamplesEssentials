@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&e[Hard] Glass Helmet'
+material: DIAMOND_HELMET
+level: 50
+lore:
+- '&eThough it may look like regular glass at first glance,'
+- '&ethis helmet is actually made out of thick molded'
+- '&ecrystalline material.'
+enchantments:
+- DAMAGE_ALL,6
+- DAMAGE_UNDEAD,4
+- DAMAGE_ARTHROPODS,3
+- DURABILITY,2
+potionEffects:
+- SLOW_FALLING,0,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,14 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&dDarkened Dwarven Note'
+material: PAPER
+lore:
+- '&dWe have failed our people, the entrance'
+- '&dto our realm has been sealed. This'
+- '&dmadness will not be allowed to spread,'
+- '&dit is our burden to bear. I wonder how'
+- '&dmuch longer I have before the corruption'
+- '&dtakes me…'
+scalability: scalable
+itemType: unique

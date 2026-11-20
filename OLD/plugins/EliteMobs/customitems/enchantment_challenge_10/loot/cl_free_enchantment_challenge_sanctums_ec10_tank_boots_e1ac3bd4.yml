@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Skell Walkers
+lore:
+- Made for walking.
+classLootFamily: TANK_BOOTS

@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Normal] Pig Helmet'
+material: DIAMOND_HELMET
+level: 20
+lore:
+- '&2Time to put this on and go roll in the mud.'
+enchantments:
+- DAMAGE_ALL,2
+- PROTECTION_ENVIRONMENTAL,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

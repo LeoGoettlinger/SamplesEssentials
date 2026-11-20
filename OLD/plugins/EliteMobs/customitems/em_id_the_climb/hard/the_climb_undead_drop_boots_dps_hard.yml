@@ -1,0 +1,11 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_BOOTS
+name: '&4[Hard] Undead''s Boots'
+lore:
+- '&4Retrieved from the walking corpse.'
+enchantments:
+- DAMAGE_ALL,3
+itemType: unique
+scalability: scalable
+level: 10

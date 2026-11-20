@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Hard] Spun Netherite Leggings'
+material: NETHERITE_LEGGINGS
+level: 20
+lore:
+- '&fYour legs will be grateful.'
+enchantments:
+- PROTECTION_FIRE,7
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_FALL,3
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

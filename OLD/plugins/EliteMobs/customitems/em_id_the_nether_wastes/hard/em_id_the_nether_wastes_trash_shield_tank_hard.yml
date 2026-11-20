@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Hard] Infested Shield'
+material: SHIELD
+level: 50
+lore:
+- '&fThere are mushrooms growing all over the shield.'
+enchantments:
+- DURABILITY,5
+- PROTECTION_PROJECTILE,3
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

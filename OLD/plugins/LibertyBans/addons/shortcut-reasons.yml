@@ -1,0 +1,21 @@
+ # The shortcuts themselves.
+ # Remember to wrap apostrophes and other special characters inside quotation marks.
+shortcuts:
+  chat_spam: 'Bitte nicht so spammen!'
+  hacking: 'Wir mussten leider feststellen das du hoechstwahrscheinlich hackst!'
+  sb: 'SICHERHEITS-PUNNISH: Wir haben bei dir einen moeglichen Regelverstoß festgestellt und überprüfen diesen aktuell. Wenn wir damit fertig sind wird sich das Punishment updaten!'
+  warns: 'Du hast zu viele Warns erhalten! Pass in Zukunft mehr auf die Regeln auf!'
+  hausverbot: 'HAUSVERBOT: Da du zu haeufig oder zu sehr unsere Regeln missachtet hasst schließen wir dich hiermit permanent vom Netzwerk aus!'
+  spam_warn: 'WARN: Da du spamst verwarnen wir dich hiermit!'
+  mute: 'MUTE: Da du gegen unsere Server-Regeln vertoest haben wir deine Chat-Ability temporaer/permanent deaktiviert'
+  hacking: 'HACKING: Da du hackst und damit unsere Server-Regeln missachtet haben wir uns entschieden dich permanent/temporaer vom Netzwerk auszuschliessen!'
+  warn_alert: 'Wenn du noch ein Warn mehr erhaelst dann wirst du ein Punishment erhalten!'
+  warn: 'WARN: Da du gegen unsere Server-Regeln verstoest verwarnen wir dich hiermit!'
+  auszeit: 'AUSZEIT: Da du gegen unsere Regeln verstossen hast, schliessen wir dich temporaer/permanent vom Netzwerk aus!'
+  
+ # The special prefix used to identify a reason shortcut when executing commands
+shortcut-identifier: '!'
+ # If a staff member specifies an invalid shortcut, the command will be halted to prevent mistakes.
+does-not-exist: '&cThere is no shortcut reason configured for &e%SHORTCUT_ARG%&c.'
+ # Whether to enable this addon at all
+enable: true

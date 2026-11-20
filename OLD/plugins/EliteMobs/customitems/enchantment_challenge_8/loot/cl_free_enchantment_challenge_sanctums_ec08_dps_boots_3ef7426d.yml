@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Kick Bunger
+lore:
+- Good feet, loud stomp.
+classLootFamily: DPS_BOOTS

@@ -1,0 +1,13 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:reduce_fall_damage"
+  ],
+  "settings": {
+    "morph:reduce_fall_damage": {
+      "amount": 10.0,
+      "is_percentage": false
+    }
+  }
+}

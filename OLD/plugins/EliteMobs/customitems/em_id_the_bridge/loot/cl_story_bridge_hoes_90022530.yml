@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&7Parapet Hook'
+lore:
+- '&7The curved blade reaches over the old stonework.'

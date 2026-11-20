@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Stage Brow
+lore:
+- The view from the front row is terrible.
+classLootFamily: DPS_HELMETS

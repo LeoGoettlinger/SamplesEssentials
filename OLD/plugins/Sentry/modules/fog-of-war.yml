@@ -1,0 +1,43 @@
+#     _____            __
+#    / ___/___  ____  / /________  __
+#    \__ \/ _ \/ __ \/ __/ ___/ / / /
+#   ___/ /  __/ / / / /_/ /  / /_/ /
+#  /____/\___/_/ /_/\__/_/   \__, /
+#                           /____/
+# DOCUMENTATION: https://squareplugins.gitbook.io/sentry
+# DISCORD SUPPORT: https://discord.gg/7cFjDnSpEs - CHECK THE DOCUMENTATION BEFORE ASKING FOR HELP!
+#
+# GO GET SENTRY PRIME NOW: https://squareplugins.gitbook.io/sentry/prime
+
+# Enable this module? true / false
+# THIS MODULE REQUIRES SENTRY PRIME!
+# PLUGIN: THIS MODULE REQUIRES PacketEvents WHEN RUNNING THE SENTRY PLUGIN VERSION!
+module-enabled: false
+
+# If true, players with sentry.bypass.fog-of-war will not be processed by Sentry.
+permission-bypass: true
+
+# This module controls a unique new feature called Fog of War,
+# what it does is completely hide and destroy players when they are out of sight,
+# this totally prevents and blocks any types of X-Ray/Wallhacking/PlayerESP cheats, as Sentry will completely
+# make the server stop sending any type of packets and information if the player is not in sight of another player.
+settings:
+  type: "DESTROY"       # You can choose between DESTROY and TELEPORT, with DESTROY being the recommended option.
+
+  visibility:
+    max-distance: 48    # Max distance to manage player visibility
+    min-distance: 4     # In this distance, players are always visible.
+    anticipation: 1.1   # Anticipation radius
+
+  out-of-sight:
+    threshold: 3        # Consecutive checks to declare out of sight
+    fov: 0.34           # Cosine of 70 degrees, calculated FOV of 140.
+
+  nametag:               # If enabled, shows the player's nametag when they are out of sight. This is useful if you want
+    enabled: true        # to keep it vanilla-style where you can still see player's nametags. Sneaking/Invisible players will not have nametags either way.
+
+  locator-bar:           # Hides out of sight players from the Locator Bar when they are invisible or sneaking.
+    enabled: true        # Recommended to leave as true.
+
+  disabled-worlds:      # Use this to disable Fog of War in specific worlds, add here your spawn/lobby/hub worlds.
+    - "spawn"

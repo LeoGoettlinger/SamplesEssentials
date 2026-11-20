@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&6Stone Longbow [Hard]'
+material: BOW
+level: 25
+lore:
+- '&cFire arrows from ancient times!'
+enchantments:
+- ARROW_DAMAGE,6
+- ARROW_KNOCKBACK,2
+- ARROW_FIRE,1
+- PROTECTION_ENVIRONMENTAL,3
+scalability: scalable
+itemType: unique
+soulbound: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

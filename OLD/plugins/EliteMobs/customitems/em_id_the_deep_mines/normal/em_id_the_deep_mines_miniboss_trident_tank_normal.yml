@@ -1,0 +1,19 @@
+isEnabled: true
+potionEffects: []
+name: '&d[Normal] Dwarven Trident'
+material: TRIDENT
+level: 45
+lore:
+- '&dUpon examining this item further you notice '
+- '&dold faded runes on the handle of the trident.'
+- '&dSeems that long ago this trident would have'
+- '&dlet it''s user traverse lava.'
+enchantments:
+- IMPALING,4
+- LOYALTY,3
+- PROTECTION_FIRE,2
+- DURABILITY,1
+- elitemobs:loud_strikes,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

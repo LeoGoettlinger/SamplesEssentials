@@ -1,0 +1,485 @@
+gui-name: '&8Spawner Shop'
+rows: 6
+permission: ''
+items:
+- material: SPAWNER
+  name: '&aPig Spawner'
+  price: 50000
+  sell-price: 35000
+  amount: 1
+  lore:
+  - '&7Spawns pigs.'
+  spawner-type: PIG
+- material: SPAWNER
+  name: '&aCow Spawner'
+  price: 75000
+  sell-price: 52500
+  amount: 1
+  lore:
+  - '&7Spawns cows.'
+  spawner-type: COW
+- material: SPAWNER
+  name: '&aSheep Spawner'
+  price: 60000
+  sell-price: 42000
+  amount: 1
+  lore:
+  - '&7Spawns sheep.'
+  spawner-type: SHEEP
+- material: SPAWNER
+  name: '&aChicken Spawner'
+  price: 45000
+  sell-price: 31500
+  amount: 1
+  lore:
+  - '&7Spawns chickens.'
+  spawner-type: CHICKEN
+- material: SPAWNER
+  name: '&aRabbit Spawner'
+  price: 55000
+  sell-price: 38500
+  amount: 1
+  lore:
+  - '&7Spawns rabbits.'
+  spawner-type: RABBIT
+- material: SPAWNER
+  name: '&aHorse Spawner'
+  price: 80000
+  sell-price: 56000
+  amount: 1
+  lore:
+  - '&7Spawns horses.'
+  spawner-type: HORSE
+- material: SPAWNER
+  name: '&aWolf Spawner'
+  price: 70000
+  sell-price: 49000
+  amount: 1
+  lore:
+  - '&7Spawns wolves.'
+  spawner-type: WOLF
+- material: SPAWNER
+  name: '&aCat Spawner'
+  price: 65000
+  sell-price: 45500
+  amount: 1
+  lore:
+  - '&7Spawns cats.'
+  spawner-type: CAT
+- material: SPAWNER
+  name: '&aFox Spawner'
+  price: 70000
+  sell-price: 49000
+  amount: 1
+  lore:
+  - '&7Spawns foxes.'
+  spawner-type: FOX
+- material: SPAWNER
+  name: '&aParrot Spawner'
+  price: 65000
+  sell-price: 45500
+  amount: 1
+  lore:
+  - '&7Spawns parrots.'
+  spawner-type: PARROT
+- material: SPAWNER
+  name: '&aAxolotl Spawner'
+  price: 80000
+  sell-price: 56000
+  amount: 1
+  lore:
+  - '&7Spawns axolotls.'
+  spawner-type: AXOLOTL
+- material: SPAWNER
+  name: '&aFrog Spawner'
+  price: 60000
+  sell-price: 42000
+  amount: 1
+  lore:
+  - '&7Spawns frogs.'
+  spawner-type: FROG
+- material: SPAWNER
+  name: '&aGoat Spawner'
+  price: 65000
+  sell-price: 45500
+  amount: 1
+  lore:
+  - '&7Spawns goats.'
+  spawner-type: GOAT
+- material: SPAWNER
+  name: '&aDolphin Spawner'
+  price: 90000
+  sell-price: 63000
+  amount: 1
+  lore:
+  - '&7Spawns dolphins.'
+  spawner-type: DOLPHIN
+- material: SPAWNER
+  name: '&aMooshroom Spawner'
+  price: 85000
+  sell-price: 59500
+  amount: 1
+  lore:
+  - '&7Spawns mooshrooms.'
+  spawner-type: MUSHROOM_COW
+- material: SPAWNER
+  name: '&aTurtle Spawner'
+  price: 70000
+  sell-price: 49000
+  amount: 1
+  lore:
+  - '&7Spawns turtles.'
+  spawner-type: TURTLE
+- material: SPAWNER
+  name: '&aLlama Spawner'
+  price: 65000
+  sell-price: 45500
+  amount: 1
+  lore:
+  - '&7Spawns llamas.'
+  spawner-type: LLAMA
+- material: SPAWNER
+  name: '&aTrader Llama Spawner'
+  price: 80000
+  sell-price: 56000
+  amount: 1
+  lore:
+  - '&7Spawns trader llamas.'
+  spawner-type: TRADER_LLAMA
+- material: SPAWNER
+  name: '&aDonkey Spawner'
+  price: 60000
+  sell-price: 42000
+  amount: 1
+  lore:
+  - '&7Spawns donkeys.'
+  spawner-type: DONKEY
+- material: SPAWNER
+  name: '&aMule Spawner'
+  price: 60000
+  sell-price: 42000
+  amount: 1
+  lore:
+  - '&7Spawns mules.'
+  spawner-type: MULE
+- material: SPAWNER
+  name: '&aStrider Spawner'
+  price: 55000
+  sell-price: 38500
+  amount: 1
+  lore:
+  - '&7Spawns striders.'
+  spawner-type: STRIDER
+- material: SPAWNER
+  name: '&dSniffer Spawner'
+  price: 100000
+  sell-price: 70000
+  amount: 1
+  lore:
+  - '&7Spawns sniffers.'
+  - '&dFinds ancient seeds!'
+  spawner-type: SNIFFER
+- material: SPAWNER
+  name: '&6Camel Spawner'
+  price: 90000
+  sell-price: 63000
+  amount: 1
+  lore:
+  - '&7Spawns camels.'
+  - '&6Two-player mount!'
+  spawner-type: CAMEL
+- material: SPAWNER
+  name: '&6Armadillo Spawner'
+  price: 85000
+  sell-price: 59500
+  amount: 1
+  lore:
+  - '&7Spawns armadillos.'
+  - '&6Drops scute!'
+  spawner-type: ARMADILLO
+- material: SPAWNER
+  name: '&eVillager Spawner'
+  price: 200000
+  sell-price: 140000
+  amount: 1
+  lore:
+  - '&7Spawns villagers.'
+  - '&eVery useful for trading!'
+  spawner-type: VILLAGER
+- material: SPAWNER
+  name: '&eWandering Trader Spawner'
+  price: 180000
+  sell-price: 126000
+  amount: 1
+  lore:
+  - '&7Spawns wandering traders.'
+  spawner-type: WANDERING_TRADER
+- material: SPAWNER
+  name: '&eIron Golem Spawner'
+  price: 350000
+  sell-price: 245000
+  amount: 1
+  lore:
+  - '&7Spawns iron golems.'
+  - '&6Drops iron ingots!'
+  spawner-type: IRON_GOLEM
+- material: SPAWNER
+  name: '&eSnow Golem Spawner'
+  price: 120000
+  sell-price: 84000
+  amount: 1
+  lore:
+  - '&7Spawns snow golems.'
+  spawner-type: SNOWMAN
+- material: SPAWNER
+  name: '&bAllay Spawner'
+  price: 250000
+  sell-price: 175000
+  amount: 1
+  lore:
+  - '&7Spawns allays.'
+  - '&dCollects items for you!'
+  spawner-type: ALLAY
+- material: SPAWNER
+  name: '&cZombie Spawner'
+  price: 100000
+  sell-price: 70000
+  amount: 1
+  lore:
+  - '&7Spawns zombies.'
+  spawner-type: ZOMBIE
+- material: SPAWNER
+  name: '&cSkeleton Spawner'
+  price: 110000
+  sell-price: 77000
+  amount: 1
+  lore:
+  - '&7Spawns skeletons.'
+  spawner-type: SKELETON
+- material: SPAWNER
+  name: '&cCreeper Spawner'
+  price: 200000
+  sell-price: 140000
+  amount: 1
+  lore:
+  - '&7Spawns creepers.'
+  - '&6Drops gunpowder & TNT!'
+  spawner-type: CREEPER
+- material: SPAWNER
+  name: '&cBlaze Spawner'
+  price: 150000
+  sell-price: 105000
+  amount: 1
+  lore:
+  - '&7Spawns blazes.'
+  - '&6Drops blaze rods!'
+  spawner-type: BLAZE
+- material: SPAWNER
+  name: '&cSpider Spawner'
+  price: 100000
+  sell-price: 70000
+  amount: 1
+  lore:
+  - '&7Spawns spiders.'
+  spawner-type: SPIDER
+- material: SPAWNER
+  name: '&cCave Spider Spawner'
+  price: 120000
+  sell-price: 84000
+  amount: 1
+  lore:
+  - '&7Spawns cave spiders.'
+  - '&cPoisonous!'
+  spawner-type: CAVE_SPIDER
+- material: SPAWNER
+  name: '&cEnderman Spawner'
+  price: 220000
+  sell-price: 154000
+  amount: 1
+  lore:
+  - '&7Spawns endermen.'
+  - '&5Drops ender pearls!'
+  spawner-type: ENDERMAN
+- material: SPAWNER
+  name: '&cWitch Spawner'
+  price: 160000
+  sell-price: 112000
+  amount: 1
+  lore:
+  - '&7Spawns witches.'
+  - '&6Drops potions & glowstone!'
+  spawner-type: WITCH
+- material: SPAWNER
+  name: '&cGuardian Spawner'
+  price: 170000
+  sell-price: 119000
+  amount: 1
+  lore:
+  - '&7Spawns guardians.'
+  - '&bDrops prismarine shards!'
+  spawner-type: GUARDIAN
+- material: SPAWNER
+  name: '&cElder Guardian Spawner'
+  price: 400000
+  sell-price: 280000
+  amount: 1
+  lore:
+  - '&7Spawns elder guardians.'
+  - '&dRare and powerful!'
+  spawner-type: ELDER_GUARDIAN
+- material: SPAWNER
+  name: '&cSlime Spawner'
+  price: 130000
+  sell-price: 91000
+  amount: 1
+  lore:
+  - '&7Spawns slimes.'
+  - '&aDrops slimeballs!'
+  spawner-type: SLIME
+- material: SPAWNER
+  name: '&cPhantom Spawner'
+  price: 140000
+  sell-price: 98000
+  amount: 1
+  lore:
+  - '&7Spawns phantoms.'
+  - '&5Drops phantom membranes!'
+  spawner-type: PHANTOM
+- material: SPAWNER
+  name: '&cMagma Cube Spawner'
+  price: 130000
+  sell-price: 91000
+  amount: 1
+  lore:
+  - '&7Spawns magma cubes.'
+  - '&6Drops magma cream!'
+  spawner-type: MAGMA_CUBE
+- material: SPAWNER
+  name: '&cHusk Spawner'
+  price: 105000
+  sell-price: 73500
+  amount: 1
+  lore:
+  - '&7Spawns husks.'
+  spawner-type: HUSK
+- material: SPAWNER
+  name: '&cStray Spawner'
+  price: 115000
+  sell-price: 80500
+  amount: 1
+  lore:
+  - '&7Spawns strays.'
+  spawner-type: STRAY
+- material: SPAWNER
+  name: '&cPillager Spawner'
+  price: 120000
+  sell-price: 84000
+  amount: 1
+  lore:
+  - '&7Spawns pillagers.'
+  spawner-type: PILLAGER
+- material: SPAWNER
+  name: '&cVindicator Spawner'
+  price: 160000
+  sell-price: 112000
+  amount: 1
+  lore:
+  - '&7Spawns vindicators.'
+  spawner-type: VINDICATOR
+- material: SPAWNER
+  name: '&cBogged Spawner'
+  price: 130000
+  sell-price: 91000
+  amount: 1
+  lore:
+  - '&7Spawns bogged.'
+  - '&2Poisonous skeleton variant!'
+  spawner-type: BOGGED
+- material: SPAWNER
+  name: '&cBreeze Spawner'
+  price: 220000
+  sell-price: 154000
+  amount: 1
+  lore:
+  - '&7Spawns breezes.'
+  - '&bNew trial chambers mob!'
+  spawner-type: BREEZE
+- material: SPAWNER
+  name: '&cWither Skeleton Spawner'
+  price: 300000
+  sell-price: 210000
+  amount: 1
+  lore:
+  - '&7Spawns wither skeletons.'
+  - '&8Drops wither skeleton skulls!'
+  spawner-type: WITHER_SKELETON
+- material: SPAWNER
+  name: '&cPiglin Brute Spawner'
+  price: 200000
+  sell-price: 140000
+  amount: 1
+  lore:
+  - '&7Spawns piglin brutes.'
+  spawner-type: PIGLIN_BRUTE
+- material: SPAWNER
+  name: '&cShulker Spawner'
+  price: 450000
+  sell-price: 315000
+  amount: 1
+  lore:
+  - '&7Spawns shulkers.'
+  - '&dDrops shulker shells!'
+  spawner-type: SHULKER
+- material: SPAWNER
+  name: '&cEvoker Spawner'
+  price: 600000
+  sell-price: 420000
+  amount: 1
+  lore:
+  - '&7Spawns evokers.'
+  - '&dDrops totems of undying!'
+  spawner-type: EVOKER
+- material: SPAWNER
+  name: '&cGhast Spawner'
+  price: 300000
+  sell-price: 210000
+  amount: 1
+  lore:
+  - '&7Spawns ghasts.'
+  - '&fDrops ghast tears!'
+  spawner-type: GHAST
+- material: SPAWNER
+  name: '&cZombified Piglin Spawner'
+  price: 110000
+  sell-price: 77000
+  amount: 1
+  lore:
+  - '&7Spawns zombified piglins.'
+  spawner-type: ZOMBIFIED_PIGLIN
+- material: SPAWNER
+  name: '&cPiglin Spawner'
+  price: 150000
+  sell-price: 105000
+  amount: 1
+  lore:
+  - '&7Spawns piglins.'
+  - '&6Bartering mob!'
+  spawner-type: PIGLIN
+- material: SPAWNER
+  name: '&cHoglin Spawner'
+  price: 140000
+  sell-price: 98000
+  amount: 1
+  lore:
+  - '&7Spawns hoglins.'
+  spawner-type: HOGLIN
+- material: SPAWNER
+  name: '&1Warden Spawner'
+  price: 1000000
+  sell-price: 700000
+  amount: 1
+  lore:
+  - '&7Spawns wardens.'
+  - '&1The most dangerous mob!'
+  - '&cUse with extreme caution!'
+  spawner-type: WARDEN

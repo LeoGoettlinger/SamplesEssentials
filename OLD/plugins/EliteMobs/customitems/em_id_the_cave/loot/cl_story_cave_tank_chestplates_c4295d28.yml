@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Furnace Front'
+lore:
+- '&7The inside is cleaner than the outside.'
+classLootFamily: TANK_CHESTPLATES

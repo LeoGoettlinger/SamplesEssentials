@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&d[Normal] City Guard Armor'
+material: DIAMOND_CHESTPLATE
+level: 30
+lore:
+- '&dWell crafted dwarven armor.'
+enchantments:
+- PROTECTION_PROJECTILE,2
+- PROTECTION_EXPLOSIONS,3
+- PROTECTION_ENVIRONMENTAL,4
+- elitemobs:loud_strikes,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

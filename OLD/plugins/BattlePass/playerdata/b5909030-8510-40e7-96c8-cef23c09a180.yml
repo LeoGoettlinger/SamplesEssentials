@@ -1,0 +1,11 @@
+tier: 1
+experience: 0
+premium: false
+quests:
+  daily_miner:
+    progress: 1
+    completed: false
+  monster_hunter:
+    progress: 2
+    completed: false
+claimed-rewards: []

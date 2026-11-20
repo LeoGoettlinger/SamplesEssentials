@@ -1,0 +1,52 @@
+# Simple RTP Plugin config
+# Thank you for using my plugin!
+# - Made by Jaeden
+
+cooldown-time: 300 # Cooldown time in seconds (default is 300 seconds, or 5 minutes)
+world: world # Name of the default world to teleport players in
+radius: 1000 # Radius for random teleportation (default is 1000 blocks)
+countdown-time: 5 # Countdown time in seconds before teleportation (default is 5 seconds)
+cancel-on-move: true # Cancel teleportation if player moves during countdown (default: false)
+preload-chunks: true # Preload chunks around teleport location before teleporting, should reduce lag a bit (default: true)
+safe-location-attempts: 50 # How many locations to try before failing (higher = more reliable, lower = faster)
+
+# Max time for searching for a safe location
+teleport-max-search-seconds: 20
+
+# Location cache (Improves RTP times by caching safe locations in background, enable this if you want to increase performance, but increases cpu usage)
+location-cache:
+  enabled: false
+  size: 25 # Cached locations kept ready per world
+  refill-interval-ticks: 200 # How often to try refilling (20t = 1s)
+
+# Biome RTP
+biome-rtp:
+  enabled: true # Enable/disable biome RTP
+  generate-chunks: true # If true, biome RTP can generate missing chunks (more cpu usage)
+  attempts-multiplier: 3 # Multiplies safe-location-attempts for /rtp biome
+# radius: -1  # Optional override for biome RTP search radius, -1 = use normal radius.
+
+rtpgui-command-enabled: false # Enable/disable the /rtpgui command
+open-on-rtp: true # If true, /rtp will open the GUI instead of teleporting directly
+
+teleport-sound:
+  enabled: true # Set to false if you want to disable teleport sound
+  sound-type: ENTITY_ENDERMAN_TELEPORT # Default sound type, change as needed
+  volume: 1.0 # Adjust volume (0.0 - 1.0)
+  pitch: 1.0 # Adjust pitch (0.0 - 2.0)
+
+countdown-sound:
+  enabled: true # Set to false if you want to disable countdown sound
+  sound-type: BLOCK_NOTE_BLOCK_BANJO # Sound played during countdown (5, 4, 3, etc.) some other cool sounds are BLOCK_NOTE_BLOCK_PLING, BLOCK_NOTE_BLOCK_IRON_XYLOPHONE
+  volume: 0.5 # Adjust volume (0.0 - 1.0)
+  pitch: 1.0 # Adjust pitch (0.0 - 2.0)
+
+blacklisted-blocks: # Blocks that players cannot teleport onto
+  - BEDROCK
+  - OAK_LEAVES
+  - SPRUCE_LEAVES
+  - BIRCH_LEAVES
+  - JUNGLE_LEAVES
+  - ACACIA_LEAVES
+  - DARK_OAK_LEAVES
+  - MANGROVE_LEAVES

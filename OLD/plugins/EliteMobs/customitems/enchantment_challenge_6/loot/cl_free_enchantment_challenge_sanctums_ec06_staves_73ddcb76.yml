@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: Band Leader
+lore:
+- Nobody is watching the baton.
+weaponType: STAVES

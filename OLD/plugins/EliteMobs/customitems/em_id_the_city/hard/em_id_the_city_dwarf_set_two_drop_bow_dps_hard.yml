@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&a[Hard] Rotted Bow'
+material: BOW
+level: 30
+lore:
+- '&aSmells lovely.'
+enchantments:
+- DAMAGE_ALL,2
+- DAMAGE_UNDEAD,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

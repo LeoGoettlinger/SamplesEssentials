@@ -1,0 +1,80 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: ZOMBIE
+isBaby: true
+name: $normalLevel &4Arachnidian Construct
+level: dynamic # 20
+disguise: CAVE_SPIDER
+instanced: true
+healthMultiplier: 0.1
+damageMultiplier: 0.75
+powers:
+- attack_poison.yml
+- attack_blinding.yml
+frozen: false
+# leashRadius: 30
+followDistance: 30
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+isRegionalBoss: true
+normalizedCombat: true
+dropsRandomLoot: false
+spawnLocations:
+- em_id_the_mines,226.5,104.5,27.5,0.0,0.0:1686821429837
+- em_id_the_mines,239.5,99.5,23.5,0.0,0.0:1686816220402
+- em_id_the_mines,227.5,93.5,30.5,0.0,0.0:1686739269980
+- em_id_the_mines,239.5,87.5,24.5,0.0,0.0:1686820935240
+- em_id_the_mines,227.5,82.5,31.5,0.0,0.0:1686902846523
+- em_id_the_mines,238.5,75.5,23.5,0.0,0.0:1686902798292
+- em_id_the_mines,227.5,69.5,30.5,0.0,0.0:1687356378244
+- em_id_the_mines,239.5,63.5,23.5,0.0,0.0:1686816342851
+- em_id_the_mines,233.5,60.5,34.5,0.0,0.0:1687449069015
+- em_id_the_mines,226.5,55.5,23.5,0.0,0.0:1687356979145
+- em_id_the_mines,240.5,51.5,23.5,0.0,0.0:1686740509275
+- em_id_the_mines,234.5,34.5,0.5,0.0,0.0:1687359634060
+- em_id_the_mines,231.5,33.5,-0.5,0.0,0.0:1687359627001
+- em_id_the_mines,236.5,26.5,-6.5,0.0,0.0
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: cl_story_mines_swords_f5c77fe4.yml
+  chance: 1.0
+- filename: cl_story_mines_axes_23aac663.yml
+  chance: 1.0
+- filename: cl_story_mines_bows_a6d16b50.yml
+  chance: 1.0
+- filename: cl_story_mines_crossbows_bc046011.yml
+  chance: 1.0
+- filename: cl_story_mines_tridents_e00d07bd.yml
+  chance: 1.0
+- filename: cl_story_mines_hoes_94e447fa.yml
+  chance: 1.0
+- filename: cl_story_mines_maces_96b8e254.yml
+  chance: 1.0
+- filename: cl_story_mines_spears_258f1267.yml
+  chance: 1.0
+- filename: cl_story_mines_staves_9801a7fb.yml
+  chance: 1.0
+- filename: cl_story_mines_wands_88a081b9.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_helmets_d62cc6c8.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_chestplates_527dffa2.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_leggings_3c7084ec.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_boots_87c73439.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_helmets_23d0f6a6.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_chestplates_905e88bf.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_leggings_cccc8016.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_boots_e7f99614.yml
+  chance: 1.0
+- filename: cl_story_mines_shields_687daaca.yml
+  chance: 1.0

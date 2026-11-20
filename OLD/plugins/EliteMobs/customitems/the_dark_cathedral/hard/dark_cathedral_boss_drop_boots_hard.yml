@@ -1,0 +1,19 @@
+isEnabled: true
+material: DIAMOND_BOOTS
+name: '&0Cursed Boots'
+lore:
+- '&0&kThese boots tread upon hallowed ground,'
+- '&0&kcarrying the wearer closer'
+- '&0&kto the abyss.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_FIRE,4
+- PROTECTION_PROJECTILE,4
+- PROTECTION_EXPLOSIONS,4
+- THORNS,3
+- elitemobs:critical_strikes,2
+- DEPTH_STRIDER,3
+potionEffects:
+- JUMP_BOOST,1,self,continuous
+itemType: unique
+scalability: scalable

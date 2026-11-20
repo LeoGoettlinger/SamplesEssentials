@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&cParade Steps'
+lore:
+- '&cBuilt for marching.'
+- '&cRecently promoted to running.'
+classLootFamily: DPS_BOOTS

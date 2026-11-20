@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: Measuring Staff
+lore:
+- The marks stop where the teeth marks start.
+weaponType: STAVES

@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&e[Mythical] Mastercraft Bow'
+material: CROSSBOW
+level: 30
+lore:
+- '&eThis bow has been crafted out of'
+- '&eonly the finest void root.'
+enchantments:
+- PIERCING,5
+- MULTISHOT,10
+- DAMAGE_ALL,4
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

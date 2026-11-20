@@ -1,0 +1,33 @@
+General:
+  # Command aliases for player gang-related commands.
+  GangAliases: clan
+  # How often (in seconds) to save gang changes to the database?
+  # [Default is 10 seconds]
+  # [Asynchronous]
+  GangSaveInterval: 10
+Gang:
+  Name:
+    # Sets allowed gang name pattern.
+    Pattern: '[\p{L}0-9_ ]+'
+    # Sets the minimum number of characters for the gang name.
+    MinLength: 3
+    # Sets the maximum number of characters for the gang name.
+    MaxLength: 20
+  Invite:
+    # Sets gang invite expire time (in seconds).
+    ExpireTime: 60
+  Prefix:
+    # Controls whether internal gang messages should have its own prefix.
+    Enabled: true
+    # Sets prefix for internal gang messages.
+    Internal: <gray>[<white>%gang_name%</white>] </gray>
+Chat:
+  # Prefix for sending messages to the gang chat.
+  Prefix: '#'
+  # Gang chat format.
+  Format: '[<white>%gang_name%</white>] %player_name%: %message%'
+Bank:
+  # List of allowed currencies for gang banks.
+  # Use '*' to allow all available currencies.
+  Allowed_Currencies:
+  - '*'

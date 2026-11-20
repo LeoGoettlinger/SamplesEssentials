@@ -1,0 +1,10 @@
+name: '&7Meteor Shower Scroll'
+lore:
+- '&4Call forth destruction.'
+- '&4Single-use.'
+isEnabled: true
+material: PAPER
+enchantments:
+- METEOR_SHOWER,1
+potionEffects: []
+itemType: UNIQUE

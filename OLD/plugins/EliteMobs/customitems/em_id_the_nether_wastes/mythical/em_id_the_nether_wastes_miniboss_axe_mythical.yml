@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&e[Mythical] Glass Slicer'
+material: DIAMOND_AXE
+level: 50
+lore:
+- '&eYou notice the axe chip upon impact, but any damage'
+- '&eis almost instantly repaired through crystalline regrowth.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,8
+- DAMAGE_ALL,5
+- PROTECTION_PROJECTILE,4
+- DURABILITY,3
+- elitemobs:loud_strikes,3
+potionEffects:
+- FIRE_RESISTANCE,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

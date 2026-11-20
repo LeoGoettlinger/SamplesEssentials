@@ -1,0 +1,20 @@
+isEnabled: true
+name: '&d[Normal] Nether Infused Boots'
+material: NETHERITE_BOOTS
+level: 50
+lore:
+- '&dThese boots have been meticulously crafted to be'
+- '&denchanted with a multitude of spells and energies.'
+enchantments:
+- PROTECTION_FALL,6
+- PROTECTION_EXPLOSIONS,5
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_FIRE,3
+- DAMAGE_ALL,2
+- DURABILITY,1
+- elitemobs:loud_strikes,1
+potionEffects:
+- GLOWING,0,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

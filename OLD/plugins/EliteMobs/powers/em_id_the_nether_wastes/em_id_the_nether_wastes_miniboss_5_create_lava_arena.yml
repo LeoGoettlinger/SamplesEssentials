@@ -1,0 +1,203 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  LevitateAndPush:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: POTION_EFFECT
+      wait: 10
+      potionEffectType: LEVITATION
+      amplifier: 6
+      duration: 90
+      Target:
+        targetType: SELF
+    - action: POTION_EFFECT
+      potionEffectType: LEVITATION
+      amplifier: 6
+      duration: 100
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.ender_dragon.flap
+      Target:
+        targetType: SELF
+      repeatEvery: 20
+      times: 5
+    - action: RUN_SCRIPT
+      scripts:
+      - PushAway
+      - PullUp
+    - action: RUN_SCRIPT
+      wait: 100
+      scripts:
+      - CylinderMaker
+    Cooldowns:
+      local: 9999
+      global: 200
+  PushAway:
+    Zone:
+      shape: SPHERE
+      radius: 5
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: PUSH
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ACTION_TARGET
+        normalize: true
+        multiplier: 0.5
+      repeatEvery: 1
+      times: 90
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.generic.explode
+      Target:
+        targetType: SELF
+  PullUp:
+    Actions:
+    - action: PUSH
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      RelativeVector:
+        SourceTarget:
+          targetType: ACTION_TARGET
+        DestinationTarget:
+          targetType: SELF
+        normalize: true
+        multiplier: 0.5
+        offset: 0,0,0
+      repeatEvery: 1
+      times: 10
+      wait: 100
+    - action: PLAY_SOUND
+      sValue: minecraft:block.beacon.ambient
+      Target:
+        targetType: SELF
+      wait: 80
+  CylinderMaker:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - UpperCylinder
+    - action: RUN_SCRIPT
+      wait: 10
+      scripts:
+      - OuterCylinder
+      - InnerCylinder
+    - action: RUN_SCRIPT
+      wait: 20
+      scripts:
+      - OuterCylinderWall
+  CylinderRemover:
+    Events:
+    - EliteMobDeathEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - CylinderWipe
+  UpperCylinder:
+    Zone:
+      shape: CYLINDER
+      radius: 22
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,-1,0
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: GLASS
+      Target:
+        targetType: ZONE_FULL
+  OuterCylinder:
+    Zone:
+      shape: CYLINDER
+      radius: 25
+      height: 4
+      Target:
+        targetType: SELF
+        offset: 0,-8,0
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: CRYING_OBSIDIAN
+      Target:
+        targetType: ZONE_FULL
+  OuterCylinderWall:
+    Zone:
+      shape: CYLINDER
+      radius: 25
+      borderRadius: 24
+      height: 8
+      Target:
+        targetType: SELF
+        offset: 0,-4,0
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: CRYING_OBSIDIAN
+      Target:
+        targetType: ZONE_BORDER
+  InnerCylinder:
+    Zone:
+      shape: CYLINDER
+      radius: 24
+      height: 3
+      filter: LIVING
+      Target:
+        targetType: SELF
+        offset: 0,-7,0
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+    - action: PLACE_BLOCK
+      material: LAVA
+      Target:
+        targetType: ZONE_FULL
+    - action: TELEPORT
+      FinalTarget:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        offset: 0,8,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 40
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CylinderWipe:
+    Zone:
+      shape: CYLINDER
+      radius: 45
+      height: 12
+      Target:
+        targetType: SELF
+        offset: 0,-8,0
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+    - action: POTION_EFFECT
+      potionEffectType: SLOW_FALLING
+      amplifier: 1
+      duration: 500
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50

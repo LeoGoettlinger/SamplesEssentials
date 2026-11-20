@@ -1,0 +1,69 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 40
+      scripts:
+      - TntShoot
+    - action: PLAY_SOUND
+      sValue: entity.ghast.warn
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 30
+    - action: POTION_EFFECT
+      potionEffectType: LEVITATION
+      amplifier: 5
+      duration: 40
+      Target:
+        targetType: SELF
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 99
+      duration: 40
+      Target:
+        targetType: SELF
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: SLOW_FALLING
+      amplifier: 2
+      duration: 40
+      Target:
+        targetType: SELF
+    Cooldowns:
+      local: 290
+      global: 50
+  TntShoot:
+    Zone:
+      shape: SPHERE
+      radius: 2
+      borderRadius: 1
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: PLAY_SOUND
+      sValue: entity.ghast.scream
+      Target:
+        targetType: SELF
+    - action: PLAY_SOUND
+      wait: 5
+      sValue: entity.ghast.shoot
+      Target:
+        targetType: SELF
+    - action: SUMMON_ENTITY
+      sValue: PRIMED_TNT
+      Target:
+        targetType: ZONE_BORDER
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ACTION_TARGET
+          track: false
+        normalize: true
+        multiplier: 1.0
+# Generated with https://magmaguy.com/webapp/webapp.html !

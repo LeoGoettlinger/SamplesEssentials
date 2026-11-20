@@ -1,0 +1,19 @@
+isEnabled: true
+name: '&d[Normal] Master Helmet'
+material: DIAMOND_HELMET
+level: 40
+lore:
+- '&dYou can tell that whoever has'
+- '&dcreated this helmet must have'
+- '&dbeen a master of their craft.'
+enchantments:
+- PROTECTION_PROJECTILE,4
+- PROTECTION_EXPLOSIONS,3
+- PROTECTION_ENVIRONMENTAL,2
+- elitemobs:loud_strikes,1
+- DURABILITY,1
+potionEffects:
+- NIGHT_VISION,3,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

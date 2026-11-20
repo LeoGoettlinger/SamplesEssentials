@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Necromancer Sickle'
+material: NETHERITE_HOE
+level: 10
+lore:
+- '&cUsed to harvest souls and'
+- '&ccommand the undead. Reeks'
+- '&cof dark magic.'
+enchantments:
+- DAMAGE_ALL,7
+- SWEEPING_EDGE,3
+- DURABILITY,4
+itemType: unique
+scalability: scalable

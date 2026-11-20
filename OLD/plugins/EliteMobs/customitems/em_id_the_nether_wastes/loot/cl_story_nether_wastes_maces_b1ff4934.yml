@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&c[$difficulty] Obsidian Breaker'
+lore:
+- '&cForged from volcanic obsidian.'
+- '&cIt shatters even the hardest'
+- '&cmaterials with ease.'

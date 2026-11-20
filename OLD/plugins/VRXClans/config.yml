@@ -1,0 +1,98 @@
+# ============================================================== #
+#                     VRX Clans - Configuration                  #
+# ============================================================== #
+
+language: "de_DE"
+max-members: 15
+name-length-min: 3
+name-length-max: 12
+blocked-names:
+  - Admin
+  - Staff
+  - Server
+  - Owner
+  - System
+  - Console
+join-cooldown: 86400
+invite-timeout: 60
+
+clan-creation-cost: 1000.0
+clan-rename-cost: 500.0
+ally-creation-cost: 100.0
+base-teleport-cost: 10.0
+upkeep-cost: 500.0
+upkeep-interval-hours: 24
+upkeep-penalty-level-drop: true
+
+level-up-multiplier: 1000.0
+xp-per-blockbreak: 1.0
+xp-per-monsterkill: 5.0
+xp-per-playerkill: 10.0
+
+disable-friendly-fire: true
+disable-ally-fire: true
+max-allies: 3
+max-rivals: 3
+war-kill-target: 50
+war-min-wager: 1000.0
+
+base-teleport-delay: 3
+base-base-radius: 10
+base-bonus-per-member: 5
+vault-unlock-level: 3
+vault-upgrade-level: 10
+
+quests:
+  reset-interval-hours: 24
+  zombies:
+    target: 5000
+    reward-xp: 1000.0
+  diamonds:
+    target: 1000
+    reward-xp: 1500.0
+  bank:
+    target: 10000.0
+    reward-xp: 2000.0
+
+shop:
+  enable-radius: true
+  enable-xp: true
+  enable-haste: true
+  enable-speed: true
+  enable-strength: true
+  enable-base-regen: true
+  enable-base-saturation: true
+  booster-hours: 1
+  radius-cost: 5000
+  radius-add: 5
+  xp-cost: 2000
+  haste-cost: 3000
+  speed-cost: 3000
+  strength-cost: 5000
+  base-regen-cost: 50000
+  base-saturation-cost: 50000
+
+clan-chat-format: "&8[&b%clan%&8] &7%player% &8» &f%message%"
+prefix-in-global-chat: true
+global-chat-prefix-format: "&8[&b%clan%&8] "
+
+gui-theme: "default"
+gui-theme-color: "GRAY_STAINED_GLASS_PANE"
+
+discord:
+  webhook-url: "https://discord.com/api/webhooks/1525436584416120862/CDbr2zcf6m347qGaaAm1l8JxKKUlUSdlwn8YyZSjrLE0MEk6ProVNrg8oIuRAvKjBIqJ"
+  enable-creation: true
+  enable-levelup: true
+  enable-war-win: true
+
+auto-save-interval: 10
+
+database:
+  use-mysql: false
+  host: ""
+  port: 
+  database: ""
+  username: "root"
+  password: ""
+
+season-reward: 50000.0

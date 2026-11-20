@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Soulbound Hammer'
+material: MACE
+level: 20
+lore:
+- '&cA hammer infused with captured'
+- '&csouls. Each strike echoes with'
+- '&cthe wails of the damned.'
+enchantments:
+- DAMAGE_ALL,4
+- KNOCKBACK,2
+- DURABILITY,3
+itemType: unique
+scalability: scalable

@@ -1,0 +1,14 @@
+isEnabled: true
+material: WHITE_DYE
+name: '&fTiny Elite Scrap'
+lore:
+- '&fUsed to repair Elite items!'
+- '&fRepairs a small amount!'
+enchantments: []
+potionEffects: []
+scalability: FIXED
+itemType: UNIQUE
+soulbound: false
+consumable:
+  type: repair_scrap
+  tier: 1

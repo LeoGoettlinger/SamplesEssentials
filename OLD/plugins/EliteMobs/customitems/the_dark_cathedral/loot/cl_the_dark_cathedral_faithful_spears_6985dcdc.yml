@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&8Saltwater Pilgrim'
+lore:
+- '&8Its shaft is scored at every tide mark.'
+- '&8The highest is above the grip.'

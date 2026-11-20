@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&aChimney Watch Boots'
+lore:
+- '&7Wide soles for a narrow rooftop.'
+- '&7Someone has written LEFT in both.'
+classLootFamily: TANK_BOOTS

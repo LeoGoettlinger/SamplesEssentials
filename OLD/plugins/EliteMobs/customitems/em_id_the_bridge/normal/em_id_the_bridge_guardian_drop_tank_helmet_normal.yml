@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&e[Normal] Ancient Helm'
+material: DIAMOND_HELMET
+level: 25
+lore:
+- '&eMade out of curious sparkling'
+- '&eblack stone.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,5
+- PROTECTION_PROJECTILE,4
+- PROTECTION_EXPLOSIONS,3
+- elitemobs:loud_strikes,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

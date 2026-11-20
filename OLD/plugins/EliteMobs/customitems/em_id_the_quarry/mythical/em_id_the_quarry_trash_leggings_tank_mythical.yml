@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Mining Pants'
+material: IRON_LEGGINGS
+level: 40
+lore:
+- '&fEvery miners favorite pants.'
+enchantments:
+- PROTECTION_EXPLOSIONS,4
+- PROTECTION_ENVIRONMENTAL,3
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

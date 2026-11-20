@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&d[$difficulty] Beastmaster''s Boots'
+lore:
+- '&dYou can sense great'
+- '&dpower flow from these boots.'
+classLootFamily: DPS_BOOTS

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&c[$difficulty] Nether Root Bow'
+lore:
+- '&cThis bow was made out of tree roots'
+- '&cthat can only be found in the nether.'
+- '&cPleasantly warm to the touch.'

@@ -1,0 +1,219 @@
+inventory:
+  armors:
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:diamond_boots
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:feather_falling":4,"minecraft:protection":255,"minecraft:unbreaking":3}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:diamond_leggings
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:protection":255,"minecraft:unbreaking":3}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:diamond_chestplate
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:protection":255,"minecraft:unbreaking":3}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:diamond_helmet
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:protection":255,"minecraft:unbreaking":3}'
+    schema_version: 1
+  extras:
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - null
+  - null
+  contents:
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:diamond_sword
+    count: 1
+    components:
+      minecraft:lore: '[{extra:["§§"],text:""},{extra:["§§",{bold:0b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"Level:
+        ",underlined:0b},{color:"gold",italic:0b,text:"0"}],text:""},{extra:["§§"],text:""},{extra:["§§",{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[",underlined:0b},{color:"yellow",italic:0b,text:"|"},{color:"gray",italic:0b,text:"|||||||||||||||||||||||||||||||||||||||||||||||||"},{color:"dark_gray",italic:0b,text:"]
+        "},{color:"yellow",italic:0b,text:"2.00"},{color:"gold",italic:0b,text:"/"},{color:"yellow",italic:0b,text:"100.00"}],text:""}]'
+      minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers"]}'
+      minecraft:enchantments: '{"minecraft:sharpness":255}'
+      minecraft:custom_data: '{PublicBukkitValues:{"leveltools:leveltoolslevel":0,"leveltools:leveltoolsxp":2.0d}}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:diamond_pickaxe
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:efficiency":255}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:sharpness":255}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:bow
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":1,"minecraft:power":255}'
+    schema_version: 1
+  - null
+  - null
+  - null
+  - null
+  - null
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:arrow
+    count: 1
+    schema_version: 1
+  - null
+  - null
+  - null
+  - null
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - null
+  - null
+  - null
+  - null
+  - null
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - null
+  - null
+  - null
+  - null
+  - null
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:diamond_boots
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:feather_falling":4,"minecraft:protection":255,"minecraft:unbreaking":3}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:diamond_leggings
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:protection":255,"minecraft:unbreaking":3}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:diamond_chestplate
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:protection":255,"minecraft:unbreaking":3}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:diamond_helmet
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:protection":255,"minecraft:unbreaking":3}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:infinity":8}'
+    schema_version: 1
+  - null
+  - null

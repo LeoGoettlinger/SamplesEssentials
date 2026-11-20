@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&bAlignment Pin'
+lore:
+- '&bThe tapered point fits no surviving machine.'
+- '&bIt fits between the floorboards perfectly.'

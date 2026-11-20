@@ -1,0 +1,83 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger: # TRY DOING THIS WITH TAGS INSTEAD!!!
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    - EliteMobDamagedEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - DomePush
+      - DomeInv
+    Cooldowns:
+      local: 99999
+      global: 1
+  DomePush:
+    Zone:
+      shape: SPHERE
+      radius: 4
+      borderRadius: 3
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,0.5,98,3.5,0,0
+    Actions:
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      sValue: '&cThe Void Bell &7has erected a barrier around itself! Defeat the undead
+        threat to take it down!'
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: ZONE_BORDER
+        track: false
+        coverage: 0.6
+      particles:
+      - particle: CLOUD
+      repeatEvery: 20
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+    - action: PUSH
+      Target:
+        targetType: ZONE_FULL
+      RelativeVector:
+        SourceTarget:
+          targetType: LOCATION
+          location: same_as_boss,0.5,98,3.5,0,0
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          range: 50
+        normalize: true
+        multiplier: 0.4
+      repeatEvery: 1
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+  DomeInv:
+    Zone:
+      shape: SPHERE
+      radius: 3
+      borderRadius: 2
+      filter: ELITE
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,0.5,98,3.5,0,0
+    Actions:
+    - action: MAKE_INVULNERABLE
+      Target:
+        targetType: ZONE_FULL
+      invulnerable: true
+      repeatEvery: 20
+      duration: 20
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING

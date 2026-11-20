@@ -1,0 +1,216 @@
+Command:
+  ArgumentName:
+    Gang: gang
+  Gang:
+    Desc: Gang commands.
+    Create:
+      Desc: Create a new gang.
+    Menu:
+      Desc: Open gang GUI.
+    Join:
+      Desc: Join a gang.
+  Syntax:
+    InvalidGang: <gray>Gang <soft_red>%input%</soft_red> does not exist!</gray>
+Gang:
+  Creation:
+    NameInvalid: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You can''t use <red>"%name%"</red> as a gang name.</gray>'
+    NameTooShort: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>The gang name must have at least <red>%amount%</red> characters!</gray>'
+    NameTooLong: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>The gang name must not exceed <red>%amount%</red> characters!</gray>'
+    Success: '[sound="minecraft:block.anvil.place;0.8;1.0"]Gang created: <white>%gang_name%</white>. Type <soft_yellow>/gang</soft_yellow> to open the Gang GUI.'
+  Rename:
+    Success: <gray>You renamed the gang to <white>%gang_name%</white>.</gray>
+  Invite:
+    AlreadyIn: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>Player <soft_red>%player_name%</soft_red> is already in your gang.</gray>'
+    AlreadyHas: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>Player <soft_red>%player_name%</soft_red> already has an active invite to your gang.</gray>'
+  InviteSent: '[sound="minecraft:block.copper_door.open;0.8;1.0"]<gray>You invited <soft_green>%player_name%</soft_green> to your gang.</gray>'
+  InviteReceived:
+  - '[prefix="false",sound="minecraft:block.copper_door.open;0.8;1.0"]'
+  - ' '
+  - <yellow><b>GANG INVITE:</b></yellow>
+  - <gray>You have been invited to the <white>%gang_name%</white> gang by <white>%player_name%</white>.</gray>
+  - <gray>Click <click:run_command:"/gang join %gang_idname%"><yellow>[Here]</yellow></click> to join the gang.</gray>
+  - ' '
+  Kick:
+    HighRank: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You can''t kick <soft_red>%member_name%</soft_red> because their rank is higher than yours.</gray>'
+    Success: <gray>You kicked <soft_green>%member_name%</soft_green> from the gang.</gray>
+  Disband:
+    Success: <gray>You disbanded the <white>%gang_name%</white> gang.</gray>
+  Join:
+    NoInvite: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You don''t have an invite to the <soft_red>%gang_name%</soft_red> gang!</gray>'
+    Success: '[sound="minecraft:block.wooden_door.open;0.8;1.0"]<gray>You joined the <white>%gang_name%</white> gang!</gray>'
+  Leave:
+    Owner: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You can''t leave the gang while you''re its leader. Transfer leadership to another member or disband the gang.</gray>'
+    Success: '[sound="minecraft:block.wooden_door.close;0.8;1.0"]<gray>You have left the gang <white>%gang_name%</white>.</gray>'
+  Teleport:
+    MemberOffline: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You can''t teleport to <soft_red>%member_name%</soft_red> while they''re offline.</gray>'
+    Failure: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>Teleportation to <soft_red>%member_name%</soft_red> failed.</gray>'
+    Success: '[sound="minecraft:entity.enderman.teleport;0.8;1.0"]<gray>You''ve teleported to <white>%member_name%</white>.</gray>'
+    Notify: '[sound="minecraft:entity.enderman.teleport;0.8;1.0"]<gray><white>%member_name%</white> has teleported to you.</gray>'
+  Promote:
+    MemberWithHigherRank: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You can''t promote <soft_red>%member_name%</soft_red> because their rank is higher than yours.</gray>'
+    MemberWithMaxRank: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You can''t promote <soft_red>%member_name%</soft_red> further.</gray>'
+    Success: <gray>You promoted <white>%member_name%</white> to the <soft_green>%member_rank%</soft_green> rank.</gray>
+  Demote:
+    MemberWithHigherRank: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You can''t demote <soft_red>%member_name%</soft_red> because their rank is higher than yours.</gray>'
+    MemberWithMinRank: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You can''t demote <soft_red>%member_name%</soft_red> further.</gray>'
+    Success: <gray>You demoted <white>%member_name%</white> to the <soft_red>%member_rank%</soft_red> rank.</gray>
+  Vault:
+    Locked: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>Your gang doesn''t have the Vault unlocked.</gray>'
+    InUse: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>Vault is already in use.</gray>'
+  Bank:
+    Withdraw:
+      NotEnough: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>There is no <soft_red>%amount%</soft_red> in the gang''s bank to withdraw!</gray>'
+      Success: '[sound="minecraft:block.vault.insert_item;0.8;1.0"]<gray>You successfully withdrawn <green>%amount%</green> from the gang''s bank!</gray>'
+    Deposit:
+      NotEnough: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You don''t have <soft_red>%amount%</soft_red> to deposit to the gang''s bank!</gray>'
+      Success: '[sound="minecraft:block.vault.insert_item;0.8;1.0"]<gray>You successfully deposit <green>%amount%</green> to the gang''s bank!</gray>'
+  Upgrade:
+    MaxLevel: '[sound="minecraft:entity.villager.no;0.8;1.0"]<soft_red>Your gang is already at max. level!</soft_red>'
+    RequirementsNotMet: '[sound="minecraft:entity.villager.no;0.8;1.0"]<soft_red>Your gang not met the level''s requirements!</soft_red>'
+    Success: <gray>You ugraded the gang to <green>%gang_level_name%</green>!</gray>
+  FriendlyFire:
+    Toggled: <gray>You set gang friendly fire to <white>%gang_friendly_fire%</white>.</gray>
+  Transfer:
+    Success: <gray>You transferred gang leadership to <white>%member_name%</white>.</gray>
+  Notify:
+    MemberJoined: '[sound="minecraft:block.wooden_door.open;0.8;1.0"]<gray>[<green>+</green>] <soft_green>%member_name%</soft_green> has joined the gang.</gray>'
+    MemberLeft: '[sound="minecraft:block.wooden_door.close;0.8;1.0"]<gray>[<red>-</red>] <soft_red>%member_name%</soft_red> has left the gang.</gray>'
+    MemberKicked: '[sound="minecraft:entity.villager.death;0.8;1.0"]<gray><soft_red>%member_name%</soft_red> was kicked from the gang.</gray>'
+    MemberPromoted: '[sound="minecraft:entity.experience_orb.pickup;0.8;1.0"]<gray>[<green>↑</green>] <white>%member_name%</white> was promoted to <soft_green>%member_rank%</soft_green>!</gray>'
+    MemberDemoted: '[sound="minecraft:entity.breeze.death;0.8;1.0"]<gray>[<red>↓</red>] <white>%member_name%</white> was demoted to <soft_red>%member_rank%</soft_red>!</gray>'
+    Rename: '[sound="minecraft:block.note_block.bell;0.8;1.0"]<gray>The gang was renamed to <white>%gang_name%</white>.</gray>'
+    Transfer: '[sound="minecraft:block.respawn_anchor.charge;0.8;1.0"]<gray><white>%member_name%</white> has become the new gang leader.</gray>'
+    FriendlyFire: '[sound="minecraft:block.trial_spawner.ominous_activate;0.8;1.0"]<gray>Friendly fire has been <white>%gang_friendly_fire%</white> by <white>%member_name%</white>!</gray>'
+    Upgrade: '[sound="minecraft:entity.player.levelup;0.8;1.0"]<gray>The gang''s level has been upgraded to <white>%gang_level_name%</white>!</gray>'
+    Disband: '[sound="minecraft:entity.dragon_fireball.explode;0.8;1.0"]<gray>The gang was disbanded by <white>%member_name%</white>.</gray>'
+  Error:
+    AlreadyExists: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>Gang with this name already exists!</gray>'
+    LevelRestriction: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>This feature is not available for the current gang level!</gray>'
+    NoPermission: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You''are not allowed to do this!</gray>'
+    OwnerOnly: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>Only gang owner can do this!</gray>'
+    AlreadyIn: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You''re already in a gang!</gray>'
+    NotIn: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You''re not in a gang!</gray>'
+    NoMember: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>Player <soft_red>%member_name%</soft_red> is not a member of your gang!</gray>'
+    NotYourself: '[sound="minecraft:entity.villager.no;0.8;1.0"]<gray>You can''t do that on yourself!</gray>'
+Error:
+  DataNotLoaded: '[sound="minecraft:entity.villager.no;0.8;1.0"]<soft_red>The data is still loading...</soft_red>'
+Other:
+  BankBalance:
+    Delimiter: ', '
+    Empty: <soft_red>$0</soft_red>
+  LevelFeature:
+    Name:
+      RENAMING: Renaming
+      NAME_GRADIENT_COLOR: Name Gradient Color
+      NAME_DECORATIONS: Name Decorations
+      VAULT: Vault
+      NAME_BASE_COLOR: Name Base Color
+    Available: <green>✔</green> <gray>%name%</gray>
+    Unavailable: <red>✘</red> <gray>%name%</gray>
+    Empty: <gray>This level has no extra features.</gray>
+  OnlineOffline:
+    onTrue: <green>Online</green>
+    onFalse: <red>Offline</red>
+Dialog:
+  Generic:
+    Confirmation:
+      Title: <soft_red><b>CONFIRM ACTION</b></soft_red>
+  Gang:
+    Creation:
+      Title: <yellow><b>GANG</b></yellow><dark_gray> » </dark_gray><white>Creation</white>
+      Body:
+        Contents: Enter a new name for your gang.
+        Width: 400
+      Input:
+        Name: <sprite:"item/name_tag"> Name
+    Rename:
+      Title: <yellow><b>GANG</b></yellow><dark_gray> » </dark_gray><white>Rename</white>
+      Body:
+        Contents: Enter a new name for your gang.
+        Width: 400
+      Input:
+        Name: <sprite:"item/name_tag"> Name
+    Kick:
+      Body:
+        Contents:
+        - You're about to kick <soft_red>%member_name%</soft_red> <gray>(<gold>%member_rank%</gold>)</gray> from your gang.
+        - ''
+        - <yellow>Do you want to continue?</yellow>
+        Width: 400
+    Transfer:
+      Body:
+        Contents:
+        - You're about to transfer the <soft_red>%gang_name%</soft_red> gang leadership to <soft_red>%member_name%</soft_red> <gray>(<gold>%member_rank%</gold>)</gray>.
+        - ''
+        - <yellow>Do you want to continue?</yellow>
+        Width: 400
+    Promote:
+      Body:
+        Contents:
+        - You're about to promote <soft_red>%member_name%</soft_red> from <gold>%member_rank%</gold> to <green>%to%</green>.
+        - ''
+        - <yellow>Do you want to continue?</yellow>
+        Width: 400
+    Demote:
+      Body:
+        Contents:
+        - You're about to demote <soft_red>%member_name%</soft_red> from <gold>%member_rank%</gold> to <green>%to%</green>.
+        - ''
+        - <yellow>Do you want to continue?</yellow>
+        Width: 400
+    Disband:
+      Body:
+        Contents:
+        - You're about to disband your <soft_red>%gang_name%</soft_red> gang.
+        - ''
+        - <yellow>Do you want to continue?</yellow>
+        Width: 400
+    Upgrade:
+      Body:
+        Contents:
+        - You're about to upgrade the gang level to <soft_yellow>%level_name%</soft_yellow>.
+        - ''
+        - '<red>Level Requirements: </red>%requirements%'
+        - ''
+        - <yellow>Do you want to continue?</yellow>
+        Width: 400
+  Invite:
+    Title: <yellow><b>GANG</b></yellow><dark_gray> » </dark_gray><white>Invite Player</white>
+    Body:
+      Contents: Enter the name of the player you want to invite to your gang.
+      Width: 400
+    Input:
+      PlayerName: <head:"%player_name%"> Player Name
+  Bank:
+    Title: <yellow><b>GANG</b></yellow><dark_gray> » </dark_gray><white>Bank Management</white>
+    Body:
+      Main:
+        Contents:
+        - Select the desired <soft_yellow>currency</soft_yellow> and enter the <soft_yellow>amount</soft_yellow> you want to withdraw or deposit into the bank.
+        - ''
+        - <green><b>BANK BALANCE:</b></green>
+        - '%balance%'
+        Width: 400
+      BalanceEntry: '%currency_name%: <soft_yellow>%amount%</soft_yellow>'
+    Input:
+      Currency: <sprite:"item/emerald"> Currency
+      Amount: Amount
+    Button:
+      Deposit:
+        Label: <green>↑</green> Deposit
+        Width: 150
+      Withdraw:
+        Label: <red>↓</red> Withdraw
+        Width: 150
+UI:
+  Levels:
+    LevelInfo:
+      Name: <yellow>%level_name%</yellow>
+      Lore:
+      - <dark_gray>»</dark_gray><gray> Members Limit </gray><yellow>%level_max_members%</yellow>
+      - <dark_gray>»</dark_gray><gray> Vault Size </gray><yellow>%level_vault_size%</yellow>
+      - ' '
+      - <yellow><b>FEATURES:</b></yellow>
+      - '%features%'
+      - ' '
+      - <red><b>REQUIREMENTS:</b></red> <white>%requirements%</white>

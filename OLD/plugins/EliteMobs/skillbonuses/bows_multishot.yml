@@ -1,0 +1,17 @@
+name: '&dMultishot'
+description:
+- '&7Chance to fire additional'
+- '&7arrows on each shot.'
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7Extra Arrows: &f$extraArrows'
+- '&7Arrow Damage: &f50% of original'
+formattedBonusTemplate: $procChance% chance for extra arrows
+isEnabled: true
+skillType: BOWS
+bonusType: PROC
+unlockTier: 2
+baseValue: 0.0
+scalingPerLevel: 0.0
+procChance: 0.2
+displayMaterial: SPECTRAL_ARROW

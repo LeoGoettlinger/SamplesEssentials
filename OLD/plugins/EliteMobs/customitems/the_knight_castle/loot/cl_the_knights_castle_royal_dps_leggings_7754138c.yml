@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&dChausses of the Fallen Court'
+lore:
+- '&dCut for a lord who expected to kneel to nobody.'
+classLootFamily: DPS_LEGGINGS

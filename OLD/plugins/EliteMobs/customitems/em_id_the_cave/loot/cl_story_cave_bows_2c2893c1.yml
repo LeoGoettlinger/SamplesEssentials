@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&c[$difficulty] Boiled Bow'
+lore:
+- '&cIt will not stop steaming.'

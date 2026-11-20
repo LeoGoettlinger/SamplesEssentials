@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Hard] Dirty Shovel'
+material: DIAMOND_SHOVEL
+level: 20
+lore:
+- '&2Time to start digging...'
+enchantments:
+- DIG_SPEED,3
+- LOOT_BONUS_BLOCKS,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

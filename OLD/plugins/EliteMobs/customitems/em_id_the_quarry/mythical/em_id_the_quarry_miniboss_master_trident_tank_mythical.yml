@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&d[Mythical] Master Spear'
+material: TRIDENT
+level: 40
+lore:
+- '&dThis spear will enrage anything it hits'
+- '&dsending them rushing towards it''s owner'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,6
+- PROTECTION_PROJECTILE,5
+- elitemobs:loud_strikes,3
+- LOYALTY,4
+- DURABILITY,3
+potionEffects:
+- SPEED,2,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

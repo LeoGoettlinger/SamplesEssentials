@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: Bonk Bunger
+lore:
+- No shrap. Still hurt.

@@ -1,0 +1,51 @@
+isEnabled: true
+customObjectives:
+  Objective1:
+    amount: '1'
+    filename: em_id_the_deep_mines_boss_the_pursuer_p1.yml
+    objectiveType: KILL_CUSTOM
+customRewards:
+- currencyAmount=450:amount=1:chance=1
+- filename=elite_scrap_tiny.yml:amount=1:chance=0.3
+- filename=elite_scrap_small.yml:amount=1:chance=0.2
+- filename=elite_scrap_medium.yml:amount=1:chance=0.1
+- filename=elite_scrap_large.yml:amount=1:chance=0.05
+- filename=elite_scrap_huge.yml:amount=1:chance=0.01
+- filename=enchanted_book_damage_all.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_arthropods.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_undead.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_environmental.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_explosions.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fall.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fire.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_projectile.yml:amount=1:chance=0.1
+- filename=story_dungeons_quest_8_crossbow.yml:amount=1:chance=1.0
+questAcceptPermission: elitequest.story_dungeons_quest_7_down_below.yml
+questLockoutPermission: elitequest.story_dungeons_quest_8_deep_down.yml
+questLockoutMinutes: 10080
+name: '&2Deep Down!'
+questLore:
+- We have a small team of guild members deployed at the bottom of the lift, they have
+  set up there with measuring tools.
+- We have found the entrance to the Nether, well I mean we know in which direction
+  it is.
+- But more concerning we are sure we have also picked energy signals from whatever
+  caused the dwarves' corruption.
+- The signals are very strong and like nothing we have witnessed before.
+- It is very concerning... But, back to the task at hand.
+- The direction to the Nether entrance has been blocked off by cave-ins.
+- Thankfully there is a lot of TNT left behind.
+temporaryPermissions: []
+questAcceptDialog:
+- '&e[Wallitz]&f Use the TNT to blow your way through the mines until you reach the
+  Nether entrance and kill anything that might be a threat to the guild.'
+- '&7&oSeems like a simple mission.'
+- '&7Interact with the nearby &fNether Lurk &7teleporter to start the quest.'
+questCompleteMessage:
+- '&e[Wallitz]&f Oh, you’re back! Glad to know you managed to slay that pesky beast.
+  Thinking about it, there was a high chance those ancient TNT crates could have expired
+  due to age. But, hey! All turned out well in the end, right?'
+- '&7&oThat was quite the adventure...'
+questCompleteCommands: []
+turnInNPC: story_dungeons_quest_giver.yml
+QuestLevel: 0

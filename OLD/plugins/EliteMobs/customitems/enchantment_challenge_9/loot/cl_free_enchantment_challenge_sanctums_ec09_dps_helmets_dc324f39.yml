@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Shard Crown
+lore:
+- Keep your hands away from the rim.
+classLootFamily: DPS_HELMETS

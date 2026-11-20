@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&0Last Invocation'
+lore:
+- '&0&kThree prayers are cut along the prongs.'
+- '&0&kThe third has no ending.'

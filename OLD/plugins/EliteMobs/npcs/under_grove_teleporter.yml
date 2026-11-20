@@ -1,0 +1,27 @@
+transportRoutes: []
+name: <g:#7A5A8A:#8A6A9A>Grove Keeper</g>
+role: <g:#6A4A7A:#7A5A8A><Under Grove></g>
+greetings:
+- ''
+dialog: []
+farewell: []
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:farmer]=VillagerProfession[name=translation{key='entity.minecraft.villager.farmer',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x000000009ab5dc68@2dc8bd81,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x000000009ab5dec8@134cb0b3,
+  requestedItems=[minecraft:wheat, minecraft:wheat_seeds, minecraft:beetroot_seeds,
+  minecraft:bone_meal], secondaryPoi=[Block{minecraft:farmland}], workSound=SoundEvent[location=minecraft:entity.villager.work_farmer,
+  fixedRange=Optional.empty], tradeSetsByLevel={1=>ResourceKey[minecraft:trade_set
+  / minecraft:farmer/level_1], 2=>ResourceKey[minecraft:trade_set / minecraft:farmer/level_2],
+  3=>ResourceKey[minecraft:trade_set / minecraft:farmer/level_3], 4=>ResourceKey[minecraft:trade_set
+  / minecraft:farmer/level_4], 5=>ResourceKey[minecraft:trade_set / minecraft:farmer/level_5]}]}}
+scripts: []
+isEnabled: true
+spawnLocation: em_adventurers_guild,293.5,92,309.5,-180,0
+spawnLocations: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+customModel: em_ag_grovekeeper
+command: em dungeontp under_grove_lair.yml
+syncMovement: false

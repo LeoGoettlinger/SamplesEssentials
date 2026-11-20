@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Wall Guards'
+lore:
+- '&7The knees carry the marks of long watches.'
+classLootFamily: TANK_LEGGINGS

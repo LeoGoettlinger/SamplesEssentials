@@ -1,0 +1,164 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: MINIBOSS
+customDisguiseData: player em_id_the_deep_mines_foreman setskin {"id":"6b02fb84-62b6-42cb-b29f-17887d48d7ec","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY1OTExMDcxNTIyNiwKICAicHJvZmlsZUlkIiA6ICJhYTA3ZjM2Mjk0NTM0YzYwODQzMjI4NzAzZTBlMjE3OCIsCiAgInByb2ZpbGVOYW1lIiA6ICJfU2FrdXlhX0l6YXlvaV8iLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzM2NGEyY2FhMWI0ZTIzYWNiZWRlOTgyZmQ4YzlkOGQyOWI4MjY2YzljMTdjMzU5MjhhNzFlODE3NGYxYTU0ZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9","signature":"QTr0mmgw35jcYfhB6sXgBsU50dXADCi9Vvl75wF4Rxhf/MleeKuze9L0rQXA2n1Qtl2frMx/IHUseXQ/GCcC6UFKsMchB9qeewpry2UgwDM/66doyjSqiMRLTaNBW3vJZkE0qlS/Fd4I/NdvFbMhobNYqksaDgYz9zHQNMUjbHSO/o+RiTpZUJJlufDLEwoBNaPzcO4P/qT/yOdKusvsKCXugMLdCrqCnX9RuWRL5SV6yBfA1QUtbUgzGFkhYqzCACJj4Xf5cGti2Nau/XeOLCyJIKzSquPBEdPIeKns25otb6LAXwia4mmY7jiaraIOX9+V//vQvcNBrjLZ5st9nNLwx6XjHpe9BmKtGdMlE/bJRfhMnv7xUqfMiCisH//FNQvTxhnPvtzBJ1z4g19Ub/SVXYRMatLqOlc/n7bNV0LM+TERRCs7zbNAePZMFoEzJz24VzJ8pj5jViF/xKb5iw7EslStzFxKAzfMN2yeaHYOvaKkC2PID1Q8Dc9yGVs1BiTOvxtySQ7LCrpwYzhU6re2QwKd+LVT39W9V9CdD/b5l1wWVD+p0zrUuWMMF/WfnvOP+b+EfA0Pgco/jvEXf73g8Ec1pxGH5xcUjB/f5KhFK5t2THZK/vhcl56ERHejo00oJalxmGFeoVM3pFDPyFwRFO4HPOtMulmdOOnQS2E="}],"legacy":false}
+damageMultiplier: 0.89
+disguise: custom:em_id_the_deep_mines_foreman
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  'false':
+    Actions:
+    - Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - slow
+      Target:
+        targetType: SELF
+      action: POTION_EFFECT
+      amplifier: 99
+      duration: 20
+      potionEffectType: SLOW
+      repeatEvery: 19
+      wait: 5
+    - Target:
+        targetType: SELF
+      action: TAG
+      tags:
+      - slow
+    Events:
+    - EliteMobSpawnEvent
+  'true':
+    Actions:
+    - Target:
+        targetType: SELF
+      action: UNTAG
+      tags:
+      - slow
+    Events:
+    - EliteMobTargetPlayerEvent
+entityType: SKELETON
+followDistance: 80
+frozen: false
+healthMultiplier: 3.3
+instanced: true
+isEnabled: true
+isRegionalBoss: true
+level: dynamic # 45
+movementSpeedAttribute: 0.33
+name: $minibossLevel &eThe Foreman
+normalizedCombat: true
+powers:
+- difficultyID:
+  - 1
+  - 2
+  filename: em_id_the_deep_mines_miniboss_summon_vex.yml
+- difficultyID:
+  - 0
+  filename: em_id_the_deep_mines_foreman_lava_rope_0.yml
+- difficultyID:
+  - 1
+  filename: em_id_the_deep_mines_foreman_lava_rope_1.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_deep_mines_foreman_lava_rope_2.yml
+- difficultyID:
+  - 1
+  filename: shield_wall.yml
+- difficultyID:
+  - 2
+  filename: ground_pound.yml
+spawnLocations:
+- em_id_the_deep_mines,-288.5,132.5,148.5,0.0,0.0
+classLoot: true
+classLootRank: MINIBOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- chance: 0.99
+  filename: em_id_the_deep_mines_lore_foreman.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_deep_mines_miniboss_boots_dps_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_deep_mines_miniboss_chestplate_dps_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_deep_mines_miniboss_helmet_dps_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_deep_mines_miniboss_leggings_dps_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_deep_mines_miniboss_pickaxe_tank_normal.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_deep_mines_miniboss_boots_dps_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_deep_mines_miniboss_chestplate_dps_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_deep_mines_miniboss_helmet_dps_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_deep_mines_miniboss_leggings_dps_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_deep_mines_miniboss_pickaxe_tank_hard.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_deep_mines_miniboss_boots_dps_mythical.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_deep_mines_miniboss_chestplate_dps_mythical.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_deep_mines_miniboss_helmet_dps_mythical.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_deep_mines_miniboss_leggings_dps_mythical.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_deep_mines_miniboss_pickaxe_tank_mythical.yml
+- filename: cl_story_deep_mines_swords_8d15cf02.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_axes_cedd4aa4.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_bows_b6c8d98d.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_crossbows_30ddf671.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tridents_ef892282.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_hoes_1230f16b.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_maces_26754aa4.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_spears_d7ace56c.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_staves_ddb894eb.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_wands_508977f6.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_helmets_e5cd2ef5.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_chestplates_2a0f5219.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_leggings_1965d4e3.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_boots_35d9f72a.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_helmets_2c10cdd9.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_chestplates_d332b108.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_leggings_00e66b52.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_boots_e2e4be2e.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_shields_a907d85d.yml
+  chance: 1.0

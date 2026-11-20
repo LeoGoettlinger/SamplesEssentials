@@ -1,0 +1,57 @@
+# Should freezing persist between relogs?
+freeze-persist: true
+# Should someone glow when they are frozen?
+freeze-glow:  true
+# Should someone be force-dismounted when frozen?
+freeze-dismount: true
+# Should someone be force-set to fly when frozen? This will prevent them from having weird glitches with their client
+# Constantly trying to force them down and the server constantly re-setting them, however I have not tested this extensively
+# With people who know how to abuse glitches. As such it is false by default
+freeze-flight: false
+# Should the user be invulnerable while they're frozen? (prevents issues like drowning if frozen while underwater)
+freeze-invulnerability: true
+# Chat behavior
+# 0 = Chat as normal, no change
+# 1 = Full mute. They cannot send messages and get an error when they attempt to
+# 2 = Shadow mute, they don't see a change in their chat, however only staff can see their messages
+chat-behavior: 2
+# Hide shadow-muted messages from DiscordSRV?
+hide-from-discord: true
+# Should console spy on attempted messages in chat behavior 2?
+console-sees-muted-messages: true
+# Should console receive the same notifications that those with the 'spf.notify' permission do?
+console-notify: true
+# Which things should be prevented when someone is frozen?
+prevent-movement: true
+prevent-walking: true
+prevent-jumping: true
+prevent-interact: true
+prevent-xp-pickup: true
+prevent-item-pickup: true
+prevent-item-drop: true
+prevent-item-use: true
+prevent-hotbar-switch: true
+prevent-commands: true
+prevent-crafting: true
+prevent-inventory-interaction: true
+prevent-inventory-open: true #idk why blocking interact doesn't block this but here we are
+prevent-attacking: true
+# Configurations for the /freezeall command
+freeze-new-logins: true # if the server or world is frozen, should people who log in while it's frozen, also be frozen?
+freeze-world-change: true # if teleporting into a frozen world should the person be frozen
+whitelisted-commands:
+# !! NOTE !! If you do not have the minecraft commands blocked by permissions, it is strongly advised
+# Not to remove these from the whitelist due to chat signatures - if these commands are cancelled,
+# The player will be kicked for a missing public key.
+  - /minecraft:msg
+  - /minecraft:w
+  - /minecraft:t
+  - /minecraft:teammsg
+  - /minecraft:tm
+  - /msg
+  - /w
+  - /t
+  - /teammsg
+  - /tm
+  - /r
+placeholder-api-format: "<dark_gray>[Frozen]</dark_gray>"

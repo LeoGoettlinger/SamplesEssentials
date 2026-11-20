@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Climbing Remains'
+lore:
+- '&7The knees have scraped every step of the ascent.'
+classLootFamily: DPS_LEGGINGS

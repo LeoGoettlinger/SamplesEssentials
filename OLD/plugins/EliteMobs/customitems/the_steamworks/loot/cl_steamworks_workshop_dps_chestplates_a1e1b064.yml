@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&bRigger''s Vest'
+lore:
+- '&bThe plates leave room for a full swing of the arms.'
+- '&bThe pockets leave room for nothing useful.'
+classLootFamily: DPS_CHESTPLATES

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Deep Footing'
+lore:
+- '&7The last firm surface before the drop.'
+classLootFamily: TANK_BOOTS

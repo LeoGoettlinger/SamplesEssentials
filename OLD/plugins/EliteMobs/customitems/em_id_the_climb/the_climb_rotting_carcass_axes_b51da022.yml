@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&e[$difficulty] War Axe'
+lore:
+- '&eA fine weapon for'
+- '&esplitting skulls.'

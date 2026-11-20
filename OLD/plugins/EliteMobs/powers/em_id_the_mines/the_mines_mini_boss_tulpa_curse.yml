@@ -1,0 +1,103 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - Curse1
+      - Curse2
+      - Curse3
+      - Curse4
+      - ReCurse1
+      - ReCurse2
+      onlyRunOneScript: true
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    Cooldowns:
+      local: 199
+      global: 40
+  Curse1:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 1
+      duration: 120
+      Target:
+        targetType: DIRECT_TARGET
+    - action: TITLE_MESSAGE
+      subtitle: Cursed!
+      duration: 20
+      Target:
+        targetType: DIRECT_TARGET
+  Curse2:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 4
+      duration: 120
+      Target:
+        targetType: DIRECT_TARGET
+    - action: TITLE_MESSAGE
+      subtitle: Cursed!
+      duration: 20
+      Target:
+        targetType: DIRECT_TARGET
+  Curse3:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: WEAKNESS
+      amplifier: 3
+      duration: 120
+      Target:
+        targetType: DIRECT_TARGET
+    - action: TITLE_MESSAGE
+      subtitle: Cursed!
+      duration: 20
+      Target:
+        targetType: DIRECT_TARGET
+  Curse4:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 120
+      Target:
+        targetType: DIRECT_TARGET
+    - action: TITLE_MESSAGE
+      subtitle: Cursed!
+      duration: 20
+      Target:
+        targetType: DIRECT_TARGET
+  ReCurse1:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 40
+      Target:
+        targetType: SELF
+    - action: TITLE_MESSAGE
+      subtitle: Curse deflected!
+      duration: 40
+      Target:
+        targetType: DIRECT_TARGET
+  ReCurse2:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 4
+      duration: 40
+      Target:
+        targetType: SELF
+    - action: TITLE_MESSAGE
+      subtitle: Curse deflected!
+      duration: 40
+      Target:
+        targetType: DIRECT_TARGET
+# Generated with https://magmaguy.com/webapp/webapp.html !

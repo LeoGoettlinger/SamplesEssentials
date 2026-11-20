@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Guardian Pike'
+material: NETHERITE_SPEAR
+level: 30
+lore:
+- '&cA ceremonial pike wielded by'
+- '&cthe Royal Guard. Its blade'
+- '&cshines with royal authority.'
+enchantments:
+- IMPALING,5
+- DAMAGE_ALL,6
+- DURABILITY,4
+itemType: unique
+scalability: scalable

@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: Window String
+lore:
+- The frame was already bent.

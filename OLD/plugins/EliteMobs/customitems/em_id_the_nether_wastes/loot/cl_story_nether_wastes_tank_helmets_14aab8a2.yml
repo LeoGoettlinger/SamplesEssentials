@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Dustbound Cap'
+lore:
+- '&7A faded expedition stamp sits above the rim.'
+classLootFamily: TANK_HELMETS

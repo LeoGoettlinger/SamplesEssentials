@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Firm Rejection
+lore:
+- These feet are not moving.
+classLootFamily: TANK_BOOTS

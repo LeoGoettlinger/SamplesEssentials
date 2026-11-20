@@ -1,0 +1,53 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  DetachDrones:
+    Events:
+    - ElitePhaseSwitchEvent
+    Zone:
+      shape: STATIC_RAY
+      Target2:
+        targetType: NEARBY_MOBS
+        offset: 0,1,0
+        range: 80
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+    Actions:
+    - action: MESSAGE
+      sValue: '&c[Ancient Guardian] &fDETACHING DRONES'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+    - action: SET_MOB_AI
+      bValue: false
+      duration: 30
+      Target:
+        targetType: SELF
+    - action: SUMMON_REINFORCEMENT
+      wait: 5
+      sValue: the_bridge_summon_drone_l.yml
+      Target:
+        targetType: SELF
+        offset: 0,2,1.5
+    - action: SUMMON_REINFORCEMENT
+      wait: 5
+      sValue: the_bridge_summon_drone_r.yml
+      Target:
+        targetType: SELF
+        offset: 0,2,-1.5
+    - action: MESSAGE
+      sValue: '&c[Ancient Guardian] &fCHARGING UP DRONES'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 80
+      wait: 15
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: ELECTRIC_SPARK
+      Target:
+        targetType: ZONE_FULL
+      wait: 15
+      repeatEvery: 5
+      times: 5
+# Generated with https://magmaguy.com/webapp/webapp.html !

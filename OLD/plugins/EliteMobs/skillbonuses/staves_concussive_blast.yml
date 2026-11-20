@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&eConcussive Blast'
+description:
+- '&7Fireball hits can fling'
+- '&7enemies away and slow them.'
+skillType: STAVES
+bonusType: PROC
+unlockTier: 1
+baseValue: 0.0
+scalingPerLevel: 0.0
+procChance: 0.1
+displayMaterial: FIRE_CHARGE
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Knockback and Slowness II for 2s'
+- '&8Fireball hits only'
+formattedBonusTemplate: $procChance% knockback and slow

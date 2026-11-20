@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&aChimney Kindling Axe'
+lore:
+- '&7The firewood must fit the smallest hearth.'
+- '&7The elves measure twice.'

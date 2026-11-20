@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&cWinter Vigil'
+lore:
+- '&7The visor bears the workshop seal.'
+- '&7One watch lasts all year.'
+classLootFamily: TANK_HELMETS

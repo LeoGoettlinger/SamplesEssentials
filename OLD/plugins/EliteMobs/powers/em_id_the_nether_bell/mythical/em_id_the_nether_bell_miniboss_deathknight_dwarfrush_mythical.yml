@@ -1,0 +1,189 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  PushAway:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: SPHERE
+      radius: 4
+      borderRadius: 3
+      Target:
+        targetType: SELF
+        track: true
+      filter: PLAYER
+    Actions:
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: ZONE_BORDER
+      particles:
+      - particle: CLOUD
+      repeatEvery: 5
+      times: 4
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PUSH
+      Target:
+        targetType: ZONE_FULL
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          range: 40
+        normalize: true
+        multiplier: 2
+        offset: 0,0.6,0
+      repeatEvery: 1
+      times: 3
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: RUN_SCRIPT
+      wait: 25
+      scripts:
+      - TeleMobsToSelf
+      - TeleMobsToPlayers
+      onlyRunOneScript: true
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    Cooldowns:
+      local: 180
+      global: 25
+  TeleMobsToPlayers:
+    Actions:
+    - action: NAVIGATE
+      wait: 20
+      Target:
+        targetType: NEARBY_MOBS
+        range: 80
+      FinalTarget:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      velocity: 3.0
+      bValue: true
+      duration: 40
+      Conditions:
+        hasTags:
+        - Phase3
+        Target:
+          targetType: ACTION_TARGET
+    - action: RUN_SCRIPT
+      onlyRunOneScript: true
+      scripts:
+      - MessagePlayers1
+      - MessagePlayers2
+      - MessagePlayers3
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  MessagePlayers1:
+    Actions:
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      sValue: '&e[Dwarven Deathknight] &fBrothers in arms, get them!'
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  MessagePlayers2:
+    Actions:
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      sValue: '&e[Dwarven Deathknight] &fDwarves! Attack!'
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  MessagePlayers3:
+    Actions:
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      sValue: '&e[Dwarven Deathknight] &fCharge at them now!'
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  TeleMobsToSelf:
+    Actions:
+    - action: NAVIGATE
+      wait: 20
+      Target:
+        targetType: NEARBY_MOBS
+        range: 80
+      FinalTarget:
+        targetType: SELF
+      velocity: 3.0
+      bValue: true
+      duration: 40
+      Conditions:
+        hasTags:
+        - Phase3
+        Target:
+          targetType: ACTION_TARGET
+    - action: RUN_SCRIPT
+      onlyRunOneScript: true
+      scripts:
+      - MessagePlayers4
+      - MessagePlayers5
+      - MessagePlayers6
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  MessagePlayers4:
+    Actions:
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      sValue: '&e[Dwarven Deathknight] &fDwarves to me!'
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  MessagePlayers5:
+    Actions:
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      sValue: '&e[Dwarven Deathknight] &fBrothers! Aid me!'
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  MessagePlayers6:
+    Actions:
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      sValue: '&e[Dwarven Deathknight] &fTo me, now!'
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF

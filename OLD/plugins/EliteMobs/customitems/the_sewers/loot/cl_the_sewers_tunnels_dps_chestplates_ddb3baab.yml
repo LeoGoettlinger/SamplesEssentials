@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&2Smuggler''s Vest'
+lore:
+- '&2The hidden pocket contains a very damp receipt.'
+classLootFamily: DPS_CHESTPLATES

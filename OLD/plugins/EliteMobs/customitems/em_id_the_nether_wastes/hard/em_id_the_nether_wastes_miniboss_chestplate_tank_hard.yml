@@ -1,0 +1,19 @@
+isEnabled: true
+name: '&e[Hard] Glass Armored Vest'
+material: DIAMOND_CHESTPLATE
+level: 50
+lore:
+- '&eThe armor offers plenty of protection but you might'
+- '&ewant to make sure you are wearing something'
+- '&eunderneath...'
+enchantments:
+- PROTECTION_PROJECTILE,6
+- PROTECTION_EXPLOSIONS,4
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,2
+- elitemobs:loud_strikes,2
+potionEffects:
+- SATURATION,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

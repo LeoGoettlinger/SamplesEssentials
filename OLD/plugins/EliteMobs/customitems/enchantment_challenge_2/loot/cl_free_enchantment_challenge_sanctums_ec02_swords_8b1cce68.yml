@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: Rabbit's Retort
+lore:
+- A rather sharp answer to a silly question.

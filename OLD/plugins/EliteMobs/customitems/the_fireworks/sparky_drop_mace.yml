@@ -1,0 +1,18 @@
+isEnabled: true
+material: MACE
+name: '&4Sparky Hammer'
+lore:
+- '&4Bang it! Bash it!'
+- '&4Watch them fly!'
+enchantments:
+- DAMAGE_ALL,5
+- KNOCKBACK,5
+- FIRE_ASPECT,3
+- DURABILITY,3
+potionEffects:
+- LEVITATION,1,target,onHit
+- FIRE_RESISTANCE,0,self,continuous
+dropWeight: dynamic
+itemType: unique
+scalability: scalable
+soulbound: true

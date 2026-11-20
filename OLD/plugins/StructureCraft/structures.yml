@@ -1,0 +1,45 @@
+structures:
+  ancient_ruin:
+    schematic: "ancient_ruin.schem"
+    placement: "ground"
+    rarity: "common"
+    biomes:
+      - "PLAINS"
+      - "DESERT"
+      - "SAVANNA"
+    min_y: 60
+    max_y: 100
+  
+  wizard_tower:
+    schematic: "wizard_tower.schem"
+    placement: "ground"
+    rarity: "rare"
+    biomes:
+      - "DARK_FOREST"
+      - "FOREST"
+      - "TAIGA"
+    min_y: 65
+    max_y: 120
+  
+  sky_island:
+    schematic: "sky_island.schem"
+    placement: "air"
+    rarity: "epic"
+    biomes: []  # Empty list means it can spawn in any biome
+    min_y: 140
+    max_y: 180
+  
+  dungeon:
+    schematic: "dungeon.schem"
+    placement: "underground"
+    rarity: "rare"
+    biomes: []  # Empty list means it can spawn in any biome
+    min_y: 10
+    max_y: 50
+
+# Configuration explanation:
+# - schematic: Filename of the schematic file in the schematics folder
+# - placement: Where the structure should be placed (ground, air, or underground)
+# - rarity: How rare the structure is (common, rare, or epic)
+# - biomes: List of biomes where the structure can spawn (empty list for any biome)
+# - min_y/max_y: The Y-coordinate range where the structure can spawn

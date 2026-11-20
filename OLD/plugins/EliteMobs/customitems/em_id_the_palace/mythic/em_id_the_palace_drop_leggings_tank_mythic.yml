@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&f[Mythical] Old Stone Leggings'
+material: NETHERITE_LEGGINGS
+level: 35
+lore:
+- '&fIt is important to keep your'
+- '&flegs well shielded.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,10
+- PROTECTION_EXPLOSIONS,6
+- PROTECTION_PROJECTILE,6
+- DURABILITY,5
+- elitemobs:loud_strikes,3
+potionEffects:
+- FIRE_RESISTANCE,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

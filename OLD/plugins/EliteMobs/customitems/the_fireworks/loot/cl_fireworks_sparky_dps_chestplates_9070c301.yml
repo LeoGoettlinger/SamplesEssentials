@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&cEncore Jacket'
+lore:
+- '&cThe audience asked for another round.'
+- '&cYour tailor did not.'
+classLootFamily: DPS_CHESTPLATES

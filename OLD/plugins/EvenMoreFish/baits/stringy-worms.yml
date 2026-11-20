@@ -1,0 +1,34 @@
+id: stringyWorms
+disabled: false
+silent: false
+format: <yellow>{name}
+sort-index: 1
+application-weight: 40
+catch-weight: 20
+max-baits: 16
+can-be-caught: true
+drop-quantity: 2
+infinite: false
+disable-use-alert: false
+purchase:
+  price: 25
+  quantity: 5
+  economy-types:
+    - Vault
+item:
+  material: STRING
+  displayname: "<yellow>Stringy Worms"
+  glowing: true
+  lore:
+    - "<gray>A simple bait for beginners."
+    - "<gray>Boosts Common fish."
+rarity-modifiers:
+  Common: "*2"
+catch-event:
+  - HEALTH:2
+recipe:
+  type: shapeless
+  ingredients:
+    - string
+    - string
+    - wheat

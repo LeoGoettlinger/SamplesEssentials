@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Mythical] Boar Boots'
+material: DIAMOND_BOOTS
+level: 20
+lore:
+- '&2Very tough and durable.'
+enchantments:
+- DAMAGE_ALL,8
+- DAMAGE_UNDEAD,6
+- DURABILITY,5
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

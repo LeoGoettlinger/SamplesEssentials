@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&7Dismissed Petition'
+lore:
+- '&7A short pointer left atop a stack of unread pleas.'
+weaponType: WANDS

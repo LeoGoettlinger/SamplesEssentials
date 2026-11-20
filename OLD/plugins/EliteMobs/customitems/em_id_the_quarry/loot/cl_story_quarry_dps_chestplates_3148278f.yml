@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&f[$difficulty] Expedition Armor'
+lore:
+- '&fIt would be foolish to go out'
+- '&fon an expedition without this armor.'
+classLootFamily: DPS_CHESTPLATES

@@ -1,0 +1,20 @@
+isEnabled: true
+name: '&dVest of Eternity'
+material: NETHERITE_CHESTPLATE
+level: 20
+lore:
+- '&dAwarded to those who dared'
+- '&dto challenge the boiler.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,6
+- PROTECTION_EXPLOSIONS,5
+- PROTECTION_FALL,4
+- PROTECTION_FIRE,3
+- PROTECTION_PROJECTILE,2
+- MENDING,1
+- DURABILITY,1
+potionEffects:
+- ABSORPTION,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

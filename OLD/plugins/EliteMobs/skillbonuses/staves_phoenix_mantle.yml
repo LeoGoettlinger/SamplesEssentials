@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&6Phoenix Mantle'
+description:
+- '&7Survive a fatal blow and'
+- '&7burst into flame.'
+skillType: STAVES
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 0.0
+scalingPerLevel: 0.0
+cooldownSeconds: 120.0
+displayMaterial: FEATHER
+loreTemplates:
+- '&7Prevents fatal damage, leaving 1 heart'
+- '&7Throws back and ignites nearby enemies'
+- '&7Cooldown: &f$cooldown seconds'
+formattedBonusTemplate: Death prevention every $cooldowns

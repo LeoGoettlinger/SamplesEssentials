@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Sticky Crossbow'
+material: CROSSBOW
+level: 15
+lore:
+- '&cA crossbow mechanism that'
+- '&csticks and jams with slime,'
+- '&cbut fires devastating shots.'
+enchantments:
+- PIERCING,3
+- QUICK_CHARGE,2
+- DURABILITY,4
+itemType: unique
+scalability: scalable

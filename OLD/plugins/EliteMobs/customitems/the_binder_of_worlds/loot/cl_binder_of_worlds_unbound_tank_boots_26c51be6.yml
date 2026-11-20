@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&5Mortal Footing'
+lore:
+- '&5A pair of broad boots from the final platform.'
+- '&5There was nowhere else left to stand.'
+classLootFamily: TANK_BOOTS

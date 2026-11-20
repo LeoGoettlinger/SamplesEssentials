@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythical] Boiled Axe'
+material: NETHERITE_AXE
+level: 15
+lore:
+- '&cIf you want attention...'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,5
+- DURABILITY,7
+- DAMAGE_ALL,5
+- elitemobs:loud_strikes,4
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

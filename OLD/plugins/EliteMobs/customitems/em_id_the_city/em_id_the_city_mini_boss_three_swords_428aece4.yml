@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&d[$difficulty] City Guard Sword'
+lore:
+- '&dStill sharp after all these years.'

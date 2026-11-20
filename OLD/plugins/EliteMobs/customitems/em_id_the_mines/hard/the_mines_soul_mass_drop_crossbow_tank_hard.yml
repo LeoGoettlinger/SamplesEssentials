@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Hard] Ethereal Bolt Launcher'
+material: CROSSBOW
+level: 20
+lore:
+- '&2One bolt at a time...'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- PIERCING,2
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

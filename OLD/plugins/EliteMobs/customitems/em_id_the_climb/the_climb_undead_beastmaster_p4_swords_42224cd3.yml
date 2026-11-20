@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&c[$difficulty] Cursed Blade'
+lore:
+- '&cA sword that refuses to rust'
+- '&cdespite centuries of decay.'
+- '&cIt whispers in the dark.'

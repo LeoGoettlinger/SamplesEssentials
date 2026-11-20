@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&bBench Crank'
+lore:
+- '&bThe stock has a clamp mark on either side.'
+- '&bIt was not always a portable tool.'

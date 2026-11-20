@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Undead Hunter'
+material: CROSSBOW
+level: 10
+lore:
+- '&cIronically used by the undead'
+- '&cto hunt living prey.'
+enchantments:
+- PIERCING,3
+- QUICK_CHARGE,2
+- DURABILITY,2
+itemType: unique
+scalability: scalable

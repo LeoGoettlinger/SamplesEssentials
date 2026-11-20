@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&c[$difficulty] Quarry Reaper'
+lore:
+- '&cUsed to harvest magical ore'
+- '&cand the souls of intruders.'
+- '&cHums with arcane power.'

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Blushing Brow
+lore:
+- It is warm under here.
+classLootFamily: DPS_HELMETS

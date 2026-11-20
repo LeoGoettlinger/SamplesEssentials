@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&f[$difficulty] Bleached Bone Blade'
+lore:
+- '&fThis blade has been fashioned'
+- '&fout of a sharp white bone.'

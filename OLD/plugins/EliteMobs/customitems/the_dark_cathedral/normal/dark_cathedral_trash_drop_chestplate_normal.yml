@@ -1,0 +1,12 @@
+potionEffects: []
+isEnabled: true
+material: IRON_CHESTPLATE
+name: '&8Worn Robe'
+lore:
+- '&8A hint of the ocean'
+- '&8covers this robe'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,1
+- PROTECTION_FIRE,1
+itemType: unique
+scalability: scalable

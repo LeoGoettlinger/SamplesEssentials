@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&cBarricade Guards'
+lore:
+- '&cThe paint matches the crowd barriers.'
+- '&cThe dents match the fireworks.'
+classLootFamily: TANK_LEGGINGS

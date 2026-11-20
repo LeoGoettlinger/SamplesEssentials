@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&bBusbar Fork'
+lore:
+- '&bThree polished prongs once fed the main circuit.'
+- '&bThe burnt end now serves as a handle.'

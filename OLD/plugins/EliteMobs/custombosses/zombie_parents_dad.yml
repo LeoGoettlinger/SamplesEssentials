@@ -1,0 +1,12 @@
+classLoot: true
+name: $reinforcementLevel &7Zombie Dad
+isEnabled: true
+entityType: SKELETON
+level: dynamic
+healthMultiplier: 0.5
+damageMultiplier: 0.5
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL

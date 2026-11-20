@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Stone Helmet'
+material: DIAMOND_HELMET
+level: 25
+lore:
+- '&cAs black as the night.'
+- '&cSparkling in the darkness.'
+enchantments:
+- DAMAGE_ALL,7
+- DAMAGE_UNDEAD,5
+- PROTECTION_ENVIRONMENTAL,4
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

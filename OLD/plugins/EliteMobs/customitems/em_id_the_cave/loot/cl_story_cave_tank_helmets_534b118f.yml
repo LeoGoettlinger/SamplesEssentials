@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Boiler Lid'
+lore:
+- '&7A heavy dome with a narrow place to look out.'
+classLootFamily: TANK_HELMETS

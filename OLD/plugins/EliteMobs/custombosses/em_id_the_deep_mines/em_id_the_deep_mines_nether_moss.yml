@@ -1,0 +1,93 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: HUSK
+isBaby: true
+name: $normalLevel &eNether Moss # SKIN ME WHEN mineskins is back up!
+level: dynamic # 45
+healthMultiplier: 1.0
+damageMultiplier: 0.6
+movementSpeedAttribute: 0.35
+powers:
+- attack_push.yml
+- invulnerability_fire.yml
+- filename: invulnerability_arrow.yml
+  difficultyID:
+  - 1
+  - 2
+- filename: bullet_hell.yml
+  difficultyID:
+  - 2
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+frozen: false
+followDistance: 15
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+spawnLocations:
+- em_id_the_deep_mines,-1.5,101.5,93.5,0.0,0.0
+- em_id_the_deep_mines,19.5,97.5,91.5,0.0,0.0
+- em_id_the_deep_mines,13.5,94.5,87.5,0.0,0.0
+- em_id_the_deep_mines,-78.5,116.5,107.5,0.0,0.0
+- em_id_the_deep_mines,-78.5,108.5,130.5,0.0,0.0
+- em_id_the_deep_mines,-71.5,98.5,150.5,0.0,0.0
+- em_id_the_deep_mines,-92.5,95.5,171.5,0.0,0.0
+- em_id_the_deep_mines,-112.5,105.5,144.5,0.0,0.0
+- em_id_the_deep_mines,-141.5,107.5,147.5,0.0,0.0
+- em_id_the_deep_mines,-150.5,107.5,151.5,0.0,0.0
+disguise: custom:em_id_the_deep_mines_nether_moss
+customDisguiseData: player em_id_the_deep_mines_nether_moss setskin {"id":"af83a9db-1c92-45b9-b7c5-9178241e27fd","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcwMDAzNjQyNTMwNywKICAicHJvZmlsZUlkIiA6ICI4Mzc2YWY4NjcxMzI0M2IwYTY0M2JhMDQwNDljNzhjNiIsCiAgInByb2ZpbGVOYW1lIiA6ICJ3ZXNsZXlwaWVzdCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xOGRjZjhlMjUyNWQwNmRmYWVkNDAyY2RlNzIwMjcwM2M0YWRlNzU1Mjc2Mjc3YjFkNjA3NjdhZTRmOTFmNjJjIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=","signature":"sxZodQ0hCJCE+whoN9+xIBKk2nE13TicoT5Gw/qgWcGGfc2no7Q3XTj2qqVIMTveGBXWrV1q6P+IYrX4BNYb2/itV4AIR5S6MCtanrLAomqpvlBzbgoD7L1xDXN86zGnp8iyd0DmCFBbo3eCJ5hUwtKvqfl1JRVUKQp8hAdMe8UDnbZ78PrCct/6Bms9DIZx2Q2K6b1rX1IEwAT79wvzajKIzs3j8Pp5sKqjVuayNY9IgTG4+2N3RQhBVDzRyA87IrjXIMzFFHkpHK0MJF5EYJTWxiq7P20u/OfrnuulkfANMelFbxt5MkTPoPdlfMdInrJdt3BiENeyPF0mBnMn4i2nm+zlymYSAkSaPkkmslzea5aQBNwmZB/p691tk9lc+RiLX+SpsGZyJEn4u0vMT6ZR1TiCit1vi/HsHdkkim0ZosoCXlYWmBNhsfdI2lmaxQ8rdqmtBbpckDq8eOcqEdMsDktXR3l+LsR2uX+oTsDTMHiNyWBGTrjBC8fOHBFyau0Uzdhtgdi6+v0s5ycPHUL8fJQ6F5o2buMexINKk8GvHf9JC/nrnoZJ2n9eid9mF6AC67m4PqR30aSKTJjmm6JweaxNqUg4xh+WHwqsLsXRIRW2PsRTv6RegBXSShvlK5aAs06r0ZSWNbneRHf4XXjG1o3CKL7pqmwjqc6r82U="}],"legacy":false}
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: em_id_the_deep_mines_nether_charm_normal.yml
+  chance: 0.04
+  difficultyID: 0
+- filename: em_id_the_deep_mines_nether_charm_hard.yml
+  chance: 0.04
+  difficultyID: 1
+- filename: em_id_the_deep_mines_nether_charm_mythical.yml
+  chance: 0.04
+  difficultyID: 2
+- filename: cl_story_deep_mines_swords_8d15cf02.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_axes_cedd4aa4.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_bows_b6c8d98d.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_crossbows_30ddf671.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tridents_ef892282.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_hoes_1230f16b.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_maces_26754aa4.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_spears_d7ace56c.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_staves_ddb894eb.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_wands_508977f6.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_helmets_e5cd2ef5.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_chestplates_2a0f5219.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_leggings_1965d4e3.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_boots_35d9f72a.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_helmets_2c10cdd9.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_chestplates_d332b108.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_leggings_00e66b52.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_boots_e2e4be2e.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_shields_a907d85d.yml
+  chance: 1.0

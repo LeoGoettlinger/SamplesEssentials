@@ -1,0 +1,14 @@
+{
+  "skillCooldown": 80,
+  "skillId": "morph:explode",
+  "abilities": [],
+  "settings": {
+    "morph:explode": {
+      "delay": 30,
+      "strength": 3,
+      "kills_self": true,
+      "primed_sound": "entity.creeper.primed",
+      "sets_fire": false
+    }
+  }
+}

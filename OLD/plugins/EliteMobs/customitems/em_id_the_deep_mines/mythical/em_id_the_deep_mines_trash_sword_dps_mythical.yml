@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Obsidian Knife'
+material: IRON_SWORD
+level: 45
+lore:
+- '&fThe dagger is chipped and dull...'
+enchantments:
+- DAMAGE_ALL,7
+- DAMAGE_UNDEAD,4
+- DURABILITY,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

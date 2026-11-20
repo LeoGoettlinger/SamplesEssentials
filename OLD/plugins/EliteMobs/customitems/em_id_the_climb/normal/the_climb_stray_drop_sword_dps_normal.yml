@@ -1,0 +1,11 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_SWORD
+name: '&b[Normal] Frostbite Sword'
+lore:
+- '&bCold to the touch.'
+enchantments:
+- DAMAGE_ALL,3
+itemType: unique
+scalability: scalable
+level: 10

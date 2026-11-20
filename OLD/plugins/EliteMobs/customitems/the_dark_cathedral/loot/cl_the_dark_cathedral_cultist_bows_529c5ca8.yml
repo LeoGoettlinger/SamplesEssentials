@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&0R''lyeh String'
+lore:
+- '&0&kA chart of unfamiliar stars covers the limb.'
+- '&0&kThe cultist crossed out the moon.'

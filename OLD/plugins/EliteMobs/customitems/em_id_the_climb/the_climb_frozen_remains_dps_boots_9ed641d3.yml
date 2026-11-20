@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&b[$difficulty] Frostbite Boots'
+lore:
+- '&bOffers decent protection'
+- '&beven though taken from a corpse.'
+classLootFamily: DPS_BOOTS

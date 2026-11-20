@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&cFront Row Visor'
+lore:
+- '&cBest view in the house.'
+- '&cMost dents, too.'
+classLootFamily: DPS_HELMETS

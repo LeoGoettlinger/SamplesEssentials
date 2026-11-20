@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: Little Black Match
+lore:
+- Already struck. Keep it anyway.
+weaponType: WANDS

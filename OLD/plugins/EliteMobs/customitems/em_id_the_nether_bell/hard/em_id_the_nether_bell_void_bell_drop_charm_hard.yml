@@ -1,0 +1,18 @@
+isEnabled: true
+material: CLOCK
+name: '&d[Hard] The Hiss'
+lore:
+- '&dThis charm buzzes with an erratic energy.'
+- '&dHolding it fills you with power, but at a cost...'
+- '&dYou feel your mind slowly shattering.'
+enchantments:
+- CURSE_OF_VANISHING,1
+- CURSE_OF_BINDING,1
+potionEffects:
+- STRENGTH,2,self,continuous
+- SPEED,1,self,continuous
+- REGENERATION,2,self,continuous
+- RESISTANCE,0,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

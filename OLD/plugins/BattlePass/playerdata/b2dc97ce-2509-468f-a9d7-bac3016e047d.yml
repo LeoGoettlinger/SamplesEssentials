@@ -1,0 +1,8 @@
+tier: 1
+experience: 0
+premium: false
+quests:
+  monster_hunter:
+    progress: 5
+    completed: false
+claimed-rewards: []

@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&4[$difficulty] Undead''s Sword'
+lore:
+- '&4Retrieved from the walking corpse.'

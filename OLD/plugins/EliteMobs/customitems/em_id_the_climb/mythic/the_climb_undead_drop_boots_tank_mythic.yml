@@ -1,0 +1,12 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_BOOTS
+name: '&e[Mythical] Undead''s Footwear'
+lore:
+- '&eRetrieved from the walking corpse.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- DAMAGE_ALL,1
+itemType: unique
+scalability: scalable
+level: 10

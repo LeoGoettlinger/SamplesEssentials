@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Hard] Gel Pants'
+material: DIAMOND_LEGGINGS
+level: 20
+lore:
+- '&2Makes all kind of squishy sounds.'
+enchantments:
+- PROTECTION_PROJECTILE,3
+- PROTECTION_ENVIRONMENTAL,2
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

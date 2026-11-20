@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Normal] Shaped Boots'
+material: DIAMOND_BOOTS
+level: 20
+lore:
+- '&2Smells of something familiar...'
+enchantments:
+- PROTECTION_PROJECTILE,2
+- PROTECTION_ENVIRONMENTAL,1
+- elitemobs:loud_strikes,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

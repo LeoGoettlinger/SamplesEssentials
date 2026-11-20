@@ -1,0 +1,15 @@
+isEnabled: true
+enchantments: []
+name: '&dObsidian of Eternity'
+material: POLISHED_DEEPSLATE
+level: 60
+lore:
+- '&dAwarded to the destroyers'
+- '&dof the void bell.'
+potionEffects:
+- RESISTANCE,1,self,continuous
+- HEAL,0,self,continuous
+- LUCK,2,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

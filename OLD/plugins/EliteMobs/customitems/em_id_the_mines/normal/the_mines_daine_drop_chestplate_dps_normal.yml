@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&f[Normal] Daine''s Soulweaver Armor'
+material: NETHERITE_CHESTPLATE
+level: 20
+lore:
+- '&fFriggin lil'' witch, I''m gonna devour you.'
+- '&fCasting spells like I never had no values.'
+enchantments:
+- THORNS,5
+- DAMAGE_ALL,4
+- DAMAGE_ARTHROPODS,3
+- DAMAGE_UNDEAD,2
+- PROTECTION_ENVIRONMENTAL,2
+potionEffects:
+- INCREASE_DAMAGE,1,self,onHit
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

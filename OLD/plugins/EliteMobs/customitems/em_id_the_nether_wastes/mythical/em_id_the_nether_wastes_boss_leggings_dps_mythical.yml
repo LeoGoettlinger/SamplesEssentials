@@ -1,0 +1,19 @@
+isEnabled: true
+name: '&d[Mythical] Nether Infused Leggings'
+material: NETHERITE_LEGGINGS
+level: 50
+lore:
+- '&dYour legs have never been equipped with such'
+- '&dtremendous power.'
+enchantments:
+- DAMAGE_ALL,10
+- DAMAGE_UNDEAD,7
+- DAMAGE_ARTHROPODS,6
+- PROTECTION_PROJECTILE,5
+- PROTECTION_ENVIRONMENTAL,4
+- DURABILITY,3
+potionEffects:
+- JUMP,1,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

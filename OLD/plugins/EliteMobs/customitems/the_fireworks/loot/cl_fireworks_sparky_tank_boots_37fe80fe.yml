@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&cGrandstand Boots'
+lore:
+- '&cWide enough to hold your place.'
+- '&cEven when everyone else leaves.'
+classLootFamily: TANK_BOOTS

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&cSleigh Captain''s Crown'
+lore:
+- '&7A little bell replaces the plume.'
+- '&7It rings at the worst possible time.'
+classLootFamily: DPS_HELMETS

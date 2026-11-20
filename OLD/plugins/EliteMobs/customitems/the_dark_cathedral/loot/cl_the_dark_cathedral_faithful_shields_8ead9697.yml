@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&8Faithful''s Seal'
+lore:
+- '&8The congregation pressed its hands into the paint.'
+- '&8One print has too many fingers.'

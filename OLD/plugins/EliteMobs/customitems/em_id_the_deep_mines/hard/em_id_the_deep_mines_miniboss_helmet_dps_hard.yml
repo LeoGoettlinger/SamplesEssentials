@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&d[Hard] Rune Helmet'
+material: DIAMOND_HELMET
+level: 45
+lore:
+- '&dDwarven runes envelope this helmet.'
+enchantments:
+- DAMAGE_ALL,6
+- DAMAGE_UNDEAD,4
+- DAMAGE_ARTHROPODS,3
+- DURABILITY,2
+potionEffects:
+- FIRE_RESISTANCE,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

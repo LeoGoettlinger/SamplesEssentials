@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&4Sewer Spike [Hard]'
+material: IRON_SPEAR
+lore:
+- '&cSharpened on the bones of the'
+- '&cdrowned king''s enemies.'
+enchantments:
+- DAMAGE_ALL,7
+- IMPALING,6
+- PIERCING,4
+- DURABILITY,3
+- MENDING,1
+potionEffects:
+- POISON,1,target,onHit
+itemType: unique
+scalability: scalable
+soulbound: true

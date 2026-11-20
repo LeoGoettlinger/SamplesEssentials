@@ -1,0 +1,18 @@
+isEnabled: true
+potionEffects: []
+name: '&d[Hard] Rune Shield'
+material: SHIELD
+level: 45
+lore:
+- '&dOf dwarven origin. Unfortunately the runes'
+- '&dhave completely faded away and no longer'
+- '&dhave any effect.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,6
+- PROTECTION_PROJECTILE,4
+- PROTECTION_EXPLOSIONS,3
+- DURABILITY,2
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&c[$difficulty] Void Striker'
+lore:
+- '&cBolts fired from this crossbow'
+- '&cseem to bend space itself.'

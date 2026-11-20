@@ -1,0 +1,45 @@
+# Particle Configuration
+# Available particles for each weapon type
+
+trident:
+  particles:
+    - FLAME
+    - SOUL_FIRE_FLAME
+    - ELECTRIC_SPARK
+    - DRIP_WATER
+    - BUBBLE_POP
+    - ENCHANTED_HIT
+    - CRIT
+    - SNOWFLAKE
+
+sword:
+  hit-particles:
+    - FLAME
+    - CRIT
+    - ENCHANTED_HIT
+    - SWEEP_ATTACK
+    - DAMAGE_INDICATOR
+    - LAVA
+    - SOUL_FIRE_FLAME
+  ranged-particles:
+    - FLAME
+    - SOUL_FIRE_FLAME
+    - ELECTRIC_SPARK
+    - ENCHANTED_HIT
+    - CRIT
+    - END_ROD
+
+mace:
+  jump-particles:
+    - SMOKE_LARGE
+    - CLOUD
+    - CAMPFIRE_COSY_SMOKE
+    - SOUL_FIRE_FLAME
+    - ASH
+  throw-particles:
+    - FLAME
+    - ELECTRIC_SPARK
+    - CRIT
+    - ENCHANTED_HIT
+    - SOUL_FIRE_FLAME
+    - LAVA

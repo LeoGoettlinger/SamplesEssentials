@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&cParade Sweeper'
+lore:
+- '&cThe groundskeeper left before the finale.'
+- '&cHis work is now your problem.'

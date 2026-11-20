@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&aLast Watch Arbalest'
+lore:
+- '&aLoaded before the alarm. Left after it.'

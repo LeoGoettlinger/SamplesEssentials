@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&cRooftop Standard'
+lore:
+- '&7A red pennant hangs below the tip.'
+- '&7It has brushed a thousand chimneys.'

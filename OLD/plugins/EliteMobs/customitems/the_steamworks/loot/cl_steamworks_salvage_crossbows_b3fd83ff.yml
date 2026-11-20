@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&bBroken Launcher [$difficulty]'
+lore:
+- '&bThis must have been the device that was'
+- '&bresponsible for launching those fire-arrows.'
+- '&bIt still works, kind of...'

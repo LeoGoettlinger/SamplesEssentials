@@ -1,0 +1,179 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - LaunchEntity1
+    - action: RUN_SCRIPT
+      wait: 10
+      scripts:
+      - LaunchEntity2
+    - action: RUN_SCRIPT
+      wait: 20
+      scripts:
+      - LaunchEntity3
+    - action: RUN_SCRIPT
+      wait: 30
+      scripts:
+      - LaunchEntity4
+    - action: RUN_SCRIPT
+      wait: 40
+      scripts:
+      - LaunchEntity5
+    - action: RUN_SCRIPT
+      wait: 50
+      scripts:
+      - LaunchEntity6
+    Cooldowns:
+      local: 260
+      global: 50
+  LaunchEntity1:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        track: false
+    Actions:
+    - action: SUMMON_ENTITY
+      sValue: ARROW
+      repeatEvery: 4
+      times: 10
+      Target:
+        targetType: SELF
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ZONE_FULL
+        normalize: true
+        multiplier: 2.0
+  LaunchEntity2:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        track: false
+    Actions:
+    - action: SUMMON_ENTITY
+      sValue: ARROW
+      repeatEvery: 4
+      times: 10
+      Target:
+        targetType: SELF
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ZONE_FULL
+        normalize: true
+        multiplier: 2.0
+  LaunchEntity3:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        track: false
+    Actions:
+    - action: SUMMON_ENTITY
+      sValue: ARROW
+      repeatEvery: 4
+      times: 10
+      Target:
+        targetType: SELF
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ZONE_FULL
+        normalize: true
+        multiplier: 2.0
+  LaunchEntity4:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        track: false
+    Actions:
+    - action: SUMMON_ENTITY
+      sValue: ARROW
+      repeatEvery: 4
+      times: 10
+      Target:
+        targetType: SELF
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ZONE_FULL
+        normalize: true
+        multiplier: 2.0
+  LaunchEntity5:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        track: false
+    Actions:
+    - action: SUMMON_ENTITY
+      sValue: ARROW
+      repeatEvery: 4
+      times: 10
+      Target:
+        targetType: SELF
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ZONE_FULL
+        normalize: true
+        multiplier: 2.0
+  LaunchEntity6:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        track: false
+    Actions:
+    - action: SUMMON_ENTITY
+      sValue: ARROW
+      repeatEvery: 4
+      times: 10
+      Target:
+        targetType: SELF
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ZONE_FULL
+        normalize: true
+        multiplier: 2.0
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&6Sunfall'
+description:
+- '&7Your next fireball every 20'
+- '&7seconds lands with triple force.'
+skillType: STAVES
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 1.5
+scalingPerLevel: 0.01
+cooldownSeconds: 20.0
+displayMaterial: SUNFLOWER
+loreTemplates:
+- '&7Bonus: &f+$bonus% fireball damage'
+- '&7Cooldown: &f$cooldown seconds'
+- '&8Every target in the blast'
+formattedBonusTemplate: +$bonus% fireball every $cooldowns

@@ -1,0 +1,24 @@
+id: default
+disabled: false
+allowed-rarities: ALL
+allowed-fish: ALL
+item:
+  material: FISHING_ROD
+  displayname: <gradient:#E6F9FF:#8FD9FB>EvenMoreFish <yellow>Fishing Rod
+  glowing: true
+  lore:
+    - ''
+    - <gray>Catch </gray><yellow>custom </yellow><gray>fish using
+    - <gray>this fishing rod.
+    - ''
+    - <gray>Type </gray><yellow>/fish</yellow><gray> to open the menu.
+recipe:
+  type: shaped
+  shape:
+    - aaa
+    - dfd
+    - aaa
+  ingredients:
+    a: string
+    d: stick
+    f: fishing_rod

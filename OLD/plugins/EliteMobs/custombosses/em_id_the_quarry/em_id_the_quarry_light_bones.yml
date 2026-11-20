@@ -1,0 +1,90 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: WITHER_SKELETON
+mainHand: BOW
+offHand: ARROW
+name: $normalLevel &eHollow Dwarf
+level: dynamic # 40
+healthMultiplier: 1.6
+damageMultiplier: 0.3
+movementSpeedAttribute: 0.28
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+powers:
+- filename: flamethrower.yml
+  difficultyID:
+  - 1
+- filename: ground_pound.yml
+  difficultyID:
+  - 2
+frozen: false
+followDistance: 80
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+disguise: custom:the_quarry_light_bones
+customDisguiseData: player the_quarry_light_bones setskin {"id":"52f4330a-f83b-4276-a039-7cba6b06837e","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcwNDgwNDQwNTg1NCwKICAicHJvZmlsZUlkIiA6ICI5YTAwZWFkNGE3Nzg0NmYxYWIzYjYxZjNlYjIyM2I5NyIsCiAgInByb2ZpbGVOYW1lIiA6ICIwb0tvcmhhbG8wIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2VhZTY5ZjQzM2ZhNTUxY2ViNGNiNGJlMjI4NDE1ZWQ0YWFmMjAxNmQxZmI1MThkNDZhNWFiZDcwNGRjMTY3MWYiCiAgICB9CiAgfQp9","signature":"J9SvVvPWGEmN2IdqY8EKZEJifE3yHTvGKkPAVgrU+QSxpHsBHchIScS9ynZcUoLZEpJN1A//uJJ/cBi1CqWpf4bXSXHasWPuPMAdGcH2ye7WV0zHP4Xg8ZR4OvMGsXTrgSrAHukyjUF6wV0ICBtjrREMnqBAIH1JWte0/q4onL30F9aoVUD9VR3cmgcV8vJOzXA9d/6cwovuRhli9i0KhUBZm9mKTjIosmift9AIvttftJDrd988OSFluEwc5SS4Dl5+YXEwgQlYpuqChfnlVbL3BUKq2wSChfJNO4oOSClLJX7NVR7BaWrT7OI4qhH1ieRm6OXNV8N8+NNDk64W1cgqwvbQ8Z0zuF6BkidLdp2RDaNcz9ENEwj7B/9xTi+13uw6ZIDjCUjAnbXxnNcsHH5cv+5STgjrh8XCT60WFSwwdDwnOR1UVvrAcH0eTIlp1s9mbuCY6/4y1w+S1qNJegJcl+12cA6fOTrmMzJUGx4UqDBtvqRkjgK8PLTOlg5vgTlqO/eIKhCRYnSeSSV/RSQFiAYaV6fpDiUboQ29GnoIV50k9Y8xD4K12aJ37zbJBmLsjQk83LDFRp8vXWBbjfPGHUjElY41N7GKZ86wUZQSlIf9BFgZgaa7UmqIiHdLfxE3Y16HtMN0tNeCGbGHX8YSRuyfjJ/qfHfK5iEBgWU="}],"legacy":false}
+eliteScript:
+  Levitate:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: LEVITATION
+      amplifier: 0
+      duration: 60
+      Target:
+        targetType: SELF
+      repeatEvery: 90
+spawnLocations:
+- em_id_the_quarry,355.5,111.5,111.5,0.0,0.0:1704874098523
+- em_id_the_quarry,383.5,113.5,81.5,0.0,0.0:1704874353807
+- em_id_the_quarry,364.5,111.5,53.5,0.0,0.0:1704825734298
+- em_id_the_quarry,367.5,111.5,40.5,0.0,0.0:1704874403773
+- em_id_the_quarry,347.5,111.5,73.5,0.0,0.0
+- em_id_the_quarry,343.5,111.5,82.5,0.0,0.0:1704874525859
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: cl_story_quarry_swords_2729e742.yml
+  chance: 1.0
+- filename: cl_story_quarry_axes_d871d3ab.yml
+  chance: 1.0
+- filename: cl_story_quarry_bows_ccabbcb4.yml
+  chance: 1.0
+- filename: cl_story_quarry_crossbows_4e4680f9.yml
+  chance: 1.0
+- filename: cl_story_quarry_tridents_9ced9fbf.yml
+  chance: 1.0
+- filename: cl_story_quarry_hoes_5211e998.yml
+  chance: 1.0
+- filename: cl_story_quarry_maces_7f24961b.yml
+  chance: 1.0
+- filename: cl_story_quarry_spears_8d549051.yml
+  chance: 1.0
+- filename: cl_story_quarry_staves_1ce41de2.yml
+  chance: 1.0
+- filename: cl_story_quarry_wands_7eb59ac6.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_helmets_73ccb419.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_chestplates_3148278f.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_leggings_ca5a54fd.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_boots_3e7f381e.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_helmets_2f899f43.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_chestplates_21a5129c.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_leggings_da76caa5.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_boots_0c31ed26.yml
+  chance: 1.0
+- filename: cl_story_quarry_shields_d080f0ef.yml
+  chance: 1.0

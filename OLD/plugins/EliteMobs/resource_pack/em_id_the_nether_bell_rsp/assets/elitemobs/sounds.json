@@ -1,0 +1,27 @@
+{
+  "nether_bell_dungeon_soundtrack": {
+    "sounds": [
+      "custom/nether_bell_dungeon_soundtrack"
+    ]
+ },
+  "void_bell_fight_soundtrack": {
+    "sounds": [
+      "custom/void_bell_fight_soundtrack"
+    ]
+ },
+  "void_bell_ring_4": {
+    "sounds": [
+      "custom/void_bell_ring_4"
+    ]
+ },
+  "void_bell_ring_5": {
+    "sounds": [
+      "custom/void_bell_ring_5"
+    ]
+ },
+   "void_bell_ring_6": {
+    "sounds": [
+      "custom/void_bell_ring_6"
+    ]
+ }
+}

@@ -1,0 +1,12 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_CHESTPLATE
+name: '&1[Normal] Guardian Chestplate'
+lore:
+- '&1Undead Guardian''s armor.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- DAMAGE_ALL,1
+itemType: unique
+scalability: scalable
+level: 10

@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Mythical] White Flame Chausses'
+material: DIAMOND_LEGGINGS
+level: 20
+lore:
+- '&2So pure, so blinding...'
+enchantments:
+- DAMAGE_UNDEAD,10
+- DAMAGE_ARTHROPODS,6
+- PROTECTION_FIRE,5
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

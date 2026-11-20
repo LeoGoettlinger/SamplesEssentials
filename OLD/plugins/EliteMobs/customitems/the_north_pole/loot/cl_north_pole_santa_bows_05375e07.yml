@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&cMidnight Delivery'
+lore:
+- '&7Its string bears a tiny silver bell.'
+- '&7The address label is blank.'

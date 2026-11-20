@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Packed Legguards
+lore:
+- The snow has settled in the joints.
+classLootFamily: TANK_LEGGINGS

@@ -1,0 +1,159 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  OnCombat:
+    Events:
+    - EliteMobEnterCombatEvent
+    Actions:
+    - action: RUN_SCRIPT
+      repeatEvery: 333
+      scripts:
+      - TakingAim
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  TakingAim:
+    Zone:
+      shape: DOME
+      radius: 5
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      wait: 60
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.6
+      particles:
+      - particle: SMOKE_NORMAL
+      repeatEvery: 20
+      times: 6
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      wait: 60
+      Target:
+        targetType: ZONE_FULL
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 40
+      repeatEvery: 1
+      times: 120
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+      title: '&cDodge!'
+      subtitle: '&cBoss is taking aim!'
+      duration: 20
+      fadeIn: 5
+      fadeOut: 5
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+      sValue: '&cBoss is taking aim, dodge the arrows!'
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      Target:
+        targetType: SELF
+      potionEffectType: SLOW
+      amplifier: 100
+      duration: 180
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: SELF
+      particles:
+      - particle: DUST
+        red: 128
+        green: 0
+        blue: 0
+        amount: 10
+        x: 0.5
+        y: 1
+        z: 0.5
+      repeatEvery: 10
+      times: 18
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: TAG
+      Target:
+        targetType: SELF
+      tags:
+      - IsAiming
+      duration: 190
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  Pull:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+      sValue: '&e[Holder of Misery] &fCome into my weary embrace...'
+      Conditions:
+        hasTags:
+        - IsAiming
+        Target:
+          targetType: SELF
+    - action: PUSH
+      Target:
+        targetType: DIRECT_TARGET
+      vValue: 0,1,0
+      Conditions:
+        hasTags:
+        - IsAiming
+        Target:
+          targetType: SELF
+    - action: PUSH
+      Target:
+        targetType: DIRECT_TARGET
+      RelativeVector:
+        SourceTarget:
+          targetType: ACTION_TARGET
+        DestinationTarget:
+          targetType: SELF
+        normalize: true
+        multiplier: 3.0
+      wait: 10
+      Conditions:
+        hasTags:
+        - IsAiming
+        Target:
+          targetType: SELF
+    Cooldowns:
+      local: 5
+      global: 1

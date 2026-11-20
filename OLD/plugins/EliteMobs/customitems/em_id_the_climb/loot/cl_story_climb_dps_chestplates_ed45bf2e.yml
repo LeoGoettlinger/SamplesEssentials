@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&4[$difficulty] Undead''s Chestplate'
+lore:
+- '&4Retrieved from the walking corpse.'
+classLootFamily: DPS_CHESTPLATES

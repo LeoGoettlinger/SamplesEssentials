@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Expedition Helmet'
+material: IRON_HELMET
+level: 40
+lore:
+- '&fExcellent helmet when you are'
+- '&fout there exploring.'
+enchantments:
+- DAMAGE_UNDEAD,3
+- PROTECTION_ENVIRONMENTAL,3
+- DAMAGE_ALL,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

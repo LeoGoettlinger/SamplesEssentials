@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Quarry Reaper'
+material: NETHERITE_HOE
+level: 40
+lore:
+- '&cUsed to harvest magical ore'
+- '&cand the souls of intruders.'
+- '&cHums with arcane power.'
+enchantments:
+- DAMAGE_ALL,5
+- SWEEPING_EDGE,3
+- DURABILITY,4
+itemType: unique
+scalability: scalable

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Winch Guard'
+lore:
+- '&7The chestplate was hung beside the brake lever.'
+classLootFamily: TANK_CHESTPLATES

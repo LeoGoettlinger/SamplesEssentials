@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&c[$difficulty] Nullifier Spear'
+lore:
+- '&cA spear forged in the void''s'
+- '&cimage. It pierces reality'
+- '&citself, leaving emptiness.'

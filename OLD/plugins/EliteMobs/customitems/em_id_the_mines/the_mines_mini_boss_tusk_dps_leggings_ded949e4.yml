@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&2[$difficulty] Boar Leggings'
+lore:
+- '&2No tusk is getting through these!'
+classLootFamily: DPS_LEGGINGS

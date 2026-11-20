@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&4Hollow Reins'
+lore:
+- '&4Dark leather binds the limbs.'
+- '&4The rider has no further use for it.'

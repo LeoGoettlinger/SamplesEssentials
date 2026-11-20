@@ -1,0 +1,21 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  SummonOnDamage:
+    Events:
+    - EliteMobDamagedEvent
+    Actions:
+    - action: SUMMON_REINFORCEMENT
+      Target:
+        targetType: SELF
+        offset: 0,4,0
+      sValue: em_id_the_nether_wastes_summon_fireball.yml
+      duration: 999
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 30
+      sValue: '&c[Heavy Miasma] &fCan you handle the heat?'
+    Cooldowns:
+      local: 1300
+      global: 80

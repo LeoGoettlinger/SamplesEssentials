@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Stone Leggings'
+material: DIAMOND_LEGGINGS
+level: 25
+lore:
+- '&cYou feel empowered when putting these on.'
+enchantments:
+- DAMAGE_ALL,7
+- DAMAGE_ARTHROPODS,5
+- PROTECTION_ENVIRONMENTAL,4
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

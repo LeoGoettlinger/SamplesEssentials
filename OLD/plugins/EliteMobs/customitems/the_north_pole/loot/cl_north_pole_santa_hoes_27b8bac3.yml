@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&cDecember''s Due'
+lore:
+- '&7The handle is marked with a year''s tally.'
+- '&7Every name has been crossed out.'

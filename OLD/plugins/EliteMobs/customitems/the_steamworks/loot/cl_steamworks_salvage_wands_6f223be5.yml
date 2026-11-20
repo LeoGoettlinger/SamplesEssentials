@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&bDiagnostic Probe'
+lore:
+- '&bA tiny dial is jammed against the red line.'
+- '&bTapping it has not helped.'
+weaponType: WANDS

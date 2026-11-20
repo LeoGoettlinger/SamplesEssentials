@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&f[Mythical] Magma''s Desire'
+material: SHIELD
+level: 30
+lore:
+- '&fA shield is required when exploring'
+- '&fthe deep dark underground...'
+enchantments:
+- MENDING,2
+- DURABILITY,3
+potionEffects:
+- NIGHT_VISION,0,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

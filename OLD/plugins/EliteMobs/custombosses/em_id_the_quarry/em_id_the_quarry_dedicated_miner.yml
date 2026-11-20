@@ -1,0 +1,87 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: DROWNED
+# disguise: HUSK
+mainHand: IRON_PICKAXE
+offHand: GOLDEN_APPLE
+chestplate: IRON_CHESTPLATE
+leggings: IRON_LEGGINGS
+boots: IRON_BOOTS
+name: $normalLevel &eDedicated Miner
+level: dynamic # 40
+healthMultiplier: 1.1
+damageMultiplier: 1.1
+movementSpeedAttribute: 0.29
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+powers:
+- bullet_hell.yml
+- filename: gold_shotgun.yml
+  difficultyID:
+  - 1
+- filename: gold_explosion.yml
+  difficultyID:
+  - 2
+frozen: false
+followDistance: 30
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+disguise: custom:the_quarry_dedicated_miner
+customDisguiseData: player the_quarry_dedicated_miner setskin {"id":"f8ed787c-e032-4b6f-95b9-d7cab22310ef","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcwNDc5NzUyMDA3MCwKICAicHJvZmlsZUlkIiA6ICI4ZjE5NjJmYzE4NzY0MDU3ODYxMmIxMzNjODE4YmY5OSIsCiAgInByb2ZpbGVOYW1lIiA6ICJOaW9uXzkiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjM4NDA5NDIxNjdhYjgxOTA2ZjVhMmEyZmE1ZGUzYTVlMTMzNzcwNzYwMzVjY2FmMjYwNjUzNDBjMGY4OTNkZiIKICAgIH0KICB9Cn0=","signature":"OeS7rUeetXqg0/nkTq2pryseVq+d4XO3T3YxxvHsfptOoqbYxJYC1cuAmNTQhTDmTgawvJnNFj28ZQuuQY8g8HsVN7alsd3f0mETmkECQBVklhTKQeLn/Aq2aqh9iQsG2uNNwo/a/bjbaB55f6Kzm18Okh6Tt0AU7YS9SO344AluW7zTiFQyfj9crzedu7fdVk7Vks/IqnTSx7jRjEWXRJVRw8tnl1d0f6PLgcjAmvb8k8uuij4B+ZePGsed9JDY8b4MSm9i1rRJOyNX6GbXVpGojbkSsy38FDXybRIGOH/ye2GCAI8xjKL6ZzYc2uHsvR03ibXxQG21ZvTYy6UEZFVE6y3ltr0FUdqUrdLPW6YeqD1Y8H1xgu/mc732ETE6FedADFS57+Oo7dQoJiPq8QZXfKDA2aYgDJcMr0ml5owHvQK04JukQLK+chTwCBtn6CCnkpL+RcnWwbldzbZlIKCpML+F2S2MlWWcwMcLPFdlTTwY9xX+ZsecxOL34yIIIRZEy6CtY+7X6CjwbXz9Y+JXXTfkDQWLpdhsEBjNiYq4CYfh3t7wBd2ns0XL9k106jl7emkBpRiFVHehBq8UUW5j0M0GwH1LUKsC/tWBhN6rEhlhBHm0WEOaSTdUZEOQEWAePr7i4Aa4PjECJaZcBURdkyqjP6D3MPLUKTroCcA="}],"legacy":false}
+spawnLocations:
+- em_id_the_quarry,353.5,106.5,60.5,0.0,0.0:1704968050173
+- em_id_the_quarry,361.5,106.5,61.5,0.0,0.0:1704968050173
+- em_id_the_quarry,373.5,106.5,59.5,0.0,0.0
+- em_id_the_quarry,372.5,107.5,44.5,0.0,0.0:1704968054630
+- em_id_the_quarry,355.5,107.5,49.5,0.0,0.0:1704968050174
+- em_id_the_quarry,362.5,107.5,46.5,0.0,0.0:1704968050174
+- em_id_the_quarry,360.5,104.5,34.5,0.0,0.0:1704968050174
+- em_id_the_quarry,368.5,104.5,33.5,0.0,0.0:1704968054630
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- material=APPLE:chance=0.33
+- material=GOLDEN_APPLE:chance=0.05
+- filename: cl_story_quarry_swords_2729e742.yml
+  chance: 1.0
+- filename: cl_story_quarry_axes_d871d3ab.yml
+  chance: 1.0
+- filename: cl_story_quarry_bows_ccabbcb4.yml
+  chance: 1.0
+- filename: cl_story_quarry_crossbows_4e4680f9.yml
+  chance: 1.0
+- filename: cl_story_quarry_tridents_9ced9fbf.yml
+  chance: 1.0
+- filename: cl_story_quarry_hoes_5211e998.yml
+  chance: 1.0
+- filename: cl_story_quarry_maces_7f24961b.yml
+  chance: 1.0
+- filename: cl_story_quarry_spears_8d549051.yml
+  chance: 1.0
+- filename: cl_story_quarry_staves_1ce41de2.yml
+  chance: 1.0
+- filename: cl_story_quarry_wands_7eb59ac6.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_helmets_73ccb419.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_chestplates_3148278f.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_leggings_ca5a54fd.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_boots_3e7f381e.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_helmets_2f899f43.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_chestplates_21a5129c.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_leggings_da76caa5.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_boots_0c31ed26.yml
+  chance: 1.0
+- filename: cl_story_quarry_shields_d080f0ef.yml
+  chance: 1.0

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&f[$difficulty] Expedition Poker'
+lore:
+- '&fExploring can be dangerous but'
+- '&fnot if you have one of these.'

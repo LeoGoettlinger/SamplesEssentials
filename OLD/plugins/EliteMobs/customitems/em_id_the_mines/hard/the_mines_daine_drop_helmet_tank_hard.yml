@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&f[Hard] Spun Netherite Helmet'
+material: NETHERITE_HELMET
+level: 20
+lore:
+- '&fProtects that which matters most.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_FALL,3
+- PROTECTION_PROJECTILE,7
+- elitemobs:loud_strikes,2
+potionEffects:
+- DAMAGE_RESISTANCE,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

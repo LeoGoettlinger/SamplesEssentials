@@ -1,0 +1,9 @@
+name: <g:#FF4500:#FF6347>Magmaguy</g>&c's <g:#228B22:#32CD32>Toothpick</g>
+lore:
+- '&aIn nearly mint condition!'
+isEnabled: true
+material: WOODEN_SWORD
+enchantments:
+- VANISHING_CURSE,1
+potionEffects: []
+customModelV2: elitemobs:gear/magmaguys_toothpick

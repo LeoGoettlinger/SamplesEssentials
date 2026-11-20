@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&2[$difficulty] White Flame Chausses'
+lore:
+- '&2So pure, so blinding...'
+classLootFamily: DPS_LEGGINGS

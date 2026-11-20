@@ -1,0 +1,178 @@
+# ============================================================== #
+#                   VRX Clans - GUI Layout                       #
+# ============================================================== #
+
+menus:
+  main:
+    items:
+      create:
+        slot: 11
+        material: EMERALD
+      list:
+        slot: 15
+        material: BOOK
+      info:
+        slot: 10
+        material: PAPER
+      level:
+        slot: 11
+        material: EXPERIENCE_BOTTLE
+      bank:
+        slot: 12
+        material: GOLD_INGOT
+      vault-unlocked:
+        slot: 13
+        material: ENDER_CHEST
+      vault-locked:
+        slot: 13
+        material: CHEST
+      members:
+        slot: 14
+        material: PLAYER_HEAD
+      perms:
+        slot: 15
+        material: COMMAND_BLOCK
+      list-clan:
+        slot: 16
+        material: BOOK
+      setbase:
+        slot: 19
+        material: BEACON
+      shop:
+        slot: 20
+        material: EMERALD
+      rename:
+        slot: 21
+        material: NAME_TAG
+      invite:
+        slot: 22
+        material: WRITABLE_BOOK
+      disband:
+        slot: 23
+        material: BARRIER
+      leave:
+        slot: 23
+        material: OAK_DOOR
+      quests:
+        slot: 24
+        material: WRITTEN_BOOK
+      basetp:
+        slot: 25
+        material: ENDER_PEARL
+      nobase:
+        slot: 25
+        material: ENDER_EYE
+
+  shop:
+    items:
+      radius:
+        slot: 10
+        material: BEACON
+      xp:
+        slot: 11
+        material: EXPERIENCE_BOTTLE
+      haste:
+        slot: 12
+        material: GOLDEN_PICKAXE
+      speed:
+        slot: 13
+        material: FEATHER
+      strength:
+        slot: 14
+        material: DIAMOND_SWORD
+      baseregen:
+        slot: 15
+        material: GHAST_TEAR
+      basesat:
+        slot: 16
+        material: GOLDEN_CARROT
+      back:
+        slot: 26
+        material: ARROW
+
+  quests:
+    items:
+      zombies:
+        slot: 11
+        material: ZOMBIE_HEAD
+      diamonds:
+        slot: 13
+        material: DIAMOND_ORE
+      bank:
+        slot: 15
+        material: GOLD_INGOT
+      back:
+        slot: 26
+        material: ARROW
+
+  bank:
+    items:
+      balance:
+        slot: 4
+        material: GOLD_BLOCK
+      deposit-1:
+        slot: 11
+        material: EMERALD
+      deposit-2:
+        slot: 12
+        material: EMERALD_BLOCK
+      withdraw-1:
+        slot: 14
+        material: REDSTONE
+      withdraw-2:
+        slot: 15
+        material: REDSTONE_BLOCK
+
+  manage:
+    items:
+      promote:
+        slot: 11
+        material: EMERALD
+      demote:
+        slot: 13
+        material: REDSTONE
+      kick:
+        slot: 15
+        material: BARRIER
+
+  perms_ranks:
+    items:
+      recruit:
+        slot: 10
+        material: WOODEN_SWORD
+      member:
+        slot: 12
+        material: STONE_SWORD
+      officer:
+        slot: 14
+        material: IRON_SWORD
+      coleader:
+        slot: 16
+        material: DIAMOND_SWORD
+      back:
+        slot: 26
+        material: ARROW
+
+  perms_toggle:
+    items:
+      invite:
+        slot: 10
+        material: WRITABLE_BOOK
+      vault:
+        slot: 11
+        material: ENDER_CHEST
+      bank:
+        slot: 12
+        material: GOLD_INGOT
+      base:
+        slot: 13
+        material: BEACON
+      shop:
+        slot: 14
+        material: EMERALD
+      war:
+        slot: 15
+        material: IRON_CHESTPLATE
+      back:
+        slot: 26
+        material: ARROW

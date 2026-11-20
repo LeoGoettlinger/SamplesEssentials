@@ -1,0 +1,11 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&f[$difficulty] Void-Forged Boots'
+lore:
+- '&fCrafted long ago'
+- '&fin the depths of the Nether,'
+- '&finfused with void energy.'
+classLootFamily: DPS_BOOTS

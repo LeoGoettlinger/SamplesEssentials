@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Ember Stompers
+lore:
+- Stamp it out before it spreads.
+classLootFamily: DPS_BOOTS

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Sporeward Brow'
+lore:
+- '&7Fine dust has caught above the eyes.'
+classLootFamily: DPS_HELMETS

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&b[$difficulty] Frostbite Chestplate'
+lore:
+- '&bOffers good protection'
+- '&beven though taken from a corpse.'
+classLootFamily: TANK_CHESTPLATES

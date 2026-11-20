@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&c[$difficulty] Feral Cleaver'
+lore:
+- '&cChipped and worn from taming'
+- '&cwild beasts. Still effective'
+- '&con flesh and bone.'

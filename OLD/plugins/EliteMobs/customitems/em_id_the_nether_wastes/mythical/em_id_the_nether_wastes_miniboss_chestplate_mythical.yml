@@ -1,0 +1,19 @@
+isEnabled: true
+name: '&e[Mythical] Glass Armored Vest'
+material: DIAMOND_CHESTPLATE
+level: 50
+lore:
+- '&eThe armor offers plenty of protection but you might'
+- '&ewant to make sure you are wearing something'
+- '&eunderneath...'
+enchantments:
+- PROTECTION_PROJECTILE,8
+- PROTECTION_EXPLOSIONS,5
+- PROTECTION_ENVIRONMENTAL,4
+- DURABILITY,3
+- elitemobs:loud_strikes,3
+potionEffects:
+- SATURATION,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

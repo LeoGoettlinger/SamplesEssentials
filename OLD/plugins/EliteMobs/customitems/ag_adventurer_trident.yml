@@ -1,0 +1,13 @@
+isEnabled: true
+material: TRIDENT
+name: '&aAdventurer''s Trident'
+lore:
+- '&7Awarded by Casus for completing your first class trial.'
+enchantments:
+- SHARPNESS,4
+- UNBREAKING,2
+- LOYALTY,1
+potionEffects: []
+scalability: FIXED
+itemType: UNIQUE
+level: 1

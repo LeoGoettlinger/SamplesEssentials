@@ -1,0 +1,109 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Spell:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: SELF
+      repeatEvery: 5
+      times: 8
+    - action: PLAY_ANIMATION
+      Target:
+        targetType: SELF
+      sValue: water_curse
+    - action: PLAY_SOUND
+      sValue: minecraft:block.enchantment_table.use
+      Target:
+        targetType: SELF
+      repeatEvery: 10
+      times: 4
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 10
+      sValue: '&4[Cultist of Cthulhu] &fI summon Cthulhu''s tainted waters to engulf
+        and doom our enemies!'
+      wait: 40
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.generic.explode
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 15
+      wait: 40
+    - action: PLACE_BLOCK
+      material: WATER
+      duration: 40
+      Target:
+        targetType: NEARBY_PLAYERS
+        offset: 0,0,0
+        range: 15
+      wait: 40
+    - action: RUN_SCRIPT
+      scripts:
+      - WitherZone
+      wait: 40
+    Cooldowns:
+      local: 280
+      global: 50
+  WitherZone:
+    Zone:
+      shape: CYLINDER
+      radius: 5
+      height: 2
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 15
+        track: false
+    Actions:
+    - action: TITLE_MESSAGE
+      Target:
+        targetType: ZONE_FULL
+      title: '&83'
+      duration: 15
+      fadeIn: 5
+      fadeOut: 5
+    - action: TITLE_MESSAGE
+      Target:
+        targetType: ZONE_FULL
+      title: '&82'
+      duration: 15
+      fadeIn: 5
+      fadeOut: 5
+      wait: 20
+    - action: TITLE_MESSAGE
+      Target:
+        targetType: ZONE_FULL
+      title: '&81'
+      duration: 15
+      fadeIn: 5
+      fadeOut: 5
+      wait: 40
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.2
+        track: false
+      particles:
+      - particle: SMOKE_LARGE
+        red: 0
+        green: 0
+        blue: 0
+      repeatEvery: 5
+      times: 12
+      wait: 60
+    - action: POTION_EFFECT
+      potionEffectType: WITHER
+      amplifier: 1
+      duration: 100
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 5
+      times: 12
+      wait: 60

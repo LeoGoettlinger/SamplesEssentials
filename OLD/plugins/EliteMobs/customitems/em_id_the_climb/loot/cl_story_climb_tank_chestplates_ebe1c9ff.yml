@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Village Bulwark'
+lore:
+- '&7The household mark was repaired more often than the straps.'
+classLootFamily: TANK_CHESTPLATES

@@ -1,0 +1,17 @@
+{
+  "playerName": "Herbert0102",
+  "unlockedDisguiseIdentifiers": [
+    "minecraft:cow",
+    "minecraft:skeleton",
+    "minecraft:spider",
+    "minecraft:creeper",
+    "player:DarkElia12",
+    "player:EinWischmopp"
+  ],
+  "showDisguiseToSelf": false,
+  "shownDisplayToSelfHint": false,
+  "shownServerSkillHint": false,
+  "shownClientSkillHint": false,
+  "shownMorphHint": true,
+  "shownMorphClientHint": false
+}

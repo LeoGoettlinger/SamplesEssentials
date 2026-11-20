@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&cClosing Bang'
+lore:
+- '&cThe head looks like a spent shell.'
+- '&cIt is quite heavy enough without powder.'

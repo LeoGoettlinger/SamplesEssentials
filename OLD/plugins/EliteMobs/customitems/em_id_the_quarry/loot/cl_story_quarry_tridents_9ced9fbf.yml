@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&7Setting Fork'
+lore:
+- '&7Three marks show where the next support should stand.'

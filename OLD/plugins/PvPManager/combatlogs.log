@@ -1,0 +1,6 @@
+This file logs every player that disconnected during combat
+You can disable the logging in the config file
+
+[2026/08/23 17:21:32] Mixedtweak tried to escape combat! (10.952s left) | In combat with: [Maxfaxbax] | World:PixelRealm_nether, X:0.55, Y:128.00, Z:16.64
+[2026/08/23 17:50:34] Maxfaxbax tried to escape combat! (19.977s left) | In combat with: [Sample_Craft] | World:PixelRealm, X:-9761.86, Y:229.88, Z:628.88
+[2026/09/03 17:08:08] JXOT tried to escape combat! (13.467s left) | In combat with: [Sample_Craft] | World:PixelRealm, X:-25.11, Y:63.00, Z:-83.96

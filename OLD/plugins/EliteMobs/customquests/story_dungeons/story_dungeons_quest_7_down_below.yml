@@ -1,0 +1,53 @@
+isEnabled: true
+customObjectives:
+  Objective1:
+    amount: '1'
+    filename: em_id_the_quarry_royal_wizard_one.yml
+    objectiveType: KILL_CUSTOM
+  Objective2:
+    amount: '1'
+    filename: LiftStateFinishDungeon.yml
+    objectiveType: KILL_CUSTOM
+  Objective4:
+    amount: '3'
+    filename: em_id_the_quarry_light_bones.yml
+    objectiveType: KILL_CUSTOM
+customRewards:
+- currencyAmount=400:amount=1:chance=1
+- filename=elite_scrap_tiny.yml:amount=1:chance=0.3
+- filename=elite_scrap_small.yml:amount=1:chance=0.2
+- filename=elite_scrap_medium.yml:amount=1:chance=0.1
+- filename=elite_scrap_large.yml:amount=1:chance=0.05
+- filename=elite_scrap_huge.yml:amount=1:chance=0.01
+- filename=enchanted_book_damage_all.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_arthropods.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_undead.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_environmental.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_explosions.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fall.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fire.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_projectile.yml:amount=1:chance=0.1
+- filename=story_dungeons_quest_7_axe.yml:amount=1:chance=1.0
+questAcceptPermission: elitequest.story_dungeons_quest_6_the_monarch.yml
+questLockoutPermission: elitequest.story_dungeons_quest_7_down_below.yml
+questLockoutMinutes: 10080
+name: '&2Down Below!'
+questLore:
+- Well, if it isn’t our thirty-sixth-best guild member.
+- The next area we are sending you to seems to be some kind of quarry?
+- I guess the dwarves just kept digging further down.
+- The madmen should have considered the dangers of digging that deep down...
+- But, too late for that now. It would be of great help if you could go to the quarry
+  and figure out how to get the lift moving.
+temporaryPermissions: []
+questAcceptDialog:
+- '&e[Wallitz]&f There are various fiends around the quarry so watch your back.'
+- '&7&oI should head to the quarry and use the lift.'
+- '&7Interact with the nearby &fDwarf Berge &7teleporter to start the quest.'
+questCompleteMessage:
+- '&e[Wallitz]&f Got the lift moving I see. I feel like stuff is about to get serious,
+  some of those fiends you slayed were from the Nether.'
+- '&7&oThe Nether? Doesn''t sound good...'
+questCompleteCommands: []
+turnInNPC: story_dungeons_quest_giver.yml
+QuestLevel: 0

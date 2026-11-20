@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&d[Mythical] Spell Focus'
+material: DIAMOND_HELMET
+level: 40
+lore:
+- '&dAllows the wearer to focus'
+- '&dtheir strength.'
+enchantments:
+- DAMAGE_UNDEAD,6
+- DAMAGE_ALL,5
+- PROTECTION_ENVIRONMENTAL,4
+- DURABILITY,3
+potionEffects:
+- GLOWING,2,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

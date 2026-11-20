@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Mythical] Pig Protector'
+material: DIAMOND_CHESTPLATE
+level: 20
+lore:
+- '&2Makes piggy go oink and not ouch.'
+enchantments:
+- PROTECTION_FIRE,5
+- PROTECTION_ENVIRONMENTAL,3
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&d[Normal] City Guard Boots'
+material: DIAMOND_BOOTS
+level: 30
+lore:
+- '&dBoots made for traversing caverns.'
+enchantments:
+- DAMAGE_UNDEAD,1
+- PROTECTION_ENVIRONMENTAL,4
+- elitemobs:loud_strikes,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

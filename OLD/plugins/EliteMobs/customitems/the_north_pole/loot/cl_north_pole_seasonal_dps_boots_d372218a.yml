@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&aSnowglobe Steps'
+lore:
+- '&7The soles bear little painted houses.'
+- '&7A whole town beneath your feet.'
+classLootFamily: DPS_BOOTS

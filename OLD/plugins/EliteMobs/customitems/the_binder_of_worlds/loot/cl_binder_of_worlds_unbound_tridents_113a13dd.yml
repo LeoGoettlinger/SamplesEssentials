@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&5Three Endings'
+lore:
+- '&5Each point casts a different shadow.'
+- '&5None falls towards the light.'

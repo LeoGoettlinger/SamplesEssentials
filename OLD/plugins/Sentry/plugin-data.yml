@@ -1,0 +1,25 @@
+plugin-version: 1.5.4
+config-version:
+  hack-blocker: 9
+  anti-bot: 0
+  anti-vpn: 0
+  client-blocker: 3
+  command-blocker: 0
+  ip-whitelist: 0
+  item-control: 2
+  tab-complete-blocker: 1
+  op-protection: 0
+  security-patches: 1
+  integrations: 0
+  fog-of-war: 0
+players:
+  06d19fc6-552e-41ed-8f57-d01fc2139970:
+    notifications: true
+  7fc57b90-102f-47bc-88e0-beb9c65c98f9:
+    notifications: true
+  3a751516-f598-4f5e-914a-047d5bb4b587:
+    notifications: true
+  00000000-0000-0000-0009-01f70183b923:
+    notifications: true
+  b5909030-8510-40e7-96c8-cef23c09a180:
+    notifications: true

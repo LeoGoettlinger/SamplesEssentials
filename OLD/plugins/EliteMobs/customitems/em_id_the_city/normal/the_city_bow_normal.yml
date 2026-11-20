@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] City Sentinel Bow'
+material: BOW
+level: 30
+lore:
+- '&cUsed by the city''s watchtower'
+- '&carchers to defend the walls.'
+enchantments:
+- ARROW_DAMAGE,3
+- ARROW_KNOCKBACK,2
+itemType: unique
+scalability: scalable

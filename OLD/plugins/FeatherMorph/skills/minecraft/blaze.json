@@ -1,0 +1,24 @@
+{
+  "skillCooldown": 10,
+  "skillId": "morph:launch_projective",
+  "abilities": [
+    "morph:can_fly",
+    "morph:fire_resistance",
+    "morph:takes_damage_from_water"
+  ],
+  "settings": {
+    "morph:can_fly": {
+      "fly_speed": 0.05,
+      "minimum_hunger": 6
+    },
+    "morph:launch_projective": {
+      "delay": 0,
+      "warning_sound_name": "",
+      "name": "minecraft:small_fireball",
+      "speed_multiplier": 1.0,
+      "sound_name": "entity.blaze.shoot",
+      "sound_distance": 8,
+      "max_target_distance": 0
+    }
+  }
+}

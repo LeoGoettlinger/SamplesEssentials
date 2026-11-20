@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&5Naughty List Cover'
+lore:
+- '&7There are names on both sides.'
+- '&7Yours is underlined.'

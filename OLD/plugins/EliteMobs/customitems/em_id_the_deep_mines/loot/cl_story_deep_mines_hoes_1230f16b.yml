@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&c[$difficulty] Abyssal Reaper'
+lore:
+- '&cA scythe that reaps both'
+- '&cstone and soul in the deep'
+- '&cmines. It whispers of darkness.'

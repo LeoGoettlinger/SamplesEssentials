@@ -1,0 +1,14 @@
+isEnabled: true
+material: BOW
+name: '&aAdventurer''s Bow'
+lore:
+- '&7Awarded by Casus for completing your first class trial.'
+enchantments:
+- POWER,3
+- UNBREAKING,1
+- FLAME,1
+- INFINITY,1
+potionEffects: []
+scalability: FIXED
+itemType: UNIQUE
+level: 1

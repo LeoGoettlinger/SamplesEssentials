@@ -1,0 +1,19 @@
+isEnabled: true
+name: '&d[Hard] Nether Infused Sickaxe'
+material: NETHERITE_PICKAXE
+level: 50
+lore:
+- '&dThis pickaxe is infused with power but something is not right...'
+enchantments:
+- DIG_SPEED,6
+- LOOT_BONUS_BLOCKS,5
+- LUCK,4
+- DURABILITY,3
+- elitemobs:drilling,1
+potionEffects:
+- POISON,0,self,onHit
+- BLINDNESS,0,self,onHit
+- SLOW,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

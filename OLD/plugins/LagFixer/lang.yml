@@ -1,0 +1,76 @@
+# ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+# ░██╗░░░░░░█████╗░░██████╗░░░███████╗██╗██╗░░██╗███████╗██████╗░░
+# ░██║░░░░░██╔══██╗██╔════╝░░░██╔════╝██║╚██╗██╔╝██╔════╝██╔══██╗░
+# ░██║░░░░░███████║██║░░██╗░░░█████╗░░██║░╚███╔╝░█████╗░░██████╔╝░
+# ░██║░░░░░██╔══██║██║░░╚██╗░░██╔══╝░░██║░██╔██╗░██╔══╝░░██╔══██╗░
+# ░███████╗██║░░██║╚██████╔╝░░██║░░░░░██║██╔╝╚██╗███████╗██║░░██║░
+# ░╚══════╝╚═╝░░╚═╝░╚═════╝░░░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝░
+# ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+# -----------------> TUTORIALS <-----------------#
+#
+# Hex colors and gradients usage:
+# - https://docs.advntr.dev/minimessage/format.html
+#
+# (SOON) PlaceholderAPI usage:
+# - Format: <papi:[papi_placeholder]>
+# - Example: <papi:luckperms_prefix>
+#
+# -----------------> TUTORIALS <-----------------#
+
+# soon it will be possible to translate all messages
+messages:
+  Main:
+    no_access: '<gray> Keine Permission: <yellow><permission>'
+    disabled_module: <gray> Modul <yellow><module> <gray>ist aktuell deaktiviert!
+      Die Administration muss es aktivieren!
+    player_only: <gray> Dieser Command kann nur von einem Spieler ausgeführt werden!
+  
+  RedstoneLimiter:
+    alert: <gray> Blockierte <yellow><ticks> <gray>Redstone Ticks im Chunk <gradient:#c48d00:#fffb00><location></gradient><gray>!
+    cooldown: <gray> Du kannst <material> in <gradient:#c48d00:#fffb00><cooldown></gradient><gray>
+      Millisekunden wieder nutzen!
+  
+  WorldCleaner:
+    # Message format -> "second=message"
+    countingdown:
+    - 15=<gradient:#ff3c00:#ffff00> WARNUNG!</gradient> <gray>In <color:#ff8800><remaining>
+      <gray>Sekunden wird der Server von allen unnötigen Entities und Items gecleart!!
+    - 10=<gradient:#ff3c00:#ffff00> WARNUNG!</gradient> <gray>In <color:#ff8800><remaining>
+      <gray>Sekunden wird der Server von allen unnötigen Entities und Items gecleart!!
+    - 5=<gradient:#ff3c00:#ffff00> WARNUNG!</gradient> <gray>In <color:#ff8800><remaining>
+      <gray>Sekunden wird der Server von allen unnötigen Entities und Items gecleart!!
+    - 3=<gradient:#ff3c00:#ffff00> WARNUNG!</gradient> <gray>In <color:#ff8800><remaining>
+      <gray>Sekunden wird der Server von allen unnötigen Entities und Items gecleart!!
+    - 2=<gradient:#ff3c00:#ffff00> WARNUNG!</gradient> <gray>In <color:#ff8800><remaining>
+      <gray>Sekunden wird der Server von allen unnötigen Entities und Items gecleart!!
+    - 1=<gradient:#ff3c00:#ffff00> WARNUNG!</gradient> <gray>In <color:#ff8800><remaining>
+      <gray>Sekunden wird der Server von allen unnötigen Entities und Items gecleart!!
+    - 0=<gray> Es wurden erfolgreich <color:#ff8800><items>x <gray>Items, <color:#ff8800><creatures>x
+      <gray>Entities und <color:#ff8800><projectiles>x <gray>Projectiles gelöscht!
+    
+    items:
+      # Abyss is the place where all deleted items go, and players can get them back by typing the /abyss command
+      abyss:
+        close: <gray> Der Abgrund wurde geschlossen!
+        open: '<gray> Der Abgrund wurde geöffnet! Erhallte deine Items zurück: <yellow>/abyss'
+        empty: <gray> Der Angrund ist aktuell <blue>leer<gray>! Warte bis er wieder
+          Items enthält!
+        closed: <gray> Der Abgrund ist <red>zu<gray>! Warte bis er wieder offen ist!
+        opened: <gray> Das Inventar vom Update wurde erfolgreich <green>geöffnet<gray>!
+        gui:
+          name: <white> Abgrund! <dark_gray>(<gray>page <page><dark_gray>)
+          previous: <dark_gray>← <red><b>LETZTE SEITE!</b>
+          next: <dark_gray>→ <green><b>NÄCHSTE SEITE!</b>
+  
+  TrashDisposal:
+    trash:
+      disabled_drop: <gray>Dropping items is disabled in this world, use <yellow>/trash
+        <gray>to dispose of your items!
+      opened: <gray>Trash has been successfully opened!
+    gui:
+      global_name: <white>Trash!
+      individual_name: <white><player>'s Trash!
+  
+  AFKOptimizer:
+    afk_kick: <gray>You have been kicked for being idle!

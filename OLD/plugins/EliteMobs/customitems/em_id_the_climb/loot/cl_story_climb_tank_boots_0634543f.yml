@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&e[$difficulty] Undead''s Footwear'
+lore:
+- '&eRetrieved from the walking corpse.'
+classLootFamily: TANK_BOOTS

@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Boiled Shield'
+material: SHIELD
+level: 15
+lore:
+- '&cHas a fresh wooden aroma.'
+enchantments:
+- PROTECTION_PROJECTILE,7
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,4
+- DAMAGE_ALL,3
+- elitemobs:loud_strikes,2
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

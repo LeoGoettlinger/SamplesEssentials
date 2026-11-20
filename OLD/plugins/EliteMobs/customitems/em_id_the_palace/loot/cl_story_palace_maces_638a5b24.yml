@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&c[$difficulty] Sovereign Scepter'
+lore:
+- '&cA royal scepter of ancient'
+- '&cstone kings. Heavy with the'
+- '&cweight of lost dynasties.'

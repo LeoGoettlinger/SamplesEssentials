@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythical] Slimed Sword'
+material: NETHERITE_SWORD
+level: 15
+lore:
+- '&cIt is kind of hard to grip it well.'
+enchantments:
+- DAMAGE_ALL,10
+- DURABILITY,5
+- DAMAGE_ARTHROPODS,5
+- DAMAGE_UNDEAD,10
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

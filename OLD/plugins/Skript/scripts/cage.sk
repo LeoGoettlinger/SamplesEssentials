@@ -1,0 +1,73 @@
+# /cage SPIELERNAME ZEIT (z.B. /cage Spieler 1m)
+command /cage <player> <timespan>:
+    permission: admin.cage
+    permission message: &cDu hast keine Berechtigung für den Käfig!
+    trigger:
+        set {_p} to arg-1
+        set {_time} to arg-2
+        
+        # Speichert die Position und markiert den Spieler als gefangen
+        set {_loc} to location of {_p}
+        set {caged::%uuid of {_p}%} to true
+        set {cage_loc::%uuid of {_p}%} to {_loc}
+        
+        # Käfig aus Bedrock um den Spieler bauen
+        loop blocks in radius 2 around {_loc}:
+            if distance between loop-block and {_loc} >= 1.5:
+                set loop-block to bedrock
+                
+        # Teleportiert den Spieler exakt in die Mitte
+        teleport {_p} to {_loc}
+        
+        broadcast "&c&l[KÄFIG] &e%{_p}% &7wurde für &b%{_time}% &7in den Bedrock-Käfig gesperrt!"
+        send "&cDu wurdest in den Käfig gesperrt! Du kannst weder entkommen noch den Server verlassen." to {_p}
+        
+        # Timer abwarten
+        wait {_time}
+        
+        # Nach Ablauf der Zeit: Freilassen (falls er nicht schon mit /uncage befreit wurde)
+        if {caged::%uuid of {_p}%} is set:
+            execute console command "uncage %{_p}%"
+
+# /uncage SPIELERNAME - Befreit einen Spieler sofort aus dem Käfig
+command /uncage <player>:
+    permission: admin.cage
+    permission message: &cDu hast keine Berechtigung, jemanden zu befreien!
+    trigger:
+        set {_p} to arg-1
+        if {caged::%uuid of {_p}%} is set:
+            set {_loc} to {cage_loc::%uuid of {_p}%}
+            
+            # Variablen löschen
+            delete {caged::%uuid of {_p}%}
+            delete {cage_loc::%uuid of {_p}%}
+            
+            # Bedrock-Käfig abbauen (Luft setzen)
+            loop blocks in radius 2 around {_loc}:
+                if loop-block is bedrock:
+                    set loop-block to air
+                    
+            # Spieler zum Spawn teleportieren
+            execute console command "spawn %{_p}%"
+            broadcast "&a&l[KÄFIG] &e%{_p}% &7wurde aus dem Käfig entlassen!"
+            send "&a&l[KÄFIG] &eDu wurdest befreit und zum Spawn teleportiert!" to {_p}
+        else:
+            send "&cDieser Spieler ist derzeit in keinem Käfig!" to player
+
+# Wenn der Spieler versucht zu leaven/rejoinen: Direkt zurück in den Käfig!
+on join:
+    if {caged::%uuid of player%} is set:
+        wait 2 ticks
+        teleport player to {cage_loc::%uuid of player%}
+        send "&c&lFluchtversuch zwecklos! &7Du bist immer noch im Käfig gefangen!" to player
+
+# Befehle blockieren, solange der Spieler im Käfig ist
+on command:
+    if {caged::%uuid of player%} is set:
+        cancel event
+        send "&cDu kannst im Käfig keine Befehle nutzen!" to player
+
+# Verhindert Blockabbau
+on break:
+    if {caged::%uuid of player%} is set:
+        cancel event

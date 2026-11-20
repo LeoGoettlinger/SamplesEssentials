@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&bFoundry Footings'
+lore:
+- '&bThe toe caps were hammered over a wooden last.'
+- '&bA sliver of the last is still inside.'
+classLootFamily: TANK_BOOTS

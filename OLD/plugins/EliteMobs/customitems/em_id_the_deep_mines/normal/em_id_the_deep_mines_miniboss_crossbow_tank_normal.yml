@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&d[Normal] Arrow Pew-Pew'
+material: CROSSBOW
+level: 45
+lore:
+- '&dAim at enemy and release trigger to fire.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- MULTISHOT,3
+- PIERCING,2
+- QUICK_CHARGE,1
+- DURABILITY,1
+- elitemobs:loud_strikes,1
+potionEffects:
+- DAMAGE_RESISTANCE,1,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,18 @@
+isEnabled: true
+material: CROSSBOW
+name: '&0Cultist Crossbow'
+lore:
+- '&0&kUsed in ancient rituals'
+- '&0&kto pierce the veil.'
+enchantments:
+- PIERCING,4
+- QUICK_CHARGE,3
+- DURABILITY,2
+- MULTISHOT,1
+potionEffects:
+- WITHER,1,target,onHit
+- GLOWING,0,target,onHit
+itemType: unique
+scalability: scalable
+customModelID: 3117305
+soulbound: true

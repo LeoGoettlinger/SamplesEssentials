@@ -1,0 +1,20 @@
+restockTimer: 0
+mimicChance: 0.0
+isEnabled: true
+chestType: CHEST
+facing: SOUTH
+chestTier: 0
+dropStyle: SINGLE
+lootList:
+- filename: em_id_the_nether_bell_chest_temple_pickaxe_normal.yml
+  chance: 0.99
+  difficultyID: 0
+- filename: em_id_the_nether_bell_chest_temple_pickaxe_hard.yml
+  chance: 0.99
+  difficultyID: 1
+- filename: em_id_the_nether_bell_chest_temple_pickaxe_mythic.yml
+  chance: 0.99
+  difficultyID: 2
+instanced: true
+locations:
+- em_id_the_nether_bell,20.0,87.0,39.0,0.0,0.0:0

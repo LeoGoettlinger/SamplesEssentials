@@ -1,0 +1,18 @@
+clans:
+  TexTra:
+    tag: TT
+    leader: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    description: TexTra Clan
+    level: 10
+    kills: 45
+    deaths: 80
+    bank: 615000.0
+    friendly-fire: false
+    created-at: 1777399418945
+    officers: []
+    members:
+    - ba908f9b-ea5a-40bf-b40a-cdffc7b60389
+    - cba625d6-616e-4c5a-843a-a2086cffb971
+    - 00000000-0000-0000-0009-01f316de4b9d
+    - 6ba7088f-15f1-41b7-8f62-aad9485e8716
+    - ac5e6298-e04d-448a-85fb-50ce7aa56f2f

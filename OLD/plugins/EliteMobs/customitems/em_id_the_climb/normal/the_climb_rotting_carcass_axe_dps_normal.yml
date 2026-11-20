@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: GOLDEN_AXE
+name: '&e[Normal] War Axe'
+lore:
+- '&eA fine weapon for'
+- '&esplitting skulls.'
+enchantments:
+- DAMAGE_ALL,3
+- DURABILITY,2
+itemType: unique
+scalability: scalable
+level: 10

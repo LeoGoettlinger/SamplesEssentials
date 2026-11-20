@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&aMoat Fork'
+lore:
+- '&aNo knight will admit where this was found.'

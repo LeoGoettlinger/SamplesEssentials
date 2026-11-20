@@ -1,0 +1,18 @@
+isEnabled: true
+material: NETHERITE_LEGGINGS
+name: '&d[Normal] Dominator Leggings'
+lore:
+- '&dThese leggings crackle with void energy.'
+- '&dYou feel an unsettling connection to the nether.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_FIRE,4
+- PROTECTION_PROJECTILE,4
+- PROTECTION_EXPLOSIONS,4
+- THORNS,1
+- elitemobs:loud_strikes,1
+potionEffects:
+- ABSORPTION,0,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

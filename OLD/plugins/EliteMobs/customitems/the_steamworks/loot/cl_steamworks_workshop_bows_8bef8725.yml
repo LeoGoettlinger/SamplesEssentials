@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&bWinding Bow'
+lore:
+- '&bThe cord smells faintly of machine oil.'
+- '&bIts owner kept it beside the spare belts.'

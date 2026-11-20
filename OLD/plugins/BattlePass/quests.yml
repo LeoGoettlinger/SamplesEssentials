@@ -1,0 +1,127 @@
+# ================================
+# BattlePass Quests Configuration
+# Plugin by ResistanceCore
+# ================================
+# 
+# Quest Types Available:
+# BREAK_BLOCKS, PLACE_BLOCKS, KILL_MOBS, KILL_PLAYERS,
+# CRAFT_ITEMS, FISH, PLAY_TIME, TRAVEL_DISTANCE,
+# DEAL_DAMAGE, ENCHANT_ITEMS, BREED_ANIMALS, TRADE_VILLAGER
+
+quests:
+  daily_miner:
+    name: "&6Daily Miner"
+    description: "Break 100 stone blocks"
+    type: BREAK_BLOCKS
+    target-value: "STONE"
+    required-amount: 100
+    experience-reward: 50
+    repeatable: true
+    display-item:
+      material: STONE
+      name: "&6Daily Miner"
+      lore:
+        - "&7Break stone blocks to earn XP"
+        - "&eReward: &650 XP"
+  
+  monster_hunter:
+    name: "&cMonster Hunter"
+    description: "Kill 20 zombies"
+    type: KILL_MOBS
+    target-value: "ZOMBIE"
+    required-amount: 20
+    experience-reward: 75
+    repeatable: true
+    display-item:
+      material: IRON_SWORD
+      name: "&cMonster Hunter"
+      lore:
+        - "&7Slay zombies to prove your strength"
+        - "&eReward: &675 XP"
+  
+  master_crafter:
+    name: "&bMaster Crafter"
+    description: "Craft 10 diamond pickaxes"
+    type: CRAFT_ITEMS
+    target-value: "DIAMOND_PICKAXE"
+    required-amount: 10
+    experience-reward: 100
+    repeatable: false
+    display-item:
+      material: DIAMOND_PICKAXE
+      name: "&bMaster Crafter"
+      lore:
+        - "&7Craft diamond tools"
+        - "&eReward: &6100 XP"
+  
+  fisherman:
+    name: "&9Gone Fishing"
+    description: "Catch 50 fish"
+    type: FISH
+    required-amount: 50
+    experience-reward: 60
+    repeatable: true
+    display-item:
+      material: FISHING_ROD
+      name: "&9Gone Fishing"
+      lore:
+        - "&7Catch fish to complete this quest"
+        - "&eReward: &660 XP"
+  
+  pvp_warrior:
+    name: "&4PvP Warrior"
+    description: "Defeat 5 players in combat"
+    type: KILL_PLAYERS
+    required-amount: 5
+    experience-reward: 150
+    repeatable: true
+    display-item:
+      material: DIAMOND_SWORD
+      name: "&4PvP Warrior"
+      lore:
+        - "&7Prove your combat skills"
+        - "&eReward: &6150 XP"
+  
+  enchanter:
+    name: "&dEnchanter"
+    description: "Enchant 15 items"
+    type: ENCHANT_ITEMS
+    required-amount: 15
+    experience-reward: 80
+    repeatable: false
+    display-item:
+      material: ENCHANTING_TABLE
+      name: "&dEnchanter"
+      lore:
+        - "&7Enchant items at the enchanting table"
+        - "&eReward: &680 XP"
+  
+  animal_breeder:
+    name: "&2Animal Breeder"
+    description: "Breed 10 cows"
+    type: BREED_ANIMALS
+    target-value: "COW"
+    required-amount: 10
+    experience-reward: 40
+    repeatable: true
+    display-item:
+      material: WHEAT
+      name: "&2Animal Breeder"
+      lore:
+        - "&7Breed cows to expand your farm"
+        - "&eReward: &640 XP"
+
+  diamond_collector:
+    name: "&bDiamond Collector"
+    description: "Mine 50 diamond ore"
+    type: BREAK_BLOCKS
+    target-value: "DIAMOND_ORE"
+    required-amount: 50
+    experience-reward: 200
+    repeatable: false
+    display-item:
+      material: DIAMOND_ORE
+      name: "&bDiamond Collector"
+      lore:
+        - "&7Mine precious diamonds"
+        - "&eReward: &6200 XP"

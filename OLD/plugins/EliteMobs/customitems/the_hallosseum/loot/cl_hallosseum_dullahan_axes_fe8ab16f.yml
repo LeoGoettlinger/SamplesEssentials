@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&4Gallows Bough'
+lore:
+- '&4The haft was cut from an old hanging tree.'
+- '&4The rope marks remain.'

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&cRed Ribbon Bow'
+lore:
+- '&cTied for the grand opening.'
+- '&cUntied for the grand escape.'

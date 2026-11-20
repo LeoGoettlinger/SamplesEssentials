@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&c[$difficulty] Slimed Maul'
+lore:
+- '&cA heavy weapon covered in'
+- '&cslimy residue from The Boiler.'
+- '&cIt sticks to enemies on impact.'

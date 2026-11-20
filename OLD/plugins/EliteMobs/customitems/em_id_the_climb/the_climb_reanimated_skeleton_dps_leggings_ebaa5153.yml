@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&4[$difficulty] Undead''s Leggings'
+lore:
+- '&4Retrieved from the walking corpse.'
+classLootFamily: DPS_LEGGINGS

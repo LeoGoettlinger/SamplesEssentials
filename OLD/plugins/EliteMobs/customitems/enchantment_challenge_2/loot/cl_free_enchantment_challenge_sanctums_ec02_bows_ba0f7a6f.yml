@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: Burrow Bow
+lore:
+- Mind the low ceiling when you draw.

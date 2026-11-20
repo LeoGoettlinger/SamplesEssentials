@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&a[$difficulty] Worn Boots'
+lore:
+- '&aThey are falling apart.'
+classLootFamily: DPS_BOOTS

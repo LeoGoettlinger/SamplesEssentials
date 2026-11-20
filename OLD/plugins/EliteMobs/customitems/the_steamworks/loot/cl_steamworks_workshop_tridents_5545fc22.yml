@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&bSorting Fork'
+lore:
+- '&bThe prongs are labelled SMALL, MEDIUM and LARGE.'
+- '&bAll three are the same length.'

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Bottle Bottoms
+lore:
+- The bottoms were the thickest parts.
+classLootFamily: TANK_BOOTS

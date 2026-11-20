@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&7Stone Crusher [$difficulty]'
+lore:
+- '&cShatter stone with ancient might!'

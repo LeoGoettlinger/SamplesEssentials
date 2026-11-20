@@ -1,0 +1,13 @@
+isEnabled: true
+material: DIAMOND_HELMET
+name: '&aAdventurer''s Helmet'
+lore:
+- '&7Awarded by Casus for completing your first class trial.'
+enchantments:
+- SHARPNESS,4
+- PROTECTION,2
+- UNBREAKING,2
+potionEffects: []
+scalability: FIXED
+itemType: UNIQUE
+level: 1

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&cChimney Descent'
+lore:
+- '&7The knee plates have matching scratches.'
+- '&7The chimney was smaller than expected.'
+classLootFamily: TANK_LEGGINGS

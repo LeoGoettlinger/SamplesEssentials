@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&dConqueror''s Spurs'
+lore:
+- '&dThe throne room tiles remember these heels.'
+classLootFamily: DPS_BOOTS

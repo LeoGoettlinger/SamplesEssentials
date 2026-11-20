@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&eRepel'
+description:
+- '&7Staff strikes can knock'
+- '&7enemies back.'
+skillType: STAVES
+bonusType: PROC
+unlockTier: 2
+baseValue: 0.0
+scalingPerLevel: 0.0
+procChance: 0.25
+displayMaterial: PISTON
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Knockback and Slowness I for 2s'
+- '&8Staff strikes only'
+formattedBonusTemplate: $procChance% knockback

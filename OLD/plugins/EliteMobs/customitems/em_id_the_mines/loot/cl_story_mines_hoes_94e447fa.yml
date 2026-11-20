@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&c[$difficulty] Soul Reaper'
+lore:
+- '&cThe tool of a soulweaver''s'
+- '&ctrade. It harvests essence'
+- '&cfrom the living and dead alike.'

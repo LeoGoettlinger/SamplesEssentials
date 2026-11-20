@@ -1,0 +1,59 @@
+isEnabled: true
+eliteScript:
+  TeleportNearbyPlayers:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: TELEPORT
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      FinalTarget:
+        targetType: LOCATION
+        location: same_as_boss,216.5,-40,95.5,180,10
+    - action: RUN_SCRIPT
+      scripts:
+      - TeleportDome
+      wait: 20
+    - action: PLAY_SOUND
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      sValue: entity.enderman.teleport
+    Cooldowns:
+      local: 99999
+      global: 1
+  TeleportDome:
+    Zone:
+      shape: SPHERE
+      radius: 48
+      borderRadius: 46
+      Target:
+        targetType: SELF
+    Actions:
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+        coverage: 0.04
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+      repeatEvery: 20
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: TELEPORT
+      repeatEvery: 1
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+        filter: PLAYER
+      FinalTarget:
+        targetType: LOCATION
+        location: same_as_boss,216.5,-40,95.5,180,10
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF

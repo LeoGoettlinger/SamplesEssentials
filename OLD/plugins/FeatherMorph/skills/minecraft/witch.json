@@ -1,0 +1,13 @@
+{
+  "skillCooldown": 80,
+  "skillId": "morph:witch",
+  "abilities": [
+    "morph:reduce_magic_damage"
+  ],
+  "settings": {
+    "morph:reduce_magic_damage": {
+      "amount": 0.15,
+      "is_percentage": true
+    }
+  }
+}

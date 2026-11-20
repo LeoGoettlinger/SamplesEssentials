@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&4Black Candle'
+lore:
+- '&4The pale tip resembles a forgotten wick.'
+- '&4Wax has hardened around the grip.'
+weaponType: WANDS

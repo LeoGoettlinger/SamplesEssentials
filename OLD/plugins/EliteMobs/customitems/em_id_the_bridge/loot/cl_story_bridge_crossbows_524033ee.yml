@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&7Stone Arbalest [$difficulty]'
+lore:
+- '&cFire precise bolts with ancient power!'

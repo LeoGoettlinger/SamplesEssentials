@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&c[$difficulty] Shroud Piercer'
+lore:
+- '&cA spear wrapped in shadowy'
+- '&cobsidian. It pierces through'
+- '&cdefenses like smoke.'

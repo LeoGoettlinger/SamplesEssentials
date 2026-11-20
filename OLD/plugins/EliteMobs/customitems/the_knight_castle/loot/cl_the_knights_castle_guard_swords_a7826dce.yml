@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&aOath Notch'
+lore:
+- '&aThe guard counted his vows along the edge.'

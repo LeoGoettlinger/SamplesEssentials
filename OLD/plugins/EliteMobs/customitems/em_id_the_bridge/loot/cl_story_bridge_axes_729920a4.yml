@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&7Abutment Axe'
+lore:
+- '&7Its edge bears the dust of the old bridge.'

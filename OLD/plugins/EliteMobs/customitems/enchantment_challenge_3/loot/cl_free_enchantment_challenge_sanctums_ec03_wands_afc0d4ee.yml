@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: Pointy Pencil
+lore:
+- For marking your next square.
+weaponType: WANDS

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: Spine Straightener
+lore:
+- Stand up properly when you hold this.
+weaponType: STAVES

@@ -1,0 +1,254 @@
+gui-name: '&6Food & Cooking'
+rows: 6
+permission: ''
+items:
+- material: BREAD
+  name: '&fBread'
+  price: 20
+  amount: 16
+  lore:
+  - '&7Basic staple food'
+  sell-price: 14
+- material: APPLE
+  name: '&cApple'
+  price: 30
+  amount: 16
+  lore:
+  - '&7A refreshing apple'
+  sell-price: 21
+- material: MELON_SLICE
+  name: '&aMelon Slice'
+  price: 6
+  sell-price: 4
+  amount: 32
+  lore:
+  - '&7Light snack'
+- material: COOKIE
+  name: '&eCookie'
+  price: 15
+  amount: 16
+  lore:
+  - '&7Sweet treat'
+  sell-price: 10
+- material: DRIED_KELP
+  name: '&2Dried Kelp'
+  price: 10
+  amount: 32
+  lore:
+  - '&7Ocean snack'
+  sell-price: 7
+- material: CHORUS_FRUIT
+  name: '&5Chorus Fruit'
+  price: 30
+  amount: 16
+  lore:
+  - '&7Teleports on eat'
+  sell-price: 21
+- material: SWEET_BERRIES
+  name: '&cSweet Berries'
+  price: 25
+  sell-price: 18
+  amount: 16
+  lore:
+  - '&7Foraged snack'
+- material: GLOW_BERRIES
+  name: '&eGlow Berries'
+  price: 50
+  sell-price: 35
+  amount: 16
+  lore:
+  - '&7Illuminating snack'
+- material: COOKED_PORKCHOP
+  name: '&6Cooked Porkchop'
+  price: 30
+  amount: 16
+  lore:
+  - '&7High hunger restoration'
+  sell-price: 21
+- material: COOKED_BEEF
+  name: '&6Cooked Beef'
+  price: 30
+  amount: 16
+  lore:
+  - '&7High hunger restoration'
+  sell-price: 21
+- material: COOKED_CHICKEN
+  name: '&6Cooked Chicken'
+  price: 25
+  amount: 16
+  lore:
+  - '&7Good hunger restoration'
+  sell-price: 18
+- material: COOKED_MUTTON
+  name: '&6Cooked Mutton'
+  price: 25
+  amount: 16
+  lore:
+  - '&7Good hunger restoration'
+  sell-price: 18
+- material: COOKED_COD
+  name: '&6Cooked Cod'
+  price: 20
+  amount: 16
+  lore:
+  - '&7Decent hunger restoration'
+  sell-price: 14
+- material: COOKED_SALMON
+  name: '&6Cooked Salmon'
+  price: 25
+  amount: 16
+  lore:
+  - '&7Good hunger restoration'
+  sell-price: 18
+- material: COOKED_RABBIT
+  name: '&6Cooked Rabbit'
+  price: 25
+  amount: 16
+  lore:
+  - '&7Good hunger restoration'
+  sell-price: 18
+- material: MUSHROOM_STEW
+  name: '&dMushroom Stew'
+  price: 50
+  amount: 4
+  lore:
+  - '&7Bowl of warm stew'
+  sell-price: 35
+- material: RABBIT_STEW
+  name: '&dRabbit Stew'
+  price: 80
+  amount: 4
+  lore:
+  - '&7Hearty and filling'
+  sell-price: 56
+- material: PUMPKIN_PIE
+  name: '&6Pumpkin Pie'
+  price: 40
+  amount: 8
+  lore:
+  - '&7Festive dessert'
+  sell-price: 28
+- material: BEETROOT_SOUP
+  name: '&cBeetroot Soup'
+  price: 50
+  amount: 4
+  lore:
+  - '&7Nutritious soup'
+  sell-price: 35
+- material: SUSPICIOUS_STEW
+  name: '&5Suspicious Stew'
+  price: 100
+  amount: 4
+  lore:
+  - '&7Random effect on eat!'
+  sell-price: 70
+- material: CAKE
+  name: '&eCake'
+  price: 50
+  amount: 1
+  lore:
+  - '&7Place and share'
+  - '&7Multiple servings'
+  sell-price: 35
+- material: BEEF
+  name: '&cRaw Beef'
+  price: 15
+  amount: 16
+  lore:
+  - '&7Needs cooking'
+  sell-price: 10
+- material: PORKCHOP
+  name: '&cRaw Porkchop'
+  price: 15
+  amount: 16
+  lore:
+  - '&7Needs cooking'
+  sell-price: 10
+- material: CHICKEN
+  name: '&cRaw Chicken'
+  price: 12
+  amount: 16
+  lore:
+  - '&7Needs cooking'
+  - '&7May cause hunger!'
+  sell-price: 8
+- material: MUTTON
+  name: '&cRaw Mutton'
+  price: 12
+  amount: 16
+  lore:
+  - '&7Needs cooking'
+  sell-price: 8
+- material: COD
+  name: '&cRaw Cod'
+  price: 10
+  amount: 16
+  lore:
+  - '&7Needs cooking'
+  sell-price: 7
+- material: SALMON
+  name: '&cRaw Salmon'
+  price: 10
+  amount: 16
+  lore:
+  - '&7Needs cooking'
+  sell-price: 7
+- material: RABBIT
+  name: '&cRaw Rabbit'
+  price: 12
+  amount: 16
+  lore:
+  - '&7Needs cooking'
+  sell-price: 8
+- material: GOLDEN_APPLE
+  name: '&6Golden Apple'
+  price: 1000
+  amount: 4
+  lore:
+  - '&6Heals and absorbs!'
+  sell-price: 700
+- material: ENCHANTED_GOLDEN_APPLE
+  name: '&6&lEnchanted Golden Apple'
+  price: 30000
+  amount: 1
+  lore:
+  - '&6&lUltra rare!'
+  - '&6Full absorption + regen!'
+  sell-price: 21000
+- material: GOLDEN_CARROT
+  name: '&6Golden Carrot'
+  price: 150
+  sell-price: 105
+  amount: 8
+  lore:
+  - '&7High saturation food'
+- material: HONEY_BOTTLE
+  name: '&eHoney Bottle'
+  price: 80
+  amount: 8
+  lore:
+  - '&7Cures poison'
+  - '&7Sweet and soothing'
+  sell-price: 56
+- material: SMOKER
+  name: '&fSmoker'
+  price: 80
+  amount: 4
+  lore:
+  - '&7Cooks food 2x faster'
+  sell-price: 56
+- material: BLAST_FURNACE
+  name: '&fBlast Furnace'
+  price: 80
+  amount: 4
+  lore:
+  - '&7Smelts ore 2x faster'
+  sell-price: 56
+- material: CAMPFIRE
+  name: '&6Campfire'
+  price: 80
+  amount: 4
+  lore:
+  - '&7Cook food outdoors'
+  - '&7Signal smoke source'
+  sell-price: 56

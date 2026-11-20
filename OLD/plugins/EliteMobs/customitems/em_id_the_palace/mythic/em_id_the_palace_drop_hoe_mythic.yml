@@ -1,0 +1,14 @@
+isEnabled: true
+name: '&f[Mythical] Old Stone Hoe'
+material: NETHERITE_HOE
+level: 35
+lore:
+- '&fYour garden will love this.'
+enchantments:
+- DURABILITY,10
+- DIG_SPEED,3
+potionEffects:
+- SPEED,2,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

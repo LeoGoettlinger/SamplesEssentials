@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&2Drywalk Boots'
+lore:
+- '&2The name reflects an ambition, not a result.'
+classLootFamily: DPS_BOOTS

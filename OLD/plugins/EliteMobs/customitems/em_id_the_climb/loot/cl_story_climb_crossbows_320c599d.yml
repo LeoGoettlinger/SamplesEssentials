@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&c[$difficulty] Undead Hunter'
+lore:
+- '&cIronically used by the undead'
+- '&cto hunt living prey.'

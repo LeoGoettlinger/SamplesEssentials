@@ -1,0 +1,17 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:breathe_under_water",
+    "morph:dryout_in_air",
+    "morph:override_maximum_air"
+  ],
+  "settings": {
+    "morph:dryout_in_air": {
+      "include_rain": false
+    },
+    "morph:override_maximum_air": {
+      "maximum_air": 6000
+    }
+  }
+}

@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Spellshot'
+material: CROSSBOW
+level: 40
+lore:
+- '&cEach bolt is enchanted with'
+- '&cone of five wizard spells.'
+enchantments:
+- PIERCING,4
+- QUICK_CHARGE,3
+- DURABILITY,4
+itemType: unique
+scalability: scalable

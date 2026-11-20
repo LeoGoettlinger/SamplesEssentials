@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&c[$difficulty] Ooze Reaper'
+lore:
+- '&cA crude scythe forged from'
+- '&cmaterials found in the cave.'
+- '&cReaps through slime and flesh.'

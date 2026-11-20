@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&c[Hard] Boiled Helmet'
+material: DIAMOND_HELMET
+level: 15
+lore:
+- '&cThe helmet has a weird square shape to it.'
+enchantments:
+- PROTECTION_EXPLOSIONS,7
+- DURABILITY,4
+- DAMAGE_ALL,3
+- elitemobs:loud_strikes,2
+potionEffects:
+- ABSORPTION,0,self,onHit
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

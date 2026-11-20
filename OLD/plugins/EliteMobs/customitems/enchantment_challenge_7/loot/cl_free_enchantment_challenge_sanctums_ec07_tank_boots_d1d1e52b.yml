@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Snowbank Braces
+lore:
+- Dig them out before spring.
+classLootFamily: TANK_BOOTS

@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Mining Bow'
+material: BOW
+level: 40
+lore:
+- '&fExcellent for lighting TNT from'
+- '&fa safe distance.'
+enchantments:
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

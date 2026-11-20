@@ -1,0 +1,16 @@
+isEnabled: true
+material: TRIDENT
+name: '&5[Hard] Void Trident'
+lore:
+- '&8Forged in the heart of oblivion'
+- '&8this trident crackles with the'
+- '&8energy of the void.'
+enchantments:
+- LOYALTY,3
+- IMPALING,4
+- RIPTIDE,3
+potionEffects:
+- SLOW_FALLING,0,self,continuous
+level: 55
+itemType: unique
+scalability: scalable

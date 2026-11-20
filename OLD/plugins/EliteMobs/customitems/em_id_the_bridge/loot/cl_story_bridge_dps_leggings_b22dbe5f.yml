@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&c[$difficulty] Stone Leggings'
+lore:
+- '&cYou feel empowered when putting these on.'
+classLootFamily: DPS_LEGGINGS

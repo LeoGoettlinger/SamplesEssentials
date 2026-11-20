@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&cThree Cheers'
+lore:
+- '&cOne prong for each cheer.'
+- '&cTry not to wave it near the crowd.'

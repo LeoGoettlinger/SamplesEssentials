@@ -1,0 +1,6 @@
+name: Sweeping Edge
+isEnabled: true
+maxLevelV2: 3
+value: 6.0
+isEnabledForProcedurallyGeneratedItems: true
+maxEnchantmentLevel: 3

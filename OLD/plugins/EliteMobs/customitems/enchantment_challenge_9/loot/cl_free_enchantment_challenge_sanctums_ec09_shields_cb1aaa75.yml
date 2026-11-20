@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: Shop Window
+lore:
+- Definitely not open for business.

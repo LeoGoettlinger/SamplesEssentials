@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: GOLDEN_BOOTS
+name: '&b[Mythical] Boots of Balance'
+lore:
+- '&bBalanced to perfection.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- DAMAGE_ALL,4
+- DURABILITY,3
+itemType: unique
+scalability: scalable
+level: 10

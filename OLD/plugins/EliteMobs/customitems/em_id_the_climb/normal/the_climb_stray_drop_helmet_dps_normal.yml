@@ -1,0 +1,12 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_HELMET
+name: '&b[Normal] Frostbite Helmet'
+lore:
+- '&bOffers decent protection'
+- '&beven though taken from a corpse.'
+enchantments:
+- DAMAGE_ALL,3
+itemType: unique
+scalability: scalable
+level: 10

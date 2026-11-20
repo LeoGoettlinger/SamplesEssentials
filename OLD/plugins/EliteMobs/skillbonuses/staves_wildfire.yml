@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&6Wildfire'
+description:
+- '&7Fireballs hit harder when'
+- '&7enemies crowd together.'
+skillType: STAVES
+bonusType: CONDITIONAL
+unlockTier: 2
+baseValue: 0.1
+scalingPerLevel: 0.001
+displayMaterial: FLINT_AND_STEEL
+loreTemplates:
+- '&7Per nearby enemy: &f+$bonusPerEnemy% damage'
+- '&7Maximum: &f+$maxBonus%'
+- '&8Counts enemies within 4 blocks of the target'
+formattedBonusTemplate: up to +$maxBonus% in crowds

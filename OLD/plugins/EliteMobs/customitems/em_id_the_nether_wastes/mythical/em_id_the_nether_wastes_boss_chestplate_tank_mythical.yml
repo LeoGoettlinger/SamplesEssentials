@@ -1,0 +1,21 @@
+isEnabled: true
+name: '&d[Mythical] Nether Infused Armor'
+material: NETHERITE_CHESTPLATE
+level: 50
+lore:
+- '&dJust by looking at this armor, you can tell that its craftsman'
+- '&dhas meticulously poured their heart and soul into every detail,'
+- '&dshowcasing an extraordinary level of dedication and skill.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,10
+- PROTECTION_PROJECTILE,7
+- PROTECTION_EXPLOSIONS,6
+- PROTECTION_FIRE,5
+- PROTECTION_FALL,4
+- DURABILITY,3
+- elitemobs:loud_strikes,3
+potionEffects:
+- REGENERATION,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

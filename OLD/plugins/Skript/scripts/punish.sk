@@ -1,0 +1,18 @@
+# /punish 
+command /punish <offline player>:
+    permission: admin.punish
+    permission message: &cDu bist nicht befugt, jemanden zu punishen!
+    trigger:
+        set {_p} to arg-1
+        # Permanenter Ban aka. HAUSVERBOT
+        execute console command "libertybans:libertybans punish %{_p}% HAUSVERBOT"
+        broadcast "&2&lɴɪxᴏʀɪᴀ &8▸ &e%{_p}% &7wurde &cpermanent &7gepunisht! (&c%{_reason}%&7)"
+
+# /unpunish SPIELERNAME
+command /unpunish <offline player>:
+    permission: admin.punish
+    permission message: &cDu bist nicht befugt, jemanden zu entpunishen!
+    trigger:
+        set {_p} to arg-1
+        execute console command "libertybans:unban %{_p}%"
+        broadcast "&2&lɴɪxᴏʀɪᴀ &8▸ &e%{_p}% &7wurde wieder entpunished!"

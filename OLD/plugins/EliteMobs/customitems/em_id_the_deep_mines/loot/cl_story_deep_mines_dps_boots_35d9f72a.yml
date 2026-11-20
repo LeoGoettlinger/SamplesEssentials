@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Oretrail Steps'
+lore:
+- '&7The footprints point further in, never out.'
+classLootFamily: DPS_BOOTS

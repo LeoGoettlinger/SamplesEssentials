@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&c[$difficulty] Arcane Crusher'
+lore:
+- '&cInfused with wizard magic.'
+- '&cEach strike pulses with'
+- '&cmystical energy.'

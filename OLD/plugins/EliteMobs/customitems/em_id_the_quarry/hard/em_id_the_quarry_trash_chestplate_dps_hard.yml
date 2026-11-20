@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Hard] Expedition Armor'
+material: IRON_CHESTPLATE
+level: 40
+lore:
+- '&fIt would be foolish to go out'
+- '&fon an expedition without this armor.'
+enchantments:
+- DAMAGE_UNDEAD,3
+- PROTECTION_ENVIRONMENTAL,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

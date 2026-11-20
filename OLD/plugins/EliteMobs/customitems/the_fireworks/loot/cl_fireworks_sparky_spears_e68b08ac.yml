@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&cProcession Pike'
+lore:
+- '&cOnce carried at the front of the parade.'
+- '&cThe parade has changed direction.'

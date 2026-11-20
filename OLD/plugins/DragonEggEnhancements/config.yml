@@ -1,0 +1,47 @@
+# Dragon Egg Enhancements Configuration
+# This file will auto-generate with these default values when the plugin first loads
+
+# Potion effects given to players holding the Dragon Egg
+effects:
+  speed:
+    enabled: true
+    level: 1  # 1 = Speed I, 2 = Speed II, etc.
+  fire_resistance:
+    enabled: true
+    level: 1  # 1 = Fire Resistance I, 2 = Fire Resistance II, etc.
+  strength:
+    enabled: true
+    level: 1  # 1 = Strength I, 2 = Strength II, etc.
+  glowing:
+    enabled: true  # Makes the player glow (visible through walls)
+
+# Health modifications
+health:
+  enabled: true
+  hearts: 15  # Total hearts (default is 10, this gives 15)
+
+# Protection settings for the Dragon Egg item
+protection:
+  explosion_proof: true  # Prevents the egg from being destroyed by explosions
+  fire_proof: true  # Prevents the egg from being destroyed by fire/lava
+  cactus_proof: true  # Prevents the egg from being destroyed by cactus
+  kill_command_proof: true  # Prevents the egg from being killed by /kill @e or /killall
+  void_protection: true  # Returns the egg to spawn if it falls into the void
+  no_despawn: true  # Prevents the egg from despawning naturally
+  block_containers: true  # Prevents the egg from being placed in chests, hoppers, etc.
+
+# Display and notification settings
+display:
+  show_coordinates_when_dropped: true  # Shows coordinates when a player drops the egg
+  glowing_when_dropped: true  # Makes the dropped egg item glow
+
+# Custom messages (use & for color codes or § for section symbols)
+messages:
+  egg_obtained: "§6§lᴘɪxᴇʟᴀᴛᴛᴀᴄᴋ §8▸ §6You now possess the Dragon Egg! Its power flows through you."
+  egg_lost: "§6§lᴘɪxᴇʟᴀᴛᴛᴀᴄᴋ §8▸ §cThe Dragon Egg's power has left you."
+  cannot_store: "§6§lᴘɪxᴇʟᴀᴛᴛᴀᴄᴋ §8▸ §cThe Dragon Egg cannot be stored in containers!"
+  egg_location: "§6§lᴘɪxᴇʟᴀᴛᴛᴀᴄᴋ §8▸ §eThe Dragon Egg is dropped at: §6X: %x%, Y: %y%, Z: %z% §ein world §6%world%"
+  egg_location_placed: "§e§6§lᴘɪxᴇʟᴀᴛᴛᴀᴄᴋ §8▸ The Dragon Egg is placed at: §6X: %x%, Y: %y%, Z: %z% §ein world §6%world%"
+  egg_placed: "§6§lᴘɪxᴇʟᴀᴛᴛᴀᴄᴋ §8▸ §eYou placed the Dragon Egg at: §6X: %x%, Y: %y%, Z: %z%"
+  egg_not_found: "§6§lᴘɪxᴇʟᴀᴛᴛᴀᴄᴋ §8▸ §cThe Dragon Egg is not currently dropped or placed in the world."
+  void_return: "§6§lᴘɪxᴇʟᴀᴛᴛᴀᴄᴋ §8▸ The Dragon Egg has returned to spawn after falling into the void!"

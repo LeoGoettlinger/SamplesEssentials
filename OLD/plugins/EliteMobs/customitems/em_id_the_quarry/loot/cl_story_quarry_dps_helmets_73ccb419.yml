@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&f[$difficulty] Expedition Helmet'
+lore:
+- '&fExcellent helmet when you are'
+- '&fout there exploring.'
+classLootFamily: DPS_HELMETS

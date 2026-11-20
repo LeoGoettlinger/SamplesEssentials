@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&d[Hard] Bow of No-Want'
+material: BOW
+level: 40
+lore:
+- '&dMagicked bow that never runs out'
+- '&dof arrows. Probably made by dwarven'
+- '&dwizards due to popular demand.'
+enchantments:
+- ARROW_INFINITE,3
+- ARROW_DAMAGE,2
+- DURABILITY,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

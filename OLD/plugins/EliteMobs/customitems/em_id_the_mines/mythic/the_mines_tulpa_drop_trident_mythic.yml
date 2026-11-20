@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&2[Mythical] Focused Lance'
+material: TRIDENT
+level: 20
+lore:
+- '&2Born out of the mind.'
+- '&2Shaped by thought.'
+- '&2Its existence just a notion.'
+enchantments:
+- LOYALTY,8
+- CHANNELING,6
+- DURABILITY,5
+potionEffects:
+- WATER_BREATHING,2,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

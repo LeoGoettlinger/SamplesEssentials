@@ -1,0 +1,19 @@
+isEnabled: true
+name: '&f[Mythical] Old Stone Crown'
+material: NETHERITE_HELMET
+level: 35
+lore:
+- '&fAs tough as stone, as light as a feather.'
+- '&fNo fire can give it back its warmth.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,10
+- PROTECTION_EXPLOSIONS,6
+- PROTECTION_FALL,6
+- PROTECTION_PROJECTILE,6
+- DURABILITY,5
+- elitemobs:loud_strikes,3
+potionEffects:
+- NIGHT_VISION,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

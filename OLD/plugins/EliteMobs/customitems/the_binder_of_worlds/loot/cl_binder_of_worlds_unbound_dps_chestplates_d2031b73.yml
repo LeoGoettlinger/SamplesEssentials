@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&5Nightward Harness'
+lore:
+- '&5Thin plates overlap like folded shadows.'
+- '&5The buckles are the only bright things.'
+classLootFamily: DPS_CHESTPLATES

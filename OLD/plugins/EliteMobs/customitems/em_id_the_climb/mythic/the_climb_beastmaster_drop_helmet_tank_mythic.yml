@@ -1,0 +1,14 @@
+potionEffects: []
+isEnabled: true
+material: NETHERITE_HELMET
+name: '&d[Mythical] Beastmaster''s Helm'
+lore:
+- '&dA powerful piece of headgear.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,10
+- DAMAGE_ALL,4
+- DURABILITY,7
+- elitemobs:loud_strikes,3
+itemType: unique
+scalability: scalable
+level: 10

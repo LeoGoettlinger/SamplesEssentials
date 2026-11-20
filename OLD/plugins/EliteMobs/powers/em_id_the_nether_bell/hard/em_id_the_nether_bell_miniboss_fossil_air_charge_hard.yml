@@ -1,0 +1,158 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Setup:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - SlowBoss
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    Cooldowns:
+      local: 300
+      global: 60
+  SlowBoss:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 10
+      duration: 100
+      Target:
+        targetType: SELF
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: TELEPORT
+      Target:
+        targetType: SELF
+      FinalTarget:
+        targetType: LOCATION
+        location: same_as_boss,0.5,99,3.5,0,0
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      potionEffectType: LEVITATION
+      amplifier: 2
+      duration: 40
+      Target:
+        targetType: SELF
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+      particles:
+      - particle: CLOUD
+      repeatEvery: 5
+      times: 8
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.evoker.prepare_summon
+      Target:
+        targetType: SELF
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: RUN_SCRIPT
+      scripts:
+      - PushToZone
+      wait: 40
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  PushToZone:
+    Zone:
+      shape: SPHERE
+      radius: 4
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        track: false
+    Actions:
+    - action: PUSH
+      Target:
+        targetType: SELF
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ZONE_FULL
+          offset: 0,1,0
+          track: false
+        normalize: true
+        multiplier: 8
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: TELEPORT
+      wait: 10
+      Target:
+        targetType: SELF
+      FinalTarget:
+        targetType: ZONE_FULL
+        offset: 0,1,0
+        track: false
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLAY_SOUND
+      wait: 10
+      sValue: minecraft:entity.generic.explode
+      Target:
+        targetType: SELF
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: SPAWN_PARTICLE
+      wait: 10
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      particles:
+      - particle: CLOUD
+      repeatEvery: 5
+      times: 4
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PUSH
+      wait: 20
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      vValue: 0,1.2,0
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF

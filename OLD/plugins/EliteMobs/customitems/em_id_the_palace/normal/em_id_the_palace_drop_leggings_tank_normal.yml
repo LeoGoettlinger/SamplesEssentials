@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&f[Normal] Old Stone Leggings'
+material: NETHERITE_LEGGINGS
+level: 35
+lore:
+- '&fIt is important to keep your'
+- '&flegs well shielded.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,5
+- PROTECTION_EXPLOSIONS,4
+- PROTECTION_PROJECTILE,4
+- DURABILITY,3
+- elitemobs:loud_strikes,1
+potionEffects:
+- FIRE_RESISTANCE,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

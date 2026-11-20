@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&2[$difficulty] Ethereal Chestplate'
+lore:
+- '&2You can hold it, you can grab it, but you can never feel it.'
+classLootFamily: DPS_CHESTPLATES

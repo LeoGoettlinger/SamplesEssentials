@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Spectral Bow'
+material: BOW
+level: 20
+lore:
+- '&cStrung with ethereal threads'
+- '&cthat pierce the veil between'
+- '&clife and death.'
+enchantments:
+- ARROW_DAMAGE,4
+- ARROW_FIRE,2
+- DURABILITY,3
+itemType: unique
+scalability: scalable

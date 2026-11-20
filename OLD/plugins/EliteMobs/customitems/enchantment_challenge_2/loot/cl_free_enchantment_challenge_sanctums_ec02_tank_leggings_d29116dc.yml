@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Energized Leggings
+lore:
+- Just makes you wanna get up and hop.
+classLootFamily: TANK_LEGGINGS

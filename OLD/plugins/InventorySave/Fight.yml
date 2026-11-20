@@ -1,0 +1,340 @@
+inventory:
+  armors:
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_boots
+    count: 1
+    components:
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:feather_falling":4,"minecraft:mending":1,"minecraft:protection":4,"minecraft:thorns":3,"minecraft:unbreaking":3}'
+      minecraft:trim: '{material:"minecraft:diamond",pattern:"minecraft:eye"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_leggings
+    count: 1
+    components:
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:mending":1,"minecraft:protection":4,"minecraft:swift_sneak":3,"minecraft:thorns":3,"minecraft:unbreaking":3}'
+      minecraft:trim: '{material:"minecraft:diamond",pattern:"minecraft:eye"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_chestplate
+    count: 1
+    components:
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:mending":1,"minecraft:protection":4,"minecraft:thorns":3,"minecraft:unbreaking":3}'
+      minecraft:trim: '{material:"minecraft:diamond",pattern:"minecraft:eye"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_helmet
+    count: 1
+    components:
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:aqua_affinity":1,"minecraft:mending":1,"minecraft:protection":4,"minecraft:respiration":3,"minecraft:thorns":3,"minecraft:unbreaking":3}'
+      minecraft:trim: '{material:"minecraft:diamond",pattern:"minecraft:eye"}'
+    schema_version: 1
+  extras:
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    schema_version: 1
+  - null
+  - null
+  contents:
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_sword
+    count: 1
+    components:
+      minecraft:lore: '[{extra:["§§"],text:""},{extra:["§§",{bold:0b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"Level:
+        ",underlined:0b},{color:"gold",italic:0b,text:"4"}],text:""},{extra:["§§"],text:""},{extra:["§§",{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[",underlined:0b},{color:"yellow",italic:0b,text:"|||||||||||||||||||||||||||"},{color:"gray",italic:0b,text:"|||||||||||||||||||||||"},{color:"dark_gray",italic:0b,text:"]
+        "},{color:"yellow",italic:0b,text:"270.80"},{color:"gold",italic:0b,text:"/"},{color:"yellow",italic:0b,text:"500.00"}],text:""}]'
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:looting":3,"minecraft:mending":1,"minecraft:sharpness":5,"minecraft:sweeping_edge":3,"minecraft:unbreaking":3}'
+      minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers"]}'
+      minecraft:custom_data: '{PublicBukkitValues:{"leveltools:leveltoolslevel":4,"leveltools:leveltoolsreward":3,"leveltools:leveltoolsxp":270.8d}}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_pickaxe
+    count: 1
+    components:
+      minecraft:lore: '[{extra:["§§"],text:""},{extra:["§§",{bold:0b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"Level:
+        ",underlined:0b},{color:"gold",italic:0b,text:"0"}],text:""},{extra:["§§"],text:""},{extra:["§§",{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[",underlined:0b},{color:"yellow",italic:0b,text:"|||||"},{color:"gray",italic:0b,text:"|||||||||||||||||||||||||||||||||||||||||||||"},{color:"dark_gray",italic:0b,text:"]
+        "},{color:"yellow",italic:0b,text:"10.60"},{color:"gold",italic:0b,text:"/"},{color:"yellow",italic:0b,text:"100.00"}],text:""}]'
+      minecraft:enchantments: '{"minecraft:efficiency":5,"minecraft:fortune":3,"minecraft:mending":1,"minecraft:unbreaking":3}'
+      minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers"]}'
+      minecraft:custom_data: '{PublicBukkitValues:{"leveltools:leveltoolslevel":0,"leveltools:leveltoolsxp":10.6d}}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:bow
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:flame":1,"minecraft:infinity":1,"minecraft:power":5,"minecraft:unbreaking":3}'
+      minecraft:damage: '2'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:ender_pearl
+    count: 16
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:enchanted_golden_apple
+    count: 64
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:wind_charge
+    count: 45
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:elytra
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:mending":1,"minecraft:unbreaking":3}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:mace
+    count: 1
+    components:
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:density":5,"minecraft:mending":1,"minecraft:unbreaking":3,"minecraft:wind_burst":3}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:firework_rocket
+    count: 64
+    components:
+      minecraft:fireworks: '{flight_duration:3b}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:orange_shulker_box
+    count: 1
+    components:
+      minecraft:container: '[{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:0},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:1},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:2},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:3},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:4},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:5},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:6},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:7},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:8},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:9},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:10},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:11},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:12},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:13},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:14},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:15},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:16},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:17},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:18},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:19},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:20},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:21},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:22},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:23},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:24},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:25},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_fire_resistance"}},id:"minecraft:splash_potion"},slot:26}]'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:water_bucket
+    count: 1
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:splash_potion
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:long_strength"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:splash_potion
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:long_strength"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:splash_potion
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:long_swiftness"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:splash_potion
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:long_swiftness"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:shield
+    count: 1
+    components:
+      minecraft:banner_patterns: '[{color:"black",pattern:"minecraft:gradient"},{color:"blue",pattern:"minecraft:triangle_bottom"},{color:"light_blue",pattern:"minecraft:skull"}]'
+      minecraft:enchantments: '{"minecraft:mending":1,"minecraft:unbreaking":3}'
+      minecraft:custom_name: '"________"'
+      minecraft:base_color: '"blue"'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:arrow
+    count: 64
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:ender_pearl
+    count: 16
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:splash_potion
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:long_fire_resistance"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:yellow_shulker_box
+    count: 1
+    components:
+      minecraft:container: '[{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:0},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:1},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:2},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:3},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:4},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:5},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:6},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:7},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:8},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:9},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:10},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:11},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:12},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:13},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:14},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:15},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:16},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:17},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:18},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:19},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:20},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:21},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:22},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:23},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:24},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:25},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_strength"}},id:"minecraft:splash_potion"},slot:26}]'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:splash_potion
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:long_swiftness"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:light_blue_shulker_box
+    count: 1
+    components:
+      minecraft:container: '[{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:0},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:1},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:2},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:3},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:4},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:5},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:6},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:7},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:8},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:9},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:10},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:11},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:12},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:13},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:14},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:15},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:16},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:17},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:18},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:19},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:20},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:21},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:22},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:23},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:24},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:25},{item:{components:{"minecraft:potion_contents":{potion:"minecraft:long_swiftness"}},id:"minecraft:splash_potion"},slot:26}]'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:firework_rocket
+    count: 64
+    components:
+      minecraft:fireworks: '{flight_duration:3b}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:ender_chest
+    count: 64
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_pickaxe
+    count: 1
+    components:
+      minecraft:lore: '[{extra:["§§"],text:""},{extra:["§§",{bold:0b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"Level:
+        ",underlined:0b},{color:"gold",italic:0b,text:"0"}],text:""},{extra:["§§"],text:""},{extra:["§§",{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[",underlined:0b},{color:"yellow",italic:0b,text:"||||"},{color:"gray",italic:0b,text:"||||||||||||||||||||||||||||||||||||||||||||||"},{color:"dark_gray",italic:0b,text:"]
+        "},{color:"yellow",italic:0b,text:"7.70"},{color:"gold",italic:0b,text:"/"},{color:"yellow",italic:0b,text:"100.00"}],text:""}]'
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:efficiency":5,"minecraft:mending":1,"minecraft:silk_touch":1,"minecraft:unbreaking":3}'
+      minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers"]}'
+      minecraft:custom_data: '{PublicBukkitValues:{"leveltools:leveltoolslevel":0,"leveltools:leveltoolsxp":7.7d}}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_axe
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:efficiency":5,"minecraft:mending":1,"minecraft:sharpness":5,"minecraft:silk_touch":1,"minecraft:unbreaking":3}'
+      minecraft:custom_name: '"________"'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:ender_pearl
+    count: 16
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:enchanted_golden_apple
+    count: 64
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:wind_charge
+    count: 64
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:elytra
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:mending":1,"minecraft:unbreaking":3}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:trident
+    count: 1
+    components:
+      minecraft:lore: '[{color:"#1A5F38",translate:"Found in the Euphrates river"}]'
+      minecraft:enchantments: '{"minecraft:impaling":8,"minecraft:loyalty":5,"minecraft:riptide":3,"minecraft:unbreaking":2}'
+      minecraft:custom_name: '{bold:1b,color:"#5BB88C",italic:0b,translate:"Ancient
+        Mesopotamian Trident"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:firework_rocket
+    count: 64
+    components:
+      minecraft:fireworks: '{flight_duration:3b}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_boots
+    count: 1
+    components:
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:feather_falling":4,"minecraft:mending":1,"minecraft:protection":4,"minecraft:thorns":3,"minecraft:unbreaking":3}'
+      minecraft:trim: '{material:"minecraft:diamond",pattern:"minecraft:eye"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_leggings
+    count: 1
+    components:
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:mending":1,"minecraft:protection":4,"minecraft:swift_sneak":3,"minecraft:thorns":3,"minecraft:unbreaking":3}'
+      minecraft:trim: '{material:"minecraft:diamond",pattern:"minecraft:eye"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_chestplate
+    count: 1
+    components:
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:mending":1,"minecraft:protection":4,"minecraft:thorns":3,"minecraft:unbreaking":3}'
+      minecraft:trim: '{material:"minecraft:diamond",pattern:"minecraft:eye"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:netherite_helmet
+    count: 1
+    components:
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:aqua_affinity":1,"minecraft:mending":1,"minecraft:protection":4,"minecraft:respiration":3,"minecraft:thorns":3,"minecraft:unbreaking":3}'
+      minecraft:trim: '{material:"minecraft:diamond",pattern:"minecraft:eye"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4790
+    id: minecraft:totem_of_undying
+    count: 1
+    schema_version: 1
+  - null
+  - null

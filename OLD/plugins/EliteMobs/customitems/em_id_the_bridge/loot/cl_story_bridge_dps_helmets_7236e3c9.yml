@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&c[$difficulty] Stone Helmet'
+lore:
+- '&cAs black as the night.'
+- '&cSparkling in the darkness.'
+classLootFamily: DPS_HELMETS

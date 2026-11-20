@@ -1,0 +1,10 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:fire_resistance",
+    "morph:no_fall_damage",
+    "morph:normal_jump_boost"
+  ],
+  "settings": {}
+}

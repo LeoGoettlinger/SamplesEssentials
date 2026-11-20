@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&e[$difficulty] Undead''s Headgear'
+lore:
+- '&eRetrieved from the walking corpse.'
+classLootFamily: TANK_HELMETS

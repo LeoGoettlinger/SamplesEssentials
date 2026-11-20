@@ -1,0 +1,35 @@
+Name: Elite Crate Crate
+Description: []
+ItemProvider:
+  Provider: vanilla
+  Data:
+    Value: '{components:{"minecraft:custom_name":{bold:0b,extra:[{bold:0b,italic:0b,obfuscated:0b,strikethrough:0b,text:"Elite Crate Crate",underlined:0b}],italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b},"minecraft:tooltip_display":{hidden_components:["minecraft:creative_slot_lock","minecraft:attribute_modifiers","minecraft:unbreakable","minecraft:fox/variant","minecraft:debug_stick_state","minecraft:written_book_content","minecraft:max_stack_size","minecraft:rarity","minecraft:use_cooldown","minecraft:break_sound","minecraft:zombie_nautilus/variant","minecraft:sheep/color","minecraft:map_color","minecraft:blocks_attacks","minecraft:map_id","minecraft:chicken/variant","minecraft:equippable","minecraft:banner_patterns","minecraft:recipes","minecraft:container_loot","minecraft:cow/variant","minecraft:note_block_sound","minecraft:block_state","minecraft:cat/collar","minecraft:lodestone_tracker","minecraft:death_protection","minecraft:wolf/sound_variant","minecraft:mooshroom/variant","minecraft:provides_trim_material","minecraft:dye","minecraft:repairable","minecraft:jukebox_playable","minecraft:axolotl/variant","minecraft:max_damage","minecraft:use_remainder","minecraft:can_place_on","minecraft:charged_projectiles","minecraft:piercing_weapon","minecraft:fireworks","minecraft:cat/variant","minecraft:profile","minecraft:food","minecraft:salmon/size","minecraft:provides_banner_patterns","minecraft:minimum_attack_charge","minecraft:painting/variant","minecraft:swing_animation","minecraft:trim","minecraft:potion_duration_scale","minecraft:ominous_bottle_amplifier","minecraft:damage","minecraft:wolf/variant","minecraft:instrument","minecraft:map_decorations","minecraft:use_effects","minecraft:sulfur_cube_content","minecraft:glider","minecraft:tool","minecraft:kinetic_weapon","minecraft:bundle_contents","minecraft:horse/variant","minecraft:consumable","minecraft:cow/sound_variant","minecraft:stored_enchantments","minecraft:container","minecraft:villager/variant","minecraft:can_break","minecraft:wolf/collar","minecraft:firework_explosion","minecraft:bees","minecraft:pig/variant","minecraft:attack_range","minecraft:custom_data","minecraft:rabbit/variant","minecraft:bucket_entity_data","minecraft:tropical_fish/base_color","minecraft:map_post_processing","minecraft:damage_type","minecraft:writable_book_content","minecraft:shulker/color","minecraft:enchantment_glint_override","minecraft:parrot/variant","minecraft:cat/sound_variant","minecraft:dyed_color","minecraft:tropical_fish/pattern_color","minecraft:enchantments","minecraft:lock","minecraft:enchantable","minecraft:pig/sound_variant","minecraft:entity_data","minecraft:block_entity_data","minecraft:base_color","minecraft:intangible_projectile","minecraft:repair_cost","minecraft:pot_decorations","minecraft:tropical_fish/pattern","minecraft:llama/variant","minecraft:weapon","minecraft:damage_resistant","minecraft:potion_contents","minecraft:suspicious_stew_effects","minecraft:frog/variant","minecraft:chicken/sound_variant","minecraft:additional_trade_cost"]}},count:1,id:"minecraft:chest"}'
+    DataVersion: 4890
+ItemStackable: false
+Permission_Required: false
+Preview:
+  Enabled: true
+  Id: default
+Animation:
+  Enabled: true
+  Id: default
+OpeningCooldown:
+  Enabled: false
+  Value: 0
+OpeningLimits:
+  Amount: 0
+Block:
+  Positions: []
+  Pushback:
+    Enabled: true
+  Hologram:
+    Enabled: true
+    Template: default
+    Y_Offset: 0.0
+  Effect:
+    Enabled: false
+    Model: helix
+    Particle:
+      Name: CLOUD
+Milestones:
+  Repeatable: false

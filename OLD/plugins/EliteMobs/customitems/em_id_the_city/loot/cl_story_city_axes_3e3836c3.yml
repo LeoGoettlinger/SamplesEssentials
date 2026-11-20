@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&7Gate Cleaver'
+lore:
+- '&7The city sealed its gates from within.'

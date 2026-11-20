@@ -1,0 +1,25 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&fRuined Dwarven Diary'
+material: PAPER
+lore:
+- '&fThis new land we have discovered is astounding.'
+- '&fOre and crystals beyond our wildest dreams'
+- '&fabound! Its inhabitants are truly terrifying'
+- '&fand monstrous, but nothing our elite forces'
+- '&fcan''t handle. The risk of mining here'
+- '&fis well worth the reward and more! We need'
+- '&fto establish an outpost here as soon as possible.'
+- '&fI have already sent messengers to the'
+- '&fpalace to dispatch builders and workers. We'
+- '&fhave spotted some sort of building or temple'
+- '&fin the distance; I will be sending a small'
+- '&fforce to explore it...'
+- '&f...I was wrong, we are all doomed. Our greed'
+- '&fhas clouded our judgment. Our last strength'
+- '&fwill be spent on creating a construct that'
+- '&fshall guard the way to the temple. Nothing'
+- '&fmust be allowed to reach that evil again!'
+scalability: scalable
+itemType: unique

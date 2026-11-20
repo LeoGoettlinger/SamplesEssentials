@@ -1,0 +1,108 @@
+gui-name: '&eSmithing'
+rows: 6
+permission: ''
+items:
+- material: SMITHING_TABLE
+  name: '&eSmithing Table'
+  price: 120
+  amount: 1
+  sell-price: 84
+- material: ANVIL
+  name: '&7Anvil'
+  price: 15000
+  amount: 1
+  sell-price: 10500
+- material: CHIPPED_ANVIL
+  name: '&7Chipped Anvil'
+  price: 10000
+  amount: 1
+  sell-price: 7800
+- material: NETHERITE_UPGRADE_SMITHING_TEMPLATE
+  name: '&8Netherite Upgrade Template'
+  price: 400000
+  sell-price: 1000
+- material: SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&fSentry Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: VEX_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&5Vex Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: WILD_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&2Wild Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: COAST_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&bCoast Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: DUNE_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&6Dune Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&eWayfinder Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: RIB_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&cRib Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: TIDE_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&9Tide Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: WARD_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&dWard Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&7Silence Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&cSnout Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: EYE_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&5Eye Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&bSpire Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: HOST_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&8Host Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: RAISER_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&6Raiser Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&fShaper Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: FLOW_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&dFlow Armor Trim'
+  price: 3000
+  sell-price: 2100
+  amount: 1

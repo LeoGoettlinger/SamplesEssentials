@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&c[$difficulty] Bone Crusher'
+lore:
+- '&cA brutal mace fashioned from'
+- '&cthe bones of defeated beasts.'
+- '&cIt hungers for more.'

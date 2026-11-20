@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&f[$difficulty] Expedition Leggings'
+lore:
+- '&fThe perfect companion when you'
+- '&fare out there expeditioning.'
+classLootFamily: DPS_LEGGINGS

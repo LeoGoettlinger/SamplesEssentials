@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&cBandmaster Baton'
+lore:
+- '&cToo long for a conductor.'
+- '&cJust right for keeping the band at a distance.'
+weaponType: STAVES

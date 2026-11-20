@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Pier Footing'
+lore:
+- '&7They stood where the bridge met the earth.'
+classLootFamily: TANK_BOOTS

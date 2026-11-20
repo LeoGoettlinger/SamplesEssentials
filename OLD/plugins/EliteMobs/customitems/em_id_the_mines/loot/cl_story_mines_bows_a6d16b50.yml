@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&7Sinew String'
+lore:
+- '&7The bow was bound before its maker found wood.'

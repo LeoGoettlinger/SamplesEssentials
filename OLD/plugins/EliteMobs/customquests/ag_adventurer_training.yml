@@ -1,0 +1,57 @@
+isEnabled: true
+customRewards:
+- filename=ag_adventurer_helmet.yml:amount=1:chance=1
+- filename=ag_adventurer_chestplate.yml:amount=1:chance=1
+- filename=ag_adventurer_leggings.yml:amount=1:chance=1
+- filename=ag_adventurer_boots.yml:amount=1:chance=1
+- filename=ag_adventurer_sword.yml:amount=1:chance=1
+- filename=ag_adventurer_axe.yml:amount=1:chance=1
+- filename=ag_adventurer_bow.yml:amount=1:chance=1
+- filename=ag_adventurer_crossbow.yml:amount=1:chance=1
+- filename=ag_adventurer_trident.yml:amount=1:chance=1
+- filename=ag_adventurer_scythe.yml:amount=1:chance=1
+- filename=ag_adventurer_mace.yml:amount=1:chance=1
+- filename=ag_adventurer_spear.yml:amount=1:chance=1
+- filename=ag_adventurer_staff.yml:amount=1:chance=1
+- filename=ag_adventurer_wand.yml:amount=1:chance=1
+questAcceptPermission: elitequest.ag_welcome_quest_1.yml
+questLockoutPermission: elitequest.ag_adventurer_training.yml
+name: '&2Your First Class'
+questLore:
+- '&aTalk to Rowan, the Adventurer Instructor, and complete his trial.'
+- '&aReturn to Casus after unlocking the Adventurer class.'
+- '&aComplete this quest to earn level-one armor and one of every weapon type.'
+temporaryPermissions: []
+questAcceptDialog:
+- '&8[&aCasus&8]&f Now that you know your way around the guild, it is time to unlock
+  your first EliteMobs class.'
+- Look for Rowan, the Adventurer Instructor, seated at a large table inside the main
+  building, near Gillian, the Guild Attendant.
+- His trial costs one Elite Coin. Once you have unlocked the Adventurer class, return
+  to me to collect your equipment.
+questCompleteMessage:
+- '&8[&aCasus&8]&f Well done, Adventurer! Here is your armor and a weapon of every
+  type.'
+- Try them all and see what suits you! Adventurers are proficient with every weapon
+  type.
+- 'Talk to me again for two new journeys: the Story Mode dungeons and the Primis expedition.'
+questCompleteCommands: []
+turnInNPC: guide_1.yml
+questLevel: 1
+customObjectives:
+  Objective2:
+    objectiveType: CLASS_UNLOCK
+    filename: class_trainer_adventurer.yml
+    class: adventurer
+  Objective1:
+    npcName: Rowan, Adventurer Instructor
+    filename: class_trainer_adventurer.yml
+    objectiveType: DIALOG
+    dialog:
+    - '&8[&aRowan&8]&f Ready to become an Adventurer and unlock your first EliteMobs
+      class? Talk to me again to open your training menu.'
+    - Select the Challenge Instructor. It costs one Elite Coin and takes place in
+      the Wood League arena.
+    - Defeat the instructor to unlock the Adventurer starter class, then return to
+      Casus for your equipment.
+    location: inside the main building

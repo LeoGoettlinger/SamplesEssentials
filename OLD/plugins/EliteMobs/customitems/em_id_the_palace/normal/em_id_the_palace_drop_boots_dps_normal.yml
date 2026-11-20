@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&f[Normal] Old Stone Walkers'
+material: NETHERITE_BOOTS
+level: 35
+lore:
+- '&fExcellent for when you''re in a hurry.'
+enchantments:
+- DAMAGE_UNDEAD,5
+- DAMAGE_ALL,4
+- DAMAGE_ARTHROPODS,4
+- DURABILITY,3
+potionEffects:
+- SPEED,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

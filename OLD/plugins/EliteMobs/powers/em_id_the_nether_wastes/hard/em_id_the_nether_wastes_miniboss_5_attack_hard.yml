@@ -1,0 +1,484 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  SpikeTrap:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 22
+      scripts:
+      - SpikeWarning
+      - SpikeLaunch
+    - action: RUN_SCRIPT
+      wait: 44
+      scripts:
+      - SpikeWarning2
+      - SpikeLaunch2
+    - action: RUN_SCRIPT
+      wait: 66
+      scripts:
+      - SpikeWarning3
+      - SpikeLaunch3
+    - action: RUN_SCRIPT
+      wait: 88
+      scripts:
+      - SpikeWarning4
+      - SpikeLaunch4
+    - action: RUN_SCRIPT
+      wait: 110
+      scripts:
+      - SpikeWarning5
+      - SpikeLaunch5
+    - action: RUN_SCRIPT
+      wait: 130
+      scripts:
+      - SpikeWarning6
+      - SpikeLaunch6
+    Cooldowns:
+      local: 200
+      global: 60
+  SpikeWarning:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+        amount: 0
+        x: 0
+        y: 1
+        z: 0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 10
+      times: 4
+    - action: PLAY_SOUND
+      sValue: minecraft:block.stone_pressure_plate.click_on
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 5
+      times: 8
+  SpikeLaunch:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 4
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: DAMAGE
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      multiplier: 1
+      wait: 40
+    - action: PLACE_BLOCK
+      material: COAL_BLOCK
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 42
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.iron_golem.attack
+      Target:
+        targetType: ZONE_FULL
+      pitch: 0.5
+      wait: 42
+    - action: PUSH
+      vValue: 0,1.2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 80
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 45
+  SpikeWarning2:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+        amount: 0
+        x: 0
+        y: 1
+        z: 0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 10
+      times: 4
+    - action: PLAY_SOUND
+      sValue: minecraft:block.stone_pressure_plate.click_on
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 5
+      times: 8
+  SpikeLaunch2:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 4
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: DAMAGE
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      multiplier: 1
+      wait: 40
+    - action: PLACE_BLOCK
+      material: COAL_BLOCK
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 42
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.iron_golem.attack
+      Target:
+        targetType: ZONE_FULL
+      pitch: 0.5
+      wait: 42
+    - action: PUSH
+      vValue: 0,1.2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 80
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 45
+  SpikeWarning3:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+        amount: 0
+        x: 0
+        y: 1
+        z: 0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 10
+      times: 4
+    - action: PLAY_SOUND
+      sValue: minecraft:block.stone_pressure_plate.click_on
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 5
+      times: 8
+  SpikeLaunch3:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 4
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: DAMAGE
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      multiplier: 1
+      wait: 40
+    - action: PLACE_BLOCK
+      material: COAL_BLOCK
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 42
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.iron_golem.attack
+      Target:
+        targetType: ZONE_FULL
+      pitch: 0.5
+      wait: 42
+    - action: PUSH
+      vValue: 0,1.2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 80
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 45
+  SpikeWarning4:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+        amount: 0
+        x: 0
+        y: 1
+        z: 0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 10
+      times: 4
+    - action: PLAY_SOUND
+      sValue: minecraft:block.stone_pressure_plate.click_on
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 5
+      times: 8
+  SpikeLaunch4:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 4
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: DAMAGE
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      multiplier: 1
+      wait: 40
+    - action: PLACE_BLOCK
+      material: COAL_BLOCK
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 42
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.iron_golem.attack
+      Target:
+        targetType: ZONE_FULL
+      pitch: 0.5
+      wait: 42
+    - action: PUSH
+      vValue: 0,1.2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 80
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 45
+  SpikeWarning5:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+        amount: 0
+        x: 0
+        y: 1
+        z: 0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 10
+      times: 4
+    - action: PLAY_SOUND
+      sValue: minecraft:block.stone_pressure_plate.click_on
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 5
+      times: 8
+  SpikeLaunch5:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 4
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: DAMAGE
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      multiplier: 1
+      wait: 40
+    - action: PLACE_BLOCK
+      material: COAL_BLOCK
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 42
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.iron_golem.attack
+      Target:
+        targetType: ZONE_FULL
+      pitch: 0.5
+      wait: 42
+    - action: PUSH
+      vValue: 0,1.2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 80
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 45
+  SpikeWarning6:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+        amount: 0
+        x: 0
+        y: 1
+        z: 0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 10
+      times: 4
+    - action: PLAY_SOUND
+      sValue: minecraft:block.stone_pressure_plate.click_on
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 5
+      times: 8
+  SpikeLaunch6:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 4
+      Target:
+        targetType: DIRECT_TARGET
+        track: false
+    Actions:
+    - action: DAMAGE
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      multiplier: 1
+      wait: 40
+    - action: PLACE_BLOCK
+      material: COAL_BLOCK
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 42
+    - action: PLAY_SOUND
+      sValue: minecraft:entity.iron_golem.attack
+      Target:
+        targetType: ZONE_FULL
+      pitch: 0.5
+      wait: 42
+    - action: PUSH
+      vValue: 0,1.2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 80
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 45

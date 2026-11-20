@@ -1,0 +1,18 @@
+isEnabled: true
+material: NETHERITE_LEGGINGS
+name: '&d[Mythical] Void Bell Leggings'
+lore:
+- '&dThese leggings chafe as you walk.'
+- '&dSomething about them seems to resonate'
+- '&dwith the nether.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,8
+- DAMAGE_ALL,8
+- DAMAGE_ARTHROPODS,8
+- DAMAGE_UNDEAD,8
+- THORNS,3
+potionEffects:
+- SPEED,1,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

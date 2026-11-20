@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Pitwall Plate'
+lore:
+- '&7The front took the weight of the falling debris.'
+classLootFamily: TANK_CHESTPLATES

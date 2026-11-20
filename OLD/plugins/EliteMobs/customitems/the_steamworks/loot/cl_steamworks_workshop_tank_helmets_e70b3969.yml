@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&bWorkshop Browplate'
+lore:
+- '&bA second plate covers the first plate''s largest dent.'
+- '&bA third is waiting on the workbench.'
+classLootFamily: TANK_HELMETS

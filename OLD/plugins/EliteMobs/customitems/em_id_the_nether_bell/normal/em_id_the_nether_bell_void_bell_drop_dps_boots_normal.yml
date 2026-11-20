@@ -1,0 +1,17 @@
+potionEffects: []
+isEnabled: true
+material: NETHERITE_BOOTS
+name: '&d[Normal] Void Bell Boots'
+lore:
+- '&dThese boots make a lot of noise as you walk.'
+- '&dYou think you can hear ringing coming from them.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- DAMAGE_ALL,4
+- DAMAGE_ARTHROPODS,4
+- DAMAGE_UNDEAD,4
+- THORNS,1
+- DEPTH_STRIDER,1
+scalability: scalable
+level: 55
+itemType: unique

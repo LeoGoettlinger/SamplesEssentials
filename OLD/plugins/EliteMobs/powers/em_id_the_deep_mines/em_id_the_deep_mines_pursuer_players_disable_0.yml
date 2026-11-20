@@ -1,0 +1,110 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: TELEPORT
+      FinalTarget:
+        targetType: SELF
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 100
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 5
+      duration: 20
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 100
+    - action: MESSAGE
+      sValue: '&d[Nether Fiend] &fHit me again! Do it!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 100
+    - action: RUN_SCRIPT
+      wait: 10
+      scripts:
+      - One
+      onlyRunOneScript: true
+    Cooldowns:
+      local: 500
+      global: 50
+  One:
+    Zone:
+      shape: SPHERE
+      radius: 3
+      borderRadius: 2
+      Target:
+        targetType: SELF
+        offset: 0,5,0
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 6
+      duration: 20
+      Target:
+        targetType: DIRECT_TARGET
+    - action: PLACE_BLOCK
+      material: GLASS
+      duration: 200
+      Target:
+        targetType: ZONE_BORDER
+    - action: TELEPORT
+      FinalTarget:
+        targetType: SELF
+        offset: 0,5,0
+      Target:
+        targetType: DIRECT_TARGET
+      wait: 5
+  Two:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 99
+      duration: 200
+      Target:
+        targetType: DIRECT_TARGET
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 99
+      duration: 200
+      Target:
+        targetType: DIRECT_TARGET
+    - action: SET_MOB_AI
+      bValue: false
+      duration: 10
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      FinalTarget:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      Target:
+        targetType: SELF
+      wait: 2
+  Three:
+    Zone:
+      shape: CYLINDER
+      radius: 10
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: TELEPORT
+      FinalTarget:
+        targetType: ZONE_FULL
+        track: true
+        coverage: 0.05
+      Target:
+        targetType: DIRECT_TARGET
+      repeatEvery: 10
+      times: 20
+    - action: TELEPORT
+      wait: 210
+      FinalTarget:
+        targetType: SELF
+        track: true
+      Target:
+        targetType: DIRECT_TARGET

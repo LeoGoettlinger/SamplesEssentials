@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&2[Hard] Flame Kicks'
+material: DIAMOND_BOOTS
+level: 20
+lore:
+- '&2Excellent for kicking in skulls!'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,7
+- PROTECTION_FALL,4
+- PROTECTION_PROJECTILE,3
+- elitemobs:loud_strikes,2
+potionEffects:
+- JUMP,2,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

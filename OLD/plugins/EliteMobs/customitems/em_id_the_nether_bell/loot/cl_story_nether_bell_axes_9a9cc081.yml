@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&f[$difficulty] Void-Forged Axe'
+lore:
+- '&fCrafted long ago'
+- '&fin the depths of the Nether,'
+- '&finfused with void energy.'

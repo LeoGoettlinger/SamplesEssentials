@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&4Skull Crusher'
+material: MACE
+lore:
+- '&cOne swing is all it takes'
+- '&cto shatter bone.'
+enchantments:
+- DAMAGE_ALL,6
+- KNOCKBACK,3
+- DAMAGE_UNDEAD,4
+potionEffects:
+- WITHER,1,target,onHit
+- SLOW,0,target,onHit
+itemType: unique
+scalability: scalable
+soulbound: true

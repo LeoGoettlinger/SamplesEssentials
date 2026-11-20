@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&bFurnace Apron'
+lore:
+- '&bThe clasps were replaced long before the plates.'
+- '&bNobody wanted to be the one to test new plates.'
+classLootFamily: TANK_CHESTPLATES

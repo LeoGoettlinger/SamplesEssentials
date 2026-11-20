@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&dRoyal Challenge'
+lore:
+- '&dThe crest remains bright beneath the battle scars.'
+classLootFamily: DPS_CHESTPLATES

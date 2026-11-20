@@ -1,0 +1,16 @@
+isEnabled: true
+material: DIAMOND_AXE
+name: '&e[Mythical] Void Chipper'
+lore:
+- '&eA tool capable of coaxing life'
+- '&eout of even the most barren'
+- '&elandscapes.'
+enchantments:
+- DURABILITY,3
+- MENDING,1
+- EFFICIENCY,5
+potionEffects:
+- SPEED,1,self,continuous
+level: 55
+itemType: unique
+scalability: scalable

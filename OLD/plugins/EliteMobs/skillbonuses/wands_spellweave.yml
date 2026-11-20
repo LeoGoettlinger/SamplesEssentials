@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&dSpellweave'
+description:
+- '&7Consecutive missiles on one'
+- '&7target build damage. Stacks up to 8x.'
+skillType: WANDS
+bonusType: STACKING
+unlockTier: 2
+baseValue: 1.0
+scalingPerLevel: 4.0E-4
+maxStacks: 8
+stackBonus: 0.03
+displayMaterial: STRING
+loreTemplates:
+- '&7Per stack: &f+$bonusPerStack% damage'
+- '&7Max stacks: &f$maxStacks'
+- '&8Resets on a new target or after 3s'
+formattedBonusTemplate: +$bonusPerStack% per stack (max $maxStacks)

@@ -1,0 +1,14 @@
+isEnabled: true
+material: IRON_LEGGINGS
+name: '&f[Normal] Tainted Leggings'
+lore:
+- '&fOnce a fine piece of armor'
+- '&fnow corrupted by the void.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,1
+- PROTECTION_PROJECTILE,2
+- elitemobs:loud_strikes,1
+potionEffects: []
+scalability: scalable
+level: 55
+itemType: unique

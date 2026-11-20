@@ -1,0 +1,18 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&eStrange Note'
+material: PAPER
+lore:
+- '&eWith the gates now lowered, the guardian'
+- '&eis no longer a threat. It seems to have'
+- '&egiven up on trying to break down the gates'
+- '&eand has returned to its original location.'
+- '&eI sense a lot of life above me. They do'
+- '&enot seem to be aware of this chamber.'
+- '&eI need to start weaving. The dwarven souls'
+- '&eI have consumed will only allow me to'
+- '&ecreate so much before I need to replenish'
+- '&emy supplies…'
+scalability: scalable
+itemType: unique

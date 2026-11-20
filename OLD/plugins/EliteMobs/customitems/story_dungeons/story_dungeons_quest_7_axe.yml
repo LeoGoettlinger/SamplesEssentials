@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&dCutter of Eternity'
+material: NETHERITE_AXE
+level: 45
+lore:
+- '&dAwarded to those who'
+- '&ddid the heavy lifting.'
+enchantments:
+- DAMAGE_ALL,6
+- DAMAGE_ARTHROPODS,5
+- DAMAGE_UNDEAD,4
+- MENDING,1
+- DURABILITY,1
+potionEffects:
+- WITHER,1,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,548 @@
+gui-name: '&8Premium & Material Shop'
+rows: 6
+permission: ''
+items:
+- material: COAL
+  name: '&8Coal'
+  price: 70
+  sell-price: 50
+  amount: 8
+- material: RAW_IRON
+  name: '&fRaw Iron'
+  price: 65
+  sell-price: 46
+  amount: 8
+- material: RAW_GOLD
+  name: '&6Raw Gold'
+  price: 150
+  sell-price: 105
+  amount: 8
+- material: RAW_COPPER
+  name: '&6Raw Copper'
+  price: 20
+  sell-price: 14
+  amount: 16
+- material: COPPER_INGOT
+  name: '&6Copper Ingot'
+  price: 40
+  sell-price: 28
+  amount: 8
+- material: IRON_INGOT
+  name: '&fIron Ingot'
+  price: 130
+  sell-price: 91
+  amount: 8
+- material: GOLD_INGOT
+  name: '&6Gold Ingot'
+  price: 300
+  sell-price: 210
+  amount: 8
+- material: NETHERITE_INGOT
+  name: '&8Netherite Ingot'
+  price: 10000
+  sell-price: 7000
+  amount: 1
+- material: NETHERITE_SCRAP
+  name: '&8Netherite Scrap'
+  price: 3500
+  sell-price: 2450
+  amount: 1
+- material: REDSTONE
+  name: '&cRedstone'
+  price: 70
+  sell-price: 49
+  amount: 8
+- material: LAPIS_LAZULI
+  name: '&9Lapis Lazuli'
+  price: 50
+  sell-price: 35
+  amount: 8
+- material: EMERALD
+  name: '&aEmerald'
+  price: 600
+  sell-price: 420
+  amount: 8
+- material: DIAMOND
+  name: '&bDiamond'
+  price: 500
+  sell-price: 350
+  amount: 8
+- material: QUARTZ
+  name: '&fNether Quartz'
+  price: 30
+  sell-price: 21
+  amount: 16
+- material: AMETHYST_SHARD
+  name: '&5Amethyst Shard'
+  price: 60
+  sell-price: 42
+  amount: 8
+- material: NETHERITE_HELMET
+  name: '&8Netherite Helmet'
+  price: 50000
+  amount: 1
+  sell-price: 35000
+- material: NETHERITE_CHESTPLATE
+  name: '&8Netherite Chestplate'
+  price: 80000
+  amount: 1
+  sell-price: 56000
+- material: NETHERITE_LEGGINGS
+  name: '&8Netherite Leggings'
+  price: 70000
+  amount: 1
+  sell-price: 49000
+- material: NETHERITE_BOOTS
+  name: '&8Netherite Boots'
+  price: 40000
+  amount: 1
+  sell-price: 28000
+- material: NETHERITE_SWORD
+  name: '&8Netherite Sword'
+  price: 30000
+  amount: 1
+  sell-price: 21000
+- material: NETHERITE_PICKAXE
+  name: '&8Netherite Pickaxe'
+  price: 30000
+  amount: 1
+  sell-price: 21000
+- material: NETHERITE_AXE
+  name: '&8Netherite Axe'
+  price: 30000
+  amount: 1
+  sell-price: 21000
+- material: NETHERITE_SHOVEL
+  name: '&8Netherite Shovel'
+  price: 20000
+  amount: 1
+  sell-price: 14000
+- material: NETHERITE_HOE
+  name: '&8Netherite Hoe'
+  price: 20000
+  amount: 1
+  sell-price: 14000
+- material: TOTEM_OF_UNDYING
+  price: 20000
+  amount: 1
+  sell-price: 18000
+- material: DIAMOND_HELMET
+  name: '&bDiamond Helmet'
+  price: 8000
+  amount: 1
+  sell-price: 5600
+- material: DIAMOND_CHESTPLATE
+  name: '&bDiamond Chestplate'
+  price: 13000
+  amount: 1
+  sell-price: 9100
+- material: DIAMOND_LEGGINGS
+  name: '&bDiamond Leggings'
+  price: 11000
+  amount: 1
+  sell-price: 7700
+- material: DIAMOND_BOOTS
+  name: '&bDiamond Boots'
+  price: 6500
+  amount: 1
+  sell-price: 4550
+- material: DIAMOND_SWORD
+  name: '&bDiamond Sword'
+  price: 7500
+  amount: 1
+  sell-price: 5250
+- material: DIAMOND_PICKAXE
+  name: '&bDiamond Pickaxe'
+  price: 7500
+  amount: 1
+  sell-price: 5250
+- material: DIAMOND_AXE
+  name: '&bDiamond Axe'
+  price: 7500
+  amount: 1
+  sell-price: 5250
+- material: DIAMOND_SHOVEL
+  name: '&bDiamond Shovel'
+  price: 5500
+  amount: 1
+  sell-price: 3850
+- material: DIAMOND_HOE
+  name: '&bDiamond Hoe'
+  price: 5500
+  amount: 1
+  sell-price: 3850
+- material: IRON_HELMET
+  name: '&fIron Helmet'
+  price: 2000
+  amount: 1
+  sell-price: 1400
+- material: IRON_CHESTPLATE
+  name: '&fIron Chestplate'
+  price: 3200
+  amount: 1
+  sell-price: 2240
+- material: IRON_LEGGINGS
+  name: '&fIron Leggings'
+  price: 2800
+  amount: 1
+  sell-price: 1960
+- material: IRON_BOOTS
+  name: '&fIron Boots'
+  price: 1600
+  amount: 1
+  sell-price: 1120
+- material: IRON_SWORD
+  name: '&fIron Sword'
+  price: 1800
+  amount: 1
+  sell-price: 1260
+- material: IRON_PICKAXE
+  name: '&fIron Pickaxe'
+  price: 1800
+  amount: 1
+  sell-price: 1260
+- material: IRON_AXE
+  name: '&fIron Axe'
+  price: 1800
+  amount: 1
+  sell-price: 1260
+- material: IRON_SHOVEL
+  name: '&fIron Shovel'
+  price: 1200
+  amount: 1
+  sell-price: 840
+- material: GOLDEN_HELMET
+  name: '&6Golden Helmet'
+  price: 4500
+  amount: 1
+  sell-price: 3150
+- material: GOLDEN_CHESTPLATE
+  name: '&6Golden Chestplate'
+  price: 7200
+  amount: 1
+  sell-price: 5040
+- material: GOLDEN_LEGGINGS
+  name: '&6Golden Leggings'
+  price: 6300
+  amount: 1
+  sell-price: 4410
+- material: GOLDEN_BOOTS
+  name: '&6Golden Boots'
+  price: 3600
+  amount: 1
+  sell-price: 2520
+- material: BOW
+  name: '&eBow'
+  price: 1500
+  amount: 1
+  sell-price: 1050
+- material: CROSSBOW
+  name: '&eCrossbow'
+  price: 2000
+  amount: 1
+  sell-price: 1400
+- material: SHIELD
+  name: '&eShield'
+  price: 800
+  amount: 1
+  sell-price: 560
+- material: TRIDENT
+  name: '&bTrident'
+  price: 50000
+  sell-price: 35000
+  amount: 1
+- material: MACE
+  name: '&dMace'
+  price: 60000
+  amount: 1
+  sell-price: 42000
+- material: TOTEM_OF_UNDYING
+  name: '&eTotem of Undying'
+  price: 9000
+  sell-price: 6300
+  amount: 1
+- material: BEACON
+  name: '&bBeacon'
+  price: 25000
+  amount: 1
+  sell-price: 17500
+- material: CONDUIT
+  name: '&bConduit'
+  price: 35000
+  amount: 1
+  sell-price: 24500
+- material: ENDER_CHEST
+  name: '&5Ender Chest'
+  price: 500
+  amount: 1
+  sell-price: 350
+- material: SHULKER_BOX
+  name: '&dShulker Box'
+  price: 20000
+  amount: 1
+  sell-price: 14000
+#- material: ELYTRA
+#  name: '&bElytra'
+#  price: 95000
+#  sell-price: 66500
+#  amount: 1
+- material: HEART_OF_THE_SEA
+  name: '&cHeart of the Sea'
+  price: 20000
+  sell-price: 14000
+  amount: 1
+- material: ANCIENT_DEBRIS
+  name: '&8Ancient Debris'
+  price: 2500
+  sell-price: 1750
+  amount: 1
+- material: WHITE_SHULKER_BOX
+  name: '&fWhite Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: ORANGE_SHULKER_BOX
+  name: '&6Orange Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: MAGENTA_SHULKER_BOX
+  name: '&dMagenta Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: LIGHT_BLUE_SHULKER_BOX
+  name: '&bLight_Blue Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: YELLOW_SHULKER_BOX
+  name: '&eYellow Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: LIME_SHULKER_BOX
+  name: '&aLime Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: PINK_SHULKER_BOX
+  name: '&dPink Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: GRAY_SHULKER_BOX
+  name: '&8Gray Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: LIGHT_GRAY_SHULKER_BOX
+  name: '&7Light_Gray Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: CYAN_SHULKER_BOX
+  name: '&3Cyan Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: PURPLE_SHULKER_BOX
+  name: '&5Purple Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: BLUE_SHULKER_BOX
+  name: '&9Blue Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: BROWN_SHULKER_BOX
+  name: '&6Brown Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: GREEN_SHULKER_BOX
+  name: '&2Green Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: RED_SHULKER_BOX
+  name: '&cRed Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: BLACK_SHULKER_BOX
+  name: '&8Black Shulker Box'
+  price: 22000
+  amount: 1
+  sell-price: 15400
+- material: MUSIC_DISC_13
+  name: '&dMusic Disc - 13'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_CAT
+  name: '&dMusic Disc - Cat'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_BLOCKS
+  name: '&dMusic Disc - Blocks'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_CHIRP
+  name: '&dMusic Disc - Chirp'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_FAR
+  name: '&dMusic Disc - Far'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_MALL
+  name: '&dMusic Disc - Mall'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_MELLOHI
+  name: '&dMusic Disc - Mellohi'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_STAL
+  name: '&dMusic Disc - Stal'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_STRAD
+  name: '&dMusic Disc - Strad'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_WARD
+  name: '&dMusic Disc - Ward'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_11
+  name: '&dMusic Disc - 11'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_WAIT
+  name: '&dMusic Disc - Wait'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MUSIC_DISC_PIGSTEP
+  name: '&dMusic Disc - Pigstep'
+  price: 8000
+  sell-price: 5600
+  amount: 1
+- material: MUSIC_DISC_OTHERSIDE
+  name: '&dMusic Disc - Otherside'
+  price: 8000
+  sell-price: 5600
+  amount: 1
+- material: MUSIC_DISC_5
+  name: '&dMusic Disc - 5'
+  price: 8000
+  sell-price: 5600
+  amount: 1
+- material: MUSIC_DISC_RELIC
+  name: '&dMusic Disc - Relic'
+  price: 15000
+  sell-price: 10500
+  amount: 1
+- material: MUSIC_DISC_PRECIPICE
+  name: '&dMusic Disc - Precipice'
+  price: 15000
+  sell-price: 10500
+  amount: 1
+- material: PIGLIN_BANNER_PATTERN
+  name: '&6Piglin Banner Pattern'
+  price: 5000
+  sell-price: 3500
+  amount: 1
+- material: FLOWER_BANNER_PATTERN
+  name: '&dFlower Banner Pattern'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: CREEPER_BANNER_PATTERN
+  name: '&2Creeper Banner Pattern'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: SKULL_BANNER_PATTERN
+  name: '&8Skull Banner Pattern'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: MOJANG_BANNER_PATTERN
+  name: '&eMojang Banner Pattern'
+  price: 5000
+  sell-price: 3500
+  amount: 1
+- material: GLOBE_BANNER_PATTERN
+  name: '&bGlobe Banner Pattern'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: VILLAGER_SPAWN_EGG
+  name: '&aVillager Spawn Egg'
+  price: 5000
+  sell-price: 3500
+  amount: 1
+- material: WOLF_SPAWN_EGG
+  name: '&aWolf Spawn Egg'
+  price: 2000
+  sell-price: 1400
+  amount: 1
+- material: CAT_SPAWN_EGG
+  name: '&aCat Spawn Egg'
+  price: 2000
+  sell-price: 1400
+  amount: 1
+- material: PARROT_SPAWN_EGG
+  name: '&aParrot Spawn Egg'
+  price: 2500
+  sell-price: 1750
+  amount: 1
+- material: HORSE_SPAWN_EGG
+  name: '&aHorse Spawn Egg'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: AXOLOTL_SPAWN_EGG
+  name: '&dAxolotl Spawn Egg'
+  price: 3500
+  sell-price: 2450
+  amount: 1
+- material: ALLAY_SPAWN_EGG
+  name: '&bAllay Spawn Egg'
+  price: 5000
+  sell-price: 3500
+  amount: 1
+- material: FROG_SPAWN_EGG
+  name: '&2Frog Spawn Egg'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+- material: SNIFFER_SPAWN_EGG
+  name: '&dSniffer Spawn Egg'
+  price: 8000
+  sell-price: 5600
+  amount: 1
+- material: CAMEL_SPAWN_EGG
+  name: '&6Camel Spawn Egg'
+  price: 4000
+  sell-price: 2800
+  amount: 1
+- material: ARMADILLO_SPAWN_EGG
+  name: '&6Armadillo Spawn Egg'
+  price: 5000
+  sell-price: 3500
+  amount: 1

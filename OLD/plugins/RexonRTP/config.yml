@@ -1,0 +1,146 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║                      ʀᴇxᴏɴ ʀᴛᴘ ᴄᴏɴꜰɪɢ                        ║
+# ║                     ʙʏ ᴠʏʀᴇxᴇɴ ᴠ2.0.0                        ║
+# ║                 ᴀᴅᴠᴀɴᴄᴇᴅ ᴍᴏᴠᴇᴍᴇɴᴛ ᴅᴇᴛᴇᴄᴛɪᴏɴ                  ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# ʀᴛᴘ ᴘʟᴜɢɪɴ ᴄᴏɴꜰɪɢᴜʀᴀᴛɪᴏɴ
+rtp:
+  # ᴄᴏᴏʟᴅᴏᴡɴ ꜱᴇᴛᴛɪɴɢꜱ (ɪɴ ꜱᴇᴄᴏɴᴅꜱ)
+  cooldown:
+    default: 1000      # ᴅᴇꜰᴀᴜʟᴛ ᴄᴏᴏʟᴅᴏᴡɴ ꜰᴏʀ ʀᴇɢᴜʟᴀʀ ᴘʟᴀʏᴇʀꜱ
+    premium: 500       # ʀᴇᴅᴜᴄᴇᴅ ᴄᴏᴏʟᴅᴏᴡɴ ꜰᴏʀ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀʏᴇʀꜱ
+    # ɴᴏᴛᴇ: ᴘʟᴀʏᴇʀꜱ ᴡɪᴛʜ ʙʏᴘᴀꜱꜱ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ꜱᴋɪᴘ ᴀʟʟ ᴄᴏᴏʟᴅᴏᴡɴꜱ, ʟɪᴋᴇ ʀᴇᴀʟʟʏ ᴇᴠᴇɴ ʀᴛᴘ ᴄᴏᴏʟᴅᴏᴡɴ
+  
+  # ᴛᴇʟᴇᴘᴏʀᴛᴀᴛɪᴏɴ ꜱᴇᴛᴛɪɴɢꜱ
+  teleport:
+    countdown: 5                    # ᴄᴏᴜɴᴛᴅᴏᴡɴ ᴛɪᴍᴇ ʙᴇꜰᴏʀᴇ ᴛᴇʟᴇᴘᴏʀᴛ (ꜱᴇᴄᴏɴᴅꜱ)
+    max-search-attempts: 20         # ᴍᴀx ᴀᴛᴛᴇᴍᴘᴛꜱ ᴛᴏ ꜰɪɴᴅ ꜱᴀꜰᴇ ʟᴏᴄᴀᴛɪᴏɴ
+    protection-time: 5000           # ᴘᴠᴘ ᴘʀᴏᴛᴇᴄᴛɪᴏɴ ᴀꜰᴛᴇʀ ᴛᴇʟᴇᴘᴏʀᴛ (ᴍɪʟʟɪꜱᴇᴄᴏɴᴅꜱ)
+    chunk-preload: true             # ʟᴏᴀᴅ ᴅᴇꜱᴛɪɴᴀᴛɪᴏɴ ᴄʜᴜɴᴋ ʙᴇꜰᴏʀᴇ ᴛᴇʟᴇᴘᴏʀᴛɪɴɢ
+    chunk-preload-radius: 2         # ʀᴀᴅɪᴜꜱ ᴏꜰ ᴄʜᴜɴᴋꜱ ᴛᴏ ᴘʀᴇʟᴏᴀᴅ ᴀʀᴏᴜɴᴅ ᴅᴇꜱᴛɪɴᴀᴛɪᴏɴ
+    
+  # ᴀᴅᴠᴀɴᴄᴇᴅ ᴍᴏᴠᴇᴍᴇɴᴛ ᴅᴇᴛᴇᴄᴛɪᴏɴ ꜱʏꜱᴛᴇᴍ
+  movement-detection:
+    enabled: true                   # ᴇɴᴀʙʟᴇ/ᴅɪꜱᴀʙʟᴇ ᴍᴏᴠᴇᴍᴇɴᴛ ᴅᴇᴛᴇᴄᴛɪᴏɴ
+    method: "HYBRID"                # ᴅᴇᴛᴇᴄᴛɪᴏɴ ᴍᴇᴛʜᴏᴅ: EVENT, TASK, HYBRID 
+    threshold: 0.5                  # ᴍᴏᴠᴇᴍᴇɴᴛ ᴛʜʀᴇꜱʜᴏʟᴅ ɪɴ ʙʟᴏᴄᴋꜱ
+    check-interval: 2               # ᴄʜᴇᴄᴋ ɪɴᴛᴇʀᴠᴀʟ ɪɴ ᴛɪᴄᴋꜱ (ᴏᴘᴛɪᴍɪᴢᴇᴅ ꜰᴏʀ ᴘᴇʀꜰᴏʀᴍᴀɴᴄᴇ)
+    ignore-micro-movements: true    # ɪɢɴᴏʀᴇ ᴛɪɴʏ ᴍᴏᴠᴇᴍᴇɴᴛꜱ
+    detect-vertical: true           # ᴅᴇᴛᴇᴄᴛ ᴠᴇʀᴛɪᴄᴀʟ ᴍᴏᴠᴇᴍᴇɴᴛ (ʏ-ᴀxɪꜱ)
+    detect-horizontal: true         # ᴅᴇᴛᴇᴄᴛ ʜᴏʀɪᴢᴏɴᴛᴀʟ ᴍᴏᴠᴇᴍᴇɴᴛ (x/z-ᴀxɪꜱ)
+    track-rotation: false           # ᴛʀᴀᴄᴋ ʜᴇᴀᴅ/ʙᴏᴅʏ ʀᴏᴛᴀᴛɪᴏɴ ᴀꜱ ᴍᴏᴠᴇᴍᴇɴᴛ
+    debug: false                    # ꜱʜᴏᴡ ᴅᴇʙᴜɢ ᴍᴇꜱꜱᴀɢᴇꜱ ꜰᴏʀ ᴍᴏᴠᴇᴍᴇɴᴛ ᴛʀᴀᴄᴋɪɴɢ
+    punishment:
+      cancel-teleport: true         # ᴄᴀɴᴄᴇʟ ᴛᴇʟᴇᴘᴏʀᴛᴀᴛɪᴏɴ ᴏɴ ᴍᴏᴠᴇᴍᴇɴᴛ
+      show-distance: true           # ꜱʜᴏᴡ ᴍᴏᴠᴇᴍᴇɴᴛ ᴅɪꜱᴛᴀɴᴄᴇ ɪɴ ᴍᴇꜱꜱᴀɢᴇ
+      play-sound: true              # ᴘʟᴀʏ ꜱᴏᴜɴᴅ ᴡʜᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ
+      action-bar-updates: true      # ꜱʜᴏᴡ ʀᴇᴀʟ-ᴛɪᴍᴇ ᴅɪꜱᴛᴀɴᴄᴇ ɪɴ ᴀᴄᴛɪᴏɴ ʙᴀʀ
+    exemptions:
+      bypass-permission: true       # ʙʏᴘᴀꜱꜱ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ᴜꜱᴇʀꜱ ᴇxᴇᴍᴘᴛ
+      creative-mode: false          # ᴄʀᴇᴀᴛɪᴠᴇ ᴍᴏᴅᴇ ᴘʟᴀʏᴇʀꜱ ᴇxᴇᴍᴘᴛ
+      flying: false                 # ꜰʟʏɪɴɢ ᴘʟᴀʏᴇʀꜱ ᴇxᴇᴍᴘᴛ
+      spectator: true               # ꜱᴘᴇᴄᴛᴀᴛᴏʀ ᴍᴏᴅᴇ ᴘʟᴀʏᴇʀꜱ ᴇxᴇᴍᴘᴛ
+    
+  # ᴡᴏʀʟᴅ ꜱᴇᴛᴛɪɴɢꜱ - ᴀᴅᴅ ᴍᴏʀᴇ ᴡᴏʀʟᴅꜱ ꜰᴏʀ ᴄᴜꜱᴛᴏᴍ ᴅɪᴍᴇɴꜱɪᴏɴꜱ
+  worlds:
+    overworld:
+      enabled: true
+      name: "Farmwelt"
+      min-distance: 100             # ᴍɪɴɪᴍᴜᴍ ᴅɪꜱᴛᴀɴᴄᴇ ꜰʀᴏᴍ ꜱᴘᴀᴡɴ
+      max-distance: 59990000           # ᴍᴀxɪᴍᴜᴍ ᴅɪꜱᴛᴀɴᴄᴇ ꜰʀᴏᴍ ꜱᴘᴀᴡɴ
+    nether:
+      enabled: true
+      name: "Farmwelt_nether"
+      min-distance: 100
+      max-distance: 59999
+    end:
+      enabled: true
+      name: "Farmwelt_the_end"
+      min-distance: 100
+      max-distance: 59990000
+
+# ɢᴜɪ ꜱᴇᴛᴛɪɴɢꜱ - ꜰᴜʟʟʏ ᴄᴜꜱᴛᴏᴍɪᴢᴀʙʟᴇ
+gui:
+  title: "ʀᴛᴘ"
+  prevent-item-movement: true      # ᴘʀᴇᴠᴇɴᴛ ɪᴛᴇᴍ ᴍᴀɴɪᴘᴜʟᴀᴛɪᴏɴ ꜰᴏʀ ꜱᴀꜰᴇᴛʏ
+  allow-player-inventory: true     # ᴀʟʟᴏᴡ ᴘʟᴀʏᴇʀ ɪɴᴠᴇɴᴛᴏʀʏ ᴀᴄᴄᴇꜱꜱ
+  # ᴄᴜꜱᴛᴏᴍɪᴢᴇ ɪᴛᴇᴍꜱ ᴀɴᴅ ꜱʟᴏᴛ ᴘᴏꜱɪᴛɪᴏɴꜱ (0-26 ꜰᴏʀ 3 ʀᴏᴡꜱ)
+  items:
+    overworld:
+      material: GRASS_BLOCK         # ᴀɴʏ ᴠᴀʟɪᴅ ᴍᴀᴛᴇʀɪᴀʟ ɴᴀᴍᴇ
+      name: "&aᴏᴠᴇʀᴡᴏʀʟᴅ"
+      slot: 11                      # ꜱʟᴏᴛ ᴘᴏꜱɪᴛɪᴏɴ (0-26)
+      world: "overworld"            # ᴡᴏʀʟᴅ ɪᴅᴇɴᴛɪꜰɪᴇʀ
+      lore:
+        - "&aᴄʟɪᴄᴋ ᴛᴏ ᴛᴇʟᴇᴘᴏʀᴛ!"
+    nether:
+      material: NETHERRACK
+      name: "&cɴᴇᴛʜᴇʀ"
+      slot: 13
+      world: "nether"
+      lore:
+        - "&cᴄʟɪᴄᴋ ᴛᴏ ᴛᴇʟᴇᴘᴏʀᴛ!"
+    end:
+      material: END_STONE
+      name: "&dᴇɴᴅ"
+      slot: 15
+      world: "end"
+      lore:
+        - "&dᴄʟɪᴄᴋ ᴛᴏ ᴛᴇʟᴇᴘᴏʀᴛ!"
+
+# ᴍᴇꜱꜱᴀɢᴇꜱ
+messages:
+  teleporting: "&aꜱᴛᴀʀᴛɪɴɢ ᴛᴇʟᴇᴘᴏʀᴛᴀᴛɪᴏɴ ᴛᴏ &e{world}&a!"
+  countdown: "&cᴛᴇʟᴇᴘᴏʀᴛɪɴɢ ɪɴ &e{time}&c ꜱᴇᴄᴏɴᴅꜱ, ᴅᴏɴ'ᴛ ᴍᴏᴠᴇ!"
+  success: "&7ʏᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴛᴇʟᴇᴘᴏʀᴛᴇᴅ ᴛᴏ &e{world}&7!"
+  cancelled-moved: "&cᴛᴇʟᴇᴘᴏʀᴛᴀᴛɪᴏɴ ᴄᴀɴᴄᴇʟʟᴇᴅ! ʏᴏᴜ ᴍᴏᴠᴇᴅ &e{distance}&c ʙʟᴏᴄᴋꜱ."
+  cancelled-moved-simple: "&cᴛᴇʟᴇᴘᴏʀᴛᴀᴛɪᴏɴ ᴄᴀɴᴄᴇʟʟᴇᴅ! ʏᴏᴜ ᴍᴏᴠᴇᴅ ᴛᴏᴏ ᴍᴜᴄʜ."
+  cancelled-damage: "&cᴛᴇʟᴇᴘᴏʀᴛᴀᴛɪᴏɴ ᴄᴀɴᴄᴇʟʟᴇᴅ ᴅᴜᴇ ᴛᴏ ᴘʟᴀʏᴇʀ ᴅᴀᴍᴀɢᴇ!"
+  already-teleporting: "&cʏᴏᴜ ᴀʀᴇ ᴀʟʀᴇᴀᴅʏ ᴛᴇʟᴇᴘᴏʀᴛɪɴɢ!"
+  cooldown-default: "&cʏᴏᴜ ᴀʀᴇ ᴏɴ ᴄᴏᴏʟᴅᴏᴡɴ! ᴡᴀɪᴛ &e{time}&c ꜱᴇᴄᴏɴᴅꜱ. &cʏᴏᴜ ɴᴇᴇᴅ ᴀ ʀᴀɴᴋ ᴛᴏ ʀᴛᴘ ᴡɪᴛʜ ʟᴏᴡᴇʀ ᴄᴏᴏʟᴅᴏᴡɴꜱ!"
+  cooldown-premium: "&cʏᴏᴜ ᴀʀᴇ ᴏɴ ᴄᴏᴏʟᴅᴏᴡɴ! ᴡᴀɪᴛ &e{time}&c ꜱᴇᴄᴏɴᴅꜱ. &7ʏᴏᴜ ʜᴀᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴄᴏᴏʟᴅᴏᴡɴ (3ꜱ)."
+  world-not-found: "&cᴡᴏʀʟᴅ ɴᴏᴛ ꜰᴏᴜɴᴅ ᴏʀ ᴅɪꜱᴀʙʟᴇᴅ!"
+  no-permission: "&cʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ᴛᴏ ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ!"
+  players-only: "&cᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜꜱᴇᴅ ʙʏ ᴘʟᴀʏᴇʀꜱ!"
+  protection-message: "&7ʏᴏᴜ ᴀʀᴇ ᴘʀᴏᴛᴇᴄᴛᴇᴅ ꜰʀᴏᴍ ᴘʟᴀʏᴇʀ ᴅᴀᴍᴀɢᴇ ꜰᴏʀ ᴀ ꜰᴇᴡ ᴍᴏʀᴇ ꜱᴇᴄᴏɴᴅꜱ."
+  cannot-damage: "&cʏᴏᴜ ᴄᴀɴɴᴏᴛ ᴅᴀᴍᴀɢᴇ &e{player}&c ʀɪɢʜᴛ ɴᴏᴡ!"
+  search-failed: "&cꜰᴀɪʟᴇᴅ ᴛᴏ ꜰɪɴᴅ ᴀ ꜱᴀꜰᴇ ʟᴏᴄᴀᴛɪᴏɴ ᴀꜰᴛᴇʀ &e{attempts}&c ᴀᴛᴛᴇᴍᴘᴛꜱ. ᴛᴇʟᴇᴘᴏʀᴛ ᴄᴀɴᴄᴇʟʟᴇᴅ."
+  loading-chunks: "&7ʟᴏᴀᴅɪɴɢ ᴅᴇꜱᴛɪɴᴀᴛɪᴏɴ ᴄʜᴜɴᴋꜱ..."
+  movement-detected: "&cᴍᴏᴠᴇᴍᴇɴᴛ ᴅᴇᴛᴇᴄᴛᴇᴅ! ᴅɪꜱᴛᴀɴᴄᴇ: &e{distance} ʙʟᴏᴄᴋꜱ &c(ᴍᴀx: &e{threshold}&c)"
+  movement-warning: "&eᴡᴀʀɴɪɴɢ: ᴅᴏɴ'ᴛ ᴍᴏᴠᴇ ᴅᴜʀɪɴɢ ᴛᴇʟᴇᴘᴏʀᴛᴀᴛɪᴏɴ! &c({distance}/{threshold} ʙʟᴏᴄᴋꜱ)"
+
+# ꜱᴏᴜɴᴅ ꜱᴇᴛᴛɪɴɢꜱ - ꜰᴜʟʟʏ ᴄᴜꜱᴛᴏᴍɪᴢᴀʙʟᴇ
+sounds:
+  enabled: true                     # ᴍᴀꜱᴛᴇʀ ꜱᴏᴜɴᴅ ᴛᴏɢɢʟᴇ
+  
+  countdown:
+    enabled: true
+    sound: BLOCK_TRIPWIRE_CLICK_ON  # ᴀɴʏ ᴠᴀʟɪᴅ ꜱᴏᴜɴᴅ ɴᴀᴍᴇ
+    volume: 1.0                     # 0.0 ᴛᴏ 1.0
+    pitch: 1.0                      # 0.0 ᴛᴏ 2.0
+    
+  teleport-success:
+    enabled: true
+    sound: ENTITY_ENDERMAN_TELEPORT
+    volume: 1.0
+    pitch: 1.0
+    
+  teleport-cancelled:
+    enabled: true
+    sound: BLOCK_NOTE_BLOCK_BASS
+    volume: 1.0
+    pitch: 1.0
+    
+  movement-detected:
+    enabled: true
+    sound: ENTITY_VILLAGER_NO    
+    volume: 0.8
+    pitch: 1.5
+    
+  gui-click:
+    enabled: true
+    sound: UI_BUTTON_CLICK
+    volume: 0.5
+    pitch: 1.2
+ # ʜᴇʏ, ᴛʜᴀɴᴋꜱ ꜰᴏʀ ᴜꜱɪɴɢ ᴀɴᴅ ʙᴜʏɪɴɢ ᴍʏ ᴘʟᴜɢɪɴꜱ, ᴊᴏɪɴ ᴍʏ ᴅɪꜱᴄᴏʀᴅ ꜰᴏʀ ꜱᴜᴘᴘᴏʀᴛ ᴀɴᴅ ʙᴜɢ ʀᴇᴘᴏʀᴛ: https://discord.gg/vXZhp3H4YF

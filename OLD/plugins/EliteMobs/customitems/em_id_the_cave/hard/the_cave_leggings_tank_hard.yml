@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Boiled Leggings'
+material: DIAMOND_LEGGINGS
+level: 15
+lore:
+- '&cThey offer good protection but they''re kinda stiff.'
+enchantments:
+- PROTECTION_FALL,7
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,4
+- DAMAGE_ALL,3
+- elitemobs:loud_strikes,2
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

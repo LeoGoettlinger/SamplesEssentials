@@ -1,0 +1,18 @@
+isEnabled: true
+material: MACE
+name: '&0Eldritch Crusher'
+lore:
+- '&0&kThe void hungers.'
+- '&0&kCrush those who oppose'
+- '&0&kthe old ones.'
+enchantments:
+- DAMAGE_ALL,3
+- KNOCKBACK,1
+- DURABILITY,1
+potionEffects:
+- DARKNESS,0,target,onHit
+- INCREASE_DAMAGE,0,self,continuous
+itemType: unique
+scalability: scalable
+customModelID: 3117301
+soulbound: true

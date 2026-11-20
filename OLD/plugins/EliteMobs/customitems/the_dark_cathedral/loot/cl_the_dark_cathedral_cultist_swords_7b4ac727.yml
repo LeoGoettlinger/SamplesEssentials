@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&0Unspoken Vow'
+lore:
+- '&0&kThe inscription ends before the name.'
+- '&0&kThe engraver would go no further.'

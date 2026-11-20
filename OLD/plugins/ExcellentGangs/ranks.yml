@@ -1,0 +1,34 @@
+cadet:
+  Name: <white>Cadet</white>
+  Priority: 0
+  Permissions:
+  - TELEPORT_TO_MEMBER
+  - VIEW_MEMBER_INVENTORY
+operative:
+  Name: <soft_green>Operative</soft_green>
+  Priority: 5
+  Permissions:
+  - VIEW_BANK
+  - INVITE_MEMBER
+  - VIEW_VAULT
+specialist:
+  Name: <soft_blue>Specialist</soft_blue>
+  Priority: 25
+  Permissions:
+  - USE_VAULT
+  - DEPOSIT_TO_BANK
+commander:
+  Name: <orange>Commander</orange>
+  Priority: 50
+  Permissions:
+  - WITHDRAW_FROM_BANK
+  - UPGRADE_LEVEL
+  - TOGGLE_FRIENDLY_FIRE
+  - DEMOTE_MEMBER
+  - KICK_MEMBER
+  - PROMOTE_MEMBER
+warlord:
+  Name: <soft_red>Warlord</soft_red>
+  Priority: 1000
+  Permissions:
+  - ALL

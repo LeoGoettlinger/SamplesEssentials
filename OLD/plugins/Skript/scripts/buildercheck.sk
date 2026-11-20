@@ -1,0 +1,52 @@
+# Registriert Items, wenn ein Spieler im Creative ein Item in der Hand wählt / wechselt
+on tool change:
+    if gamemode of player is creative:
+        if player's tool is set:
+            set {_item} to player's tool
+            # Vermeidet doppelte Einträge direkt hintereinander
+            if {creative_last_item::%uuid of player%} is not {_item}:
+                set {creative_last_item::%uuid of player%} to {_item}
+                add "%{_item}% &7(in Hand genommen um %now%)" to {creative_history::%uuid of player%::*}
+                if size of {creative_history::%uuid of player%::*} > 10:
+                    remove {creative_history::%uuid of player%::1} from {creative_history::%uuid of player%::*}
+
+# Registriert Blöcke, die im Creative platziert werden
+on place:
+    if gamemode of player is creative:
+        set {_item} to event-block
+        add "%{_item}% &7(platziert um %now%)" to {creative_history::%uuid of player%::*}
+        if size of {creative_history::%uuid of player%::*} > 10:
+            remove {creative_history::%uuid of player%::1} from {creative_history::%uuid of player%::*}
+
+# Registriert Items, die im Creative geworfen/dropped werden
+on drop:
+    if gamemode of player is creative:
+        set {_item} to event-item
+        add "%{_item}% &7(dropped um %now%)" to {creative_history::%uuid of player%::*}
+        if size of {creative_history::%uuid of player%::*} > 10:
+            remove {creative_history::%uuid of player%::1} from {creative_history::%uuid of player%::*}
+
+# /checkbuilder <Spieler>
+command /checkbuilder <player>:
+    permission: admin.checkbuilder
+    permission message: &cDu hast keine Berechtigung für diesen Befehl!
+    trigger:
+        set {_p} to arg-1
+        send "&e========== &c&lCREATIVE-CHECK: %{_p}% &e==========" to player
+        
+        if {creative_history::%uuid of {_p}%::*} is set:
+            send "&7Die letzten genutzten Creative-Items:" to player
+            loop {creative_history::%uuid of {_p}%::*}:
+                send "&7- &a%loop-value%" to player
+        else:
+            send "&cDieser Spieler hat seit dem Script-Start noch keine Items im Creative benutzt!" to player
+            
+        send "&e==========================================" to player
+
+# /clearbuilderlog <Spieler>
+command /clearbuilderlog <player>:
+    permission: admin.checkbuilder
+    trigger:
+        delete {creative_history::%uuid of arg-1%::*}
+        delete {creative_last_item::%uuid of arg-1%}
+        send "&aLog-Verlauf für %arg-1% wurde gelöscht." to player

@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&cHeadless Blade'
+material: NETHERITE_SWORD
+lore:
+- '&4Forged from the horseman''s'
+- '&4lost memories.'
+enchantments:
+- DAMAGE_ALL,5
+- FIRE_ASPECT,2
+- DAMAGE_UNDEAD,5
+potionEffects:
+- WEAKNESS,1,target,onHit
+- CONFUSION,0,target,onHit
+itemType: unique
+scalability: scalable
+soulbound: true

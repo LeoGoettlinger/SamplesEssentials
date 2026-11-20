@@ -1,0 +1,19 @@
+{
+  "playerName": "LordFruchtzwerk",
+  "unlockedDisguiseIdentifiers": [
+    "minecraft:cow",
+    "minecraft:skeleton",
+    "minecraft:enderman",
+    "minecraft:drowned",
+    "minecraft:zombified_piglin",
+    "minecraft:piglin",
+    "minecraft:shulker",
+    "minecraft:zombie"
+  ],
+  "showDisguiseToSelf": false,
+  "shownDisplayToSelfHint": false,
+  "shownServerSkillHint": false,
+  "shownClientSkillHint": false,
+  "shownMorphHint": true,
+  "shownMorphClientHint": false
+}

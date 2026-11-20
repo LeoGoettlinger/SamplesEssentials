@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&1[$difficulty] Guardian Helmet'
+lore:
+- '&1You feel empowered.'
+classLootFamily: DPS_HELMETS

@@ -1,0 +1,12 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_SWORD
+name: '&b[Mythical] Frostbite Sword'
+lore:
+- '&bCold to the touch.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- DAMAGE_ALL,5
+itemType: unique
+scalability: scalable
+level: 10

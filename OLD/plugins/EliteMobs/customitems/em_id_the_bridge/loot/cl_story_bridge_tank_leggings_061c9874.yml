@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Stonebrace Legs'
+lore:
+- '&7The joints resist after so many motionless years.'
+classLootFamily: TANK_LEGGINGS

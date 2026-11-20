@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Thick Lens
+lore:
+- Your head looks enormous through it.
+classLootFamily: TANK_HELMETS

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&5Axis of the End'
+lore:
+- '&5A crooked staff recovered beneath the crystals.'
+- '&5Its grooves follow no earthly grain.'
+weaponType: STAVES

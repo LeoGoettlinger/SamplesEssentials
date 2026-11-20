@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&7Pilot Ember'
+lore:
+- '&7A small rod left beside a much larger fire.'
+weaponType: WANDS

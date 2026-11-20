@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Void Striker'
+material: CROSSBOW
+level: 55
+lore:
+- '&cBolts fired from this crossbow'
+- '&cseem to bend space itself.'
+enchantments:
+- PIERCING,4
+- QUICK_CHARGE,3
+- DURABILITY,4
+itemType: unique
+scalability: scalable

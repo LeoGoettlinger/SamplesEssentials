@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&2[$difficulty] Pig Leggings'
+lore:
+- '&2A pig should never be seen without its leggings.'
+classLootFamily: DPS_LEGGINGS

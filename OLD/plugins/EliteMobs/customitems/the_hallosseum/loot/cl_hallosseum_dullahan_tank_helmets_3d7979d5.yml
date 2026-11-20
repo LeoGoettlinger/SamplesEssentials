@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&4Empty Saddle Crown'
+lore:
+- '&4A closed helm found beside the horse.'
+- '&4You are the first to fill it.'
+classLootFamily: TANK_HELMETS

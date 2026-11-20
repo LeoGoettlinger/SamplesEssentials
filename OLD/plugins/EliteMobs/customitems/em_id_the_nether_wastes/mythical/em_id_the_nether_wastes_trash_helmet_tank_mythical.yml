@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Infested Helm'
+material: IRON_HELMET
+level: 50
+lore:
+- '&fThis ancient helm is covered in nether mold and rust.'
+enchantments:
+- PROTECTION_PROJECTILE,7
+- PROTECTION_ENVIRONMENTAL,4
+- DURABILITY,3
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Stand Bunger
+lore:
+- Strong legs, no running away.
+classLootFamily: TANK_LEGGINGS

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&aMidwinter Mantle'
+lore:
+- '&7Its plates overlap like roof tiles.'
+- '&7The workshop roof inspired the smith.'
+classLootFamily: TANK_CHESTPLATES

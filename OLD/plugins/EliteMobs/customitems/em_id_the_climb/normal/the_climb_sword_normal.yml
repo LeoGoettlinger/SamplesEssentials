@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Cursed Blade'
+material: NETHERITE_SWORD
+level: 10
+lore:
+- '&cA sword that refuses to rust'
+- '&cdespite centuries of decay.'
+- '&cIt whispers in the dark.'
+enchantments:
+- DAMAGE_ALL,3
+- FIRE_ASPECT,1
+- DURABILITY,2
+itemType: unique
+scalability: scalable

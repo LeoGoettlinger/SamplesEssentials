@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&d[$difficulty] City Defender'
+lore:
+- '&dThis bow must have been used'
+- '&dto fire thousands of arrows.'

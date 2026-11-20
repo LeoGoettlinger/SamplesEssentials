@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&c[$difficulty] Slimed Chestplate'
+lore:
+- '&cBeing covered in goo feels so good!'
+classLootFamily: DPS_CHESTPLATES

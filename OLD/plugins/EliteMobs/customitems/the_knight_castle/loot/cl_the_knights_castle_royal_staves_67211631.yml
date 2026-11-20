@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&dScepter of the Empty Hall'
+lore:
+- '&dThe courtiers left it standing beside the throne.'
+weaponType: STAVES

@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] City Sentinel Bow'
+material: BOW
+level: 30
+lore:
+- '&cUsed by the city''s watchtower'
+- '&carchers to defend the walls.'
+enchantments:
+- ARROW_DAMAGE,7
+- ARROW_KNOCKBACK,3
+- DURABILITY,5
+itemType: unique
+scalability: scalable

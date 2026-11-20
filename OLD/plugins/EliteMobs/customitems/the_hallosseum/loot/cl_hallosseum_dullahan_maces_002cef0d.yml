@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&4Funeral Knell'
+lore:
+- '&4Shaped from a cracked bell.'
+- '&4There is no clapper left inside.'

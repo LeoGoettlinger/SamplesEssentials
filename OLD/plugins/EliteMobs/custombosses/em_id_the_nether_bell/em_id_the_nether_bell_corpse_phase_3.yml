@@ -1,0 +1,63 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: ZOMBIE
+# mainHand: BOW
+name: $normalLevel &fShambling Dwarf
+level: dynamic # 55
+healthMultiplier: 1.8
+damageMultiplier: 0.5
+movementSpeedAttribute: 0.32
+powers:
+- invulnerability_arrow.yml
+- invulnerability_fire.yml
+- invulnerability_fall_damage.yml
+- filename: attack_freeze.yml
+  difficultyID:
+  - 1
+  - 2
+- filename: bullet_hell.yml
+  difficultyID:
+  - 2
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+frozen: false
+followDistance: 60
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+disguise: custom:em_id_the_nether_bell_unrotten
+customDisguiseData: player em_id_the_nether_bell_unrotten setskin {"uuid":"a9c2cc75-957c-4620-bf0f-271dfe368297","name":"Unknown","textureProperties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcxOTM5MzQ3NDU5OSwKICAicHJvZmlsZUlkIiA6ICI5NDczNjdlMTE1N2Q0ZjQzYTZmYmY0MGQwOTY3MjY3MyIsCiAgInByb2ZpbGVOYW1lIiA6ICJ3aW5uZXIzMiIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xZDQzZTdkNzgyYzJhYmE1Mzc2NzU2ZTZmYWJkNThiZDJkYzQyN2YxZGZlZDdiOTNmN2JkNGRkMGQxMzFlMzRmIgogICAgfQogIH0KfQ==","signature":"AJhNBXQcIOcVA9aFmCHyM7BMYAzZI8tX8BostYEFntm3e7F8bl++CKQ2EKUb/f1zd2nPiPMvfS3ZEHPc4tGlWXbyWtWsg8rxj6yDKhCdURDxAJB41Pj/yDoDTPlezzmgIbw4S4bIeeKb5xK3V/IpBDz+VUnHkwj04tqX2UWuzcO+rAI1o6QkfbgabqJorjCYe1gVAvtpNPOShzzE+zV25TV4Nw6vkWKq4d7wkJZUGZUUWkO8Zg6+1UlZaG596Uus22QKsC+dywvX3X0Npu+Wa+oTio7Cikym1ir3KeaKIT19jVq3dSNL5YM5Owo0JPumIHxREcJfiJ/WuAbfgrkXiDjOhng88y4kt19ojsgJ3e3OAIdnZCv4OK3vVt0BlpG7R8hLw7BK6hSCMDi+4hQ5F2RNFGl23AXNNiw5Oe4sArccYQuxO43Xb6XbKQijhG5uRlWPJvNkgsPg3dOgrJiHYydhVV+2kFXLxcPxnLe/RIL4FAVcblTKVwqJCgKm44kdedjGQMb1hwg/kEf3Bu6JC2CEgT2ZlsdFfgFZLSUpOuYfCKMwumwtO0FXLlq+cGSLMaOSQpWbhQMG9udLUKs4dIWmTs1vjNtdCpFBtsr80d9H9nRYDZ27keJ1wPZFPNoWYQPOZzXixXX38it297K0Yc7lAC8N24pg7PQSYEjfHRM="}]}
+eliteScript:
+  SpawnPrep:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: TAG
+      Target:
+        targetType: SELF
+      tags:
+      - Phase3
+    - action: SET_MOB_AI
+      bValue: false
+      Target:
+        targetType: SELF
+    - action: MAKE_INVULNERABLE
+      wait: 1
+      Target:
+        targetType: SELF
+      invulnerable: true
+spawnLocations:
+- em_id_the_nether_bell,25.5,92.4,-4.5,90.0,0.0
+- em_id_the_nether_bell,16.5,92.4,17.5,-77.0,0.0
+- em_id_the_nether_bell,12.5,94,3.5,45.0,0.0
+- em_id_the_nether_bell,6.5,94.4,5.5,124.0,0.0
+- em_id_the_nether_bell,3.5,93.4,12.5,-177.0,0.0
+- em_id_the_nether_bell,-2.5,93,-5.5,11.0,0.0
+- em_id_the_nether_bell,-7.5,94.4,3.5,-50.0,0.0
+- em_id_the_nether_bell,-16.5,93.4,5.5,111.0,0.0
+- em_id_the_nether_bell,-12.5,93,-7.5,33.0,0.0
+- em_id_the_nether_bell,-10.5,93,16.5,3.0,0.0
+classLoot: false

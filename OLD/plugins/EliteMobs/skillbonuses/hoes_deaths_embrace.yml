@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&8Death''s Embrace'
+description:
+- '&7Cheat death and revive'
+- '&7with 10% health.'
+skillType: HOES
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 0.05
+scalingPerLevel: 0.001
+cooldownSeconds: 120.0
+displayMaterial: TOTEM_OF_UNDYING
+loreTemplates:
+- '&7Prevents fatal damage'
+- '&7Heals to: &f$healPercent% HP'
+- '&7Passive Bonus: &f+$passiveBonus% damage'
+- '&7Cooldown: &f$cooldown seconds'
+formattedBonusTemplate: +$passiveBonus% Damage & Death Prevention

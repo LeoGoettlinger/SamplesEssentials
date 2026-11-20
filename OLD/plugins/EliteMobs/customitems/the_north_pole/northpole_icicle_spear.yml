@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&bIcicle Spear'
+material: DIAMOND_SPEAR
+lore:
+- '&7Sharp as winter''s bite,'
+- '&7Piercing through the coldest night.'
+- '&7I''m too much!'
+enchantments:
+- IMPALING,4
+- PIERCING,2
+- DURABILITY,3
+- MENDING,1
+potionEffects:
+- WEAKNESS,1,target,onHit
+- WATER_BREATHING,0,self,continuous
+scalability: scalable
+itemType: unique
+soulbound: true

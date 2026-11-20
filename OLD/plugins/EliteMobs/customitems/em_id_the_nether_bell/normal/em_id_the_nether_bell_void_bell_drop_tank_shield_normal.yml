@@ -1,0 +1,17 @@
+potionEffects: []
+isEnabled: true
+material: SHIELD
+name: '&d[Normal] Dominator Shield'
+lore:
+- '&dThis shield is strangely warm to the touch.'
+- '&dA constant hissing emanates from its surface.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_FIRE,4
+- PROTECTION_PROJECTILE,4
+- PROTECTION_EXPLOSIONS,4
+- THORNS,1
+- elitemobs:loud_strikes,1
+scalability: scalable
+level: 55
+itemType: unique

@@ -1,0 +1,22 @@
+isEnabled: true
+name: '&c[Mythical] Ember Walkers'
+material: NETHERITE_BOOTS
+level: 45
+lore:
+- '&cYou would have never guessed'
+- '&cthat fire and smoke would be'
+- '&cthe most comfortable thing that'
+- '&cyou ever wore on your feet.'
+enchantments:
+- PROTECTION_FALL,10
+- PROTECTION_EXPLOSIONS,7
+- PROTECTION_PROJECTILE,6
+- PROTECTION_FIRE,5
+- PROTECTION_ENVIRONMENTAL,4
+- DURABILITY,3
+- elitemobs:loud_strikes,3
+potionEffects:
+- JUMP,2,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

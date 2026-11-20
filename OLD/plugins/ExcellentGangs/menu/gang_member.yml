@@ -1,0 +1,144 @@
+# ==================== [SECTION] SETTINGS ====================
+# > [MenuType] : String | Represents the menu type. Allowed values: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/MenuType.html
+# > [Title] : String | Sets menu title.
+# > [Auto_Refresh] : Integer | Defines menu refresh rate in seconds. Set 0 to disable.
+# > [PlaceholderAPI -> Enabled] : Boolean | When enabled, applies PlaceholderAPI placeholders for all items in the menu per player.
+#  
+# ==================== [SECTION] CONTENT ====================
+# You can freely edit items in this section as you wish (add, remove, modify items).
+# > [Item] : Section | Item to display.
+#     [*] Navigate to https://nightexpressdev.com/nightcore/configuration/item-formation/ for a list of available options.
+# > [Priority] : Integer | Item priority. Higher values will override other item(s) in the same slot(s).
+# > [Slots] : Int Array | Item slots, starts from 0. Split with commas.
+#     Slots: '0,4,9,10'
+# > [Type] : String | Defines item click action.
+#     [*] Available types: ['close', 'user_skin', 'return']
+# > [Click_Commands] : Section | Executes commands on click with PlaceholderAPI support.
+#     [*] Works only if [Type] is not set (null).
+#     [*] Available click types: [LEFT, RIGHT, SHIFT_LEFT, SHIFT_RIGHT, DROP_KEY, SWAP_KEY, DRAG_N_DROP]
+#     [*] Use prefix 'player:' to run command by a player.
+#     Click_Commands:
+#       LEFT:
+#       - say Hello
+#       - give %player_name% diamond 1
+#       - player: warp shop
+# ==================================================
+Settings:
+  MenuType: minecraft:generic_9x5
+  Title: '<black>Gang Member: %member_name%</black>'
+  Auto_Refresh: -1
+  PlaceholderAPI:
+    Enabled: false
+Buttons:
+  Teleport:
+    Slot: 21
+    Default:
+      Material: minecraft:acacia_boat
+      Display_Name: <gold>Teleport</gold>
+      Lore:
+      - <gray>Quickly teleports you to <gold>%member_name%</gold>.</gray>
+      - ''
+      - <gold>→ <u>Click to teleport</u></gold>
+      Hide_Components: true
+    NoPermission:
+      Material: minecraft:dark_oak_boat
+      Display_Name: <gold>Teleport</gold> <red>[No Access]</red>
+      Lore:
+      - <gray>You can't teleport to gang's members.</gray>
+      Hide_Components: true
+    Offline:
+      Material: minecraft:pale_oak_boat
+      Display_Name: <white>Teleport</white> <red>[Offline]</red>
+      Lore:
+      - <gray>Offline teleports are not supported.</gray>
+      Hide_Components: true
+  Inventory:
+    Slot: 23
+    Default:
+      Material: minecraft:chest
+      Display_Name: <soft_aqua>View Inventory</soft_aqua>
+      Lore:
+      - <gray>Opens <soft_aqua>%member_name%</soft_aqua>'s inventory.</gray>
+      - ''
+      - <soft_aqua>→ <u>Click to view</u></soft_aqua>
+      Hide_Components: true
+    NoPermission:
+      Material: minecraft:chest
+      Display_Name: <soft_aqua>View Inventory</soft_aqua> <red>[No Access]</red>
+      Lore:
+      - <gray>You can't view gang member's inventories.</gray>
+      Hide_Components: true
+    Offline:
+      Material: minecraft:chest
+      Display_Name: <white>View Inventory</white> <red>[Offline]</red>
+      Lore:
+      - <gray>Offline inventories can not be seen.</gray>
+      Hide_Components: true
+  TransferLeadership:
+    Slot: 0
+    Icon:
+      Material: minecraft:red_banner
+      Display_Name: <soft_red>Transfer Leadership</soft_red>
+      Lore:
+      - <gray>Transfer the gang leadership</gray>
+      - <gray>to <soft_red>%member_name%</soft_red></gray>
+      - ''
+      - <soft_red>→ <u>Click to transfer</u></soft_red>
+  Kick:
+    Slot: 8
+    Icon:
+      Material: minecraft:barrier
+      Display_Name: <soft_red>Kick</soft_red>
+      Lore:
+      - <gray>Kicks <soft_red>%member_name%</soft_red> from the gang.</gray>
+      - ''
+      - <soft_red>→ <u>Click to kick</u></soft_red>
+  Demote:
+    Slot: 3
+    Default:
+      Material: minecraft:melon_slice
+      Display_Name: <soft_red>Demote</soft_red>
+      Lore:
+      - '<gray>Demote <soft_red>%member_name%</soft_red>: <white>%member_rank%</white> → <white>%to%</white></gray>'
+      - ''
+      - <soft_red>→ <u>Click to demote</u></soft_red>
+    Min:
+      Material: minecraft:gray_dye
+      Display_Name: <white>Demote</white> <gray>(Lowest)</gray>
+      Lore:
+      - '<dark_gray>»</dark_gray><gray> Rank: </gray><white>%member_rank%</white>'
+      - ''
+      - <gray>You can't demote <white>%member_name%</white> further.</gray>
+  Promote:
+    Slot: 5
+    Default:
+      Material: minecraft:glistering_melon_slice
+      Display_Name: <yellow>Promote</yellow>
+      Lore:
+      - '<gray>Promote <yellow>%member_name%</yellow>: <white>%member_rank%</white> → <white>%to%</white></gray>'
+      - ''
+      - <yellow>→ <u>Click to promote</u></yellow>
+    Max:
+      Material: minecraft:gray_dye
+      Display_Name: <white>Promote</white> <gray>(Max.)</gray>
+      Lore:
+      - '<dark_gray>»</dark_gray><gray> Rank: </gray><white>%member_rank%</white>'
+      - ''
+      - <gray>You can't promote <white>%member_name%</white> further.</gray>
+Content:
+  black_stained_glass_pane:
+    Priority: -1
+    Item:
+      Material: minecraft:black_stained_glass_pane
+      Lore: []
+      Hide_Tooltip: true
+    Slots: 0,1,2,3,4,5,6,7,8,36,37,38,39,40,41,42,43,44
+    Type: 'null'
+  return:
+    Priority: 0
+    Item:
+      Material: minecraft:iron_door
+      Display_Name: <soft_yellow><b>Back</b></soft_yellow>
+      Lore: []
+    Slots: '40'
+    Type: return

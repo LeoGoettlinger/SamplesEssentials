@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&2[Normal] Burning Helmet'
+material: DIAMOND_HELMET
+level: 20
+lore:
+- '&2Such beautiful blue flames...'
+enchantments:
+- DAMAGE_ALL,5
+- DAMAGE_ARTHROPODS,3
+- PROTECTION_ENVIRONMENTAL,2
+potionEffects:
+- NIGHT_VISION,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

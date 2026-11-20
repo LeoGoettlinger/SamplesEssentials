@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&cLaunch Crew Helm'
+lore:
+- '&cA bright target for the stage lights.'
+- '&cA poor place to rest a rocket.'
+classLootFamily: TANK_HELMETS

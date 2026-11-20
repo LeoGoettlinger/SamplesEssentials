@@ -1,0 +1,9 @@
+isEnabled: true
+name: Multicast
+maxLevel: 3
+value: 18.0
+isEnabledForProcedurallyGeneratedItems: true
+maxEnchantmentLevel: 3
+generationChance: 0.35
+levelThreeChance: 0.01
+levelThreeMinimumItemLevel: 75

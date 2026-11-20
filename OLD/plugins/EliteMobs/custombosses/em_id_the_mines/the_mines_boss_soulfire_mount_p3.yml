@@ -1,0 +1,27 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: MINIBOSS
+damageMultiplier: 0.5
+disguise: WITHER_SKELETON
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+entityType: SKELETON
+followDistance: 80
+frozen: false
+healthMultiplier: 15
+instanced: true
+isBaby: true
+isEnabled: true
+isRegionalBoss: false
+level: dynamic # 20
+mainHand: NETHERITE_SWORD
+movementSpeedAttribute: 0.31
+name: $minibossLevel &cCharred Villager
+normalizedCombat: true
+offHand: NETHERITE_SWORD
+powers:
+- invulnerability_knockback.yml
+- invulnerability_fire.yml
+- invulnerability_fall_damage.yml
+classLoot: false

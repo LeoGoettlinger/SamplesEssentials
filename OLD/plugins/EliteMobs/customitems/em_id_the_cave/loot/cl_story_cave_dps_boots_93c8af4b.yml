@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&c[$difficulty] Slimed Boots'
+lore:
+- '&cComfy but a bit noisy.'
+classLootFamily: DPS_BOOTS

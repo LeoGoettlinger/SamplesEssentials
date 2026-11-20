@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&2[$difficulty] Shaped Helmet'
+lore:
+- '&2Smells like iron...'
+classLootFamily: DPS_HELMETS

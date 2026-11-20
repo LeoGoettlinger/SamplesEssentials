@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&4Heir of the Drain'
+lore:
+- '&4A narrow circlet salvaged from the king''s court.'
+classLootFamily: DPS_HELMETS

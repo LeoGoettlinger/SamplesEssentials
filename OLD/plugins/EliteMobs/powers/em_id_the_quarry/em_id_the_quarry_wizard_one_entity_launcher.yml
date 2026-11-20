@@ -1,0 +1,53 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 2
+      scripts:
+      - LaunchEntity1
+    - action: RUN_SCRIPT
+      wait: 1
+      scripts:
+      - LaunchEntity2
+    Cooldowns:
+      local: 180
+      global: 50
+  LaunchEntity1:
+    Actions:
+    - action: SUMMON_ENTITY
+      sValue: ARROW
+      repeatEvery: 20
+      times: 5
+      Target:
+        targetType: SELF
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          track: false
+          range: 40
+        normalize: true
+        multiplier: 4.0
+  LaunchEntity2:
+    Actions:
+    - action: SUMMON_ENTITY
+      sValue: CHICKEN
+      repeatEvery: 20
+      times: 5
+      Target:
+        targetType: SELF
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          track: false
+          range: 40
+        normalize: true
+        multiplier: 2.0
+# Generated with https://magmaguy.com/webapp/webapp.html !

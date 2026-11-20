@@ -1,0 +1,24 @@
+{
+  "skillCooldown": 180,
+  "skillId": "morph:apply_effect",
+  "abilities": [
+    "morph:breathe_under_water",
+    "morph:dryout_in_air",
+    "morph:override_maximum_air"
+  ],
+  "settings": {
+    "morph:apply_effect": {
+      "duration": 180,
+      "acquires_water": true,
+      "show_guardian": false,
+      "multiplier": 0,
+      "sound": "",
+      "name": "minecraft:dolphins_grace",
+      "sound_distance": 0,
+      "apply_distance": 9
+    },
+    "morph:override_maximum_air": {
+      "maximum_air": 4800
+    }
+  }
+}

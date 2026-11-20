@@ -1,0 +1,7 @@
+behavior: native
+isEnabled: true
+entityType: BLAZE
+name: '&fLvl &2$level &fElite &eBlaze'
+deathMessages:
+- $player &cwas lit ablaze by $entity!
+baseDamageV2: 9.0

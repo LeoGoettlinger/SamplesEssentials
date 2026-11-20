@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_LEGGINGS
+name: '&b[Mythical] Frostbite Leggings'
+lore:
+- '&bOffers good protection'
+- '&beven though taken from a corpse.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,5
+- DAMAGE_ALL,3
+itemType: unique
+scalability: scalable
+level: 10

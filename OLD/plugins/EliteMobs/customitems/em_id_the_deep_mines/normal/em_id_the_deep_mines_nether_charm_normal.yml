@@ -1,0 +1,15 @@
+isEnabled: true
+enchantments: []
+name: '&e[Normal] Nether Growth'
+material: MUSHROOM_STEM
+level: 45
+lore:
+- '&eImbued with Nether essence.'
+potionEffects:
+- ABSORPTION,0,self,onHit
+- JUMP,0,self,onHit
+- SLOW_FALLING,0,self,onHit
+- NIGHT_VISION,0,self,continuous
+scalability: scalable
+itemType: custom
+# Generated with https://magmaguy.com/webapp/webapp.html !

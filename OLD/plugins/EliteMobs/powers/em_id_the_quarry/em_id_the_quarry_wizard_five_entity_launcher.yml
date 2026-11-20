@@ -1,0 +1,83 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - LaunchEntity1
+      - LaunchEntity2
+      - LaunchEntity3
+      onlyRunOneScript: true
+    Cooldowns:
+      local: 80
+      global: 50
+  LaunchEntity1:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        track: false
+    Actions:
+    - action: SUMMON_ENTITY
+      sValue: ARROW
+      Target:
+        targetType: SELF
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ZONE_FULL
+        normalize: true
+        multiplier: 8.0
+  LaunchEntity2:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        track: false
+    Actions:
+    - action: SUMMON_ENTITY
+      sValue: FIREBALL
+      Target:
+        targetType: SELF
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ZONE_FULL
+        normalize: true
+        multiplier: 2.0
+  LaunchEntity3:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        track: false
+    Actions:
+    - action: SUMMON_ENTITY
+      sValue: CREEPER
+      Target:
+        targetType: SELF
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ZONE_FULL
+        normalize: true
+        multiplier: 4.0

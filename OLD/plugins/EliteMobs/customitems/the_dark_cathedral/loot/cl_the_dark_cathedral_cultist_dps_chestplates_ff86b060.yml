@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&0Ritual Vestment'
+lore:
+- '&0&kThe clasps bear the cultist''s personal seal.'
+- '&0&kThe congregation used a different mark.'
+classLootFamily: DPS_CHESTPLATES

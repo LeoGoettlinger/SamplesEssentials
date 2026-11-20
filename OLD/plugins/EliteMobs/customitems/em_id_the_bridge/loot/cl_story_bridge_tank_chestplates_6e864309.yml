@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Abutment Guard'
+lore:
+- '&7The straps were replaced. The plate was not.'
+classLootFamily: TANK_CHESTPLATES

@@ -1,0 +1,133 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 300
+      scripts:
+      - TriggerCurse
+    - action: RUN_SCRIPT
+      wait: 5100
+      scripts:
+      - TriggerCurse2
+    - action: RUN_SCRIPT
+      wait: 9900
+      scripts:
+      - TriggerCurse3
+    - action: RUN_SCRIPT
+      wait: 14700
+      scripts:
+      - TriggerCurse4
+  TriggerCurse:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 0
+      duration: 1200
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cHeavy Miasma &7surrounds you! The source must be destroyed to
+        lift the slow effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  TriggerCurse2:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 1200
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cHeavy Miasma &7surrounds you! The source must be destroyed to
+        lift the slow effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  TriggerCurse3:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 1200
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cHeavy Miasma &7surrounds you! The source must be destroyed to
+        lift the slow effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  TriggerCurse4:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 4
+      duration: 1200
+      repeatEvery: 1200
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cHeavy Miasma &7surrounds you! The source must be destroyed to
+        lift the slow effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

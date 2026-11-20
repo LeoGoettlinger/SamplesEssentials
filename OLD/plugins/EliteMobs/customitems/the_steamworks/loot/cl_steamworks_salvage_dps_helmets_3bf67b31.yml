@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&bReinforced Netherite Plate [$difficulty]'
+lore:
+- '&bThe plate is heavily damaged and severely bent.'
+- '&bUseable as a helmet...'
+classLootFamily: DPS_HELMETS

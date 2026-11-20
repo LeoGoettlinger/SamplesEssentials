@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&cFinal Check'
+lore:
+- '&7The end is stained with red ink.'
+- '&7He checked the list twice.'
+weaponType: WANDS

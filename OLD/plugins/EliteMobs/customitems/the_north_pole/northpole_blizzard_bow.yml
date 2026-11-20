@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&fBlizzard Bow'
+material: BOW
+lore:
+- '&7Each arrow summons winter''s rage,'
+- '&7Freezing all who dare engage.'
+- '&7I''m too much!'
+enchantments:
+- ARROW_DAMAGE,4
+- ARROW_INFINITE,1
+- DURABILITY,3
+- MENDING,1
+potionEffects:
+- SLOW,2,target,onHit
+- BLINDNESS,0,target,onHit
+scalability: scalable
+itemType: unique
+soulbound: true

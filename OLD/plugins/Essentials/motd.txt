@@ -1,0 +1,14 @@
+&6Willkommen, auf dem &2&lɴɪxᴏʀɪᴀ ɴᴇᴛᴡᴏʀᴋ &r{PLAYER}&6!
+&6Spieler Online:&c {ONLINE} &6- Welt Zeit:&c {WORLDTIME12}
+&c&lTUTORIAL:
+&3 - /server um zwischen Servern zu wechseln
+&3 - /warp um zwischen Welten zu ändern
+&3 - /spawn für Spawn
+&3 - /shop und /shop sell für Shop und Shop Sell
+&3 - /order für Orders
+&3 - /fish für Fishmenü
+&3 - /ah und /ah sell [Preis] für das Aktionshaus
+&3 - /rtp für einen Random-Teleport
+§3 - /rules für die Server-Regeln
+&3 - ...
+&c WENN IHR BUGS / GLITCHES FINDET DÜRFT IHR DIE NICHT AUSNUTZEN UND MÜSST DIESE SOFORT REPORTEN!

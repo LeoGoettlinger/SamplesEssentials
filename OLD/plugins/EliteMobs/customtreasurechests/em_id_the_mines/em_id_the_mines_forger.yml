@@ -1,0 +1,16 @@
+effects: []
+mimicChance: 0.0
+mimicCustomBossesList: []
+restockTime: 90
+restockTimers: []
+isEnabled: true
+instanced: true
+chestType: CHEST
+facing: WEST
+chestTier: 2
+dropStyle: group
+restockTimer: 90
+lootList:
+- filename=em_id_the_mines_forge_lore.yml:chance=0.99
+locations:
+- em_id_the_mines,358.0,112.0,29.0,0.0,0.0

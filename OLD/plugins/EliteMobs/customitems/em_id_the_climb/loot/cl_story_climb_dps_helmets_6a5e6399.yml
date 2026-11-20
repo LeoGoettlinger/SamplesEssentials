@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Hillside Brow'
+lore:
+- '&7The visor has a clear view of the road below.'
+classLootFamily: DPS_HELMETS

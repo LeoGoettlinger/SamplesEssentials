@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&f[Mythical] Old Stone Walkers'
+material: NETHERITE_BOOTS
+level: 35
+lore:
+- '&fExcellent for when you''re in a hurry.'
+enchantments:
+- DAMAGE_UNDEAD,10
+- DAMAGE_ALL,6
+- DAMAGE_ARTHROPODS,6
+- DURABILITY,5
+potionEffects:
+- SPEED,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

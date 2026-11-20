@@ -1,0 +1,16 @@
+name: '&eQuick Reload'
+description:
+- '&7Successful hits briefly'
+- '&7increase movement speed.'
+loreTemplates:
+- '&7Movement speed: &f+$speedPercent%'
+- '&7Duration: &f3 seconds'
+- '&7Triggers on hit'
+formattedBonusTemplate: +$speedPercent% movement speed on hit
+isEnabled: true
+skillType: CROSSBOWS
+bonusType: PASSIVE
+unlockTier: 1
+baseValue: 0.5
+scalingPerLevel: 0.01
+displayMaterial: SUGAR

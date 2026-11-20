@@ -1,0 +1,13 @@
+isEnabled: true
+material: DIAMOND_SPEAR
+name: '&aAdventurer''s Spear'
+lore:
+- '&7Awarded by Casus for completing your first class trial.'
+enchantments:
+- SHARPNESS,3
+- UNBREAKING,2
+- FIRE_ASPECT,1
+potionEffects: []
+scalability: FIXED
+itemType: UNIQUE
+level: 1

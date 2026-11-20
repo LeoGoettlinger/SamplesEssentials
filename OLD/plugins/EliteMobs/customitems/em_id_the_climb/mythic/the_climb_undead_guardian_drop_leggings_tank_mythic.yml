@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_LEGGINGS
+name: '&1[Mythical] Guardian Leggings'
+lore:
+- '&1They protected the Undead Guardian'
+- '&1and now they protect you.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,7
+- DAMAGE_ALL,3
+itemType: unique
+scalability: scalable
+level: 10

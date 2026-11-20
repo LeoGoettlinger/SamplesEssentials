@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&aGiftwrapper''s Vest'
+lore:
+- '&7The pockets contain nothing but ribbon.'
+- '&7One still holds a half-finished bow.'
+classLootFamily: DPS_CHESTPLATES

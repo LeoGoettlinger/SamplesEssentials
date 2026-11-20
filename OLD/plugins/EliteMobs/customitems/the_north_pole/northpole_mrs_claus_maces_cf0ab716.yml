@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&cKitchen Persuasion'
+lore:
+- '&7Mrs. Claus asked for a bigger rolling pin.'
+- '&7The workshop took her seriously.'

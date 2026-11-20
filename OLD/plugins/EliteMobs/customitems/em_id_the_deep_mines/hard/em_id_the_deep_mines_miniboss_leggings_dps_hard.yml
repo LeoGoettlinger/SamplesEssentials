@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&d[Hard] Rune Leggings'
+material: DIAMOND_LEGGINGS
+level: 45
+lore:
+- '&dThe runes on these leggings are quite'
+- '&dfaded but whatever magic enchantment'
+- '&dthey offer still seems to be in effect.'
+enchantments:
+- DAMAGE_ALL,6
+- DAMAGE_UNDEAD,4
+- DAMAGE_ARTHROPODS,3
+- DURABILITY,2
+potionEffects:
+- SPEED,1,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

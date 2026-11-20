@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Garden Dashers
+lore:
+- The farmer would like a word.
+classLootFamily: DPS_BOOTS

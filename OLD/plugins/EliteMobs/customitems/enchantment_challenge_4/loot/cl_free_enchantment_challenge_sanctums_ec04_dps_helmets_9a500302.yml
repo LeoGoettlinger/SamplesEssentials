@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: 1337 H34dgear
+lore:
+- The label is harder to read than the spellbook.
+classLootFamily: DPS_HELMETS

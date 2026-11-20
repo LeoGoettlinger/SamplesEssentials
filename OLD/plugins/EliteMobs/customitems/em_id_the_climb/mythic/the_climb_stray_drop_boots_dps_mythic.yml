@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_BOOTS
+name: '&b[Mythical] Frostbite Boots'
+lore:
+- '&bOffers decent protection'
+- '&beven though taken from a corpse.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- DAMAGE_ALL,5
+itemType: unique
+scalability: scalable
+level: 10

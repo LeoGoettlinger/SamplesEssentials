@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+lore:
+- '&7Scuffed by a thousand tiny chairs.'
+- '&7Assembly work takes its toll.'
+classLootFamily: DPS_LEGGINGS
+name: '&aToymaker''s Trousers'

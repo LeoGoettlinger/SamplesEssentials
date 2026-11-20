@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&aSolstice Staff'
+lore:
+- '&7Carved with the dates of long winters.'
+- '&7The latest notch is still pale.'
+weaponType: STAVES

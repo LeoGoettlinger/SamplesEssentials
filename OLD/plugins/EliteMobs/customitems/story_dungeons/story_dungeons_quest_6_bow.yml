@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&dBow of Eternity'
+material: BOW
+level: 40
+lore:
+- '&dAwarded to the slayers'
+- '&dof the monarch.'
+enchantments:
+- ARROW_DAMAGE,6
+- ARROW_INFINITE,5
+- ARROW_KNOCKBACK,4
+- MENDING,1
+- DURABILITY,1
+potionEffects:
+- GLOWING,1,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

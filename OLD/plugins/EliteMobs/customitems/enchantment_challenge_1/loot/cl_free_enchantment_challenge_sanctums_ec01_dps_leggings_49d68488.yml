@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Fireside Trousers
+lore:
+- One knee is darker than the other.
+classLootFamily: DPS_LEGGINGS

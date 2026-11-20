@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&7Patrol Fork'
+lore:
+- '&7Three narrow points beneath a faded city seal.'

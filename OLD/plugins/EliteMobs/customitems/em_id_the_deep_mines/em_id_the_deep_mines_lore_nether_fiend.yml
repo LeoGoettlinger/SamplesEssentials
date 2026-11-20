@@ -1,0 +1,16 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&fStolen Note'
+material: PAPER
+lore:
+- '&fThe chamber has been built. But the'
+- '&fprocess of enchanting the lava took'
+- '&ftoo long. There are only a few of us'
+- '&fleft. Even though the enchanted lava'
+- '&fluminance can strip the fiends of its'
+- '&fprotective cloak, there aren''t enough'
+- '&fof us left to overpower it. Darn'
+- '&fit all...'
+scalability: scalable
+itemType: unique

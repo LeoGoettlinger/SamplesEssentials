@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&dUnravel'
+description:
+- '&7Missiles can unravel an enemy''s'
+- '&7defenses for everyone.'
+skillType: WANDS
+bonusType: PROC
+unlockTier: 3
+baseValue: 0.1
+scalingPerLevel: 0.001
+procChance: 0.1
+displayMaterial: FERMENTED_SPIDER_EYE
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Unravelled: &f+$bonus% damage from all players'
+- '&8Lasts 5 seconds'
+formattedBonusTemplate: +$bonus% party damage

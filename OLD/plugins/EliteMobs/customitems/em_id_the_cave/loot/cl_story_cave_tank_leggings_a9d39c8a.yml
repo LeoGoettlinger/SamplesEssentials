@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Stoker Guards'
+lore:
+- '&7The plates kept the worst of the splatter off.'
+classLootFamily: TANK_LEGGINGS

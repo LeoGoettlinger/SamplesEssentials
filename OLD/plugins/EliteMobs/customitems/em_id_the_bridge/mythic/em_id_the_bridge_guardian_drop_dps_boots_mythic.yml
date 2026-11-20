@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythical] Stone Striders'
+material: DIAMOND_BOOTS
+level: 25
+lore:
+- '&cSharp long spikes protrude'
+- '&cout of these black stone boots.'
+enchantments:
+- DAMAGE_ALL,10
+- DAMAGE_UNDEAD,6
+- PROTECTION_ENVIRONMENTAL,5
+- THORNS,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

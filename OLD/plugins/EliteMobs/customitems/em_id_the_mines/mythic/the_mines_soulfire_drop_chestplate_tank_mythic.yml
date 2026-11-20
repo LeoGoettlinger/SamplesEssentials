@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Mythical] Scorching Armor'
+material: DIAMOND_CHESTPLATE
+level: 20
+lore:
+- '&2Everything will burn...'
+enchantments:
+- THORNS,10
+- PROTECTION_ENVIRONMENTAL,6
+- PROTECTION_FIRE,5
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

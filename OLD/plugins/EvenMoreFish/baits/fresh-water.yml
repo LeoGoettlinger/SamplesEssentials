@@ -1,0 +1,33 @@
+id: freshWater
+disabled: false
+silent: false
+format: <aqua>{name}
+sort-index: 4
+application-weight: 5
+catch-weight: 2
+max-baits: 32
+can-be-caught: true
+drop-quantity: 1
+infinite: false
+disable-use-alert: false
+purchase:
+  price: 1500
+  quantity: 2
+  economy-types:
+    - Vault
+item:
+  material: WATER_BUCKET
+  displayname: "<aqua>Fresh Water"
+  lore:
+    - "<gray>Boosts Epic & Legendary fish."
+rarity-modifiers:
+  Epic: "*2"
+  Legendary: "*2"
+catch-event:
+  - EXP:100
+recipe:
+  type: shapeless
+  ingredients:
+    - water_bucket
+    - kelp
+    - prismarine_crystals

@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: Cupid's Other Bow
+lore:
+- The pointy end spoils the mood.

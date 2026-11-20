@@ -1,0 +1,35 @@
+Name: Starter-crate Crate
+Description: []
+ItemProvider:
+  Provider: vanilla
+  Data:
+    Value: '{components:{"minecraft:custom_name":{bold:0b,extra:[{bold:0b,italic:0b,obfuscated:0b,strikethrough:0b,text:"Starter-crate Crate",underlined:0b}],italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b},"minecraft:tooltip_display":{hidden_components:["minecraft:container_loot","minecraft:villager/variant","minecraft:wolf/collar","minecraft:glider","minecraft:enchantable","minecraft:food","minecraft:lodestone_tracker","minecraft:jukebox_playable","minecraft:suspicious_stew_effects","minecraft:lock","minecraft:wolf/variant","minecraft:creative_slot_lock","minecraft:max_stack_size","minecraft:consumable","minecraft:tropical_fish/base_color","minecraft:potion_contents","minecraft:potion_duration_scale","minecraft:firework_explosion","minecraft:note_block_sound","minecraft:provides_trim_material","minecraft:tropical_fish/pattern_color","minecraft:bundle_contents","minecraft:damage","minecraft:use_remainder","minecraft:map_decorations","minecraft:trim","minecraft:shulker/color","minecraft:chicken/variant","minecraft:debug_stick_state","minecraft:unbreakable","minecraft:cow/variant","minecraft:weapon","minecraft:instrument","minecraft:painting/variant","minecraft:charged_projectiles","minecraft:container","minecraft:salmon/size","minecraft:axolotl/variant","minecraft:tool","minecraft:pig/variant","minecraft:cat/variant","minecraft:provides_banner_patterns","minecraft:can_place_on","minecraft:break_sound","minecraft:recipes","minecraft:repairable","minecraft:map_id","minecraft:banner_patterns","minecraft:pot_decorations","minecraft:horse/variant","minecraft:written_book_content","minecraft:sheep/color","minecraft:writable_book_content","minecraft:death_protection","minecraft:can_break","minecraft:dyed_color","minecraft:damage_resistant","minecraft:use_cooldown","minecraft:mooshroom/variant","minecraft:cat/collar","minecraft:block_state","minecraft:fox/variant","minecraft:entity_data","minecraft:max_damage","minecraft:map_color","minecraft:profile","minecraft:custom_data","minecraft:ominous_bottle_amplifier","minecraft:blocks_attacks","minecraft:map_post_processing","minecraft:parrot/variant","minecraft:frog/variant","minecraft:intangible_projectile","minecraft:stored_enchantments","minecraft:bucket_entity_data","minecraft:block_entity_data","minecraft:attribute_modifiers","minecraft:rarity","minecraft:tropical_fish/pattern","minecraft:bees","minecraft:fireworks","minecraft:base_color","minecraft:enchantment_glint_override","minecraft:rabbit/variant","minecraft:llama/variant","minecraft:repair_cost","minecraft:enchantments","minecraft:wolf/sound_variant","minecraft:equippable"]}},count:1,id:"minecraft:chest"}'
+    DataVersion: 4556
+ItemStackable: false
+Permission_Required: false
+Preview:
+  Enabled: true
+  Id: default
+Animation:
+  Enabled: true
+  Id: default
+OpeningCooldown:
+  Enabled: false
+  Value: 0
+OpeningLimits:
+  Amount: 0
+Block:
+  Positions: []
+  Pushback:
+    Enabled: true
+  Hologram:
+    Enabled: true
+    Template: default
+    Y_Offset: 0.0
+  Effect:
+    Enabled: false
+    Model: helix
+    Particle:
+      Name: CLOUD
+Milestones:
+  Repeatable: false

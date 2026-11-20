@@ -1,0 +1,161 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: MINIBOSS
+customDisguiseData: player em_id_the_nether_wastes_heavy_miasma setskin {"id":"8a2a44fe-e246-4001-bcbf-590aa8df4a81","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcxNjg4NzQwMzI3NywKICAicHJvZmlsZUlkIiA6ICIzZGE2ZDgxOTI5MTY0MTNlODhlNzg2MjQ3NzA4YjkzZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJGZXJTdGlsZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS85ZWE1NjcwM2E0OTVjMDg3YWI3MGM3NDMxNmVkMDNmY2Q3ZDcyNWRmNjc3MWZlNmQ4YjQwNGZiNWFmZDA1NTg3IgogICAgfQogIH0KfQ==","signature":"ASYye7E0JK/a5UfR1WsSmmlYSVUVfY+lVN3nLBXlO+uLDEDzUh0FaM3352meT1vxyc0Oc5DSbDaWceXiWs7+8uQhcCogAFABvEz6dQL7EByJOv26ymirMyFnJItvbps7LF7w6hZ/8mMDaeEsdaAs3cOJlANgX9cqEVSsw2/rZgB41WrfPqm2pLdGjF7bbW1bTsvHTCmetHBghYOTG7BXwSvdOhKHX6Bm8MHboAeXlbZe4BqmkYaIEzycI8sw/N7oouuPt3O0ABx7MLFvU7v5QahYDaymPR61WliBKjgonpW8WMIPSW2jaADpJY5a2qgZi2S+wX5GJUk0gCS06gZJ2i3S1uvFiwxddfqbaW7UOKaqC6zhHJUY+NpxhXDixbOddzqMEULtk64QZa34tjLO6k+6IlL+NFasmo+FR+bSL7MJcrLu1tlliIk8BKY8bOqjwfvfYYDKNRyLHhQ6Hk6p1cC5Hh44eBe9/6V2l4t/Wb5/uA10TcPOeJuLHEcffSYCjD3mELcbBkcymJjE+gbawcFD5FAcS9Oc6KzufP5ZjhAKlqSkNpnQj12uVaqpCyL9FP0Q0fzW9lg7OpOzuDSTOUl/01kpeCdH3ecz+tH9zZ/1vsAQEHMTJYEv1OFHEa6Tmqv4vEeS4Hn2Y94gRKS5q8GojcNE+931engllUsqL5g="}],"legacy":false}
+damageMultiplier: 0.7
+disguise: custom:em_id_the_nether_wastes_heavy_miasma
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  Sleep:
+    Actions:
+    - Target:
+        targetType: SELF
+      action: SET_MOB_AI
+      bValue: false
+    Events:
+    - EliteMobSpawnEvent
+  Wake:
+    Actions:
+    - Target:
+        targetType: SELF
+      action: SET_MOB_AI
+      bValue: true
+    Events:
+    - EliteMobDamagedEvent
+entityType: VINDICATOR
+followDistance: 80
+frozen: false
+healthMultiplier: 6.0
+instanced: true
+isEnabled: true
+isRegionalBoss: true
+level: dynamic # 50
+movementSpeedAttribute: 0.29
+name: $minibossLevel &cHeavy Miasma
+normalizedCombat: true
+powers:
+- difficultyID:
+  - 0
+  filename: em_id_the_nether_wastes_slow_normal.yml
+- difficultyID:
+  - 1
+  filename: em_id_the_nether_wastes_slow_hard.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_nether_wastes_slow_mythical.yml
+- difficultyID:
+  - 0
+  filename: em_id_the_nether_wastes_miniboss_1_summon_ball_normal.yml
+- difficultyID:
+  - 1
+  filename: em_id_the_nether_wastes_miniboss_1_summon_ball_hard.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_nether_wastes_miniboss_1_summon_ball_mythical.yml
+- difficultyID:
+  - 1
+  filename: attack_push.yml
+- difficultyID:
+  - 2
+  filename: shield_wall.yml
+spawnCooldown: 5
+spawnLocations:
+- em_id_the_nether_wastes,240.5,58,-164.5,0.0,0.0
+classLoot: true
+classLootRank: MINIBOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- chance: 0.06
+  difficultyID: 0
+  filename: em_id_the_nether_wastes_miniboss_axe_tank_normal.yml
+- chance: 0.06
+  difficultyID: 1
+  filename: em_id_the_nether_wastes_miniboss_axe_tank_hard.yml
+- chance: 0.06
+  difficultyID: 2
+  filename: em_id_the_nether_wastes_miniboss_axe_mythical.yml
+- chance: 0.06
+  difficultyID: 0
+  filename: em_id_the_nether_wastes_miniboss_boots_dps_normal.yml
+- chance: 0.06
+  difficultyID: 1
+  filename: em_id_the_nether_wastes_miniboss_boots_dps_hard.yml
+- chance: 0.06
+  difficultyID: 2
+  filename: em_id_the_nether_wastes_miniboss_boots_dps_mythical.yml
+- chance: 0.06
+  difficultyID: 0
+  filename: em_id_the_nether_wastes_miniboss_bow_dps_normal.yml
+- chance: 0.06
+  difficultyID: 1
+  filename: em_id_the_nether_wastes_miniboss_bow_dps_hard.yml
+- chance: 0.06
+  difficultyID: 2
+  filename: em_id_the_nether_wastes_miniboss_bow_dps_mythical.yml
+- chance: 0.06
+  difficultyID: 0
+  filename: em_id_the_nether_wastes_miniboss_chestplate_tank_normal.yml
+- chance: 0.06
+  difficultyID: 1
+  filename: em_id_the_nether_wastes_miniboss_chestplate_tank_hard.yml
+- chance: 0.06
+  difficultyID: 2
+  filename: em_id_the_nether_wastes_miniboss_chestplate_mythical.yml
+- chance: 0.06
+  difficultyID: 0
+  filename: em_id_the_nether_wastes_miniboss_helmet_dps_normal.yml
+- chance: 0.06
+  difficultyID: 1
+  filename: em_id_the_nether_wastes_miniboss_helmet_dps_hard.yml
+- chance: 0.06
+  difficultyID: 2
+  filename: em_id_the_nether_wastes_miniboss_helmet_dps_mythical.yml
+- chance: 0.06
+  difficultyID: 0
+  filename: em_id_the_nether_wastes_miniboss_leggings_tank_normal.yml
+- chance: 0.06
+  difficultyID: 1
+  filename: em_id_the_nether_wastes_miniboss_leggings_tank_hard.yml
+- chance: 0.06
+  difficultyID: 2
+  filename: em_id_the_nether_wastes_miniboss_leggings_tank_mythical.yml
+- filename: cl_story_nether_wastes_swords_83b45875.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_axes_333869f1.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_bows_cc5e7a54.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_crossbows_1a9685cb.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_tridents_a02afff2.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_hoes_05039adb.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_maces_b1ff4934.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_spears_9bbf0b16.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_staves_9b61ac58.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_wands_a6ec916c.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_dps_helmets_09aa1d2f.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_dps_chestplates_bdf38d96.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_dps_leggings_f42a3272.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_dps_boots_8d90cb1a.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_tank_helmets_14aab8a2.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_tank_chestplates_9a121351.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_tank_leggings_737b8326.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_tank_boots_1f4808ab.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_shields_3102f87a.yml
+  chance: 1.0

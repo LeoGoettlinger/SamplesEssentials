@@ -1,0 +1,15 @@
+potionEffects: []
+isEnabled: true
+material: NETHERITE_CHESTPLATE
+name: '&d[Mythical] Beastmaster''s Armor'
+lore:
+- '&dUnderneath all the human skin you'
+- '&dfeel some sort of shell or casing.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,10
+- DAMAGE_ALL,4
+- DURABILITY,7
+- elitemobs:loud_strikes,3
+itemType: unique
+scalability: scalable
+level: 10

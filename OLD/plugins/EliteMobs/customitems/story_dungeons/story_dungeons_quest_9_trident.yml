@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&dSpear of Eternity'
+material: TRIDENT
+level: 55
+lore:
+- '&dAwarded to those who dared'
+- '&denter the nether.'
+enchantments:
+- RIPTIDE,6
+- LOYALTY,5
+- IMPALING,4
+- MENDING,1
+- DURABILITY,1
+potionEffects:
+- WATER_BREATHING,1,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

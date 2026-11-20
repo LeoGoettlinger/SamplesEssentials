@@ -1,0 +1,212 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+boots: NETHERITE_BOOTS
+bossType: MINIBOSS
+customDisguiseData: player the_quarry_thundersmith setskin {"id":"aca40e43-2bb1-4bca-8d72-87d4c3473b9d","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcwNDgwNzcxMzYzMSwKICAicHJvZmlsZUlkIiA6ICJmZmU5MzczY2YyMDM0OWFhYTJlN2NiYzJkZmY2M2I5MyIsCiAgInByb2ZpbGVOYW1lIiA6ICJNZWxvblR1bmExIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JmYzA0NDJkMGU4ZjA3N2E1MTVkZjc3MTAzNWM0MjFjMzhiYzNkNjNmYjU4MjVmYWNkNjI5OGIzMWNhZWUyMDgiCiAgICB9CiAgfQp9","signature":"am7pdFCsHSS92FbuUhcWUAqvb8obbxXcQXh2RKvrZ9OoiwVxCks2LczaJ//9t9vvi456cS3EjsdmH6Qvy6MouUtL2smzrIsYR9bqrhjTZE+JSwNiYVMqr12AHEgS0erOO7XDlEAISrH9sUOc8jfkoIjJceHjaPb3Y8lJ4c29aN+bXaF491/5GuFtzIOIfPRUxQTCgRVoPYUgBPYSJj3t7Je6qapyiO6nIyln65AOa4akzbLZDSOxFZItqYaYyCQMX5CKWAeaxGjswM3qbiP9fdxgUed3o+2ypYZfno4MvijDLdS59olT7+/EGs/y2Xn+Pq23EM9ri1SKPNA/mfBVZWWv+KJAuMwV8qC2+Tu4ER751MeWOQIq0eiyAK8Y0XyeVfffTe9r57tn5i56BWvHmQjYFHrJWMruBYGWxzpbewzTrkPhsjlQcyHbHXfC1s7bUQvtR+mmIwRh/EGFC9P1oCXfE04jZ6tiaUz+sERmxa6ixM43h53rFBXblI8J1Kf5yddHw9ZagEKyr8Q7w0wJtFTA7Hvgriodzy98PjN/7BnNT3IqrsRhR3vz9wMVpX6NoGC9xzYM9LhHTUJmc3JcTVBKwfavSEiuJQ5q9SUuShxUwmSTjzlSvyDy9kOL1GrmKQBqXu2se47rpbUlmjHno7H3QbOk8gTQbXL/APQNrVE="}],"legacy":false}
+damageMultiplier: 0.7
+disguise: custom:the_quarry_thundersmith
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  PlaceWall:
+    Actions:
+    - Target:
+        targetType: ZONE_FULL
+      action: PLACE_BLOCK
+      material: OBSIDIAN
+      wait: 40
+    Events:
+    - EliteMobSpawnEvent
+    Zone:
+      Target:
+        location: same_as_boss,358.5,111,91.5,0,0
+        targetType: LOCATION
+      shape: CUBOID
+      x: 5
+      y: 4
+      z: 1
+  RemoveWall:
+    Actions:
+    - Target:
+        targetType: ZONE_FULL
+      action: PLACE_BLOCK
+      material: AIR
+    - Target:
+        targetType: WORLD_PLAYERS
+      action: TITLE_MESSAGE
+      duration: 40
+      fadeIn: 5
+      fadeOut: 5
+      subtitle: '&aA path has opened.'
+    - Target:
+        targetType: WORLD_PLAYERS
+      action: MESSAGE
+      sValue: '&7You hear a loud noise come from the quarry lift.'
+      wait: 10
+    Events:
+    - EliteMobDeathEvent
+    Zone:
+      Target:
+        location: same_as_boss,358.5,111,91.5,0,0
+        targetType: LOCATION
+      shape: CUBOID
+      x: 5
+      y: 4
+      z: 1
+  Sleep:
+    Actions:
+    - Target:
+        targetType: SELF
+      action: SET_MOB_AI
+      bValue: false
+    Events:
+    - EliteMobSpawnEvent
+  WakeUp:
+    Actions:
+    - Target:
+        targetType: SELF
+      action: SET_MOB_AI
+      bValue: true
+    Events:
+    - EliteMobDamagedEvent
+entityType: VINDICATOR
+followDistance: 40
+frozen: false
+healthMultiplier: 7.5
+instanced: true
+isEnabled: true
+isRegionalBoss: true
+level: dynamic # 40
+mainHand: NETHERITE_AXE
+movementSpeedAttribute: 0.33
+name: $minibossLevel &dThe Thunder Smith
+normalizedCombat: true
+offHand: IRON_AXE
+powers:
+- em_id_the_quarry_sleep.yml
+- attack_lightning.yml
+- invulnerability_fire.yml
+- invulnerability_fireworks.yml
+- difficultyID:
+  - 0
+  filename: em_id_the_quarry_lava_storm.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_quarry_lava_storm_mythical.yml
+- difficultyID:
+  - 1
+  - 2
+  filename: lightning_bolts.yml
+- difficultyID:
+  - 2
+  filename: thunderstorm.yml
+spawnLocations:
+- em_id_the_quarry,375.5,111,22.5,-132.0,21.0:1704848952435
+classLoot: true
+classLootRank: MINIBOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- chance: 0.2
+  difficultyID: 0
+  filename: em_id_the_quarry_miniboss_master_smith_bow_normal.yml
+- chance: 0.2
+  difficultyID: 0
+  filename: em_id_the_quarry_miniboss_master_smith_crossbow_normal.yml
+- chance: 0.2
+  difficultyID: 1
+  filename: em_id_the_quarry_miniboss_master_smith_bow_hard.yml
+- chance: 0.2
+  difficultyID: 1
+  filename: em_id_the_quarry_miniboss_master_smith_crossbow_hard.yml
+- chance: 0.2
+  difficultyID: 2
+  filename: em_id_the_quarry_miniboss_master_smith_bow_mythical.yml
+- chance: 0.2
+  difficultyID: 2
+  filename: em_id_the_quarry_miniboss_master_smith_crossbow_mythical.yml
+- chance: 0.95
+  filename: em_id_the_quarry_smith_lore.yml
+- chance: 0.05
+  difficultyID: 0
+  filename: em_id_the_quarry_trash_boots_tank_normal.yml
+- chance: 0.05
+  difficultyID: 0
+  filename: em_id_the_quarry_trash_bow_tank_normal.yml
+- chance: 0.05
+  difficultyID: 0
+  filename: em_id_the_quarry_trash_chestplate_tank_normal.yml
+- chance: 0.05
+  difficultyID: 0
+  filename: em_id_the_quarry_trash_helmet_tank_normal.yml
+- chance: 0.05
+  difficultyID: 0
+  filename: em_id_the_quarry_trash_leggings_tank_normal.yml
+- chance: 0.05
+  difficultyID: 1
+  filename: em_id_the_quarry_trash_boots_tank_hard.yml
+- chance: 0.05
+  difficultyID: 1
+  filename: em_id_the_quarry_trash_bow_tank_hard.yml
+- chance: 0.05
+  difficultyID: 1
+  filename: em_id_the_quarry_trash_chestplate_tank_hard.yml
+- chance: 0.05
+  difficultyID: 1
+  filename: em_id_the_quarry_trash_helmet_tank_hard.yml
+- chance: 0.05
+  difficultyID: 1
+  filename: em_id_the_quarry_trash_leggings_tank_hard.yml
+- chance: 0.05
+  difficultyID: 2
+  filename: em_id_the_quarry_trash_boots_tank_mythical.yml
+- chance: 0.05
+  difficultyID: 2
+  filename: em_id_the_quarry_trash_bow_tank_mythical.yml
+- chance: 0.05
+  difficultyID: 2
+  filename: em_id_the_quarry_trash_chestplate_tank_mythical.yml
+- chance: 0.05
+  difficultyID: 2
+  filename: em_id_the_quarry_trash_helmet_tank_mythical.yml
+- chance: 0.05
+  difficultyID: 2
+  filename: em_id_the_quarry_trash_leggings_tank_mythical.yml
+- filename: cl_story_quarry_swords_2729e742.yml
+  chance: 1.0
+- filename: cl_story_quarry_axes_d871d3ab.yml
+  chance: 1.0
+- filename: cl_story_quarry_bows_ccabbcb4.yml
+  chance: 1.0
+- filename: cl_story_quarry_crossbows_4e4680f9.yml
+  chance: 1.0
+- filename: cl_story_quarry_tridents_9ced9fbf.yml
+  chance: 1.0
+- filename: cl_story_quarry_hoes_5211e998.yml
+  chance: 1.0
+- filename: cl_story_quarry_maces_7f24961b.yml
+  chance: 1.0
+- filename: cl_story_quarry_spears_8d549051.yml
+  chance: 1.0
+- filename: cl_story_quarry_staves_1ce41de2.yml
+  chance: 1.0
+- filename: cl_story_quarry_wands_7eb59ac6.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_helmets_73ccb419.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_chestplates_3148278f.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_leggings_ca5a54fd.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_boots_3e7f381e.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_helmets_2f899f43.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_chestplates_21a5129c.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_leggings_da76caa5.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_boots_0c31ed26.yml
+  chance: 1.0
+- filename: cl_story_quarry_shields_d080f0ef.yml
+  chance: 1.0

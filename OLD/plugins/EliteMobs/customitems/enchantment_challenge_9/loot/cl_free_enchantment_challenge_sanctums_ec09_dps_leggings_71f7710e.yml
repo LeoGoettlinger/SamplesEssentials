@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Splinter Stride
+lore:
+- Mind where you kneel.
+classLootFamily: DPS_LEGGINGS

@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Wizard Javelin'
+material: NETHERITE_SPEAR
+level: 40
+lore:
+- '&cA spear enchanted by the'
+- '&cWizard Five. It seeks targets'
+- '&cwith magical precision.'
+enchantments:
+- IMPALING,6
+- DAMAGE_ALL,8
+- DURABILITY,6
+itemType: unique
+scalability: scalable

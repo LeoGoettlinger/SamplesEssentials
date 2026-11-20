@@ -1,0 +1,12 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_CHESTPLATE
+name: '&b[Normal] Frostbite Chestplate'
+lore:
+- '&bOffers good protection'
+- '&beven though taken from a corpse.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+itemType: unique
+scalability: scalable
+level: 10

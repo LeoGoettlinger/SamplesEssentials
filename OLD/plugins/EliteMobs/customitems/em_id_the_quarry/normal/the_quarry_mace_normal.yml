@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Arcane Crusher'
+material: MACE
+level: 40
+lore:
+- '&cInfused with wizard magic.'
+- '&cEach strike pulses with'
+- '&cmystical energy.'
+enchantments:
+- DAMAGE_ALL,5
+- KNOCKBACK,2
+- DURABILITY,4
+itemType: unique
+scalability: scalable

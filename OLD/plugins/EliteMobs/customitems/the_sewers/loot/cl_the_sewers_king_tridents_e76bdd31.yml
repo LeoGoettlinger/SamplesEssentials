@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&4Drowned King''s Trident'
+lore:
+- '&cFormerly the trident of the'
+- '&cdevilish Drowned King!'

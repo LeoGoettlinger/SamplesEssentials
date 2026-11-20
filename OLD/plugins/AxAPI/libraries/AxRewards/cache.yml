@@ -1,0 +1,85 @@
+libraries:
+- artifact-id: axapi
+  transitive-dependencies: []
+  classifier: all
+  version: 2.2.0-DEV-NEW-VERSION-5
+  group: com.artillexstudios.axapi.nms.v26_2
+- artifact-id: mysql-connector-j
+  transitive-dependencies:
+  - artifact-id: protobuf-java
+    transitive-dependencies: []
+    classifier: ''
+    version: 4.29.0
+    group: com.google.protobuf
+  classifier: null
+  version: 9.2.0
+  group: com.mysql
+- artifact-id: sqlite-jdbc
+  transitive-dependencies: []
+  classifier: null
+  version: 3.49.1.0
+  group: org.xerial
+- artifact-id: h2
+  transitive-dependencies: []
+  classifier: null
+  version: 2.1.214
+  group: com.h2database
+- artifact-id: postgresql
+  transitive-dependencies: []
+  classifier: null
+  version: 42.7.5
+  group: org.postgresql
+- artifact-id: HikariCP
+  transitive-dependencies:
+  - artifact-id: slf4j-api
+    transitive-dependencies: []
+    classifier: ''
+    version: 2.0.17
+    group: org.slf4j
+  classifier: null
+  version: 7.1.0
+  group: com.zaxxer
+- artifact-id: commons-dbutils
+  transitive-dependencies: []
+  classifier: null
+  version: 1.8.1
+  group: commons-dbutils
+- artifact-id: commons-math3
+  transitive-dependencies: []
+  classifier: null
+  version: 3.6.1
+  group: org.apache.commons
+- artifact-id: caffeine
+  transitive-dependencies:
+  - artifact-id: jspecify
+    transitive-dependencies: []
+    classifier: ''
+    version: 1.0.0
+    group: org.jspecify
+  - artifact-id: error_prone_annotations
+    transitive-dependencies: []
+    classifier: ''
+    version: 2.43.0
+    group: com.google.errorprone
+  classifier: null
+  version: 3.2.3
+  group: com.github.ben-manes.caffeine
+
+relocations:
+- from: org.apache.commons.math3
+  to: com.artillexstudios.axrewards.libs.axapi.libs.math3
+- from: com.github.benmanes
+  to: com.artillexstudios.axrewards.libs.axapi.libs.caffeine
+- from: com.artillexstudios.axapi
+  to: com.artillexstudios.axrewards.libs.axapi
+- from: com.mysql
+  to: com.artillexstudios.axrewards.libs.mysql
+- from: org.postgresql
+  to: com.artillexstudios.axrewards.libs.postgresql
+- from: com.zaxxer.hikari
+  to: com.artillexstudios.axrewards.libs.hikari
+
+repositories:
+- https://repo.artillex-studios.com/releases/
+- https://repo2.artillex-studios.com/releases/
+- https://repo1.maven.org/maven2/

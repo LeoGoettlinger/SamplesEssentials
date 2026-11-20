@@ -1,0 +1,16 @@
+{
+  "skillCooldown": 25,
+  "skillId": "morph:launch_projective",
+  "abilities": [],
+  "settings": {
+    "morph:launch_projective": {
+      "delay": 0,
+      "warning_sound_name": "",
+      "name": "minecraft:llama_spit",
+      "speed_multiplier": 1.0,
+      "sound_name": "entity.llama.spit",
+      "sound_distance": 8,
+      "max_target_distance": 0
+    }
+  }
+}

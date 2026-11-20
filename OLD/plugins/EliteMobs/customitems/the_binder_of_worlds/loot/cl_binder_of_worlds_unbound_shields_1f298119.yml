@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&5Unbound Aegis'
+lore:
+- '&5The face reflects the sky in broken pieces.'
+- '&5Your arm holds them together.'

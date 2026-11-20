@@ -1,0 +1,22 @@
+isEnabled: true
+name: '&c[Hard] Ember Helmet'
+material: NETHERITE_HELMET
+level: 45
+lore:
+- '&cIt should not be possible to mold fire'
+- '&cand smoke into something tangible.'
+- '&cBut you hold the proof that it is'
+- '&cin your own hands.'
+enchantments:
+- PROTECTION_FIRE,8
+- PROTECTION_EXPLOSIONS,6
+- PROTECTION_PROJECTILE,5
+- PROTECTION_FALL,4
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,2
+- elitemobs:loud_strikes,2
+potionEffects:
+- FIRE_RESISTANCE,1,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,15 @@
+potionEffects: []
+isEnabled: true
+material: NETHERITE_CHESTPLATE
+name: '&d[Hard] Beastmaster''s Armor'
+lore:
+- '&dUnderneath all the human skin you'
+- '&dfeel some sort of shell or casing.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,7
+- DAMAGE_ALL,3
+- DURABILITY,5
+- elitemobs:loud_strikes,2
+itemType: unique
+scalability: scalable
+level: 10

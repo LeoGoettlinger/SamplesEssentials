@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&d[Mythical] Rune Helmet'
+material: DIAMOND_HELMET
+level: 45
+lore:
+- '&dDwarven runes envelope this helmet.'
+enchantments:
+- DAMAGE_ALL,8
+- DAMAGE_UNDEAD,5
+- DAMAGE_ARTHROPODS,4
+- DURABILITY,3
+potionEffects:
+- FIRE_RESISTANCE,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

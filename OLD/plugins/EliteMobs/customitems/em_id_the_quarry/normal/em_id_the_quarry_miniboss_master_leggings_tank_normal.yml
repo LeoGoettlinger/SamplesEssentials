@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&d[Normal] Master Leggings'
+material: DIAMOND_LEGGINGS
+level: 40
+lore:
+- '&dFinely crafted leggings.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_PROJECTILE,3
+- PROTECTION_EXPLOSIONS,2
+- elitemobs:loud_strikes,1
+- DURABILITY,1
+potionEffects:
+- ABSORPTION,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

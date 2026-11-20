@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Slimed Sword'
+material: DIAMOND_SWORD
+level: 15
+lore:
+- '&cIt is kind of hard to grip it well.'
+enchantments:
+- DAMAGE_ALL,7
+- DURABILITY,4
+- DAMAGE_ARTHROPODS,4
+- DAMAGE_UNDEAD,7
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

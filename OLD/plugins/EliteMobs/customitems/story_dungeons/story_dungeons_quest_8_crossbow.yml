@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&dLauncher of Eternity'
+material: CROSSBOW
+level: 50
+lore:
+- '&dAwarded to those who ventured'
+- '&dinto the deepest mines.'
+enchantments:
+- PIERCING,6
+- MULTISHOT,5
+- LUCK,4
+- MENDING,1
+- DURABILITY,1
+potionEffects:
+- NIGHT_VISION,1,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

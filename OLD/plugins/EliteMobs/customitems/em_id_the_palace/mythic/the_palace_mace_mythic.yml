@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Sovereign Scepter'
+material: MACE
+level: 35
+lore:
+- '&cA royal scepter of ancient'
+- '&cstone kings. Heavy with the'
+- '&cweight of lost dynasties.'
+enchantments:
+- DAMAGE_ALL,9
+- KNOCKBACK,3
+- DURABILITY,5
+itemType: unique
+scalability: scalable

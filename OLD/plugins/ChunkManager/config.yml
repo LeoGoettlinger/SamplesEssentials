@@ -1,0 +1,197 @@
+# Radius of chunks to preload around each player
+chunk-loading-radius: 6
+
+# Maximum chunks to load per server tick
+max-chunks-to-load: 20
+
+# Maximum chunk entries in the memory cache
+max-cache-size: 100
+
+# Time (ms) before cached chunks expire
+cache-expiration-time: 30000
+
+# ─── Performance Options ──────────────────
+
+# Dynamic radius: auto-adjust based on server performance
+dynamic-radius:
+  enabled: false
+  high-tick-threshold: 50
+  high-memory-threshold: 75
+  low-tick-threshold: 40
+  low-memory-threshold: 60
+
+# Maintenance mode: protect server performance
+maintenance:
+  enabled: false
+  radius: 2
+  tick-time-threshold: 70.0
+  memory-threshold: 80.0
+  auto-maintenance: false
+
+# ─── Advanced Features ──────────────────────
+
+# Multi-threading settings
+chunk-processor:
+  core-threads: 0
+  max-threads: 0
+  queue-timeout: 3000
+
+# Smart unloading configuration
+smart-unloading:
+  enabled: true
+  heat-decay-rate: 0.95
+  heat-decay-interval: 5000
+  cold-threshold: 1.0
+  min-chunk-age: 30000
+  visit-heat-increase: 10.0
+  proximity-heat-bonus: 5.0
+  safety-radius: 3
+
+# Memory management
+memory:
+  gc-min-interval: 30000
+  low-threshold: 0.85
+  critical-threshold: 0.95
+
+# GUI settings
+gui:
+  enabled: true
+  update-interval: 20
+  cooldown: 300
+
+# Performance monitoring
+performance:
+  alert-on-critical: true
+  export-metrics: false
+  metrics-interval: 300
+
+# ─── Advanced Features ──────────────────────
+
+# Enable advanced optimization features
+advanced-features:
+  enabled: true
+  
+  chunk-analyzer:
+    cache-expiration: 300000
+    complexity-threshold: 100
+  
+  region-optimizer:
+    region-size: 8
+    activity-decay-rate: 0.9
+    high-activity-threshold: 100
+  
+  prefetcher:
+    enabled: true
+    max-distance: 5
+    confidence-threshold: 0.7
+    worker-threads: 4
+
+# ─── Permission Radius ─────────────────────
+# Grant players different radius based on permissions
+permission-radius:
+  enabled: false
+  tiers:
+    '6': 6
+    '5': 5
+    '4': 4
+    '3': 3
+    '2': 2
+    '1': 1
+
+# ─── Scheduled Optimization ───────────────
+# Run chunk optimization at specific times
+scheduled-optimization:
+  enabled: false
+  times:
+  - 04:00
+  aggressive-target: 100
+  log-results: true
+
+# ─── WorldGuard Integration ───────────────
+# Keep WorldGuard region chunks loaded
+worldguard:
+  keep-regions-loaded: false
+  check-on-unload: true
+  region-whitelist: []
+  scan-interval: 300
+
+# ─── Chunk Pre-Generation ────────────────────
+# Pre-generate chunks with TPS-aware throttling
+pre-generation:
+  chunks-per-tick: 3
+  tps-threshold: 18.0
+  actionbar-updates: true
+
+# ─── System Options ─────────────────────────
+
+# Logging level (SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST)
+logging-level: INFO
+
+# Plugin language (en, es, fr, de, pt, it, ru, ja, ko, zh, ar)
+language: de
+
+# Whether to broadcast maintenance mode changes to all players
+broadcast-maintenance-changes: false
+
+# --- Entity Limiter ---
+entity-limiter:
+  enabled: false
+  total-limit: 100
+  hostile-limit: 30
+  passive-limit: 40
+  item-limit: 50
+  cull-cooldown: 5000
+
+# --- TPS Throttling ---
+tps-throttle:
+  enabled: true
+  min-tps: 15.0
+  target-tps: 19.0
+
+# --- Load Priority Queue ---
+load-priority:
+  enabled: true
+
+# --- Chunk Tickets ---
+chunk-tickets:
+  enabled: false
+  default-duration: 300
+
+# --- Teleport Preloading ---
+teleport-preload:
+  enabled: true
+  radius: 3
+
+# --- Portal Preloading ---
+portal-preload:
+  enabled: true
+  radius: 4
+
+# --- Adaptive Player Loading ---
+adaptive-loading:
+  enabled: false
+  ping-threshold-low: 50
+  ping-threshold-med: 150
+  ping-threshold-high: 300
+
+# --- GeyserMC ---
+geyser:
+  auto-detect: true
+  radius-reduction: 2
+
+# --- Chunk Cost Tracking ---
+chunk-cost:
+  enabled: true
+  update-interval: 100
+
+# Worlds to exclude from chunk management
+world-blacklist:
+- world_nether
+- world_the_end
+region-tick-monitor:
+  enabled: true
+  update-interval: 20
+map-overlay:
+  enabled: true
+  top-count: 20
+  refresh-interval: 600

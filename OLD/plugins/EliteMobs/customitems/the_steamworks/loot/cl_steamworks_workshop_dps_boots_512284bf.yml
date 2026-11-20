@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&bCatwalk Shoes'
+lore:
+- '&bThe soles are scored in the pattern of the walkways.'
+- '&bThey have seen every floor of this place.'
+classLootFamily: DPS_BOOTS

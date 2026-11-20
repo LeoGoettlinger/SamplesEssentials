@@ -1,0 +1,12 @@
+name: '&bSlowpoke Charm'
+lore:
+- '&aLet''s just hope it doesn''t hit'
+- '&aitself in its confusion...'
+isEnabled: true
+material: CARROT_ON_A_STICK
+enchantments:
+- VANISHING_CURSE,1
+potionEffects:
+- SLOW,0,self,onHit
+- CONFUSION,0,target,onHit
+dropWeight: '1'

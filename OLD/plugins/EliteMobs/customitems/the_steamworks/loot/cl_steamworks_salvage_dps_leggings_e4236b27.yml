@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&bDrive-Link Greaves'
+lore:
+- '&bThe hinges bear the marks of hurried filing.'
+- '&bThey bend in the correct direction now.'
+classLootFamily: DPS_LEGGINGS

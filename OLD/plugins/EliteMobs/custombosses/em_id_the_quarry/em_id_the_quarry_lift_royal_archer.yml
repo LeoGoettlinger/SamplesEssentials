@@ -1,0 +1,130 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: SKELETON
+mainHand: BOW
+offHand: ARROW
+name: $normalLevel &eRoyal Archer
+level: dynamic # 40
+healthMultiplier: 1.7
+damageMultiplier: 0.85
+movementSpeedAttribute: 0.3
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+powers:
+- attack_arrow.yml
+- filename: arrow_fireworks.yml
+  difficultyID:
+  - 1
+- filename: arrow_rain.yml
+  difficultyID:
+  - 2
+disguise: custom:the_quarry_lift_archer
+customDisguiseData: player the_quarry_lift_archer setskin {"id":"12fb5e93-9aa1-422f-b602-379ee1fdaafe","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcwOTY1Mjg3MzI4NCwKICAicHJvZmlsZUlkIiA6ICI0OTY5YTVlZTYxMTY0MDBkYTM4YzhmZjRiMWJhZTZiZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJSZWFjdFpJUCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9iYmUwMzEwMzQ2ZWU2NTFmYzI3NjU5NzQzZmE4MTQ0MTI1MDkzMjA0YWIwNDdjOTg4N2EwMWMxNGQyZTI5NTc1IgogICAgfQogIH0KfQ==","signature":"TSIg8/5aOWmj73Rinle8csp1wxhKBGE/QV2P7UPEonF79i6QO/yk73LDJp7ejtBaxi69JZ85xCXBS0pQhuGFqyzNMLT5YAZNn5GqsbdO9/69gaE7UgayDRlaebEfNI/xRJfDxoBseOWff89ES9gDrzjJ3FLw0RcPVKLeDC3yqbHyO959P+hbxUfOJKa/nSzUwWDrsPwn1ZZ2AMVS7BRC6YAmOQ/203Pfxaf2a3jNaUNFFIjKvCktdUK+WynTvMcn0bhAWmC5Q/4hi+8uZERnaV8te301TVBod+xy2YBBI+jR1cjqxDcW2rXUCuWKFaOKWWKDQ5EZpV6h23c8t6swItFpX6lIfjNqRO0ZAKLuNB+HGYSD79IR90rKOssvvzY2BvCYrcL+aNCn/BKzGBgZwMlQQcBfyE8dGiH9OfDrUiyMZ2SnBDanLb2h6KHr+2ObA9tafv/WWy0N3JOGy/WO/fm6Q2miMGdQhY98L6A3OB11hg/I8QKeg7bmrlLj+o/Gp46feDsli2gKXcxjSgDFsuVHH9eyAmSa2AuFXIVsOiow6uoAl1jcfA6fKlQM3ZoPLV0vS8PebO8JTKD06Oiy58+w1Mb2QRwLYgewe0pMx4UtXXdRBvEayPFAa2GQpjIxYhxUwei7nKzZZqumJnyGiYZ8+W+xX+bJhI0136gjmuk="}],"legacy":false}
+frozen: false
+followDistance: 80
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+spawnLocations:
+- em_id_the_quarry,343.5,58.5,131.5,0.0,0.0
+- em_id_the_quarry,337.5,57.5,124.5,0.0,0.0
+- em_id_the_quarry,371.5,62.5,95.5,0.0,0.0
+- em_id_the_quarry,362.5,22.5,109.5,0.0,0.0:1709718258392
+- em_id_the_quarry,357.5,12.5,140.5,0.0,0.0
+- em_id_the_quarry,347.5,10.5,138.5,0.0,0.0
+- em_id_the_quarry,345.5,-18.5,115.5,0.0,0.0
+- em_id_the_quarry,370.5,-20.5,107.5,0.0,0.0
+- em_id_the_quarry,390.5,-33.5,88.5,0.0,0.0
+- em_id_the_quarry,386.5,-30.5,135.5,0.0,0.0
+- em_id_the_quarry,327.5,-36.5,124.5,0.0,0.0
+- em_id_the_quarry,363.5,-16.5,95.5,0.0,0.0
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: em_id_the_quarry_trash_boots_tank_normal.yml
+  chance: 0.05
+  difficultyID: 0
+- filename: em_id_the_quarry_trash_bow_tank_normal.yml
+  chance: 0.05
+  difficultyID: 0
+- filename: em_id_the_quarry_trash_chestplate_tank_normal.yml
+  chance: 0.05
+  difficultyID: 0
+- filename: em_id_the_quarry_trash_helmet_tank_normal.yml
+  chance: 0.05
+  difficultyID: 0
+- filename: em_id_the_quarry_trash_leggings_tank_normal.yml
+  chance: 0.05
+  difficultyID: 0
+- filename: em_id_the_quarry_trash_boots_tank_hard.yml
+  chance: 0.05
+  difficultyID: 1
+- filename: em_id_the_quarry_trash_bow_tank_hard.yml
+  chance: 0.05
+  difficultyID: 1
+- filename: em_id_the_quarry_trash_chestplate_tank_hard.yml
+  chance: 0.05
+  difficultyID: 1
+- filename: em_id_the_quarry_trash_helmet_tank_hard.yml
+  chance: 0.05
+  difficultyID: 1
+- filename: em_id_the_quarry_trash_leggings_tank_hard.yml
+  chance: 0.05
+  difficultyID: 1
+- filename: em_id_the_quarry_trash_boots_tank_mythical.yml
+  chance: 0.05
+  difficultyID: 2
+- filename: em_id_the_quarry_trash_bow_tank_mythical.yml
+  chance: 0.05
+  difficultyID: 2
+- filename: em_id_the_quarry_trash_chestplate_tank_mythical.yml
+  chance: 0.05
+  difficultyID: 2
+- filename: em_id_the_quarry_trash_helmet_tank_mythical.yml
+  chance: 0.05
+  difficultyID: 2
+- filename: em_id_the_quarry_trash_leggings_tank_mythical.yml
+  chance: 0.05
+  difficultyID: 2
+- filename: cl_story_quarry_swords_2729e742.yml
+  chance: 1.0
+- filename: cl_story_quarry_axes_d871d3ab.yml
+  chance: 1.0
+- filename: cl_story_quarry_bows_ccabbcb4.yml
+  chance: 1.0
+- filename: cl_story_quarry_crossbows_4e4680f9.yml
+  chance: 1.0
+- filename: cl_story_quarry_tridents_9ced9fbf.yml
+  chance: 1.0
+- filename: cl_story_quarry_hoes_5211e998.yml
+  chance: 1.0
+- filename: cl_story_quarry_maces_7f24961b.yml
+  chance: 1.0
+- filename: cl_story_quarry_spears_8d549051.yml
+  chance: 1.0
+- filename: cl_story_quarry_staves_1ce41de2.yml
+  chance: 1.0
+- filename: cl_story_quarry_wands_7eb59ac6.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_helmets_73ccb419.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_chestplates_3148278f.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_leggings_ca5a54fd.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_boots_3e7f381e.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_helmets_2f899f43.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_chestplates_21a5129c.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_leggings_da76caa5.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_boots_0c31ed26.yml
+  chance: 1.0
+- filename: cl_story_quarry_shields_d080f0ef.yml
+  chance: 1.0

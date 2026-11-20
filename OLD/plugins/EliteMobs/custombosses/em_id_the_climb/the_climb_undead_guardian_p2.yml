@@ -1,0 +1,181 @@
+announcementPriority: 0
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: MINIBOSS
+customDisguiseData: player the_climb_undead_2 setskin {"id":"2cc1589b-7ffc-4d7d-8fb3-c81d560b1caf","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY0NzcyMTYzNDY5OSwKICAicHJvZmlsZUlkIiA6ICI1ODkwNjAyNDYyMzE0ZGFjODM0NWQ3YjI4MmExZDI4ZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJXeW5uY3JhZnRHYW1pbmciLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDk2MGNlZGFhMzZkZTQxNmIyMzhmY2Y3ZmZiYmJlNWNjOTgyZjE0MGVjMTZlNzYxZThjNjYxMGQ3NTFjNzM2IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=","signature":"DW27LHyy4vPb9v7MWVSpla+fvsW8C7o1K63ZS5FdKLNWa7IfbfZJA2ZdxZsdtHWhAzzVcranKITFW0oAAajKggfV272dCntQgYnujB4mX/fklOxHsDqSHdbhqwedeDtrujWr3ErPMSQTmOkZBVWmqTDHE5eQe1ZwiJNma+0mYaz1O4dqClufufrZn1GYcIyU8nhu9ymrpRExgwq1LiYh0urk2mb1FsckIzLCnR3y0lJz+bHuZkiqY/3goe3mWhGoyM7lGeDnBE7Y5FPuDsk/hBiCVU3aJ8M74+HV7sKcvu16Ms5lOwSOxJ7Ft0JLLPbPG4Yh7PlTQSliT8aLaF/NkFGtx7sfDK52RS5ZWGlyPteYOWwpakG1dRoFI5jtMRWC3a3r+0upoqJYWjgc5MY1U1LUm37EHfr4R+Ox1BDMFDQRu5a9uTiGSlfm+qRo1W+dUO9ihwoLCu6W4fbswVtvrB+RVJKoUB8CxfgU7+6Au9c0g4krgqcqvpl/I8AQMBobFWqoMn9JTdHL8uKSAM2A2JH6uYUiAnab7ciWSjJjCjDL4h85iZy1p7fvIqB2544RAV9QjTlmh5D6GcUU/+dITpjTr/CTLRh7J4g3Dv+eQFKdtk0pH6SjbUI60d7nQABDM2VLxGspxFC42nNwvTXQC6o3S0TWRj1qgRQwbk4lNTE="}],"legacy":false}
+damageMultiplier: 0.8
+deathMessages:
+- Thank you for freeing me...
+disguise: custom:the_climb_undead_2
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  DomeArena:
+    Actions:
+    - Target:
+        range: 40
+        targetType: NEARBY_PLAYERS
+      action: MESSAGE
+      sValue: '&c[Undead Guardian] &fLet the the darkness come!'
+    - Target:
+        targetType: SELF
+      action: SET_TIME
+      time: 18000
+      wait: 50
+    - Conditions:
+        isAlive: true
+        locationIsAir: true
+      Target:
+        targetType: ZONE_BORDER
+      action: PLACE_BLOCK
+      duration: 12000
+      material: GLASS
+      wait: 20
+    - Target:
+        range: 40
+        targetType: NEARBY_PLAYERS
+      action: POTION_EFFECT
+      amplifier: 0
+      duration: 20
+      potionEffectType: BLINDNESS
+    - FinalTarget:
+        location: same_as_boss,411.5,43.0,364.5,0.0,0.0
+        targetType: LOCATION
+      Target:
+        range: 40
+        targetType: NEARBY_PLAYERS
+      action: TELEPORT
+    - action: RUN_SCRIPT
+      scripts:
+      - OpenDomeTop
+    Events:
+    - ElitePhaseSwitchEvent
+    Zone:
+      Target:
+        location: same_as_boss,416.5,43.0,364.5,0.0,0.0
+        targetType: LOCATION
+      borderRadius: 9.0
+      filter: LIVING
+      radius: 10.0
+      shape: DOME
+  DomeArenaRemove:
+    Actions:
+    - Target:
+        targetType: ZONE_BORDER
+      action: PLACE_BLOCK
+      material: AIR
+    Zone:
+      Target:
+        location: same_as_boss,416.5,43.0,364.5,0.0,0.0
+        targetType: LOCATION
+      borderRadius: 9.0
+      radius: 10.0
+      shape: DOME
+  OpenDomeTop:
+    Actions:
+    - Target:
+        targetType: ZONE_FULL
+      action: PLACE_BLOCK
+      duration: 12000
+      material: AIR
+      wait: 25
+    Zone:
+      Target:
+        location: same_as_boss,416.5,49.0,364.5,0.0,0.0
+        targetType: LOCATION
+      height: 4.0
+      radius: 6.0
+      shape: CYLINDER
+  OpenPath:
+    Actions:
+    - Target:
+        targetType: ZONE_FULL
+      action: PLACE_BLOCK
+      duration: 12000
+      material: AIR
+    - action: RUN_SCRIPT
+      scripts:
+      - DomeArenaRemove
+      wait: 699
+    Events:
+    - EliteMobDeathEvent
+    Zone:
+      Target:
+        location: same_as_boss,417.5,43.0,356.5,0.0,0.0
+        targetType: LOCATION
+      height: 3.0
+      radius: 2.0
+      shape: CYLINDER
+entityType: SKELETON
+followDistance: 25
+frozen: false
+healthMultiplier: 4
+helmet: IRON_HELMET
+instanced: true
+isEnabled: true
+leashRadius: 25
+level: dynamic # 10
+mainHand: NETHERITE_SWORD
+movementSpeedAttribute: 0.28
+name: $minibossLevel &cVillage Guardian
+normalizedCombat: true
+offHand: SHIELD
+powers:
+- arrow_rain.yml
+- difficultyID:
+  - 2
+  filename: attack_poison.yml
+- difficultyID:
+  - 1
+  - 2
+  filename: attack_weakness.yml
+- difficultyID:
+  - 2
+  filename: movement_speed.yml
+- the_climb_firewall.yml
+trails:
+- SMOKE_LARGE
+- SMOKE_LARGE
+classLoot: true
+classLootRank: MINIBOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: cl_story_climb_swords_8ea5dae3.yml
+  chance: 1.0
+- filename: the_climb_undead_guardian_p2_axes_07b66bca.yml
+  chance: 1.0
+- filename: cl_story_climb_bows_147d3e16.yml
+  chance: 1.0
+- filename: cl_story_climb_crossbows_320c599d.yml
+  chance: 1.0
+- filename: cl_story_climb_tridents_462a95e9.yml
+  chance: 1.0
+- filename: cl_story_climb_hoes_90f57b2c.yml
+  chance: 1.0
+- filename: cl_story_climb_maces_7f63f619.yml
+  chance: 1.0
+- filename: cl_story_climb_spears_743b64fe.yml
+  chance: 1.0
+- filename: cl_story_climb_staves_3ba7efcc.yml
+  chance: 1.0
+- filename: cl_story_climb_wands_0b2088fe.yml
+  chance: 1.0
+- filename: the_climb_undead_guardian_p2_dps_helmets_d893552d.yml
+  chance: 1.0
+- filename: cl_story_climb_dps_chestplates_ed45bf2e.yml
+  chance: 1.0
+- filename: cl_story_climb_dps_leggings_4a065545.yml
+  chance: 1.0
+- filename: the_climb_undead_guardian_p2_dps_boots_45dbb14c.yml
+  chance: 1.0
+- filename: cl_story_climb_tank_helmets_77716983.yml
+  chance: 1.0
+- filename: the_climb_undead_guardian_p2_tank_chestplates_f9943d05.yml
+  chance: 1.0
+- filename: the_climb_undead_guardian_p2_tank_leggings_21e4b161.yml
+  chance: 1.0
+- filename: cl_story_climb_tank_boots_0634543f.yml
+  chance: 1.0
+- filename: cl_story_climb_shields_4f3929f0.yml
+  chance: 1.0

@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&4Tribute of the Deep'
+lore:
+- '&4The king collects from every passing vessel.'

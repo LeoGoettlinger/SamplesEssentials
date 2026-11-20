@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&c[$difficulty] Volcanic Arbalest'
+lore:
+- '&cA heavy crossbow that fires'
+- '&cbolts of hardened lava.'

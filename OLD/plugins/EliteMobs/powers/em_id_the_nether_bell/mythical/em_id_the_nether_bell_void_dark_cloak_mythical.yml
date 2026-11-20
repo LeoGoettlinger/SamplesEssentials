@@ -1,0 +1,81 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  SmokeBomb:
+    Events:
+    - EliteMobDamagedEvent
+    Zone:
+      shape: SPHERE
+      radius: 5
+      Target:
+        targetType: SELF
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.5
+      repeatEvery: 10
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 5
+      duration: 40
+      repeatEvery: 19
+      Target:
+        targetType: ZONE_FULL
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 0
+      duration: 80
+      repeatEvery: 10
+      Target:
+        targetType: ZONE_FULL
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLAY_SOUND
+      sValue: minecraft:ambient.cave
+      repeatEvery: 200
+      volume: 0.3
+      Target:
+        targetType: SELF
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: MESSAGE
+      Target:
+        targetType: ZONE_FULL
+      sValue: '&cThe Void bell &7is affecting your mind!'
+      repeatEvery: 100
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      title: '&cDeath'
+      subtitle: '&cis the only way out...'
+      Target:
+        targetType: ZONE_FULL
+      duration: 40
+      fadeIn: 10
+      fadeOut: 10
+      repeatEvery: 200
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF
+    Cooldowns:
+      local: 99999
+      global: 1

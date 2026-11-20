@@ -1,0 +1,6 @@
+name: Plasma Boots
+isEnabled: true
+maxLevelV2: 3
+value: 20.0
+isEnabledForProcedurallyGeneratedItems: false
+maxEnchantmentLevel: 3

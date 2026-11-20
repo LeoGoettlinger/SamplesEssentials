@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Hard] Gel Armor'
+material: DIAMOND_CHESTPLATE
+level: 20
+lore:
+- '&2It weighs more than you thought it would.'
+enchantments:
+- DAMAGE_UNDEAD,3
+- PROTECTION_ENVIRONMENTAL,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

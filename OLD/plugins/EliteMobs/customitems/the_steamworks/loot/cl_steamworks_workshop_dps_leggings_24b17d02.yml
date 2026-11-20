@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&bClimber''s Links'
+lore:
+- '&bThe outer plates are worn smooth against the gantry.'
+- '&bThe inside edges were filed smooth on purpose.'
+classLootFamily: DPS_LEGGINGS

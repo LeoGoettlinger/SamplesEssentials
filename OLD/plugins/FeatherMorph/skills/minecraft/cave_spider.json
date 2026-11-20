@@ -1,0 +1,15 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:potion_on_attack",
+    "morph:spider"
+  ],
+  "settings": {
+    "morph:potion_on_attack": {
+      "duration": 200,
+      "name": "minecraft:poison",
+      "amplifier": 0
+    }
+  }
+}

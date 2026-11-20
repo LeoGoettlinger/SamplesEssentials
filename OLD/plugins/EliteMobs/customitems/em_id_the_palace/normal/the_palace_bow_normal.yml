@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Regal Longbow'
+material: BOW
+level: 35
+lore:
+- '&cA bow fit for royalty. Its'
+- '&carrows fly true and strike'
+- '&cwith noble precision.'
+enchantments:
+- ARROW_DAMAGE,3
+- ARROW_KNOCKBACK,2
+- DURABILITY,3
+itemType: unique
+scalability: scalable

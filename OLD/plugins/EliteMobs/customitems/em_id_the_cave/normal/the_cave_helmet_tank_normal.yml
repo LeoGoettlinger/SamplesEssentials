@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&c[Normal] Boiled Helmet'
+material: IRON_HELMET
+level: 15
+lore:
+- '&cThe helmet has a weird square shape to it.'
+enchantments:
+- PROTECTION_EXPLOSIONS,5
+- DURABILITY,3
+- DAMAGE_ALL,2
+- elitemobs:loud_strikes,1
+potionEffects:
+- ABSORPTION,0,self,onHit
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

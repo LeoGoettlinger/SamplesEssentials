@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Foundation Blocks
+lore:
+- Now you are the bottom row.
+classLootFamily: TANK_BOOTS

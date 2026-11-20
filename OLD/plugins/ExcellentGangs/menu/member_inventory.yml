@@ -1,0 +1,80 @@
+# ==================== [SECTION] SETTINGS ====================
+# > [MenuType] : String | Represents the menu type. Allowed values: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/MenuType.html
+# > [Title] : String | Sets menu title.
+# > [Auto_Refresh] : Integer | Defines menu refresh rate in seconds. Set 0 to disable.
+# > [PlaceholderAPI -> Enabled] : Boolean | When enabled, applies PlaceholderAPI placeholders for all items in the menu per player.
+#  
+# ==================== [SECTION] CONTENT ====================
+# You can freely edit items in this section as you wish (add, remove, modify items).
+# > [Item] : Section | Item to display.
+#     [*] Navigate to https://nightexpressdev.com/nightcore/configuration/item-formation/ for a list of available options.
+# > [Priority] : Integer | Item priority. Higher values will override other item(s) in the same slot(s).
+# > [Slots] : Int Array | Item slots, starts from 0. Split with commas.
+#     Slots: '0,4,9,10'
+# > [Type] : String | Defines item click action.
+#     [*] Available types: ['close', 'user_skin', 'return']
+# > [Click_Commands] : Section | Executes commands on click with PlaceholderAPI support.
+#     [*] Works only if [Type] is not set (null).
+#     [*] Available click types: [LEFT, RIGHT, SHIFT_LEFT, SHIFT_RIGHT, DROP_KEY, SWAP_KEY, DRAG_N_DROP]
+#     [*] Use prefix 'player:' to run command by a player.
+#     Click_Commands:
+#       LEFT:
+#       - say Hello
+#       - give %player_name% diamond 1
+#       - player: warp shop
+# ==================================================
+Settings:
+  MenuType: minecraft:generic_9x6
+  Title: <black>%member_name%'s Inventory</black>
+  Auto_Refresh: -1
+  PlaceholderAPI:
+    Enabled: false
+Inventory:
+  ItemSlots: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35
+  Helmet:
+    Slot: 38
+    Placeholder:
+      Material: minecraft:red_stained_glass_pane
+      Display_Name: <soft_red>No Helmet</soft_red>
+      Lore: []
+  Chest:
+    Slot: 39
+    Placeholder:
+      Material: minecraft:red_stained_glass_pane
+      Display_Name: <soft_red>No Chestplate</soft_red>
+      Lore: []
+  Legs:
+    Slot: 40
+    Placeholder:
+      Material: minecraft:red_stained_glass_pane
+      Display_Name: <soft_red>No Leggings</soft_red>
+      Lore: []
+  Feet:
+    Slot: 41
+    Placeholder:
+      Material: minecraft:red_stained_glass_pane
+      Display_Name: <soft_red>No Boots</soft_red>
+      Lore: []
+  Offhand:
+    Slot: 42
+    Placeholder:
+      Material: minecraft:red_stained_glass_pane
+      Display_Name: <soft_red>No Offhand Item</soft_red>
+      Lore: []
+Content:
+  black_stained_glass_pane:
+    Priority: -1
+    Item:
+      Material: minecraft:black_stained_glass_pane
+      Lore: []
+      Hide_Tooltip: true
+    Slots: 36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53
+    Type: 'null'
+  return:
+    Priority: 0
+    Item:
+      Material: minecraft:iron_door
+      Display_Name: <soft_yellow><b>Back</b></soft_yellow>
+      Lore: []
+    Slots: '49'
+    Type: return

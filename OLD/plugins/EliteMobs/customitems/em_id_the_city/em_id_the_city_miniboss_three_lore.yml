@@ -1,0 +1,11 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&aRipped Dwarven Note'
+material: PAPER
+lore:
+- '&aThe last of my life will go to protecting'
+- '&athis city and the palace. No matter what,'
+- '&aI shall keep serving.'
+scalability: scalable
+itemType: unique

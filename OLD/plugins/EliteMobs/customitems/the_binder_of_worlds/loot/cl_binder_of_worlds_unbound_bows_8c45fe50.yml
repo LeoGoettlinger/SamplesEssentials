@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&5Last Orbit'
+lore:
+- '&5The curve recalls a sky without stars.'
+- '&5Your fingers find the string by touch.'

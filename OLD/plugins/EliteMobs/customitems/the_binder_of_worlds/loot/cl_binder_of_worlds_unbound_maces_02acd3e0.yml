@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&5Collapsed Star'
+lore:
+- '&5There is no light left in its head.'
+- '&5Only the weight remains.'

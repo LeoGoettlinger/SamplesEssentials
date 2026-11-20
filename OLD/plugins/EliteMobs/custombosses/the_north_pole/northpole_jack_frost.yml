@@ -1,0 +1,106 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: BOSS
+damageMultiplier: 1.75
+disguise: SNOWMAN
+dropsEliteMobsLoot: true
+entityType: STRAY
+healthMultiplier: 6.0
+isEnabled: true
+isRegionalBoss: true
+leashRadius: 50
+instanced: true
+level: dynamic # 60
+mainHand: BOW
+name: $bossLevel &bJack Frost
+powers:
+- bonus_loot.yml
+- bullet_hell.yml
+- attack_freeze.yml
+- invulnerability_arrow.yml
+- invulnerability_knockback.yml
+- invulnerability_fire.yml
+- invulnerability_fall_damage.yml
+- movement_speed.yml
+- amount: 1
+  chance: 0.35
+  filename: northpole_snowy_wraith.yml
+  inheritAggro: true
+  inheritLevel: true
+  spawnNearby: false
+  summonType: ON_HIT
+spawnCooldown: 30
+spawnLocations:
+- em_north_pole,-304.45753776403706,113.2,-463.5300105741452,151.86108,47.549934:1611245651441
+classLoot: true
+classLootRank: BOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- northpole_treat.yml:0.1
+- northpole_treat_v2.yml:0.5
+- northpole_treat_v2.yml:0.5
+- northpole_treat_v2.yml:0.5
+- northpole_treat_v2.yml:0.5
+- northpole_treat_v2.yml:0.5
+- northpole_treat_v2.yml:0.5
+- northpole_treat_v2.yml:0.5
+- northpole_treat_v2.yml:0.5
+- northpole_treat_v2.yml:0.5
+- northpole_amazing_treat.yml:0.5
+- northpole_amazing_treat.yml:0.5
+- northpole_amazing_treat.yml:0.5
+- northpole_amazing_treat.yml:0.5
+- northpole_amazing_treat.yml:0.5
+- northpole_amazing_treat.yml:0.5
+- northpole_amazing_treat.yml:0.5
+- northpole_amazing_treat.yml:0.5
+- northpole_amazing_treat.yml:0.5
+- northpole_amazing_treat.yml:0.5
+- northpole_incredible_treat.yml:0.5
+- northpole_incredible_treat.yml:0.5
+- northpole_incredible_treat.yml:0.5
+- northpole_frostcaster.yml:0.5
+- xmas_lost_present.yml:0.1
+- xmas_lost_present.yml:0.1
+- xmas_lost_present.yml:0.1
+- xmas_lost_present.yml:0.1
+- xmas_lost_present.yml:0.1
+- xmas_lost_present.yml:0.1
+- filename: cl_north_pole_seasonal_swords_fe094451.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_axes_38ee1d9d.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_bows_1452471e.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_crossbows_27dc1590.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_tridents_25a25429.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_hoes_b090697f.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_maces_1d4190e9.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_spears_0a2c19a5.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_staves_354129f1.yml
+  chance: 1.0
+- filename: northpole_jack_frost_wands_1b4caef1.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_dps_helmets_2eed31ca.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_dps_chestplates_8304d9b6.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_dps_leggings_b800c94d.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_dps_boots_d372218a.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_tank_helmets_4cfac7c4.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_tank_chestplates_489df044.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_tank_leggings_60f7912e.yml
+  chance: 1.0
+- filename: cl_north_pole_seasonal_tank_boots_94496b1d.yml
+  chance: 1.0
+- filename: northpole_jack_frost_shields_dd46d276.yml
+  chance: 1.0

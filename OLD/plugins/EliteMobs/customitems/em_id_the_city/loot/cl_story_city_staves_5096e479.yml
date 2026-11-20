@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&7Ward Captain''s Baton'
+lore:
+- '&7Every watch post is marked along its length.'
+weaponType: STAVES

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&4Graveyard Watch'
+lore:
+- '&4Its stock bears the marks of a long vigil.'
+- '&4No keeper came to reclaim it.'

@@ -1,0 +1,65 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: REINFORCEMENT
+customDisguiseData: player the_palace_stone_guardian setskin {"id":"152a2c81-362c-4bba-9ec8-b35bb6ce8252","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcwMjU0ODAyMTEyNSwKICAicHJvZmlsZUlkIiA6ICIxNmJhNWU4MDJhMmU0ZDJhYjEwZmZiYWJiYmQ1MDdlZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJzbGlua3l1c2VyMzMxNSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9lYTRlZDYyMjFhOTc2N2UzMjU0ZmQxNWZlZWEzOTEzMjg1OGU0ZDdhMTgzMjMyZWUyYWExNjRlNzEyZjgxYTZlIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=","signature":"naBNweYizJTaSqC/IpLK6JilwteP+Np0xPcaRJ/PziTDyeHj8Lfp343BwtecJgh7FNJ9jKUSfJbQ4KpcgWT9Kyj1LdrFueoQJc2Q2PPYMxbksBBuNPZAf8I5a9TLX45yFoHDfD7Dqu1WS/JsfdF07TACEwkSXuhyePVtAIUBZQZ0Qxg56/uNonl0a/BebOtv3+uS3d+o99kRHfXk7TDjhoPURbsc9kHCYezF/PE6ZdW3e3gBeX3q7+/npaihd5Ypt8/aG0NG+SD9n1UGeXb87P3Ym1E1+tPTqzEp8JYRP7gOY+Wt8xz4yfGsT4mEWOH1HG8qmCkvwhOiUxucFnk48lbsBRlq2CnuDW/OLzZ8VCnbeY87uBPfOo/FsGs6ieAYk5mFWzdKK5D3gYORPCZn107ewVvLpGZtk5RWZEH+TVH/fNY6r3VrrLy8VAGEXVRA/zmwTo0yL9ZK0IhsnIiUZUTBswafMsrXHeWwZ91DU2ZWSDtVOMxVJxoUA5kWdYR1OGLk7NlATXPEfp+xum4JNg9+eatj4AvsNCaDAY1OjHCQZ1T1Q9H4JKi3AULBtTAo8YspM449RYm6OlAx/QKJDfLrmBKcddjANI4/guGdQgyJOXgoH+T2pBqbEfhGUkz++Q86did72y9hFVqs8kdd0A3DDGx2jfP2KwHPMQYs9gI="}],"legacy":false}
+damageMultiplier: 0.3
+disguise: custom:the_palace_stone_guardian
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  ElectricParticleSelf:
+    Actions:
+    - Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - p3
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      action: SPAWN_PARTICLE
+      particles:
+      - particle: ELECTRIC_SPARK
+      repeatEvery: 20
+      wait: 5
+    - Target:
+        targetType: SELF
+      action: TAG
+      tags:
+      - p3
+    - Target:
+        targetType: SELF
+      action: UNTAG
+      tags:
+      - p2
+    Events:
+    - ElitePhaseSwitchEvent
+    Zone:
+      Target:
+        offset: 0,1,0
+        targetType: SELF
+        track: true
+      height: 2
+      radius: 2
+      shape: CYLINDER
+entityType: IRON_GOLEM
+followDistance: 110
+frozen: false
+healthMultiplier: 3
+instanced: true
+isEnabled: true
+isRegionalBoss: false
+level: dynamic # 35
+movementSpeedAttribute: 0.32
+name: $reinforcementLevel &aStone Guardian
+normalizedCombat: true
+powers:
+- difficultyID:
+  - 2
+  filename: em_id_the_palace_summon_slow.yml
+- invulnerability_arrow.yml
+- invulnerability_fire.yml
+- invulnerability_knockback.yml
+classLoot: false

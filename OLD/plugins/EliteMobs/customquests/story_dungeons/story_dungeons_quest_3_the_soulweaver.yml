@@ -1,0 +1,51 @@
+isEnabled: true
+customObjectives:
+  Objective1:
+    amount: '1'
+    filename: the_mines_soulweaver_daine_p0.yml
+    objectiveType: KILL_CUSTOM
+customRewards:
+- currencyAmount=200:amount=1:chance=1
+- filename=elite_scrap_tiny.yml:amount=1:chance=0.3
+- filename=elite_scrap_small.yml:amount=1:chance=0.2
+- filename=elite_scrap_medium.yml:amount=1:chance=0.1
+- filename=elite_scrap_large.yml:amount=1:chance=0.05
+- filename=elite_scrap_huge.yml:amount=1:chance=0.01
+- filename=enchanted_book_damage_all.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_arthropods.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_undead.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_environmental.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_explosions.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fall.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fire.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_projectile.yml:amount=1:chance=0.1
+- filename=story_dungeons_quest_3_leggings.yml:amount=1:chance=1.0
+questAcceptPermission: elitequest.story_dungeons_quest_2_broiled.yml
+questLockoutPermission: elitequest.story_dungeons_quest_3_the_soulweaver.yml
+questLockoutMinutes: 10080
+name: '&2The Soulweaver!'
+questLore:
+- With The Boiler out of the way, we can now focus on clearing out the mines of these
+  evil creatures.
+- You need to locate this Soulweaver Daine and make sure it is eliminated before it
+  can cause more trouble.
+- And make sure you hurry up. This creature seems capable of creation so the more
+  we wait the more time it has to create fresh undead.
+- The Mines is a dark place, so I recommend taking with you some potions of night
+  vision.
+temporaryPermissions: []
+questAcceptDialog:
+- '&e[Wallitz]&f Our scouts also reported seeing traces of spider-like beings down
+  there, so you should expect attacks that can inflict poison and other nasty effects.
+  I want to say good luck but I know you are our eighty-ninth-best guild member so
+  I am sure you will get the job done!'
+- '&7&oTime to head into the mines and see if I can locate the source of the trouble.'
+- '&7Interact with the nearby &fProspector Voultar &7teleporter to start the quest.'
+questCompleteMessage:
+- '&e[Wallitz]&f What is that smokey smell? Oh, it’s our eighty-eight-best guild member!
+  Glad to see that you made it back in one piece. Roasted but, still in one piece.
+  I hope it wasn’t too difficult to put that flaming jello down.'
+- '&7&oI feel like this is not over yet.'
+questCompleteCommands: []
+turnInNPC: story_dungeons_quest_giver.yml
+QuestLevel: 0

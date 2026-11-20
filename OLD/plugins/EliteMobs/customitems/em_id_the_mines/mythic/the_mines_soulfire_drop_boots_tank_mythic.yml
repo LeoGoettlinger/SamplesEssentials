@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&2[Mythical] Flame Kicks'
+material: DIAMOND_BOOTS
+level: 20
+lore:
+- '&2Excellent for kicking in skulls!'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,10
+- PROTECTION_FALL,6
+- PROTECTION_PROJECTILE,5
+- elitemobs:loud_strikes,3
+potionEffects:
+- JUMP,3,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

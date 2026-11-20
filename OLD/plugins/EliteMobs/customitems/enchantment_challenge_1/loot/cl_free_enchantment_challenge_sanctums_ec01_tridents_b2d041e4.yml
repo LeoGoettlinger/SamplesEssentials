@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: Cinder Fork
+lore:
+- Three prongs. Still no good for dinner.

@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: Carrot Crate Lid
+lore:
+- The rabbit kept the carrots.

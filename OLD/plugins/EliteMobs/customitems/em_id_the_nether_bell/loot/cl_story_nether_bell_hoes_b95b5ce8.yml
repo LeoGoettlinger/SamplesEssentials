@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&c[$difficulty] Bell Ringer'
+lore:
+- '&cA scythe used to toll the'
+- '&cvoid bell. Each swing echoes'
+- '&cwith apocalyptic resonance.'

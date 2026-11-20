@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&0Sunken Bell'
+lore:
+- '&0&kThe bell''s clapper forms its head.'
+- '&0&kThe cathedral has been quieter since.'

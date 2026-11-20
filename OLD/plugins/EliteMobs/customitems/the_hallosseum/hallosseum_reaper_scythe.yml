@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&4Reaper''s Scythe'
+material: NETHERITE_HOE
+lore:
+- '&cDeath itself swings this'
+- '&cdark harvest tool.'
+enchantments:
+- DAMAGE_ALL,5
+- SWEEPING_EDGE,2
+- DAMAGE_UNDEAD,4
+potionEffects:
+- WITHER,1,target,onHit
+- BLINDNESS,0,target,onHit
+itemType: unique
+scalability: scalable
+soulbound: true

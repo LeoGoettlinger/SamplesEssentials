@@ -1,0 +1,335 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: DROWNED
+customModel: em_id_the_nether_bell_model
+isBaby: true
+mainHand: TRIDENT
+name: $bossLevel &cThe Void Bell
+level: dynamic # 55
+healthMultiplier: 11.0
+damageMultiplier: 0.3
+movementSpeedAttribute: 1.0E-4
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+powers:
+- em_id_the_nether_bell_void_end.yml
+- invulnerability_knockback.yml
+- invulnerability_arrow.yml
+- invulnerability_fall_damage.yml
+- invulnerability_fire.yml
+- em_id_the_nether_bell_wake_phase3.yml
+- filename: skeleton_tracking_arrow.yml
+  difficultyID:
+  - 1
+  - 2
+- filename: arrow_rain.yml
+  difficultyID:
+  - 1
+  - 2
+- filename: shield_wall.yml
+  difficultyID:
+  - 2
+- filename: em_id_the_nether_bell_void_dark_cloak_normal.yml
+  difficultyID:
+  - 0
+- filename: em_id_the_nether_bell_void_dark_cloak_hard.yml
+  difficultyID:
+  - 1
+- filename: em_id_the_nether_bell_void_dark_cloak_mythical.yml
+  difficultyID:
+  - 2
+frozen: false
+followDistance: 80
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+eliteScript:
+  SpawnPrep:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: SET_MOB_AWARE
+      bValue: false
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      Target:
+        targetType: SELF
+      FinalTarget:
+        targetType: SELF_SPAWN
+      repeatEvery: 200
+  TridentToss:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: PLAY_SOUND
+      sValue: minecraft:item.trident.throw
+      volume: 1.4
+      Target:
+        targetType: SELF
+    - action: SUMMON_ENTITY
+      wait: 24
+      sValue: TRIDENT
+      repeatEvery: 10
+      times: 4
+      Target:
+        targetType: SELF
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          range: 30
+        normalize: true
+        multiplier: 2.5
+    Cooldowns:
+      local: 120
+      global: 1
+# - action: TAG
+# Target:
+# targetType: SELF
+# tags:
+# - VoidBell
+# - action: RUN_SCRIPT
+# repeatEvery: 60
+# scripts:
+# - GoodPotions
+# - action: RUN_SCRIPT
+# repeatEvery: 60
+# scripts:
+# - BadPotions
+# GoodPotions:
+# Actions:
+# - action: POTION_EFFECT
+# potionEffectType: SPEED
+# amplifier: 0
+# duration: 60
+# Target:
+# targetType: NEARBY_PLAYERS
+# range: 30
+# Conditions:
+# hasTags:
+# - Green1
+# Target:
+# targetType: SELF
+# conditionType: BLOCKING
+# - action: POTION_EFFECT
+# potionEffectType: STRENGTH
+# amplifier: 0
+# duration: 60
+# Target:
+# targetType: NEARBY_PLAYERS
+# range: 30
+# Conditions:
+# hasTags:
+# - Green2
+# Target:
+# targetType: SELF
+# conditionType: BLOCKING
+# - action: POTION_EFFECT
+# potionEffectType: NIGHT_VISION
+# amplifier: 0
+# duration: 300
+# Target:
+# targetType: NEARBY_PLAYERS
+# range: 30
+# Conditions:
+# hasTags:
+# - Green3
+# Target:
+# targetType: SELF
+# conditionType: BLOCKING
+# BadPotions:
+# Actions:
+# - action: POTION_EFFECT
+# potionEffectType: SLOWNESS
+# amplifier: 0
+# duration: 60
+# Target:
+# targetType: NEARBY_PLAYERS
+# range: 30
+# Conditions:
+# hasTags:
+# - Red1
+# Target:
+# targetType: SELF
+# conditionType: BLOCKING
+# - action: POTION_EFFECT
+# potionEffectType: HUNGER
+# amplifier: 3
+# duration: 60
+# Target:
+# targetType: NEARBY_PLAYERS
+# range: 30
+# Conditions:
+# hasTags:
+# - Red2
+# Target:
+# targetType: SELF
+# conditionType: BLOCKING
+# - action: POTION_EFFECT
+# potionEffectType: DARKNESS
+# amplifier: 0
+# duration: 220
+# Target:
+# targetType: NEARBY_PLAYERS
+# range: 30
+# Conditions:
+# hasTags:
+# - Red3
+# Target:
+# targetType: SELF
+# conditionType: BLOCKING
+classLoot: true
+classLootRank: BOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: em_id_the_nether_bell_void_bell_drop_charm_normal.yml
+  chance: 0.05
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_dps_boots_normal.yml
+  chance: 0.15
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_dps_chestplate_normal.yml
+  chance: 0.15
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_dps_helmet_normal.yml
+  chance: 0.15
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_dps_leggings_normal.yml
+  chance: 0.15
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_dps_sword_normal.yml
+  chance: 0.15
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_tank_axe_normal.yml
+  chance: 0.15
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_tank_boots_normal.yml
+  chance: 0.15
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_tank_chestplate_normal.yml
+  chance: 0.15
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_tank_helmet_normal.yml
+  chance: 0.15
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_tank_leggings_normal.yml
+  chance: 0.15
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_tank_shield_normal.yml
+  chance: 0.15
+  difficultyID: 0
+- filename: em_id_the_nether_bell_void_bell_drop_charm_hard.yml
+  chance: 0.05
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_dps_boots_hard.yml
+  chance: 0.15
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_dps_chestplate_hard.yml
+  chance: 0.15
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_dps_helmet_hard.yml
+  chance: 0.15
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_dps_leggings_hard.yml
+  chance: 0.15
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_dps_sword_hard.yml
+  chance: 0.15
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_tank_axe_hard.yml
+  chance: 0.15
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_tank_boots_hard.yml
+  chance: 0.15
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_tank_chestplate_hard.yml
+  chance: 0.15
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_tank_helmet_hard.yml
+  chance: 0.15
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_tank_leggings_hard.yml
+  chance: 0.15
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_tank_shield_hard.yml
+  chance: 0.15
+  difficultyID: 1
+- filename: em_id_the_nether_bell_void_bell_drop_charm_mythic.yml
+  chance: 0.05
+  difficultyID: 2
+- filename: em_id_the_nether_bell_void_bell_drop_dps_boots_mythic.yml
+  chance: 0.15
+  difficultyID: 2
+- filename: em_id_the_nether_bell_void_bell_drop_dps_chestplate_mythic.yml
+  chance: 0.15
+  difficultyID: 2
+- filename: em_id_the_nether_bell_void_bell_drop_dps_helmet_mythic.yml
+  chance: 0.15
+  difficultyID: 2
+- filename: em_id_the_nether_bell_void_bell_drop_dps_leggings_mythic.yml
+  chance: 0.15
+  difficultyID: 2
+- filename: em_id_the_nether_bell_void_bell_drop_dps_sword_mythic.yml
+  chance: 0.15
+  difficultyID: 2
+- filename: em_id_the_nether_bell_void_bell_drop_tank_axe_mythic.yml
+  chance: 0.15
+  difficultyID: 2
+- filename: em_id_the_nether_bell_void_bell_drop_tank_boots_mythic.yml
+  chance: 0.15
+  difficultyID: 2
+- filename: em_id_the_nether_bell_void_bell_drop_tank_chestplate_mythic.yml
+  chance: 0.15
+  difficultyID: 2
+- filename: em_id_the_nether_bell_void_bell_drop_tank_helmet_mythic.yml
+  chance: 0.15
+  difficultyID: 2
+- filename: em_id_the_nether_bell_void_bell_drop_tank_leggings_mythic.yml
+  chance: 0.15
+  difficultyID: 2
+- filename: em_id_the_nether_bell_void_bell_drop_tank_shield_mythic.yml
+  chance: 0.15
+  difficultyID: 2
+- filename: cl_story_nether_bell_swords_5b0e5445.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_axes_9a9cc081.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_bows_e09343b5.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_crossbows_7413b656.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_tridents_9c6deb80.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_hoes_b95b5ce8.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_maces_2d5735b1.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_spears_d1f22e48.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_staves_3d92b639.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_wands_e5e77fbb.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_dps_helmets_d647333b.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_dps_chestplates_3d33aaeb.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_dps_leggings_8994d82f.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_dps_boots_a48a83ae.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_tank_helmets_c53bb16e.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_tank_chestplates_f21db6b8.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_tank_leggings_41290a61.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_tank_boots_d3f7f477.yml
+  chance: 1.0
+- filename: cl_story_nether_bell_shields_16efa34b.yml
+  chance: 1.0

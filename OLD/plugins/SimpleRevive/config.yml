@@ -1,0 +1,114 @@
+bleedout-seconds: 30
+revive-seconds: 7
+revive-radius: 2.5
+surrender-hold-seconds: 2
+
+downed-health: 1.0
+revive-health: 2.0
+revive-food-level: 10
+downed-slowness-amplifier: 2
+bossbar-nearby-radius: 5.0
+# Keeps bars distinguishable when several players are downed nearby, including
+# on older configs whose messages.bossbar-title lacks the %player% placeholder.
+bossbar-identify-player: true
+heartbeat-radius: 6.0
+
+show-glow: false
+nearby-info-radius: 5.0
+block-commands-while-downed: true
+
+void:
+  allow-downed: false
+
+revive:
+  # DISABLED | EVERYONE | ALLIES_ONLY | ENEMIES_ONLY
+  mode: EVERYONE
+
+carry:
+  enabled: true
+  # DISABLED | EVERYONE | ALLIES_ONLY | ENEMIES_ONLY
+  mode: EVERYONE
+  shift-drop: true
+  vertical-offset: 2.0
+  back-offset: 0.25
+
+
+loot:
+  # DISABLED | EVERYONE | ALLIES_ONLY | ENEMIES_ONLY
+  mode: EVERYONE
+  # Supports %player%. Shows 27 main slots, the 9-slot hotbar,
+  # a black-pane separator, then armor and off-hand equipment.
+  inventory-title: "&1%player%"
+  personal-protection:
+    enabled: true
+    default-protected: true
+
+compat:
+  vanish-filter: true
+  bypass-permission: simplerevive.interact.bypass
+
+  worldguard:
+    enabled: true
+
+  lands:
+    enabled: true
+
+  relations:
+    # Prevents ALLIES_ONLY from locking every interaction when no Lands or
+    # PlaceholderAPI relationship provider is actually configured.
+    allow-without-provider: true
+    scoreboard-team-is-ally: true
+    same-land-trust-is-ally: true
+
+    placeholderapi:
+      enabled: true
+      # Use relational placeholders supplied by expansions such as
+      # Factions/SaberFactions/BetterTeams/UltimateClans/Friends & Party.
+      # Examples:
+      # ally-checks:
+      #   - "%rel_factionsuuid_relation%=member|ally|truce"
+      #   - "%rel_betterteams_relation%=team|ally"
+      # enemy-checks:
+      #   - "%rel_factionsuuid_relation%=enemy"
+      ally-checks: []
+      enemy-checks: []
+      # For plugins without relational placeholders, add a placeholder that
+      # resolves to the player's team/clan/faction/party ID or name. Two
+      # players with the same non-empty value will be treated as allies.
+      # same-value-checks:
+      #   - "%your_plugin_team_id%"
+      same-value-checks: []
+
+messages:
+  downed: "&cʏᴏᴜ ᴀʀᴇ ᴅᴏᴡɴᴇᴅ! ʏᴏᴜ ʜᴀᴠᴇ &f%seconds%s &cʙᴇғᴏʀᴇ ʙʟᴇᴇᴅɪɴɢ ᴏᴜᴛ."
+  revived-target: "&aʏᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ʀᴇᴠɪᴠᴇᴅ ʙʏ &f%player%&a."
+  revived-reviver: "&aʏᴏᴜ ʀᴇᴠɪᴠᴇᴅ &f%player%&a."
+  bleedout: "&4ʏᴏᴜ ʙʟᴇᴅ ᴏᴜᴛ..."
+  surrender: "&4ʏᴏᴜ sᴜʀʀᴇɴᴅᴇʀᴇᴅ..."
+  surrender-action: "&csᴜʀʀᴇɴᴅᴇʀɪɴɢ ɪɴ &f%seconds%s"
+  bossbar-title: "&c%player% ᴅᴏᴡɴᴇᴅ - &lʙʟᴇᴇᴅᴏᴜᴛ &7| &f%seconds%s"
+  bossbar-revive-title: "&aʀᴇᴠɪᴠɪɴɢ &7| &f%player% &7| &f%progress%%"
+  revive-action-reviver: "&aʀᴇᴠɪᴠɪɴɢ &f%player%&a... &f%progress%%"
+  revive-action-target: "&e%player% ɪs ʀᴇᴠɪᴠɪɴɢ ʏᴏᴜ..."
+  nearby-info: "&c%player% &8| &f%seconds%s &8| &bʀ-ᴄʟɪᴄᴋ: &fʟᴏᴏᴛ &8| &6sʜɪғᴛ+ʀᴄʟɪᴄᴋ: &fᴄᴀʀʀʏ"
+  cannot-carry-while-downed: "&cʏᴏᴜ ᴄᴀɴɴᴏᴛ ᴄᴀʀʀʏ ᴘʟᴀʏᴇʀs ᴡʜɪʟᴇ ʏᴏᴜ ᴀʀᴇ ᴅᴏᴡɴᴇᴅ."
+  already-carried: "&eᴛʜᴀᴛ ᴘʟᴀʏᴇʀ ɪs ᴀʟʀᴇᴀᴅʏ ʙᴇɪɴɢ ᴄᴀʀʀɪᴇᴅ."
+  carry-pickup: "&aʏᴏᴜ ᴀʀᴇ ɴᴏᴡ ᴄᴀʀʀɪɴɢ &f%player%&a."
+  carry-drop: "&eʏᴏᴜ ᴅʀᴏᴘᴘᴇᴅ &f%player%&e."
+  carried-by: "&eʏᴏᴜ ᴀʀᴇ ʙᴇɪɴɢ ᴄᴀʀʀɪᴇᴅ ʙʏ &f%player%&e."
+  carried-dropped: "&e%player% ᴅʀᴏᴘᴘᴇᴅ ʏᴏᴜ."
+  looting: "&6ʟᴏᴏᴛɪɴɢ &f%player%&e..."
+  commands-blocked-while-downed: "&cʏᴏᴜ ᴄᴀɴɴᴏᴛ ᴜsᴇ ᴄᴏᴍᴍᴀɴᴅs ᴡʜɪʟᴇ ᴅᴏᴡɴᴇᴅ."
+
+  interaction-hidden-by-vanish: "&cʏᴏᴜ ᴄᴀɴ'ᴛ ɪɴᴛᴇʀᴀᴄᴛ ᴡɪᴛʜ ᴛʜᴀᴛ ᴘʟᴀʏᴇʀ ʀɪɢʜᴛ ɴᴏᴡ."
+  interaction-blocked-by-region: "&cʏᴏᴜ ᴄᴀɴ'ᴛ ᴅᴏ ᴛʜᴀᴛ ʜᴇʀᴇ."
+  revive-denied: "&cʏᴏᴜ ᴄᴀɴ'ᴛ ʀᴇᴠɪᴠᴇ ᴛʜᴀᴛ ᴘʟᴀʏᴇʀ."
+  carry-denied: "&cʏᴏᴜ ᴄᴀɴ'ᴛ ᴄᴀʀʀʏ ᴛʜᴀᴛ ᴘʟᴀʏᴇʀ."
+  loot-denied: "&cʏᴏᴜ ᴄᴀɴ'ᴛ ʟᴏᴏᴛ ᴛʜᴀᴛ ᴘʟᴀʏᴇʀ."
+  loot-protected-target: "&c%player% ᴘʀᴏᴛᴇᴄᴛᴇᴅ ᴛʜᴇɪʀ ɪɴᴠᴇɴᴛᴏʀʏ."
+
+  loot-protection-enabled: "&aʏᴏᴜʀ ᴅᴏᴡɴᴇᴅ ɪɴᴠᴇɴᴛᴏʀʏ ɪs ɴᴏᴡ ᴘʀᴏᴛᴇᴄᴛᴇᴅ."
+  loot-protection-disabled: "&eʏᴏᴜʀ ᴅᴏᴡɴᴇᴅ ɪɴᴠᴇɴᴛᴏʀʏ ᴄᴀɴ ɴᴏᴡ ʙᴇ ʟᴏᴏᴛᴇᴅ."
+  loot-protection-status: "&eʏᴏᴜʀ ʟᴏᴏᴛ ᴘʀᴏᴛᴇᴄᴛɪᴏɴ ɪs ᴄᴜʀʀᴇɴᴛʟʏ: &f%status%"
+  loot-protection-status-protected: "ᴘʀᴏᴛᴇᴄᴛᴇᴅ"
+  loot-protection-status-open: "ᴏᴘᴇɴ"

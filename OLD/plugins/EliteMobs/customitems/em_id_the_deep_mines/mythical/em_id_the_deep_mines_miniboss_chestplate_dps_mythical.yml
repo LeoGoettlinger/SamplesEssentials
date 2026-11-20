@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&d[Mythical] Rune Armor'
+material: DIAMOND_CHESTPLATE
+level: 45
+lore:
+- '&dBeautiful dwarven runes cover this armor.'
+- '&dEvery now and then you notice the runes'
+- '&demit a slight warm glow.'
+enchantments:
+- DAMAGE_ALL,8
+- DAMAGE_UNDEAD,5
+- DAMAGE_ARTHROPODS,4
+- DURABILITY,3
+potionEffects:
+- DAMAGE_RESISTANCE,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

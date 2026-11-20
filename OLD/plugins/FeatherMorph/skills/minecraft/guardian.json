@@ -1,0 +1,9 @@
+{
+  "skillCooldown": 80,
+  "skillId": "morph:guardian",
+  "abilities": [
+    "morph:breathe_under_water",
+    "morph:dryout_in_air"
+  ],
+  "settings": {}
+}

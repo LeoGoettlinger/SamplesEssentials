@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Boiled Chestplate'
+material: IRON_CHESTPLATE
+level: 15
+lore:
+- '&cWhy does this smell like hot dogs?'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,5
+- DURABILITY,3
+- DAMAGE_ALL,2
+- elitemobs:loud_strikes,1
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

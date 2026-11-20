@@ -1,0 +1,118 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+announcementPriority: 3
+bossType: BOSS
+damageMultiplier: 1.75
+deathMessage: '&4The headless horseman was vanquished by $players!'
+deathMessages:
+- '&e&l---------------------------------------------'
+- '&4The Headless Horseman was vanquished!'
+- '&c&l    1st Damager: $damager1name &cwith $damager1damage damage!'
+- '&6&l    2nd Damager: $damager2name &6with $damager2damage damage!'
+- '&e&l    3rd Damager: $damager3name &ewith $damager3damage damage!'
+- '&4Slayers: $players'
+- '&e&l---------------------------------------------'
+disguise: custom:hallosseum_event_boss
+dropsEliteMobsLoot: true
+dropsVanillaLoot: true
+entityType: SKELETON
+escapeMessage: '&4The headless horseman has left to haunt someone''s dreams!'
+followDistance: 60
+healthMultiplier: 40
+isEnabled: true
+leashradius: 40
+level: dynamic # 30
+instanced: true
+locationMessage: '&4Dullahan: $distance blocks away!'
+mainHand: NETHERITE_HOE
+name: $bossLevel Dullahan
+offHand: CARVED_PUMPKIN
+powers:
+- attack_wither.yml
+- invulnerability_knockback.yml
+- movement_speed.yml
+- skeleton_tracking_arrow.yml
+- bullet_hell.yml
+- death_slice.yml
+- hyper_loot.yml
+- amount: 1
+  chance: 0.2
+  filename: halloween_event_boss_reinforcement.yml
+  inheritAggro: true
+  inheritLevel: true
+  spawnNearby: false
+  summonType: ON_HIT
+spawnCooldown: 180
+trails:
+- DRAGON_BREATH
+classLoot: true
+classLootRank: BOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- hallosseum_treat.yml:0.1
+- hallosseum_treat_v2.yml:0.5
+- hallosseum_treat_v2.yml:0.5
+- hallosseum_treat_v2.yml:0.5
+- hallosseum_treat_v2.yml:0.5
+- hallosseum_treat_v2.yml:0.5
+- hallosseum_treat_v2.yml:0.5
+- hallosseum_treat_v2.yml:0.5
+- hallosseum_treat_v2.yml:0.5
+- hallosseum_treat_v2.yml:0.5
+- hallosseum_amazing_treat.yml:0.5
+- hallosseum_amazing_treat.yml:0.5
+- hallosseum_amazing_treat.yml:0.5
+- hallosseum_amazing_treat.yml:0.5
+- hallosseum_amazing_treat.yml:0.5
+- hallosseum_amazing_treat.yml:0.5
+- hallosseum_amazing_treat.yml:0.5
+- hallosseum_amazing_treat.yml:0.5
+- hallosseum_amazing_treat.yml:0.5
+- hallosseum_amazing_treat.yml:0.5
+- hallosseum_incredible_treat.yml:0.5
+- hallosseum_incredible_treat.yml:0.5
+- hallosseum_incredible_treat.yml:0.5
+- hallosseum_axe_of_beheadings.yml:0.5
+- hallosseum_reaper_scythe.yml:0.5
+- hallosseum_headless_blade.yml:0.5
+- hallosseum_phantom_crossbow.yml:0.5
+- hallosseum_skull_crusher.yml:0.5
+- hallosseum_haunted_spear.yml:0.5
+- filename: cl_hallosseum_dullahan_swords_fef65ee4.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_axes_fe8ab16f.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_bows_68f46fd8.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_crossbows_89dc8776.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_tridents_7cc42c69.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_hoes_8fd19328.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_maces_002cef0d.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_spears_03fa2570.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_staves_2fc9513b.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_wands_374d3168.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_dps_helmets_5cb5315c.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_dps_chestplates_c68ddcbe.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_dps_leggings_f96e9301.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_dps_boots_a2312025.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_tank_helmets_3d7979d5.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_tank_chestplates_20442f51.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_tank_leggings_0fa73f31.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_tank_boots_6dc00438.yml
+  chance: 1.0
+- filename: cl_hallosseum_dullahan_shields_02d935a0.yml
+  chance: 1.0

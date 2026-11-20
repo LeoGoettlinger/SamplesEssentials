@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&bContainment Cowl'
+lore:
+- '&bThree bolts hold the brow plate shut.'
+- '&bThere used to be a fourth.'
+classLootFamily: TANK_HELMETS

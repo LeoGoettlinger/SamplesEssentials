@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Boiled Bow'
+material: BOW
+level: 15
+lore:
+- '&cIt will not stop steaming.'
+enchantments:
+- ARROW_DAMAGE,2
+- ARROW_FIRE,3
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

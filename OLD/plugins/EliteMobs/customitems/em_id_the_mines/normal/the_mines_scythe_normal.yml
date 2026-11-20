@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Soul Reaper'
+material: NETHERITE_HOE
+level: 20
+lore:
+- '&cThe tool of a soulweaver''s'
+- '&ctrade. It harvests essence'
+- '&cfrom the living and dead alike.'
+enchantments:
+- DAMAGE_ALL,4
+- SWEEPING_EDGE,2
+- DURABILITY,3
+itemType: unique
+scalability: scalable

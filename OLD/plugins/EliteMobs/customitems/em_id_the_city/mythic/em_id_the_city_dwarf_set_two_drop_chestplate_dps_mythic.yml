@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&a[Mythical] Worn Chestplate'
+material: DIAMOND_CHESTPLATE
+level: 30
+lore:
+- '&aIt will absorb zero hits.'
+enchantments:
+- DAMAGE_ALL,4
+- DAMAGE_ARTHROPODS,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

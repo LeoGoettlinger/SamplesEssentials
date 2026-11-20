@@ -1,0 +1,691 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    - EliteMobTargetPlayerEvent
+    Zone:
+      shape: DOME
+      radius: 3
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 10
+      scripts:
+      - RingSetLower
+      onlyRunOneScript: true
+    - action: PLAY_SOUND
+      sValue: block.bell.resonate
+      Target:
+        targetType: SELF
+      repeatEvery: 30
+      times: 3
+    - action: PUSH
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: ACTION_TARGET
+        normalize: true
+        multiplier: 1.1
+        offset: 0,0.2,0
+      repeatEvery: 1
+      times: 5
+    - action: SET_MOB_AI
+      bValue: false
+      duration: 100
+      Target:
+        targetType: SELF
+    Cooldowns:
+      local: 190
+      global: 50
+  RingSetLower:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - LowerRing1
+    - action: RUN_SCRIPT
+      wait: 10
+      scripts:
+      - LowerRing2
+    - action: RUN_SCRIPT
+      wait: 20
+      scripts:
+      - LowerRing3
+    - action: RUN_SCRIPT
+      wait: 30
+      scripts:
+      - LowerRing4
+    - action: RUN_SCRIPT
+      wait: 40
+      scripts:
+      - LowerRing5
+    - action: RUN_SCRIPT
+      wait: 50
+      scripts:
+      - LowerRing6
+    - action: RUN_SCRIPT
+      wait: 60
+      scripts:
+      - LowerRing7
+    - action: RUN_SCRIPT
+      wait: 70
+      scripts:
+      - LowerRing8
+    - action: RUN_SCRIPT
+      wait: 80
+      scripts:
+      - LowerRing9
+    - action: RUN_SCRIPT
+      wait: 90
+      scripts:
+      - LowerRing10
+  LowerRing1:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      borderRadius: 1
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,-0.1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      repeatEvery: 1
+      times: 10
+  LowerRing2:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,-0.1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  LowerRing3:
+    Zone:
+      shape: CYLINDER
+      radius: 3
+      borderRadius: 2
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,-0.1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  LowerRing4:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      borderRadius: 3
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,-0.1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  LowerRing5:
+    Zone:
+      shape: CYLINDER
+      radius: 5
+      borderRadius: 4
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,-0.1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  LowerRing6:
+    Zone:
+      shape: CYLINDER
+      radius: 6
+      borderRadius: 5
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,-0.1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  LowerRing7:
+    Zone:
+      shape: CYLINDER
+      radius: 7
+      borderRadius: 6
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,-0.1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  LowerRing8:
+    Zone:
+      shape: CYLINDER
+      radius: 8
+      borderRadius: 7
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,-0.1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  LowerRing9:
+    Zone:
+      shape: CYLINDER
+      radius: 9
+      borderRadius: 8
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,-0.1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  LowerRing10:
+    Zone:
+      shape: CYLINDER
+      radius: 10
+      borderRadius: 9
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,-0.1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  RingSetHigher:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - HigherRing1
+    - action: RUN_SCRIPT
+      wait: 10
+      scripts:
+      - HigherRing2
+    - action: RUN_SCRIPT
+      wait: 20
+      scripts:
+      - HigherRing3
+    - action: RUN_SCRIPT
+      wait: 30
+      scripts:
+      - HigherRing4
+    - action: RUN_SCRIPT
+      wait: 40
+      scripts:
+      - HigherRing5
+    - action: RUN_SCRIPT
+      wait: 50
+      scripts:
+      - HigherRing6
+    - action: RUN_SCRIPT
+      wait: 60
+      scripts:
+      - HigherRing7
+    - action: RUN_SCRIPT
+      wait: 70
+      scripts:
+      - HigherRing8
+    - action: RUN_SCRIPT
+      wait: 80
+      scripts:
+      - HigherRing9
+    - action: RUN_SCRIPT
+      wait: 90
+      scripts:
+      - HigherRing10
+  HigherRing1:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      borderRadius: 1
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      repeatEvery: 1
+      times: 10
+  HigherRing2:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  HigherRing3:
+    Zone:
+      shape: CYLINDER
+      radius: 3
+      borderRadius: 2
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  HigherRing4:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      borderRadius: 3
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  HigherRing5:
+    Zone:
+      shape: CYLINDER
+      radius: 5
+      borderRadius: 4
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  HigherRing6:
+    Zone:
+      shape: CYLINDER
+      radius: 6
+      borderRadius: 5
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  HigherRing7:
+    Zone:
+      shape: CYLINDER
+      radius: 7
+      borderRadius: 6
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  HigherRing8:
+    Zone:
+      shape: CYLINDER
+      radius: 8
+      borderRadius: 7
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  HigherRing9:
+    Zone:
+      shape: CYLINDER
+      radius: 9
+      borderRadius: 8
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+  HigherRing10:
+    Zone:
+      shape: CYLINDER
+      radius: 10
+      borderRadius: 9
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+      repeatEvery: 1
+      times: 10
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 3
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      repeatEvery: 1
+      times: 10
+# Generated with https://magmaguy.com/webapp/webapp.html !

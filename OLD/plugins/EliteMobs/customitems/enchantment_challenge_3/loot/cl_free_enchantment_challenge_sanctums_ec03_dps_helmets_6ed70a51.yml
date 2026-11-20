@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Corner Crown
+lore:
+- Watch the doorframe.
+classLootFamily: DPS_HELMETS

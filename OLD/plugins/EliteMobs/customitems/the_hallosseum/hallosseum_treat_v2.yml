@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&aTreat!'
+material: COOKIE
+lore:
+- '&eA delicious snack!'
+scalability: scalable
+itemType: unique

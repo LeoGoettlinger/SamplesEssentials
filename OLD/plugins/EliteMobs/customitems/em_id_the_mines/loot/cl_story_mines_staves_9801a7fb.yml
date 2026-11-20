@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&7Daine''s Spindle'
+lore:
+- '&7The shaft is scored by threads drawn much too tightly.'
+weaponType: STAVES

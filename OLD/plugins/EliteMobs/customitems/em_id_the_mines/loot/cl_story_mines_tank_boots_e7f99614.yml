@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Loom Footing'
+lore:
+- '&7The heels are braced like the legs of an enormous frame.'
+classLootFamily: TANK_BOOTS

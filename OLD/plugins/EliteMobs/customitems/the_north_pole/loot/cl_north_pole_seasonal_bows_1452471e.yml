@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&aParcel String Bow'
+lore:
+- '&7A length of wrapping cord made good.'
+- '&7Mind the knot near the grip.'

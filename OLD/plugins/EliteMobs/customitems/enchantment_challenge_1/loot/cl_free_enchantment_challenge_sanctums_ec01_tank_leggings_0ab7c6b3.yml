@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Furnace Kneeguards
+lore:
+- For getting a closer look at the coals.
+classLootFamily: TANK_LEGGINGS

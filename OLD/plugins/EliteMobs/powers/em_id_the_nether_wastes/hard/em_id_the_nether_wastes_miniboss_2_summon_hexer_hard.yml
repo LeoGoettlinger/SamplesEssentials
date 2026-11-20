@@ -1,0 +1,17 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  SummonOnHit:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SUMMON_REINFORCEMENT
+      wait: 111
+      Target:
+        targetType: SELF
+        offset: 0,3.5,0
+      sValue: em_id_the_nether_wastes_miniboss_2_summon_hard.yml
+    Cooldowns:
+      local: 99999 # Adjust cooldown as needed
+      global: 20 # Adjust cooldown as needed

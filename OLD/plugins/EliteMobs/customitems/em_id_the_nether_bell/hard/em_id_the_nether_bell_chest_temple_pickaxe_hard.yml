@@ -1,0 +1,16 @@
+isEnabled: true
+material: NETHERITE_PICKAXE
+name: '&d[Hard] Void Pick'
+lore:
+- '&dLegends say this pickaxe can'
+- '&duncover veins of ore thought'
+- '&dto be long depleted.'
+enchantments:
+- DURABILITY,2
+- MENDING,1
+- EFFICIENCY,4
+- SILK_TOUCH,1
+potionEffects:
+- NIGHT_VISION,0,self,continuous
+itemType: unique
+scalability: scalable

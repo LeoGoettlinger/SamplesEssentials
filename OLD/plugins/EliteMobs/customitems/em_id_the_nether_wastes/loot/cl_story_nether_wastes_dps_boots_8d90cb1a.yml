@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&f[$difficulty] Infested Boots'
+lore:
+- '&fThe mold inside the boots makes them quite comfortable to wear.'
+classLootFamily: DPS_BOOTS

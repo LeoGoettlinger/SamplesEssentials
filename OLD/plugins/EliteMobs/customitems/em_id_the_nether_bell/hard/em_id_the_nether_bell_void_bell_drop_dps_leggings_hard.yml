@@ -1,0 +1,18 @@
+isEnabled: true
+material: NETHERITE_LEGGINGS
+name: '&d[Hard] Void Bell Leggings'
+lore:
+- '&dThese leggings chafe as you walk.'
+- '&dSomething about them seems to resonate'
+- '&dwith the nether.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,6
+- DAMAGE_ALL,6
+- DAMAGE_ARTHROPODS,6
+- DAMAGE_UNDEAD,6
+- THORNS,2
+potionEffects:
+- SPEED,0,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

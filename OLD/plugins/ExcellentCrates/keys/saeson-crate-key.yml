@@ -1,0 +1,8 @@
+Name: Sason Crate Key
+Virtual: true
+ItemData:
+  Provider: vanilla
+  Data:
+    Value: '{components:{"minecraft:custom_name":{bold:0b,extra:[{bold:0b,italic:0b,obfuscated:0b,strikethrough:0b,text:"Sason Crate Key",underlined:0b}],italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b}},count:1,id:"minecraft:tripwire_hook"}'
+    DataVersion: 4556
+ItemStackable: false

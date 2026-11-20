@@ -1,0 +1,22 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: REINFORCEMENT
+damageMultiplier: 0.15
+disguise: ZOGLIN
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+entityType: SKELETON
+followDistance: 30
+frozen: false
+healthMultiplier: 4
+isEnabled: true
+instanced: true
+leashRadius: 30
+level: dynamic # 10
+movementSpeedAttribute: 0.35
+name: $reinforcementLevel &dResurrected Beast
+normalizedCombat: true
+powers:
+- invulnerability_fire.yml
+classLoot: false

@@ -1,0 +1,18 @@
+isEnabled: true
+material: DIAMOND_SPEAR
+name: '&6Sparkler Spear'
+lore:
+- '&6Trails of light follow'
+- '&6this dazzling weapon.'
+enchantments:
+- IMPALING,4
+- DAMAGE_ALL,3
+- FIRE_ASPECT,4
+- DURABILITY,3
+potionEffects:
+- GLOWING,2,target,onHit
+- SPEED,0,self,continuous
+dropWeight: dynamic
+itemType: unique
+scalability: scalable
+soulbound: true

@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&bChilling Bolt'
+description:
+- '&7Missiles can chill enemies,'
+- '&7slowing them.'
+skillType: WANDS
+bonusType: PROC
+unlockTier: 1
+baseValue: 0.0
+scalingPerLevel: 0.0
+procChance: 0.03
+displayMaterial: PACKED_ICE
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Slowness II for 2s'
+formattedBonusTemplate: $procChance% slow

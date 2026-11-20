@@ -1,0 +1,49 @@
+id: Junk
+disabled: false
+weight: 5
+item:
+  material: white_concrete_powder
+format: <#888888>{name}
+worth-multiplier: 0
+broadcast:
+  enabled: false
+  only-rods: false
+  range: -1
+catch-type: both
+sort-index: 1
+size:
+  minSize: -1
+  maxSize: -1
+
+fish:
+  Rusty Bucket:
+    weight: 10
+    item:
+      material: BUCKET
+  Rusty Spoon:
+    weight: 10
+    item:
+      material: IRON_SHOVEL
+  Lost Fishing Rod:
+    weight: 5
+    item:
+      material: FISHING_ROD
+      displayname: Lost Fishing Rod
+  Explorers Boat:
+    weight: 8
+    item:
+      displayname: Explorer's Boat
+      materials:
+        - OAK_BOAT
+        - SPRUCE_BOAT
+        - BIRCH_BOAT
+        - ACACIA_BOAT
+        - JUNGLE_BOAT
+        - DARK_OAK_BOAT
+        - MANGROVE_BOAT
+  Old Fishers Hat:
+    weight: 8
+    item:
+      material: LEATHER_HELMET
+      dye-colour: '#888877'
+      displayname: Old Fisher's Hat

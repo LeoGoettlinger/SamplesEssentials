@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&d[Normal] City Guard Helm'
+material: DIAMOND_HELMET
+level: 30
+lore:
+- '&dFinely crafted dwarven head gear.'
+enchantments:
+- PROTECTION_PROJECTILE,4
+- PROTECTION_FIRE,2
+- PROTECTION_ENVIRONMENTAL,3
+- elitemobs:loud_strikes,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&aWorn Leggings'
+lore:
+- '&aThese leggings have seen a lot of use.'
+classLootFamily: TANK_LEGGINGS

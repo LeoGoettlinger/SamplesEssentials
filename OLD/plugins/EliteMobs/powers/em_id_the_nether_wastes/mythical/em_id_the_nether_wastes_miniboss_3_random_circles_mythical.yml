@@ -1,0 +1,546 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  ZonePlacer:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - Zone1
+      - Zone2
+      - Zone3
+      - Zone4
+      - Zone5
+      - Zone6
+      - Zone7
+      - Zone8
+      onlyRunOneScript: true
+    - action: RUN_SCRIPT
+      scripts:
+      - Zone1
+      - Zone2
+      - Zone3
+      - Zone4
+      - Zone5
+      - Zone6
+      - Zone7
+      - Zone8
+      onlyRunOneScript: true
+    - action: RUN_SCRIPT
+      scripts:
+      - Zone1
+      - Zone2
+      - Zone3
+      - Zone4
+      - Zone5
+      - Zone6
+      - Zone7
+      - Zone8
+      onlyRunOneScript: true
+    - action: RUN_SCRIPT
+      scripts:
+      - Zone1
+      - Zone2
+      - Zone3
+      - Zone4
+      - Zone5
+      - Zone6
+      - Zone7
+      - Zone8
+      onlyRunOneScript: true
+    - action: RUN_SCRIPT
+      scripts:
+      - ZonePlayers
+    Cooldowns:
+      local: 320
+      global: 50
+  Zone1:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      height: 3
+      Target:
+        targetType: SELF_SPAWN
+        offset: 15,0,0
+        track: false
+        filter: PLAYERS
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+        speed: 0.2
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 40
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+  Zone2:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      height: 3
+      Target:
+        targetType: SELF_SPAWN
+        offset: -15,0,0
+        track: false
+        filter: PLAYERS
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+        speed: 0.2
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 40
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+  Zone3:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      height: 3
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,0,15
+        track: false
+        filter: PLAYERS
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+        speed: 0.2
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 40
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+  Zone4:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      height: 3
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,0,-15
+        track: false
+        filter: PLAYERS
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+        speed: 0.2
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 40
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+  Zone5:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      height: 3
+      Target:
+        targetType: SELF_SPAWN
+        offset: 11,0,11
+        track: false
+        filter: PLAYERS
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+        speed: 0.2
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 40
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+  Zone6:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      height: 3
+      Target:
+        targetType: SELF_SPAWN
+        offset: -11,0,-11
+        track: false
+        filter: PLAYERS
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+        speed: 0.2
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 40
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+  Zone7:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      height: 3
+      Target:
+        targetType: SELF_SPAWN
+        offset: 11,0,-11
+        track: false
+        filter: PLAYERS
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+        speed: 0.2
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 40
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+  Zone8:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      height: 3
+      Target:
+        targetType: SELF_SPAWN
+        offset: -11,0,11
+        track: false
+        filter: PLAYERS
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+        speed: 0.2
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 40
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 200
+      wait: 40
+  ZonePlayers:
+    Zone:
+      shape: CYLINDER
+      radius: 6
+      height: 3
+      Target:
+        targetType: NEARBY_PLAYERS
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+        speed: 0.2
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+        track: false
+      repeatEvery: 1
+      times: 50
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.01
+        track: false
+      repeatEvery: 1
+      times: 190
+      wait: 50
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 190
+      wait: 50
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 50
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 190
+      wait: 50
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 190
+      wait: 50

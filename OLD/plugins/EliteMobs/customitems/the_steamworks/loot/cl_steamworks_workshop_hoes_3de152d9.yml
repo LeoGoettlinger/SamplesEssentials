@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&bOffcut Hook'
+lore:
+- '&bThis blade gathered scraps beneath the cutting bench.'
+- '&bThe bench has considerably fewer legs now.'

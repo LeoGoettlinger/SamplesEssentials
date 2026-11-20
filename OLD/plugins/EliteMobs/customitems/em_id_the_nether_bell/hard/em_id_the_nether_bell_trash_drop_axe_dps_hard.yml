@@ -1,0 +1,14 @@
+isEnabled: true
+material: IRON_AXE
+name: '&f[Hard] Void-Forged Axe'
+lore:
+- '&fCrafted long ago'
+- '&fin the depths of the Nether,'
+- '&finfused with void energy.'
+enchantments:
+- DAMAGE_ALL,4
+- SHARPNESS,4
+potionEffects: []
+scalability: scalable
+level: 55
+itemType: unique

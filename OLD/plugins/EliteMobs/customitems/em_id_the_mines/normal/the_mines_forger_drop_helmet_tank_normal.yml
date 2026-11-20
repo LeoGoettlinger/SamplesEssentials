@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Normal] Head Cover'
+material: DIAMOND_HELMET
+level: 20
+lore:
+- '&2Excellent head cover 10 out of 10.'
+enchantments:
+- PROTECTION_PROJECTILE,4
+- PROTECTION_FIRE,3
+- PROTECTION_ENVIRONMENTAL,2
+- elitemobs:loud_strikes,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,1895 @@
+config-version: 2.2
+
+common:
+  treasure: "Treasure"
+  collection: "Collection"
+  chance: "Chance"
+  message: "Message"
+  broadcast: "Broadcast"
+  value: "Value"
+
+feedback:
+  gui:
+    first_page: "%prefix%&cYou are already on the first page."
+    last_page: "%prefix%&cYou are on the last page."
+  rewards:
+    prompt:
+      command: "%prefix%&aEnter the command to execute (without /):"
+      chat_message: "%prefix%&aEnter the chat message to send (use & for colors):"
+      broadcast_message: "%prefix%&aEnter the broadcast message to send to all players (use & for colors):"
+      new_chance: "%prefix%&aEnter the new chance (current: %current%%):"
+      new_message: "%prefix%&aEnter the new message (current: %current%):"
+      new_broadcast: "%prefix%&aEnter the new broadcast (current: %current%):"
+      new_value: "%prefix%&aEnter the new value (current: %current%):"
+    added: "%prefix%&aReward added successfully!"
+    deleted: "%prefix%&cReward deleted."
+    instance_given: "%prefix%&aAdded the reward item to your inventory."
+    instance_dropped: "%prefix%&eInventory full — dropped the item at your feet."
+    instance_invalid: "%prefix%&cThis reward item is invalid and can't be loaded."
+    command_preview: "%prefix%&eCommand: &f/%command%"
+    chat_message_preview: "%prefix%&eMessage: &f%message%"
+    broadcast_message_preview: "%prefix%&eBroadcast Message: &f%message%"
+    updated: "%prefix%&a%type% updated successfully!"
+    reset: "%prefix%&a%type% reset successfully!"
+  teleport:
+    success: "%prefix%&aTeleported to treasure!"
+    unsafe: "%prefix%&cUnable to find a safe teleport location!"
+    invalid_location: "%prefix%&cInvalid treasure location!"
+    adjusted: "%prefix%&aTeleported to nearby safe location."
+  settings:
+    delete:
+      success: "%prefix%&aSuccessfully deleted collection &e%collection%&a and all its treasures."
+  act:
+    applied: "%prefix%&aACT rule updated successfully!"
+
+    components:
+      date_range:
+        prompt: "%prefix%&aEnter date range (YYYY-MM-DD:YYYY-MM-DD or * for always):"
+      duration:
+        prompt: "%prefix%&aEnter duration (e.g., 2h, 30m, 1d or * for permanent):"
+      act_format:
+        prompt: "%prefix%&aEnter ACT format: [DATE_RANGE] [DURATION] [CRON] (example: [*] [2h] [0 0 9 * * ?])"
+
+    presets:
+      applied: "%prefix%&aApplied preset: &e%preset%"
+
+    rules:
+      rule_deleted: "%prefix%&cDeleted rule: &e%name%"
+
+    date_range:
+      success: "%prefix%&aDate range updated successfully!"
+    duration:
+      success: "%prefix%&aDuration updated successfully!"
+  cron:
+    applied: "%prefix%&aSchedule applied successfully!"
+    cleared: "%prefix%&aSchedule cleared."
+    preset_applied: "%prefix%&aApplied preset: &e%preset%"
+    preset:
+      daily:
+        name: "&eDaily"
+      weekly:
+        name: "&eWeekly"
+      monthly:
+        name: "&eMonthly"
+      yearly:
+        name: "&eYearly"
+  preset:
+    prompt_name: "%prefix%&eEnter a name for this %type% preset:"
+    prompt_rename: "%prefix%&eEnter a new name for preset '&f%name%&e':"
+    saved: "%prefix%&aSuccessfully saved %type% preset '&f%name%&a'!"
+    renamed: "%prefix%&aRenamed preset to '&f%name%&a'."
+    loaded: "%prefix%&aSuccessfully loaded %type% preset '&f%name%&a'!"
+    deleted: "%prefix%&cDeleted preset '&f%name%&c'."
+    set_default: "%prefix%&aSet default preset for &e%collection%&a to '&f%name%&a'."
+    override:
+      none: "%prefix%&cNo treasures found in this collection."
+      started: "%prefix%&eOverriding &f%count%&e treasures with preset '&f%name%&e'..."
+      progress: "&eOverride progress: &f%percent%% &7(%current%/%total%)"
+      done: "%prefix%&aOverrode &f%count%&a treasures with preset '&f%name%&a'."
+      failed: "%prefix%&cFailed to override treasure rewards. Check console for details."
+
+  place_items:
+    prompt_group: "%prefix%&7Type the &egroup name&7 in chat (or 'cancel')."
+    prompt_rename_group: "%prefix%&7Type a new name for group &e%group%&7 (or 'cancel')."
+    group_created: "%prefix%&aCreated group &e%group%&a."
+    group_renamed: "%prefix%&aRenamed group &e%old%&a to &e%group%&a."
+    group_deleted: "%prefix%&aDeleted group &e%group%&a."
+    created: "%prefix%&aCreated place item &e%name%&a in group &e%group%&a."
+    given: "%prefix%&aGiven item &e%name%&a (&7%group%&a)."
+    deleted: "%prefix%&aDeleted item &e%name%&a (&7%group%&a)."
+
+prefix: "&2&lɴɪxᴇʀɪᴀ &8▸ "
+
+error:
+  no_permission: "%prefix%&cYou do not have permission to do this!"
+  generic: "%prefix%&cAn error occurred. Please check the console."
+  place_items:
+    no_item: "%prefix%&cPlace a block item into the slot first."
+    not_a_block: "%prefix%&cThat item isn't a block and can't be used for placing."
+    invalid_group: "%prefix%&cInvalid group name."
+    duplicate_group: "%prefix%&cThat group already exists."
+    serialize_failed: "%prefix%&cFailed to save that item."
+    deserialize_failed: "%prefix%&cFailed to load that item."
+    create_failed: "%prefix%&cFailed to create the place item."
+    create_group_failed: "%prefix%&cFailed to create the group."
+    rename_group_failed: "%prefix%&cFailed to rename the group."
+
+  feature_disabled: "%prefix%&cThat feature is currently disabled."
+
+  validation:
+    date_range: "%prefix%&cInvalid date range! Use ISO dates (2024-01-01:2024-12-31) or * for always."
+    duration: "%prefix%&cInvalid duration! Use format like 90s, 2h, 30m, or * for always active."
+  rewards:
+    invalid_chance: "%prefix%&cInvalid chance! Must be a number between 0 and 100."
+    command_blacklisted: "%prefix%&cThat command is blacklisted and cannot be used!"
+    add:
+      item:
+        no_item: "%prefix%&cPlease place an item in the slot first!"
+  cron:
+    invalid: "%prefix%&cInvalid cron expression! Please check the format."
+  act:
+    format:
+      invalid_format: "%prefix%&cInvalid ACT format! Expected: [DATE_RANGE] [DURATION] [CRON]"
+  preset:
+    invalid_name: "%prefix%&cInvalid preset name! Please enter a valid name."
+    duplicate_name: "%prefix%&cA preset with that name already exists."
+    save_failed: "%prefix%&cFailed to save %type% preset!"
+  
+command:
+  help:
+    descriptions:
+      help: "Shows this help menu"
+      reload: "Reloads the plugin configuration"
+      show: "Shows nearby treasure locations as holograms"
+      bypass: "Toggle treasure bypass visibility"
+      list: "Lists all available collections"
+      list_collection: "View all placed treasures in a collection"
+      leaderboard: "Opens the leaderboard for a collection"
+      progress: "View your progress in a collection"
+      collection: "Opens the collection editor"
+      collection_create: "Creates a new collection"
+      collection_edit: "Edit an existing collection"
+      collection_delete: "Deletes a collection"
+      collection_rename: "Renames a collection"
+      collection_info: "Display detailed collection information"
+      rewards: "View rewards for the treasure you're looking at"
+      placeitems: "Opens the place items menu"
+      place: "Toggle place mode (exits if active)"
+      place_collection: "Enters place mode for a collection"
+      reset_all: "Resets all player progress"
+      reset_collection: "Resets progress for a collection"
+      reset_player: "Resets all progress for a player"
+      reset_player_collection: "Resets a player's progress in a collection"
+      hint: "Request a hint to find nearby treasures"
+      migrate: "Migrate data between storage systems (yaml/sqlite/mysql)"
+      debug_hint: "Debug: Test hint system"
+      debug_placecollection: "Debug: Place treasures randomly"
+      debug_placecollection_random: "Debug: Place treasures randomly"
+      debug_placecollection_plane: "Debug: Place treasures in a plane grid"
+      debug_removecollectionplaced: "Debug: Remove all placed treasures in a collection"
+      debug_minigame: "Debug: Test minigame system"
+      debug_inspect: "Debug: Inspect the stored data of the treasure you're looking at"
+    minecraft:
+      help: "&6AdvancedHunt &8- &7Help"
+      command: "Command"
+      description: "Description"
+      no_description: "No description"
+      arguments: "Arguments"
+      optional: "Optional"
+      showing_results_for_query: "&7Showing results for query"
+      no_results_for_query: "No results for query"
+      available_commands: "Available commands"
+      click_to_show_help: "Click to show help for this command"
+      page_out_of_range: "Error: Page is not in range."
+      click_for_next_page: "Click for next page"
+      click_for_previous_page: "Click for previous page"
+
+  reload:
+    success: "%prefix%&aConfiguration and messages reloaded!"
+    failed: "%prefix%&cReload failed. Check console for details."
+
+  show:
+    success: "%prefix%&aShowing &e%count%&a treasure locations within &e%radius%&a blocks for &e%seconds%s&a."
+    success_truncated: "%prefix%&aShowing &e%count%&a treasure locations within &e%radius%&a blocks for &e%seconds%s&a. &7(Showing first %max%)"
+    none_found: "%prefix%&eNo treasures found within &6%radius%&e blocks."
+    invalid_radius: "%prefix%&cRadius must be between &e1&c and &e500&c blocks."
+    invalid_duration: "%prefix%&cDuration must be between &e1&c and &e300&c seconds."
+    packetevents_missing: "%prefix%&cUnable to show markers. Install/enable &ePacketEvents&c."
+  bypass:
+    enabled: "%prefix%&aTreasure bypass enabled."
+    disabled: "%prefix%&cTreasure bypass disabled."
+    usage: "%prefix%&eUsage: /ah bypass [on|off]"
+  list:
+    header: "&6Available Collections:"
+    format: "&7- &e%collection%"
+    hint: "&eUse /ah list <collection> to view treasures."
+  collection_not_found: "%prefix%&cCollection not found."
+
+  direction:
+    east: "East"
+    southeast: "Southeast"
+    south: "South"
+    southwest: "Southwest"
+    west: "West"
+    northwest: "Northwest"
+    north: "North"
+    northeast: "Northeast"
+  rewards:
+    no_block: "%prefix%&cYou must be looking at a block!"
+    not_treasure: "%prefix%&cThat block is not a treasure!"
+  rename:
+    success: "%prefix%&aSuccessfully renamed collection &e%old_name% &ato &e%new_name%"
+    failed: "%prefix%&cFailed to rename collection. Check if old exists and new name is unique."
+  create:
+    success: "%prefix%&aSuccessfully created collection &e%name%"
+    failed: "%prefix%&cFailed to create collection. A collection with that name might already exist."
+  info:
+    lines:
+      - "&6━━━━━━ Collection Info: &e%collection% &6━━━━━━"
+      - "%uuid%"
+      - "&7Treasures: &f%count%"
+      - "%status%"
+      - "%timing%"
+      - "%reset%"
+      - "&7Use UUID in PlaceholderAPI: &e%advancedhunt_found_treasures_<uuid>%"
+    uuid: "&7UUID: &f%uuid%"
+    click_to_copy: "&eClick to copy/suggest UUID"
+    status_available: "&7Status: &aCurrently Available"
+    status_unavailable: "&7Status: &cCurrently Unavailable"
+    active_until_note: "&7  &8(Active duration set by ACT rules)"
+    next_activation: "&7Next Active: &f%time%"
+    next_reset: "&7Next Reset: &f%time%"
+    no_reset: "&7Next Reset: &fNever &8(no reset schedule)"
+    invalid_reset_schedule: "&7Next Reset: &cInvalid schedule"
+  place_mode:
+    disabled: "%prefix%&aPlace mode disabled."
+    enabled: "%prefix%&aPlace mode enabled for collection &e%collection%&a. Place blocks to add treasures."
+    not_in_place_mode: "%prefix%&cYou are not in place mode."
+    no_break: "%prefix%&cYou cannot break blocks in place mode!"
+    use_command: "%prefix%&eUse /ah placeitems &eto receive your saved treasures."
+  reset:
+    all_success: "%prefix%&aReset &e%count% &atreasure records for all players across all collections!"
+    collection_success: "%prefix%&aReset &e%count% &atreasure records for collection &e%collection%&a!"
+    player_success: "%prefix%&aReset &e%count% &atreasure records for player &e%player%&a!"
+    player_collection_success: "%prefix%&aReset &e%count% &atreasure records for player &e%player% &ain collection &e%collection%&a!"
+    player_not_found: "%prefix%&cPlayer not found or has never played on this server."
+  migration:
+    started: "%prefix%&aStorage migration started (copying all data to target storage)..."
+    progress: "%prefix%&eMigration progress: &f%percent%% &7(%current%/%total%) &8- &7%stage%"
+    progress_actionbar: "&eMigration: &f%percent%% &7(%current%/%total%) &8- &7%stage%"
+    success: "%prefix%&aStorage migration successful! All data has been copied to the target storage."
+    failed: "%prefix%&cStorage migration failed. Check console for errors."
+    mysql_not_configured: "%prefix%&cMySQL migration settings not configured! Please edit config.yml under 'migration.target' section with your target database details."
+    mysql_config_reset: "%prefix%&eMySQL migration settings have been reset in config.yml. Configure them again if you need another migration."
+    existing_data_abort: "%prefix%&c&lMigration aborted! Target storage contains existing data: %collections% collections, %treasures% treasures, %players% players. Use '--purge' to delete target data first, or '--force' (not recommended) to overwrite: /ah migrate <type> --purge"
+    warning_existing_data: "%prefix%&e&lWARNING: Target storage contains existing data! (%collections% collections, %treasures% treasures, %players% players). Proceeding with migration... (--force is not recommended)"
+
+treasure:
+  found: "%prefix%&aYou found a treasure!"
+  already_found: "%prefix%&cYou have already found this treasure!"
+  already_claimed_global: "%prefix%&cThis treasure has already been claimed by another player!"
+  added: "%prefix%&aTreasure added to collection!"
+  removed: "%prefix%&cTreasure removed from collection."
+  protected: "%prefix%&cYou cannot break treasure blocks!"
+  placemode: "%prefix%&cYou cannot collect treasures in place mode!"
+
+collection:
+  unavailable: "%prefix%&cThe collection &e%collection% &cis not currently available!"
+  available_at: "%prefix%&eIt will be available at: &f%time%"
+  available: "&a✓ Available"
+  not_available: "&c✗ Not Available"
+  completed: "%prefix%&6You have completed the &e%collection% &6collection!"
+
+chat_input:
+  request: "%prefix%&aPlease type your input in chat."
+  canceled: "%prefix%&cInput canceled."
+  timeout: "%prefix%&cInput timed out."
+
+gui:
+  common:
+    back: "&7« Back to %menu%"
+    close: "&cClose"
+    previous_page: "&aPrevious Page"
+    next_page: "&aNext Page"
+    page_indicator: "&7(%page%/%total%)"
+    confirm: "&aConfirm"
+    cancel: "&cCancel"
+    enabled: "&aEnabled"
+    disabled: "&cDisabled"
+    none: "&cNone"
+  place_items:
+    groups:
+      title: "&8Place Items Groups"
+      none:
+        name: "&cNo groups"
+        lore:
+          - "&7No groups exist yet."
+          - "&7Create one with the button below."
+      group:
+        name: "&e%group%"
+        lore:
+          - "&7Item count: &f%count%"
+          - ""
+          - "&a%action%"
+          - "&7%action2%"
+        action:
+          open: "Click to open"
+          manage: "Right-click to manage"
+
+    group_actions:
+      title: "&8Group: &e%group%"
+      rename:
+        name: "&eRename group"
+        lore:
+          - "&7Current: &f%current%"
+          - ""
+          - "&eClick to rename"
+      delete:
+        name: "&cDelete group"
+        lore:
+          - "&7Items in group: &f%count%"
+          - ""
+          - "&c&lWARNING: deletes all items in this group!"
+          - ""
+          - "&cClick to delete"
+        confirm_title: "&8Delete group &c%group%&8?"
+
+    list:
+      title: "&8Place Items: &e%group%"
+      none:
+        name: "&cNo items"
+        lore:
+          - "&7No items exist in this group."
+          - "&7Create one with the button below."
+      preset:
+        name: "&e%name%"
+        lore:
+          - "&a%action%"
+          - "&7%action2%"
+        action:
+          give: "Left-click to get the item"
+          manage: "Right-click to manage"
+
+    actions:
+      title: "&8Item: &e%name%"
+      give:
+        name: "&aGet item"
+        lore:
+          - "&7Adds the item to your inventory."
+      delete:
+        name: "&cDelete"
+        lore:
+          - "&7Permanently deletes this item."
+        confirm_title: "&8Delete item &c%name%&8?"
+
+    create:
+      name: "&aCreate group"
+      lore:
+        - "&7Creates a new empty group."
+    create_in_group:
+      name: "&aAdd block item"
+      lore:
+        - "&7Adds a block item to &e%group%&7."
+        - "&7Place a block item in the slot"
+        - "&7and confirm to save it."
+    add:
+      title: "&8Add Place Item: &e%group%"
+      placeholder:
+        name: "&7Place a block here"
+        lore:
+          - "&7Drag a block item into"
+          - "&7the center slot."
+      info:
+        name: "&eHow it works"
+        lore:
+          - "&7Put any &eblock item&7 in the slot."
+          - "&7The item is saved as &f1 block&7."
+          - "&7Your item is &anot consumed&7."
+      confirm:
+        name: "&aSave item"
+        lore:
+          - "&7Saves this block as an item"
+          - "&7in the selected group."
+      cancel:
+        name: "&cCancel"
+        lore:
+          - "&7Return without saving."
+  rewards:
+    title: "&8Treasure Rewards"
+    collection_title: "&8Completion Rewards"
+    preset_title: "&8Reward Preset"
+    treasure_info:
+      name: "&eTreasure Information"
+      lore:
+        - "&8▸ &7This treasure has unique data."
+        - "&8▸ &7Use its UUID in PlaceholderAPI."
+        - ""
+        - "&8┌ &7UUID"
+        - "&8└ &b%uuid%"
+        - ""
+        - "&e▶ Click for full details."
+      info:
+        lines:
+          - ""
+          - "&6&l━━━━━━ Treasure Info ━━━━━━"
+          - ""
+          - "&8▸ &7UUID"
+          - "&f  %uuid%"
+          - ""
+          - "&8▸ &7Rewards: &e%count%"
+          - "&8▸ &7Material: &e%block%"
+          - "&8▸ &7BlockState: &e%blockStateLine%"
+          - "&8▸ &7Location: &e%location%"
+          - ""
+          - "&8▸ &7NBT-Data"
+          - "&f  %nbtData%"
+          - ""
+          - "&8▸ &7PlaceholderAPI: &e%advancedhunt_has_found_<treasure_id>%"
+          - ""
+          - "&8▸ &6&l[COPY ALL DATA]"
+        uuid: "%uuid%"
+        nbt: "%nbtData%"
+        block_states: "&8(%block_states%)"
+        block_states_line: "%block_states%"
+        location: "%x%, %y%, %z% &8: &7%world%"
+        click_to_copy_uuid: "&eClick to copy UUID"
+        click_to_copy_nbt: "&eClick to copy NBT"
+        click_to_copy_blockstate: "&eClick to copy BlockState"
+        click_to_copy_all: "&eClick to copy all data"
+    open_reward_option_menu:
+      title: "&8Reward Options"
+      name: "&6+ Add Reward"
+      lore:
+        - ""
+        - "&7Choose the type of reward"
+        - "&7you want to add:"
+        - ""
+        - "&e► Item Reward"
+        - "&f  Give a physical item"
+        - ""
+        - "&e► Command Reward"
+        - "&f  Execute a server command"
+        - ""
+        - "&e► Chat Message"
+        - "&f  Send a message to the player"
+        - ""
+        - "&e► Broadcast Message"
+        - "&f  Send a message to all players"
+        - ""
+        - "&aClick to open options"
+    switch_to_collection:
+      name: "&eView Collection Rewards"
+      lore:
+        - "&7Click to view the rewards"
+        - "&7given when completing the"
+        - "&7entire collection."
+    switch_to_treasure:
+      name: "&eView Treasure Rewards"
+      lore:
+        - "&7Click to view the rewards"
+        - "&7given when finding this"
+        - "&7specific treasure."
+    no_rewards:
+      name: "&7No Rewards"
+      lore:
+        - "&7This treasure has no"
+        - "&7rewards configured."
+    reward_number: "&7Reward #%number%"
+    chance_lore: "&7Chance: &e%chance%%"
+    message_lore: "&7Message: &e%message%"
+    broadcast_lore: "&7Broadcast: &e%broadcast%"
+    amount_lore: "&7Amount: &fx%amount%"
+    command_name: "&6Command Reward"
+    command_label: "&7Executes command:"
+    chat_message_name: "&bChat Message Reward"
+    chat_message_label: "&7Sends message:"
+    broadcast_message_name: "&dBroadcast Message Reward"
+    broadcast_message_label: "&7Broadcasts to all:"
+    truncated:
+      command: "&8(Command truncated)"
+      message: "&8(Message truncated)"
+    invalid_item:
+      name: "&cInvalid Item"
+      lore:
+        - "&7This item could not be loaded"
+        - ""
+        - "&8─────────────"
+        - "&7Chance: &e%chance%%"
+    # Edit mode
+    click_to_edit: "&e&lLeft-Click &7to edit  &8|  &e&lRight-Click &7to %action%"
+    save_preset:
+      name: "&aCreate %Type% Preset"
+      lore:
+        - "&7Save the current reward configuration"
+        - "&7as a reusable preset for %type%s"
+        - ""
+        - "&7This allows you to quickly apply"
+        - "&7the same rewards to other %type%s"
+        - ""
+        - "&eClick to create preset"
+    load_preset:
+      name: "&bLoad %Type% Preset"
+      lore:
+        - "&7Load a saved reward configuration"
+        - "&7from your %type% presets"
+        - ""
+        - "&7Replace current rewards with"
+        - "&7a previously saved preset"
+        - ""
+        - "&eClick to view presets"
+    quick_action:
+      delete: "&cdelete"
+      get_instance: "&aget instance"
+    quick_mode:
+      name: "&bQuick Action"
+      mode_delete: "&cDelete"
+      mode_get_instance: "&aGet Instance"
+      lore:
+        - "&7Mode: %mode%"
+        - "&7Right-click rewards to %action%"
+        - ""
+        - "&eClick to switch mode"
+    add_item:
+      name: "&a+ Add Item Reward"
+      lore:
+        - "&7Click to add an item"
+        - "&7as a reward for this treasure."
+    add_command:
+      name: "&a+ Add Command Reward"
+      lore:
+        - "&7Click to add a command"
+        - "&7as a reward for this treasure."
+        - ""
+        - "&7Use &f%player% &7for the player's name."
+    add_chat_message:
+      name: "&a+ Add Chat Message Reward"
+      lore:
+        - "&7Click to add a chat message"
+        - "&7as a reward for this treasure."
+        - ""
+        - "&7Use &f%player% &7for the player's name."
+        - "&7Use &f& &7for color codes and hex colors."
+    add_broadcast_message:
+      name: "&a+ Add Broadcast Message Reward"
+      lore:
+        - "&7Click to add a broadcast message"
+        - "&7that all players will see."
+        - ""
+        - "&7Use &f%player% &7for the player's name."
+        - "&7Use &f& &7for color codes and hex colors."
+    # Chat prompts
+    editor:
+      title: "&8Reward #%number%"
+      edit_chance:
+        name: "&eEdit Chance"
+        lore:
+          - "&7Current: &f%chance%%"
+          - ""
+          - "&7Click to change the"
+          - "&7drop chance of this reward."
+      edit_message:
+        name: "&eEdit Message"
+        lore:
+          - "&8Only for this reward!"
+          - "&7Current: &f%message%"
+          - ""
+          - "&eLeft-Click &7to change"
+          - "&eRight-Click &7to reset"
+          - ""
+          - "&8&m                    "
+          - "&7Available placeholders:"
+          - "&f  %player% &8- &7Player's name"
+          - "&f  %found_treasures% &8- &7Found treasures"
+          - "&f  %max_treasures% &8- &7Total treasures"
+          - "&f  %remaining_treasures% &8- &7Remaining treasures"
+          - "&f  %chance% &8- &7Reward chance"
+          - "&f  %item% &8- &7Item name &c(Item rewards only)"
+          - "&f  \n &8- &7New line"
+          - "&f  & &8- &7Color codes and hex colors"
+      edit_broadcast:
+        name: "&eEdit Broadcast"
+        lore:
+          - "&8Only for this reward!"
+          - "&7Current: &f%broadcast%"
+          - ""
+          - "&eLeft-Click &7to change"
+          - "&eRight-Click &7to reset"
+          - ""
+          - "&8&m                    "
+          - "&7Available placeholders:"
+          - "&f  %player% &8- &7Player's name"
+          - "&f  %found_treasures% &8- &7Found treasures"
+          - "&f  %max_treasures% &8- &7Total treasures"
+          - "&f  %remaining_treasures% &8- &7Remaining treasures"
+          - "&f  %chance% &8- &7Reward chance"
+          - "&f  %item% &8- &7Item name &c(Item rewards only)"
+          - "&f  \n &8- &7New line"
+          - "&f  & &8- &7Color codes and hex colors"
+      edit_value:
+        name: "&eEdit Value"
+        lore:
+          - "&7Current: &f%value%"
+          - ""
+          - "&7Click to change the"
+          - "&7value of this reward."
+          - ""
+          - "&8&m                    "
+          - "&7Available placeholders:"
+          - "&f  %player% &8- &7Player's name"
+          - "&f  %found_treasures% &8- &7Found treasures"
+          - "&f  %max_treasures% &8- &7Total treasures"
+          - "&f  %remaining_treasures% &8- &7Remaining treasures"
+          - "&f  %chance% &8- &7Reward chance"
+          - "&f  \n &8- &7New line"
+          - "&f  & &8- &7Color codes and hex colors"
+      delete:
+        name: "&cDelete Reward"
+        lore:
+          - "&7Click to remove this"
+          - "&7reward from the treasure."
+      confirm_delete:
+        title: "&8Confirm Delete"
+
+    add:
+      item:
+        title: "&8Add Item Reward"
+        placeholder:
+          name: "&7Place Item Here"
+          lore:
+            - "&7Place the item you want"
+            - "&7to add as a reward."
+        info:
+          name: "&eHow to Add Item Reward"
+          lore:
+            - "&7Place the item in the"
+            - "&7center slot below."
+            - ""
+            - "&7The exact item (including"
+            - "&7enchants, name, lore) will"
+            - "&7be given as a reward."
+            - ""
+            - "&7Click &aConfirm &7when ready."
+        confirm:
+          name: "&aConfirm"
+          lore:
+            - "&7Click to add this item"
+            - "&7as a reward."
+        cancel:
+          name: "&cCancel"
+          lore:
+            - "&7Click to cancel and"
+            - "&7return to rewards menu."
+  collection_content:
+    title: "&8Collection Content"
+    no_treasures:
+      name: "&7No Treasures"
+      lore:
+        - "&7This collection has no"
+        - "&7treasures configured yet."
+    treasure_item:
+      name: "&6Treasure #%number%"
+      lore:
+        - "&7Players found: &f%count%"
+        - ""
+        - "&7Location:"
+        - "&7X: &f%x%"
+        - "&7Y: &f%y%"
+        - "&7Z: &f%z%"
+        - "&7World: &f%world%"
+        - ""
+      lore_teleport: "&eLeft-Click &7to teleport"
+      lore_reward: "&eShift+Left-Click &7to open the reward menu"
+      lore_who_found: "&eRight-Click &7to see who found"
+      lore_action_menu_bedrock: "&8Bedrock/Geyser: &7Press &eDrop (Q) &7to open action menu"
+  minigame:
+    reaction:
+      title: "&8Reaction Game"
+      click:
+        name: "&aClick Me!"
+        lore:
+          - "&6%current%&7/&6%required%"
+    memory:
+      title: "&8Memory Game"
+      button:
+        name: "&fButton %number%"
+    spot:
+      title: "&bSpot the Items"
+      item:
+        name: "&e&l★ Remember me!"
+        found: "&a&l✔ Found!"
+    oddoneout:
+      title: "&dOdd One Out"
+      odd:
+        name: "&c&l? I am different!"
+      timer: "&e%seconds%s"
+    order:
+      title: "&5Sequence"
+      sequence:
+        name: "&ePosition %pos%"
+      empty:
+        name: "&8[ Empty ]"
+      palette:
+        name: "&a&l➤ Select me"
+      placed:
+        name: "&f&l✔ Placed (#%pos%)"
+    sliderpuzzle:
+      title: "&9Slider Puzzle"
+      tile:
+        name: "&fTile %number%"
+      empty:
+        name: "&8[ Empty ]"
+    higherlower:
+      title: "&6Higher or Lower?"
+      number:
+        active: "&a%n% &7— Click to guess"
+        eliminated: "&c%n% &7— Eliminated"
+      guesses:
+        remaining: "&e%left% guesses remaining"
+      feedback:
+        neutral: "&7Guess a number!"
+        higher: "&a&l▲ Higher!"
+        lower: "&c&l▼ Lower!"
+  treasure_action:
+    title: "&8Treasure Actions"
+    teleport:
+      name: "&aTeleport to Treasure"
+      lore:
+        - "&7Click to teleport to"
+        - "&7this treasure's location."
+    view_finders:
+      name: "&eView Who Found"
+      lore:
+        - "&7Click to see which players"
+        - "&7have found this treasure."
+    rewards:
+      name: "&6Rewards"
+      lore:
+        - "&7Click to open the rewards"
+        - "&7for that treasure."
+  finders:
+    title: "&8Who Found This Treasure"
+    loading: "&7Loading player data..."
+    empty:
+      name: "&7No One Yet"
+      lore:
+        - "&7This treasure has not"
+        - "&7been found by anyone yet."
+    entry:
+      name: "&e%player%"
+      lore:
+        - "&7Found this treasure"
+  leaderboard:
+    title: "&8Leaderboard: %collection%"
+    loading:
+      name: "&7Loading leaderboard..."
+      lore:
+        - "&7Please wait while we fetch"
+        - "&7the leaderboard data..."
+    empty:
+      name: "&7No Data Yet"
+      lore:
+        - "&7No players have found"
+        - "&7treasures in this collection yet."
+    player_entry:
+      name: "&e#%rank% %player%"
+      lore:
+        - "&7Treasures found: &f%score%"
+    player_entry_highlighted:
+      name: "&6&l#%rank% %player% &7(You)"
+      lore:
+        - "&7Treasures found: &f%score%"
+        - ""
+        - "&6⭐ This is your position!"
+    your_rank:
+      name: "&aYour Position"
+      lore:
+        - "&7Rank: &f#%rank%"
+        - "&7Found: &f%score%/%total%"
+        - "&7Progress: &e%percentage%%"
+    not_ranked:
+      name: "&cNot Ranked"
+      lore:
+        - "&7You haven't found any"
+        - "&7treasures in this collection yet."
+        - ""
+        - "&7Start exploring to get ranked!"
+    view_button:
+      name: "&eTreasure Leaderboard"
+      lore:
+        - "&7Click to view the top players"
+        - "&7who have found the most"
+        - "&7treasures in this collection."
+    info:
+      name: "&bLeaderboard Info"
+      lore:
+        - "&7Max entries shown: &f%display_limit%"
+        - "&7Cache refresh: &f%refresh_interval%s &8(%minutes%m)"
+        - ""
+        - "&8Leaderboard updates automatically"
+  progress:
+    title: "&8Progress: %collection%"
+    loading: "&7Loading your progress..."
+    no_treasures:
+      name: "&7No Treasures"
+      lore:
+        - "&7This collection has no"
+        - "&7treasures configured yet."
+    stats:
+      name: "&aYour Progress Statistics"
+      lore:
+        - "&7Collection: &e%collection%"
+        - "&7Found: &a%found%&7/&e%total%"
+        - "&7Completion: &e%percentage%&7%"
+        - ""
+        - "&7Keep exploring to find"
+        - "&7all treasures!"
+    treasure:
+      name: "&7Treasure #%number% &7- %status%"
+      status_found: "&aFound"
+      status_not_found: "&cNot Found"
+      lore_found:
+        - "&a✓ You found this treasure!"
+        - ""
+        - "&7Location:"
+        - "&7  X: &f%x%"
+        - "&7  Y: &f%y%"
+        - "&7  Z: &f%z%"
+        - "&7  World: &f%world%"
+      lore_not_found:
+        - "&c✗ You haven't found this yet!"
+        - ""
+        - "&7Keep exploring to discover"
+        - "&7this treasure's location!"
+  editor:
+    title: "Collection Editor"
+    collection_item:
+      name: "&6%collection%"
+      lore:
+        - "&7Status: %status%"
+        - "&7Availability: %availability%"
+        - "&7Treasures: &f%treasures%"
+        - "&7Reset Cron: %cron%"
+        - ""
+        - "&eClick to edit settings"
+    create:
+      name: "&aCreate Collection"
+      lore:
+        - "&7Click to create a new collection"
+  settings:
+    title: "Settings: %collection%"
+    rename:
+      name: "&eRename Collection"
+      lore:
+        - "&7Current: &f%name%"
+        - ""
+        - "&eClick to rename"
+    status:
+      name: "&eToggle Status"
+      lore:
+        - "&7Current: %status%"
+        - ""
+        - "&eClick to toggle"
+    rewards:
+      name: "&eCompletion Rewards"
+      lore:
+        - "&7Click to configure rewards"
+        - "&7given when a player finds"
+        - "&7ALL treasures in this collection."
+        - ""
+        - "&eClick to open"
+    default_treasure_preset:
+      name: "&eDefault Treasure Reward Preset"
+      lore:
+        - "&7Current: %preset%"
+        - ""
+        - "&7Applied to newly created treasures"
+        - "&7in this collection (place mode)."
+        - ""
+        - "&eLeft-click to set"
+        - "&eRight-click to clear"
+    override_treasure_rewards:
+      name: "&cOverride All Treasure Rewards"
+      lore:
+        - "&7Replace rewards for ALL treasures"
+        - "&7in this collection using a preset."
+        - ""
+        - "&c&lWARNING: This replaces existing rewards!"
+        - ""
+        - "&eClick to choose preset"
+      confirm_title: "Override rewards with '%name%'?"
+    act_rules:
+      name: "&eSchedule Rules"
+      lore:
+        - "&7Manage availability schedules"
+        - "&7using ACT format rules."
+        - ""
+        - "&7Current rules: &f%count%"
+        - ""
+        - "&eClick to manage"
+    progress_reset_cron:
+      name: "&eProgress Reset Schedule"
+      lore:
+        - "&7Current: %cron%"
+        - ""
+        - "&7Automatically resets player"
+        - "&7progress on a schedule."
+        - ""
+        - "&eClick to configure"
+    single_player_find:
+      name: "&eSingle Player Find"
+      lore:
+        - "&7Current: %status%"
+        - ""
+        - "&7When enabled, only ONE player"
+        - "&7globally can find each treasure."
+        - "&7Resets only when cron triggers."
+        - ""
+        - "&eClick to toggle"
+    delete:
+      name: "&cDelete Collection"
+      lore:
+        - "&7Permanently delete this collection"
+        - "&7and ALL its treasures."
+        - ""
+        - "&c&lWARNING: This cannot be undone!"
+        - ""
+        - "&cClick to delete"
+    delete_handling:
+      title: "Delete: Treasure Handling"
+      keep:
+        name: "&aKeep placed treasures"
+        lore:
+          - "&7Delete the collection data,"
+          - "&7but keep all treasure blocks"
+          - "&7where they were placed."
+          - ""
+          - "&7Also restores treasures that"
+          - "&7are currently hidden."
+          - ""
+          - "&eClick to select"
+        confirm_title: "Delete & keep all treasures?"
+      remove_heads:
+        name: "&eRemove heads/skulls"
+        lore:
+          - "&7Delete the collection data,"
+          - "&7remove only player heads/skulls,"
+          - "&7keep other treasures placed."
+          - ""
+          - "&7Also restores non-head"
+          - "&7treasures if currently hidden."
+          - ""
+          - "&eClick to select"
+        confirm_title: "Delete & remove heads/skulls?"
+      remove_blocks:
+        name: "&cRemove blocks & furniture"
+        lore:
+          - "&7Delete the collection data,"
+          - "&7and remove all treasure blocks"
+          - "&7and ItemsAdder furniture."
+          - ""
+          - "&c&lWARNING: World blocks will be removed!"
+          - ""
+          - "&cClick to select"
+        confirm_title: "Delete & remove all treasure blocks?"
+    hide_after_found:
+      name: "&eHide Found Treasures"
+      lore:
+        - "&7Current: %status%"
+        - ""
+        - "&7When enabled, treasures that"
+        - "&7you've already found will be"
+        - "&7hidden Client-Side."
+        - ""
+        - "&8&m                    "
+        - "&7This helps you focus on"
+        - "&7treasures you haven't found yet."
+        - ""
+        - "&eClick to toggle"
+    hide_when_not_available:
+      name: "&eHide When Not Available"
+      lore:
+        - "&7Current: %status%"
+        - ""
+        - "&7When enabled, all treasures"
+        - "&7in this collection will be"
+        - "&7hidden when the collection"
+        - "&7is not available (disabled or"
+        - "&7unavailable due to ACT rules)."
+        - ""
+        - "&8&m                    "
+        - "&7This prevents players from"
+        - "&7seeing unavailable content."
+        - ""
+        - "&eClick to toggle"
+    reset_schedule:
+      title: "Progress Reset Schedule"
+    categories:
+      basic:
+        name: "&6&lBasic Settings &8------>"
+        lore:
+          - ""
+          - "&7Configure fundamental"
+          - "&7collection properties."
+          - ""
+          - "&8&m                    "
+          - "&7• Rename collection"
+          - "&7• Enable / Disable"
+          - "&7• Single player mode"
+          - "&7• Delete collection"
+      rewards:
+        name: "&6&lSchedule Configuration &8------>"
+        lore:
+          - ""
+          - "&7Manage completion rewards"
+          - "&7and schedule of the collection."
+          - ""
+          - "&8&m                    "
+          - "&7• Collection rewards"
+          - "&7• Schedule rules"
+          - "&7• Progress reset timing"
+      presets:
+        name: "&6&lPresets &8------>"
+        lore:
+          - ""
+          - "&7Configure default preset"
+          - "&7for the collection and the"
+          - "&7loading of a preset in all"
+          - "&7treasures."
+          - ""
+          - "&8&m                    "
+          - "&7• Default preset"
+          - "&7• Bulk override rewards"
+      visibility:
+        name: "&6&lVisibility Options &8------>"
+        lore:
+          - ""
+          - "&7Control how treasures are hidden"
+          - "&7for the player or on unavailability."
+          - ""
+          - "&8&m                    "
+          - "&7• Hide found treasures"
+          - "&7• Hide when disabled"
+  presets:
+    treasure:
+      title: "Treasure Presets"
+    collection:
+      title: "Collection Presets"
+    unknown: "&cUnknown"
+    none:
+      name: "&7No Presets"
+      lore:
+        - "&7No reward presets have been created yet."
+    preset:
+      name: "&6%name%"
+      lore:
+        - ""
+        - "&7Total rewards: &f%count%"
+        - ""
+        - "&eLeft-click to %action%"
+        - "&eRight-click to edit"
+      action:
+        select: "select"
+        load: "load"
+        edit: "edit"
+
+    actions:
+      title: "Preset: %name%"
+      rename:
+        name: "&eRename Preset"
+        lore:
+          - "&7Current name: &f%current%"
+          - ""
+          - "&7Change the display name of"
+          - "&7this reward preset."
+          - ""
+          - "&eClick to rename"
+      load_all:
+        name: "&eLoad For All Treasures"
+        lore:
+          - ""
+          - "&7Overwrite ALL treasures"
+          - "&7in this collection with"
+          - "&7this preset's rewards."
+          - ""
+          - "&cThis replaces existing rewards!"
+          - ""
+          - "&eClick to continue"
+        lore_disabled:
+          - ""
+          - "&7This action is only available"
+          - "&7when editing a treasure preset."
+          - "&8Not possible for collection presets!"
+        confirm_title: "Override all treasures?"
+      set_default:
+        option:
+          available: "&eClick to set default"
+          already_selected: "&a✓ Already set as default"
+        name: "&eSet As Default"
+        lore:
+          - ""
+          - "&7Current: &f%current%"
+          - ""
+          - "&7Set this preset as the"
+          - "&7default treasure reward preset"
+          - "&7for this collection."
+          - ""
+          - "%option%"
+        lore_disabled:
+          - ""
+          - "&7This action is only available"
+          - "&7when editing a treasure preset."
+          - "&8Not possible for collection presets!"
+      edit_rewards:
+        name: "&aEdit Rewards"
+        lore:
+          - ""
+          - "&7Edit the rewards stored"
+          - "&7inside this preset."
+          - ""
+          - "&eClick to edit"
+      delete:
+        name: "&cDelete"
+        lore:
+          - ""
+          - "&7Permanently delete"
+          - "&7this preset."
+          - ""
+          - "&cThis cannot be undone!"
+          - ""
+          - "&eClick to delete"
+        confirm_title: "Delete preset '%name%'?"
+  cron:
+    common:
+      invalid_expression: "&c&l⚠ Invalid expression"
+    type:
+      act: "ACT"
+      reset: "Progress Reset"
+    editor:
+      title: "%cron_type% Cron Schedule Editor"
+      current:
+        name: "&e&lCurrent Schedule"
+        expression: "&7Expression:"
+        next_runs: "&7Next executions:"
+        none: "&7No schedule set"
+    preset:
+      information:
+        name: "&e---------->"
+        lore:
+          - "&6⏰ Quick Presets"
+          - ""
+          - "&7Pre-configured scheduling templates"
+          - "&7for common %cron_type% schedules."
+          - ""
+          - "&e► Daily &7- Every day at 00:00"
+          - "&e► Weekly &7- Every Monday at 00:00"
+          - "&e► Monthly &7- 1st of each month"
+          - "&e► Yearly &7- January 1st"
+          - "&e► More... &7- Additional options"
+          - ""
+          - "&a✓ &7Safe and easy to use"
+          - "&8Perfect for beginners!"
+      daily:
+        name: "&eDaily"
+        lore:
+          - "&7Runs every day at midnight"
+          - "&7Expression: &f0 0 0 * * ? *"
+          - ""
+          - "&aClick to apply"
+      weekly:
+        name: "&eWeekly"
+        lore:
+          - "&7Runs every Monday at midnight"
+          - "&7Expression: &f0 0 0 ? * MON *"
+          - ""
+          - "&aClick to apply"
+      monthly:
+        name: "&eMonthly"
+        lore:
+          - "&7Runs on the 1st of each month"
+          - "&7Expression: &f0 0 0 1 * ? *"
+          - ""
+          - "&aClick to apply"
+      yearly:
+        name: "&eYearly"
+        lore:
+          - "&7Runs on January 1st"
+          - "&7Expression: &f0 0 0 1 1 ? *"
+          - ""
+          - "&aClick to apply"
+      more:
+        name: "&6More Presets"
+        lore:
+          - "&7View additional preset schedules"
+          - "&7Including hourly, weekly days,"
+          - "&7seasonal, and special dates"
+          - ""
+          - "&eClick to browse"
+    presets:
+      title: "%cron_type% Cron Presets"
+      item:
+        name: "&e%name%"
+      list:
+        hourly:
+          name: "Every Hour"
+          lore:
+            - "&7Runs at the start of every hour"
+            - "&7Example: 1:00, 2:00, 3:00..."
+            - ""
+            - "&aClick to apply"
+        every_6_hours:
+          name: "Every 6 Hours"
+          lore:
+            - "&7Runs every 6 hours"
+            - "&7Example: 00:00, 06:00, 12:00, 18:00"
+            - ""
+            - "&aClick to apply"
+        every_12_hours:
+          name: "Every 12 Hours"
+          lore:
+            - "&7Runs twice a day"
+            - "&7Example: 00:00, 12:00"
+            - ""
+            - "&aClick to apply"
+        daily_midnight:
+          name: "Daily at Midnight"
+          lore:
+            - "&7Runs every day at 00:00"
+            - ""
+            - "&aClick to apply"
+        daily_noon:
+          name: "Daily at Noon"
+          lore:
+            - "&7Runs every day at 12:00"
+            - ""
+            - "&aClick to apply"
+        daily_6am:
+          name: "Daily at 6 AM"
+          lore:
+            - "&7Runs every day at 06:00"
+            - ""
+            - "&aClick to apply"
+        weekdays_9am:
+          name: "Weekdays at 9 AM"
+          lore:
+            - "&7Runs Monday-Friday at 09:00"
+            - "&7Perfect for weekday events"
+            - ""
+            - "&aClick to apply"
+        monday_midnight:
+          name: "Every Monday at Midnight"
+          lore:
+            - "&7Weekly schedule on Mondays"
+            - "&7Runs at 00:00 on Monday"
+            - ""
+            - "&aClick to apply"
+        friday_6pm:
+          name: "Every Friday at 6 PM"
+          lore:
+            - "&7Weekend event starter"
+            - "&7Runs at 18:00 on Fridays"
+            - ""
+            - "&aClick to apply"
+        sunday_midnight:
+          name: "Every Sunday at Midnight"
+          lore:
+            - "&7Weekly schedule on Sundays"
+            - "&7Runs at 00:00 on Sunday"
+            - ""
+            - "&aClick to apply"
+        first_day_month:
+          name: "First Day of Month"
+          lore:
+            - "&7Monthly schedule"
+            - "&7Runs at 00:00 on the 1st"
+            - ""
+            - "&aClick to apply"
+        last_day_month:
+          name: "Last Day of Month"
+          lore:
+            - "&7End of month schedule"
+            - "&7Runs at 00:00 on last day"
+            - ""
+            - "&aClick to apply"
+        first_monday_month:
+          name: "First Monday of Month"
+          lore:
+            - "&7First Monday monthly schedule"
+            - "&7Runs at 00:00"
+            - ""
+            - "&aClick to apply"
+        new_year:
+          name: "New Year (Jan 1st)"
+          lore:
+            - "&7Annual schedule on New Year"
+            - "&7Runs at 00:00 on January 1st"
+            - ""
+            - "&aClick to apply"
+        christmas:
+          name: "Christmas (Dec 25th)"
+          lore:
+            - "&7Christmas special event"
+            - "&7Runs at 00:00 on December 25th"
+            - ""
+            - "&aClick to apply"
+        quarterly:
+          name: "Quarterly (1st of Jan/Apr/Jul/Oct)"
+          lore:
+            - "&7Seasonal schedules"
+            - "&7Runs at 00:00 on the 1st"
+            - "&7of Jan, Apr, Jul, and Oct"
+            - ""
+            - "&aClick to apply"
+    custom:
+      information:
+        name: "&e---------->"
+        lore:
+          - "&6⚙ Advanced Options"
+          - ""
+          - "&7For users who need precise control"
+          - "&7over their scheduling configuration."
+          - ""
+          - "&e► Field Builder"
+          - "&f  Configure each time field individually"
+          - ""
+          - "&e► Manual Input"
+          - "&f  Write cron expressions directly"
+          - ""
+          - "&c⚠ &7Requires cron syntax knowledge"
+          - "&8Use presets if you're unsure!"
+      builder:
+        name: "&dAdvanced Builder"
+        lore:
+          - "&7Build your cron expression"
+          - "&7field by field with a"
+          - "&7visual interface"
+          - ""
+          - "&eClick to open builder"
+      manual:
+        name: "&bManual Input"
+        lore:
+          - "&7Enter a cron expression manually"
+          - "&7Format: SEC MIN HOUR DAY MONTH DOW YEAR"
+          - "&7Example: &f0 0 12 * * ? *"
+          - ""
+          - "&eClick to type expression"
+    builder:
+      title: "%cron_type% Cron Expression Builder"
+      fields:
+        second:
+          name: "Second"
+          description: "Seconds in minute"
+          values:
+            0: "At the start"
+            wildcard: "Every second"
+            every_interval: "Every %interval% seconds"
+        minute:
+          name: "Minute"
+          description: "Minutes in hour"
+          values:
+            0: "At the start"
+            wildcard: "Every minute"
+            every_interval: "Every %interval% minutes"
+        hour:
+          name: "Hour"
+          description: "Hours in day (0-23)"
+          values:
+            0: "Midnight"
+            6: "6 AM"
+            12: "Noon"
+            18: "6 PM"
+            wildcard: "Every hour"
+            every_interval: "Every %interval% hours"
+        day:
+          name: "Day"
+          description: "Day of month (1-31)"
+          values:
+            1: "First day of month"
+            15: "Mid-month"
+            last: "Last day of month"
+            wildcard: "Every day"
+            none: "No specific day"
+        month:
+          name: "Month"
+          description: "Month of year (1-12 or JAN-DEC)"
+          values:
+            wildcard: "Every month"
+            1: "January"
+            6: "June"
+            12: "December"
+            "1_4_7_10": "Quarterly (Jan/Apr/Jul/Oct)"
+        day_of_week:
+          name: "Day of Week"
+          description: "Day of week (1-7 or SUN-SAT)"
+          values:
+            none: "No specific day"
+            wildcard: "Every day"
+            mon: "Monday"
+            fri: "Friday"
+            sat: "Saturday"
+            sun: "Sunday"
+            mon_fri: "Weekdays"
+        year:
+          name: "Year"
+          description: "Year (optional, leave * for any)"
+          values:
+            wildcard: "Every year"
+            specific_year: "Year %year%"
+        custom_value: "Custom value"
+      preview:
+        name: "&e&lPreview"
+        current_expression: "&7Current Expression:"
+        next_runs: "&7Next runs:"
+      field:
+        selected_name: "&a&l► %name%"
+        unselected_name: "&7%name%"
+        lore:
+          - "&7Value: &f%value%"
+          - ""
+          - "&7%description%"
+          - ""
+          - "&e&lClick to edit this field"
+      preset:
+        current_name: "&a✓ %value%"
+        set_name: "&f%value%"
+        current_lore:
+          - "&aCurrent value"
+          - ""
+          - "&7%description%"
+        set_lore:
+          - "&7Click to set"
+          - ""
+          - "&7%description%"
+      custom_input:
+        name: "&e&lCustom Value"
+        lore:
+          - "&7Enter a custom value"
+          - "&7for %field%"
+          - ""
+          - "&7Examples:"
+          - "&7  - Wildcard: *"
+          - "&7  - Range: 1-5"
+          - "&7  - List: 1,3,5"
+          - "&7  - Increment: */15"
+          - ""
+          - "&eClick to enter custom value"
+      decrease:
+        name: "&c&l- Decrease"
+        lore:
+          - "&7Decrease numeric value by 1"
+      increase:
+        name: "&a&l+ Increase"
+        lore:
+          - "&7Increase numeric value by 1"
+      save:
+        name: "&a&lSave & Apply"
+        lore:
+          - "&7Apply this cron expression"
+          - "&7to the collection"
+          - ""
+          - "&fExpression: &7%expression%"
+    clear:
+      name: "&cClear Schedule"
+      lore:
+        - "&7Remove the reset schedule"
+        - "&7Collection will not auto-reset"
+        - ""
+        - "&cClick to clear"
+  act:
+    setup:
+      title: "&8ACT Setup"
+      date_window:
+        name: "&aDate Window (Always On)"
+        lore:
+          - "&7Active all day between"
+          - "&7a start and end date."
+          - ""
+          - "&7You will pick the date range."
+          - "&7No schedule needed."
+          - ""
+          - "&eClick to configure"
+      repeating_schedule:
+        name: "&eRepeating Schedule"
+        lore:
+          - "&7Active for X hours"
+          - "&7at a fixed time schedule."
+          - ""
+          - "&7You will pick the duration"
+          - "&7then pick the schedule."
+          - ""
+          - "&eClick to configure"
+      advanced:
+        name: "&cAdvanced"
+        lore:
+          - "&7Full control over"
+          - "&7date range, duration,"
+          - "&7and schedule."
+          - ""
+          - "&eClick to open editor"
+    editor:
+      title: "ACT Rule Editor: %name%"
+      guided_setup:
+        name: "&bGuided Setup"
+        lore:
+          - "&7Reopen the setup wizard"
+          - "&7for this rule."
+          - ""
+          - "&eClick to open"
+      manual_input:
+        name: "&bManual ACT Input"
+        lore:
+          - "&7Enter the ACT format"
+          - "&7directly in chat."
+          - ""
+          - "&eClick to type"
+      current:
+        name: "&e&lCurrent Rule Configuration"
+        date_range: "&7Date Range: &f%date_range%"
+        duration: "&7Duration: &f%duration%"
+        cron: "&7Cron: &f%cron%"
+        next_activation: "&7Next Activation:"
+        validation: "&7Validation: %status%"
+        valid: "&a✓ Valid"
+        invalid: "&c✗ Invalid"
+    preset:
+      apply:
+        name: "&6Quick Setup (Presets)"
+        lore:
+          - "&7Pick a common schedule"
+          - "&7(no ACT format needed)"
+          - ""
+          - "&eClick to browse presets"
+    presets:
+      title: "ACT Rule Presets"
+      list:
+        always_available:
+          name: "Always Available"
+          lore:
+            - "&7Collection is permanently available"
+            - "&7No date, duration, or schedule limits"
+            - ""
+            - "&7Format: &f[*] [*] [NONE]"
+            - ""
+            - "&aClick to apply"
+        daily_2h:
+          name: "Daily 2 Hours (Morning)"
+          lore:
+            - "&7Available every day for 2 hours"
+            - "&7Triggers at 9:00 AM"
+            - ""
+            - "&7Format: &f[*] [2h] [0 0 9 * * ?]"
+            - ""
+            - "&aClick to apply"
+        daily_4h:
+          name: "Daily 4 Hours (Afternoon)"
+          lore:
+            - "&7Available every day for 4 hours"
+            - "&7Triggers at 2:00 PM"
+            - ""
+            - "&7Format: &f[*] [4h] [0 0 14 * * ?]"
+            - ""
+            - "&aClick to apply"
+        weekend_8h:
+          name: "Weekend Event (8 Hours)"
+          lore:
+            - "&7Available on Saturdays and Sundays"
+            - "&7For 8 hours starting at 10:00 AM"
+            - ""
+            - "&7Format: &f[*] [8h] [0 0 10 ? * SAT,SUN]"
+            - ""
+            - "&aClick to apply"
+        weekly_24h:
+          name: "Weekly Event (24 Hours)"
+          lore:
+            - "&7Available every Monday"
+            - "&7For the entire day"
+            - ""
+            - "&7Format: &f[*] [24h] [0 0 0 ? * MON]"
+            - ""
+            - "&aClick to apply"
+        holiday_special:
+          name: "Holiday Special (Christmas)"
+          lore:
+            - "&7Available during Christmas week"
+            - "&7Permanent availability during period"
+            - "&7From Dec 20 to Dec 26"
+            - ""
+            - "&7Format: &f[2025-12-20:2025-12-26] [*] [0 0 0 * * ?]"
+            - ""
+            - "&aClick to apply"
+        seasonal_summer:
+          name: "Summer Season"
+          lore:
+            - "&7Available during summer months"
+            - "&7Permanent availability June-August"
+            - ""
+            - "&7Format: &f[2025-06-01:2025-08-31] [*] [NONE]"
+            - ""
+            - "&aClick to apply"
+        hourly_30m:
+          name: "Hourly (30 Minutes)"
+          lore:
+            - "&7Triggers every hour"
+            - "&7Available for 30 minutes each time"
+            - ""
+            - "&7Format: &f[*] [30m] [0 0 * * * ?]"
+            - ""
+            - "&aClick to apply"
+        twice_daily_3h:
+          name: "Twice Daily (3 Hours Each)"
+          lore:
+            - "&7Available twice per day"
+            - "&7At 9:00 AM and 6:00 PM"
+            - "&7For 3 hours each time"
+            - ""
+            - "&7Format: &f[*] [3h] [0 0 9,18 * * ?]"
+            - ""
+            - "&aClick to apply"
+        monthly_week:
+          name: "Monthly (First Week)"
+          lore:
+            - "&7Available the first week of every month"
+            - "&7From the 1st to the 7th"
+            - "&7Permanent during this period"
+            - ""
+            - "&7Format: &f[*-*-01:*-*-07] [*] [NONE]"
+            - ""
+            - "&aClick to apply"
+    component:
+      date_range:
+        name: "&eDate Range"
+        lore:
+          - "&7Current: &f%value%"
+          - "&7%description%"
+          - ""
+          - "&7Optional: limit to specific dates"
+          - ""
+          - "&eClick to edit"
+      duration:
+        name: "&eDuration"
+        lore:
+          - "&7Current: &f%value%"
+          - "&7%description%"
+          - ""
+          - "&7Optional: limit how long it's active"
+          - ""
+          - "&eClick to edit"
+      cron:
+        name: "&eSchedule"
+        description:
+          none: "No schedule"
+          invalid: "Invalid schedule"
+        lore:
+          - "&7Current: &f%value%"
+          - "&7%description%"
+          - ""
+          - "&7Optional: run on a repeating schedule"
+          - ""
+          - "&eClick to edit"
+    rules:
+      list:
+        title: "Schedule Rules: %collection%"
+        rule_item:
+          name: "&6%name%"
+          lore:
+            - "&7Status: %status%"
+            - "&7Date Range: &f%date_range%"
+            - "&7Duration: &f%duration%"
+            - "&7Cron: &f%cron%"
+            - "&7Next Trigger: %next_trigger%"
+            - ""
+            - "&eLeft-Click to edit"
+            - "&eRight-Click to toggle"
+            - "&cShift+Left-Click to delete"
+        add_rule:
+          name: "&aAdd New Rule"
+          lore:
+            - "&7Creates a new rule"
+            - "&7and opens setup"
+      editor:
+        name:
+          name: "&eName"
+          lore:
+            - "&7Current: &f%name%"
+            - ""
+            - "&eClick to rename"
+        enabled:
+          name: "&eEnabled"
+          lore:
+            - "&7Current: %status%"
+            - ""
+            - "&eClick to toggle"
+        delete:
+          name: "&cDelete Rule"
+          lore:
+            - "&7Permanently removes this rule"
+            - ""
+            - "&cClick to delete"
+    components:
+      duration:
+        editor:
+          title: "Edit Duration"
+          current:
+            name: "&e&lCurrent Duration"
+            value: "&f%duration%"
+            description: "&7%description%"
+        preset:
+          permanent:
+            name: "&aPermanent"
+            lore:
+              - "&7Collection stays available forever"
+              - "&7once triggered (until reset)"
+              - ""
+              - "&7Value: &f*"
+              - ""
+              - "&eClick to apply"
+          30_minutes:
+            name: "&e30 Minutes"
+            lore:
+              - "&7Available for half an hour"
+              - ""
+              - "&7Value: &f30m"
+              - ""
+              - "&eClick to apply"
+          1_hour:
+            name: "&e1 Hour"
+            lore:
+              - "&7Available for one hour"
+              - ""
+              - "&7Value: &f1h"
+              - ""
+              - "&eClick to apply"
+          2_hours:
+            name: "&e2 Hours"
+            lore:
+              - "&7Available for two hours"
+              - ""
+              - "&7Value: &f2h"
+              - ""
+              - "&eClick to apply"
+          4_hours:
+            name: "&e4 Hours"
+            lore:
+              - "&7Available for four hours"
+              - ""
+              - "&7Value: &f4h"
+              - ""
+              - "&eClick to apply"
+          8_hours:
+            name: "&e8 Hours"
+            lore:
+              - "&7Available for eight hours"
+              - ""
+              - "&7Value: &f8h"
+              - ""
+              - "&eClick to apply"
+          24_hours:
+            name: "&e24 Hours (1 Day)"
+            lore:
+              - "&7Available for one full day"
+              - ""
+              - "&7Value: &f24h"
+              - ""
+              - "&eClick to apply"
+          7_days:
+            name: "&e7 Days (1 Week)"
+            lore:
+              - "&7Available for one week"
+              - ""
+              - "&7Value: &f7d"
+              - ""
+              - "&eClick to apply"
+        custom:
+          name: "&dCustom Duration"
+          lore:
+            - "&7Enter a custom duration"
+            - "&7Format: <number><unit>"
+            - "&7Units: s, m, h, d"
+            - "&7Example: 90s, 90m, 12h, 3d"
+            - ""
+            - "&eClick to type manually"
+        increase:
+          name: "&a&l+ Increase"
+          lore:
+            - "&7Add 1 to the duration value"
+            - "&7(numeric durations only)"
+        decrease:
+          name: "&c&l- Decrease"
+          lore:
+            - "&7Subtract 1 from the duration value"
+            - "&7(numeric durations only, min: 1)"
+      date_range:
+        manual:
+          name: "&dManual Date Range Input"
+          lore:
+            - "&7Enter a custom date range"
+            - "&7Format: YYYY-MM-DD:YYYY-MM-DD"
+            - "&7Example: 2025-12-24:2025-12-31"
+            - "&7Use &f* &7for always active"
+            - ""
+            - "&eClick to type manually"
+        editor:
+          title: "Edit Date Range"
+          current:
+            name: "&e&lCurrent Date Range"
+            value: "&f%date_range%"
+            description: "&7%description%"
+        preset:
+          always:
+            name: "&aAlways Active"
+            lore:
+              - "&7No date restrictions"
+              - "&7The rule can trigger any day"
+              - ""
+              - "&7Value: &f*"
+              - ""
+              - "&eClick to apply"
+          this_year:
+            name: "&eThis Year (%year%)"
+            lore:
+              - "&7Active during current year only"
+              - "&7From Jan 1st to Dec 31st"
+              - ""
+              - "&7Value: &f%year%-01-01:%year%-12-31"
+              - ""
+              - "&eClick to apply"
+          this_month:
+            name: "&eThis Month"
+            lore:
+              - "&7Active during current month"
+              - ""
+              - "&7Value: &f%start%:%end%"
+              - ""
+              - "&eClick to apply"
+          next_month:
+            name: "&eNext Month"
+            lore:
+              - "&7Active during next month"
+              - ""
+              - "&7Value: &f%start%:%end%"
+              - ""
+              - "&eClick to apply"
+minigame:
+  success: "%prefix%&aMinigame completed successfully!"
+  failed: "%prefix%&cMinigame failed."
+  reaction:
+    timeout: "%prefix%&cYou took too long! Game over."
+    wrong_click: "%prefix%&cWrong block! Game over."
+  memory:
+    watch: "%prefix%&eWatch the sequence carefully!"
+    repeat: "%prefix%&aNow repeat the sequence!"
+    wrong: "%prefix%&cWrong sequence! Game over."
+  spot:
+    memorise: "%prefix%&eMemorize the positions of the items!"
+    find: "%prefix%&aFind all hidden items!"
+    wrong: "%prefix%&cWrong slot! That was not a hidden item."
+  oddoneout:
+    find: "%prefix%&eRound &f%round%&e/&f%max% &8— &aFind the odd item!"
+    timeout: "%prefix%&cToo slow! Time ran out."
+    wrong: "%prefix%&cWrong! That was not the odd item."
+  order:
+    memorise: "%prefix%&eRound &f%round%&e/&f%max% &8— &eMemorize the sequence!"
+    recreate: "%prefix%&aRecreate the sequence using the palette below!"
+    wrong: "%prefix%&cWrong! That was not the correct item."
+  sliderpuzzle:
+    start: "%prefix%&eSlide the tiles into the correct order (1-8)!"
+  higherlower:
+    start: "%prefix%&eI am thinking of a number from &f1&e to &f%max%&e. You have &f%guesses% &eguesses!"
+    correct: "%prefix%&a&lCorrect! &7The number was &f%n%&7."
+    higher: "%prefix%&a▲ Higher! &7&f%left% &7guess(es) remaining."
+    lower: "%prefix%&c▼ Lower! &7&f%left% &7guess(es) remaining."
+    lose: "%prefix%&c&lGame over! &7The number was &f%n%&7."
+  error:
+    invalid_type: "%prefix%&cInvalid minigame type. Available: REACTION, MEMORY"
+
+proximity:
+  near_treasure: "&eYou are near a treasure!"
+  in_place_mode: "&eYou are currently in place mode!"
+
+hint:
+  no_unfound_nearby: "%prefix%&cNo unfound treasures nearby in active collections!"
+  cooldown: "%prefix%&cYou must wait &e%time% seconds &cbefore requesting another hint."
+  coordinate_x: "%prefix%&aHint: X coordinate is &e%value% &a(&e%distance%m &a%direction%)"
+  coordinate_z: "%prefix%&aHint: Z coordinate is &e%value% &a(&e%distance%m &a%direction%)"
+  success: "%prefix%&aYou earned a hint!"
+  visual_active: "%prefix%&eVisual hint activated!"
+  minigame_failed: "%prefix%&cMinigame failed. No hint for you!"

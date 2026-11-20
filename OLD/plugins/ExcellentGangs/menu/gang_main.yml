@@ -1,0 +1,158 @@
+# ==================== [SECTION] SETTINGS ====================
+# > [MenuType] : String | Represents the menu type. Allowed values: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/MenuType.html
+# > [Title] : String | Sets menu title.
+# > [Auto_Refresh] : Integer | Defines menu refresh rate in seconds. Set 0 to disable.
+# > [PlaceholderAPI -> Enabled] : Boolean | When enabled, applies PlaceholderAPI placeholders for all items in the menu per player.
+#  
+# ==================== [SECTION] CONTENT ====================
+# You can freely edit items in this section as you wish (add, remove, modify items).
+# > [Item] : Section | Item to display.
+#     [*] Navigate to https://nightexpressdev.com/nightcore/configuration/item-formation/ for a list of available options.
+# > [Priority] : Integer | Item priority. Higher values will override other item(s) in the same slot(s).
+# > [Slots] : Int Array | Item slots, starts from 0. Split with commas.
+#     Slots: '0,4,9,10'
+# > [Type] : String | Defines item click action.
+#     [*] Available types: ['close', 'user_skin']
+# > [Click_Commands] : Section | Executes commands on click with PlaceholderAPI support.
+#     [*] Works only if [Type] is not set (null).
+#     [*] Available click types: [LEFT, RIGHT, SHIFT_LEFT, SHIFT_RIGHT, DROP_KEY, SWAP_KEY, DRAG_N_DROP]
+#     [*] Use prefix 'player:' to run command by a player.
+#     Click_Commands:
+#       LEFT:
+#       - say Hello
+#       - give %player_name% diamond 1
+#       - player: warp shop
+# ==================================================
+Settings:
+  MenuType: minecraft:generic_9x6
+  Title: <black>Gang Menu</black>
+  Auto_Refresh: -1
+  PlaceholderAPI:
+    Enabled: true
+Buttons:
+  Member:
+    Slots: 13,20,21,22,23,24,29,30,31,32,33
+    Self:
+      Material: minecraft:player_head
+      Display_Name: <soft_yellow>%member_name%</soft_yellow> <dark_gray>[<white>You</white>]</dark_gray>
+      Lore:
+      - '<gray>In Game: <soft_aqua>%member_online_time%</soft_aqua></gray>'
+      - ''
+      - <soft_yellow>Info:</soft_yellow>
+      - '<dark_gray>»</dark_gray> <gray>Location: </gray><soft_blue>%player_world%</soft_blue> <dark_gray>[%player_x%, %player_y%, %player_z%]</dark_gray>'
+      - '<dark_gray>»</dark_gray> <gray>Health: </gray><soft_red>%player_health%</soft_red>'
+      - '<dark_gray>»</dark_gray> <gray>Money: </gray><soft_green>$%vault_eco_balance_formatted%</soft_green>'
+      - '<dark_gray>»</dark_gray> <gray>XP Level: </gray><soft_yellow>%player_level%</soft_yellow>'
+    Online:
+      Material: minecraft:player_head
+      Display_Name: <soft_yellow>%member_name%</soft_yellow> <dark_gray>[%member_online%]</dark_gray>
+      Lore:
+      - '<gray>In Game: <soft_aqua>%member_online_time%</soft_aqua></gray>'
+      - ''
+      - <soft_yellow>Info:</soft_yellow>
+      - '<dark_gray>»</dark_gray> <gray>Location: </gray><soft_blue>%player_world%</soft_blue> <dark_gray>[%player_x%, %player_y%, %player_z%]</dark_gray>'
+      - '<dark_gray>»</dark_gray> <gray>Health: </gray><soft_red>%player_health%</soft_red>'
+      - '<dark_gray>»</dark_gray> <gray>Money: </gray><soft_green>$%vault_eco_balance_formatted%</soft_green>'
+      - '<dark_gray>»</dark_gray> <gray>XP Level: </gray><soft_yellow>%player_level%</soft_yellow>'
+      - ''
+      - <soft_yellow>→ <u>Click for actions</u></soft_yellow>
+    Offline:
+      Material: minecraft:player_head
+      Display_Name: <soft_yellow>%member_name%</soft_yellow> <dark_gray>[%member_online%]</dark_gray>
+      Lore:
+      - '<gray>Last Seen: <soft_pink>%member_online_time%</soft_pink></gray>'
+      - ''
+      - <soft_yellow>→ <u>Click for actions</u></soft_yellow>
+    Invite:
+      Material: minecraft:cyan_stained_glass_pane
+      Display_Name: <soft_aqua>Invite Player</soft_aqua>
+      Lore:
+      - <gray>Invite more players to your gang!</gray>
+      - ''
+      - <soft_aqua>→ <u>Click to invite</u></soft_aqua>
+    Locked:
+      Material: minecraft:gray_stained_glass_pane
+      Display_Name: <soft_yellow>Member Slot</soft_yellow> <gray>(Locked)</gray>
+      Lore:
+      - <gray>Upgrade <soft_yellow>gang level</soft_yellow> to unlock!</gray>
+    Empty:
+      Material: minecraft:black_stained_glass_pane
+      Display_Name: <soft_yellow>Member Slot</soft_yellow>
+      Lore:
+      - <gray>A vacant slot for new members.</gray>
+  FriendlyFire:
+    Slot: 47
+    Default:
+      Material: minecraft:netherite_helmet
+      Display_Name: <orange>Friendly Fire</orange>
+      Lore:
+      - '<dark_gray>»</dark_gray> <gray>State: </gray><orange>%gang_friendly_fire%</orange>'
+      - ''
+      - <gray>Controls whether gang members can</gray>
+      - <gray>damage each other.</gray>
+      - ''
+      - <orange>→ <u>Click to toggle</u></orange>
+  Disband:
+    Slot: 49
+    Default:
+      Material: minecraft:barrier
+      Display_Name: <soft_red>Disband</soft_red>
+      Lore:
+      - <gray>Disband the gang.</gray>
+      - ''
+      - <soft_red>→ <u>Click to disband</u></soft_red>
+  Name:
+    Slot: 51
+    Default:
+      Material: minecraft:filled_map
+      Display_Name: <soft_yellow>Gang Name</soft_yellow>
+      Lore:
+      - '<dark_gray>»</dark_gray> <gray>Current: </gray><soft_yellow>%gang_name%</soft_yellow>'
+      - ''
+      - <soft_yellow>→ <u>Click to change</u></soft_yellow>
+    Locked:
+      Material: minecraft:filled_map
+      Display_Name: <gray>Gang Name</gray> <red>[Locked]</red>
+      Lore:
+      - <gray>Upgrade <red>gang level</red> to unlock!</gray>
+  Vault:
+    Slot: 52
+    Default:
+      Material: minecraft:ender_chest
+      Display_Name: <soft_purple>Gang's Vault</soft_purple>
+      Lore:
+      - '<dark_gray>»</dark_gray> <gray>Vault Items: <soft_purple>%amount%</soft_purple>/<soft_purple>%gang_vault_size%</soft_purple></gray>'
+      - ''
+      - <soft_purple>→ <u>Click to open</u></soft_purple>
+    Locked:
+      Material: minecraft:ender_chest
+      Display_Name: <gray>Gang's Vault</gray> <red>[Locked]</red>
+      Lore:
+      - <gray>Upgrade <red>gang level</red> to unlock!</gray>
+  Bank:
+    Slot: 46
+    Default:
+      Material: minecraft:emerald
+      Display_Name: <soft_green>Gang's Bank</soft_green>
+      Lore:
+      - '<dark_gray>»</dark_gray> <gray>Balance: <soft_green>%balance%</soft_green></gray>'
+      - ''
+      - <soft_green>→ <u>Click to open</u></soft_green>
+  Levels:
+    Slot: 8
+    Default:
+      Material: minecraft:firework_rocket
+      Display_Name: <soft_orange>Gang Levels</soft_orange>
+      Lore:
+      - '<dark_gray>»</dark_gray> <gray>Current: <soft_orange>%gang_level_name%</soft_orange></gray>'
+      - ''
+      - <soft_orange>→ <u>Click to open</u></soft_orange>
+Content:
+  black_stained_glass_pane:
+    Priority: -1
+    Item:
+      Material: minecraft:black_stained_glass_pane
+      Lore: []
+      Hide_Tooltip: true
+    Slots: 45,46,47,48,49,50,51,52,53
+    Type: 'null'

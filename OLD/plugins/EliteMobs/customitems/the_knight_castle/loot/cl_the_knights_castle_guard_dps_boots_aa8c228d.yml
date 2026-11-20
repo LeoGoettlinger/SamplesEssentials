@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&aCourtyard Spurs'
+lore:
+- '&aEach heel bears a dent from the castle steps.'
+classLootFamily: DPS_BOOTS

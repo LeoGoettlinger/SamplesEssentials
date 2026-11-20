@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Mythical] Shaped Leggings'
+material: DIAMOND_LEGGINGS
+level: 20
+lore:
+- '&2Has a very musky scent to it.'
+enchantments:
+- DAMAGE_UNDEAD,3
+- DAMAGE_ALL,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,73 @@
+# --- ReaperScythe Plugin Configuration ---
+
+# Default settings for the scythe.
+default_scythe_name: "&5Scythe"
+
+# --- Crafting Limits and Settings ---
+
+# The number of times the scythe can be crafted on the server.
+# A value of -1 means unlimited crafting.
+max_crafts:
+  reaper_scythe: 1
+
+# --- Crafting Recipes ---
+
+# Defines the shaped crafting recipe for the scythe.
+# 'pattern' must have exactly 3 rows.
+# 'ingredients' maps a single character in the pattern to a Material.
+recipes:
+  reaper_scythe:
+    pattern:
+      - "NNN"
+      - "N S"
+      - "  M"
+    ingredients:
+      M: MACE
+      N: NETHERITE_INGOT
+      S: NETHER_STAR
+
+# --- Scythe Appearance Settings ---
+scythe_settings:
+  reaper_scythe:
+    name: "&5&lScythe of the Reaper"
+
+    # The description (lore) of the item. Color codes can be used with '&'.
+    lore:
+      - "&7The soul of every foe"
+      - "&7belongs to the Reaper."
+      - ""
+      - "&eAbility: Reaper's Whirlwind (Right Click)"
+      - "&ePassive: Death Speed"
+
+# --- Active Potion Effects ---
+# These effects are applied as long as the player holds the scythe in their main hand.
+# The 'duration_ticks' must be high enough (e.g., 220) because the effect is reapplied every 10 ticks.
+# The 'amplifier' is the effect level minus one (0 = Level I, 1 = Level II, etc.).
+
+active_effects:
+  haste:
+    effect: HASTE
+    amplifier: 10
+    duration_ticks: 20
+
+  strength:
+    effect: INCREASE_DAMAGE
+    amplifier: 1
+    duration_ticks: 20
+
+# --- Special Abilities (NEU) ---
+special_abilities:
+
+  reapers_whirlwind:
+    enabled: true
+    cooldown_seconds: 30
+    radius: 4.0
+    base_damage: 4.0
+    wither_duration_ticks: 80
+    wither_amplifier: 1
+
+
+  death_speed_boost:
+    enabled: true
+    duration_ticks: 60
+    amplifier: 1 #speed 2

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&7Stoker''s Rod'
+lore:
+- '&7The grip marks stop well short of the blackened end.'
+weaponType: STAVES

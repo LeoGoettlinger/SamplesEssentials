@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&7Beastmaster''s Crook'
+lore:
+- '&7The handle is worn by a grip too tight to release.'
+weaponType: STAVES

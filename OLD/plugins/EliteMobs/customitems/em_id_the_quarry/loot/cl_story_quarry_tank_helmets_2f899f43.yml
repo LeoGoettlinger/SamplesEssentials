@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Quarry Cap'
+lore:
+- '&7The crown has caught more than its share of small stones.'
+classLootFamily: TANK_HELMETS

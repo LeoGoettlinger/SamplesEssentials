@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&7Last Toll'
+lore:
+- '&7A small rod taken from an empty collector''s booth.'
+weaponType: WANDS

@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&7Ancient Defender [Normal]'
+material: DIAMOND_AXE
+level: 25
+lore:
+- '&eExcellent axe for defending yourself.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,5
+- PROTECTION_PROJECTILE,4
+- elitemobs:loud_strikes,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

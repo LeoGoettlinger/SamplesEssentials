@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&8Votive Weight'
+lore:
+- '&8A heavy offering fitted to a handle.'
+- '&8The inscription asks for nothing in return.'

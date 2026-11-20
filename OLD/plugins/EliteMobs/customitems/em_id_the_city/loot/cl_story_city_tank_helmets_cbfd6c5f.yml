@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Gatehouse Helm'
+lore:
+- '&7Built for the narrow spaces behind the gate.'
+classLootFamily: TANK_HELMETS

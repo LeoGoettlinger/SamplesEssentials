@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 10.131.111.27
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1791390799026
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1791392462652
+  login: 1791391261724
+money: '0'
+last-account-name: .CCraft9926
+lastlocation:
+  world: f7b9d6a4-0776-481f-976b-15e3b76d6a75
+  world-name: PixelAttack
+  x: 34.137627
+  y: 68.0
+  z: 26.2341
+  yaw: -92.7203369140625
+  pitch: -64.04861450195312
+logoutlocation:
+  world: f7b9d6a4-0776-481f-976b-15e3b76d6a75
+  world-name: PixelAttack
+  x: -59.470177
+  y: 163.0
+  z: -27.47909
+  yaw: -128.8905029296875
+  pitch: -2.350372314453125

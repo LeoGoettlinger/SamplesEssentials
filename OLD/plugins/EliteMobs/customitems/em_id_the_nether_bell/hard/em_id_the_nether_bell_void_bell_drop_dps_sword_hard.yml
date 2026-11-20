@@ -1,0 +1,17 @@
+isEnabled: true
+material: NETHERITE_SWORD
+name: '&d[Hard] Void Bell Sword'
+lore:
+- '&dThe sword hums as you swing it.'
+- '&dYou can almost hear the sound of a bell.'
+enchantments:
+- DAMAGE_ALL,8
+- FIRE_ASPECT,1
+- SWEEPING_EDGE,2
+- KNOCKBACK,1
+- LOOTING,2
+potionEffects:
+- WITHER,1,target,onHit
+scalability: scalable
+level: 55
+itemType: unique

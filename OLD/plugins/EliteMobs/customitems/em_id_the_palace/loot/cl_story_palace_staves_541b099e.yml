@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&7Old King''s Measure'
+lore:
+- '&7The ruler''s height is cut into the dark shaft.'
+weaponType: STAVES

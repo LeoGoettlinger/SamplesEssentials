@@ -1,0 +1,20 @@
+isEnabled: true
+name: '&c[Normal] Singing Sword'
+material: NETHERITE_SWORD
+level: 45
+lore:
+- '&cThis sword is made of material unfamiliar to you.'
+- '&cThe sword emits micro vibrations that give off'
+- '&ca low tone.'
+enchantments:
+- DAMAGE_ALL,6
+- DAMAGE_ARTHROPODS,5
+- DAMAGE_UNDEAD,4
+- DURABILITY,3
+- KNOCKBACK,2
+- SWEEPING_EDGE,1
+potionEffects:
+- NIGHT_VISION,0,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

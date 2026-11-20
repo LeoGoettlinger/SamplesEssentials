@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&7Bell Keeper''s Rod'
+lore:
+- '&7The grip is wrapped where the old keeper''s hands shook.'
+weaponType: STAVES

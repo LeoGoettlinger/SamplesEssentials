@@ -1,0 +1,11 @@
+potionEffects: []
+isEnabled: true
+material: SHIELD
+name: '&e[Hard] Undead''s Shield'
+lore:
+- '&eRetrieved from the walking corpse.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+itemType: unique
+scalability: scalable
+level: 10

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&bMelted Flamethrowers [$difficulty]'
+lore:
+- '&bYou can just barely fit your feet'
+- '&binside.'
+classLootFamily: DPS_BOOTS

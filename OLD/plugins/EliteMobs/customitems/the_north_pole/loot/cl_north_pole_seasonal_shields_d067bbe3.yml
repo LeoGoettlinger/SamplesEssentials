@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&aParcel Guard'
+lore:
+- '&7Wrapped once, dented twice.'
+- '&7The tag still says handle with care.'

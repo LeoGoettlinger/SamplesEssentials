@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Hard] Dwarven Leggings'
+material: DIAMOND_LEGGINGS
+level: 30
+lore:
+- '&fJust what your legs always dreaded.'
+enchantments:
+- elitemobs:loud_strikes,2
+- PROTECTION_ENVIRONMENTAL,4
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

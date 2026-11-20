@@ -1,0 +1,57 @@
+isEnabled: true
+customObjectives:
+  Objective1:
+    amount: '1'
+    filename: the_cave_boiler_p1.yml
+    objectiveType: KILL_CUSTOM
+customRewards:
+- currencyAmount=150:amount=1:chance=1
+- filename=elite_scrap_tiny.yml:amount=1:chance=0.3
+- filename=elite_scrap_small.yml:amount=1:chance=0.2
+- filename=elite_scrap_medium.yml:amount=1:chance=0.1
+- filename=elite_scrap_large.yml:amount=1:chance=0.05
+- filename=elite_scrap_huge.yml:amount=1:chance=0.01
+- filename=enchanted_book_damage_all.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_arthropods.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_undead.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_environmental.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_explosions.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fall.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fire.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_projectile.yml:amount=1:chance=0.1
+- filename=story_dungeons_quest_2_chestplate.yml:amount=1:chance=1.0
+questAcceptPermission: elitequest.story_dungeons_quest_1_undead_attack.yml
+questLockoutPermission: elitequest.story_dungeons_quest_2_broiled.yml
+questLockoutMinutes: 10080
+name: '&2Broiled!'
+questLore:
+- Oh! You stopped by just in time!
+- I got some reports here, regarding those undead corpses from the village.
+- Wait, are they corpses or bodies if they’re undead?
+- Anyway, the corpses had faint traces of Nether magic in them.
+- Not good, not good at all. There shouldn’t be any Nether beings here at all.
+- From what you have told me and what information we could gather from that note.
+- Our culprit is most likely something called Soulweaver Daine.
+- We need to find whatever that creature is and slay it. Or this will only get worse.
+- This is now becoming a priority mission. I sent some scouts ahead of you.
+- They managed to find the mines. The mines are infested with all sorts of nasty creatures
+  according to the reports.
+- Before we send you to the mines, I have a more important task. At the entrance to
+  the mines, we sighted a powerful magma cube.
+- Apparently, all it does is hop back and forth in this small cave.
+- This must The Boiler that the note mentioned.
+- We cannot leave something like that alive.
+temporaryPermissions: []
+questAcceptDialog:
+- '&e[Wallitz]&f I do not need to tell you that fire resistance might be a good idea
+  before heading out? Good luck!'
+- '&7&oI should prepare for a challenging fight.'
+- '&7Interact with the nearby &fVillage Mother &7teleporter to start the quest.'
+questCompleteMessage:
+- '&e[Wallitz]&f What is that smokey smell? Oh, it’s our eighty-eight-best guild member!
+  Glad to see that you made it back in one piece. Roasted but, still in one piece.
+  I hope it wasn’t too difficult to put that flaming jello down.'
+- '&7&oThat was really draining but seems like there is more to do.'
+questCompleteCommands: []
+turnInNPC: story_dungeons_quest_giver.yml
+QuestLevel: 0

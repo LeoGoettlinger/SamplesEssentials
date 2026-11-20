@@ -1,0 +1,24 @@
+# Messages Configuration
+# Supports hex colors with &#RRGGBB format
+
+trident:
+  title: "&#00FFFFPower Trident"
+  subtitle: "&#FFFFFFUnleash the Storm"
+
+sword:
+  title: "&#FF0000Power Sword"
+  subtitle: "&#FFFFFFStrike with Fury"
+
+mace:
+  title: "&#FFD700Power Mace"
+  subtitle: "&#FFFFFFThor's Hammer"
+
+totem:
+  title: "&#FFD700Power Totem"
+  subtitle: "&#FFFFFFProtection & Power"
+
+general:
+  no-permission: "&cYou don't have permission to use this!"
+  reload-success: "&a&lSPower reloaded successfully!"
+  cooldown: "&cCooldown: {time}s"
+  particle-selected: "&aSelected particle: &e{particle}"

@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&e[Mythical] Mastercraft Protector'
+material: SHIELD
+level: 30
+lore:
+- '&eThis shield will hold as long'
+- '&eas it''s user is willing.'
+enchantments:
+- DAMAGE_ALL,5
+- DURABILITY,10
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,354 @@
+# ============================================
+# Main Shop Menu - Hauptmenü
+# Kompatibel mit EconomyShopGUI / ShopGUIPlus
+# ============================================
+
+title: '&8&lShop Menu'
+rows: 6
+
+items:
+  # ==========================================
+  # MITTE OBEN: Info-Button (Slot 4)
+  # ==========================================
+  info:
+    slot: 4
+    material: WRITABLE_BOOK
+    name: '&c&lServer-Shop Info'
+    lore:
+      - ''
+      - '&6&lServer-SHOP'
+      - '&7Made by &bDralle'
+      - '&6Configured by SampleCraft'
+      - '&7Version: &b%version%'
+      - '%update-available%'
+      - ''
+      - '&7Hier kannst du Dinge kaufen'
+      - '&7und verkaufen!'
+      - '&79 Shops mit &e1000+ Items&7!'
+      - ''
+
+  # ==========================================
+  # REIHE 2: Haupt-Shops (Slots 10-16)
+  # ==========================================
+  blocks:
+    slot: 10
+    material: STONE_BRICKS
+    name: '&b&lBlocks'
+    lore:
+      - ''
+      - '&7Baublocke, Holz, Glas,'
+      - '&7Wolle, Stein, Erde...'
+      - '&7Uber 400 Items!'
+      - '&7Available: &e%available-times%'
+      - ''
+    shop-key: blocks
+
+  farming:
+    slot: 11
+    material: GOLDEN_HOE
+    name: '&a&lFarming'
+    lore:
+      - ''
+      - '&7Setzlinge, Blumen, Ernten,'
+      - '&7Samen, Tiere, Leuchtbeeren...'
+      - '&7Available: &e%available-times%'
+      - ''
+    shop-key: farming
+
+  premium:
+    slot: 12
+    material: EMERALD
+    name: '&6&lPremium & Materials'
+    lore:
+      - ''
+      - '&7Erze, Diamanten, Netherite,'
+      - '&7Rustung, Werkzeuge, Trims...'
+      - '&7Available: &e%available-times%'
+      - ''
+    shop-key: premium
+
+  spawners:
+    slot: 13
+    material: SPAWNER
+    name: '&c&lSpawners'
+    lore:
+      - ''
+      - '&7Mob-Spawner aller Art!'
+      - '&7Passiv, Feindlich, Nether, End...'
+      - '&7Available: &e%available-times%'
+      - ''
+    shop-key: spawners
+    hide-attributes: true
+    hide-additional: true
+
+  misc:
+    slot: 14
+    material: CHEST
+    name: '&f&lMisc Items'
+    lore:
+      - ''
+      - '&7Eimer, Maps, Sattel,'
+      - '&7Rustungsstander, Farbstoffe,'
+      - '&7Topferscherben...'
+      - '&7Available: &e%available-times%'
+      - ''
+    shop-key: misc
+
+  food_cooking:
+    slot: 15
+    material: COOKED_BEEF
+    name: '&6&lFood & Cooking'
+    lore:
+      - ''
+      - '&7Essen, Roh & Gekocht,'
+      - '&7Suppen, Kuchen, Goldene Apfel!'
+      - '&7Available: &e%available-times%'
+      - ''
+    shop-key: food_cooking
+
+  redstone_tech:
+    slot: 16
+    material: REDSTONE
+    name: '&c&lRedstone Tech'
+    lore:
+      - ''
+      - '&7Redstone, Piston, Hopper,'
+      - '&7Schienen, Komparatoren,'
+      - '&7Repeater, Observer...'
+      - '&7Available: &e%available-times%'
+      - ''
+    shop-key: redstone_tech
+
+  # ==========================================
+  # REIHE 3: Spezial-Shops (zentriert)
+  # ==========================================
+  potions_brewing:
+    slot: 21
+    material: POTION
+    name: '&5&lPotions & Brewing'
+    lore:
+      - ''
+      - '&7Tranke, Wurftranke,'
+      - '&7Verweiltranke, Brau-Zutaten,'
+      - '&7Spezialpfeile & Pfeile!'
+      - '&7Available: &e%available-times%'
+      - ''
+    shop-key: potions_brewing
+  
+  smithing:
+    slot: 22
+    material: NETHERITE_UPGRADE_SMITHING_TEPLATE
+    name: '&7&lSmithing'
+    lore:
+      - ''
+      - '&Ambosse, Smithing Templates und co.!'
+      - '&7Available: &e%available-times%'
+      - ''
+    shop-key: smithing
+
+
+  weekend_market:
+    slot: 23
+    material: NETHER_STAR
+    name: '&d&lWeekend Market'
+    lore:
+      - ''
+      - '&7Sonderangebote & exklusive Items!'
+      - '&7Nur &dSamstag - Sonntag&7, 0-24 Uhr'
+      - '&7Rabatte auf Blocke, Waffen, Trim!'
+      - '&7Available: &e%available-times%'
+      - ''
+    shop-key: weekend_market
+    available-times:
+      - Saturday-Sunday
+      - "00:00-23:59"
+
+  # ==========================================
+  # DEKORATIVE FILLER (Schwarzes Glas)
+  # ==========================================
+  border_top_0:
+    slot: 0
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_top_1:
+    slot: 1
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_top_2:
+    slot: 2
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_top_3:
+    slot: 3
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_top_5:
+    slot: 5
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_top_6:
+    slot: 6
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_top_7:
+    slot: 7
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_top_8:
+    slot: 8
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+
+  # Linke & Rechte Rahmen
+  border_l9:
+    slot: 9
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_l18:
+    slot: 18
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_r17:
+    slot: 17
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+
+  # Trennzeile
+  sep_19:
+    slot: 19
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  sep_20:
+    slot: 20
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  sep_23:
+    slot: 23
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  sep_24:
+    slot: 24
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  sep_25:
+    slot: 25
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  sep_26:
+    slot: 26
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+
+  # Untere Rahmen
+  border_27:
+    slot: 27
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_28:
+    slot: 28
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_29:
+    slot: 29
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_30:
+    slot: 30
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_31:
+    slot: 31
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_32:
+    slot: 32
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_33:
+    slot: 33
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_34:
+    slot: 34
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+  border_35:
+    slot: 35
+    material: BLACK_STAINED_GLASS_PANE
+    name: ' '
+
+  # Info-Leiste
+  info_36:
+    slot: 36
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    name: ' '
+  info_37:
+    slot: 37
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    name: ' '
+  info_38:
+    slot: 38
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    name: ' '
+  info_39:
+    slot: 39
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    name: '&7&l> Shop Menu <'
+  info_40:
+    slot: 40
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    name: ' '
+  info_41:
+    slot: 41
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    name: ' '
+  info_42:
+    slot: 42
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    name: ' '
+  info_43:
+    slot: 43
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    name: ' '
+  info_44:
+    slot: 44
+    material: LIGHT_GRAY_STAINED_GLASS_PANE
+    name: ' '
+
+  # Footer
+  foot_45:
+    slot: 45
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+  foot_46:
+    slot: 46
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+  foot_47:
+    slot: 47
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+  foot_48:
+    slot: 48
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+  foot_49:
+    slot: 49
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+  foot_50:
+    slot: 50
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+  foot_51:
+    slot: 51
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+  foot_52:
+    slot: 52
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '
+  foot_53:
+    slot: 53
+    material: GRAY_STAINED_GLASS_PANE
+    name: ' '

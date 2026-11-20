@@ -1,0 +1,22 @@
+isEnabled: true
+name: '&c[Hard] Ember Gear'
+material: NETHERITE_CHESTPLATE
+level: 45
+lore:
+- '&cFire and smoke given form.'
+- '&cThe armor does not hurt you'
+- '&cwhen worn but it is slightly'
+- '&cuncomfortable to wear.'
+enchantments:
+- PROTECTION_EXPLOSIONS,8
+- PROTECTION_FIRE,6
+- PROTECTION_FALL,5
+- PROTECTION_PROJECTILE,4
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,2
+- elitemobs:loud_strikes,2
+potionEffects:
+- GLOWING,1,target,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

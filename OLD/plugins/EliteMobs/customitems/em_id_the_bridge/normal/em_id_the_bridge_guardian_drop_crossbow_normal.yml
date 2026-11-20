@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&7Stone Arbalest [Normal]'
+material: CROSSBOW
+level: 25
+lore:
+- '&cFire precise bolts with ancient power!'
+enchantments:
+- PIERCING,3
+- QUICK_CHARGE,3
+- PROTECTION_ENVIRONMENTAL,2
+scalability: scalable
+itemType: unique
+soulbound: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Ear Room
+lore:
+- Finally, a helmet with enough space.
+classLootFamily: DPS_HELMETS

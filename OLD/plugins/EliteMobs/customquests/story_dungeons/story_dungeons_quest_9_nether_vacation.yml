@@ -1,0 +1,45 @@
+isEnabled: true
+customObjectives:
+  Objective1:
+    amount: '1'
+    filename: em_id_the_nether_wastes_miniboss_5_shroud_p1.yml
+    objectiveType: KILL_CUSTOM
+customRewards:
+- currencyAmount=500:amount=1:chance=1
+- filename=elite_scrap_tiny.yml:amount=1:chance=0.3
+- filename=elite_scrap_small.yml:amount=1:chance=0.2
+- filename=elite_scrap_medium.yml:amount=1:chance=0.1
+- filename=elite_scrap_large.yml:amount=1:chance=0.05
+- filename=elite_scrap_huge.yml:amount=1:chance=0.01
+- filename=enchanted_book_damage_all.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_arthropods.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_undead.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_environmental.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_explosions.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fall.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fire.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_projectile.yml:amount=1:chance=0.1
+- filename=story_dungeons_quest_9_trident.yml:amount=1:chance=1.0
+questAcceptPermission: elitequest.story_dungeons_quest_8_deep_down.yml
+questLockoutPermission: elitequest.story_dungeons_quest_9_nether_vacation.yml
+questLockoutMinutes: 10080
+name: '&2Nether Vacation!'
+questLore:
+- Sorry, no scouting information that we can share with you this time.
+- We don’t want to send our scouts into the Nether until we know it is safe, or safer…
+- We have no idea what to expect on the other side.
+- Since this is the Nether be very, very cautious.
+- We have coordinates to where this object or artifact of power is.
+- Do not wander off the path that leads there.
+temporaryPermissions: []
+questAcceptDialog:
+- '&e[Wallitz]&f Clear the path of fiends and monsters and then signal us.'
+- '&7&oKill monsters, signal the guild when done. Got it.'
+- '&7Interact with the nearby &fNether Shroom &7teleporter to start the quest.'
+questCompleteMessage:
+- '&e[Wallitz]&f Hah! You made it back, of course our eleventh-best guild member would
+  not fail us!'
+- '&7&oThat was quite the adventure...'
+questCompleteCommands: []
+turnInNPC: story_dungeons_quest_giver.yml
+QuestLevel: 0

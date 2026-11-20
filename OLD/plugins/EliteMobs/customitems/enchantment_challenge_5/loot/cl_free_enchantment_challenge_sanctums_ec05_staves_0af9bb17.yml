@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: Sweet Nothings
+lore:
+- The staff has heard enough already.
+weaponType: STAVES

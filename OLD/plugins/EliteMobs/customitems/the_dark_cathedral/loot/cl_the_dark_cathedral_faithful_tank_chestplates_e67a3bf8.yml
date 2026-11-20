@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&8Worn Robe'
+lore:
+- '&8A hint of the ocean'
+- '&8covers this robe'
+classLootFamily: TANK_CHESTPLATES

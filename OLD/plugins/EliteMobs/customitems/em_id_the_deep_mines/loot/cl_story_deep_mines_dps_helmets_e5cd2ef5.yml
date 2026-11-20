@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&f[$difficulty] Obsidian Helmet'
+lore:
+- '&fIt will protect you from a few hits here and there.'
+classLootFamily: DPS_HELMETS

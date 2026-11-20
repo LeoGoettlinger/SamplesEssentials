@@ -1,0 +1,109 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: DROWNED
+name: $normalLevel &4Undead Bruiser
+level: dynamic # 10
+instanced: true
+mainHand: TRIDENT
+healthMultiplier: 1.0
+damageMultiplier: 0.75
+# leashRadius: 30
+movementSpeedAttribute: 0.28
+onDamageMessages:
+- Your wish is my command, Soulweaver.
+- Need more glowing ones.
+- If there is no glow, then kill them all.
+powers:
+- invulnerability_fire.yml
+- attack_push.yml
+- filename: plasma_blaster.yml
+  difficultyID:
+  - 2
+- filename: attack_freeze.yml
+  difficultyID:
+  - 1
+  - 2
+- filename: invulnerability_knockback.yml
+  difficultyID:
+  - 2
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+isRegionalBoss: true
+followDistance: 30
+normalizedCombat: true
+dropsRandomLoot: false
+disguise: custom:the_climb_undead
+spawnLocations:
+- em_id_the_climb,399.5,43.5,355.5,0.0,0.0
+- em_id_the_climb,381.5,36.5,376.5,0.0,0.0
+- em_id_the_climb,391.5,44.5,389.5,0.0,0.0
+- em_id_the_climb,404.5,43.5,388.5,0.0,0.0
+- em_id_the_climb,393.5,45.5,372.5,0.0,0.0
+- em_id_the_climb,392.5,49.5,371.5,0.0,0.0
+- em_id_the_climb,437.5,45.5,355.5,0.0,0.0
+- em_id_the_climb,438.5,49.5,357.5,0.0,0.0
+- em_id_the_climb,342.5,31.5,321.5,0.0,0.0
+- em_id_the_climb,275.5,78.5,181.5,0.0,0.0
+- em_id_the_climb,284.5,81.5,160.5,0.0,0.0
+- em_id_the_climb,270.5,83.5,156.5,0.0,0.0
+- em_id_the_climb,277.5,84.5,145.5,0.0,0.0
+- em_id_the_climb,274.5,88.5,133.5,0.0,0.0
+- em_id_the_climb,295.5,88.5,133.5,0.0,0.0
+- em_id_the_climb,306.5,87.5,108.5,0.0,0.0
+- em_id_the_climb,334.5,93.5,72.5,0.0,0.0
+- em_id_the_climb,291.5,94.5,70.5,0.0,0.0
+- em_id_the_climb,334.5,103.5,40.5,0.0,0.0
+- em_id_the_climb,355.5,109.5,53.5,0.0,0.0
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: the_climb_undead_drop_shield_tank_normal.yml
+  chance: 0.01
+  difficultyID: 0
+- filename: the_climb_undead_drop_shield_tank_hard.yml
+  chance: 0.01
+  difficultyID: 1
+- filename: the_climb_undead_drop_shield_tank_mythic.yml
+  chance: 0.01
+  difficultyID: 2
+- filename: the_climb_undead_bruiser_swords_07873c9c.yml
+  chance: 1.0
+- filename: cl_story_climb_axes_31b58f5d.yml
+  chance: 1.0
+- filename: cl_story_climb_bows_147d3e16.yml
+  chance: 1.0
+- filename: cl_story_climb_crossbows_320c599d.yml
+  chance: 1.0
+- filename: cl_story_climb_tridents_462a95e9.yml
+  chance: 1.0
+- filename: cl_story_climb_hoes_90f57b2c.yml
+  chance: 1.0
+- filename: cl_story_climb_maces_7f63f619.yml
+  chance: 1.0
+- filename: cl_story_climb_spears_743b64fe.yml
+  chance: 1.0
+- filename: cl_story_climb_staves_3ba7efcc.yml
+  chance: 1.0
+- filename: cl_story_climb_wands_0b2088fe.yml
+  chance: 1.0
+- filename: the_climb_undead_bruiser_dps_helmets_2477de07.yml
+  chance: 1.0
+- filename: cl_story_climb_dps_chestplates_ed45bf2e.yml
+  chance: 1.0
+- filename: the_climb_undead_bruiser_dps_leggings_947d907a.yml
+  chance: 1.0
+- filename: the_climb_undead_bruiser_dps_boots_2e88faae.yml
+  chance: 1.0
+- filename: cl_story_climb_tank_helmets_77716983.yml
+  chance: 1.0
+- filename: the_climb_undead_bruiser_tank_chestplates_5b1d0c3f.yml
+  chance: 1.0
+- filename: the_climb_undead_bruiser_tank_leggings_2ad0cd13.yml
+  chance: 1.0
+- filename: cl_story_climb_tank_boots_0634543f.yml
+  chance: 1.0
+- filename: cl_story_climb_shields_4f3929f0.yml
+  chance: 1.0

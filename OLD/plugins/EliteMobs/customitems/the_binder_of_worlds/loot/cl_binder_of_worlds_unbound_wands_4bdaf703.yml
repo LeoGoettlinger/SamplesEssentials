@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&5Unravelling Thread'
+lore:
+- '&5A slender rod with a knot of black glass.'
+- '&5The knot has no visible seam.'
+weaponType: WANDS

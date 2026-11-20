@@ -1,0 +1,122 @@
+# Miner Job Configuration
+
+# Job Display Settings
+job:
+  name: "Miner"
+  short-name: "MN"
+  icon: IRON_PICKAXE
+  description:
+    - ""
+    - "&#FFFFFFMine stone and ores deep underground"
+    - "&#FFFFFFto earn money as a miner!"
+    - ""
+    - "&#FFD700Earnings:"
+    - "&#FFFFFF► Stone: $0.5 - $1.5"
+    - "&#FFFFFF► Ores: $3.0 - $15.0"
+    - ""
+    - "&#00FF00Click to view details!"
+
+# Payment Configuration
+# Format: MATERIAL: payment_amount
+payments:
+  # Stone Types
+  STONE: 0.5
+  COBBLESTONE: 0.5
+  DEEPSLATE: 0.75
+  COBBLED_DEEPSLATE: 0.75
+  GRANITE: 0.6
+  DIORITE: 0.6
+  ANDESITE: 0.6
+  TUFF: 0.8
+  CALCITE: 0.8
+  DRIPSTONE_BLOCK: 1.0
+  SMOOTH_BASALT: 1.0
+
+  # Sandstone
+  SANDSTONE: 0.7
+  RED_SANDSTONE: 0.7
+
+  # Terracotta
+  TERRACOTTA: 0.8
+  WHITE_TERRACOTTA: 0.8
+  ORANGE_TERRACOTTA: 0.8
+  MAGENTA_TERRACOTTA: 0.8
+  LIGHT_BLUE_TERRACOTTA: 0.8
+  YELLOW_TERRACOTTA: 0.8
+  LIME_TERRACOTTA: 0.8
+  PINK_TERRACOTTA: 0.8
+  GRAY_TERRACOTTA: 0.8
+  LIGHT_GRAY_TERRACOTTA: 0.8
+  CYAN_TERRACOTTA: 0.8
+  PURPLE_TERRACOTTA: 0.8
+  BLUE_TERRACOTTA: 0.8
+  BROWN_TERRACOTTA: 0.8
+  GREEN_TERRACOTTA: 0.8
+  RED_TERRACOTTA: 0.8
+  BLACK_TERRACOTTA: 0.8
+
+  # Coal
+  COAL_ORE: 3.0
+  DEEPSLATE_COAL_ORE: 3.5
+
+  # Iron
+  IRON_ORE: 4.0
+  DEEPSLATE_IRON_ORE: 4.5
+
+  # Copper
+  COPPER_ORE: 3.5
+  DEEPSLATE_COPPER_ORE: 4.0
+
+  # Gold
+  GOLD_ORE: 6.0
+  DEEPSLATE_GOLD_ORE: 6.5
+  NETHER_GOLD_ORE: 5.5
+
+  # Redstone
+  REDSTONE_ORE: 5.0
+  DEEPSLATE_REDSTONE_ORE: 5.5
+
+  # Lapis
+  LAPIS_ORE: 5.5
+  DEEPSLATE_LAPIS_ORE: 6.0
+
+  # Diamond
+  DIAMOND_ORE: 12.0
+  DEEPSLATE_DIAMOND_ORE: 13.0
+
+  # Emerald
+  EMERALD_ORE: 15.0
+  DEEPSLATE_EMERALD_ORE: 16.0
+
+  # Quartz
+  NETHER_QUARTZ_ORE: 4.0
+
+  # Ancient Debris
+  ANCIENT_DEBRIS: 20.0
+
+  # Amethyst
+  AMETHYST_CLUSTER: 3.0
+  LARGE_AMETHYST_BUD: 2.0
+  MEDIUM_AMETHYST_BUD: 1.5
+  SMALL_AMETHYST_BUD: 1.0
+  AMETHYST_BLOCK: 2.5
+  BUDDING_AMETHYST: 5.0
+
+  # Nether
+  NETHERRACK: 0.5
+  BLACKSTONE: 0.8
+  BASALT: 0.8
+  SOUL_SAND: 1.0
+  SOUL_SOIL: 1.0
+
+  # End
+  END_STONE: 1.5
+
+  # Obsidian
+  OBSIDIAN: 3.0
+  CRYING_OBSIDIAN: 4.0
+
+  # Prismarine
+  PRISMARINE: 2.0
+  PRISMARINE_BRICKS: 2.5
+  DARK_PRISMARINE: 3.0

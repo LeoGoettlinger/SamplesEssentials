@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Ashbed Soles'
+lore:
+- '&7Set firmly amongst the cold remains of the fire.'
+classLootFamily: TANK_BOOTS

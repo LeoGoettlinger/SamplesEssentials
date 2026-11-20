@@ -1,0 +1,33 @@
+{
+  "skillCooldown": 10,
+  "skillId": "morph:launch_projective",
+  "abilities": [
+    "morph:can_fly",
+    "morph:fire_resistance",
+    "morph:bossbar"
+  ],
+  "settings": {
+    "morph:bossbar": {
+      "distance": 80,
+      "color": "purple",
+      "name": "<name> (<who>)",
+      "flags": [
+        "darken_screen"
+      ],
+      "style": "progress"
+    },
+    "morph:can_fly": {
+      "fly_speed": 0.1,
+      "minimum_hunger": 6
+    },
+    "morph:launch_projective": {
+      "delay": 0,
+      "warning_sound_name": "",
+      "name": "minecraft:wither_skull",
+      "speed_multiplier": 1.0,
+      "sound_name": "entity.wither.shoot",
+      "sound_distance": 24,
+      "max_target_distance": 0
+    }
+  }
+}

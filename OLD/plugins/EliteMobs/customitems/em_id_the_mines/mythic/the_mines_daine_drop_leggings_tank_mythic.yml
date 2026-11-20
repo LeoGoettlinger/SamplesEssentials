@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Spun Netherite Leggings'
+material: NETHERITE_LEGGINGS
+level: 20
+lore:
+- '&fYour legs will be grateful.'
+enchantments:
+- PROTECTION_FIRE,10
+- PROTECTION_ENVIRONMENTAL,6
+- PROTECTION_FALL,5
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

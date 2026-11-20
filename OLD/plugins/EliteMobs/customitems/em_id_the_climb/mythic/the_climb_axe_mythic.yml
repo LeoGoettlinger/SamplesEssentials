@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Feral Cleaver'
+material: NETHERITE_AXE
+level: 10
+lore:
+- '&cChipped and worn from taming'
+- '&cwild beasts. Still effective'
+- '&con flesh and bone.'
+enchantments:
+- DAMAGE_ALL,7
+- DURABILITY,4
+itemType: unique
+scalability: scalable

@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Dwarven Shield'
+material: SHIELD
+level: 30
+lore:
+- '&fIt will shield you from harm.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,4
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

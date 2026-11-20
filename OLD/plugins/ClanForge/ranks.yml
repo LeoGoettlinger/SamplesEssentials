@@ -1,0 +1,23 @@
+ranks:
+  Leader:
+    priority: 100
+    permissions:
+      - "*"
+  Mod:
+    priority: 50
+    permissions:
+      - "invite"
+      - "kick"
+      - "base.tp"
+      - "promote"
+      - "demote"
+      - "claim"
+      - "withdraw"
+      - "chest"
+      - "map"
+  Member:
+    priority: 10
+    permissions:
+      - "base.tp"
+      - "chest"
+      - "map"

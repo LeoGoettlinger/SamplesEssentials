@@ -1,0 +1,549 @@
+menus:
+  main:
+    title: "ClanForge Menu"
+    size: 54
+    items:
+      members:
+        slot: 0
+        material: PLAYER_HEAD
+        name: "&aMembers"
+        lore:
+          - "&7Manage members (kick/promote)"
+        action: "OPEN:MEMBERS"
+        custom_model_data: 0
+      ranks:
+        slot: 1
+        material: IRON_SWORD
+        name: "&eRanks"
+        lore:
+          - "&7Manage ranks & permissions"
+        action: "OPEN:RANKS"
+        custom_model_data: 0
+      bank:
+        slot: 2
+        material: GOLD_INGOT
+        name: "&6Bank"
+        lore:
+          - "&7Deposit/withdraw, upkeep"
+        action: "OPEN:BANK"
+        custom_model_data: 0
+      relations:
+        slot: 3
+        material: RED_BANNER
+        name: "&3Relations"
+        lore:
+          - "&7Allies & rivals"
+        action: "OPEN:RELATIONS"
+        custom_model_data: 0
+      settings:
+        slot: 4
+        material: COMPARATOR
+        name: "&5Settings"
+        lore:
+          - "&7Clan settings"
+        action: "OPEN:SETTINGS"
+        custom_model_data: 0
+      help:
+        slot: 5
+        material: BOOK
+        name: "&bHelp"
+        lore:
+          - "&7Click to view help"
+        action: "OPEN:HELP"
+        custom_model_data: 0
+      close:
+        slot: 8
+        material: BARRIER
+        name: "&cClose"
+        lore:
+          - "&7Close this menu"
+        action: "CLOSE"
+        custom_model_data: 0
+      create:
+        slot: 10
+        material: PAPER
+        name: "&aCreate Clan"
+        lore:
+          - "&7Click to create a clan"
+        action: "CLAN_CREATE"
+        custom_model_data: 0
+      info:
+        slot: 12
+        material: BOOK
+        name: "&bClan Info"
+        lore:
+          - "&7Name: {name}"
+          - "&7Members: {members}"
+        action: "CLAN_INFO"
+        custom_model_data: 0
+      settag:
+        slot: 14
+        material: NAME_TAG
+        name: "&eSet Tag"
+        lore:
+          - "&7Current: {tag}"
+          - "&7Click to change"
+        action: "CLAN_SETTAG"
+        custom_model_data: 0
+      setcolor:
+        slot: 16
+        material: RED_DYE
+        name: "&eTag Color"
+        lore:
+          - "&7Current: {color}"
+          - "&7Click to change"
+        action: "OPEN:COLOR"
+        custom_model_data: 0
+      bases:
+        slot: 22
+        material: ENDER_PEARL
+        name: "&aBases"
+        lore:
+          - "&7Click to manage bases"
+        action: "OPEN:BASES"
+        custom_model_data: 0
+      chest:
+        slot: 24
+        material: CHEST
+        name: "&6Clan Chest"
+        lore:
+          - "&7Open clan storage"
+        action: "CMD:clan chest"
+        custom_model_data: 0
+      stats:
+        slot: 31
+        material: DIAMOND_SWORD
+        name: "&bTop Clans"
+        lore:
+          - "&7View clan rankings"
+        action: "OPEN:STATS"
+        custom_model_data: 0
+
+  stats:
+    title: "Top Clans"
+    size: 27
+    back_slot: 26
+    back_material: BARRIER
+    back_name: "&cBack"
+    back_action: "OPEN:MAIN"
+    item_template:
+      material: DIAMOND_SWORD
+      name: "&6#{rank} {name}"
+      lore:
+        - "&cKills: {kills}"
+        - "&bLevel: {level}"
+      custom_model_data: 0
+
+  bases:
+    title: "Clan Bases"
+    size: 54
+    slots:
+      prev: 45
+      next: 53
+      back: 48
+      set_base: 49
+    item_template:
+      material: ENDER_PEARL
+      name: "&a{base_name}"
+      lore:
+        - "&7Click to teleport"
+        - "&7Right-click to delete"
+      action: "BASE_ACTION:{base_name}"
+      custom_model_data: 0
+    items:
+      prev:
+        material: ARROW
+        name: "&ePrevious Page"
+        lore: []
+        action: "PAGE_PREV"
+        custom_model_data: 0
+      next:
+        material: ARROW
+        name: "&eNext Page"
+        lore: []
+        action: "PAGE_NEXT"
+        custom_model_data: 0
+      back:
+        material: BARRIER
+        name: "&cBack"
+        lore: []
+        action: "OPEN:MAIN"
+        custom_model_data: 0
+      set_base:
+        material_unlocked: COMPASS
+        material_locked: BARRIER
+        name: "&aSet Base"
+        action: "BASE_SET"
+        custom_model_data: 0
+
+  members:
+    title: "Clan Members"
+    size: 54
+    slots:
+      prev: 45
+      next: 53
+      back: 48
+    item_template:
+      material: PLAYER_HEAD
+      name: "&a{player_name}"
+      lore:
+        - "&7Click to manage"
+        - "&8{uuid}"
+      action: "MEMBER_ACTION:{uuid}"
+      custom_model_data: 0
+    items:
+      prev:
+        material: ARROW
+        name: "&ePrevious Page"
+        lore: []
+        action: "PAGE_PREV"
+        custom_model_data: 0
+      next:
+        material: ARROW
+        name: "&eNext Page"
+        lore: []
+        action: "PAGE_NEXT"
+        custom_model_data: 0
+      back:
+        material: BARRIER
+        name: "&cBack"
+        lore: []
+        action: "OPEN:MAIN"
+        custom_model_data: 0
+
+  ranks:
+    title: "Clan Ranks"
+    size: 54
+    slots:
+      back: 48
+    items:
+      back:
+        material: BARRIER
+        name: "&cBack"
+        lore: []
+        action: "OPEN:MAIN"
+        custom_model_data: 0
+
+  bank:
+    title: "Clan Bank"
+    size: 27
+    slots:
+      balance: 13
+      deposit: 11
+      withdraw: 15
+      back: 22
+    items:
+      balance:
+        material: GOLD_BLOCK
+        name: "&eBalance: &6{amount}"
+        custom_model_data: 0
+      deposit:
+        material: EMERALD
+        name: "&aDeposit"
+        lore:
+          - "&7Click to deposit money"
+        action: "BANK_DEPOSIT"
+        custom_model_data: 0
+      withdraw:
+        material: REDSTONE
+        name: "&cWithdraw"
+        lore:
+          - "&7Click to withdraw money"
+        action: "BANK_WITHDRAW"
+        custom_model_data: 0
+      back:
+        material: BARRIER
+        name: "&cBack"
+        lore: []
+        action: "OPEN:MAIN"
+        custom_model_data: 0
+
+  relations:
+    title: "Clan Relations"
+    size: 54
+    slots:
+      add_ally: 47
+      add_rival: 51
+      back: 49
+    ally_template:
+      material: EMERALD_BLOCK
+      name: "&aAlly: {clan_name}"
+      lore:
+        - "&7Click to remove"
+      action: "RELATION_REMOVE_ALLY:{clan_name}"
+      custom_model_data: 0
+    rival_template:
+      material: REDSTONE_BLOCK
+      name: "&cRival: {clan_name}"
+      lore:
+        - "&7Click to remove"
+      action: "RELATION_REMOVE_RIVAL:{clan_name}"
+      custom_model_data: 0
+    items:
+      add_ally:
+        material: EMERALD
+        name: "&aAdd Ally"
+        lore:
+          - "&7Click to request alliance"
+        action: "RELATION_ADD_ALLY"
+        custom_model_data: 0
+      add_rival:
+        material: REDSTONE
+        name: "&cAdd Rival"
+        lore:
+          - "&7Click to declare rivalry"
+        action: "RELATION_ADD_RIVAL"
+        custom_model_data: 0
+      back:
+        material: BARRIER
+        name: "&cBack"
+        lore: []
+        action: "OPEN:MAIN"
+        custom_model_data: 0
+
+  settings:
+    title: "Clan Settings"
+    size: 27
+    slots:
+      friendly_fire: 11
+      disband: 13
+      leave: 15
+      back: 22
+    items:
+      friendly_fire:
+        material_on: LAVA_BUCKET
+        material_off: WATER_BUCKET
+        name: "&eFriendly Fire: {status}"
+        action: "TOGGLE_FF"
+        custom_model_data: 0
+      disband:
+        material: TNT
+        name: "&cDisband Clan"
+        lore:
+          - "&7Click to disband clan"
+          - "&cWARNING: Cannot be undone!"
+        action: "CLAN_DISBAND"
+        custom_model_data: 0
+      leave:
+        material: OAK_DOOR
+        name: "&cLeave Clan"
+        lore:
+          - "&7Click to leave clan"
+        action: "CLAN_LEAVE"
+        custom_model_data: 0
+      back:
+        material: BARRIER
+        name: "&cBack"
+        lore: []
+        action: "OPEN:MAIN"
+        custom_model_data: 0
+
+  help:
+    title: "Clan Help"
+    size: 27
+    slots:
+      back: 22
+    items:
+      general:
+        slot: 10
+        material: BOOK
+        name: "&eGeneral Commands"
+        lore:
+          - "&7/clan create <name>"
+          - "&7/clan invite <player>"
+          - "&7/clan join <clan>"
+          - "&7/clan leave"
+          - "&7/clan info"
+        action: "NONE"
+        custom_model_data: 0
+      management:
+        slot: 12
+        material: WRITABLE_BOOK
+        name: "&eManagement"
+        lore:
+          - "&7/clan promote <player>"
+          - "&7/clan demote <player>"
+          - "&7/clan kick <player>"
+          - "&7/clan settag <tag>"
+          - "&7/clan setcolor"
+        action: "NONE"
+        custom_model_data: 0
+      territory:
+        slot: 14
+        material: GRASS_BLOCK
+        name: "&eTerritory"
+        lore:
+          - "&7/clan claim"
+          - "&7/clan unclaim"
+          - "&7/clan base"
+          - "&7/clan setbase <name>"
+        action: "NONE"
+        custom_model_data: 0
+      war:
+        slot: 16
+        material: IRON_SWORD
+        name: "&cWar & PvP"
+        lore:
+          - "&7/clan war invite <clan>"
+          - "&7/clan war accept <clan>"
+          - "&7/clan ally <clan>"
+          - "&7/clan rival <clan>"
+          - "&7/clan ff"
+        action: "NONE"
+        custom_model_data: 0
+      back:
+        material: BARRIER
+        name: "&cBack"
+        lore: []
+        action: "OPEN:MAIN"
+        custom_model_data: 0
+
+  color:
+    title: "Select Color"
+    size: 27
+    slots:
+      back: 26
+    items:
+      white:
+        slot: 9
+        material: WHITE_WOOL
+        name: "&fWhite"
+        action: "COLOR_SET:white"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      yellow:
+        slot: 10
+        material: YELLOW_WOOL
+        name: "&eYellow"
+        action: "COLOR_SET:yellow"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      gold:
+        slot: 11
+        material: ORANGE_WOOL
+        name: "&6Gold"
+        action: "COLOR_SET:gold"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      red:
+        slot: 12
+        material: RED_WOOL
+        name: "&cRed"
+        action: "COLOR_SET:red"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      light_purple:
+        slot: 13
+        material: MAGENTA_WOOL
+        name: "&dLight Purple"
+        action: "COLOR_SET:light_purple"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      blue:
+        slot: 14
+        material: BLUE_WOOL
+        name: "&9Blue"
+        action: "COLOR_SET:blue"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      aqua:
+        slot: 15
+        material: LIGHT_BLUE_WOOL
+        name: "&bAqua"
+        action: "COLOR_SET:aqua"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      green:
+        slot: 16
+        material: LIME_WOOL
+        name: "&aGreen"
+        action: "COLOR_SET:green"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      dark_green:
+        slot: 17
+        material: GREEN_WOOL
+        name: "&2Dark Green"
+        action: "COLOR_SET:dark_green"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      dark_aqua:
+        slot: 18
+        material: CYAN_WOOL
+        name: "&3Dark Aqua"
+        action: "COLOR_SET:dark_aqua"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      dark_blue:
+        slot: 19
+        material: BLUE_CONCRETE
+        name: "&1Dark Blue"
+        action: "COLOR_SET:dark_blue"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      dark_purple:
+        slot: 20
+        material: PURPLE_WOOL
+        name: "&5Dark Purple"
+        action: "COLOR_SET:dark_purple"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      dark_red:
+        slot: 21
+        material: RED_CONCRETE
+        name: "&4Dark Red"
+        action: "COLOR_SET:dark_red"
+        lore: ["&7Click to select"]
+        custom_model_data: 0
+      back:
+        material: BARRIER
+        name: "&cBack"
+        lore: []
+        action: "OPEN:MAIN"
+        custom_model_data: 0
+
+  member_actions:
+    title: "Manage: {name}"
+    size: 27
+    items:
+      info:
+        slot: 4
+        material: PLAYER_HEAD
+        name: "&a{name}"
+        lore:
+          - "&7Rank: &f{rank}"
+          - "&8{uuid}"
+        action: "NONE"
+        custom_model_data: 0
+      promote:
+        slot: 11
+        material: DIAMOND_SWORD
+        name: "&aPromote"
+        lore:
+          - "&7Click to promote member"
+        action: "ACTION_PROMOTE:{target}"
+        custom_model_data: 0
+      demote:
+        slot: 13
+        material: WOODEN_SWORD
+        name: "&eDemote"
+        lore:
+          - "&7Click to demote member"
+        action: "ACTION_DEMOTE:{target}"
+        custom_model_data: 0
+      kick:
+        slot: 15
+        material: BARRIER
+        name: "&cKick"
+        lore:
+          - "&7Click to kick member"
+        action: "ACTION_KICK:{target}"
+        custom_model_data: 0
+      back:
+        slot: 22
+        material: BARRIER
+        name: "&cBack"
+        lore:
+          - "&7Back to members list"
+        action: "OPEN:MEMBERS"
+        custom_model_data: 0

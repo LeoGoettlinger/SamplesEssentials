@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&aSleigh Runner Pike'
+lore:
+- '&7A spare runner with a sharpened end.'
+- '&7The sleigh has plenty left.'

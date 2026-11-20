@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Tunnel Cap'
+lore:
+- '&7The crown has been flattened against low stone.'
+classLootFamily: TANK_HELMETS

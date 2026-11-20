@@ -1,0 +1,21 @@
+settings:
+  name-min-length: 3
+  name-max-length: 16
+  tag-min-length: 2
+  tag-max-length: 5
+  create-cost: 0
+  base-max-members: 5
+  members-per-level: 3
+  max-level: 10
+  invite-timeout: 60
+
+level-costs:
+  2: 2000
+  3: 5000
+  4: 10000
+  5: 20000
+  6: 35000
+  7: 50000
+  8: 75000
+  9: 100000
+  10: 150000

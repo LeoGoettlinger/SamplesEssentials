@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&d[Normal] City Guard Leggings'
+material: DIAMOND_LEGGINGS
+level: 30
+lore:
+- '&dTime has spared these leggings.'
+enchantments:
+- DAMAGE_ALL,4
+- DAMAGE_UNDEAD,3
+- PROTECTION_ENVIRONMENTAL,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

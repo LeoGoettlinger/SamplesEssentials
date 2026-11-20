@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&f[$difficulty] Infested Chestplate'
+lore:
+- '&fMold and holes cover this ancient piece of armor.'
+classLootFamily: DPS_CHESTPLATES

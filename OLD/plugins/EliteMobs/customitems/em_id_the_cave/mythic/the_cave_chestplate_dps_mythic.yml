@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythical] Slimed Chestplate'
+material: NETHERITE_CHESTPLATE
+level: 15
+lore:
+- '&cBeing covered in goo feels so good!'
+enchantments:
+- DAMAGE_ALL,5
+- DURABILITY,7
+- PROTECTION_ENVIRONMENTAL,3
+- DAMAGE_UNDEAD,10
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

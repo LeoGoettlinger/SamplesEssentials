@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Hard] Ethereal Helmet'
+material: DIAMOND_HELMET
+level: 20
+lore:
+- '&2Is it real, does it even exist...'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,2
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

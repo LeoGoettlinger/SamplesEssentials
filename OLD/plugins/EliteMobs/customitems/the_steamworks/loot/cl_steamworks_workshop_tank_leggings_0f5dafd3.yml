@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&bPipefitter''s Guards'
+lore:
+- '&bThe knees carry the imprint of the same narrow pipe.'
+- '&bIt must have been a very long repair.'
+classLootFamily: TANK_LEGGINGS

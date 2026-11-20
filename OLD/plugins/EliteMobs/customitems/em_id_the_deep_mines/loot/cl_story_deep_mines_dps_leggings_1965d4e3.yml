@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Downshaft Striders'
+lore:
+- '&7Both knees are blackened by the lowest tunnel.'
+classLootFamily: DPS_LEGGINGS

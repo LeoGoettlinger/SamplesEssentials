@@ -1,0 +1,11 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_CHESTPLATE
+name: '&e[Hard] Undead''s Armor'
+lore:
+- '&eRetrieved from the walking corpse.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+itemType: unique
+scalability: scalable
+level: 10

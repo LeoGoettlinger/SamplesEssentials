@@ -1,0 +1,61 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    - EliteMobTargetPlayerEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - LavaStorm
+    Cooldowns:
+      local: 290
+      global: 50
+  LavaStorm:
+    Zone:
+      shape: CYLINDER
+      radius: 12
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,6,0
+        track: false
+    Actions:
+    - action: SPAWN_FALLING_BLOCK
+      material: BARRIER
+      landingScripts:
+      - LavaStormRun
+      Target:
+        targetType: ZONE_FULL
+        track: false
+        coverage: 0.06
+  LavaStormRun:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      borderRadius: 0
+      height: 1
+      Target:
+        targetType: LANDING_LOCATION
+    Actions:
+    - action: STRIKE_LIGHTNING
+      repeatEvery: 10
+      times: 5
+      Target:
+        targetType: ZONE_FULL
+    - action: PLACE_BLOCK
+      material: LAVA
+      duration: 200
+      Target:
+        targetType: ZONE_FULL
+      wait: 50
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      repeatEvery: 10
+      times: 6
+      Target:
+        targetType: ZONE_FULL
+# Generated with https://magmaguy.com/webapp/webapp.html !

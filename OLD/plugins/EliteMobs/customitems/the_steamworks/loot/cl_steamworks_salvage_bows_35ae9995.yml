@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&bGear-Strung Bow [$difficulty]'
+lore:
+- '&bGears and springs crowd the bow''s limbs.'
+- '&bA tiny maker''s stamp hides beneath'
+- '&bthe last layer of machine oil.'

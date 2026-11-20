@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&d[$difficulty] City Guard Leggings'
+lore:
+- '&dTime has spared these leggings.'
+classLootFamily: DPS_LEGGINGS

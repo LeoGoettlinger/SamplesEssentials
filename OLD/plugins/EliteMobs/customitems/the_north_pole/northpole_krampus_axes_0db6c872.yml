@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&5Coalhouse Cleaver'
+lore:
+- '&7Krampus keeps the coal behind a locked door.'
+- '&7He has never needed the key.'

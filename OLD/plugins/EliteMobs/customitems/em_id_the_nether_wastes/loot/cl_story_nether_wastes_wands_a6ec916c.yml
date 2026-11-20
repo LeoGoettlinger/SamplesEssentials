@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&7Clouded Crystal'
+lore:
+- '&7The smallest sample in an abandoned survey bag.'
+weaponType: WANDS

@@ -1,0 +1,26 @@
+transportRoutes: []
+name: <g:#4A7A9A:#5A8AAA>Sea Dog</g>
+role: <g:#3A6A8A:#4A7A9A><Pirate Ship></g>
+greetings:
+- ''
+dialog: []
+farewell: []
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:fisherman]=VillagerProfession[name=translation{key='entity.minecraft.villager.fisherman',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x000000009ab5d7a8@52e901af,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x000000009ab5da08@8bc7f53,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_fisherman,
+  fixedRange=Optional.empty], tradeSetsByLevel={1=>ResourceKey[minecraft:trade_set
+  / minecraft:fisherman/level_1], 2=>ResourceKey[minecraft:trade_set / minecraft:fisherman/level_2],
+  3=>ResourceKey[minecraft:trade_set / minecraft:fisherman/level_3], 4=>ResourceKey[minecraft:trade_set
+  / minecraft:fisherman/level_4], 5=>ResourceKey[minecraft:trade_set / minecraft:fisherman/level_5]}]}}
+scripts: []
+isEnabled: true
+spawnLocation: em_adventurers_guild,302.7,92,288.5,-90,0
+spawnLocations: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+customModel: em_ag_seadog
+command: em dungeontp pirate_ship_minidungeon.yml
+syncMovement: false

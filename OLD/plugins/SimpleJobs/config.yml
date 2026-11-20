@@ -1,0 +1,89 @@
+# SimpleJobs Configuration File
+# Support for Hex Colors: &#RRGGBB (e.g., &#FF5555)
+# Support for Gradients: <gradient:#FF0000:#0000FF>text</gradient>
+
+# GUI Settings
+gui:
+  fill-item: BLACK_STAINED_GLASS_PANE
+  fill-item-name: " "
+
+  # Main Jobs GUI
+  main-gui:
+    title: "<gradient:#FFD700:#FFA500>SimpleJobs - Jobs Menu</gradient>"
+    size: 54
+    info-item:
+      slot: 4
+      material: ENDER_EYE
+      name: "<gradient:#00FFFF:#0080FF>What is SimpleJobs?</gradient>"
+      lore:
+        - ""
+        - "&#FFFFFFJoin different jobs to earn money"
+        - "&#FFFFFFby performing various activities!"
+        - ""
+        - "&#FFD700► Break blocks"
+        - "&#FFD700► Farm crops"
+        - "&#FFD700► Hunt mobs"
+        - "&#FFD700► Fish"
+        - ""
+        - "&#00FF00Click on a job below to learn more!"
+    close-item:
+      slot: 49
+      material: BARRIER
+      name: "&#FF5555✖ Close Menu"
+      lore:
+        - ""
+        - "&#FFFFFFClick to close this menu"
+    job-slots: [20, 21, 22, 23, 24]
+
+  # Job GUI Template
+  job-gui:
+    title: "<gradient:#FFD700:#FFA500>{job} - Job Info</gradient>"
+    size: 54
+    job-icon-slot: 4
+    join-leave-button:
+      slot: 49
+      join:
+        material: LIME_DYE
+        name: "&#00FF00✓ Join Job"
+        lore:
+          - ""
+          - "&#FFFFFFClick to join this job!"
+      leave:
+        material: RED_DYE
+        name: "&#FF5555✖ Leave Job"
+        lore:
+          - ""
+          - "&#FFFFFFClick to leave this job!"
+    back-button:
+      slot: 45
+      material: ARROW
+      name: "&#FFFF00← Back to Jobs Menu"
+      lore:
+        - ""
+        - "&#FFFFFFReturn to the main jobs menu"
+    previous-page:
+      slot: 47
+      material: ARROW
+      name: "&#FFFF00◀ Previous Page"
+      lore:
+        - ""
+        - "&#FFFFFFClick to go to the previous page"
+    next-page:
+      slot: 51
+      material: ARROW
+      name: "&#FFFF00Next Page ▶"
+      lore:
+        - ""
+        - "&#FFFFFFClick to go to the next page"
+    payment-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41, 42, 43]
+
+# Anti-Abuse System
+anti-abuse:
+  enabled: true
+  cooldown-seconds: 30
+  # Blocks placed by players won't give money for X seconds
+
+# Database
+database:
+  type: YAML
+  # Currently only YAML is supported

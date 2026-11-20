@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&0Steps to R''lyeh'
+lore:
+- '&0&kA drowned city''s map lines the soles.'
+- '&0&kIt contains no road home.'
+classLootFamily: DPS_BOOTS

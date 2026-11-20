@@ -1,0 +1,7 @@
+isEnabled: false
+entityType: SNOW_GOLEM
+name: '&fLvl &2$level &fElite &2Snow Golem'
+deathMessages:
+- $player &cwas slain by $entity&c!
+baseDamageV2: 2.0
+behavior: basic_melee.lua

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Eager Suitor
+lore:
+- Already halfway across the room.
+classLootFamily: DPS_BOOTS

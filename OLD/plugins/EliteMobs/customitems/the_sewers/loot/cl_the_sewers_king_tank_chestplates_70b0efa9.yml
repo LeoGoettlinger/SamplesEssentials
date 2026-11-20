@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&4Drowned King''s Chestplate'
+lore:
+- '&cFormerly the chestplate of the'
+- '&cdevilish Drowned King!'
+classLootFamily: TANK_CHESTPLATES

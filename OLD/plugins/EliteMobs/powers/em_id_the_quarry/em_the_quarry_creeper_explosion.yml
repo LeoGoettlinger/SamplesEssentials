@@ -1,0 +1,56 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Visual:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Zone:
+      shape: DOME
+      radius: 3
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: PLAY_SOUND
+      sValue: entity.creeper.primed
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 15
+    - action: PLAY_SOUND
+      sValue: entity.generic.explode
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 15
+      wait: 30
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        track: true
+        coverage: 0.5
+      wait: 30
+      scripts:
+      - Explosion
+    - action: SET_MOB_AI
+      bValue: false
+      duration: 40
+      Target:
+        targetType: SELF
+    Cooldowns:
+      local: 70
+      global: 5
+  Explosion:
+    Zone:
+      shape: DOME
+      radius: 4
+      Target:
+        targetType: SELF
+    Actions:
+    - action: DAMAGE
+      multiplier: 40
+      Target:
+        targetType: ZONE_FULL
+        track: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

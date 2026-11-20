@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Grounded Soles
+lore:
+- Somebody has to stay on the floor.
+classLootFamily: TANK_BOOTS

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&8Goatkeeper''s Door'
+lore:
+- '&8Four hoof marks mar the face.'
+- '&8Black Philip did not knock.'

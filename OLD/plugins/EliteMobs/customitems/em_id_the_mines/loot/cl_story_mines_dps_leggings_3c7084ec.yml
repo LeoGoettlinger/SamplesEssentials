@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Woven Stride'
+lore:
+- '&7The joints hide beneath layers of old bindings.'
+classLootFamily: DPS_LEGGINGS

@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: IRON_HELMET
+name: '&8Worn Hood'
+lore:
+- '&8Wearing this hood makes'
+- '&8you feel off, there is'
+- '&8something odd about it.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,2
+- PROTECTION_FIRE,1
+itemType: unique
+scalability: scalable

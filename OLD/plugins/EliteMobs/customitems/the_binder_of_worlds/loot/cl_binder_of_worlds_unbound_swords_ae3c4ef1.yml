@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&5Severed Horizon'
+lore:
+- '&5A thin dark line divides the blade.'
+- '&5You cannot find its other side.'

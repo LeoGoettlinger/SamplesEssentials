@@ -1,0 +1,111 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+isEnabled: true
+entityType: PILLAGER
+mainHand: CROSSBOW
+name: $normalLevel &cWorshipper of Cthulhu
+bossType: NORMAL
+scale: 1.25
+level: dynamic # 15
+healthMultiplier: 1.0
+damageMultiplier: 1.4
+dropsEliteMobsLoot: false
+isRegionalBoss: true
+instanced: true
+leashRadius: 400
+followDistance: 100
+spawnCooldown: 2
+powers:
+- invulnerability_knockback.yml
+- invulnerability_arrow.yml
+- invulnerability_fire.yml
+damageModifiers:
+- material: TRIDENT
+  multiplier: 0.01
+disguise: custom:dark_cathedral_tier_75_reinforcement
+customDisguiseData: player dark_cathedral_tier_75_reinforcement setskin {"id":"35c5f08a-cf0e-4250-b5f1-c651013c651f","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTYwMTgxODExNjAwMywKICAicHJvZmlsZUlkIiA6ICJmMzA1ZjA5NDI0NTg0ZjU4YmEyYjY0ZjAyZDcyNDYyYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJqcm9ja2EzMyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9kY2UzNDRkMjQyNDQyN2Q2N2JmOTc2MmNhMmI3OWU0YThmYTY1NDMwNGZlMGNiNzgxOTNjOTVhNzAxYjgzNTQ1IgogICAgfQogIH0KfQ==","signature":"H47nOuodmuYkLGMrs/2812oNT5UXl1Dx4eLnDkFYKWsu6X2L/NxjoQLYPq33SzW5RDE2XiPHBWgaDFec9NnglIYmOxnzD/m5shBUC8kezGQSUV8D6446iEn9TGi8IJD7HI7X1SPPnFY8lqzCuXi4PzERe1p+4F91s9a9bx9wvEyYOk9NgFNSHCJLxZdpl3+/CWNiW8g2/osOzDFZ3ebPIN8Sy6dtbBuXv2yIkTJoJTJIckDGeSTAYIt5V9c4vuOvu53sSiYjmp5fCUQ6vaVSffjZy7MOOvAEfEsct7+ZuWn05H2SPwc/uQYD0VUpEBHI2EMKzplur7xzhQcggJIwI6CeazfTdHe3rZI6DcUQuU9xkvxa6qs1hxI2BaO+q4Fkx8m9gOJEABIIHTGACv2lAuzV98MlawcDSlIRQaoCpAfin3w+VVx1Us8yx8h5mSfwhofZwfSmSYUtY1Tj8ZPlm0yB+k99TgcDwlFt8xZJ3P7j1RP+9jlYKqbLKVrT/LIvkFxVQryVllO7z8Wibqv6sQfI+WatE3XQR0sO5iGoDPtZB3akMoqnixAnOjzyMnN6ohvE+iA9izz+yCDQtqrf+tz84hu/vy8WfzUzNbqGwNTHZrigG4ae7SXZ6LNzUYqv5dq9LUPkODUPgNqoDv2/3lH4aayNpwqv/R1U0h6boKg="}],"legacy":false}
+spawnLocations:
+- em_the_dark_cathedral,32.5,94.0,6.5,180,0:1721741763556
+- em_the_dark_cathedral,29.5,94.0,6.5,180,0:1721741775712
+- em_the_dark_cathedral,32.5,94.0,-1.5,180,0:1721741775358
+- em_the_dark_cathedral,29.5,94.0,-1.5,180,0:1721741768314
+- em_the_dark_cathedral,32.5,94.0,-9.5,180,0:1721741782613
+- em_the_dark_cathedral,29.5,94.0,-9.5,180,0:1721741768112
+- em_the_dark_cathedral,32.5,94.0,-17.5,180,0:1721741764413
+- em_the_dark_cathedral,29.5,94.0,-17.5,180,0:1721741768064
+- em_the_dark_cathedral,32.5,94.0,-25.5,180,0:1723367272262
+- em_the_dark_cathedral,29.5,94.0,-25.5,180,0:1721741769709
+eliteScript:
+  PhaseStart:
+    Events:
+    - EliteMobSpawnEvent
+    - EliteMobExitCombatEvent
+    Actions:
+    - action: TELEPORT
+      Target:
+        targetType: SELF
+      FinalTarget:
+        targetType: SELF_SPAWN
+    - action: SET_MOB_AI
+      Target:
+        targetType: SELF
+      bValue: false
+    - action: MAKE_INVULNERABLE
+      Target:
+        targetType: SELF
+      invulnerable: true
+    - action: TAG
+      Target:
+        targetType: SELF
+      tags:
+      - Phase1
+    - action: TAG
+      Target:
+        targetType: SELF
+      tags:
+      - Warn
+  DomeMessages:
+    Events:
+    - ZoneEnterEvent
+    Zone:
+      shape: DOME
+      radius: 4
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: MESSAGE
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      sValue: '&c[Worshipper of Cthulhu] &fCthulhu, hear our fervent cry.'
+    Cooldowns:
+      local: 1000
+      global: 1
+  WarnPlayer:
+    Events:
+    - ZoneEnterEvent
+    Zone:
+      shape: DOME
+      radius: 1
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: TITLE_MESSAGE
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      subtitle: '&dFaith in Cthulhu shields this worshipper.'
+      duration: 40
+      fadeIn: 5
+      fadeOut: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        hasTags:
+        - Warn
+    Cooldowns:
+      local: 100
+      global: 1
+classLoot: false

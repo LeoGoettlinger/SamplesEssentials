@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&dStandard of the Last King'
+lore:
+- '&dThe castle fell. The painted lion did not.'

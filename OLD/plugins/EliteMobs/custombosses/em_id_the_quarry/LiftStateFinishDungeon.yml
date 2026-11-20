@@ -1,0 +1,90 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: BOSS
+customDisguiseData: player the_quarry_lift_master setskin {"id":"07e868be-5e6e-4c65-bf02-72eac66db32a","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcwOTgxNzcyMzgyMCwKICAicHJvZmlsZUlkIiA6ICJiMmM5ZTUyZjNhODU0YzQ4YmJjMmMwM2JjM2U0NzdiMiIsCiAgInByb2ZpbGVOYW1lIiA6ICJJU05FRVpFREFUWU9VIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2U1MjhiYzI2ZTkwMzU5NmUzNmRjYTE4MzJmYTg0NTdiZWRiZGY1ZjdmZjkwY2IxZGQyZmNjZWFlMTViZWQ0ZTciCiAgICB9CiAgfQp9","signature":"w65UEwVBhgvQWevUS8twYFcjcO1mBeVpfQ9rq/5NM3NcDovlDRbV0ajDYYHS1MgoBldmQP8GbT4mPZT904OAkykeCr9y02EN9fhPFCpH75iqBLuDzvsf4PB0CxVLwJYlhPMSPnJJeWBsBYH2W2HJwbNu2psEK5a/q+llad9QpUI8H9o3Jh7tErWAWLAAi1lyynh+u1QwEFU30cZRdY5fXTeoqN6H+4QwGhez+OJdXT+xbpssMs5PM3ZCneuza0BvBOEgr4HWm29NzZF1V3BM7cmDJxpZaek1EJEpwo2/lRAB+t5Izid4+zCDZDNAr+QPRR0v0buS0O4oZS5Rwll+bmDoXUmZNWHihxfoGWtMl05j6oxEBhX95ONzCGQmjScmcN8Aznv226IihGcfstR7Lt3Bp7vAOmwd1nfgCtkBw3iy+Gnq89BzrLcpTtocod6+n0gl8CQzFgkZMCxqw7DzgikRbuWvx3IuV54CJOr+EDV2JAeTs7XwNDTvL8nz17Qcma2ABDi7usyvd1sXPCKVumJI2qS0LryScjGynqKsekWeQw21bbqYyq39h7UD8F4Hsy2qISJIXAjk1V0E5rHC9ySHwcBxaUFAkFfd4tCHSrSr/vx30ZkXPoO0b4SoS01BDI/f9Uc+X5wxsXryQ2LrdyEk5ONwlpScf0+k/jPSTsg="}],"legacy":false}
+damageMultiplier: 0.8
+disguise: custom:the_quarry_lift_master
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+entityType: ZOMBIE
+healthMultiplier: 8.5
+instanced: true
+isEnabled: true
+isRegionalBoss: true
+level: dynamic # 40
+movementSpeedAttribute: 0.33
+name: $bossLevel &dLift Master
+normalizedCombat: true
+powers:
+- skeleton_tracking_arrow.yml
+- difficultyID:
+  - 1
+  - 2
+  filename: gold_explosion.yml
+- difficultyID:
+  - 2
+  filename: attack_blinding.yml
+- difficultyID:
+  - 0
+  filename: em_id_the_quarry_lift_master_final_normal.yml
+- difficultyID:
+  - 1
+  filename: em_id_the_quarry_lift_master_final_hard.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_quarry_lift_master_final_mythic.yml
+- em_id_the_quarry_sleep.yml
+spawnLocations:
+- em_id_the_quarry,362.5,-29,84.5,4.0,0.0
+classLoot: true
+classLootRank: BOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- chance: 0.33
+  difficultyID: 0
+  filename: em_id_the_quarry_miniboss_master_trident_tank_normal.yml
+- chance: 0.33
+  difficultyID: 1
+  filename: em_id_the_quarry_miniboss_master_trident_tank_hard.yml
+- chance: 0.33
+  difficultyID: 2
+  filename: em_id_the_quarry_miniboss_master_trident_tank_mythical.yml
+- filename: cl_story_quarry_swords_2729e742.yml
+  chance: 1.0
+- filename: cl_story_quarry_axes_d871d3ab.yml
+  chance: 1.0
+- filename: cl_story_quarry_bows_ccabbcb4.yml
+  chance: 1.0
+- filename: cl_story_quarry_crossbows_4e4680f9.yml
+  chance: 1.0
+- filename: cl_story_quarry_tridents_9ced9fbf.yml
+  chance: 1.0
+- filename: cl_story_quarry_hoes_5211e998.yml
+  chance: 1.0
+- filename: cl_story_quarry_maces_7f24961b.yml
+  chance: 1.0
+- filename: cl_story_quarry_spears_8d549051.yml
+  chance: 1.0
+- filename: cl_story_quarry_staves_1ce41de2.yml
+  chance: 1.0
+- filename: cl_story_quarry_wands_7eb59ac6.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_helmets_73ccb419.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_chestplates_3148278f.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_leggings_ca5a54fd.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_boots_3e7f381e.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_helmets_2f899f43.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_chestplates_21a5129c.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_leggings_da76caa5.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_boots_0c31ed26.yml
+  chance: 1.0
+- filename: cl_story_quarry_shields_d080f0ef.yml
+  chance: 1.0

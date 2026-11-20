@@ -1,0 +1,112 @@
+# SPower Configuration File
+# Professional Power Weapons Plugin
+
+# Materials Configuration (Change weapon types)
+materials:
+  trident: TRIDENT
+  sword: NETHERITE_SWORD
+  mace: DIAMOND_AXE
+  totem: TOTEM_OF_UNDYING
+
+# Item Names and Lore (Supports hex colors &#RRGGBB and color codes &a, &b, etc)
+item-names:
+  trident: "&#00FFFFᴘᴏᴡᴇʀ ᴛʀɪᴅᴇɴᴛ"
+  sword: "&#FF0000ᴘᴏᴡᴇʀ sᴡᴏʀᴅ"
+  mace: "&#FFD700ᴘᴏᴡᴇʀ ᴍᴀᴄᴇ"
+  totem: "&#FFD700ᴘᴏᴡᴇʀ ᴛᴏᴛᴇᴍ"
+
+item-lore:
+  trident:
+    - "&#00FFFF⚡ ʟɪɢʜᴛɴɪɴɢ sᴛʀɪᴋᴇ"
+    - "&#00FFFF🌊 ʀɪᴘᴛɪᴅᴇ ғʟɪɢʜᴛ"
+    - ""
+    - "&#888888ʟᴇғᴛ ᴄʟɪᴄᴋ: ʟɪɢʜᴛɴɪɴɢ"
+    - "&#888888ʀɪɢʜᴛ ᴄʟɪᴄᴋ: ғʟʏ"
+  sword:
+    - "&#FF0000🔥 ғɪʀᴇʙᴀʟʟ ᴀᴛᴛᴀᴄᴋ"
+    - "&#FFD700⚔ ʀᴀɴɢᴇᴅ ʙᴇᴀᴍ"
+    - "&#FF4500🔥 ғɪʀᴇ ᴄɪʀᴄʟᴇ"
+    - ""
+    - "&#888888ʟᴇғᴛ ᴄʟɪᴄᴋ: ғɪʀᴇʙᴀʟʟ"
+    - "&#888888ʀɪɢʜᴛ ᴄʟɪᴄᴋ: ʙᴇᴀᴍ"
+    - "&#888888sʜɪғᴛ: ғɪʀᴇ ᴄɪʀᴄʟᴇ"
+  mace:
+    - "&#FFD700⚡ ᴛʜᴏʀ's ʜᴀᴍᴍᴇʀ"
+    - "&#FFA500🔨 ᴛʜʀᴏᴡ & ʀᴇᴛᴜʀɴ"
+    - ""
+    - "&#888888ʀɪɢʜᴛ ᴄʟɪᴄᴋ: ᴛʜʀᴏᴡ"
+    - "&#888888ғ ᴋᴇʏ: sᴜᴘᴇʀ ᴊᴜᴍᴘ"
+  totem:
+    - "&#FFD700✦ ᴘʀᴏᴛᴇᴄᴛɪᴏɴ ᴄɪʀᴄʟᴇ"
+    - "&#FFFF00👑 ᴄʀᴏᴡɴ ᴘᴀʀᴛɪᴄʟᴇs"
+    - "&#FF6347❤ +5 ʜᴇᴀʀᴛs"
+    - ""
+    - "&#888888ʜᴏʟᴅ ɪɴ ᴏғғʜᴀɴᴅ ᴛᴏ ᴀᴄᴛɪᴠᴀᴛᴇ"
+
+# Trident Power Settings
+trident:
+  particle-radius: 1.5
+  particle-speed: 2
+  lightning-cooldown: 3000
+  lightning-damage: 8.0
+  riptide-cooldown: 5000
+
+# Sword Power Settings
+sword:
+  melee-damage: 12.0
+  ranged-damage: 8.0
+  ranged-cooldown: 5000
+  fireball-damage: 6.0
+  fireball-cooldown: 3000
+  fire-circle-damage: 10.0
+  fire-circle-radius: 5.0
+  fire-circle-duration: 60
+  fire-circle-cooldown: 8000
+
+# Mace Power Settings (Thor Hammer)
+mace:
+  throw-distance: 20.0
+  throw-speed: 0.5
+  throw-damage: 10.0
+  throw-cooldown: 8000
+  jump-height: 3.0
+  jump-cooldown: 10000
+  landing-damage: 15.0
+  break-radius: 4
+  breakable-blocks:
+    - DIRT
+    - GRASS_BLOCK
+    - STONE
+    - COBBLESTONE
+    - SAND
+    - GRAVEL
+    - NETHERRACK
+    - ANDESITE
+    - DIORITE
+    - GRANITE
+    - COAL_ORE
+    - IRON_ORE
+    - GOLD_ORE
+    - DIAMOND_ORE
+    - EMERALD_ORE
+    - LAPIS_ORE
+    - REDSTONE_ORE
+    - COPPER_ORE
+    - DEEPSLATE_COAL_ORE
+    - DEEPSLATE_IRON_ORE
+    - DEEPSLATE_GOLD_ORE
+    - DEEPSLATE_DIAMOND_ORE
+    - DEEPSLATE_EMERALD_ORE
+    - DEEPSLATE_LAPIS_ORE
+    - DEEPSLATE_REDSTONE_ORE
+    - DEEPSLATE_COPPER_ORE
+    - NETHER_GOLD_ORE
+    - NETHER_QUARTZ_ORE
+    - ANCIENT_DEBRIS
+
+# Totem Power Settings
+totem:
+  extra-hearts: 10.0
+  circle-radius: 3.0
+  circle-particles: 32
+  circle-damage: 1.0

@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&7Weaver''s Catch'
+lore:
+- '&7The latch has trapped a thread it will not release.'

@@ -1,0 +1,30 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  SpawnArrowMen:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      height: 1
+      Target:
+        targetType: SELF_SPAWN
+        track: true
+        offset: 0,9,0
+    Actions:
+    - action: SUMMON_REINFORCEMENT
+      sValue: the_mines_mini_boss_tulpa_reinforcements.yml
+      duration: 55
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    Cooldowns:
+      local: 260
+      global: 80
+# Generated with https://magmaguy.com/webapp/webapp.html !

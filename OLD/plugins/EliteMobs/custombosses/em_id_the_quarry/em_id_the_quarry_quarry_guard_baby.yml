@@ -1,0 +1,114 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: HUSK
+isBaby: true
+disguise: WITHER_SKELETON
+mainHand: NETHERITE_AXE
+offHand: NETHERITE_AXE
+helmet: NETHERITE_HELMET
+chestplate: NETHERITE_CHESTPLATE
+leggings: NETHERITE_LEGGINGS
+boots: NETHERITE_BOOTS
+name: $normalLevel &eQuarry Guard
+level: dynamic # 40
+healthMultiplier: 0.65
+damageMultiplier: 1.2
+movementSpeedAttribute: 0.29
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+powers:
+- filename: attack_push.yml
+  difficultyID:
+  - 1
+- filename: arrow_fireworks.yml
+  difficultyID:
+  - 2
+frozen: false
+# leashRadius: 30
+followDistance: 20
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+eliteScript:
+  'false':
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: POTION_EFFECT
+      wait: 5
+      potionEffectType: SLOW
+      amplifier: 99
+      duration: 20
+      Target:
+        targetType: SELF
+      repeatEvery: 19
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - slow
+    - action: TAG
+      tags:
+      - slow
+      Target:
+        targetType: SELF
+  'true':
+    Events:
+    - EliteMobTargetPlayerEvent
+    Actions:
+    - action: UNTAG
+      tags:
+      - slow
+      Target:
+        targetType: SELF
+spawnLocations:
+- em_id_the_quarry,263.5,126.5,111.5,0.0,0.0
+- em_id_the_quarry,297.5,120.5,111.5,0.0,0.0:1704968050379
+- em_id_the_quarry,340.5,111.5,105.5,0.0,0.0:1704968050379
+- em_id_the_quarry,354.5,109.5,135.5,0.0,0.0:1704968050379
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: cl_story_quarry_swords_2729e742.yml
+  chance: 1.0
+- filename: cl_story_quarry_axes_d871d3ab.yml
+  chance: 1.0
+- filename: cl_story_quarry_bows_ccabbcb4.yml
+  chance: 1.0
+- filename: cl_story_quarry_crossbows_4e4680f9.yml
+  chance: 1.0
+- filename: cl_story_quarry_tridents_9ced9fbf.yml
+  chance: 1.0
+- filename: cl_story_quarry_hoes_5211e998.yml
+  chance: 1.0
+- filename: cl_story_quarry_maces_7f24961b.yml
+  chance: 1.0
+- filename: cl_story_quarry_spears_8d549051.yml
+  chance: 1.0
+- filename: cl_story_quarry_staves_1ce41de2.yml
+  chance: 1.0
+- filename: cl_story_quarry_wands_7eb59ac6.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_helmets_73ccb419.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_chestplates_3148278f.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_leggings_ca5a54fd.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_boots_3e7f381e.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_helmets_2f899f43.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_chestplates_21a5129c.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_leggings_da76caa5.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_boots_0c31ed26.yml
+  chance: 1.0
+- filename: cl_story_quarry_shields_d080f0ef.yml
+  chance: 1.0

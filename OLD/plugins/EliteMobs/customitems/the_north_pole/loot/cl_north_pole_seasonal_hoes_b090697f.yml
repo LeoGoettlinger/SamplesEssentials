@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&aHolly Harvester'
+lore:
+- '&7The holly was reluctant to cooperate.'
+- '&7The red berries survived.'

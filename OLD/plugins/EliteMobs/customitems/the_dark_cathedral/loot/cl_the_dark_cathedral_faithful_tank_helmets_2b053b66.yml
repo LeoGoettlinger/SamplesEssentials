@@ -1,0 +1,11 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&8Worn Hood'
+lore:
+- '&8Wearing this hood makes'
+- '&8you feel off, there is'
+- '&8something odd about it.'
+classLootFamily: TANK_HELMETS

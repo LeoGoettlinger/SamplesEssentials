@@ -1,0 +1,37 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  SummonVex:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: SUMMON_REINFORCEMENT
+      sValue: em_id_the_deep_mines_reinforcement_vex.yml
+      duration: 1200
+      Target:
+        targetType: SELF
+        offset: 0,2,0
+      wait: 347
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: SELF
+        offset: 0,2,0
+      wait: 327
+      repeatEvery: 5
+      times: 4
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    Cooldowns:
+      local: 99999
+      global: 1
+# Generated with https://magmaguy.com/webapp/webapp.html !

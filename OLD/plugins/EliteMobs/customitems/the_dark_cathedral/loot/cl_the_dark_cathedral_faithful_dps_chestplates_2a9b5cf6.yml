@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&8Tidewalker''s Vest'
+lore:
+- '&8A shell is sewn into each strap.'
+- '&8The shells do not match this coast.'
+classLootFamily: DPS_CHESTPLATES

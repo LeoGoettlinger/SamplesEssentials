@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Throne Piercer'
+material: NETHERITE_SPEAR
+level: 35
+lore:
+- '&cA spear used by the palace'
+- '&cguards to defend their king.'
+- '&cCarved from ancient stone.'
+enchantments:
+- IMPALING,4
+- DAMAGE_ALL,4
+- DURABILITY,3
+itemType: unique
+scalability: scalable

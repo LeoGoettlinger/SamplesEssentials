@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Shored Legguards'
+lore:
+- '&7The plates were strapped on like tunnel braces.'
+classLootFamily: TANK_LEGGINGS

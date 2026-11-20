@@ -1,0 +1,146 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: BOSS
+customDisguiseData: player em_id_the_deep_mines_the_pursuer setskin {"id":"ba37b7af-061b-4dff-846f-7bf10fc2d6ba","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTYyOTYyNTY0NjYxNiwKICAicHJvZmlsZUlkIiA6ICJmMTA0NzMxZjljYTU0NmI0OTkzNjM4NTlkZWY5N2NjNiIsCiAgInByb2ZpbGVOYW1lIiA6ICJ6aWFkODciLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTY2Njg3Zjg4MjJmNTJmMWY4ODU0N2E5YTk1ODM4ZDg3MmM3ZWYyM2Y5NGNiZDkyMDE2NDgyYzE0Y2M2OWQwNSIKICAgIH0KICB9Cn0=","signature":"RGNEZObjreuUopyS0DrlSl7BR/wDrU0rp/lugkOfsPT8Im7ivHISYTw92GaWEEy2EF1k3ANyxbzQu0DgBMG4BCR/KJbQMn9mzfvSSzMGNEp9CsreGkjUdLX+hQYAqEsj0rW5KIkXoM+LxYvhzm+/wX+knLOGup6A02t+JSsJRcou0iCP63QfDCxKFBBjl7HQ63GKlf7g+tXzX9hOOSj+U7HYggTb8pXRR+Ld/K+O8lKaMp/slTi7ucTb/g4lbWR0eUawrc/gSIJ1IQYhzRasFv3a4XcL6HkoXJn78owD4iTz60p8gvsuGkhMI9lHsd/hfdAaOChobLU/3Qtt04GWwxvq79ie1CeM96OwkY+o4l0tFSB0RLIv7U5ntzO2a597ZnPXSeIXZfz+L2CVqDJrQVZA2v/AcSLCmhDFY4O/a8ZPgeni8a+pUmQQCzLuAt0UxieiFqybXyjTx0RoXW8o/bgMFqFIMBjQBHsevliZqQsIxzSB2m3dQShpGnQNS/M84wBxhwOHWiefPpM7yel9QaPRdi15RJg5Qow+GmtQlUuDjC4T0ZEri5dN23CNxzyPbL0WLiUZua4O+r1RGryHk1iwbU+NRgjEgD7jzi0Ks3w94RWNtT81ZEmu1YpAg4c9x/palpqu1KVmmei58GUDn7S1QzjdFBnI2sxjqrv0F4o="}],"legacy":false}
+customModel: deep_mines_specter_2
+damageMultiplier: 0.8
+disguise: custom:em_id_the_deep_mines_the_pursuer
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+entityType: SKELETON
+followDistance: 99
+frozen: false
+healthMultiplier: 12.0
+instanced: true
+isEnabled: true
+isRegionalBoss: true
+level: dynamic # 45
+mainHand: BOW
+movementSpeedAttribute: 0.34
+name: $bossLevel &dNether Fiend
+normalizedCombat: true
+powers:
+- invulnerability_fire.yml
+- difficultyID:
+  - 0
+  filename: em_id_the_deep_mines_pursuer_lava_sweep_0.yml
+- difficultyID:
+  - 1
+  filename: em_id_the_deep_mines_pursuer_lava_sweep_1.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_deep_mines_pursuer_lava_sweep_2.yml
+- difficultyID:
+  - 0
+  filename: em_id_the_deep_mines_pursuer_tnt_gun_0.yml
+- difficultyID:
+  - 1
+  filename: em_id_the_deep_mines_pursuer_tnt_gun_1.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_deep_mines_pursuer_tnt_gun_2.yml
+- difficultyID:
+  - 1
+  filename: attack_freeze.yml
+- difficultyID:
+  - 2
+  filename: attack_web.yml
+classLoot: true
+classLootRank: BOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- chance: 0.99
+  filename: em_id_the_deep_mines_lore_nether_fiend.yml
+- chance: 0.2
+  difficultyID: 0
+  filename: em_id_the_deep_mines_boss_axe_dps_normal.yml
+- chance: 0.2
+  difficultyID: 0
+  filename: em_id_the_deep_mines_boss_boots_tank_normal.yml
+- chance: 0.2
+  difficultyID: 0
+  filename: em_id_the_deep_mines_boss_chestplate_tank_normal.yml
+- chance: 0.2
+  difficultyID: 0
+  filename: em_id_the_deep_mines_boss_helmet_tank_normal.yml
+- chance: 0.2
+  difficultyID: 0
+  filename: em_id_the_deep_mines_boss_leggings_tank_normal.yml
+- chance: 0.2
+  difficultyID: 0
+  filename: em_id_the_deep_mines_boss_sword_dps_normal.yml
+- chance: 0.2
+  difficultyID: 1
+  filename: em_id_the_deep_mines_boss_axe_dps_hard.yml
+- chance: 0.2
+  difficultyID: 1
+  filename: em_id_the_deep_mines_boss_boots_tank_hard.yml
+- chance: 0.2
+  difficultyID: 1
+  filename: em_id_the_deep_mines_boss_chestplate_tank_hard.yml
+- chance: 0.2
+  difficultyID: 1
+  filename: em_id_the_deep_mines_boss_helmet_tank_hard.yml
+- chance: 0.2
+  difficultyID: 1
+  filename: em_id_the_deep_mines_boss_leggings_tank_hard.yml
+- chance: 0.2
+  difficultyID: 1
+  filename: em_id_the_deep_mines_boss_sword_dps_hard.yml
+- chance: 0.2
+  difficultyID: 2
+  filename: em_id_the_deep_mines_boss_axe_dps_mythical.yml
+- chance: 0.2
+  difficultyID: 2
+  filename: em_id_the_deep_mines_boss_boots_tank_mythical.yml
+- chance: 0.2
+  difficultyID: 2
+  filename: em_id_the_deep_mines_boss_chestplate_tank_mythical.yml
+- chance: 0.2
+  difficultyID: 2
+  filename: em_id_the_deep_mines_boss_helmet_tank_mythical.yml
+- chance: 0.2
+  difficultyID: 2
+  filename: em_id_the_deep_mines_boss_leggings_tank_mythical.yml
+- chance: 0.2
+  difficultyID: 2
+  filename: em_id_the_deep_mines_boss_sword_dps_mythical.yml
+- filename: cl_story_deep_mines_swords_8d15cf02.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_axes_cedd4aa4.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_bows_b6c8d98d.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_crossbows_30ddf671.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tridents_ef892282.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_hoes_1230f16b.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_maces_26754aa4.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_spears_d7ace56c.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_staves_ddb894eb.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_wands_508977f6.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_helmets_e5cd2ef5.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_chestplates_2a0f5219.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_leggings_1965d4e3.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_boots_35d9f72a.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_helmets_2c10cdd9.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_chestplates_d332b108.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_leggings_00e66b52.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_boots_e2e4be2e.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_shields_a907d85d.yml
+  chance: 1.0

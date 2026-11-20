@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Sharp Edges
+lore:
+- The corners are pointed away from you.
+classLootFamily: DPS_CHESTPLATES

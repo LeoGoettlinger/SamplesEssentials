@@ -1,0 +1,48 @@
+ # This addon allows you to define actions when certain amounts of warns are reached.
+ # The warn tally is per-victim, meaning user punishments and IP punishments are tallied separately.
+ # 
+ # Please note this configuration is unordered, meaning it is acceptable to read
+ # auto-commands:
+ # - 8: 'command which runs at eight warns'
+ # - 2: 'command which runs at two warns'
+ # for example.
+ # Commands to execute.
+ # 
+ # Each command is executed by the console. Note that if LibertyBans is installed
+ # on the proxy, you will not be able to run commands from plugins on the backend servers;
+ # likewise if installed on the backend servers, you will not be able to run proxy commands.
+ # 
+ # The available variables are the same as those available in punishment messages.
+ # Do not use a leading slash unless the command is double-slashed (e.g., //wand in WorldEdit).
+auto-commands:
+  1: 'msg %VICTIM% Wenn du noch ein Warn mehr erhaelst dann wirst du ein Punishment erhalten!'
+  2: 'mute %VICTIM% 1d Du hast zu viele Warns erhalten! Pass in Zukunft mehr auf die Regeln auf!'
+  3: 'msg %VICTIM% Wenn du noch ein Warn mehr erhaelst dann wirst du ein Punishment erhalten!'
+  4: 'ban %VICTIM% 7d Du hast zu viele Warns erhalten! Pass in Zukunft mehr auf die Regeln auf!'
+  7: 'ban %VICTIM% 40d Pass mehr auf! Beim naechstenmal Warn es einen Perma-Bann!'
+  8: 'ban %VICTIM% perm !hausverbot'
+  
+#  3: 'say Lookout, %VICTIM% has three warns'
+
+ # Punishments to perform.
+ # 
+ # Each punishment is performed as if by the console. The setting broadcast-notification controls whether
+ # punishment notifications will be broadcast as usual; if false, no notifications are sent.
+auto-punishments:
+  4:
+    broadcast-notification: false
+    scope: ''
+    type: 'MUTE'
+    duration: '4h'
+    reason: 'You reached 4 warnings'
+
+  12:
+    broadcast-notification: true
+    scope: ''
+    type: 'BAN'
+    duration: 'perm'
+    reason: 'You must be banned if you truly managed to reach 12 warnings.'
+
+
+ # Whether to enable this addon at all
+enable: true

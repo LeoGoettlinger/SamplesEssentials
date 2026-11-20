@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&e[$difficulty] Mastercraft Brand'
+lore:
+- '&eYou are uncertain what this blade'
+- '&eis made out of. It seems to have'
+- '&ea great effect against the undead.'

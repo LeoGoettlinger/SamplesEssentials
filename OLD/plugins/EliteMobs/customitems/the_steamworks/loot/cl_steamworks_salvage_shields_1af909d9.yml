@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&bAccess Panel'
+lore:
+- '&bAUTHORIZED PERSONNEL ONLY is stamped on the face.'
+- '&bThe handle is on the unauthorized side.'

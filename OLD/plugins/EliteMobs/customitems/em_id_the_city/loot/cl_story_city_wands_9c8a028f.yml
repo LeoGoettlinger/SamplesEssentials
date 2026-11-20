@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&7Sealed Dispatch'
+lore:
+- '&7A short pointer wrapped in the remains of a message.'
+weaponType: WANDS

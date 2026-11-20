@@ -1,0 +1,34 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  BoolHard:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - EliteMobEnterCombatEvent
+    - EliteMobDamagedEvent
+    - EliteMobTargetPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Zone:
+      shape: CYLINDER
+      radius: 5
+      height: 1
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: SUMMON_REINFORCEMENT
+      sValue: the_mines_soulweaver_reinforcements.yml
+      duration: 666
+      Target:
+        targetType: ZONE_FULL
+        track: true
+        coverage: 0.05
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+        randomChance: 0.5
+    Cooldowns:
+      local: 888
+      global: 20

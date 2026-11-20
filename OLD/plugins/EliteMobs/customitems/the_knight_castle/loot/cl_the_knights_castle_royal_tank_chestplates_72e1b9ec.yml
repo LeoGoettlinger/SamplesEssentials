@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&dThroneguard Plate'
+lore:
+- '&dMade for the knight between the king and the blade.'
+classLootFamily: TANK_CHESTPLATES

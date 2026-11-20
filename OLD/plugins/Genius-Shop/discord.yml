@@ -1,0 +1,126 @@
+# ==========================================================
+# Genius-Shop — Discord Webhooks Configuration
+# ==========================================================
+# Configure Discord webhook notifications for shop transactions.
+#
+# Available Placeholders:
+#   %player%      - Player's username
+#   %item%        - Item name (with color codes stripped)
+#   %amount%      - Number of items bought/sold
+#   %price%       - Total price/earnings
+#   %currency%    - Currency symbol (e.g., $, €, etc.)
+#   %timestamp%   - Current timestamp (ISO 8601 format)
+# ==========================================================
+
+config-version: 1
+
+# Enable Discord webhook notifications
+enabled: true
+
+# Your Discord webhook URL
+# To create a webhook:
+# 1. Go to your Discord server settings
+# 2. Select "Integrations" -> "Webhooks"
+# 3. Click "New Webhook"
+# 4. Copy the webhook URL and paste it below
+webhook-url: https://discord.com/api/webhooks/1524824237108363465/VCvTiLZPyXtMc_CAJbmGoMYBvpc6P0HqyF6VubCnZ10_c3JG8N8ejNx7PmVi_zTBACeQ
+
+# ==========================================================
+# Purchase Notifications
+# ==========================================================
+purchase:
+  # Enable purchase notifications
+  enabled: true
+  
+  # Message type: "embed" or "plain"
+  # - embed: Rich Discord embed with colors and fields
+  # - plain: Simple text message
+  type: embed
+  
+  # Plain text message (only used when type is "plain")
+  plain-message: 🛒 **%player%** hat **%amount%x %item%** für **%currency%%price%
+    gekauft!**
+  
+  # Embed configuration (only used when type is "embed")
+  embed:
+    # Embed title
+    title: 🛒 Kauf Transaktion
+    
+    # Embed description (supports Discord markdown)
+    description: '**%player%** hat Items vom Shop gekauft'
+    
+    # Embed color (decimal format)
+    # Some common colors:
+    #   3066993  - Green (#2ecc71)
+    #   15844367 - Gold (#f1c40f)
+    #   3447003  - Blue (#3498db)
+    #   15158332 - Red (#e74c3c)
+    #   10181046 - Purple (#9b59b6)
+    color: 3066993
+    
+    # Embed fields (name, value, inline)
+    fields:
+    - name: Player
+      value: '%player%'
+      inline: true
+    - name: Item
+      value: '%item%'
+      inline: true
+    - name: Amount
+      value: '%amount%'
+      inline: true
+    - name: Total Cost
+      value: '%currency%%price%'
+      inline: true
+    
+    # Footer text
+    footer: Genius(Server) Shop
+    
+    # Show timestamp at bottom of embed
+    timestamp: true
+
+# ==========================================================
+# Sell Notifications
+# ==========================================================
+sell:
+  # Enable sell notifications
+  enabled: true
+  
+  # Message type: "embed" or "plain"
+  type: embed
+  
+  # Plain text message (only used when type is "plain")
+  plain-message: 💰 **%player%** hat **%amount%x %item%** für **%currency%%price%
+    verkauft!**
+  
+  # Embed configuration (only used when type is "embed")
+  embed:
+    # Embed title
+    title: 💰 Verkauf Transaktion
+    
+    # Embed description (supports Discord markdown)
+    description: '**%player%** hat Items im Shop verkauft!'
+    
+    # Embed color (decimal format)
+    color: 15844367
+    
+    # Embed fields (name, value, inline)
+    fields:
+    - name: Player
+      value: '%player%'
+      inline: true
+    - name: Item
+      value: '%item%'
+      inline: true
+    - name: Amount
+      value: '%amount%'
+      inline: true
+    - name: Total Earned
+      value: '%currency%%price%'
+      inline: true
+    
+    # Footer text
+    footer: Genius(Server) Shop
+    
+    # Show timestamp at bottom of embed
+    timestamp: true

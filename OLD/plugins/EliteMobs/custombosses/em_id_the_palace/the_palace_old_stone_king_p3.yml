@@ -1,0 +1,181 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+boots: NETHERITE_BOOTS
+bossType: BOSS
+chestplate: NETHERITE_CHESTPLATE
+customDisguiseData: player the_palace_stone_king setskin {"id":"31ca4ee5-fc54-4409-8d19-e1ca2c794de3","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY3NzQ5MjM1MzQ2MywKICAicHJvZmlsZUlkIiA6ICIzZmM3ZmRmOTM5NjM0YzQxOTExOTliYTNmN2NjM2ZlZCIsCiAgInByb2ZpbGVOYW1lIiA6ICJZZWxlaGEiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTQ3YmFiZDA5MzY1ODA1NjM5OWM2MDlhZWY5MTMzNGZlY2JkMjdkZDk5NTNjODAzM2E3MGY2YmM5ZTY4N2ZmNyIKICAgIH0KICB9Cn0=","signature":"CvbBW+zsKW3ppQm3kzjelHI873hG11BnajdtnhYsTn4maJwk9XRfyxNgP0TbMHBpedXAG83KDmb4o1/JWNh5a3DwRQGwqi8C+jFn4H9NZz4ACjkLPXiHTeV8f43VKPkEQpMwOgNiTT3z7GLEYB5hnsOSpTSm2nPgP9R576EYbB8VhHli14pT6R8qe987+1UbwpVSJALHBcstzj7pB5SBbTuFdwmKid5cGYnxAeAonHGDI5h0VpVbF4NnCgFy54lTuC130CxzADqgesAGayzZswmQc1GXDcMxkR06YC4QdG3y+xAXoqvB/yt0GT395bmPVlESe+Reh5ZCCIKCOMV3I+GmBJ6qcIlrwD9t/nmXWI0aMX2tnT/GmJNlwAUa7lTwpFYzsksM2/l/R6yqObrlQ04EGTeevyVaVe+li6WZ15lPv7IMHefXLUE89ZXb0Vu2NhoHakWJxupLu27lpUILtF9tYoMclZolgOtSqkK33njwaHroftd1r93bEzt0FNVMQ1eD+Hz4DXx1lgBdUROed2cMLmFI0y6gK7VtoPtNc7l5zLpq2KqNsQr1/zvb73ShUbFaCdcgPQrzFUkqEp/v6spLtkXf6jmMqZPzFy98TzwvAVsqXQGzV4ftMhK3v+LyQxUGjPV0DCBIvSH7vw0wZV+pgDbYnKUiBjtChLKkx5Q="}],"legacy":false}
+damageMultiplier: 0.5
+disguise: custom:the_palace_stone_king
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  ElectricParticleSelf:
+    Actions:
+    - Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - p3
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      action: SPAWN_PARTICLE
+      particles:
+      - particle: ELECTRIC_SPARK
+      repeatEvery: 20
+      wait: 5
+    - Target:
+        targetType: SELF
+      action: TAG
+      tags:
+      - p3
+    - Target:
+        targetType: SELF
+      action: UNTAG
+      tags:
+      - p2
+    Events:
+    - ElitePhaseSwitchEvent
+    Zone:
+      Target:
+        offset: 0,1,0
+        targetType: SELF
+        track: true
+      height: 2
+      radius: 2
+      shape: CYLINDER
+entityType: WITHER_SKELETON
+followDistance: 110
+frozen: false
+healthMultiplier: 20
+helmet: DIAMOND_HELMET
+instanced: true
+isEnabled: true
+isRegionalBoss: false
+leggings: NETHERITE_LEGGINGS
+level: dynamic # 35
+mainHand: NETHERITE_HOE
+movementSpeedAttribute: 0.3
+name: $bossLevel &dOld Stone King
+normalizedCombat: true
+onDamageMessages:
+- Head down there and open your mind like we did…
+- Accept the melody into yourself
+powers:
+- taze.yml
+- invulnerability_arrow.yml
+- invulnerability_fire.yml
+- difficultyID:
+  - 0
+  filename: em_id_the_palace_earth_strike.yml
+- difficultyID:
+  - 1
+  filename: em_id_the_palace_earth_strike_hard.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_palace_earth_strike_mythic.yml
+- difficultyID:
+  - 1
+  - 2
+  filename: attack_push.yml
+- difficultyID:
+  - 2
+  filename: shield_wall.yml
+classLoot: true
+classLootRank: BOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_palace_drop_axe_tank_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_palace_drop_boots_dps_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_palace_drop_chestplate_dps_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_palace_drop_helmet_tank_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_palace_drop_hoe_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_palace_drop_leggings_tank_normal.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_palace_drop_axe_tank_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_palace_drop_boots_dps_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_palace_drop_chestplate_dps_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_palace_drop_helmet_tank_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_palace_drop_hoe_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_palace_drop_leggings_tank_hard.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_palace_drop_axe_tank_mythic.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_palace_drop_boots_dps_mythic.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_palace_drop_chestplate_dps_mythic.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_palace_drop_helmet_tank_mythic.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_palace_drop_hoe_mythic.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_palace_drop_leggings_tank_mythic.yml
+- filename: cl_story_palace_swords_13c1072d.yml
+  chance: 1.0
+- filename: cl_story_palace_axes_42c49ad5.yml
+  chance: 1.0
+- filename: cl_story_palace_bows_6362044c.yml
+  chance: 1.0
+- filename: cl_story_palace_crossbows_79f64975.yml
+  chance: 1.0
+- filename: cl_story_palace_tridents_1bd55a0f.yml
+  chance: 1.0
+- filename: cl_story_palace_hoes_4421dc53.yml
+  chance: 1.0
+- filename: cl_story_palace_maces_638a5b24.yml
+  chance: 1.0
+- filename: cl_story_palace_spears_709e1efd.yml
+  chance: 1.0
+- filename: cl_story_palace_staves_541b099e.yml
+  chance: 1.0
+- filename: cl_story_palace_wands_85e1cf75.yml
+  chance: 1.0
+- filename: cl_story_palace_dps_helmets_82343ede.yml
+  chance: 1.0
+- filename: cl_story_palace_dps_chestplates_549b2b64.yml
+  chance: 1.0
+- filename: cl_story_palace_dps_leggings_7e743ef9.yml
+  chance: 1.0
+- filename: cl_story_palace_dps_boots_fedb30d4.yml
+  chance: 1.0
+- filename: cl_story_palace_tank_helmets_8d1bb24f.yml
+  chance: 1.0
+- filename: cl_story_palace_tank_chestplates_d001d4eb.yml
+  chance: 1.0
+- filename: cl_story_palace_tank_leggings_4c8319f0.yml
+  chance: 1.0
+- filename: cl_story_palace_tank_boots_ac2968eb.yml
+  chance: 1.0
+- filename: cl_story_palace_shields_30678b0a.yml
+  chance: 1.0

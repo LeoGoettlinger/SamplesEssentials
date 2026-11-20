@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&c[$difficulty] Royal Enforcer'
+lore:
+- '&cThe weapon of the city guard''s'
+- '&celite enforcers. Heavy and'
+- '&crelentless in its judgment.'

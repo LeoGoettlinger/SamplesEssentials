@@ -1,0 +1,191 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  LavaFall:
+    Events:
+    - EliteMobEnterCombatEvent
+    Actions:
+    - action: TITLE_MESSAGE
+      title: Lasers fired!
+      subtitle: Cave ceiling damaged!
+      duration: 30
+      fadeIn: 5
+      fadeOut: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+    - action: MESSAGE
+      sValue: '&c[Ancient Guardian] &fSCANNING LIFEFOR&kM'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+    - action: MESSAGE
+      sValue: '&c[Ancient Guardian] &fNO MAT&kCH A&fVAILABLE'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+      wait: 20
+    - action: MESSAGE
+      sValue: '&c[Ancient Guardian] &f&kASS&fUMING LIFEFORM IS A THREAT'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+      wait: 40
+    - action: MESSAGE
+      wait: 10
+      sValue: '&7The guardian fires off it''s powerful lasers into the cavern ceiling.'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+    - action: MESSAGE
+      wait: 50
+      sValue: '&c[Ancient Guardian] &fLASER RECHARGING'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+    - action: PLACE_BLOCK
+      material: LAVA
+      duration: 11111
+      Target:
+        targetType: LOCATIONS
+        locations:
+        - same_as_boss,-220.5,223,-8.5
+        - same_as_boss,-191.5,216,-13.5
+        - same_as_boss,-169.5,218,-17.5
+        - same_as_boss,-147.5,225,-14.5
+        - same_as_boss,-105.5,235,-16.5
+    - action: RUN_SCRIPT
+      scripts:
+      - LaserAnimation
+      - LaserAnimation2
+      - LaserAnimation3
+      - LaserAnimation4
+      - LaserAnimation5
+    Cooldowns:
+      local: 99999
+      global: 20
+  LaserAnimation:
+    Zone:
+      shape: STATIC_RAY
+      Target2:
+        targetType: LOCATION
+        location: same_as_boss,-220.5,223,-8.5,0,0
+        track: true
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: PLAY_SOUND
+      wait: 10
+      sValue: entity.guardian.attack
+      Target:
+        targetType: SELF
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: ELECTRIC_SPARK
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 30
+  LaserAnimation2:
+    Zone:
+      shape: STATIC_RAY
+      Target2:
+        targetType: LOCATION
+        location: same_as_boss,-191.5,216,-13.5,0,0
+        track: true
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: PLAY_SOUND
+      wait: 10
+      sValue: entity.guardian.attack
+      Target:
+        targetType: SELF
+    - action: SPAWN_PARTICLE
+      wait: 10
+      particles:
+      - particle: ELECTRIC_SPARK
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 30
+  LaserAnimation3:
+    Zone:
+      shape: STATIC_RAY
+      Target2:
+        targetType: LOCATION
+        location: same_as_boss,-169.5,218,-17.5,0,0
+        track: true
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: PLAY_SOUND
+      wait: 10
+      sValue: entity.guardian.attack
+      Target:
+        targetType: SELF
+    - action: SPAWN_PARTICLE
+      wait: 10
+      particles:
+      - particle: ELECTRIC_SPARK
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 30
+  LaserAnimation4:
+    Zone:
+      shape: STATIC_RAY
+      Target2:
+        targetType: LOCATION
+        location: same_as_boss,-147.5,225,-14.5,0,0
+        track: true
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: PLAY_SOUND
+      wait: 10
+      sValue: entity.guardian.attack
+      Target:
+        targetType: SELF
+    - action: SPAWN_PARTICLE
+      wait: 10
+      particles:
+      - particle: ELECTRIC_SPARK
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 30
+  LaserAnimation5:
+    Zone:
+      shape: STATIC_RAY
+      Target2:
+        targetType: LOCATION
+        location: same_as_boss,-105.5,235,-16.5,0,0
+        track: true
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: PLAY_SOUND
+      wait: 10
+      sValue: entity.guardian.attack
+      Target:
+        targetType: SELF
+    - action: SPAWN_PARTICLE
+      wait: 10
+      particles:
+      - particle: ELECTRIC_SPARK
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 30
+# Generated with https://magmaguy.com/webapp/webapp.html !

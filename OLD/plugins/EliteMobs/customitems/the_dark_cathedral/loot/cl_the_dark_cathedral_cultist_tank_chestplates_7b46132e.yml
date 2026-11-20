@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&0Cathedral''s Burden'
+lore:
+- '&0&kThe plate carries the altar''s carved arch.'
+- '&0&kA crack runs through the central stone.'
+classLootFamily: TANK_CHESTPLATES

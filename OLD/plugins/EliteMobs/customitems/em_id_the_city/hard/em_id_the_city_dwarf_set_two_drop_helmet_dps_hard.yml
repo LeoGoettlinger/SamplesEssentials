@@ -1,0 +1,12 @@
+isEnabled: true
+potionEffects: []
+name: '&a[Hard] Worn Helmet'
+material: DIAMOND_HELMET
+level: 30
+lore:
+- '&aAlmost useless.'
+enchantments:
+- DAMAGE_ALL,4
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

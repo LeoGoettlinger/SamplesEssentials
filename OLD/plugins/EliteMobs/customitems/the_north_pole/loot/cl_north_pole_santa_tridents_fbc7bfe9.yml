@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&cNorth Star Fork'
+lore:
+- '&7Three points beneath a painted star.'
+- '&7A gift from the old workshop.'

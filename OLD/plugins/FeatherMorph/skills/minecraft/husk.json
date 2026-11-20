@@ -1,0 +1,14 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:potion_on_attack"
+  ],
+  "settings": {
+    "morph:potion_on_attack": {
+      "duration": 280,
+      "name": "minecraft:hunger",
+      "amplifier": 0
+    }
+  }
+}

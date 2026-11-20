@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&bSnowdrift Whisper'
+lore:
+- '&7Jack left it beside an open window.'
+- '&7The sill is still white.'
+weaponType: WANDS

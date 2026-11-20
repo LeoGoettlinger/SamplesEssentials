@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Crowd Barrier
+lore:
+- Please form an orderly queue.
+classLootFamily: TANK_CHESTPLATES

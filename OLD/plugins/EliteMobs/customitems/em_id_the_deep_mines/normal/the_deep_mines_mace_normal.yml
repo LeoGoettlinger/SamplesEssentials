@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Infernal Hammer'
+material: MACE
+level: 45
+lore:
+- '&cForged in the deepest pits'
+- '&cwhere nether meets stone.'
+- '&cBurns with hellish fury.'
+enchantments:
+- DAMAGE_ALL,6
+- KNOCKBACK,2
+- DURABILITY,4
+- FIRE_ASPECT,1
+itemType: unique
+scalability: scalable

@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Obsidian Breaker'
+material: MACE
+level: 50
+lore:
+- '&cForged from volcanic obsidian.'
+- '&cIt shatters even the hardest'
+- '&cmaterials with ease.'
+enchantments:
+- DAMAGE_ALL,10
+- KNOCKBACK,3
+- DURABILITY,7
+- FIRE_ASPECT,2
+itemType: unique
+scalability: scalable

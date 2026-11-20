@@ -1,0 +1,12 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_CHESTPLATE
+name: '&4[Mythical] Undead''s Chestplate'
+lore:
+- '&4Retrieved from the walking corpse.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,1
+- DAMAGE_ALL,4
+itemType: unique
+scalability: scalable
+level: 10

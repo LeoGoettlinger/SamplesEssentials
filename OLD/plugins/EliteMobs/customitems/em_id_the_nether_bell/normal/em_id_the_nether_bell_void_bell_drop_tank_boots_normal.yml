@@ -1,0 +1,17 @@
+isEnabled: true
+material: NETHERITE_BOOTS
+name: '&d[Normal] Dominator Boots'
+lore:
+- '&dThese boots tread heavily, their steps echoing with an otherworldly hiss.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_FIRE,4
+- PROTECTION_PROJECTILE,4
+- PROTECTION_EXPLOSIONS,4
+- THORNS,1
+- elitemobs:loud_strikes,1
+potionEffects:
+- SLOW_FALLING,0,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

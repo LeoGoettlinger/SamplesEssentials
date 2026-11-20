@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Shroudward Plate'
+lore:
+- '&7The straps were fastened before the last approach.'
+classLootFamily: TANK_CHESTPLATES

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Keeper''s Braces'
+lore:
+- '&7The knees held firm through the last toll.'
+classLootFamily: TANK_LEGGINGS

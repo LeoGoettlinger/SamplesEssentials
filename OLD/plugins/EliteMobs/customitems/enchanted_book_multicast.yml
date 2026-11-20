@@ -1,0 +1,12 @@
+isEnabled: true
+material: ENCHANTED_BOOK
+name: '&5Elite Multicast Enchanted Book'
+lore:
+- '&2Used at the enchanter.'
+- '&7Wands only. Adds extra magic bolts.'
+enchantments:
+- freeminecraftmodels:multicast,1
+potionEffects: []
+scalability: FIXED
+itemType: UNIQUE
+soulbound: false

@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Void Toll'
+material: MACE
+level: 55
+lore:
+- '&cA mace that resonates with'
+- '&cthe bell''s void energy. Each'
+- '&cstrike rings with emptiness.'
+enchantments:
+- DAMAGE_ALL,7
+- KNOCKBACK,3
+- DURABILITY,5
+itemType: unique
+scalability: scalable

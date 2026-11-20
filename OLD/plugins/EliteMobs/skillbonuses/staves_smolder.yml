@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&6Smolder'
+description:
+- '&7Fireball hits can leave the'
+- '&7target smoldering.'
+skillType: STAVES
+bonusType: PROC
+unlockTier: 1
+baseValue: 0.6
+scalingPerLevel: 0.004
+procChance: 0.15
+displayMaterial: BLAZE_POWDER
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Burn: &f$burnPercent% of the hit over 4s'
+- '&8Fireball hits only'
+formattedBonusTemplate: $burnPercent% burn over 4s

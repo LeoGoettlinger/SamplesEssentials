@@ -1,0 +1,14 @@
+isEnabled: true
+material: CLOCK
+name: '&dAmulet of the Void'
+lore:
+- '&dA strange amulet that hums'
+- '&dwith an otherworldly energy.'
+enchantments: []
+potionEffects:
+- RESISTANCE,1,self,continuous
+- NIGHT_VISION,0,self,continuous
+- STRENGTH,1,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

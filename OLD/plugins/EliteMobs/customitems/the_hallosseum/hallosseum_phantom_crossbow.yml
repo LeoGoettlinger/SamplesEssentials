@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&8Phantom Crossbow'
+material: CROSSBOW
+lore:
+- '&7Spectral bolts phase through'
+- '&7armor and bone alike.'
+enchantments:
+- PIERCING,3
+- QUICK_CHARGE,2
+potionEffects:
+- BLINDNESS,1,target,onHit
+- SLOW,1,target,onHit
+itemType: unique
+scalability: scalable
+soulbound: true

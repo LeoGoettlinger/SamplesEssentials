@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&cRecipe Pointer'
+lore:
+- '&7A floury fingerprint marks the handle.'
+- '&7The recipe ends with a warning.'
+weaponType: WANDS

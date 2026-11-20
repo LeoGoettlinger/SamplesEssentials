@@ -1,0 +1,82 @@
+id: moonlit
+disabled: false
+allowed-rarities:
+  - Common
+  - Rare
+  - Epic
+allowed-fish:
+  Common:
+    - Cod
+    - Atlantic Cod
+    - Rockfish
+    - Tuna
+    - Mackerel
+    - Spanish Mackerel
+    - Salmon
+    - Pufferfish
+    - Tropical Fish
+    - Red Mullet
+    - Anchovy
+    - Haddock
+    - Bluefish
+    - Carp
+    - Silver Carp
+    - Grass Carp
+    - Koi Carp
+    - Black Carp
+    - Lemon Shark
+    - Sea Snail
+    - Eel
+    - Tadpole
+    - Seagull Feather
+  Rare:
+    - Penguin Feather
+    - Nemo
+    - Dory
+    - Squid Ink
+    - Squid
+    - Coral
+    - Jellyfish
+    - Temperate Frog
+    - Cold Frog
+    - Warm Frog
+    - Electric Eel
+    - Sunfish
+    - Goldfish
+  Epic:
+    - Glowing Jellyfish
+    - Dolphin
+    - Turtle
+    - Anemone
+    - Shiny Pickle
+    - Penguin
+    - Axolotl
+    - Rainbow Trout
+    - Crab
+    - Hermit Crab
+    - Whale
+    - Clownfish
+    - Breaded Fish Fillet
+    - Coinfish
+    - Kelpfish
+item:
+  material: FISHING_ROD
+  displayname: "<#aaaaff>Moonlit Rod"
+  glowing: true
+  head-64: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWQwNzI3MzJkYjcwZmRhZjBiMmFhZTY3YmM0MTViZTE1MzAwYWIzMzZhMTRmMTk5YTRmNDEzMGRiNDM1NTFhMiJ9fX0=
+  lore:
+    - "<gray>Illuminated by moonlight,"
+    - "<gray>this rod attracts nocturnal"
+    - "<gray>creatures of the deep."
+    - ""
+    - "<#aaaaff>► Best during night fishing"
+recipe:
+  type: shaped
+  shape:
+    - lll
+    - lfl
+    - lsl
+  ingredients:
+    l: glowstone
+    f: fishing_rod
+    s: string

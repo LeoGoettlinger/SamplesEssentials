@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&c[$difficulty] Infernal Hammer'
+lore:
+- '&cForged in the deepest pits'
+- '&cwhere nether meets stone.'
+- '&cBurns with hellish fury.'

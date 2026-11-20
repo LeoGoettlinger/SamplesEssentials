@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&aHearthguard Helm'
+lore:
+- '&7The brim is blackened with chimney soot.'
+- '&7Polishing only spreads it around.'
+classLootFamily: TANK_HELMETS

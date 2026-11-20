@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Gate Cap'
+lore:
+- '&7A low helmet worn beneath a lower arch.'
+classLootFamily: TANK_HELMETS

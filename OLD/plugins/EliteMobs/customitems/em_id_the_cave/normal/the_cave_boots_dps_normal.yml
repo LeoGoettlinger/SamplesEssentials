@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Slimed Boots'
+material: IRON_BOOTS
+level: 15
+lore:
+- '&cComfy but a bit noisy.'
+enchantments:
+- DAMAGE_ALL,5
+- DURABILITY,3
+- PROTECTION_FALL,2
+- DAMAGE_UNDEAD,2
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

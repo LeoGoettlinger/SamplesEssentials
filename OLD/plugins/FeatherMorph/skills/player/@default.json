@@ -1,0 +1,8 @@
+{
+  "skillCooldown": 20,
+  "skillId": "morph:fake_equip",
+  "abilities": [
+    "morph:chat_override"
+  ],
+  "settings": {}
+}

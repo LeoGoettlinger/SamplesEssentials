@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&c[$difficulty] Stone Plate'
+lore:
+- '&cDoes not provide much protection.'
+classLootFamily: DPS_CHESTPLATES

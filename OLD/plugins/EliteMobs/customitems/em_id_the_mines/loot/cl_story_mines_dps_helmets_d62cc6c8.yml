@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Stitched Brow'
+lore:
+- '&7The lining has been fastened from the outside.'
+classLootFamily: DPS_HELMETS

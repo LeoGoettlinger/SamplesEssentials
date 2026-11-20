@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&b[$difficulty] Frostbite Leggings'
+lore:
+- '&bOffers good protection'
+- '&beven though taken from a corpse.'
+classLootFamily: TANK_LEGGINGS

@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Chainmail Boots'
+material: IRON_LEGGINGS
+level: 45
+lore:
+- '&fAre you sure you want to put these on your feet?'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,7
+- PROTECTION_FALL,4
+- DURABILITY,3
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

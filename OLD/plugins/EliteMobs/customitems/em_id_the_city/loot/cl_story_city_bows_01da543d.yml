@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&7Empty Watchtower'
+lore:
+- '&7A bow left facing a road nobody used again.'

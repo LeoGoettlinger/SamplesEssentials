@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&aBattlement Yew'
+lore:
+- '&aIts string has outlasted three watch captains.'

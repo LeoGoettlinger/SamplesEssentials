@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&0Summoner''s Vigil'
+lore:
+- '&0&kThe rim is carved with the hours of prayer.'
+- '&0&kThere is no hour marked for rest.'
+classLootFamily: TANK_HELMETS

@@ -1,0 +1,37 @@
+id: rareBait
+disabled: false
+silent: false
+format: <aqua>{name}
+sort-index: 3
+application-weight: 60
+catch-weight: 10
+max-baits: 24
+can-be-caught: true
+drop-quantity: 2
+infinite: false
+disable-use-alert: false
+purchase:
+  price: 500
+  quantity: 4
+  economy-types:
+    - Vault
+item:
+  material: GLOW_BERRIES
+  displayname: "<aqua>Rare Delight"
+  glowing: true
+  lore:
+    - "<gray>Sweet glowing berries"
+    - "<gray>that attract Rare fish."
+rarity-modifiers:
+  Rare: "*2"
+catch-event:
+  - EXP:30
+recipe:
+  type: shaped
+  shape:
+    - rrr
+    - rbr
+    - rrr
+  ingredients:
+    r: glow_berries
+    b: blueberry

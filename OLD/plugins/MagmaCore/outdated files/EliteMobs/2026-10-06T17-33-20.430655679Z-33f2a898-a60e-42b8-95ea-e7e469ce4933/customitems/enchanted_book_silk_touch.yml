@@ -1,0 +1,12 @@
+name: '&5Elite Silk Touch Enchanted Book'
+lore:
+- '&2Used to enchant items at the enchanter!'
+isEnabled: true
+material: BOOK
+enchantments:
+- SILK_TOUCH,1
+- ENCHANTED_SOURCE,1
+potionEffects: []
+scalability: FIXED
+itemType: UNIQUE
+soulbound: false

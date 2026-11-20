@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&4Last Procession'
+lore:
+- '&4A black ribbon hangs beneath the point.'
+- '&4Its owner will not be needing a banner.'

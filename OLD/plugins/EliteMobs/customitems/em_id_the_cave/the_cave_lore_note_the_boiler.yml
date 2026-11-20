@@ -1,0 +1,12 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&4Crispy Coded Note'
+material: PAPER
+lore:
+- '&4Deef eht oliebr yna gnuy seno taht od ton evah eht nehsi.'
+- '&4Od ton deef ti yna eldre seno. Eht oliebr sdeen nrutriceg'
+- '&4segniney taht ylno regnuoy sgnnieb nac edorvip.'
+- '&4Esleorwi,ti lliw esol sti taeh dna wolg.'
+scalability: scalable
+itemType: unique

@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Volcanic Arbalest'
+material: CROSSBOW
+level: 50
+lore:
+- '&cA heavy crossbow that fires'
+- '&cbolts of hardened lava.'
+enchantments:
+- PIERCING,3
+- QUICK_CHARGE,2
+- DURABILITY,4
+itemType: unique
+scalability: scalable

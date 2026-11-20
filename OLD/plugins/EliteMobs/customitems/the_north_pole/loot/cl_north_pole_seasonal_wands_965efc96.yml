@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&aTinsel Baton'
+lore:
+- '&7The conductor left it on the workbench.'
+- '&7There is glitter in every drawer.'
+weaponType: WANDS

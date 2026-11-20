@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&e[Normal] Glass Bow'
+material: BOW
+level: 50
+lore:
+- '&eThe bow is capable of growing its own crystal arrows.'
+enchantments:
+- ARROW_INFINITE,4
+- ARROW_KNOCKBACK,3
+- ARROW_DAMAGE,2
+- DURABILITY,1
+potionEffects:
+- NIGHT_VISION,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

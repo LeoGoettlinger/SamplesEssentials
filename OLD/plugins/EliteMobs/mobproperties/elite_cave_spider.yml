@@ -1,0 +1,7 @@
+behavior: native
+isEnabled: true
+entityType: CAVE_SPIDER
+name: '&fLvl &2$level &fElite &3Cave Spider'
+deathMessages:
+- $player &cbecame entangled in $entity's &cweb!
+baseDamageV2: 3.0

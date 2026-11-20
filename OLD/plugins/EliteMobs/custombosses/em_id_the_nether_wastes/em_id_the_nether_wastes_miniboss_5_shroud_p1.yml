@@ -1,0 +1,59 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: BOSS
+customDisguiseData: player em_id_the_nether_wastes_shroud setskin {"id":"8f948e5b-2080-4f22-9745-f3dc7f8bbe67","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcxMjc3NjU4NDY5NSwKICAicHJvZmlsZUlkIiA6ICIzMjQ4M2M4YmNiNDk0N2Y0OTA2ZGM1NjgxMmVmZDA0NSIsCiAgInByb2ZpbGVOYW1lIiA6ICJZYXJPMTcwMzAzIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzY3NmU3ZTY4ZmQxMDJkZTE4OWQxODk0MzU1MTY5NDcxNzRmYTEwNDA3YTM3ZjEyYWI5MThkNTMwMTY3YjVmMDYiCiAgICB9CiAgfQp9","signature":"GRY33V2hZsMX3DUv4d6I1x4wf9+eQ26arL02qape+AgUWigy0QRyjMChbvI4Fe52ku7v5VCivhWSyq1J7BgLJsoysbgFfM6ucfqgbiNGekj6oZdczc/sl4G8zFno39nEmtK78YXL1t3DmIlXqRPrd2mVSwS+VAx9jG0/5lCWZq+jM5quN0XpkPmruCTC+nQAd88AoOm3fQLXHZvySlFoWQGMiQOZNxu9a1Im74LmEViYjk3VJBD/Lnk1nOWiz4Iu7AICJZYkht+u8eLfWR2yIbykXuwYShinNHMxxfqY+LvYKJdPAN54dj9bGgkmbQaw+La3Kzy6AnJmGqkBecWVknFOl9NJ5aHPTXtealjaW5gxBYxTrhLHcP9levOMf2xdIAJeR8UfncPvnY5tPRAgoOkx+NtPj8kl8Pxr13xfJdu1i5JJIpQTPtXpPi2+3Ld5VDdiNwRqLnlGacaYLZW55mbLB5n+8yicOocZt3+vMMOOZDvMNJ6gKYeM01g0TRnpN0EEXHVjtBp5jj60HEjAp1tB9Pbu6V5NdKidagwQjq0zHO5A09m8YhvAGdMeMVSJ9/qlL2nJo4wRkkHwmIYNtBirzKq/46zKEImc+38gxO7dFV5AIbaleUe4ls9/0BqkxrN0t0z6E8ziO3X1aADU8oSRkdBLfInYW4Xzyo6MAQw="}],"legacy":false}
+damageMultiplier: 0.85
+disguise: custom:em_id_the_nether_wastes_shroud
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  Sleep:
+    Actions:
+    - Target:
+        targetType: SELF
+      action: SET_MOB_AI
+      bValue: false
+    Events:
+    - EliteMobSpawnEvent
+  Wake:
+    Actions:
+    - Target:
+        targetType: SELF
+      action: SET_MOB_AI
+      bValue: true
+    Events:
+    - EliteMobDamagedEvent
+entityType: VINDICATOR
+followDistance: 80
+frozen: false
+healthMultiplier: 10.0
+instanced: true
+isEnabled: true
+isRegionalBoss: true
+level: dynamic # 50
+movementSpeedAttribute: 0.36
+name: $bossLevel &cThe Obsidian Shroud
+normalizedCombat: true
+phases:
+- em_id_the_nether_wastes_miniboss_5_shroud_p2.yml:0.60
+powers:
+- invulnerability_arrow.yml
+- invulnerability_fall_damage.yml
+- invulnerability_fire.yml
+- invulnerability_fireworks.yml
+- difficultyID:
+  - 2
+  filename: shield_wall.yml
+- difficultyID:
+  - 0
+  filename: em_id_the_nether_wastes_miniboss_5_attack_normal.yml
+- difficultyID:
+  - 1
+  filename: em_id_the_nether_wastes_miniboss_5_attack_hard.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_nether_wastes_miniboss_5_attack_mythical.yml
+spawnLocations:
+- em_id_the_nether_wastes,216.5,-40,90.5,0.0,0.0
+classLoot: false

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&cFather Christmas''s Staff'
+lore:
+- '&7The crook is polished by mittened hands.'
+- '&7Red thread binds a split in the wood.'
+weaponType: STAVES

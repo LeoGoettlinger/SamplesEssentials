@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&c[$difficulty] Fiend Trident'
+lore:
+- '&cA demonic spear that pierces'
+- '&cboth flesh and soul. Forged'
+- '&cin the Nether Fiend''s flames.'

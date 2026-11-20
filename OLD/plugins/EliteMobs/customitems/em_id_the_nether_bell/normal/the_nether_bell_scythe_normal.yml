@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Bell Ringer'
+material: NETHERITE_HOE
+level: 55
+lore:
+- '&cA scythe used to toll the'
+- '&cvoid bell. Each swing echoes'
+- '&cwith apocalyptic resonance.'
+enchantments:
+- DAMAGE_ALL,7
+- SWEEPING_EDGE,4
+- DURABILITY,5
+itemType: unique
+scalability: scalable

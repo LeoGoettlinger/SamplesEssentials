@@ -1,0 +1,123 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: HUSK
+name: $normalLevel &dLiving Slime
+level: dynamic # 20
+instanced: true
+healthMultiplier: 1.8
+damageMultiplier: 0.15
+powers:
+- attack_confusing.yml
+- invulnerability_arrow.yml
+- invulnerability_fire.yml
+movementSpeedAttribute: 0.26
+frozen: false
+# leashRadius: 30
+followDistance: 30
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+isRegionalBoss: true
+normalizedCombat: true
+dropsRandomLoot: false
+spawnLocations:
+- em_id_the_mines,263.5,114.5,-82.5,0.0,0.0
+- em_id_the_mines,260.5,115.5,-66.5,0.0,0.0
+- em_id_the_mines,240.5,115.5,-40.5,0.0,0.0
+- em_id_the_mines,236.5,113.5,57.5,0.0,0.0
+- em_id_the_mines,165.5,122.5,21.5,0.0,0.0
+- em_id_the_mines,189.5,121.5,21.5,0.0,0.0
+disguise: custom:the_mines_living_slime
+customDisguiseData: player the_mines_living_slime setskin {"id":"ac20a725-e158-4d67-b641-dcb5be87f8aa","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcwMTQ0NzgwNDgyMywKICAicHJvZmlsZUlkIiA6ICJmOGZiNTJmZjU5ZjY0Mjg4OTgyMzk4ZTUwOTNmZjE5NyIsCiAgInByb2ZpbGVOYW1lIiA6ICJKc25FWEUiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODc1NGFlMDRmNDViODQ5YTMyOTczZjc5MzI4NTgwODBkNzc3NmYyNjYzNTU0YTJmNDU3MmY3MWZiNDJlMzUwMiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9","signature":"BwInGR5ZNE6LDeTv3buobhM7wFbaDr8LaVhx9224x3kSdnqDmOfDnYMFV3i/4Cwl5JMzFYGb0/7eXnYdExQUPN3iB7oRCQN68RFFVyfdyvxq7ZafQBBtGsx+WEW6wZQfsNy04fb0XCi8ht6ui09I80ES2FqAMJ6np8nKLf8IRcfX0BQOeFol5cmI/rvHz8IEsYjJCBpdgrab/ES4DVaQw70qufvU4R2hePvQKsP9W36y9l+FrQUzPdf0pYNbQWS8T10FQkXGdA/xOO4YI/J2OdiYLKHG9vGtZ4jEOSCw5b0c+Zx/1KiU0kg9IueD1ZD9VjTxPHI5A5rNSd7KaJTWdEz1PDtKRfzFmyAY38lsVKjht+9tdJprVNZBR7FVS2uEND+Y0T/GNK7ntD/ZImozMRQu+gFde0bHHVzWifgl7OJ2QJO434jBkgedbeZaURzd4GPdzNXrJsJMc5a2EB8U7+4hrYQaLdGk7FwEUvy6jR43X7l/WsXKI0iRdtFOgJ2ZB1326CB7h1C4NCODLU/SIWc1D3ScrxVMg5gLuEc6r8qP6ZPCLQ9cZD4RV1HVOMM3zw4cBbLF6RV6bxjuybyN+GJPjpxQhpagueNkw2ph0ZMOStRdOYv63gqBcUzYUqMaxEgz3M3K5SU8pn/QdreU/oLo/smiG7nJErJFEPP8c5k="}],"legacy":false}
+eliteScript:
+  GetSlimed:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: TITLE_MESSAGE
+      title: '&aEww!'
+      subtitle: '&aYou''re covered in slime!'
+      duration: 30
+      fadeIn: 5
+      fadeOut: 5
+      Target:
+        targetType: DIRECT_TARGET
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 0
+      duration: 65
+      Target:
+        targetType: DIRECT_TARGET
+    - action: POTION_EFFECT
+      potionEffectType: WEAKNESS
+      amplifier: 3
+      duration: 45
+      Target:
+        targetType: DIRECT_TARGET
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 180
+      Target:
+        targetType: DIRECT_TARGET
+    Cooldowns:
+      local: 650
+      global: 10
+  NerfDamage:
+    Events:
+    - ZoneEnterEvent
+    - ZoneLeaveEvent
+    Zone:
+      shape: SPHERE
+      radius: 1
+      Target:
+        targetType: SELF
+    Actions:
+    - action: SET_MOB_AI
+      Target:
+        targetType: SELF
+      bValue: false
+      duration: 10
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: cl_story_mines_swords_f5c77fe4.yml
+  chance: 1.0
+- filename: cl_story_mines_axes_23aac663.yml
+  chance: 1.0
+- filename: cl_story_mines_bows_a6d16b50.yml
+  chance: 1.0
+- filename: cl_story_mines_crossbows_bc046011.yml
+  chance: 1.0
+- filename: cl_story_mines_tridents_e00d07bd.yml
+  chance: 1.0
+- filename: cl_story_mines_hoes_94e447fa.yml
+  chance: 1.0
+- filename: cl_story_mines_maces_96b8e254.yml
+  chance: 1.0
+- filename: cl_story_mines_spears_258f1267.yml
+  chance: 1.0
+- filename: cl_story_mines_staves_9801a7fb.yml
+  chance: 1.0
+- filename: cl_story_mines_wands_88a081b9.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_helmets_d62cc6c8.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_chestplates_527dffa2.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_leggings_3c7084ec.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_boots_87c73439.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_helmets_23d0f6a6.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_chestplates_905e88bf.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_leggings_cccc8016.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_boots_e7f99614.yml
+  chance: 1.0
+- filename: cl_story_mines_shields_687daaca.yml
+  chance: 1.0

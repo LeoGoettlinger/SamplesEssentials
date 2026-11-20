@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: Little Love Tap
+lore:
+- The name does not make it polite.
+weaponType: WANDS

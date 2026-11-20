@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Audience Steps'
+lore:
+- '&7The heels crossed the same hall at every summons.'
+classLootFamily: DPS_BOOTS

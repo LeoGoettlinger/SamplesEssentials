@@ -1,0 +1,9 @@
+cannot-extend-kicks: '&cThe punishment with ID &e%ID%&c is a kick so it cannot be extended.'
+invalid-duration: '&e%DURATION_ARG%&c is not a valid duration.'
+usage: '&cUsage: /libertybans extend <id> <time>'
+no-permission: '&cSorry, you cannot use this.'
+not-found: '&7No punishment exists with ID &e%ID%&7.'
+ # The success message. All the usual punishment variables can be used here.
+success: '&7Extended punishment &e%ID%&7. It now ends on &e%END_DATE%&7.'
+ # Whether to enable this addon at all
+enable: true

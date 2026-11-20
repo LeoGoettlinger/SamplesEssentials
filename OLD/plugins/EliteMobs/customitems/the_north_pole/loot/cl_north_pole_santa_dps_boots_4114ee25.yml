@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&cSilent Rooftops'
+lore:
+- '&7Soot fills the seams of these boots.'
+- '&7Somebody forgot to wipe their feet.'
+classLootFamily: DPS_BOOTS

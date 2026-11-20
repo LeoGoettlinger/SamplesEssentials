@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Hard] Infested Chestplate'
+material: IRON_CHESTPLATE
+level: 50
+lore:
+- '&fMold and holes cover this ancient piece of armor.'
+enchantments:
+- DAMAGE_UNDEAD,5
+- DAMAGE_ALL,3
+- DURABILITY,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

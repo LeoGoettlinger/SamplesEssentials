@@ -1,0 +1,22 @@
+worlds:
+  Farmwelt:
+    enabled: true
+    chunk-radius: 3
+    max-chunks-per-tick: 5
+    safety-radius: 3
+    smart-unloading: true
+    priority: 5
+  Farmwelt_nether:
+    enabled: true
+    chunk-radius: 2
+    max-chunks-per-tick: 3
+    safety-radius: 3
+    smart-unloading: true
+    priority: 3
+  Farmwelt_the_end:
+    enabled: true
+    chunk-radius: 2
+    max-chunks-per-tick: 3
+    safety-radius: 3
+    smart-unloading: true
+    priority: 2

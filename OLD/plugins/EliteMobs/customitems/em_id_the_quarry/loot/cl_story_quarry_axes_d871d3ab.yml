@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&7Lift Cleaver'
+lore:
+- '&7The haft is bound with old hoist rope.'

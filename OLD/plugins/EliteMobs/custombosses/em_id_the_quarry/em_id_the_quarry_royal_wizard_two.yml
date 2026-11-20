@@ -1,0 +1,131 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: MINIBOSS
+customDisguiseData: player the_quarry_wizard setskin {"id":"f3a516ae-b247-49bf-9847-a78488fcfc1e","name":"Unknown","properties":[{"name":"textures","value":"eyJ0aW1lc3RhbXAiOjE1ODE2NDAzMjQ1NTIsInByb2ZpbGVJZCI6IjU3MGIwNWJhMjZmMzRhOGViZmRiODBlY2JjZDdlNjIwIiwicHJvZmlsZU5hbWUiOiJMb3JkU29ubnkiLCJzaWduYXR1cmVSZXF1aXJlZCI6dHJ1ZSwidGV4dHVyZXMiOnsiU0tJTiI6eyJ1cmwiOiJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVmMGNlMjM3Y2I1YzQzZWE5YWQxM2NiMTEwNjcwOTY2NWE0M2ViYWVjMWE5NTJmM2JlZTljYjAzNjA2YTlhZjYifX19","signature":"bLAIg5KWUUbGYi4FiDYGlgnch5jfiYSIqsfoa1VPYnU0tNQFWdpD3CkszCkMLRz862nQJQcaGsj8/GWecd+A05kQQXxNnYsRZaIMz3+6F2eAM6sOq5iDxQM/hqvVNjYyaVciGiRXKJmU8BMaNzyjFmso0BssHPlX2NQS1VggNQMnysITD/lfSW0Yevw/LhG6kBzXFoPZDTFTTx64rvM/I8q2iCfgqQC7V/Ny8Gfk3r7mxp3bWtQEVUoV1uIZV0C276keHhsGqmEgqf4yKjlayvtWZGfzu2MjQFUJdROW3h0x1z2OQxWtXtmRekY0GMqZXeDJCcy9+c1ZW+1qBd8GsOOCaKxrx6QDzbMmYul5MQeKrydby+gy50fzcWQYzoFPJPZuXVAc9hms+E0SrABFBafEhVJ2OmIf7sP6RN1ERSbDx4KagGeNRdIxZe69NcBr7Z2/XztdPFYcug1PG9kGVg0scq5RI99nbeVBhQRkXUvSxwOArc3maYvlX3YcZuyHR2rbVxJyjB4zSMj4gtkZs6lT+c9tZU425KovbfEL1Iq3Lx/57vP54PEq2bkEsX6IORS0qqDECMv0Qova3vX/K7eLbHRgNxVSmjm8Aoxuf6TyUrvRoz+yknEH5aFn/CUzbJc01iNsOqeev3tzLJdnHfOE6jP6b1DJmRzmqRNbkyE="}],"legacy":false}
+damageMultiplier: 0.6
+disguise: custom:the_quarry_wizard
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  Levitate:
+    Actions:
+    - Target:
+        targetType: SELF
+      action: POTION_EFFECT
+      amplifier: 0
+      duration: 60
+      potionEffectType: LEVITATION
+      repeatEvery: 70
+    Events:
+    - EliteMobSpawnEvent
+  RemoveDome:
+    Actions:
+    - Target:
+        targetType: WORLD_PLAYERS
+      action: TITLE_MESSAGE
+      duration: 40
+      fadeIn: 5
+      fadeOut: 5
+      subtitle: '&aThe Lift Master has been freed'
+    - Target:
+        targetType: ZONE_FULL
+      action: PLACE_BLOCK
+      material: AIR
+      wait: 10
+    Events:
+    - EliteMobDeathEvent
+    Zone:
+      Target:
+        location: same_as_boss,355.5,86,81.5,0,0
+        targetType: LOCATION
+      radius: 3
+      shape: DOME
+  Speak:
+    Actions:
+    - Target:
+        range: 40
+        targetType: NEARBY_PLAYERS
+      action: MESSAGE
+      sValue: '&d[Royal Spellcaller] &fYou cannot be allowed to reach the bottom...'
+      wait: 100
+    Cooldowns:
+      global: 5
+      local: 9999
+    Events:
+    - EliteMobDamagedByPlayerEvent
+entityType: WITCH
+followDistance: 40
+frozen: false
+healthMultiplier: 3.5
+instanced: true
+isEnabled: true
+isRegionalBoss: true
+level: dynamic # 40
+mainHand: WOODEN_HOE
+movementSpeedAttribute: 0.31
+name: $minibossLevel &dRoyal Spellcaller
+normalizedCombat: true
+powers:
+- em_id_the_quarry_wizard_two_entity_launcher.yml
+- invulnerability_fire.yml
+- invulnerability_fireworks.yml
+- difficultyID:
+  - 1
+  filename: attack_push.yml
+- difficultyID:
+  - 2
+  filename: attack_vacuum.yml
+spawnLocations:
+- em_id_the_quarry,361.5,85.5,45.5,0.0,0.0:1704984743708
+classLoot: true
+classLootRank: MINIBOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- chance: 0.33
+  difficultyID: 0
+  filename: em_id_the_quarry_miniboss_wiz_boots_dps_normal.yml
+- chance: 0.33
+  difficultyID: 1
+  filename: em_id_the_quarry_miniboss_wiz_boots_dps_hard.yml
+- chance: 0.33
+  difficultyID: 2
+  filename: em_id_the_quarry_miniboss_wiz_boots_dps_mythical.yml
+- filename: cl_story_quarry_swords_2729e742.yml
+  chance: 1.0
+- filename: cl_story_quarry_axes_d871d3ab.yml
+  chance: 1.0
+- filename: cl_story_quarry_bows_ccabbcb4.yml
+  chance: 1.0
+- filename: cl_story_quarry_crossbows_4e4680f9.yml
+  chance: 1.0
+- filename: cl_story_quarry_tridents_9ced9fbf.yml
+  chance: 1.0
+- filename: cl_story_quarry_hoes_5211e998.yml
+  chance: 1.0
+- filename: cl_story_quarry_maces_7f24961b.yml
+  chance: 1.0
+- filename: cl_story_quarry_spears_8d549051.yml
+  chance: 1.0
+- filename: cl_story_quarry_staves_1ce41de2.yml
+  chance: 1.0
+- filename: cl_story_quarry_wands_7eb59ac6.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_helmets_73ccb419.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_chestplates_3148278f.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_leggings_ca5a54fd.yml
+  chance: 1.0
+- filename: cl_story_quarry_dps_boots_3e7f381e.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_helmets_2f899f43.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_chestplates_21a5129c.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_leggings_da76caa5.yml
+  chance: 1.0
+- filename: cl_story_quarry_tank_boots_0c31ed26.yml
+  chance: 1.0
+- filename: cl_story_quarry_shields_d080f0ef.yml
+  chance: 1.0

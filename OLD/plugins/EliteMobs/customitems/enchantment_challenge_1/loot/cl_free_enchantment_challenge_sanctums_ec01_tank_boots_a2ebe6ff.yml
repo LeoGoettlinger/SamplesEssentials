@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Dark Flame Boots
+lore:
+- Scorch the earth you walk upon.
+classLootFamily: TANK_BOOTS

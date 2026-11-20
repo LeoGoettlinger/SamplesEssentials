@@ -1,0 +1,35 @@
+Name: Season-crate Crate
+Description: []
+ItemProvider:
+  Provider: vanilla
+  Data:
+    Value: '{components:{"minecraft:custom_name":{bold:0b,extra:[{bold:0b,italic:0b,obfuscated:0b,strikethrough:0b,text:"Season-crate Crate",underlined:0b}],italic:0b,obfuscated:0b,strikethrough:0b,text:"",underlined:0b},"minecraft:tooltip_display":{hidden_components:["minecraft:attribute_modifiers","minecraft:debug_stick_state","minecraft:potion_duration_scale","minecraft:ominous_bottle_amplifier","minecraft:llama/variant","minecraft:instrument","minecraft:use_cooldown","minecraft:break_sound","minecraft:wolf/sound_variant","minecraft:custom_data","minecraft:base_color","minecraft:map_color","minecraft:consumable","minecraft:wolf/variant","minecraft:block_entity_data","minecraft:fox/variant","minecraft:suspicious_stew_effects","minecraft:trim","minecraft:pig/variant","minecraft:max_damage","minecraft:weapon","minecraft:bees","minecraft:map_post_processing","minecraft:salmon/size","minecraft:stored_enchantments","minecraft:damage","minecraft:bucket_entity_data","minecraft:map_id","minecraft:cat/variant","minecraft:creative_slot_lock","minecraft:death_protection","minecraft:parrot/variant","minecraft:potion_contents","minecraft:enchantable","minecraft:chicken/variant","minecraft:tropical_fish/pattern","minecraft:wolf/collar","minecraft:sheep/color","minecraft:max_stack_size","minecraft:banner_patterns","minecraft:tropical_fish/base_color","minecraft:recipes","minecraft:cat/collar","minecraft:enchantment_glint_override","minecraft:intangible_projectile","minecraft:food","minecraft:jukebox_playable","minecraft:horse/variant","minecraft:can_break","minecraft:charged_projectiles","minecraft:bundle_contents","minecraft:painting/variant","minecraft:unbreakable","minecraft:mooshroom/variant","minecraft:axolotl/variant","minecraft:repair_cost","minecraft:tool","minecraft:container_loot","minecraft:writable_book_content","minecraft:dyed_color","minecraft:provides_banner_patterns","minecraft:lock","minecraft:pot_decorations","minecraft:rabbit/variant","minecraft:tropical_fish/pattern_color","minecraft:villager/variant","minecraft:container","minecraft:glider","minecraft:rarity","minecraft:map_decorations","minecraft:enchantments","minecraft:use_remainder","minecraft:profile","minecraft:firework_explosion","minecraft:note_block_sound","minecraft:entity_data","minecraft:repairable","minecraft:fireworks","minecraft:cow/variant","minecraft:written_book_content","minecraft:frog/variant","minecraft:shulker/color","minecraft:damage_resistant","minecraft:can_place_on","minecraft:provides_trim_material","minecraft:block_state","minecraft:equippable","minecraft:lodestone_tracker","minecraft:blocks_attacks"]}},count:1,id:"minecraft:chest"}'
+    DataVersion: 4556
+ItemStackable: false
+Permission_Required: false
+Preview:
+  Enabled: true
+  Id: default
+Animation:
+  Enabled: true
+  Id: default
+OpeningCooldown:
+  Enabled: false
+  Value: 0
+OpeningLimits:
+  Amount: 0
+Block:
+  Positions: []
+  Pushback:
+    Enabled: true
+  Hologram:
+    Enabled: true
+    Template: default
+    Y_Offset: 0.0
+  Effect:
+    Enabled: false
+    Model: helix
+    Particle:
+      Name: CLOUD
+Milestones:
+  Repeatable: false

@@ -1,0 +1,156 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Bell:
+    Events:
+    - EliteMobDamagedEvent
+    - ZoneEnterEvent
+    Zone:
+      shape: CYLINDER
+      radius: 27
+      height: 8
+      Target:
+        targetType: SELF
+        offset: 0,-2,0
+    Actions:
+    - action: PLAY_SOUND
+      sValue: minecraft:block.bell.resonate
+      Target:
+        targetType: SELF
+      repeatEvery: 1
+      times: 100
+    - action: RUN_SCRIPT
+      scripts:
+      - Potion
+      - MessagePlayers
+      - Title
+      - Darkness
+      - PushSphere
+    Cooldowns:
+      local: 99999
+      global: 1
+  Potion:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: DARKNESS
+      amplifier: 5
+      duration: 100
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 2
+      duration: 100
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+    - action: PUSH
+      vValue: 0,-0.3,0
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      repeatEvery: 1
+      times: 100
+  MessagePlayers:
+    Actions:
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      sValue: '&cThe Void Bell &7attempts to pierce your mind!'
+      wait: 10
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      sValue: '&7You focus intently, and for now...'
+      wait: 30
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      sValue: '&7you manage to resist &cThe Void Bell''s &7mind-altering effects...'
+      wait: 60
+  Title:
+    Actions:
+    - action: TITLE_MESSAGE
+      title: '&cAnything'
+      subtitle: '&cyou want...'
+      duration: 40
+      fadeIn: 10
+      fadeOut: 10
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      wait: 1
+    - action: TITLE_MESSAGE
+      title: '&cPower'
+      subtitle: '&cdo you desire it...'
+      duration: 40
+      fadeIn: 10
+      fadeOut: 10
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      wait: 25
+    - action: TITLE_MESSAGE
+      title: '&cImmortality'
+      subtitle: '&cit can be yours...'
+      duration: 40
+      fadeIn: 10
+      fadeOut: 10
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      wait: 50
+  Darkness:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: DARKNESS
+      amplifier: 0
+      duration: 40
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      wait: 101
+      repeatEvery: 35
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF
+  PushSphere:
+    Zone:
+      shape: SPHERE
+      radius: 32
+      borderRadius: 30
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.01
+        track: true
+      repeatEvery: 10
+      wait: 100
+    - action: PUSH
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+      RelativeVector:
+        SourceTarget:
+          targetType: ACTION_TARGET
+        DestinationTarget:
+          targetType: SELF
+        normalize: true
+        multiplier: 0.2
+      wait: 100
+      repeatEvery: 1
+      Conditions:
+        isAlive: true
+        Target:
+          targetType: SELF

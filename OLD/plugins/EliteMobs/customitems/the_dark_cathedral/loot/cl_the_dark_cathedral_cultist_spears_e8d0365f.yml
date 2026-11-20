@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&0Tide of the Old Ones'
+lore:
+- '&0&kA long shaft, banded with dark script.'
+- '&0&kEvery band repeats the same name.'

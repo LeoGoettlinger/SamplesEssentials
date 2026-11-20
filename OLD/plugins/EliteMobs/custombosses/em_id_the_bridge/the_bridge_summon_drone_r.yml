@@ -1,0 +1,32 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: REINFORCEMENT
+customDisguiseData: player the_bridge_drone setskin {"id":"4cb116fc-e05c-4746-bba1-c0661c845b82","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcwMjU3MjYzNzc5MCwKICAicHJvZmlsZUlkIiA6ICJmYjNhZTU0OTU3ODQ0MGVlODIzODJlMDY2MzlhYTkzMiIsCiAgInByb2ZpbGVOYW1lIiA6ICJXZWx0ZXJ3ZWlnaHQiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTI0ZGYwNmM2ODAwNTUwNGE2ZWYyOTAwNGFlY2Q0OWZkZmRjYjc4NjFmNTEwZmMyMjAwOWM3ZWMzMzAzNDAxYSIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9","signature":"YhUG0BA/RfM06tx88yKEncoThwPoUoQ1Jbnh6kQnGuQwkBjb2eGxhZ1IUUvgFS9SFdM0mEFMosoDq3FhCOXVghYxJryrIQEXiYhI6ARiq7yM6EwtCZ7uqyk9wrNJpbFuJNmn+zJOLoblYYtLAMFaLfBV8sGKru8i4baFPCDWUQ7w4M3wtVW5wSRU70fmCgfEUZ07K5IADXKbxj8zTEw+uE7bf9FprAqYNwEupPvfXffLLeqtW6sqn1xqjxJWkHEPt4uY7DG/hlyznQU8JiGLnvzDRGsnzKXBcfbdb5AyxmBiVB22xNmVjOFGiK1b4ZHaYL5WU+0d/P6cx4+vTp5iILmVBW980kMwdfKHnT/mHyQffbjzdN3oax0i4oeSE3fOYYJzoSjVoM2N0EuOAU7I2Q5Qtwpkeroc4CWxQTZangRgKYrh28wtdu0MvVJmNu7jXxx1uteH1Y91jn/+c/MkqMQpT7mF/6FlzBkE2A5i92CWkkfE+pGF/OiYr8YxBZw8Fgvo6YY/JPYhPGVoILG2a+ZXuz37+tHgjdG7Typ0haJkJexyL2UG6WOcJ0DXkiCNZSp9OiQu0JHSPrXwJWijGO5zr1bBR61kJ0NIDZz+f0hHf1Xo0ziMhQ1Aq3RsMuvCsCx6l5QQXGBR8hKfwL+AXjip1ZUECGyrj7S6qEng8lQ="}],"legacy":false}
+damageMultiplier: 0.3
+disguise: custom:the_bridge_drone
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  Spawn:
+    Actions:
+    - Target:
+        targetType: SELF
+      action: SET_MOB_AI
+      bValue: false
+      duration: 35
+    Events:
+    - EliteMobSpawnEvent
+entityType: SKELETON
+frozen: false
+healthMultiplier: 3.0
+instanced: true
+isEnabled: true
+isRegionalBoss: false
+level: dynamic # 25
+mainHand: BOW
+name: $reinforcementLevel &cDrone R-1
+normalizedCombat: true
+powers:
+- attack_weakness.yml
+classLoot: false

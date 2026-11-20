@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Expedition Leggings'
+material: IRON_LEGGINGS
+level: 40
+lore:
+- '&fThe perfect companion when you'
+- '&fare out there expeditioning.'
+enchantments:
+- DAMAGE_UNDEAD,4
+- PROTECTION_ENVIRONMENTAL,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

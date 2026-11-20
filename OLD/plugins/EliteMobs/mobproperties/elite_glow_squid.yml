@@ -1,0 +1,7 @@
+isEnabled: false
+entityType: GLOW_SQUID
+name: '&fLvl &2$level &fElite &2Glow Squid'
+deathMessages:
+- $player &cwas slain by $entity&c!
+baseDamageV2: 2.0
+behavior: basic_melee.lua

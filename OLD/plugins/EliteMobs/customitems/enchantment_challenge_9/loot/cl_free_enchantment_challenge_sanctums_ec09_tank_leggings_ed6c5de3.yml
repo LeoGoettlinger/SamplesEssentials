@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Double Glazing
+lore:
+- Two layers. Twice the fingerprints.
+classLootFamily: TANK_LEGGINGS

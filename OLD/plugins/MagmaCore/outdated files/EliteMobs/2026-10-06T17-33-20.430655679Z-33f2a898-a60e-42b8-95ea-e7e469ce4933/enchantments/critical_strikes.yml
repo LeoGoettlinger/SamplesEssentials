@@ -1,0 +1,8 @@
+name: Critical Strikes
+criticalHitPopup: '&5Critical Hit!'
+isEnabled: true
+maxLevelV2: 2
+value: 13.0
+isEnabledForProcedurallyGeneratedItems: true
+maxEnchantmentLevel: 3
+criticalHitColor: '&5'

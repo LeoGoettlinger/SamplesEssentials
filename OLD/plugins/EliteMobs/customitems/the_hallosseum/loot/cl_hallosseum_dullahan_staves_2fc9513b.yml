@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&4Wayside Mourner'
+lore:
+- '&4A staff found at the edge of the arena.'
+- '&4Someone had carved a farewell into it.'
+weaponType: STAVES

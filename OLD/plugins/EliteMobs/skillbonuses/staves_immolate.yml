@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&4Immolate'
+description:
+- '&7Fireballs deal bonus damage'
+- '&7to badly wounded enemies.'
+skillType: STAVES
+bonusType: CONDITIONAL
+unlockTier: 3
+baseValue: 0.45
+scalingPerLevel: 0.006
+displayMaterial: LAVA_BUCKET
+loreTemplates:
+- '&7Bonus: &f+$bonus% damage'
+- '&7Below &f$threshold%&7 health'
+formattedBonusTemplate: +$bonus% below $threshold% HP

@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Necromancer Sickle'
+material: NETHERITE_HOE
+level: 10
+lore:
+- '&cUsed to harvest souls and'
+- '&ccommand the undead. Reeks'
+- '&cof dark magic.'
+enchantments:
+- DAMAGE_ALL,5
+- SWEEPING_EDGE,2
+- DURABILITY,3
+itemType: unique
+scalability: scalable

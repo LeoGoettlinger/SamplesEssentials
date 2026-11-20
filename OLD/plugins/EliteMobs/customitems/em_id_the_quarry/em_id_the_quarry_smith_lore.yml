@@ -1,0 +1,16 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&fDwarven Singed Note'
+material: PAPER
+lore:
+- '&fDigging down was the correct decision.'
+- '&fThe quality of the ore from The Deep Mines'
+- '&fis exceptional. Curiously the ore is quite hot'
+- '&fto the touch. We will be able to craft'
+- '&fmasterwork tools with this ore. I will'
+- '&fbe giving the go ahead to keep digging further,'
+- '&fwho knows what other kind of deposits and or'
+- '&fveins we will be able to find further down.'
+scalability: scalable
+itemType: unique

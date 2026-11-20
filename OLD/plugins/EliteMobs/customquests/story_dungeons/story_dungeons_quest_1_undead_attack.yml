@@ -1,0 +1,56 @@
+isEnabled: true
+customObjectives:
+  Objective1:
+    amount: '1'
+    filename: the_climb_undead_beastmaster.yml
+    objectiveType: KILL_CUSTOM
+customRewards:
+- currencyAmount=100:amount=1:chance=1
+- filename=elite_scrap_tiny.yml:amount=1:chance=0.3
+- filename=elite_scrap_small.yml:amount=1:chance=0.2
+- filename=elite_scrap_medium.yml:amount=1:chance=0.1
+- filename=elite_scrap_large.yml:amount=1:chance=0.05
+- filename=elite_scrap_huge.yml:amount=1:chance=0.01
+- filename=enchanted_book_damage_all.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_arthropods.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_undead.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_environmental.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_explosions.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fall.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fire.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_projectile.yml:amount=1:chance=0.1
+- filename=story_dungeons_quest_1_helmet.yml:amount=1:chance=1.0
+questAcceptPermission: ''
+questLockoutPermission: elitequest.story_dungeons_quest_1_undead_attack.yml
+questLockoutMinutes: 10080
+name: '&2Undead Attack!'
+questLore:
+- Good to see you around and in one piece!
+- Excellent timing by the way.
+- We just had a distraught miner storm in, asking us for aid.
+- Apparently, their entire village has been overrun by the undead and they have lost
+  many villagers to the forces of evil.
+- And this doesn’t seem to be your regular bunch of evil brain dead undead either.
+- I have this uneasy feeling this might be a major threat that we aren’t aware of
+  yet.
+- Miner Regulus told us that some of the villagers were being taken alive and carried
+  away into the mines in the mountains.
+- Thankfully our ninety-nine-best guild member is available to help these poor folks.
+- That is you, by the way. Go to the village and cleanse it of its undead infestation.
+temporaryPermissions: []
+questAcceptDialog:
+- '&e[Wallitz]&f Oh, and make sure you keep an eye out for any clues or other information
+  that might confirm my suspicions.'
+- Just to be sure I will be sending in our smartest after you.
+- They will sweep the area and check the corpses to see what we are up against.
+- '&7Interact with the nearby &fMiner Regulus &7teleporter to start the quest.'
+questCompleteMessage:
+- '&e[Wallitz]&f Excellent work! I wouldn’t expect anything but the finest work from
+  one of our guild members! Our team is looking over the corpses of the undead and
+  trying to make sense of all of this. Your reports aren’t making me feel any better
+  about this since they only confirm my suspicions that there is more going on here.
+  Check in with me soon for more work!'
+- '&7&oI should talk to &e&oWallitz&7&o when I can.'
+questCompleteCommands: []
+turnInNPC: story_dungeons_quest_giver.yml
+questLevel: 0

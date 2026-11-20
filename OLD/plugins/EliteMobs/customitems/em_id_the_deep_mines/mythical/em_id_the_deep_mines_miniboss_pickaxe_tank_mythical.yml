@@ -1,0 +1,22 @@
+isEnabled: true
+name: '&d[Mythical] Shifting Pickaxe'
+material: NETHERITE_PICKAXE
+level: 45
+lore:
+- '&dEQUIP ME. I WILL GIVE HAPPINESS.'
+- '&dHOLD ME. I WILL GIVE FORTUNE.'
+- '&dGRIP ME. I WILL GIVE LUCK.'
+enchantments:
+- SILK_TOUCH,8
+- DIG_SPEED,5
+- WATER_WORKER,4
+- DURABILITY,3
+- MENDING,3
+- BINDING_CURSE,3
+- VANISHING_CURSE,3
+- elitemobs:loud_strikes,3
+potionEffects:
+- FAST_DIGGING,3,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

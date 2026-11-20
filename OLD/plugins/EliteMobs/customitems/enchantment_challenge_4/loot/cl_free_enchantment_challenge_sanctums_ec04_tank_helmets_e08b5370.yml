@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Head Fluff
+lore:
+- As fluffy as a cloud.
+classLootFamily: TANK_HELMETS

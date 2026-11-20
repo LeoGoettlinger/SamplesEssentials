@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Closed Gate Boots'
+lore:
+- '&7Their owner refused to take another step backwards.'
+classLootFamily: TANK_BOOTS

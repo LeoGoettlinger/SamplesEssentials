@@ -1,0 +1,16 @@
+isEnabled: true
+material: CROSSBOW
+name: '&cRocket Launcher'
+lore:
+- '&cWhoosh! Bang! Works every time.'
+enchantments:
+- MULTISHOT,1
+- QUICK_CHARGE,3
+- DURABILITY,3
+potionEffects:
+- LEVITATION,0,target,onHit
+- GLOWING,1,target,onHit
+dropWeight: dynamic
+itemType: unique
+scalability: scalable
+soulbound: true

@@ -1,0 +1,169 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 3900
+      scripts:
+      - RunScripts
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  RunScripts:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - CurseFire
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      wait: 4800
+      scripts:
+      - CurseFire2
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      wait: 9600
+      scripts:
+      - CurseFire3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      wait: 14400
+      scripts:
+      - CurseFire4
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      scripts:
+      - WarnFire
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CurseFire:
+    Actions:
+    - action: SET_ON_FIRE
+      duration: 30
+      repeatEvery: 100
+      times: 12
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cDeadly Miasma &7surrounds you! The source must be destroyed to
+        lift the burn effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CurseFire2:
+    Actions:
+    - action: SET_ON_FIRE
+      duration: 40
+      repeatEvery: 90
+      times: 13
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cDeadly Miasma &7surrounds you! The source must be destroyed to
+        lift the burn effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CurseFire3:
+    Actions:
+    - action: SET_ON_FIRE
+      duration: 50
+      repeatEvery: 80
+      times: 15
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cDeadly Miasma &7surrounds you! The source must be destroyed to
+        lift the burn effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CurseFire4:
+    Actions:
+    - action: SET_ON_FIRE
+      duration: 60
+      repeatEvery: 70
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cDeadly Miasma &7surrounds you! The source must be destroyed to
+        lift the burn effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

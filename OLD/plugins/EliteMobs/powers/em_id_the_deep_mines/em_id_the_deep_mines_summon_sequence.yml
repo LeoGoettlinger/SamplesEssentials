@@ -1,0 +1,432 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  'false':
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: POTION_EFFECT
+      wait: 5
+      potionEffectType: SLOW
+      amplifier: 99
+      duration: 20
+      Target:
+        targetType: SELF
+      repeatEvery: 19
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - slow
+    - action: POTION_EFFECT
+      wait: 5
+      potionEffectType: INVISIBILITY
+      amplifier: 99
+      duration: 20
+      Target:
+        targetType: SELF
+      repeatEvery: 19
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - slow
+    - action: TAG
+      tags:
+      - slow
+      Target:
+        targetType: SELF
+  'true':
+    Events:
+    - EliteMobTargetPlayerEvent
+    - EliteMobEnterCombatEvent
+    Actions:
+    - action: UNTAG
+      tags:
+      - slow
+      Target:
+        targetType: SELF
+    - action: RUN_SCRIPT
+      wait: 50
+      scripts:
+      - Trigger
+    - action: RUN_SCRIPT
+      wait: 10
+      scripts:
+      - Players
+    - action: SET_MOB_AI
+      bValue: false
+      duration: 350
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 1
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-3,0
+      Target:
+        targetType: SELF
+    - action: POTION_EFFECT
+      wait: 5
+      potionEffectType: INVISIBILITY
+      amplifier: 99
+      duration: 170
+      Target:
+        targetType: SELF
+    Cooldowns:
+      local: 99999
+      global: 1
+  Players:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 10
+      duration: 330
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+    - action: PUSH
+      vValue: 0,-5,0
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      repeatEvery: 1
+      times: 330
+    - action: MESSAGE
+      sValue: '&7You sense that something is terribly wrong... Your fear overwhelms
+        you.'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+    - action: MESSAGE
+      sValue: '&7Whatever this creature is, it is very powerful. Every fiber of your
+        being tells you that you need to run.'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+      wait: 250
+    - action: TITLE_MESSAGE
+      wait: 280
+      subtitle: '&cRUN!'
+      duration: 20
+      fadeIn: 5
+      fadeOut: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 33
+  Trigger:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - DrawCircle
+    - action: RUN_SCRIPT
+      wait: 20
+      scripts:
+      - DrawLine1
+    - action: RUN_SCRIPT
+      wait: 50
+      scripts:
+      - DrawLine2
+    - action: RUN_SCRIPT
+      wait: 80
+      scripts:
+      - DrawLine3
+    - action: RUN_SCRIPT
+      wait: 110
+      scripts:
+      - DrawLine4
+      - Summon
+    Cooldowns:
+      local: 99999
+      global: 1
+  DrawCircle:
+    Zone:
+      shape: CYLINDER
+      radius: 6
+      borderRadius: 5
+      height: 1
+      Target:
+        targetType: SELF_SPAWN
+    Actions:
+    - action: PLAY_SOUND
+      sValue: block.portal.ambient
+      Target:
+        targetType: SELF
+      repeatEvery: 50
+      times: 6
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 1.0
+      repeatEvery: 10
+      times: 31
+  DrawLine1:
+    Zone:
+      shape: TRANSLATING_RAY
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 1,0,-5
+      Target2:
+        targetType: SELF_SPAWN
+        offset: 1,0,-5
+      FinalTarget2:
+        targetType: SELF_SPAWN
+        offset: 1,0,1
+      animationDuration: 80
+      Target:
+        targetType: SELF_SPAWN
+        offset: 1,0,-5
+    Actions:
+    - action: PLAY_SOUND
+      sValue: block.bell.resonate
+      Target:
+        targetType: SELF
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1.0
+      repeatEvery: 5
+      times: 54
+  DrawLine2:
+    Zone:
+      shape: TRANSLATING_RAY
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: -1,0,5
+      Target2:
+        targetType: SELF_SPAWN
+        offset: -1,0,5
+      FinalTarget2:
+        targetType: SELF_SPAWN
+        offset: -1,0,-1
+      animationDuration: 80
+      Target:
+        targetType: SELF_SPAWN
+        offset: -1,0,5
+    Actions:
+    - action: PLAY_SOUND
+      sValue: block.bell.resonate
+      Target:
+        targetType: SELF
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1.0
+      repeatEvery: 5
+      times: 50
+  DrawLine3:
+    Zone:
+      shape: TRANSLATING_RAY
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 5,0,-1
+      Target2:
+        targetType: SELF_SPAWN
+        offset: 5,0,-1
+      FinalTarget2:
+        targetType: SELF_SPAWN
+        offset: -1,0,-1
+      animationDuration: 80
+      Target:
+        targetType: SELF_SPAWN
+        offset: 5,0,-1
+    Actions:
+    - action: PLAY_SOUND
+      sValue: block.bell.resonate
+      Target:
+        targetType: SELF
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1.0
+      repeatEvery: 5
+      times: 46
+  DrawLine4:
+    Zone:
+      shape: TRANSLATING_RAY
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: -5,0,1
+      Target2:
+        targetType: SELF_SPAWN
+        offset: -5,0,1
+      FinalTarget2:
+        targetType: SELF_SPAWN
+        offset: 1,0,1
+      animationDuration: 80
+      Target:
+        targetType: SELF_SPAWN
+        offset: -5,0,1
+    Actions:
+    - action: PLAY_SOUND
+      sValue: block.bell.resonate
+      Target:
+        targetType: SELF
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+      Target:
+        targetType: ZONE_FULL
+        coverage: 1.0
+      repeatEvery: 5
+      times: 40
+  Summon:
+    Actions:
+    - action: TELEPORT
+      wait: 1
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-2,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 10
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-1.9,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 20
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-1.8,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 30
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-1.7,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 40
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-1.6,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 50
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-1.5,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 60
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-1.4,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 70
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-1.3,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 80
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-1.2,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 90
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-1.1,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 100
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-1.0,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 110
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-0.9,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 120
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-0.8,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 130
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-0.7,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 140
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-0.6,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 150
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-0.5,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 160
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-0.4,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 170
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-0.3,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 180
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-0.2,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 190
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,-0.1,0
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      wait: 200
+      FinalTarget:
+        targetType: SELF_SPAWN
+        offset: 0,0,0
+      Target:
+        targetType: SELF
+# Generated with https://magmaguy.com/webapp/webapp.html !

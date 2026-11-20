@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&b[$difficulty] Frostbite Helmet'
+lore:
+- '&bOffers decent protection'
+- '&beven though taken from a corpse.'
+classLootFamily: DPS_HELMETS

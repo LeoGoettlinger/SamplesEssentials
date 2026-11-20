@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&c[$difficulty] Slimed Sword'
+lore:
+- '&cIt is kind of hard to grip it well.'

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&7Loose End'
+lore:
+- '&7One short rod beneath a pile of failed creations.'
+weaponType: WANDS

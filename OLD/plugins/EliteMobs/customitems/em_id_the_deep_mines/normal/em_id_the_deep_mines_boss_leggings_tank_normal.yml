@@ -1,0 +1,21 @@
+isEnabled: true
+name: '&c[Normal] Ember Leggings'
+material: NETHERITE_LEGGINGS
+level: 45
+lore:
+- '&cNot only are these fire and smoke'
+- '&cleggings fashionable but they also'
+- '&coffer great protection from the cold.'
+enchantments:
+- PROTECTION_PROJECTILE,6
+- PROTECTION_FALL,5
+- PROTECTION_FIRE,4
+- PROTECTION_EXPLOSIONS,3
+- PROTECTION_ENVIRONMENTAL,2
+- DURABILITY,1
+- elitemobs:loud_strikes,1
+potionEffects:
+- SLOW,1,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

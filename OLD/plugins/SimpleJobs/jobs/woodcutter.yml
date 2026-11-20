@@ -1,0 +1,99 @@
+# Woodcutter Job Configuration
+
+# Job Display Settings
+job:
+  name: "Woodcutter"
+  short-name: "WC"
+  icon: IRON_AXE
+  description:
+    - ""
+    - "&#FFFFFFChop down trees and collect leaves"
+    - "&#FFFFFFto earn money as a woodcutter!"
+    - ""
+    - "&#FFD700Earnings:"
+    - "&#FFFFFF► Logs: $2.0 - $3.0"
+    - "&#FFFFFF► Leaves: $0.5 - $1.0"
+    - ""
+    - "&#00FF00Click to view details!"
+
+# Payment Configuration
+# Format: MATERIAL: payment_amount
+payments:
+  # Oak
+  OAK_LOG: 2.0
+  STRIPPED_OAK_LOG: 2.5
+  OAK_WOOD: 2.0
+  STRIPPED_OAK_WOOD: 2.5
+  OAK_LEAVES: 0.5
+
+  # Spruce
+  SPRUCE_LOG: 2.0
+  STRIPPED_SPRUCE_LOG: 2.5
+  SPRUCE_WOOD: 2.0
+  STRIPPED_SPRUCE_WOOD: 2.5
+  SPRUCE_LEAVES: 0.5
+
+  # Birch
+  BIRCH_LOG: 2.0
+  STRIPPED_BIRCH_LOG: 2.5
+  BIRCH_WOOD: 2.0
+  STRIPPED_BIRCH_WOOD: 2.5
+  BIRCH_LEAVES: 0.5
+
+  # Jungle
+  JUNGLE_LOG: 2.5
+  STRIPPED_JUNGLE_LOG: 3.0
+  JUNGLE_WOOD: 2.5
+  STRIPPED_JUNGLE_WOOD: 3.0
+  JUNGLE_LEAVES: 0.5
+
+  # Acacia
+  ACACIA_LOG: 2.0
+  STRIPPED_ACACIA_LOG: 2.5
+  ACACIA_WOOD: 2.0
+  STRIPPED_ACACIA_WOOD: 2.5
+  ACACIA_LEAVES: 0.5
+
+  # Dark Oak
+  DARK_OAK_LOG: 2.5
+  STRIPPED_DARK_OAK_LOG: 3.0
+  DARK_OAK_WOOD: 2.5
+  STRIPPED_DARK_OAK_WOOD: 3.0
+  DARK_OAK_LEAVES: 0.5
+
+  # Mangrove
+  MANGROVE_LOG: 2.5
+  STRIPPED_MANGROVE_LOG: 3.0
+  MANGROVE_WOOD: 2.5
+  STRIPPED_MANGROVE_WOOD: 3.0
+  MANGROVE_LEAVES: 0.5
+  MANGROVE_ROOTS: 1.5
+  MUDDY_MANGROVE_ROOTS: 1.5
+
+  # Cherry
+  CHERRY_LOG: 2.5
+  STRIPPED_CHERRY_LOG: 3.0
+  CHERRY_WOOD: 2.5
+  STRIPPED_CHERRY_WOOD: 3.0
+  CHERRY_LEAVES: 0.5
+
+  # Crimson
+  CRIMSON_STEM: 3.0
+  STRIPPED_CRIMSON_STEM: 3.5
+  CRIMSON_HYPHAE: 3.0
+  STRIPPED_CRIMSON_HYPHAE: 3.5
+
+  # Warped
+  WARPED_STEM: 3.0
+  STRIPPED_WARPED_STEM: 3.5
+  WARPED_HYPHAE: 3.0
+  STRIPPED_WARPED_HYPHAE: 3.5
+
+  # Mushroom Blocks
+  BROWN_MUSHROOM_BLOCK: 1.0
+  RED_MUSHROOM_BLOCK: 1.0
+  MUSHROOM_STEM: 1.0
+
+  # Azalea
+  AZALEA_LEAVES: 0.75
+  FLOWERING_AZALEA_LEAVES: 0.75

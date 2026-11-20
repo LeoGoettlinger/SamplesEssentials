@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&2[Hard] Molded Tulpa'
+material: SHIELD
+level: 20
+lore:
+- '&2When you slew the Tulpa its remains turned into this.'
+- '&2Was it your desires that made it change its shape...'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_PROJECTILE,3
+- PROTECTION_EXPLOSIONS,2
+- elitemobs:loud_strikes,2
+potionEffects:
+- DAMAGE_RESISTANCE,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

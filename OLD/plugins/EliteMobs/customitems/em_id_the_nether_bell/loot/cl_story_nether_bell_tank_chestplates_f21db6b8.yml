@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Temple Doorplate'
+lore:
+- '&7The heavy front still bears the temple''s markings.'
+classLootFamily: TANK_CHESTPLATES

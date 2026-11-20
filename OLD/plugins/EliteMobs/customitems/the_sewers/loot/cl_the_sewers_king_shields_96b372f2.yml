@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&4Last Harbor'
+lore:
+- '&4A royal shield found facing the rising water.'

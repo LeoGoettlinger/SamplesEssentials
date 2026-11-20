@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Hard] Gel Helm'
+material: DIAMOND_HELMET
+level: 20
+lore:
+- '&2Does not offer much protection but it smells so good.'
+enchantments:
+- PROTECTION_EXPLOSIONS,3
+- PROTECTION_ENVIRONMENTAL,2
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

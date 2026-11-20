@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&c[$difficulty] Wizard Javelin'
+lore:
+- '&cA spear from the Wizard Five.'
+- '&cFive sets of initials crowd the grip.'

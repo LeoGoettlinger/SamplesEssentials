@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&4Last Watch Greaves'
+lore:
+- '&4Mud has dried around the heels.'
+- '&4The watch ended far from home.'
+classLootFamily: TANK_BOOTS

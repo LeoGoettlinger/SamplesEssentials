@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Procession Front'
+lore:
+- '&7The crest is polished where a hand once rested.'
+classLootFamily: DPS_CHESTPLATES

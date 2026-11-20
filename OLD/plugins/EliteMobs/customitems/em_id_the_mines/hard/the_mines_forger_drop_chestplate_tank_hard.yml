@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Hard] Meat Protector'
+material: DIAMOND_CHESTPLATE
+level: 20
+lore:
+- '&2Makes sure your squishy bits stay intact.'
+enchantments:
+- PROTECTION_PROJECTILE,5
+- PROTECTION_EXPLOSIONS,4
+- PROTECTION_ENVIRONMENTAL,3
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,19 @@
+isEnabled: true
+name: '&d[Normal] Master Armor'
+material: DIAMOND_CHESTPLATE
+level: 40
+lore:
+- '&dJust from a glance it is clear'
+- '&dthat this armor was made'
+- '&dby experienced hands.'
+enchantments:
+- PROTECTION_FIRE,4
+- PROTECTION_ENVIRONMENTAL,3
+- PROTECTION_FALL,2
+- elitemobs:loud_strikes,1
+- DURABILITY,1
+potionEffects:
+- DAMAGE_RESISTANCE,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

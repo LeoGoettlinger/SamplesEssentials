@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Extra Ribs
+lore:
+- A few spares never hurt.
+classLootFamily: TANK_CHESTPLATES

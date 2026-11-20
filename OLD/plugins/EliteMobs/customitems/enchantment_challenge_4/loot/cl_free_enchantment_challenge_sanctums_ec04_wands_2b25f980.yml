@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: Pocket Invocation
+lore:
+- The instructions are written very small.
+weaponType: WANDS

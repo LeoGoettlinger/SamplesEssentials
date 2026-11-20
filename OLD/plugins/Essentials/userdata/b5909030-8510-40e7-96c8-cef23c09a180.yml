@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 10.131.100.9
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1791465894035
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1791466991564
+  login: 1791465282817
+money: '0'
+last-account-name: Zorro0126
+logoutlocation:
+  world: f7b9d6a4-0776-481f-976b-15e3b76d6a75
+  world-name: PixelAttack
+  x: -9.426994344234576
+  y: 159.5
+  z: 1.9451899551668144
+  yaw: -2.0386962890625
+  pitch: 5.850146770477295
+lastlocation:
+  world: f7b9d6a4-0776-481f-976b-15e3b76d6a75
+  world-name: PixelAttack
+  x: 1.1911396661236302
+  y: 164.35594897914177
+  z: -14.561246441045482
+  yaw: 116.12884521484375
+  pitch: -26.700382232666016

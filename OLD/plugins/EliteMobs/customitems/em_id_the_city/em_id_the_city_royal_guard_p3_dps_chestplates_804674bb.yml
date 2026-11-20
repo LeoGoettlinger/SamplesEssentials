@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&e[$difficulty] Mastercraft Breastplate'
+lore:
+- '&eYou are not sure if you should wear this'
+- '&eor display it on the wall of your house.'
+classLootFamily: DPS_CHESTPLATES

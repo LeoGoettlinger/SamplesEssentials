@@ -1,0 +1,60 @@
+# /armee commands
+command /armee [<text>]:
+    permission: admin.armee
+    permission message: &cDu bist nicht befugt, die Armee zu befehligen!
+    trigger:
+        if arg-1 is "create":
+            # Löscht alte Wardens, falls vorhanden
+            loop {armee_mobs::%uuid of player%::*}:
+                clear loop-value
+            delete {armee_mobs::%uuid of player%::*}
+            
+            set {armee_active::%uuid of player%} to true
+            send "&a&l[ARMEE] &eDeine Armee aus 10 gewaltigen Wardens wurde beschworen!" to player
+            
+            # Spawnt 10 Wardens um den Spieler
+            loop 10 times:
+                spawn 1 warden at location of player
+                set {_w} to last spawned warden
+                
+                # Effekte für Dia-Rüstung (Resistance) & Schwerter (Strength)
+                apply resistance 3 to {_w} for 999 days
+                apply strength 3 to {_w} for 999 days
+                set display name of {_w} to "&3&lWarden-Krieger von %player%"
+                
+                # Speichert die Mobs
+                add {_w} to {armee_mobs::%uuid of player%::*}
+                
+            broadcast "&c&l[WARNHINWEIS] &e%player% &7hat eine Armee aus 10 mächtigen Wardens gerufen!"
+
+        else if arg-1 is "tp" or "teleport":
+            if {armee_active::%uuid of player%} is set:
+                loop {armee_mobs::%uuid of player%::*}:
+                    teleport loop-value to location of player
+                send "&a&l[ARMEE] &eAlle deine 10 Wardens wurden zu dir teleportiert!" to player
+            else:
+                send "&cDu hast aktuell keine aktive Armee!" to player
+
+        else if arg-1 is "dismiss" or "delete":
+            if {armee_active::%uuid of player%} is set:
+                loop {armee_mobs::%uuid of player%::*}:
+                    kill loop-value
+                delete {armee_mobs::%uuid of player%::*}
+                delete {armee_active::%uuid of player%}
+                send "&e&l[ARMEE] &7Deine Warden-Armee wurde aufgelöst." to player
+            else:
+                send "&cDu hast aktuell keine aktive Armee!" to player
+
+        else:
+            send "&e=== &c&lWARDEN-ARMEE BEFEHLE &e===" to player
+            send "&e/armee create &7- Beschwört deine 10 Wardens" to player
+            send "&e/armee tp &7- Teleportiert alle Wardens sofort zu dir" to player
+            send "&e/armee dismiss &7- Löscht deine Wardens wieder" to player
+
+# Wenn du einen Spieler schlägst, greifen alle deine Wardens das Ziel an
+on damage:
+    if attacker is a player:
+        if {armee_active::%uuid of attacker%} is set:
+            if victim is not attacker:
+                loop {armee_mobs::%uuid of attacker%::*}:
+                    set target of loop-value to victim

@@ -1,0 +1,15 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&fDwarven Note'
+material: PAPER
+lore:
+- '&fIt is too late. There is nothing we can do.'
+- '&fI will try and hang on to the little sanity'
+- '&fthat I have left. There is the easy way out,'
+- '&fbut that was never an option for the likes'
+- '&fof us. I shall stay here and hold, protect'
+- '&fthe city and what is left of our pride until'
+- '&fthere is only dust.'
+scalability: scalable
+itemType: unique

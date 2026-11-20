@@ -1,0 +1,87 @@
+id: Common
+disabled: false
+weight: 100
+item:
+  material: light_gray_concrete_powder
+format: <gray>{name}
+worth-multiplier: 0.1
+broadcast:
+  enabled: false
+  only-rods: false
+  range: -1
+catch-type: both
+sort-index: 2
+size:
+  minSize: 1
+  maxSize: 30
+
+fish:
+  Cod:
+    weight: 15
+  Atlantic Cod:
+    weight: 10
+    requirements:
+      biome:
+        - COLD_OCEAN
+        - DEEP_COLD_OCEAN
+        - DEEP_LUKEWARM_OCEAN
+        - DEEP_OCEAN
+        - LUKEWARM_OCEAN
+        - OCEAN
+        - WARM_OCEAN
+  Rockfish:
+    weight: 10
+  Tuna:
+    weight: 8
+  Mackerel:
+    weight: 10
+  Spanish Mackerel:
+    weight: 5
+    item:
+      lore:
+        - <gray>Hola!
+  Salmon:
+    weight: 8
+    item:
+      material: SALMON
+  Pufferfish:
+    weight: 5
+    item:
+      material: PUFFERFISH
+    effect: POISON:1:2
+  Tropical Fish:
+    weight: 5
+    item:
+      material: TROPICAL_FISH
+  Red Mullet:
+    weight: 8
+  Anchovy:
+    weight: 10
+  Haddock:
+    weight: 8
+  Bluefish:
+    weight: 8
+  Carp:
+    weight: 5
+  Silver Carp:
+    weight: 3
+  Grass Carp:
+    weight: 3
+  Koi Carp:
+    weight: 2
+  Black Carp:
+    weight: 2
+  Lemon Shark:
+    weight: 3
+  Sea Snail:
+    weight: 8
+    item:
+      material: NAUTILUS_SHELL
+  Eel:
+    weight: 3
+  Tadpole:
+    weight: 8
+  Seagull Feather:
+    weight: 2
+    item:
+      material: FEATHER

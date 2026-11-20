@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&7Stone Crusher [Normal]'
+material: MACE
+level: 25
+lore:
+- '&cShatter stone with ancient might!'
+enchantments:
+- DAMAGE_ALL,5
+- KNOCKBACK,2
+- PROTECTION_ENVIRONMENTAL,2
+scalability: scalable
+itemType: unique
+soulbound: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

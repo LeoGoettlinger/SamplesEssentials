@@ -1,0 +1,8 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:small_jump_boost"
+  ],
+  "settings": {}
+}

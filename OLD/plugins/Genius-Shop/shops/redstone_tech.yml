@@ -1,0 +1,265 @@
+gui-name: '&cRedstone & Tech'
+rows: 6
+permission: ''
+items:
+- material: REDSTONE
+  name: '&cRedstone Dust'
+  price: 70
+  sell-price: 49
+  amount: 16
+  lore:
+  - '&7Basic redstone wiring'
+- material: REDSTONE_BLOCK
+  name: '&cRedstone Block'
+  price: 650
+  amount: 8
+  lore:
+  - '&79 Redstone = 1 Block'
+  - '&9Preis pro Stack'
+  - '&89 Redstone = 1 Block'
+  sell-price: 455
+- material: REDSTONE_LAMP
+  name: '&6Redstone Lamp'
+  price: 150
+  amount: 8
+  lore:
+  - '&7Activates with signal'
+  sell-price: 105
+- material: REDSTONE_TORCH
+  name: '&cRedstone Torch'
+  price: 15
+  amount: 16
+  lore:
+  - '&7Inverting signal source'
+  sell-price: 10
+- material: REPEATER
+  name: '&cRepeater'
+  price: 60
+  amount: 8
+  lore:
+  - '&7Signal delay & direction'
+  sell-price: 42
+- material: COMPARATOR
+  name: '&cComparator'
+  price: 80
+  amount: 8
+  lore:
+  - '&7Signal comparison & measurement'
+  sell-price: 56
+- material: TARGET
+  name: '&eTarget'
+  price: 60
+  amount: 8
+  lore:
+  - '&7Signal strength indicator'
+  sell-price: 42
+- material: PISTON
+  name: '&7Piston'
+  price: 80
+  amount: 8
+  lore:
+  - '&7Pushes blocks'
+  sell-price: 56
+- material: STICKY_PISTON
+  name: '&aSticky Piston'
+  price: 120
+  amount: 8
+  lore:
+  - '&7Pushes and pulls blocks'
+  sell-price: 84
+- material: OBSERVER
+  name: '&8Observer'
+  price: 100
+  amount: 8
+  lore:
+  - '&7Detects block changes'
+  sell-price: 70
+- material: HOPPER
+  name: '&7Hopper'
+  price: 250
+  amount: 4
+  lore:
+  - '&7Item transfer & filtering'
+  sell-price: 175
+- material: DROPPER
+  name: '&7Dropper'
+  price: 80
+  amount: 8
+  lore:
+  - '&7Drops items'
+  sell-price: 56
+- material: DISPENSER
+  name: '&7Dispenser'
+  price: 80
+  amount: 8
+  lore:
+  - '&7Shoots items & projectiles'
+  sell-price: 56
+- material: CRAFTER
+  name: '&eCrafter'
+  price: 300
+  amount: 4
+  lore:
+  - '&7Auto-crafts items'
+  sell-price: 210
+- material: LEVER
+  name: '&fLever'
+  price: 20
+  amount: 8
+  lore:
+  - '&7Toggle redstone signal'
+  sell-price: 14
+- material: STONE_BUTTON
+  name: '&7Stone Button'
+  price: 15
+  amount: 8
+  lore:
+  - '&7Momentary signal'
+  sell-price: 10
+- material: OAK_BUTTON
+  name: '&6Oak Button'
+  price: 10
+  amount: 8
+  lore:
+  - '&7Momentary signal'
+  sell-price: 7
+- material: TRIPWIRE_HOOK
+  name: '&fTripwire Hook'
+  price: 50
+  amount: 8
+  lore:
+  - '&7Entity detection wire'
+  sell-price: 35
+- material: DAYLIGHT_DETECTOR
+  name: '&eDaylight Detector'
+  price: 80
+  amount: 4
+  lore:
+  - '&7Detects light level'
+  sell-price: 56
+- material: SCULK_SENSOR
+  name: '&9Sculk Sensor'
+  price: 120
+  sell-price: 84
+  amount: 4
+  lore:
+  - '&7Detects vibrations'
+- material: CALIBRATED_SCULK_SENSOR
+  name: '&9Calibrated Sculk Sensor'
+  price: 200
+  amount: 4
+  lore:
+  - '&7Filtered vibration detection'
+  sell-price: 140
+- material: POWERED_RAIL
+  name: '&6Powered Rail'
+  price: 80
+  amount: 8
+  lore:
+  - '&7Accelerates minecarts'
+  sell-price: 56
+- material: DETECTOR_RAIL
+  name: '&eDetector Rail'
+  price: 60
+  amount: 8
+  lore:
+  - '&7Detects passing minecarts'
+  sell-price: 42
+- material: ACTIVATOR_RAIL
+  name: '&cActivator Rail'
+  price: 80
+  amount: 8
+  lore:
+  - '&7Activates minecart entities'
+  sell-price: 56
+- material: RAIL
+  name: '&7Rail'
+  price: 20
+  amount: 32
+  lore:
+  - '&7Basic track'
+  sell-price: 14
+- material: MINECART
+  name: '&fMinecart'
+  price: 100
+  amount: 1
+  lore:
+  - '&7Ride the rails'
+  sell-price: 70
+- material: CHEST_MINECART
+  name: '&eChest Minecart'
+  price: 150
+  amount: 1
+  lore:
+  - '&7Mobile item storage'
+  sell-price: 105
+- material: HOPPER_MINECART
+  name: '&7Hopper Minecart'
+  price: 300
+  amount: 1
+  lore:
+  - '&7Auto-pickup items on track'
+  sell-price: 210
+- material: TNT_MINECART
+  name: '&cTNT Minecart'
+  price: 250
+  amount: 1
+  lore:
+  - '&7Explodes on activator rail'
+  sell-price: 175
+- material: FURNACE_MINECART
+  name: '&6Furnace Minecart'
+  price: 120
+  amount: 1
+  lore:
+  - '&7Self-propelled minecart'
+  sell-price: 84
+- material: HEAVY_WEIGHTED_PRESSURE_PLATE
+  name: '&7Heavy Pressure Plate'
+  price: 60
+  amount: 8
+  lore:
+  - '&7Gold - measures entity count'
+  sell-price: 42
+- material: LIGHT_WEIGHTED_PRESSURE_PLATE
+  name: '&eLight Pressure Plate'
+  price: 40
+  amount: 8
+  lore:
+  - '&7Iron - measures entity count'
+  sell-price: 28
+- material: STONE_PRESSURE_PLATE
+  name: '&8Stone Pressure Plate'
+  price: 15
+  amount: 8
+  lore:
+  - '&7Detects mobs & players'
+  sell-price: 10
+- material: IRON_TRAPDOOR
+  name: '&7Iron Trapdoor'
+  price: 80
+  amount: 4
+  lore:
+  - '&7Redstone-controlled door'
+  sell-price: 56
+- material: NOTE_BLOCK
+  name: '&eNote Block'
+  price: 120
+  amount: 8
+  lore:
+  - '&7Plays musical notes'
+  sell-price: 84
+- material: JUKEBOX
+  name: '&dJukebox'
+  price: 200
+  amount: 4
+  lore:
+  - '&7Play music discs'
+  sell-price: 140
+- material: BELL
+  name: '&eBell'
+  price: 300
+  amount: 1
+  lore:
+  - '&7Rings for raid warnings'
+  sell-price: 210

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&cSnowbound Sentinel'
+lore:
+- '&7A red buckle has frozen shut.'
+- '&7Santa left a spare in the sleigh.'
+classLootFamily: TANK_BOOTS

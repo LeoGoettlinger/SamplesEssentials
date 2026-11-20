@@ -1,0 +1,23 @@
+isEnabled: true
+material: DIAMOND_SWORD
+name: '&0Cursed Sword'
+lore:
+- '&0&kChtulhu is the one true God.'
+- '&0&kThis world is but a lamb'
+- '&0&kto the slaughter'
+enchantments:
+- DAMAGE_ALL,7
+- DAMAGE_UNDEAD,6
+- DURABILITY,3
+- KNOCKBACK,2
+- FIRE_ASPECT,3
+- LOOT_BONUS_MOBS,6
+- elitemobs:critical_strikes,3
+potionEffects:
+- POISON,1,target,onHit
+- GLOWING,1,target,onHit
+- NIGHT_VISION,1,self,continuous
+- WITHER,1,target,onHit
+itemType: unique
+scalability: scalable
+customModelID: 3117302

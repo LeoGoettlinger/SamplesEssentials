@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Party Crasher
+lore:
+- The guests are not impressed.
+classLootFamily: DPS_CHESTPLATES

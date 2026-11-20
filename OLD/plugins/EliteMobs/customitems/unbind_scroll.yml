@@ -1,0 +1,12 @@
+isEnabled: true
+material: PAPER
+name: '&5Unbind Scroll'
+lore:
+- '&5Allows users to unbind one'
+- '&5soulbound item at the Unbinder!'
+- '&5Use wisely!'
+enchantments: []
+potionEffects: []
+itemType: UNIQUE
+consumable:
+  type: unbind

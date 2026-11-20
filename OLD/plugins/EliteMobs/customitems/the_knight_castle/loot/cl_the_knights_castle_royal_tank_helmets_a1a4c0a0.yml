@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&dCharlemagne''s Last Visor'
+lore:
+- '&dThe royal smith riveted the crown in place.'
+classLootFamily: TANK_HELMETS

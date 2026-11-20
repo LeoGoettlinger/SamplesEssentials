@@ -1,0 +1,8 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:breathe_under_water"
+  ],
+  "settings": {}
+}

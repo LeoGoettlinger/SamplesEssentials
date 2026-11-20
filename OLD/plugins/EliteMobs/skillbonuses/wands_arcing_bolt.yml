@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&9Arcing Bolt'
+description:
+- '&7Missiles can arc to another'
+- '&7nearby enemy.'
+skillType: WANDS
+bonusType: PROC
+unlockTier: 2
+baseValue: 0.55
+scalingPerLevel: 0.005
+procChance: 0.15
+displayMaterial: LIGHTNING_ROD
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Arc damage: &f$arcPercent% of the hit'
+- '&8Needs an enemy within 5 blocks'
+formattedBonusTemplate: $arcPercent% arc

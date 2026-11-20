@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Uninvited Trousers
+lore:
+- Nobody remembers asking for these.
+classLootFamily: DPS_LEGGINGS

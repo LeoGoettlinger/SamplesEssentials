@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Infested Boots'
+material: IRON_BOOTS
+level: 50
+lore:
+- '&fThe mold inside the boots makes them quite comfortable to wear.'
+enchantments:
+- DAMAGE_ALL,7
+- DAMAGE_UNDEAD,4
+- DURABILITY,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

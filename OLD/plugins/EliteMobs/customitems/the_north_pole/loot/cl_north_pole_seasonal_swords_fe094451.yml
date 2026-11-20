@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&aRibbon Cutter'
+lore:
+- '&7The workshop ran out of scissors.'
+- '&7Nobody volunteered to fetch more.'

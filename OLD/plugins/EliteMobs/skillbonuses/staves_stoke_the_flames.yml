@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&cStoke the Flames'
+description:
+- '&7Each fireball that hits builds'
+- '&7heat for the next. Stacks up to 5x.'
+skillType: STAVES
+bonusType: STACKING
+unlockTier: 2
+baseValue: 1.0
+scalingPerLevel: 6.0E-4
+maxStacks: 5
+stackBonus: 0.05
+displayMaterial: CAMPFIRE
+loreTemplates:
+- '&7Per stack: &f+$bonusPerStack% fireball damage'
+- '&7Max stacks: &f$maxStacks'
+- '&8Fades after 6s without a fireball hit'
+formattedBonusTemplate: +$bonusPerStack% per stack (max $maxStacks)

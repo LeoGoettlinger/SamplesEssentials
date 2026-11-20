@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&4Pallbearer Guards'
+lore:
+- '&4Scratches mark where a coffin rested.'
+- '&4Its weight is gone.'
+classLootFamily: TANK_LEGGINGS

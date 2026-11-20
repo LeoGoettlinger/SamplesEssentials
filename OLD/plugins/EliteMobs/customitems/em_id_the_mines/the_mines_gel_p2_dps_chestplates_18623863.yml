@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&2[$difficulty] Gel Armor'
+lore:
+- '&2It weighs more than you thought it would.'
+classLootFamily: DPS_CHESTPLATES

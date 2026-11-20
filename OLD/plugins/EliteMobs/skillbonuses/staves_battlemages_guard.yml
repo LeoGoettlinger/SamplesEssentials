@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&6Battlemage''s Guard'
+description:
+- '&7Take less damage from nearby'
+- '&7enemies while holding a staff.'
+skillType: STAVES
+bonusType: PASSIVE
+unlockTier: 1
+baseValue: 0.1
+scalingPerLevel: 0.001
+displayMaterial: SHIELD
+loreTemplates:
+- '&7Damage taken: &f-$reduction%'
+- '&7From enemies within 4 blocks'
+formattedBonusTemplate: -$reduction% damage from nearby enemies

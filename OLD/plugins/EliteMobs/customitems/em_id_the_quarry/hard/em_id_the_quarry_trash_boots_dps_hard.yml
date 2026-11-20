@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Hard] Expedition Boots'
+material: IRON_BOOTS
+level: 40
+lore:
+- '&fYour feet will appreciate these.'
+enchantments:
+- DAMAGE_UNDEAD,2
+- PROTECTION_ENVIRONMENTAL,2
+- DAMAGE_ALL,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

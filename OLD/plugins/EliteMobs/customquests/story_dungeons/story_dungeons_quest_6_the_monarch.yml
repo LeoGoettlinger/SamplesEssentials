@@ -1,0 +1,55 @@
+isEnabled: true
+customObjectives:
+  Objective1:
+    amount: '1'
+    filename: the_palace_old_stone_king_p1.yml
+    objectiveType: KILL_CUSTOM
+customRewards:
+- currencyAmount=350:amount=1:chance=1
+- filename=elite_scrap_tiny.yml:amount=1:chance=0.3
+- filename=elite_scrap_small.yml:amount=1:chance=0.2
+- filename=elite_scrap_medium.yml:amount=1:chance=0.1
+- filename=elite_scrap_large.yml:amount=1:chance=0.05
+- filename=elite_scrap_huge.yml:amount=1:chance=0.01
+- filename=enchanted_book_damage_all.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_arthropods.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_undead.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_environmental.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_explosions.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fall.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fire.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_projectile.yml:amount=1:chance=0.1
+- filename=story_dungeons_quest_6_bow.yml:amount=1:chance=1.0
+questAcceptPermission: elitequest.story_dungeons_quest_5_the_underground.yml
+questLockoutPermission: elitequest.story_dungeons_quest_6_the_monarch.yml
+questLockoutMinutes: 10080
+name: '&2The Monarch!'
+questLore:
+- I have some interesting information to share with you.
+- We have taken a closer look at the dwarves you were fighting.
+- Judging by their armor they are as old as the city itself.
+- And as you have noticed they are under heavy corruption.
+- We have concluded that whatever gave them this eternal life also caused the corruption.
+- The corruption was most likely caused by whatever was trying to mentally dominate
+  them or change them.
+- Dwarves are quite tough mentally, living underground comes with its benefits, I
+  guess.
+- We need to find the source of this corruption. Anything that is that powerful must
+  be destroyed.
+- The dwarves must have dug too deep and reached a Nether portal…
+- Well let’s not be too grim about this, you don’t get to visit the Nether every day.
+temporaryPermissions: []
+questAcceptDialog:
+- '&e[Wallitz]&f How exciting! Your next mission is to secure the palace and ensure
+  safe passage for our guild members to the next area.'
+- '&7&oI feel like this is gonna be a tough one...'
+- '&7Interact with the nearby &fRoyal Guard Sven &7teleporter to start the quest.'
+questCompleteMessage:
+- '&e[Wallitz]&f Has it been done? Excellent. We are not sure exactly what we should
+  do with the city and the palace after all of this is over. Do you know any people
+  that prefer staying deep underground in large dark caves? Anyway, the rest of the
+  guild members are moving ahead and will scout the next area.'
+- '&7&oI wonder what the dwarves managed to find all the way in the depths...'
+questCompleteCommands: []
+turnInNPC: story_dungeons_quest_giver.yml
+QuestLevel: 0

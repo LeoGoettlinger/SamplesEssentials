@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Angular Striders
+lore:
+- No room for cutting corners.
+classLootFamily: DPS_LEGGINGS

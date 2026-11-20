@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Beastmaster Lance'
+material: NETHERITE_SPEAR
+level: 10
+lore:
+- '&cUsed to control wild beasts'
+- '&cand unruly undead. Still'
+- '&cdripping with ancient blood.'
+enchantments:
+- IMPALING,5
+- DAMAGE_ALL,6
+- DURABILITY,4
+itemType: unique
+scalability: scalable

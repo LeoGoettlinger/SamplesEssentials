@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&0The Fourth Whisper'
+lore:
+- '&0&kThree words are written on the grip.'
+- '&0&kThe cultist refused to write the last.'
+weaponType: WANDS

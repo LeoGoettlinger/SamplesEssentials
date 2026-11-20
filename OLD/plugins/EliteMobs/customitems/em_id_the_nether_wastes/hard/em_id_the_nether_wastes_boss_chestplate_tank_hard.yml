@@ -1,0 +1,21 @@
+isEnabled: true
+name: '&d[Hard] Nether Infused Armor'
+material: NETHERITE_CHESTPLATE
+level: 50
+lore:
+- '&dJust by looking at this armor, you can tell that its craftsman'
+- '&dhas meticulously poured their heart and soul into every detail,'
+- '&dshowcasing an extraordinary level of dedication and skill.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,8
+- PROTECTION_PROJECTILE,6
+- PROTECTION_EXPLOSIONS,5
+- PROTECTION_FIRE,4
+- PROTECTION_FALL,3
+- DURABILITY,2
+- elitemobs:loud_strikes,2
+potionEffects:
+- REGENERATION,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

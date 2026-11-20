@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Burrow Bumper
+lore:
+- For all those low tunnels.
+classLootFamily: TANK_HELMETS

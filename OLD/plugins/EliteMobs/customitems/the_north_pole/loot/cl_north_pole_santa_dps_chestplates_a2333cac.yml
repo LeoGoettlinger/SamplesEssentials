@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&cScarlet Delivery Coat'
+lore:
+- '&7Every clasp bears a different address.'
+- '&7None are close to home.'
+classLootFamily: DPS_CHESTPLATES

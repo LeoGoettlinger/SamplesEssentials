@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&5Eventide Reaper'
+lore:
+- '&5Darkness gathers along the inner curve.'
+- '&5The handle remains cold and solid.'

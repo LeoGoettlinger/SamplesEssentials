@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&cSafety Marshal Plate'
+lore:
+- '&cThe safety instructions are scratched inside.'
+- '&cSparky clearly never read them.'
+classLootFamily: TANK_CHESTPLATES

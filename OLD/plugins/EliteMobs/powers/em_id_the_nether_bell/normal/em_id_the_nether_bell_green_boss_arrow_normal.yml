@@ -1,0 +1,112 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  PillarAndLaunch:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: PLACE_BLOCK
+      wait: 80
+      Target:
+        targetType: NEARBY_PLAYERS
+        offset: 1,0,0
+        range: 40
+      material: QUARTZ_BLOCK
+      duration: 100
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLACE_BLOCK
+      wait: 80
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        offset: 1,1,0
+      material: QUARTZ_BLOCK
+      duration: 100
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLACE_BLOCK
+      wait: 80
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+        offset: 1,2,0
+      material: QUARTZ_BLOCK
+      duration: 100
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: RUN_SCRIPT
+      wait: 80
+      scripts:
+      - LaunchBoss
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    Cooldowns:
+      local: 333
+      global: 60
+  LaunchBoss:
+    Actions:
+    - action: PUSH
+      Target:
+        targetType: SELF
+      vValue: 0,1.6,0
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: SUMMON_ENTITY
+      Target:
+        targetType: SELF
+      sValue: ARROW
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          range: 40
+        normalize: true
+        multiplier: 2.0
+      repeatEvery: 3
+      times: 17
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLAY_SOUND
+      Target:
+        targetType: SELF
+      sValue: minecraft:entity.arrow.shoot
+      volume: 0.1
+      repeatEvery: 3
+      times: 17
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      Target:
+        targetType: SELF
+      potionEffectType: SLOW_FALLING
+      duration: 100
+      amplifier: 10
+      wait: 12
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF

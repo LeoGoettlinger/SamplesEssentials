@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&e[Hard] Glass Greaves'
+material: DIAMOND_BOOTS
+level: 50
+lore:
+- '&eThe greaves produce a lovely crystalline sound with'
+- '&eeach step you take, creating an enchanting melody.'
+enchantments:
+- DAMAGE_UNDEAD,6
+- DAMAGE_ARTHROPODS,4
+- DAMAGE_ALL,3
+- DURABILITY,2
+potionEffects:
+- SLOW,0,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

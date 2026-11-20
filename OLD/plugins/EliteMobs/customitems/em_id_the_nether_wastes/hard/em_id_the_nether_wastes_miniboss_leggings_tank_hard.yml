@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&e[Hard] Glass Armored Pants'
+material: DIAMOND_LEGGINGS
+level: 50
+lore:
+- '&eThe pants gleam brilliantly in the light, but maintaining'
+- '&etheir shine requires frequent polishing.'
+enchantments:
+- PROTECTION_FALL,6
+- PROTECTION_FIRE,4
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,2
+- elitemobs:loud_strikes,2
+potionEffects:
+- SATURATION,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

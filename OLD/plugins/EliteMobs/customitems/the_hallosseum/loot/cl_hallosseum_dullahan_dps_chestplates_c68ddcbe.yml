@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&4Wakecoat'
+lore:
+- '&4The clasps are polished for a funeral.'
+- '&4Nobody thought to say whose.'
+classLootFamily: DPS_CHESTPLATES

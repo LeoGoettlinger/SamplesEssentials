@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&2Tunnelrunner Cap'
+lore:
+- '&2Low ceilings have worn the crown smooth.'
+classLootFamily: DPS_HELMETS

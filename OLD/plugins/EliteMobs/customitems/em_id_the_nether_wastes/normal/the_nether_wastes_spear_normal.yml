@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Shroud Piercer'
+material: NETHERITE_SPEAR
+level: 50
+lore:
+- '&cA spear wrapped in shadowy'
+- '&cobsidian. It pierces through'
+- '&cdefenses like smoke.'
+enchantments:
+- IMPALING,5
+- DAMAGE_ALL,5
+- DURABILITY,5
+itemType: unique
+scalability: scalable

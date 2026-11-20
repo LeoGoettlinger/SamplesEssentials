@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: Smol Bunger
+lore:
+- Fits pocket. Mind pocket.
+weaponType: WANDS

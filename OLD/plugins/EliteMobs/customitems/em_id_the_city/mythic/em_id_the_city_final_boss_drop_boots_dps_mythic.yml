@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&e[Mythical] Mastercraft Greaves'
+material: NETHERITE_BOOTS
+level: 30
+lore:
+- '&eThese boots were crafted with'
+- '&ehigh precision and care.'
+enchantments:
+- DAMAGE_ALL,10
+- DAMAGE_ARTHROPODS,6
+- PROTECTION_ENVIRONMENTAL,5
+potionEffects:
+- ABSORPTION,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

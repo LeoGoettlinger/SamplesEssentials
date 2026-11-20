@@ -1,0 +1,39 @@
+isEnabled: true
+name: '&6The Goblin Kingdom'
+customInfo:
+- '&fAn instanced goblin realm with escalating encounter mechanics.'
+- '&aEasy &7uses core attacks, &eMedium &7adds mechanics, and &cHard &7enables full
+  kits.'
+- '&6An EliteMobs dungeon by Nightbreak Studios.'
+dungeonSizeCategory: REALM
+worldName: GoblinKingdom_vf
+environment: NORMAL
+protect: true
+playerInfo: |-
+  &6Three difficulty modes
+  &aEasy &7- core mechanics
+  &eMedium &7- expanded mechanics
+  &cHard &7- complete boss power sets
+regionEnterMessage: '&8[EM] &8You have entered an instanced Goblin Kingdom.'
+regionLeaveMessage: '&8[EM] &8You have left the Goblin Kingdom.'
+hasCustomModels: true
+startLocation: GoblinKingdom_vf,687.5,65.0,980.5,0,0
+teleportLocation: GoblinKingdom_vf,687.5,65.0,989.5,0,0
+dungeonObjectives:
+- filename=GK_boss_snickersnap.yml
+- filename=GK_boss_grubgulp.yml
+- filename=GK_boss_boomfizzle.yml
+contentType: INSTANCED_DUNGEON
+dungeonConfigFolderName: goblin_kingdom
+contentLevel: 1
+difficulties:
+- name: Easy
+  id: easy
+- name: Medium
+  id: medium
+- name: Hard
+  id: hard
+setupMenuDescription:
+- '&2Instanced realm for 1-5 players.'
+- '&7Boss powers scale cumulatively by difficulty.'
+dungeonLockoutMinutes: 4320

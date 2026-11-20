@@ -1,0 +1,14 @@
+isEnabled: true
+material: DIAMOND_SHOVEL
+name: '&e[Mythical] Void Whisperer'
+lore:
+- '&eThe earth bends to the will'
+- '&eof this void tool.'
+enchantments:
+- DURABILITY,3
+- MENDING,1
+- EFFICIENCY,5
+potionEffects:
+- FAST_DIGGING,3,self,continuous
+itemType: unique
+scalability: scalable

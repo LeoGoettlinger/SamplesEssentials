@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&d[Mythical] Master Boots'
+material: DIAMOND_BOOTS
+level: 40
+lore:
+- '&dGreat care has been put into the'
+- '&dmaking of these exquisite boots.'
+enchantments:
+- PROTECTION_FALL,6
+- PROTECTION_EXPLOSIONS,5
+- PROTECTION_FIRE,4
+- elitemobs:loud_strikes,3
+- DURABILITY,3
+potionEffects:
+- FIRE_RESISTANCE,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

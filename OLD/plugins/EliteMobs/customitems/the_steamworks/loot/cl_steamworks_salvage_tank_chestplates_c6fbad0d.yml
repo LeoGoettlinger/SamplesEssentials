@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&bReinforced Netherite Plate [$difficulty]'
+lore:
+- '&bSome straps and some padding and you'
+- '&bgot yourself a fine chestplate.'
+classLootFamily: TANK_CHESTPLATES

@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&7Last Watch'
+lore:
+- '&7A guard''s name is cut into the worn pommel.'

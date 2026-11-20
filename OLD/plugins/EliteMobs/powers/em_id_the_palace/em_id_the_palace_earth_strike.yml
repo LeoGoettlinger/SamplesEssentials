@@ -1,0 +1,81 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - Fly
+      - Strike
+    - action: SET_MOB_AWARE
+      bValue: false
+      duration: 32
+      Target:
+        targetType: SELF
+    Cooldowns:
+      local: 420
+      global: 10
+  Fly:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: LEVITATION
+      amplifier: 3
+      duration: 12
+      Target:
+        targetType: SELF
+    - action: PUSH
+      vValue: 0,4,0
+      Target:
+        targetType: SELF
+      wait: 10
+    - action: PUSH
+      wait: 20
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          offset: 0,6,0
+          range: 30
+          track: true
+        normalize: true
+        multiplier: 5.5
+      Target:
+        targetType: SELF
+        track: true
+  Strike:
+    Zone:
+      shape: SPHERE
+      radius: 2
+      Target:
+        targetType: SELF
+        offset: 0,0,0
+    Actions:
+    - action: PUSH
+      vValue: 0,-10,0
+      Target:
+        targetType: SELF
+      wait: 25
+    - action: PLACE_BLOCK
+      material: AIR
+      duration: 400
+      Target:
+        targetType: ZONE_FULL
+      wait: 30
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+      Target:
+        targetType: ZONE_FULL
+      wait: 30
+    - action: DAMAGE
+      multiplier: 2
+      Target:
+        targetType: ZONE_FULL
+      wait: 30
+      repeatEvery: 3
+      times: 2
+# Generated with https://magmaguy.com/webapp/webapp.html !

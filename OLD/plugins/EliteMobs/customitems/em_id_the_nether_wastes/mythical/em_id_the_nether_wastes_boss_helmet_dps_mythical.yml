@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&d[Mythical] Nether Infused Circlet'
+material: NETHERITE_HELMET
+level: 50
+lore:
+- '&dYou sense powerful energy radiate from this circlet.'
+enchantments:
+- DAMAGE_UNDEAD,10
+- DAMAGE_ARTHROPODS,7
+- DAMAGE_ALL,6
+- PROTECTION_ENVIRONMENTAL,5
+- PROTECTION_PROJECTILE,4
+- DURABILITY,3
+potionEffects:
+- SPEED,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

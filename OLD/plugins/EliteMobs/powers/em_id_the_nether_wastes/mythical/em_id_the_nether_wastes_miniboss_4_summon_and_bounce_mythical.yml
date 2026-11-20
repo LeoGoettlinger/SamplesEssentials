@@ -1,0 +1,112 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Bounce:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CYLINDER
+      height: 3
+      radius: 13
+      filter: PLAYER
+      Target:
+        targetType: SELF
+        offset: 0,-1,0
+        track: true
+    Actions:
+    - action: PUSH
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      vValue: 0,0.3,0
+      repeatEvery: 40
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      scripts:
+      - BounceParticle
+      - SummonReinforcements
+      - SummonTitle
+    Cooldowns:
+      local: 99999
+      global: 80
+  BounceParticle:
+    Zone:
+      shape: CYLINDER
+      height: 1
+      radius: 13
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: REDSTONE
+        red: 255
+        green: 0
+        blue: 0
+        speed: 0.5
+        amount: 5
+      - particle: REDSTONE
+        red: 0
+        green: 255
+        blue: 0
+        speed: 0.3
+        amount: 3
+      - particle: REDSTONE
+        red: 0
+        green: 0
+        blue: 255
+        speed: 0.7
+        amount: 7
+      repeatEvery: 40
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.1
+        track: true
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  SummonReinforcements:
+    Actions:
+    - action: SUMMON_REINFORCEMENT
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 13
+        offset: 0,3,0
+      sValue: em_id_the_nether_wastes_miniboss_4_summon.yml
+      repeatEvery: 180
+      duration: 800
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: PLAY_SOUND
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 13
+      sValue: entity.wither.spawn
+      repeatEvery: 180
+      volume: 0.4
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  SummonTitle:
+    Actions:
+    - action: TITLE_MESSAGE
+      title: ''
+      subtitle: '&cReinforcements portal opened!'
+      duration: 60
+      fadeIn: 5
+      fadeOut: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Sootbrow
+lore:
+- At least nobody can see you sweating.
+classLootFamily: DPS_HELMETS

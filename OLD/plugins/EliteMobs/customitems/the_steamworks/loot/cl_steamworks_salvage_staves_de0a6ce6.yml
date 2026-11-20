@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&bCalibration Rod'
+lore:
+- '&bEvery measurement has been scratched out twice.'
+- '&bThe last mechanic simply wrote CLOSE ENOUGH.'
+weaponType: STAVES

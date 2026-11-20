@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&aVisor of the Advance'
+lore:
+- '&aThe eye slits leave no room to look back.'
+classLootFamily: DPS_HELMETS

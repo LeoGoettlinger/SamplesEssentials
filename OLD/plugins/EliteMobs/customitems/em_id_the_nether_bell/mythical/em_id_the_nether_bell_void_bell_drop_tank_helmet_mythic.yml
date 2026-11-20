@@ -1,0 +1,19 @@
+isEnabled: true
+material: NETHERITE_HELMET
+name: '&d[Mythical] Dominator Helmet'
+lore:
+- '&dThis helmet whispers promises of power.'
+- '&dIts resonance chills you to the bone.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,8
+- PROTECTION_FIRE,8
+- PROTECTION_PROJECTILE,8
+- PROTECTION_EXPLOSIONS,8
+- THORNS,3
+- WATER_AFFINITY,1
+- elitemobs:loud_strikes,3
+potionEffects:
+- REGENERATION,1,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&aPage''s Candle'
+lore:
+- '&aA court magician forgot it beside his books.'
+weaponType: WANDS

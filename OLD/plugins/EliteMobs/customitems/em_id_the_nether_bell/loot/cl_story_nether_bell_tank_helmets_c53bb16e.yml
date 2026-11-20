@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Muted Crown'
+lore:
+- '&7The lining has been packed around the ears.'
+classLootFamily: TANK_HELMETS

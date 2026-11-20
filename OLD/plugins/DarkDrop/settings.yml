@@ -1,0 +1,121 @@
+3a751516-f598-4f5e-914a-047d5bb4b587:
+  good-chance: 60.0
+  bad-chance: 40.0
+  good-amount: 1
+  bad-amount: 20
+  bad-loot-type: WITHER
+  good-loot-items:
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:netherite_pickaxe
+    count: 1
+    components:
+      minecraft:lore: '[{extra:["§§"],text:""},{extra:["§§",{bold:0b,color:"yellow",italic:0b,obfuscated:0b,strikethrough:0b,text:"Level:
+        ",underlined:0b},{color:"gold",italic:0b,text:"0"}],text:""},{extra:["§§"],text:""},{extra:["§§",{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"[",underlined:0b},{color:"yellow",italic:0b,text:"||||"},{color:"gray",italic:0b,text:"||||||||||||||||||||||||||||||||||||||||||||||"},{color:"dark_gray",italic:0b,text:"]
+        "},{color:"yellow",italic:0b,text:"7.70"},{color:"gold",italic:0b,text:"/"},{color:"yellow",italic:0b,text:"100.00"}],text:""}]'
+      minecraft:tooltip_display: '{hidden_components:["minecraft:attribute_modifiers"]}'
+      minecraft:enchantments: '{"minecraft:efficiency":5,"minecraft:mending":1,"minecraft:silk_touch":1,"minecraft:unbreaking":3}'
+      minecraft:custom_name: '"________"'
+      minecraft:custom_data: '{PublicBukkitValues:{"leveltools:leveltoolslevel":0,"leveltools:leveltoolsxp":7.7d}}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:trident
+    count: 1
+    components:
+      minecraft:lore: '[{color:"#1A5F38",translate:"Found in the Euphrates river"}]'
+      minecraft:custom_name: '{bold:1b,color:"#5BB88C",italic:0b,translate:"Ancient
+        Mesopotamian Trident"}'
+      minecraft:enchantments: '{"minecraft:impaling":8,"minecraft:loyalty":5,"minecraft:riptide":3,"minecraft:unbreaking":2}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:netherite_axe
+    count: 1
+    components:
+      minecraft:custom_name: '"________"'
+      minecraft:enchantments: '{"minecraft:efficiency":5,"minecraft:mending":1,"minecraft:sharpness":5,"minecraft:silk_touch":1,"minecraft:unbreaking":3}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:mace
+    count: 1
+    components:
+      minecraft:enchantments: '{"minecraft:density":5,"minecraft:mending":1,"minecraft:unbreaking":3,"minecraft:wind_burst":3}'
+      minecraft:custom_name: '"________"'
+      minecraft:damage: '4'
+    schema_version: 1
+  good-loot-commands: []
+  use-commands-as-good-loot: false
+06d19fc6-552e-41ed-8f57-d01fc2139970:
+  good-chance: 50.0
+  bad-chance: 50.0
+  good-amount: 1
+  bad-amount: 1
+  bad-loot-type: LIGHTNING
+  good-loot-items:
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:tipped_arrow
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:tipped_arrow
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:tipped_arrow
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:tipped_arrow
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:tipped_arrow
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:tipped_arrow
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:tipped_arrow
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:tipped_arrow
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+    schema_version: 1
+  - ==: org.bukkit.inventory.ItemStack
+    DataVersion: 4903
+    id: minecraft:tipped_arrow
+    count: 1
+    components:
+      minecraft:potion_contents: '{potion:"minecraft:strong_harming"}'
+    schema_version: 1
+  good-loot-commands: []
+  use-commands-as-good-loot: false

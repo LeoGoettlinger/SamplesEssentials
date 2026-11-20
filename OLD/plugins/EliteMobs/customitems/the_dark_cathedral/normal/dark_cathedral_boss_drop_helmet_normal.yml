@@ -1,0 +1,16 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_HELMET
+name: '&0Cursed Helmet'
+lore:
+- '&0&kThe whispers of the deep'
+- '&0&kecho within this helm, driving'
+- '&0&kthe wearer to madness.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,2
+- PROTECTION_PROJECTILE,2
+- PROTECTION_EXPLOSIONS,3
+- THORNS,1
+- elitemobs:critical_strikes,1
+itemType: unique
+scalability: scalable

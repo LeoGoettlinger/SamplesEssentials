@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&2[Mythical] Dawn'
+material: BOW
+level: 20
+lore:
+- '&2Piercing the darkness like daylight.'
+enchantments:
+- ARROW_FIRE,10
+- ARROW_DAMAGE,6
+- DAMAGE_ALL,5
+potionEffects:
+- NIGHT_VISION,1,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

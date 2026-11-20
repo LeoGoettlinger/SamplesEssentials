@@ -1,0 +1,67 @@
+ # Configuration for sending webhooks every time a player is punished.
+ # 
+ # Most people will use this addon for Discord webhooks. As a result, the comments guide people through
+ # creating a Discord webhook and configuring it here. However, it is technically possible to send any kind of
+ # webhook to any kind of URL; the free-form json payload enables this possibility.
+ # When a player is unpunished, this webhook is sent. Note that punishments expiring will NOT trigger this webhook.
+on-pardon:
+   # Whether to enable the webhook for this event
+  enable: true
+   # The raw JSON that will be sent to the Discord webhook.
+   # A Discord webhook has many potential fields, so this section lets you add whatever you want.
+   # 
+   # Note that punishment-related variables are fully supported here, but color codes are not.
+   # 
+   # We HIGHLY recommend using a tool, like Discohook, to create a webhook
+   # Steps:
+   # 1. Visit https://discohook.org/
+   # 2. Make the webhook look how you want it.
+   # 3. Click 'JSON Editor' and copy the text
+   # 4. Minify the JSON using https://www.minifyjson.org/ so that it fits on a single line
+   # 5. Copy the minified version here.
+   # 
+   # If editing the raw JSON, it's recommended to use a JSON minifier/prettifier to help visualize your changes.
+   # For example, https://www.minifyjson.org/ . Use the "Beautify" button to see the JSON, then edit it.
+   # Once you're done, use the "Minify" button and paste the result back here.
+   # 
+   # You can see a full list of options by checking Discord's documentation, or by browsing some examples.
+   # Official reference:
+   # https://discord.com/developers/docs/resources/webhook#execute-webhook-jsonform-params
+   # Examples and guide:
+   # https://gist.github.com/Birdie0/78ee79402a4301b1faf412ab5f1cdcf9#example-for-a-webhook
+  json-payload: '{"content":"BAM! %VICTIM% has been punished with %TYPE%.\n\nThere''s more info below, but you don''t have to read it. This punishment will last for %DURATION%\n_ _","embeds":[{"title":"Punishment reason","description":"%REASON%","color":5814783,"fields":[{"name":"Operator","value":"By %OPERATOR%"},{"name":"Scope","value":"%SCOPE%"}],"author":{"name":"LibertyBans"}}]}'
+
+ # When a player is punished, this webhook is sent
+on-punish:
+   # Whether to enable the webhook for this event
+  enable: true
+   # The raw JSON that will be sent to the Discord webhook.
+   # A Discord webhook has many potential fields, so this section lets you add whatever you want.
+   # 
+   # Note that punishment-related variables are fully supported here, but color codes are not.
+   # 
+   # We HIGHLY recommend using a tool, like Discohook, to create a webhook
+   # Steps:
+   # 1. Visit https://discohook.org/
+   # 2. Make the webhook look how you want it.
+   # 3. Click 'JSON Editor' and copy the text
+   # 4. Minify the JSON using https://www.minifyjson.org/ so that it fits on a single line
+   # 5. Copy the minified version here.
+   # 
+   # If editing the raw JSON, it's recommended to use a JSON minifier/prettifier to help visualize your changes.
+   # For example, https://www.minifyjson.org/ . Use the "Beautify" button to see the JSON, then edit it.
+   # Once you're done, use the "Minify" button and paste the result back here.
+   # 
+   # You can see a full list of options by checking Discord's documentation, or by browsing some examples.
+   # Official reference:
+   # https://discord.com/developers/docs/resources/webhook#execute-webhook-jsonform-params
+   # Examples and guide:
+   # https://gist.github.com/Birdie0/78ee79402a4301b1faf412ab5f1cdcf9#example-for-a-webhook
+  json-payload: '{"content":"BAM! %VICTIM% has been punished with %TYPE%.\n\nThere''s more info below, but you don''t have to read it. This punishment will last for %DURATION%\n_ _","embeds":[{"title":"Punishment reason","description":"%REASON%","color":5814783,"fields":[{"name":"Operator","value":"By %OPERATOR%"},{"name":"Scope","value":"%SCOPE%"}],"author":{"name":"LibertyBans"}}]}'
+
+ # This is the URL of your webhook. Do not share this with anyone!
+ # visit your Discord server's admin panel, then click on Integrations > New Webhook.
+ # Click 'Copy Webhook URL' and paste it here.
+webhook-url: 'https://discord.com/api/webhooks/1533505481832661154/Seo_l3onE3Es3Tk5uLxu-vZDLlRVkD_8uxCAmYStYJQK3cH_-mGV9OCXjhICaH-95tqp'
+ # Whether to enable this addon at all
+enable: true

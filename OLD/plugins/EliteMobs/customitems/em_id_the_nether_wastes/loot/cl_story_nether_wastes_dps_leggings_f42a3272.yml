@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Ashtrail Striders'
+lore:
+- '&7The knees are marked by a long crawl through the waste.'
+classLootFamily: DPS_LEGGINGS

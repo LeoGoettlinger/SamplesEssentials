@@ -1,0 +1,177 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 1500
+      scripts:
+      - RunScripts
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  RunScripts:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - CurseBlind
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      wait: 4800
+      scripts:
+      - CurseBlind2
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      wait: 9600
+      scripts:
+      - CurseBlind3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      wait: 14400
+      scripts:
+      - CurseBlind4
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      scripts:
+      - WarnBlind
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CurseBlind:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 20
+      duration: 30
+      repeatEvery: 200
+      times: 6
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2500
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cThick Miasma &7surrounds you! The source must be destroyed to
+        lift the blindness effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2500
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CurseBlind2:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 20
+      duration: 40
+      repeatEvery: 150
+      times: 8
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2500
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cThick Miasma &7surrounds you! The source must be destroyed to
+        lift the blindness effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2500
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CurseBlind3:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 20
+      duration: 50
+      repeatEvery: 100
+      times: 12
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2500
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cThick Miasma &7surrounds you! The source must be destroyed to
+        lift the blindness effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2500
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CurseBlind4:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 20
+      duration: 60
+      repeatEvery: 50
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2500
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cThick Miasma &7surrounds you! The source must be destroyed to
+        lift the blindness effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2500
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

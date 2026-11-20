@@ -1,0 +1,39 @@
+id: legendaryLure
+disabled: false
+silent: false
+format: <gold>{name}
+sort-index: 6
+application-weight: 40
+catch-weight: 2
+max-baits: 8
+can-be-caught: true
+drop-quantity: 1
+infinite: false
+disable-use-alert: false
+purchase:
+  price: 25000
+  quantity: 1
+  economy-types:
+    - Vault
+item:
+  material: GOLDEN_CARROT
+  displayname: "<gold>Legendary Lure"
+  glowing: true
+  lore:
+    - "<gray>A golden lure shimmering"
+    - "<gray>with ancient power."
+    - "<gray>Boosts Legendary fish."
+rarity-modifiers:
+  Legendary: "*2"
+catch-event:
+  - EXP:200
+  - MONEY:1000
+recipe:
+  type: shaped
+  shape:
+    - ggg
+    - gfg
+    - ggg
+  ingredients:
+    g: gold_ingot
+    f: golden_carrot

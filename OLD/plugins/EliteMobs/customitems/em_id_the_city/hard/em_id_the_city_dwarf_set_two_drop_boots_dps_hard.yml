@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&a[Hard] Worn Boots'
+material: DIAMOND_BOOTS
+level: 30
+lore:
+- '&aThey are falling apart.'
+enchantments:
+- DAMAGE_ALL,3
+- PROTECTION_ENVIRONMENTAL,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

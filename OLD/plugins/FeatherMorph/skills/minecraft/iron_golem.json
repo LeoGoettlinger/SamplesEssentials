@@ -1,0 +1,40 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:no_fall_damage",
+    "morph:attribute_modify",
+    "morph:extra_knockback"
+  ],
+  "settings": {
+    "morph:extra_knockback": {
+      "motion_z": 0.0,
+      "motion_y": 0.8,
+      "motion_x": 0.0
+    },
+    "morph:attribute_modify": {
+      "modifiers": [
+        {
+          "name": "minecraft:movement_speed",
+          "type": "multiply_base",
+          "value": -0.6
+        },
+        {
+          "name": "minecraft:knockback_resistance",
+          "type": "add",
+          "value": 1.0
+        },
+        {
+          "name": "minecraft:attack_damage",
+          "type": "add",
+          "value": 15.0
+        },
+        {
+          "name": "minecraft:attack_speed",
+          "type": "multiply_base",
+          "value": -0.55
+        }
+      ]
+    }
+  }
+}

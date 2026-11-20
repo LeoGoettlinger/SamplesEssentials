@@ -1,0 +1,12 @@
+potionEffects: []
+isEnabled: true
+material: IRON_LEGGINGS
+name: '&8Worn Leggings'
+lore:
+- '&8Smells like incense.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,2
+- PROTECTION_FIRE,1
+- PROTECTION_PROJECTILE,1
+itemType: unique
+scalability: scalable

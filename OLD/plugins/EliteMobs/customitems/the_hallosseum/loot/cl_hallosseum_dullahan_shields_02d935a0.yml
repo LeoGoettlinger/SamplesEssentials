@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&4Door of the Crypt'
+lore:
+- '&4A small iron door with the hinges removed.'
+- '&4Keep the inscription facing out.'

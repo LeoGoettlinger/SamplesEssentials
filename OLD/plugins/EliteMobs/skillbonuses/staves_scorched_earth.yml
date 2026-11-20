@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&cScorched Earth'
+description:
+- '&7Fireballs can leave the'
+- '&7ground burning.'
+skillType: STAVES
+bonusType: PROC
+unlockTier: 3
+baseValue: 0.15
+scalingPerLevel: 0.002
+procChance: 0.1
+displayMaterial: MAGMA_BLOCK
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Burn: &f$pulsePercent% of the hit per second for 4s'
+- '&8Hits every enemy in the flames'
+formattedBonusTemplate: $pulsePercent%/s burning ground

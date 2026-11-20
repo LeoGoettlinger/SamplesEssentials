@@ -1,0 +1,5 @@
+name: Unbind
+isEnabled: true
+maxLevelV2: 1
+value: 10000.0
+isEnabledForProcedurallyGeneratedItems: false

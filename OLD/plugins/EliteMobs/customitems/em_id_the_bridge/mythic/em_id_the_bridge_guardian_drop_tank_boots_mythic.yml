@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&e[Mythical] Ancient Stone Sabatons'
+material: DIAMOND_BOOTS
+level: 25
+lore:
+- '&eNow everyone will hear you coming.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,10
+- PROTECTION_FALL,6
+- PROTECTION_FIRE,5
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

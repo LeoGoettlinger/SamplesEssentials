@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&f[Hard] Old Stone Plate'
+material: NETHERITE_CHESTPLATE
+level: 35
+lore:
+- '&fA chestplate worthy of a king.'
+enchantments:
+- DAMAGE_ALL,7
+- DAMAGE_ARTHROPODS,5
+- DAMAGE_UNDEAD,5
+- DURABILITY,4
+potionEffects:
+- INCREASE_DAMAGE,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

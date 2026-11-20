@@ -1,0 +1,14 @@
+potionEffects: []
+isEnabled: true
+material: SHIELD
+name: '&3[Mythical] Bone Champion''s Deflector'
+lore:
+- '&3Excellent for deflecting strikes.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,7
+- PROTECTION_PROJECTILE,7
+- DAMAGE_ALL,4
+- elitemobs:loud_strikes,2
+itemType: unique
+scalability: scalable
+level: 10

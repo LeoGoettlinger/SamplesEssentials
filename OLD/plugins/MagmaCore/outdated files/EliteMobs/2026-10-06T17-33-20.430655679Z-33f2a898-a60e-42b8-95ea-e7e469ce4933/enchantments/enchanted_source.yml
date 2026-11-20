@@ -1,0 +1,5 @@
+name: Enchanted Source
+isEnabled: true
+maxLevelV2: 1
+value: 10.0
+isEnabledForProcedurallyGeneratedItems: true

@@ -1,0 +1,9 @@
+{
+  "skillCooldown": 20,
+  "skillId": "morph:fake_equip",
+  "abilities": [
+    "morph:breathe_under_water",
+    "morph:burns_under_sun"
+  ],
+  "settings": {}
+}

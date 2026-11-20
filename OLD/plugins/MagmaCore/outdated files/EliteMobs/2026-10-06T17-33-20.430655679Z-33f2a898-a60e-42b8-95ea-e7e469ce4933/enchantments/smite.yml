@@ -1,0 +1,6 @@
+name: Smite
+isEnabled: true
+maxLevelV2: 4
+value: 6.0
+isEnabledForProcedurallyGeneratedItems: true
+maxEnchantmentLevel: 100

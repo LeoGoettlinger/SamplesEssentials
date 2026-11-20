@@ -1,0 +1,78 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: ZOMBIE
+disguise: CREEPER
+name: $normalLevel &eMagicked Creeper
+level: dynamic # 40
+healthMultiplier: 1.2
+damageMultiplier: 0.01
+movementSpeedAttribute: 0.31
+instanced: true
+isRegionalBoss: false
+normalizedCombat: true
+powers:
+- implosion.yml
+- em_the_quarry_creeper_explosion.yml
+- filename: attack_lightning.yml
+  difficultyID:
+  - 1
+- filename: lightning_bolts.yml
+  difficultyID:
+  - 2
+frozen: false
+followDistance: 20
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+eliteScript:
+  Cloak:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: SET_MOB_AWARE
+      bValue: false
+      duration: 60
+      Target:
+        targetType: SELF
+    - action: POTION_EFFECT
+      wait: 5
+      potionEffectType: INVISIBILITY
+      amplifier: 1
+      duration: 20
+      Target:
+        targetType: SELF
+      repeatEvery: 19
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - cloak
+    - action: TAG
+      tags:
+      - cloak
+      Target:
+        targetType: SELF
+  Decloak:
+    Events:
+    - EliteMobTargetPlayerEvent
+    Actions:
+    - action: UNTAG
+      wait: 5
+      tags:
+      - cloak
+      Target:
+        targetType: SELF
+  Slowfall:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOW_FALLING
+      amplifier: 0
+      duration: 400
+      Target:
+        targetType: SELF
+classLoot: false

@@ -1,0 +1,21 @@
+isEnabled: true
+name: '&d[Hard] Nether Infused Spear'
+material: TRIDENT
+level: 50
+lore:
+- '&dUpon meticulous examination, you discern that this'
+- '&dspear is forged from the bones of a nether creature. '
+- '&dThese bones are sheathed in mithril and embellished'
+- '&dwith intricate magical runes and carvings.'
+enchantments:
+- LOYALTY,8
+- IMPALING,6
+- DAMAGE_ALL,5
+- DAMAGE_UNDEAD,4
+- DURABILITY,3
+- MENDING,2
+potionEffects:
+- POISON,0,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

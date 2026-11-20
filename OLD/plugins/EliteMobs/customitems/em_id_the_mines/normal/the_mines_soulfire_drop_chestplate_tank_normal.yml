@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Normal] Scorching Armor'
+material: DIAMOND_CHESTPLATE
+level: 20
+lore:
+- '&2Everything will burn...'
+enchantments:
+- THORNS,5
+- PROTECTION_ENVIRONMENTAL,3
+- PROTECTION_FIRE,2
+- elitemobs:loud_strikes,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

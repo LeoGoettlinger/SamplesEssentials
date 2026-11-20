@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythical] Slimed Leggings'
+material: NETHERITE_LEGGINGS
+level: 15
+lore:
+- '&cBetter try and not sit down on'
+- '&canything important.'
+enchantments:
+- DAMAGE_ALL,10
+- DURABILITY,5
+- PROTECTION_PROJECTILE,4
+- DAMAGE_UNDEAD,5
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

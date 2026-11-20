@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Hard] Gel Bow'
+material: BOW
+level: 20
+lore:
+- '&2This was stuck in the Gel Head''s head.'
+enchantments:
+- DAMAGE_ALL,3
+- DAMAGE_UNDEAD,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

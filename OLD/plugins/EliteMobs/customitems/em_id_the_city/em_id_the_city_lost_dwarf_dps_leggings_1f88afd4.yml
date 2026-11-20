@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&a[$difficulty] Worn Leggings'
+lore:
+- '&aWell used.'
+classLootFamily: DPS_LEGGINGS

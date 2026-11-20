@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Expedition Armor'
+material: IRON_CHESTPLATE
+level: 40
+lore:
+- '&fIt would be foolish to go out'
+- '&fon an expedition without this armor.'
+enchantments:
+- DAMAGE_UNDEAD,4
+- PROTECTION_ENVIRONMENTAL,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

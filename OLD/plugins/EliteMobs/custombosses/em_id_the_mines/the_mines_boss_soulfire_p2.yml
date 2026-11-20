@@ -1,0 +1,31 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: MINIBOSS
+damageMultiplier: 1.0
+disguise: WITHER_SKELETON
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+entityType: SKELETON
+followDistance: 80
+frozen: false
+healthMultiplier: 7
+instanced: true
+isEnabled: true
+level: dynamic # 20
+mainHand: BOW
+mountedEntity: the_mines_boss_soulfire_mount_p2.yml
+movementSpeedAttribute: 0.8
+name: $minibossLevel &cInfused Soul
+normalizedCombat: true
+powers:
+- the_mines_soulfire_arrow_launchers.yml
+- invulnerability_fire.yml
+- invulnerability_fall_damage.yml
+- difficultyID:
+  - 1
+  filename: the_mines_soulfire_flame_pillars.yml
+- difficultyID:
+  - 2
+  filename: attack_fireball.yml
+classLoot: false

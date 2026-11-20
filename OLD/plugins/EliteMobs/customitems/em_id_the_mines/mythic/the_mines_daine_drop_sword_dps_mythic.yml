@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Inhibition'
+material: NETHERITE_SWORD
+level: 20
+lore:
+- '&fSeems to be made out of enchanted Netherite.'
+enchantments:
+- DAMAGE_ALL,11
+- DAMAGE_ARTHROPODS,7
+- DAMAGE_UNDEAD,8
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

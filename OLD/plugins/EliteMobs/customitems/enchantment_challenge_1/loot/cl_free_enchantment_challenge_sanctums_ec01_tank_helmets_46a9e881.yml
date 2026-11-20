@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Dark Flame Helmet
+lore:
+- Should keep your head nice and warm.
+classLootFamily: TANK_HELMETS

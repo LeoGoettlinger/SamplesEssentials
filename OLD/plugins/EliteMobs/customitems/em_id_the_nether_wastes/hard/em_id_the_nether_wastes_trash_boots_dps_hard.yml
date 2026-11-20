@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Hard] Infested Boots'
+material: IRON_BOOTS
+level: 50
+lore:
+- '&fThe mold inside the boots makes them quite comfortable to wear.'
+enchantments:
+- DAMAGE_ALL,5
+- DAMAGE_UNDEAD,3
+- DURABILITY,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

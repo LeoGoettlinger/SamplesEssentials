@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&cReindeer Reprimand'
+lore:
+- '&7Kept beside the sleigh''s spare harness.'
+- '&7The reindeer know that cupboard.'

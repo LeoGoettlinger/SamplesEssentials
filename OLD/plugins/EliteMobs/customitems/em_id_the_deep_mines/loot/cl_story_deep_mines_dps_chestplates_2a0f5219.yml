@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&f[$difficulty] Obsidian Plate'
+lore:
+- '&fThis could have been more useful if it wasn''t'
+- '&fdamaged beyond repair...'
+classLootFamily: DPS_CHESTPLATES

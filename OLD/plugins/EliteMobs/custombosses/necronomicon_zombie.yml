@@ -1,0 +1,12 @@
+classLoot: true
+name: $reinforcementLevel &7Summoned Zombie
+isEnabled: true
+entityType: ZOMBIE
+level: dynamic
+healthMultiplier: 0.3
+damageMultiplier: 0.1
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL

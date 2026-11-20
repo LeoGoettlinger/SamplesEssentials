@@ -1,0 +1,83 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 450
+      scripts:
+      - SummonV
+      - Summon1
+      - Summon2
+    - action: MESSAGE
+      wait: 400
+      sValue: '&d[Old Stone King] &fIf there is no one left to aid me...'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+    - action: MESSAGE
+      wait: 430
+      sValue: '&d[Old Stone King] &fThen I shall carve out guardians from the stone!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+    Cooldowns:
+      local: 9999
+      global: 5
+  SummonV:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 4
+      Target:
+        targetType: LOCATIONS
+        locations:
+        - same_as_boss,242.5,144,-26.5
+        - same_as_boss,234.5,144,-26.5
+    Actions:
+    - action: PLACE_BLOCK
+      material: AIR
+      duration: 9999
+      Target:
+        targetType: ZONE_FULL
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      repeatEvery: 5
+      times: 8
+      Target:
+        targetType: ZONE_FULL
+        offset: 0,-1,0
+  Summon1:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: LOCATIONS
+        locations:
+        - same_as_boss,243.5,144,-26.5
+    Actions:
+    - action: SUMMON_REINFORCEMENT
+      wait: 20
+      sValue: the_palace_old_stone_king_summon_1.yml
+      Target:
+        targetType: ZONE_FULL
+  Summon2:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: LOCATIONS
+        locations:
+        - same_as_boss,233.5,144,-26.5
+    Actions:
+    - action: SUMMON_REINFORCEMENT
+      wait: 20
+      sValue: the_palace_old_stone_king_summon_2.yml
+      Target:
+        targetType: ZONE_FULL
+# Generated with https://magmaguy.com/webapp/webapp.html !

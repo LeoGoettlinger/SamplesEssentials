@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&4Royal Pursuit'
+lore:
+- '&4The king''s footsteps did not stop at the waterline.'
+classLootFamily: DPS_BOOTS

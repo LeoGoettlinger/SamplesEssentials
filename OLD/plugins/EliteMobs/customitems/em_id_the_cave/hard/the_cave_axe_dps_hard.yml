@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Slimed Axe'
+material: DIAMOND_AXE
+level: 15
+lore:
+- '&cBeautiful green slime adorns this axe.'
+enchantments:
+- DAMAGE_ALL,8
+- DURABILITY,7
+- DAMAGE_ARTHROPODS,7
+- DAMAGE_UNDEAD,4
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,29 @@
+classUnlockQuestDefaultSummaryLine: '&c➤Unlock $name'
+headerTextLines2: |
+  §a§l『§c§l$questName§a§l』
+acceptTextLines: '&a&l[Accept!]'
+acceptHoverLines: "&aClick to \n&aaccept quest!"
+acceptedTextLines: '&2&lAccepted! &aTurn in with $npcName &4[Abandon]'
+acceptedHoverLines: '&aClick to abandon quest!'
+trackTextLines: '&2&l[Track]'
+trackHoverLines: '&aClick to track quest!'
+untrackTextLines: '&4&l[Untrack]'
+untrackHoverLines: '&cClick to untrack quest!'
+completedTextLines: '&2&l[Turn in!]'
+completedHoverLines: '&aClick to turn quest in!'
+turnedInHoverLines: '&8Already turned in!'
+objectivesLine: '&c&lObjectives:'
+killQuestDefaultSummaryLine: '&c➤Kill $name:$color$current&0/$color$target'
+fetchQuestDefaultSummaryLine: '&c➤Get $name:$color&$current&0/$color$target'
+dialogQuestDefaultSummaryLine: '&c➤Go talk to $name $location'
+arenaQuestDefaultSummaryLine: '&c➤Complete $arenaName'
+rewardsLine: '&2&lRewards:'
+rewardsDefaultSummaryLine: '&2➤$amountx $rewardName &8($chance%)'
+isEnabled: true
+acceptCommandLines: /em quest accept $questID
+acceptedCommandLines3: /em quest leave $questID
+useQuestTracking: true
+trackCommandLines3: /em quest track $questID
+untrackCommandLines: /em quest track $questID
+completedCommandLines: /em quest complete $questID
+ongoingQuestColorCode: '&2'

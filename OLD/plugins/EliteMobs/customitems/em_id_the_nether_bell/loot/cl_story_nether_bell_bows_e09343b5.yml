@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&c[$difficulty] Eclipse Longbow'
+lore:
+- '&cDark limbs curve around a pale'
+- '&cmoon carved above the grip.'
+- '&cThe old string is almost invisible.'

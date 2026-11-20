@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Weaver Lance'
+material: NETHERITE_SPEAR
+level: 20
+lore:
+- '&cDaine''s personal weapon for'
+- '&cpiercing through soul barriers.'
+- '&cIt hungers for essence.'
+enchantments:
+- IMPALING,3
+- DAMAGE_ALL,3
+- DURABILITY,3
+itemType: unique
+scalability: scalable

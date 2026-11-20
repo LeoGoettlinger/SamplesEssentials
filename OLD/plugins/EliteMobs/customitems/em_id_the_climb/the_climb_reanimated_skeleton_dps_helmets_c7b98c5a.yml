@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&4[$difficulty] Undead''s Helmet'
+lore:
+- '&4Retrieved from the walking corpse.'
+classLootFamily: DPS_HELMETS

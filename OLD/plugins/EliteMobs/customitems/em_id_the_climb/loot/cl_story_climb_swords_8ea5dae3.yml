@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&7Village Remnant'
+lore:
+- '&7The grip was cut for a hand that no longer holds it.'

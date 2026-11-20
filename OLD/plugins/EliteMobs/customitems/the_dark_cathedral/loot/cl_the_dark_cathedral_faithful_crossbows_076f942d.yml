@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&8Processional Crossbow'
+lore:
+- '&8Carried with the candles through the nave.'
+- '&8The procession had no music.'

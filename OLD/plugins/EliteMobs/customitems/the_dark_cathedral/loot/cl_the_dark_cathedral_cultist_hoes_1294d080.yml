@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&0Harvest of Silence'
+lore:
+- '&0&kThe blade was wrapped in the altar cloth.'
+- '&0&kNo one will wash it.'

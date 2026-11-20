@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&4Reaper of the Sluice'
+lore:
+- '&4The king''s gardens have grown rather strange.'

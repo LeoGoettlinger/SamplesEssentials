@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&7Ancient Impaler [Normal]'
+material: DIAMOND_SPEAR
+level: 25
+lore:
+- '&cPierce through the ages!'
+enchantments:
+- IMPALING,5
+- PIERCING,2
+- PROTECTION_ENVIRONMENTAL,2
+scalability: scalable
+itemType: unique
+soulbound: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

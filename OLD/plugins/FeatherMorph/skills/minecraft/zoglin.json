@@ -1,0 +1,8 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:fire_resistance"
+  ],
+  "settings": {}
+}

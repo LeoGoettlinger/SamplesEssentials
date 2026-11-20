@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&d[Mythical] Silk Leggings'
+material: DIAMOND_LEGGINGS
+level: 40
+lore:
+- '&dThey offer little protection'
+- '&dbut allow you to move swiftly.'
+enchantments:
+- DAMAGE_ALL,6
+- DAMAGE_UNDEAD,5
+- PROTECTION_ENVIRONMENTAL,4
+- DURABILITY,3
+potionEffects:
+- SPEED,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

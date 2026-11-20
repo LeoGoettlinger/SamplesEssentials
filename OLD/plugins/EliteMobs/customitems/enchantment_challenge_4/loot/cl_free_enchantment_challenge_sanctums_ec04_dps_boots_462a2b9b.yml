@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Door Kickers
+lore:
+- That was not the bell.
+classLootFamily: DPS_BOOTS

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&aSallyport Chausses'
+lore:
+- '&aBuckled for the charge that never returned.'
+classLootFamily: DPS_LEGGINGS

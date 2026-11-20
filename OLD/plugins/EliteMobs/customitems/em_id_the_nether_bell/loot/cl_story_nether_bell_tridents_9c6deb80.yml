@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&7Three Notes'
+lore:
+- '&7Each tine has been filed to a different length.'

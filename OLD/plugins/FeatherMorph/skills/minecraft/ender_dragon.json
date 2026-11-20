@@ -1,0 +1,39 @@
+{
+  "skillCooldown": 80,
+  "skillId": "morph:launch_projective",
+  "abilities": [
+    "morph:can_fly",
+    "morph:fire_resistance",
+    "morph:bossbar",
+    "morph:heals_from_entity"
+  ],
+  "settings": {
+    "morph:heals_from_entity": {
+      "amount": 0.05,
+      "max_percentage": 1.0,
+      "entity_type": "minecraft:end_crystal",
+      "damage_when_destroyed": 10.0,
+      "distance": 32.0
+    },
+    "morph:bossbar": {
+      "distance": -1,
+      "color": "pink",
+      "name": "<name> (<who>)",
+      "flags": [],
+      "style": "progress"
+    },
+    "morph:can_fly": {
+      "fly_speed": 0.15,
+      "minimum_hunger": 6
+    },
+    "morph:launch_projective": {
+      "delay": 0,
+      "warning_sound_name": "",
+      "name": "minecraft:dragon_fireball",
+      "speed_multiplier": 1.0,
+      "sound_name": "entity.ender_dragon.shoot",
+      "sound_distance": 80,
+      "max_target_distance": 0
+    }
+  }
+}

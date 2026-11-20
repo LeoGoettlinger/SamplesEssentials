@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&aSledguard Greaves'
+lore:
+- '&7Dented where a loaded sled struck them.'
+- '&7The presents were unharmed.'
+classLootFamily: TANK_LEGGINGS

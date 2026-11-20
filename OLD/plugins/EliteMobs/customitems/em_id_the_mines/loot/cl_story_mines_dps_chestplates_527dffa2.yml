@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Patchwork Front'
+lore:
+- '&7No two plates seem to have come from the same suit.'
+classLootFamily: DPS_CHESTPLATES

@@ -1,0 +1,31 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 60
+      scripts:
+      - Waterfall
+    Cooldowns:
+      local: 500
+      global: 80
+  Waterfall:
+    Zone:
+      shape: CYLINDER
+      radius: 10
+      height: 3
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 25
+        offset: 0,9,0
+    Actions:
+    - action: PLACE_BLOCK
+      material: WATER
+      duration: 200
+      Target:
+        targetType: ZONE_FULL
+# Generated with https://magmaguy.com/webapp/webapp.html !

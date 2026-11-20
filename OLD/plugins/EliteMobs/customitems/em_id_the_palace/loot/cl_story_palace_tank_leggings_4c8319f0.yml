@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Throne Guards'
+lore:
+- '&7The joints have stiffened during the long audience.'
+classLootFamily: TANK_LEGGINGS

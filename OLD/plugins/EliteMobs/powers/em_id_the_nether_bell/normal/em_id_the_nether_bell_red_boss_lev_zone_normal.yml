@@ -1,0 +1,149 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  MainScript:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - Warning
+      wait: 99
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    Cooldowns:
+      local: 333
+      global: 70
+  Warning:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      height: 2
+      Target:
+        targetType: SELF
+        track: false
+    Actions:
+    - action: PLAY_SOUND
+      Target:
+        targetType: ZONE_FULL
+      sValue: minecraft:entity.evoker.prepare_summon
+      pitch: 1
+      volume: 0.1
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: SET_MOB_AI
+      bValue: false
+      duration: 62
+      Target:
+        targetType: SELF
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+      sValue: '&c[Holder of Void] &fOh, void, halt my adversaries and bind them in
+        shadows!'
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      particles:
+      - particle: CLOUD
+      repeatEvery: 10
+      times: 6
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: RUN_SCRIPT
+      scripts:
+      - EffectZone
+      wait: 60
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+  EffectZone:
+    Zone:
+      shape: CYLINDER
+      radius: 4
+      height: 3
+      Target:
+        targetType: SELF
+        offset: 0,-0.5,0
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: ZONE_FULL
+        track: false
+        coverage: 0.6
+      particles:
+      - particle: SMOKE_NORMAL
+      repeatEvery: 5
+      times: 20
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      potionEffectType: LEVITATION
+      amplifier: 1
+      duration: 100
+      repeatEvery: 1
+      times: 100
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      potionEffectType: SLOW
+      amplifier: 10
+      duration: 100
+      repeatEvery: 1
+      times: 100
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      potionEffectType: DARKNESS
+      amplifier: 1
+      duration: 120
+      repeatEvery: 1
+      times: 100
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF

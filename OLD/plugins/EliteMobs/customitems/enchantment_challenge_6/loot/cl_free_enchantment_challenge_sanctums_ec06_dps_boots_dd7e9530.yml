@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Offbeat Shoes
+lore:
+- Left. Left again. Oh dear.
+classLootFamily: DPS_BOOTS

@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&d[Mythical] Rune Leggings'
+material: DIAMOND_LEGGINGS
+level: 45
+lore:
+- '&dThe runes on these leggings are quite'
+- '&dfaded but whatever magic enchantment'
+- '&dthey offer still seems to be in effect.'
+enchantments:
+- DAMAGE_ALL,8
+- DAMAGE_UNDEAD,5
+- DAMAGE_ARTHROPODS,4
+- DURABILITY,3
+potionEffects:
+- SPEED,2,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

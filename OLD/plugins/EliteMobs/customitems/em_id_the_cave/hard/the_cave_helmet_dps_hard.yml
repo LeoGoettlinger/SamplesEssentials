@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&c[Hard] Slimed Helmet'
+material: DIAMOND_HELMET
+level: 15
+lore:
+- '&cPut the icky on head and feel good.'
+enchantments:
+- DAMAGE_ALL,7
+- DURABILITY,4
+- PROTECTION_ENVIRONMENTAL,3
+- DAMAGE_UNDEAD,3
+potionEffects:
+- INCREASE_DAMAGE,0,self,onHit
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

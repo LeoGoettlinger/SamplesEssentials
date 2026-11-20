@@ -1,0 +1,110 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: ZOMBIE
+isBaby: true
+name: $normalLevel &cStrange TNT
+level: dynamic # 45
+healthMultiplier: 0.3
+damageMultiplier: 1.1
+movementSpeedAttribute: 1.0E-4
+frozen: true
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+followDistance: 30
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+customModel: strange_tnt_model_the_deep_mines
+disguise: custom:em_id_the_deep_mines_strange_tnt
+customDisguiseData: player em_id_the_deep_mines_strange_tnt setskin {"id":"09abd6f9-3690-458b-ada9-05d93386172b","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcxMjg1Mzg0OTQ3MiwKICAicHJvZmlsZUlkIiA6ICJiZDNhNWRmY2ZkZjg0NDczOTViZDJiZmUwNGY0YzAzMiIsCiAgInByb2ZpbGVOYW1lIiA6ICJwcmVja3Jhc25vIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M1MzQ2MmM3Zjk1OGRjNTVmMTg0OWFkOThhMGNjZmNkMmVkOWE2Njg2YjMwYzBhZDI4MGFmYTFhNTA4MzNmMCIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9","signature":"kbmm5sZhB8WmU7X1MYydxQGeM3Pbu5ic6oGGKkTocSDwLzR1Ax8jTRGTBAHSbF4splGIOB4e4W00WnNnP/r7buqE+CNbjsK+l9BikRWir7UN8n34Rz8ip4K0KImTN1XfG6NYaFzKkk1Sk95S/ZzWOQVc6HmsfPRi+8ExgeCFX+9RtFE7DdvJt9XTSnzYGsCs0pwNle99qmbMcVYzydmXk/CF3K7FDSxzBPaGdxWzN5MbAUwF1cwELEtNvLqivqsiC76bzKwFxg4WD6u5nvyVDebcULSc9xTazYBiFrFKMskFyCcr9kiuPloeVPmes9xwoDqmnXh9Y7pMbZfV+rqcSw+KX7tkHBR1eZ0cjhxGTjzgj438ZWY0auqTFm8/psTimTka9JNuj05kb3XNCCczoa5EHcwwuCmEz9A48ElADVZ84pkBIdqV9tRmfKnCtbFOyTUQTmRdN59oMShBDs9ZGl/MzyEpHTOBB/TEN97CC2sH2X7xOuwG5Jvhf9N8VGF/g8XqqzEyY21CmCkcrDZaxRw4YRATUYLjyOTM1qTo3bBu4uzFBSbmNtprbyw5gQnZN3Z+Df+Al4NEbkbsmIR2uBeR3Vm/hUMMN2OWg1f0uJweJxIgVjRmmLjh7AzqtoXEzqhzxS6JrjBjio7E7F6Gkd5Gq5775w9VTSVIbx/ExGE="}],"legacy":false}
+eliteScript:
+  BeTNT:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: SET_MOB_AI
+      bValue: false
+      duration: 99999
+      Target:
+        targetType: SELF
+  Visual:
+    Events:
+    - EliteMobDeathEvent
+    Zone:
+      shape: DOME
+      radius: 3
+      Target:
+        targetType: SELF
+        track: true
+    Actions:
+    - action: PLAY_SOUND
+      sValue: entity.tnt.primed
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 15
+    - action: PLAY_SOUND
+      sValue: entity.generic.explode
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 15
+      wait: 20
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        track: true
+        coverage: 0.03
+      wait: 20
+      scripts:
+      - Explosion
+      - Wall
+    - action: SET_MOB_AI
+      bValue: false
+      duration: 40
+      Target:
+        targetType: SELF
+  Explosion:
+    Zone:
+      shape: DOME
+      radius: 3
+      Target:
+        targetType: SELF
+    Actions:
+    - action: MESSAGE
+      sValue: '&d[Nether Fiend] &fFools! HA HA HA!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+    - action: DAMAGE
+      multiplier: 3
+      Target:
+        targetType: ZONE_FULL
+        track: true
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: true
+  Wall:
+    Zone:
+      shape: CUBOID
+      x: 1
+      y: 26
+      z: 21
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,-11.5,105,100.5,0,0
+    Actions:
+    - action: PLACE_BLOCK
+      wait: 5
+      material: OBSIDIAN
+      Target:
+        targetType: ZONE_FULL
+        track: true
+spawnLocations:
+- em_id_the_deep_mines,-13.5,105,100.5,0.0,0.0
+classLoot: false

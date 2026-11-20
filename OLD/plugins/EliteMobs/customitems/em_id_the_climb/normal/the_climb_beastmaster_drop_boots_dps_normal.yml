@@ -1,0 +1,14 @@
+potionEffects: []
+isEnabled: true
+material: NETHERITE_BOOTS
+name: '&d[Normal] Beastmaster''s Boots'
+lore:
+- '&dYou can sense great'
+- '&dpower flow from these boots.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,2
+- DAMAGE_ALL,5
+- DURABILITY,3
+itemType: unique
+scalability: scalable
+level: 10

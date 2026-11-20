@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Eclipse Longbow'
+material: BOW
+level: 55
+lore:
+- '&cDrawn from the void''s darkness.'
+- '&cArrows vanish mid-flight only'
+- '&cto reappear at their target.'
+enchantments:
+- ARROW_DAMAGE,6
+- ARROW_INFINITE,1
+- DURABILITY,5
+itemType: unique
+scalability: scalable

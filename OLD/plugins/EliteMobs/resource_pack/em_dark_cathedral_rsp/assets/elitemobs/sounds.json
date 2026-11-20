@@ -1,0 +1,12 @@
+{
+   "dark_cathedral.ambient": {
+    "sounds": [
+      "custom/dark_cathedral_ambient"
+    ]
+ },
+   "dark_cathedral.fight": {
+    "sounds": [
+      "custom/dark_cathedral_fight"
+    ]
+ }
+}

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&0Deep-Rite Greaves'
+lore:
+- '&0&kA prayer curls down each shin.'
+- '&0&kBoth prayers end at the floor.'
+classLootFamily: TANK_LEGGINGS

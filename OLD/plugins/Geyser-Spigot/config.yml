@@ -1,0 +1,60 @@
+advanced:
+    add-team-suggestions: true
+    bedrock:
+        broadcast-port: 0
+        compression-level: 6
+        haproxy-protocol-whitelisted-ips: []
+        mtu: 1400
+        use-haproxy-protocol: false
+        use-waterdogpe-forwarding: false
+        validate-bedrock-login: true
+    cache-images: 0
+    floodgate-key-file: key.pem
+    java:
+        disable-compression: true
+        use-direct-connection: true
+        use-haproxy-protocol: false
+    resource-pack-urls: []
+    scoreboard-packet-threshold: 20
+bedrock:
+    address: 0.0.0.0
+    clone-remote-port: true
+    port: 14555
+config-version: 7
+debug-mode: false
+default-locale: system
+gameplay:
+    block-legacy-codes: true
+    command-suggestions: true
+    cooldown-type: crosshair
+    custom-skull-render-distance: 32
+    disable-bedrock-scaffolding: false
+    emotes-enabled: true
+    enable-custom-content: true
+    enable-integrated-pack: true
+    force-resource-packs: true
+    forward-player-ping: false
+    max-visible-custom-skulls: 128
+    nether-roof-workaround: false
+    server-name: SampleCraft
+    show-coordinates: true
+    unusable-space-block: minecraft:barrier
+    xbox-achievements-enabled: false
+java:
+    auth-type: online
+log-player-ip-addresses: true
+motd:
+    integrated-ping-passthrough: true
+    max-players: 100
+    passthrough-motd: true
+    passthrough-player-counts: true
+    ping-passthrough-interval: 3
+    primary-motd: PixelRealm - Early Acces
+    secondary-motd: SAMPLECRAFT.NET NETWORK
+notify-on-new-bedrock-update: true
+pending-authentication-timeout: 120
+remote:
+    auth-type: floodgate
+saved-user-logins:
+    - ThisExampleUsernameShouldBeLongEnoughToNeverBeAnXboxUsername
+    - ThisOtherExampleUsernameShouldAlsoBeLongEnough

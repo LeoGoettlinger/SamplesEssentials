@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&4Midnight Spurs'
+lore:
+- '&4The rowels have long since worn away.'
+- '&4The leather still smells of the stable.'
+classLootFamily: DPS_BOOTS

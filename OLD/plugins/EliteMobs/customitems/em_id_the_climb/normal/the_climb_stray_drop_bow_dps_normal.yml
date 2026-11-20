@@ -1,0 +1,12 @@
+potionEffects: []
+isEnabled: true
+material: BOW
+name: '&b[Normal] Frostbite Bow'
+lore:
+- '&bTiny icicles cover this bow.'
+enchantments:
+- DAMAGE_ALL,3
+- DURABILITY,2
+itemType: unique
+scalability: scalable
+level: 10

@@ -1,0 +1,14 @@
+isEnabled: true
+material: CROSSBOW
+name: '&aAdventurer''s Crossbow'
+lore:
+- '&7Awarded by Casus for completing your first class trial.'
+enchantments:
+- POWER,3
+- UNBREAKING,2
+- QUICK_CHARGE,2
+- PIERCING,1
+potionEffects: []
+scalability: FIXED
+itemType: UNIQUE
+level: 1

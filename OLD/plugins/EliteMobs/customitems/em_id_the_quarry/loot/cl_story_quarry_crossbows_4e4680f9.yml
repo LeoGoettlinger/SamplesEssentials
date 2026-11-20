@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&c[$difficulty] Spellshot'
+lore:
+- '&cFive wizard seals mark the stock.'
+- '&cEach was carved by a different hand.'

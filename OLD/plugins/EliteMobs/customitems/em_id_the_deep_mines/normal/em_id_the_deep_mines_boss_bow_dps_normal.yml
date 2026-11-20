@@ -1,0 +1,18 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Nether Root Bow'
+material: BOW
+level: 45
+lore:
+- '&cThis bow was made out of tree roots'
+- '&cthat can only be found in the nether.'
+- '&cPleasantly warm to the touch.'
+enchantments:
+- ARROW_FIRE,6
+- ARROW_INFINITE,5
+- ARROW_DAMAGE,4
+- ARROW_KNOCKBACK,3
+- DURABILITY,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

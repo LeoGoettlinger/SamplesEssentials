@@ -1,0 +1,79 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - ElitePhaseSwitchEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - DumpVs1
+      - Dump1
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    Cooldowns:
+      local: 311
+      global: 20
+  DumpVs1:
+    Zone:
+      shape: SPHERE
+      radius: 3
+      borderRadius: 2
+      Target:
+        targetType: SELF
+        offset: 0,3,0
+        track: true
+    Actions:
+    - action: TITLE_MESSAGE
+      title: '&6Lava Warning!'
+      subtitle: '&6Move away!'
+      duration: 40
+      fadeIn: 5
+      fadeOut: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: LAVA
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.2
+        track: true
+      repeatEvery: 10
+      times: 4
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  Dump1:
+    Zone:
+      shape: SPHERE
+      radius: 2
+      Target:
+        targetType: SELF
+        offset: 0,0,0
+        track: true
+    Actions:
+    - action: PLACE_BLOCK
+      material: LAVA
+      duration: 200
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      wait: 45
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

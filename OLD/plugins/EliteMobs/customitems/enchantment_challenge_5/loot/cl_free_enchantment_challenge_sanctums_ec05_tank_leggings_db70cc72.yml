@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Boundary Keepers
+lore:
+- Stand your ground. Politely.
+classLootFamily: TANK_LEGGINGS

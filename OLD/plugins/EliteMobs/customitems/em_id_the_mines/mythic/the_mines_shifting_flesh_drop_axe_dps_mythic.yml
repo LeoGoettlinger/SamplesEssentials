@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Mythical] Shifting Axe'
+material: DIAMOND_AXE
+level: 20
+lore:
+- '&2The color of the axe shifts with every swing.'
+enchantments:
+- DAMAGE_ALL,5
+- DAMAGE_ARTHROPODS,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

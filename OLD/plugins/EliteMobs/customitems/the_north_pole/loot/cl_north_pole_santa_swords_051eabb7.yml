@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&cLast Present'
+lore:
+- '&7The wrapping is torn at the point.'
+- '&7Santa kept this one for himself.'

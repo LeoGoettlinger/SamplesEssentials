@@ -1,0 +1,54 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  SummonReinforcements:
+    Events:
+    - EliteMobDamagedEvent
+    Zone:
+      shape: CYLINDER
+      radius: 5
+      borderRadius: 4
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,4,0
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: DRIP_WATER
+      Target:
+        targetType: ZONE_BORDER
+      repeatEvery: 10
+      times: 6
+    - action: PLAY_ANIMATION
+      Target:
+        targetType: SELF
+      sValue: summon_tridents
+    - action: MESSAGE
+      wait: 25
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 10
+      sValue: '&4[Cultist of Cthulhu] &fI call forth the sea''s dark kin, children
+        of Cthulhu, aid me!'
+    - action: PLAY_SOUND
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+      sValue: minecraft:block.beacon.activate
+      repeatEvery: 20
+      times: 3
+    - action: SUMMON_REINFORCEMENT
+      duration: 100
+      Target:
+        targetType: ZONE_BORDER
+      sValue: dark_cathedral_tier_75_reinforcement.yml
+      wait: 60
+      Conditions:
+        locationIsAir: true
+        Target:
+          targetType: ACTION_TARGET
+    Cooldowns:
+      local: 200
+      global: 60

@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&7Closed Audience'
+lore:
+- '&7The court''s answer was to shut the doors.'

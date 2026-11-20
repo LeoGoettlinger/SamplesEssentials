@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Top Bunger
+lore:
+- Nice top, keeps head.
+classLootFamily: TANK_HELMETS

@@ -1,0 +1,107 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: ZOMBIE
+disguise: ZOMBIFIED_PIGLIN
+name: $normalLevel &7Rearranged Flesh
+level: dynamic # 20
+mainHand: IRON_SWORD
+offHand: SHIELD
+powers:
+- invulnerability_fall_damage.yml
+- invulnerability_fire.yml
+- invulnerability_arrow.yml
+- bullet_hell.yml
+onDamageMessages:
+- Your shine is mesmerizing.
+- Do I glow like you?
+- What… am I…
+instanced: true
+healthMultiplier: 1
+damageMultiplier: 0.85
+movementSpeedAttribute: 0.36
+frozen: false
+# leashRadius: 30
+followDistance: 30
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+isRegionalBoss: true
+normalizedCombat: true
+dropsRandomLoot: false
+spawnLocations:
+- em_id_the_mines,210.5,115.5,25.5,0.0,0.0:1676457445040
+- em_id_the_mines,195.5,115.5,24.5,0.0,0.0:1676457445081
+- em_id_the_mines,172.5,116.5,30.5,0.0,0.0:1676457445039
+- em_id_the_mines,151.5,125.5,30.5,0.0,0.0:1676457445098
+- em_id_the_mines,124.5,116.5,34.5,0.0,0.0:1676457445015
+- em_id_the_mines,124.5,116.5,26.5,0.0,0.0:1676457445006
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: the_mines_rearranged_hog_drop_boots_tank_normal.yml
+  chance: 0.01
+  difficultyID: 0
+- filename: the_mines_rearranged_hog_drop_boots_tank_hard.yml
+  chance: 0.01
+  difficultyID: 1
+- filename: the_mines_rearranged_hog_drop_boots_tank_mythic.yml
+  chance: 0.01
+  difficultyID: 2
+- filename: the_mines_rearranged_hog_drop_chestplate_tank_normal.yml
+  chance: 0.01
+  difficultyID: 0
+- filename: the_mines_rearranged_hog_drop_chestplate_tank_hard.yml
+  chance: 0.01
+  difficultyID: 1
+- filename: the_mines_rearranged_hog_drop_chestplate_tank_mythic.yml
+  chance: 0.01
+  difficultyID: 2
+- filename: the_mines_rearranged_hog_drop_shield_tank_normal.yml
+  chance: 0.01
+  difficultyID: 0
+- filename: the_mines_rearranged_hog_drop_shield_tank_hard.yml
+  chance: 0.01
+  difficultyID: 1
+- filename: the_mines_rearranged_hog_drop_shield_tank_mythic.yml
+  chance: 0.01
+  difficultyID: 2
+- filename: cl_story_mines_swords_f5c77fe4.yml
+  chance: 1.0
+- filename: cl_story_mines_axes_23aac663.yml
+  chance: 1.0
+- filename: cl_story_mines_bows_a6d16b50.yml
+  chance: 1.0
+- filename: cl_story_mines_crossbows_bc046011.yml
+  chance: 1.0
+- filename: cl_story_mines_tridents_e00d07bd.yml
+  chance: 1.0
+- filename: cl_story_mines_hoes_94e447fa.yml
+  chance: 1.0
+- filename: cl_story_mines_maces_96b8e254.yml
+  chance: 1.0
+- filename: cl_story_mines_spears_258f1267.yml
+  chance: 1.0
+- filename: cl_story_mines_staves_9801a7fb.yml
+  chance: 1.0
+- filename: cl_story_mines_wands_88a081b9.yml
+  chance: 1.0
+- filename: the_mines_rearranged_hog_dps_helmets_3884afdd.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_chestplates_527dffa2.yml
+  chance: 1.0
+- filename: the_mines_rearranged_hog_dps_leggings_fb97b658.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_boots_87c73439.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_helmets_23d0f6a6.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_chestplates_905e88bf.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_leggings_cccc8016.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_boots_e7f99614.yml
+  chance: 1.0
+- filename: cl_story_mines_shields_687daaca.yml
+  chance: 1.0

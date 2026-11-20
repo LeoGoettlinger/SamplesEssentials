@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_SWORD
+name: '&f[Hard] Bleached Bone Blade'
+lore:
+- '&fThis blade has been fashioned'
+- '&fout of a sharp white bone.'
+enchantments:
+- DAMAGE_ALL,4
+- DAMAGE_UNDEAD,4
+itemType: unique
+scalability: scalable
+level: 10

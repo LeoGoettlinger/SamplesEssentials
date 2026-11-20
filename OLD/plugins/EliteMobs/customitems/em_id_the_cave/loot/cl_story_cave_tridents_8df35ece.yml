@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&7Boiling Fork'
+lore:
+- '&7The three tips bear rings of cooked slime.'

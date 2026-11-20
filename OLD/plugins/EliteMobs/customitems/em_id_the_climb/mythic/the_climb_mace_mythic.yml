@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Bone Crusher'
+material: MACE
+level: 10
+lore:
+- '&cA brutal mace fashioned from'
+- '&cthe bones of defeated beasts.'
+- '&cIt hungers for more.'
+enchantments:
+- DAMAGE_ALL,7
+- KNOCKBACK,2
+- DURABILITY,4
+itemType: unique
+scalability: scalable

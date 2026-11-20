@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&d[Normal] Crossbow of Pew-Pew'
+material: CROSSBOW
+level: 40
+lore:
+- '&dCreated by the mighty dwarven'
+- '&dwizard Pew as a swift way to deal'
+- '&dwith cave bats.'
+enchantments:
+- MULTISHOT,2
+- PIERCING,1
+- DURABILITY,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

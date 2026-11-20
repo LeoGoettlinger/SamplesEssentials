@@ -1,0 +1,14 @@
+isEnabled: true
+material: IRON_LEGGINGS
+name: '&f[Normal] Void-Forged Leggings'
+lore:
+- '&fCrafted long ago'
+- '&fin the depths of the Nether,'
+- '&finfused with void energy.'
+enchantments:
+- DAMAGE_ALL,3
+- THORNS,1
+potionEffects: []
+scalability: scalable
+level: 55
+itemType: unique

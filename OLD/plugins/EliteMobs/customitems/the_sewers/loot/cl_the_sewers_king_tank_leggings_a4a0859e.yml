@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&4Drowned King''s Leggings'
+lore:
+- '&cFormerly the leggings of the'
+- '&cdevilish Drowned King!'
+classLootFamily: TANK_LEGGINGS

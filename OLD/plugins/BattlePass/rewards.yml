@@ -1,0 +1,328 @@
+# ================================
+# BattlePass Rewards Configuration
+# Plugin by ResistanceCore
+# ================================
+#
+# ✅ FIXED: Removed redundant 'premium-only' field
+# Use ONLY 'type' field now:
+#   - type: FREE    → All players can claim
+#   - type: PREMIUM → Only premium players can claim
+# 
+# ⚠️ CUSTOM ITEMS (Oraxen/ItemsAdder):
+# - DO NOT use "oraxen-id" or "itemsadder-id" anymore
+# - Use Tier Editor GUI: /bpadmin editor
+# - Hold custom item in hand → Click "Add Item from Hand"
+# - This preserves FULL NBT data for ANY custom item!
+
+rewards:
+  # ==================
+  # TIER 1 REWARDS
+  # ==================
+  tier_1_free:
+    tier: 1
+    name: "&aStarter Pack"
+    description: "Welcome to the BattlePass!"
+    type: FREE  # ✅ All players
+    # ❌ REMOVED: premium-only: false
+    items:
+      - material: DIAMOND
+        amount: 5
+      - material: GOLDEN_APPLE
+        amount: 3
+    commands:
+      - "give %player% minecraft:experience_bottle 5"
+    display-item:
+      material: CHEST
+      name: "&aStarter Pack"
+      lore:
+        - "&75x Diamonds"
+        - "&73x Golden Apples"
+        - "&75x XP Bottles"
+  
+  tier_1_premium:
+    tier: 1
+    name: "&d⭐ Premium Starter"
+    description: "Premium players get extra goodies!"
+    type: PREMIUM  # ✅ Premium only
+    # ❌ REMOVED: premium-only: true
+    items:
+      - material: DIAMOND
+        amount: 10
+      - material: ENCHANTED_GOLDEN_APPLE
+        amount: 2
+    display-item:
+      material: ENDER_CHEST
+      name: "&d⭐ Premium Starter"
+      lore:
+        - "&710x Diamonds"
+        - "&72x Enchanted Golden Apples"
+  
+  # ==================
+  # TIER 5 REWARDS
+  # ==================
+  tier_5_free:
+    tier: 5
+    name: "&aWarrior Kit"
+    description: "Basic combat essentials"
+    type: FREE
+    # ❌ REMOVED: premium-only: false
+    items:
+      - material: IRON_SWORD
+        amount: 1
+      - material: IRON_CHESTPLATE
+        amount: 1
+    commands:
+      - "give %player% minecraft:cooked_beef 32"
+    display-item:
+      material: IRON_SWORD
+      name: "&aWarrior Kit"
+      lore:
+        - "&7Iron Sword"
+        - "&7Iron Chestplate"
+        - "&732x Cooked Beef"
+  
+  tier_5_premium:
+    tier: 5
+    name: "&d⭐ Elite Warrior Kit"
+    description: "Enhanced combat gear for premium players"
+    type: PREMIUM
+    # ❌ REMOVED: premium-only: true
+    items:
+      - material: DIAMOND_SWORD
+        amount: 1
+      - material: DIAMOND_CHESTPLATE
+        amount: 1
+    display-item:
+      material: DIAMOND_SWORD
+      name: "&d⭐ Elite Warrior Kit"
+      lore:
+        - "&7Diamond Sword"
+        - "&7Diamond Chestplate"
+  
+  # ==================
+  # TIER 10 REWARDS
+  # ==================
+  tier_10_free:
+    tier: 10
+    name: "&aResource Pack"
+    description: "Useful resources for building"
+    type: FREE
+    # ❌ REMOVED: premium-only: false
+    items:
+      - material: IRON_BLOCK
+        amount: 16
+      - material: GOLD_BLOCK
+        amount: 8
+    money: 1000
+    display-item:
+      material: IRON_BLOCK
+      name: "&aResource Pack"
+      lore:
+        - "&716x Iron Blocks"
+        - "&78x Gold Blocks"
+        - "&7$1,000"
+  
+  tier_10_premium_custom:
+    tier: 10
+    name: "&6Custom Legendary Weapon"
+    description: "Exclusive custom weapon!"
+    type: PREMIUM
+    # ❌ REMOVED: premium-only: true
+    items: []
+    # ⚠️ ADD CUSTOM ITEMS VIA GUI:
+    # 1. /bpadmin editor 10
+    # 2. Click this reward → Manage Items
+    # 3. Hold your Oraxen "legendary_sword" in hand
+    # 4. Click "Add Item from Hand"
+    # 5. Save Changes
+    display-item:
+      material: GOLDEN_SWORD
+      name: "&6Custom Legendary Weapon"
+      lore:
+        - "&7A legendary custom weapon"
+        - "&d⭐ Premium Only"
+        - "&eAdd via GUI: Hold item → Add from Hand"
+  
+  # ==================
+  # TIER 15 REWARDS
+  # ==================
+  tier_15_free:
+    tier: 15
+    name: "&aBuilder's Dream"
+    description: "Materials for mega builds"
+    type: FREE
+    # ❌ REMOVED: premium-only: false
+    items:
+      - material: OAK_LOG
+        amount: 64
+      - material: STONE
+        amount: 64
+      - material: GLASS
+        amount: 64
+    display-item:
+      material: OAK_LOG
+      name: "&aBuilder's Dream"
+      lore:
+        - "&764x Oak Logs"
+        - "&764x Stone"
+        - "&764x Glass"
+  
+  tier_15_premium_custom:
+    tier: 15
+    name: "&bMagic Staff"
+    description: "A mystical custom staff"
+    type: PREMIUM
+    # ❌ REMOVED: premium-only: true
+    items: []
+    # ⚠️ ADD CUSTOM ITEMS VIA GUI:
+    # Use /bpadmin editor → Hold ItemsAdder "magic:fire_staff" → Add from Hand
+    display-item:
+      material: STICK
+      name: "&bMagic Staff"
+      lore:
+        - "&7A powerful magical staff"
+        - "&d⭐ Premium Only"
+        - "&eAdd via GUI: Hold item → Add from Hand"
+  
+  # ==================
+  # TIER 20 REWARDS
+  # ==================
+  tier_20_free:
+    tier: 20
+    name: "&aElite Pack"
+    description: "Midway rewards!"
+    type: FREE
+    # ❌ REMOVED: premium-only: false
+    items:
+      - material: DIAMOND_BLOCK
+        amount: 3
+      - material: NETHERITE_INGOT
+        amount: 1
+    money: 5000
+    commands:
+      - "give %player% minecraft:totem_of_undying 1"
+    display-item:
+      material: DIAMOND_BLOCK
+      name: "&aElite Pack"
+      lore:
+        - "&73x Diamond Blocks"
+        - "&71x Netherite Ingot"
+        - "&7$5,000"
+        - "&71x Totem of Undying"
+  
+  tier_20_premium:
+    tier: 20
+    name: "&d⭐ Premium Elite Pack"
+    description: "Double the rewards!"
+    type: PREMIUM
+    # ❌ REMOVED: premium-only: true
+    items:
+      - material: DIAMOND_BLOCK
+        amount: 6
+      - material: NETHERITE_INGOT
+        amount: 3
+    money: 10000
+    commands:
+      - "give %player% minecraft:totem_of_undying 2"
+      - "give %player% minecraft:elytra 1"
+    display-item:
+      material: NETHERITE_BLOCK
+      name: "&d⭐ Premium Elite Pack"
+      lore:
+        - "&76x Diamond Blocks"
+        - "&73x Netherite Ingots"
+        - "&7$10,000"
+        - "&72x Totems"
+        - "&71x Elytra"
+  
+  # ==================
+  # TIER 30 REWARDS
+  # ==================
+  tier_30_premium_bundle:
+    tier: 30
+    name: "&6&lULTIMATE CUSTOM BUNDLE"
+    description: "Multiple custom items!"
+    type: PREMIUM
+    # ❌ REMOVED: premium-only: true
+    items: []
+    # ⚠️ ADD MULTIPLE CUSTOM ITEMS VIA GUI:
+    # 1. /bpadmin editor 30
+    # 2. Hold "mythic_helmet" → Add from Hand
+    # 3. Hold "mythic_chestplate" → Add from Hand
+    # 4. Hold "legendary_boots" → Add from Hand
+    # 5. Save Changes
+    money: 20000
+    commands:
+      - "broadcast &6%player% &eunlocked the Ultimate Custom Bundle!"
+    display-item:
+      material: NETHERITE_CHESTPLATE
+      name: "&6&lULTIMATE CUSTOM BUNDLE"
+      lore:
+        - "&d★ PREMIUM EXCLUSIVE ★"
+        - "&7Full custom armor set"
+        - "&7$20,000"
+        - "&eAdd items via GUI!"
+  
+  # ==================
+  # TIER 50 REWARDS (FINAL)
+  # ==================
+  tier_50_free:
+    tier: 50
+    name: "&6&lSEASON COMPLETION"
+    description: "You completed the season!"
+    type: FREE
+    # ❌ REMOVED: premium-only: false
+    items:
+      - material: NETHERITE_BLOCK
+        amount: 5
+      - material: BEACON
+        amount: 1
+    money: 50000
+    commands:
+      - "give %player% minecraft:elytra 1"
+      - "broadcast &6%player% &ehas completed the BattlePass Season!"
+    display-item:
+      material: NETHER_STAR
+      name: "&6&lSEASON COMPLETION"
+      lore:
+        - "&e★ CONGRATULATIONS! ★"
+        - "&75x Netherite Blocks"
+        - "&71x Beacon"
+        - "&71x Elytra"
+        - "&7$50,000"
+  
+  tier_50_premium_legendary:
+    tier: 50
+    name: "&d⭐ &6&lLEGENDARY COMPLETION"
+    description: "The ultimate premium reward!"
+    type: PREMIUM
+    # ❌ REMOVED: premium-only: true
+    items:
+      - material: NETHERITE_BLOCK
+        amount: 10
+      - material: BEACON
+        amount: 3
+    # ⚠️ ADD CUSTOM LEGENDARY ITEMS VIA GUI:
+    # Hold each custom item → Add from Hand:
+    # - mythic_crown (Oraxen)
+    # - legendary_wings (Oraxen)
+    # - ultimate_sword (ItemsAdder)
+    money: 100000
+    commands:
+      - "give %player% minecraft:elytra 1"
+      - "give %player% minecraft:dragon_egg 1"
+      - "broadcast &d⭐ &6%player% &ehas completed the &dPREMIUM &eBattlePass!"
+      - "give %player% minecraft:enchanted_golden_apple 10"
+    display-item:
+      material: DRAGON_EGG
+      name: "&d⭐ &6&lLEGENDARY COMPLETION"
+      lore:
+        - "&5★★★ ULTIMATE PREMIUM REWARD ★★★"
+        - "&710x Netherite Blocks"
+        - "&73x Beacons"
+        - "&71x Elytra + Dragon Egg"
+        - "&710x Enchanted Golden Apples"
+        - "&7$100,000"
+        - ""
+        - "&eCustom items: Add via GUI!"
+        - "&7mythic_crown, legendary_wings, ultimate_sword"

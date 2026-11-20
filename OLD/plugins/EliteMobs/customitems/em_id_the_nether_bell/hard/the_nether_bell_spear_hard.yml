@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Nullifier Spear'
+material: NETHERITE_SPEAR
+level: 55
+lore:
+- '&cA spear forged in the void''s'
+- '&cimage. It pierces reality'
+- '&citself, leaving emptiness.'
+enchantments:
+- IMPALING,7
+- DAMAGE_ALL,8
+- DURABILITY,6
+itemType: unique
+scalability: scalable

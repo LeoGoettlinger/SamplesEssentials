@@ -1,0 +1,99 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  ActivateMobs:
+    Events:
+    - ElitePhaseSwitchEvent
+    - EliteMobDamagedEvent
+    Actions:
+    - action: TITLE_MESSAGE
+      title: '&cThe Void Bell'
+      subtitle: '&cRings!'
+      Target:
+        targetType: WORLD_PLAYERS
+      duration: 30
+      fadeIn: 5
+      fadeOut: 5
+    - action: PLAY_SOUND
+      sValue: void_bell_ring_6
+      Target:
+        targetType: SELF
+      repeatEvery: 10
+      times: 4
+    - action: PLAY_ANIMATION
+      Target:
+        targetType: SELF
+      sValue: ring
+    - action: SET_MOB_AI
+      Target:
+        targetType: NEARBY_MOBS
+        range: 40
+      bValue: true
+      Conditions:
+        hasTags:
+        - Phase3
+        Target:
+          targetType: ACTION_TARGET
+    - action: MAKE_INVULNERABLE
+      wait: 20
+      Target:
+        targetType: NEARBY_MOBS
+        range: 40
+      invulnerable: false
+      Conditions:
+        hasTags:
+        - Phase3
+        Target:
+          targetType: ACTION_TARGET
+    - action: PUSH
+      wait: 5
+      Target:
+        targetType: NEARBY_MOBS
+        range: 40
+      vValue: 0,0.6,0
+      Conditions:
+        hasTags:
+        - Phase3
+        Target:
+          targetType: ACTION_TARGET
+    - action: RUN_SCRIPT
+      scripts:
+      - CallYellowReinforcements
+    Cooldowns:
+      local: 99999
+      global: 100
+  CallYellowReinforcements:
+    Actions:
+    - action: SUMMON_REINFORCEMENT
+      Target:
+        targetType: SELF
+        offset: 2,0,0
+      sValue: em_id_the_nether_bell_beam_boss_yellow_3_warden_summon.yml
+      duration: 2000
+      Conditions:
+        hasTags:
+        - Yellow3
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 30
+      sValue: '&cThe Void Bell&f released a lost soul you have slain!'
+      Conditions:
+        hasTags:
+        - Yellow3
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+    - action: PLAY_SOUND
+      Target:
+        targetType: SELF
+      sValue: entity.wither.spawn
+      Conditions:
+        hasTags:
+        - Yellow3
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING

@@ -1,0 +1,26 @@
+transportRoutes: []
+name: <g:#A89040:#B8A050>Arena Master</g>
+role: <g:#988030:#A89040><Colosseum></g>
+greetings:
+- ''
+dialog: []
+farewell: []
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:armorer]=VillagerProfession[name=translation{key='entity.minecraft.villager.armorer',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x000000009ab5d7a8@7e1f67fa,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x000000009ab5da08@730799ea,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_armorer,
+  fixedRange=Optional.empty], tradeSetsByLevel={1=>ResourceKey[minecraft:trade_set
+  / minecraft:armorer/level_1], 2=>ResourceKey[minecraft:trade_set / minecraft:armorer/level_2],
+  3=>ResourceKey[minecraft:trade_set / minecraft:armorer/level_3], 4=>ResourceKey[minecraft:trade_set
+  / minecraft:armorer/level_4], 5=>ResourceKey[minecraft:trade_set / minecraft:armorer/level_5]}]}}
+scripts: []
+isEnabled: true
+spawnLocation: em_adventurers_guild,291.5,92,307.5,-90,0
+spawnLocations: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+customModel: em_ag_arenamaster
+command: em dungeontp the_colosseum_lair.yml
+syncMovement: false

@@ -1,0 +1,11 @@
+name: '&bFirefly Charm'
+lore:
+- '&aLight up the night!'
+isEnabled: true
+material: GLASS_BOTTLE
+enchantments:
+- VANISHING_CURSE,1
+potionEffects:
+- NIGHT_VISION,0,self,continuous
+- GLOWING,0,target,onHit
+dropWeight: '1'

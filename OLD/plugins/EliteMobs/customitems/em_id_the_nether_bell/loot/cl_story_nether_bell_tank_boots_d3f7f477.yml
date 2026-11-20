@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Silent Foundation'
+lore:
+- '&7Dust from the temple floor fills the grooves.'
+classLootFamily: TANK_BOOTS

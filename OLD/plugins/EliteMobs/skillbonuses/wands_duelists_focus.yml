@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&5Duelist''s Focus'
+description:
+- '&7Missiles hit harder when you'
+- '&7face one enemy alone.'
+skillType: WANDS
+bonusType: CONDITIONAL
+unlockTier: 2
+baseValue: 0.25
+scalingPerLevel: 0.003
+displayMaterial: SPYGLASS
+loreTemplates:
+- '&7Bonus: &f+$bonus% damage'
+- '&7No other enemy within &f$range&7 blocks'
+formattedBonusTemplate: +$bonus% one-on-one

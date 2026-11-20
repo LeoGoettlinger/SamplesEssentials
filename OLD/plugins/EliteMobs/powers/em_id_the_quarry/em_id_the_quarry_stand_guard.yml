@@ -1,0 +1,34 @@
+isEnabled: true
+eliteScript:
+  'false':
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: POTION_EFFECT
+      wait: 5
+      potionEffectType: SLOW
+      amplifier: 99
+      duration: 20
+      Target:
+        targetType: SELF
+      repeatEvery: 19
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - slow
+    - action: TAG
+      tags:
+      - slow
+      Target:
+        targetType: SELF
+  'true':
+    Events:
+    - EliteMobTargetPlayerEvent
+    Actions:
+    - action: UNTAG
+      tags:
+      - slow
+      Target:
+        targetType: SELF

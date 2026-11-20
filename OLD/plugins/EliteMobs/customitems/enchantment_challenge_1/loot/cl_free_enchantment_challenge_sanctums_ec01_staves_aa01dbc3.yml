@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: Chimney Rod
+lore:
+- Found wedged across a very narrow flue.
+weaponType: STAVES

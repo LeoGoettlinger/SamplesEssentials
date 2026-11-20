@@ -1,0 +1,8 @@
+Name: Starter Crate Key
+Virtual: true
+ItemData:
+  Provider: vanilla
+  Data:
+    Value: '{count:64,id:"minecraft:trial_key"}'
+    DataVersion: 4556
+ItemStackable: true

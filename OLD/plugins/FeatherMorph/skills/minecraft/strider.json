@@ -1,0 +1,9 @@
+{
+  "skillCooldown": 20,
+  "skillId": "morph:fake_equip",
+  "abilities": [
+    "morph:fire_resistance",
+    "morph:takes_damage_from_water"
+  ],
+  "settings": {}
+}

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&cPresent Pounder'
+lore:
+- '&7For packages that refuse to close.'
+- '&7Santa calls it gentle encouragement.'

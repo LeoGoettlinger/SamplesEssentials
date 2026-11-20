@@ -1,0 +1,6 @@
+name: Repair
+isEnabled: true
+maxLevelV2: 5
+value: 15.0
+isEnabledForProcedurallyGeneratedItems: false
+maxEnchantmentLevel: 5

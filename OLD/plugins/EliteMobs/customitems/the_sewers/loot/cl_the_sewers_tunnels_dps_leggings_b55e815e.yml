@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&2Culvert Strides'
+lore:
+- '&2Rolled cuffs were not enough.'
+classLootFamily: DPS_LEGGINGS

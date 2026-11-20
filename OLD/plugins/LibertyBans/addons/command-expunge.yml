@@ -1,0 +1,6 @@
+usage: '&cUsage: /libertybans expunge <id>'
+no-permission: '&cSorry, you cannot use this.'
+not-found: '&7No punishment exists with ID &e%ID%&7.'
+success: '&7Expunged punishment &e%ID%&7.'
+ # Whether to enable this addon at all
+enable: true

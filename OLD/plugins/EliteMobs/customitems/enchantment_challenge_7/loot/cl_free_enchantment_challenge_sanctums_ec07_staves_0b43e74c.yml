@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: Snowman's Cane
+lore:
+- The owner did not need it to walk.
+weaponType: STAVES

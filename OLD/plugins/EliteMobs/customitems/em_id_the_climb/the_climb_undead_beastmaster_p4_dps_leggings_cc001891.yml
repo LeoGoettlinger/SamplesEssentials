@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&d[$difficulty] Beastmaster''s Leggings'
+lore:
+- '&dThese leggings seem to be interwoven'
+- '&dout of silk-like material.'
+classLootFamily: DPS_LEGGINGS

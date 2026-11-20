@@ -1,0 +1,17 @@
+name: Kill the Test Boss
+questLore:
+- '&cEnd the test boss'' reign of terror!'
+questAcceptDialog: []
+questCompleteMessage: []
+isEnabled: true
+customRewards:
+- filename=magmaguys_toothpick.yml:amount=1:chance=1
+questAcceptPermission: ''
+questLockoutPermission: ''
+temporaryPermissions: []
+questCompleteCommands: []
+customObjectives:
+  Objective1:
+    filename: test_boss.yml
+    amount: 1
+    objectiveType: KILL_CUSTOM

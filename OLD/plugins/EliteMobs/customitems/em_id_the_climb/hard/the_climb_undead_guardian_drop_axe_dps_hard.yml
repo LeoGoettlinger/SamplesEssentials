@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_AXE
+name: '&1[Hard] Guardian Axe'
+lore:
+- '&1This axe was frozen solid to'
+- '&1the corpse''s back. It''s yours now.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- DAMAGE_ALL,5
+itemType: unique
+scalability: scalable
+level: 10

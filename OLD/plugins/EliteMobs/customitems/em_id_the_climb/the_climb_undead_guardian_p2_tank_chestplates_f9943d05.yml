@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&1[$difficulty] Guardian Chestplate'
+lore:
+- '&1Undead Guardian''s armor.'
+classLootFamily: TANK_CHESTPLATES

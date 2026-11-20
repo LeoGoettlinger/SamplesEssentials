@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&d[Hard] Magicked Boots'
+material: DIAMOND_BOOTS
+level: 40
+lore:
+- '&dSomeone has put a lot of'
+- '&deffort into enhancing these boots'
+- '&dwith powerful magic.'
+enchantments:
+- DAMAGE_UNDEAD,5
+- DAMAGE_ALL,4
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,2
+potionEffects:
+- LEVITATION,0,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

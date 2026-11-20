@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&aArcane Watchstaff'
+lore:
+- '&aTiny warding letters crowd the grip.'
+weaponType: STAVES

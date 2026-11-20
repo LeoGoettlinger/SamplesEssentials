@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&2[Hard] Twilight'
+material: DIAMOND_SWORD
+level: 20
+lore:
+- '&2When the darkness comes, this will keep it at bay.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,7
+- PROTECTION_PROJECTILE,4
+- DAMAGE_ALL,3
+- elitemobs:loud_strikes,2
+potionEffects:
+- GLOWING,0,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

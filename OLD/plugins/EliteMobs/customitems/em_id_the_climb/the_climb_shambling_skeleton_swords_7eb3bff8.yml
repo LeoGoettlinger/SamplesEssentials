@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&b[$difficulty] Frostbite Sword'
+lore:
+- '&bCold to the touch.'

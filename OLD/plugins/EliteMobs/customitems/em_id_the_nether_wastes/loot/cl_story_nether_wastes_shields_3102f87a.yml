@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&7Abandoned Claim'
+lore:
+- '&7The shield bears a claim nobody came back to collect.'

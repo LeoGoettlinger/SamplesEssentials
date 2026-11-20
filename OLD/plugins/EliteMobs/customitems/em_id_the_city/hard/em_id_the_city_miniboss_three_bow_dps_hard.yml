@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&d[Hard] City Defender'
+material: BOW
+level: 30
+lore:
+- '&dThis bow must have been used.'
+- '&dto fire thousands of arrows.'
+enchantments:
+- DAMAGE_UNDEAD,5
+- PROTECTION_ENVIRONMENTAL,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

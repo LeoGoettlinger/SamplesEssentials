@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&c[$difficulty] Weaver Lance'
+lore:
+- '&cDaine''s personal weapon for'
+- '&cpiercing through soul barriers.'
+- '&cIt hungers for essence.'

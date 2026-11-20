@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&c[$difficulty] Guardian Pike'
+lore:
+- '&cA ceremonial pike wielded by'
+- '&cthe Royal Guard. Its blade'
+- '&cshines with royal authority.'

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&cSpent Sparkler'
+lore:
+- '&cThe handle is warm from the crowd.'
+- '&cNo fuse remains.'
+weaponType: WANDS

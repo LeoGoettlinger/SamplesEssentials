@@ -1,0 +1,14 @@
+isEnabled: true
+material: IRON_CHESTPLATE
+name: '&f[Hard] Void-Forged Chestplate'
+lore:
+- '&fCrafted long ago'
+- '&fin the depths of the Nether,'
+- '&finfused with void energy.'
+enchantments:
+- DAMAGE_ALL,4
+- THORNS,2
+potionEffects: []
+scalability: scalable
+level: 55
+itemType: unique

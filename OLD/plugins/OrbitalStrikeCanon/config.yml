@@ -1,0 +1,32 @@
+# ---- Crafting / Recipe ----
+recipe: true
+
+# ---- Rod delays ----
+rod-delay: 1
+tp-delay: 7
+
+# ---- Arrow ----
+arrow-velocity: 50000
+arrow-delay: 0
+
+# ---- Death ban ----
+ban-duration: 1d
+
+# ---- Mafia ----
+mafia-delay: 2
+
+# ---- Nuke ----
+nuke-rings: 15
+
+# ---- Wolf ----
+wolf-amount: 150
+
+# ---- Darkness ----
+darkness-duration: 25
+darkness-range: 50
+
+# ---- Pearl Cannon ----
+pearlcannon-delay: 7
+
+# ---- Wither Canon ----
+wither-canon-count: 20

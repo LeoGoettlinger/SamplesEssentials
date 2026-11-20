@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Mining Boots'
+material: IRON_BOOTS
+level: 40
+lore:
+- '&fStepping on TNT is a lot safer'
+- '&fwhen you are wearing these.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_EXPLOSIONS,3
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

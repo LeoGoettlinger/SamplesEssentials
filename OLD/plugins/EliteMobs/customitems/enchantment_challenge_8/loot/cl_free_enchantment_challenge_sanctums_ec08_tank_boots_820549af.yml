@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Heel Bunger
+lore:
+- Heavy feet. Stay put.
+classLootFamily: TANK_BOOTS

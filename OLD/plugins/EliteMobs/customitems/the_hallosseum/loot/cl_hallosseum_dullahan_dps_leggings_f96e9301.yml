@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&4Gravebound Strides'
+lore:
+- '&4Fine enough for the final procession.'
+- '&4Sturdy enough to leave it.'
+classLootFamily: DPS_LEGGINGS

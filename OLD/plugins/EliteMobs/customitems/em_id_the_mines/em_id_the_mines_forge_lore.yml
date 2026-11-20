@@ -1,0 +1,13 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&cHidden Note'
+material: PAPER
+lore:
+- '&cForging both armor and new life is wearing'
+- '&cme down. Daine should not have made me so'
+- '&cweak.I want to be better; I want to be more.'
+- '&cOnce the Tulpa has finished growing, Daine'
+- '&cwill surely reward me with a better body…'
+scalability: scalable
+itemType: unique

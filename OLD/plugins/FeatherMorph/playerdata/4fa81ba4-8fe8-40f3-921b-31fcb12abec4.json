@@ -1,0 +1,14 @@
+{
+  "playerName": "Sky_CraftTV",
+  "unlockedDisguiseIdentifiers": [
+    "minecraft:sheep",
+    "minecraft:cod",
+    "minecraft:armor_stand"
+  ],
+  "showDisguiseToSelf": false,
+  "shownDisplayToSelfHint": false,
+  "shownServerSkillHint": false,
+  "shownClientSkillHint": false,
+  "shownMorphHint": true,
+  "shownMorphClientHint": false
+}

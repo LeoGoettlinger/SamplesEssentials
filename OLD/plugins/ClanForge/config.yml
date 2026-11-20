@@ -1,0 +1,86 @@
+plugin:
+  name: ClanForge
+  debug: false
+  language: en # en, ja, de, zh, bn, ar
+
+database:
+  type: sqlite # mysql or sqlite
+  mysql:
+    host: localhost
+    port: 3306
+    database: clans
+    user: root
+    password: ''
+    useSSL: true
+  sqlite:
+    file: plugins/ClanForge/data.db
+
+features:
+  gui: true
+  discord_integration: false
+  web_stats: false
+  wars: true
+  land_sharing:
+    worldguard: false
+    plotsquared: false
+    griefprevention: false
+  placeholderapi: true
+  economy_vault: true
+  kdr_tracking: false
+  kill_reward: false
+  clan_chat: true
+  alliance_chat: true
+  bank_account: true
+  bulletin_board: true
+  upkeep_fee: false
+  member_fee: false
+  friendly_fire: true
+  alliances: true
+  rivalries: true
+  vitals_coordinates: true
+  home_regroup: true
+  ranks:
+    defaults:
+    - leader
+    - trusted
+    - member
+    custom_enabled: true
+  verified_status: true
+  permanent_status: true
+  tab_completions: true
+  leaderboard: true
+  moderation_commands: true
+  spy_chat: true
+  api_events_enabled: true
+  tamable_mobs_sharing: false
+  voting: true
+  holograms: true
+system-clans:
+  allow-leave: false
+  immune-to-cleanup: true
+  immune-to-disband: true
+
+clan:
+  max_bases: 5
+
+economy:
+  starting_balance: 0.0
+  bank_enabled: true
+  kill_reward_amount: 10.0
+
+chat:
+  prefix: '&7[&bClana&7] '
+  clan_format: '&b[Clan]&f {player}: {message}'
+  alliance_format: '&d[Alliance]&f {player}: {message}'
+
+effects:
+  claim:
+    enabled: true
+    particle_own: VILLAGER_HAPPY
+    particle_enemy: FLAME
+    duration_ticks: 100
+    period_ticks: 10
+  teleport:
+    enabled: true
+    particle: PORTAL
+    sound: ENTITY_ENDERMAN_TELEPORT

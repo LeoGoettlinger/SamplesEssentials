@@ -1,0 +1,17 @@
+isEnabled: true
+material: NETHERITE_SPEAR
+name: '&0Abyssal Spear'
+lore:
+- '&0&kForged in the depths'
+- '&0&kwhere light cannot reach.'
+enchantments:
+- DAMAGE_ALL,3
+- IMPALING,3
+- PIERCING,2
+- DURABILITY,1
+potionEffects:
+- WITHER,0,target,onHit
+itemType: unique
+scalability: scalable
+customModelID: 3117303
+soulbound: true

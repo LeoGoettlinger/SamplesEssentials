@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&bSurveyor''s Rule'
+lore:
+- '&bThe measurement marks stop just below the grip.'
+- '&bThe last few inches were apparently a guess.'
+weaponType: STAVES

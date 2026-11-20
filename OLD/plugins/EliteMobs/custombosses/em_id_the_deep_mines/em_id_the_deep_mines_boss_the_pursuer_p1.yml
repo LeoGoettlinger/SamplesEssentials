@@ -1,0 +1,109 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: BOSS
+customDisguiseData: player em_id_the_deep_mines_the_pursuer_ghost setskin {"id":"67ea978c-d188-4f6e-9b5c-0eb885074083","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcxMjgyNjg1Njg5OSwKICAicHJvZmlsZUlkIiA6ICIzOTg5OGFiODFmMjU0NmQxOGIyY2ExMTE1MDRkZGU1MCIsCiAgInByb2ZpbGVOYW1lIiA6ICI4YjJjYTExMTUwNGRkZTUwIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M3NDUxN2MwZTgwZjc1NmE5Y2Y0NTBkZDlkYzVkMDM0ZThkNzhlZTQ3YWFjNTc1ZTViODEwNGExYzNiMDU4ZDQiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ==","signature":"Z0i4i1sVHHxXeW/ipBQBY5QoHf7w2zeFu67USQsieB+U6TQA8UeIwLdxK21/Hdl6uAOu6gChi74oZlfNxU+qNVcDqcEVoGZU/S+nnMujOA1nk90NRh96Mb5piz9JmLb7YdbPnM2rNGQrDkLbQWKkXm3IZq0ptYz2DEm7cuaTqVTFIg9OhqqzHnPevdnquJT0Nch3sow4YE9KvjphLCPhwC2wxMoup2j9coVQCR3JwJG0UiHrDXBFmfi9p7tnQAWzOI2RQxhksxTnq84KvcEh4MhMWWfKeodyU3oMxd/s3ChvS2QxnJ0CHqYQ4yc6fX4cdKWcIwx/f7sUf1/aOxLFOjMT3HuwLuVmbtcLtmnbsbAL7YKPNY6IPSPexIIPU/+vSb8fgg1PNV+/UEO2M0TEDzJ0W6tXSQGemZC3L9iXPcQ+Mht/d2bosDJC1skyMbdQG8uaoJVFQcZ7L1C8jGJlz33eaNrCgwAISokVJ6blok+O8gVvb2haKhiBuru507ta92o6Yl2l8qyzBXdsoBvOdhB7HgsWlZnCAyxpWOaprVHfSxKB8TUI/CiO/Uzl1zxIPQWiKcTsywtYn+MJ9j3KNcl15CYgbt2u5mZpc5K6VvrAIUprakXiQOMImov36FLRaapQJLf5iGOAjyNAU5O+k23zD3GUK/2gV/hQEpEDmc4="}],"legacy":false}
+customModel: deep_mines_specter
+damageMultiplier: 0.2
+disguise: custom:em_id_the_deep_mines_the_pursuer_ghost
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  ImmortalSelf:
+    Actions:
+    - Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        doesNotHaveTags:
+        - ImmortalOff
+      Target:
+        targetType: SELF
+      action: POTION_EFFECT
+      amplifier: 2
+      duration: 40
+      potionEffectType: HARM
+      repeatEvery: 39
+    - Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        doesNotHaveTags:
+        - ImmortalOff
+      Target:
+        range: 6
+        targetType: NEARBY_PLAYERS
+      action: POTION_EFFECT
+      amplifier: 2
+      duration: 40
+      potionEffectType: SPEED
+      repeatEvery: 39
+    - Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        doesNotHaveTags:
+        - ImmortalOff
+      FinalTarget:
+        offset: 0,4,0
+        range: 600
+        targetType: NEARBY_PLAYERS
+      Target:
+        targetType: SELF
+      action: TELEPORT
+      repeatEvery: 800
+      wait: 2000
+    Cooldowns:
+      global: 1
+      local: 99999
+  Trigger:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - ImmortalSelf
+    - Target:
+        targetType: SELF
+      action: TAG
+      tags:
+      - IsFiend
+    Cooldowns:
+      global: 1
+      local: 99999
+    Events:
+    - EliteMobSpawnEvent
+    - EliteMobTargetPlayerEvent
+entityType: SKELETON
+followDistance: 99
+frozen: false
+healthMultiplier: 12.0
+instanced: true
+isEnabled: true
+isRegionalBoss: true
+level: dynamic # 45
+movementSpeedAttribute: 0.52
+name: $bossLevel &dNether Fiend
+normalizedCombat: true
+phases:
+- em_id_the_deep_mines_boss_the_pursuer_p2.yml:0.94
+- em_id_the_deep_mines_boss_the_pursuer_p3.yml:0.5
+powers:
+- em_id_the_deep_mines_summon_sequence.yml
+- em_id_the_deep_mines_pursuer_punish_sphere.yml
+- em_id_the_deep_mines_teleport_failsafe.lua
+- invulnerability_fire.yml
+- difficultyID:
+  - 1
+  - 2
+  filename: attack_vacuum.yml
+- difficultyID:
+  - 0
+  filename: em_id_the_deep_mines_pursuer_players_disable_0.yml
+- difficultyID:
+  - 1
+  filename: em_id_the_deep_mines_pursuer_players_disable_1.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_deep_mines_pursuer_players_disable_2.yml
+spawnLocations:
+- em_id_the_deep_mines,-202.5,154,-51.5,0.0,0.0
+classLoot: false

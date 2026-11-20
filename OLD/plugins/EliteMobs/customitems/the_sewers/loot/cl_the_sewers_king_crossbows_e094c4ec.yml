@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&4Sovereign''s Arbalest'
+lore:
+- '&4The stock bears a crown beneath the silt.'

@@ -1,0 +1,13 @@
+name: '&bCheetah Charm'
+lore:
+- '&aCheetahs can reach speeds of'
+- '&a120 km/h... for about 60'
+- '&aseconds. Make them count!'
+isEnabled: true
+material: GOLDEN_BOOTS
+enchantments:
+- VANISHING_CURSE,1
+potionEffects:
+- SPEED,2,self,continuous
+- HUNGER,0,self,continuous
+dropWeight: '1'

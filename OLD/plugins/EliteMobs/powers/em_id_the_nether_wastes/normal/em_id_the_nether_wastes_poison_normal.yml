@@ -1,0 +1,169 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 2700
+      scripts:
+      - RunScripts
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  RunScripts:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - CursePoison
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      wait: 4800
+      scripts:
+      - CursePoison2
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      wait: 9600
+      scripts:
+      - CursePoison3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: RUN_SCRIPT
+      wait: 14400
+      scripts:
+      - CursePoison4
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CursePoison:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 20
+      repeatEvery: 100
+      times: 12
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cToxic Miasma &7surrounds you! The source must be destroyed to
+        lift the poison effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CursePoison2:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 30
+      repeatEvery: 90
+      times: 13
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cToxic Miasma &7surrounds you! The source must be destroyed to
+        lift the poison effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CursePoison3:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 40
+      repeatEvery: 80
+      times: 15
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cToxic Miasma &7surrounds you! The source must be destroyed to
+        lift the poison effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  CursePoison4:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: POISON
+      amplifier: 0
+      duration: 50
+      repeatEvery: 70
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: MESSAGE
+      sValue: '&7A &cToxic Miasma &7surrounds you! The source must be destroyed to
+        lift the poison effect!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 2000
+      repeatEvery: 400
+      times: 3
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

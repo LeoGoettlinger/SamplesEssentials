@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Energized Chestplate
+lore:
+- So nice and tingly!
+classLootFamily: TANK_CHESTPLATES

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&7Rune Chalk'
+lore:
+- '&7A short rod dusted with the remains of glowing marks.'
+weaponType: WANDS

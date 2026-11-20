@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&2[$difficulty] Pig Helmet'
+lore:
+- '&2Time to put this on and go roll in the mud.'
+classLootFamily: DPS_HELMETS

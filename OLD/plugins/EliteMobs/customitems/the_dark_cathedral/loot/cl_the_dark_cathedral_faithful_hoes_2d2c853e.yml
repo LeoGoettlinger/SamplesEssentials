@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&8Incense Reaper'
+lore:
+- '&8Ash gathers along the curve.'
+- '&8The faithful sweep it back into the brazier.'

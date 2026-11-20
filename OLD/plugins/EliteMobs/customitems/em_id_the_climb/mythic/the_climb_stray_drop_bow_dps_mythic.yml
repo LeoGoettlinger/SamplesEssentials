@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: BOW
+name: '&b[Mythical] Frostbite Bow'
+lore:
+- '&bTiny icicles cover this bow.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- DAMAGE_ALL,5
+- DURABILITY,2
+itemType: unique
+scalability: scalable
+level: 10

@@ -1,0 +1,24 @@
+command /nether:
+    permission: custom.normal
+    permission message: &cDu hast keine Berechtigung für diesen Befehl!
+    trigger:
+        execute player command "warp Nether"
+        send "&2&lɴɪxᴏʀɪᴀ &8▸ &eWillkommen im Nether!" to player
+command /end:
+    permission: custom.normal
+    permission message: &cDu hast keine Berechtigung für diesen Befehl!
+    trigger:
+        execute player command "warp End"
+        send "&2&lɴɪxᴏʀɪᴀ &8▸ &eWillkommen im End!" to player
+command /overworld:
+    permission: custom.normal
+    permission message: &cDu hast keine Berechtigung für diesen Befehl!
+    trigger:
+        execute player command "warp Overworld"
+        send "&2&lɴɪxᴏʀɪᴀ &8▸ &eWillkommen in der Overworld!" to player
+command /spawn:
+    permission: custom.normal
+    permission message: &cDu hast keine Berechtigung für diesen Befehl!
+    trigger:
+        execute player command "warp Spawn"
+        send "&2&lɴɪxᴏʀɪᴀ &8▸ &eWillkommen am Spawn!" to player

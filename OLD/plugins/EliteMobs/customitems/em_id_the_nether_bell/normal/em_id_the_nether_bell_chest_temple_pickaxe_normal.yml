@@ -1,0 +1,14 @@
+potionEffects: []
+isEnabled: true
+material: NETHERITE_PICKAXE
+name: '&e[Normal] &dVoid Pick'
+lore:
+- '&dLegends say this pickaxe can'
+- '&duncover veins of ore thought'
+- '&dto be long depleted.'
+enchantments:
+- DURABILITY,1
+- MENDING,1
+- EFFICIENCY,3
+itemType: unique
+scalability: scalable

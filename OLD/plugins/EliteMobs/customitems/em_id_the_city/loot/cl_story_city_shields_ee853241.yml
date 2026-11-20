@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&7City''s Burden'
+lore:
+- '&7The seal is faded. The wood beneath is sound.'

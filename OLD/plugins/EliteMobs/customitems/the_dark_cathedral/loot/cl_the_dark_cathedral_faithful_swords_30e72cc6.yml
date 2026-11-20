@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&8Brinebound Edge'
+lore:
+- '&8Salt crusts the letters on the blade.'
+- '&8The prayer continues beneath the hilt.'

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&c[$difficulty] Throne Piercer'
+lore:
+- '&cA spear used by the palace'
+- '&cguards to defend their king.'
+- '&cCarved from ancient stone.'

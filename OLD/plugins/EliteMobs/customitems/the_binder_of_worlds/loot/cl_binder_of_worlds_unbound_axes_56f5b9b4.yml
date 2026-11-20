@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&5Worldwedge'
+lore:
+- '&5The head is wider than the shadow it casts.'
+- '&5Something was left behind in the rift.'

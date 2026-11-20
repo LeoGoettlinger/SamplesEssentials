@@ -1,0 +1,12 @@
+isEnabled: true
+potionEffects: []
+name: '&a[Mythical] Worn Leggings'
+material: DIAMOND_LEGGINGS
+level: 30
+lore:
+- '&aWell used.'
+enchantments:
+- DAMAGE_ALL,5
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

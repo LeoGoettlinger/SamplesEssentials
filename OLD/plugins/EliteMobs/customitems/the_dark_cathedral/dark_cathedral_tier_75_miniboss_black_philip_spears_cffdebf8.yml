@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&8Black Philip''s Horn'
+lore:
+- '&8A horn-shaped point caps the shaft.'
+- '&8The goat would not surrender the original.'

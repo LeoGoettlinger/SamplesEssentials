@@ -1,0 +1,14 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:can_fly",
+    "morph:burns_under_sun"
+  ],
+  "settings": {
+    "morph:can_fly": {
+      "fly_speed": 0.06,
+      "minimum_hunger": 6
+    }
+  }
+}

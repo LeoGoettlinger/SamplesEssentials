@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&bConveyor Reaper'
+lore:
+- '&bIts curved edge used to clear the belt.'
+- '&bNot everything that reached the belt was ore.'

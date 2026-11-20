@@ -1,0 +1,10 @@
+# If sending anonymous data should be enabled.
+# Having this enabled helps us gain insightful data
+# such as the server version, the java version you are using,
+# and how popular our plugins are.
+#
+# Want to know more? Check out our metrics at: https://metrics.artillex-studios.com/
+#
+# We'd appreciate if you kept this enabled, as this has no impact on your performance.
+enabled: true
+server-uuid: a5ab60d9-044f-4a76-9c77-1a197f7f37c2

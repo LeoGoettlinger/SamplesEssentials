@@ -1,0 +1,14 @@
+isEnabled: true
+material: DIAMOND_HOE
+name: '&e[Normal] Void Sun'
+lore:
+- '&eA tool blessed by the void itself,'
+- '&ecapable of producing incredible'
+- '&eyields.'
+enchantments:
+- DURABILITY,1
+- MENDING,1
+potionEffects:
+- LUCK,0,self,continuous
+itemType: unique
+scalability: scalable

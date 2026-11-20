@@ -1,0 +1,279 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDeathEvent
+    Actions:
+    - action: PLAY_SOUND
+      sValue: minecraft:block.bell.resonate
+      Target:
+        targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 5
+      title: '&cVoid Bell'
+      subtitle: '&aVanquished!'
+      Target:
+        targetType: WORLD_PLAYERS
+      duration: 30
+      fadeIn: 5
+      fadeOut: 20
+    - action: RUN_SCRIPT
+      wait: 10
+      scripts:
+      - Bell
+  Bell:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - Sphere
+    - action: RUN_SCRIPT
+      wait: 2
+      scripts:
+      - Dome1
+    - action: RUN_SCRIPT
+      wait: 5
+      scripts:
+      - Dome2
+    - action: RUN_SCRIPT
+      wait: 10
+      scripts:
+      - Dome3
+    - action: RUN_SCRIPT
+      wait: 15
+      scripts:
+      - Dome4
+    - action: RUN_SCRIPT
+      wait: 20
+      scripts:
+      - Dome5
+    - action: RUN_SCRIPT
+      wait: 25
+      scripts:
+      - Dome6
+    - action: RUN_SCRIPT
+      wait: 30
+      scripts:
+      - Dome7
+    Cooldowns:
+      local: 40
+      global: 1
+  Sphere:
+    Zone:
+      shape: SPHERE
+      radius: 2
+      Target:
+        targetType: SELF_SPAWN
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 10
+  Dome1:
+    Zone:
+      shape: DOME
+      radius: 3
+      borderRadius: 2
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,0,0
+        track: false
+    Actions:
+    - action: PLAY_SOUND
+      sValue: entity.generic.explode
+      Target:
+        targetType: SELF
+      volume: 0.5
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 10
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+        track: false
+      repeatEvery: 1
+      times: 10
+    - action: PUSH
+      vValue: 0,0.7,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+  Dome2:
+    Zone:
+      shape: DOME
+      radius: 5
+      borderRadius: 4
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,0,0
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 10
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+        track: false
+      repeatEvery: 1
+      times: 10
+  Dome3:
+    Zone:
+      shape: DOME
+      radius: 10
+      borderRadius: 9
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,0,0
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 10
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.05
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.1
+        track: false
+      repeatEvery: 1
+      times: 10
+  Dome4:
+    Zone:
+      shape: DOME
+      radius: 15
+      borderRadius: 14
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,0,0
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 10
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.05
+        track: false
+      repeatEvery: 1
+      times: 10
+    - action: PUSH
+      vValue: 0,0.5,0
+      Target:
+        targetType: ZONE_FULL
+        track: false
+  Dome5:
+    Zone:
+      shape: DOME
+      radius: 20
+      borderRadius: 19
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,0,0
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 10
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.05
+        track: false
+      repeatEvery: 1
+      times: 10
+  Dome6:
+    Zone:
+      shape: DOME
+      radius: 25
+      borderRadius: 24
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,0,0
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 10
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.05
+        track: false
+      repeatEvery: 1
+      times: 10
+  Dome7:
+    Zone:
+      shape: DOME
+      radius: 30
+      borderRadius: 29
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,0,0
+        track: false
+    Actions:
+    - action: PLACE_BLOCK
+      material: AIR
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      repeatEvery: 1
+      times: 10
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.1
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.05
+        track: false
+      repeatEvery: 1
+      times: 10

@@ -1,0 +1,201 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  RunOtherScript:
+    Events:
+    - EliteMobDamagedEvent
+    - ElitePhaseSwitchEvent
+    - PlayerDamagedByEliteMobEvent
+    - EliteMobTargetPlayerEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 1
+      scripts:
+      - ActivateMobs
+    - action: RUN_SCRIPT
+      wait: 245
+      scripts:
+      - BuffPhaseMobs
+    Cooldowns:
+      local: 6100
+      global: 50
+  BuffPhaseMobs:
+    Actions:
+    - action: SET_MOB_AI
+      duration: 40
+      Target:
+        targetType: SELF
+      bValue: false
+    - action: PLAY_ANIMATION
+      Target:
+        targetType: SELF
+      sValue: buff_reinforcements
+    - action: MESSAGE
+      wait: 20
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+      sValue: '&4[Cultist of Cthulhu] &fCthulhu''s touch empowers all, his followers
+        rise, mighty and tall.'
+    - action: SCALE
+      wait: 40
+      scale: 1.5
+      Target:
+        targetType: NEARBY_MOBS
+        range: 200
+      duration: 1000
+      Conditions:
+        conditionType: FILTERING
+        Target:
+          targetType: ACTION_TARGET
+        hasTags:
+        - Phase2
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: LEVITATION
+      amplifier: 0
+      duration: 200
+      Target:
+        targetType: NEARBY_MOBS
+        range: 200
+      Conditions:
+        conditionType: FILTERING
+        Target:
+          targetType: ACTION_TARGET
+        hasTags:
+        - Phase2
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: SLOW_FALLING
+      amplifier: 2
+      duration: 400
+      Target:
+        targetType: NEARBY_MOBS
+        range: 200
+      Conditions:
+        conditionType: FILTERING
+        Target:
+          targetType: ACTION_TARGET
+        hasTags:
+        - Phase2
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: ABSORPTION
+      amplifier: 2
+      duration: 1000
+      Target:
+        targetType: NEARBY_MOBS
+        range: 200
+      Conditions:
+        conditionType: FILTERING
+        Target:
+          targetType: ACTION_TARGET
+        hasTags:
+        - Phase2
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: RESISTANCE
+      amplifier: 2
+      duration: 1000
+      Target:
+        targetType: NEARBY_MOBS
+        range: 200
+      Conditions:
+        conditionType: FILTERING
+        Target:
+          targetType: ACTION_TARGET
+        hasTags:
+        - Phase2
+    - action: PLAY_SOUND
+      wait: 40
+      sValue: entity.illusioner.cast_spell
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: DRIP_WATER
+      Target:
+        targetType: SELF
+      repeatEvery: 5
+      times: 8
+  ActivateMobs:
+    Actions:
+    - action: TITLE_MESSAGE
+      wait: 100
+      title: '&cWorshippers'
+      subtitle: '&caid me!!!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+      duration: 30
+      fadeIn: 5
+      fadeOut: 5
+    - action: PLAY_SOUND
+      wait: 100
+      sValue: entity.elder_guardian.ambient
+      Target:
+        targetType: SELF
+      repeatEvery: 10
+      times: 4
+    - action: TELEPORT
+      wait: 115
+      Target:
+        targetType: NEARBY_MOBS
+        range: 80
+      FinalTarget:
+        targetType: LOCATION
+        location: same_as_boss,37.5,94,-13.5,0,0
+      Conditions:
+        hasTags:
+        - Phase2
+        Target:
+          targetType: ACTION_TARGET
+    - action: UNTAG
+      Target:
+        targetType: NEARBY_MOBS
+        range: 80
+      tags:
+      - Warn
+      Conditions:
+        hasTags:
+        - Phase2
+        Target:
+          targetType: ACTION_TARGET
+    - action: NAVIGATE
+      wait: 120
+      Target:
+        targetType: NEARBY_MOBS
+        range: 80
+      FinalTarget:
+        targetType: SELF
+      velocity: 3.0
+      bValue: false
+      duration: 185
+      Conditions:
+        hasTags:
+        - Phase2
+        Target:
+          targetType: ACTION_TARGET
+    - action: SET_MOB_AI
+      wait: 110
+      Target:
+        targetType: NEARBY_MOBS
+        range: 80
+      bValue: true
+      Conditions:
+        hasTags:
+        - Phase2
+        Target:
+          targetType: ACTION_TARGET
+    - action: MAKE_INVULNERABLE
+      wait: 110
+      Target:
+        targetType: NEARBY_MOBS
+        range: 80
+      invulnerable: false
+      Conditions:
+        hasTags:
+        - Phase2
+        Target:
+          targetType: ACTION_TARGET

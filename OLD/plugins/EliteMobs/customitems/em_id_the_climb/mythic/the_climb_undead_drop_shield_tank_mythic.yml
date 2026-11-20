@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: SHIELD
+name: '&e[Mythical] Undead''s Shield'
+lore:
+- '&eRetrieved from the walking corpse.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- DAMAGE_ALL,1
+- elitemobs:loud_strikes,1
+itemType: unique
+scalability: scalable
+level: 10

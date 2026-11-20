@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&4Sewer Spike [Mythic]'
+material: IRON_SPEAR
+lore:
+- '&cSharpened on the bones of the'
+- '&cdrowned king''s enemies.'
+enchantments:
+- DAMAGE_ALL,9
+- IMPALING,7
+- PIERCING,5
+- DURABILITY,5
+- MENDING,1
+potionEffects:
+- POISON,2,target,onHit
+- WITHER,1,target,onHit
+itemType: unique
+scalability: scalable
+soulbound: true

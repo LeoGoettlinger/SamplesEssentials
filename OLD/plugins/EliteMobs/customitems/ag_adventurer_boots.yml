@@ -1,0 +1,14 @@
+isEnabled: true
+material: DIAMOND_BOOTS
+name: '&aAdventurer''s Boots'
+lore:
+- '&7Awarded by Casus for completing your first class trial.'
+enchantments:
+- SHARPNESS,4
+- PROTECTION,2
+- UNBREAKING,2
+- FEATHER_FALLING,2
+potionEffects: []
+scalability: FIXED
+itemType: UNIQUE
+level: 1

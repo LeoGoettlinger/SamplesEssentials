@@ -1,0 +1,11 @@
+name: '&bSalamander Charm'
+lore:
+- '&aAlmost as hot as MagmaGuy''s'
+- '&anew mixtape!'
+isEnabled: true
+material: LEATHER
+enchantments:
+- VANISHING_CURSE,1
+potionEffects:
+- FIRE_RESISTANCE,0,self,continuous
+dropWeight: '1'

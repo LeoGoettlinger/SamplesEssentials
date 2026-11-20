@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&2Pipewatch Bow'
+lore:
+- '&2The string was kept above the waterline.'

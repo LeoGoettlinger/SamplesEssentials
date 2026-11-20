@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&d[Normal] Master Boots'
+material: DIAMOND_BOOTS
+level: 40
+lore:
+- '&dGreat care has been put into the'
+- '&dmaking of these exquisite boots.'
+enchantments:
+- PROTECTION_FALL,4
+- PROTECTION_EXPLOSIONS,3
+- PROTECTION_FIRE,2
+- elitemobs:loud_strikes,1
+- DURABILITY,1
+potionEffects:
+- FIRE_RESISTANCE,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,10 @@
+isEnabled: true
+lore: []
+potionEffects: []
+name: Tricky Bow
+material: BOW
+enchantments:
+- VANISHING_CURSE,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

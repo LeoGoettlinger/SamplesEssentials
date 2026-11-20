@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&2[$difficulty] Shifting Axe'
+lore:
+- '&2The color of the axe shifts with every swing.'

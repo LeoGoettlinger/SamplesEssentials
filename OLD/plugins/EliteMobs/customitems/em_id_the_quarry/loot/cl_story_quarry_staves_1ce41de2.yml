@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&7Wizard''s Plumb'
+lore:
+- '&7The marks run straight even where the shaft does not.'
+weaponType: STAVES

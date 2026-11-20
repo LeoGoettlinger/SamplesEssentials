@@ -1,0 +1,314 @@
+# ============================================
+# Global Playtime Rewards - Lifetime Meilensteine
+# Reset: Nie (0 = lifetime tracking)
+# ============================================
+type: playtime-rewards
+enabled: true
+
+# How often (in days) to reset (0 to disable = lifetime)
+reset-playtime-at: 0
+# Time in minutes between checking whether any online players need to receive rewards
+refresh-time: 15
+# Whether notifications should be sent when rewards are claimable
+enable-notifications: true
+
+goals:
+  # ============ FRÜHGAME (0-10h) ============
+  - play-minutes: 30       # 30 Minuten
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: bread
+        amount: 16
+      - type: item
+        material: torch
+        amount: 32
+
+  - play-minutes: 60       # 1 Stunde
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: iron_ingot
+        amount: 4
+      - type: item
+        material: oak_log
+        amount: 32
+
+  - play-minutes: 180      # 3 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: iron_ingot
+        amount: 8
+      - type: item
+        material: coal
+        amount: 16
+      - type: item
+        material: experience_bottle
+        amount: 8
+
+  - play-minutes: 300      # 5 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: iron_ingot
+        amount: 16
+      - type: item
+        material: shield
+        amount: 1
+      - type: item
+        material: experience_bottle
+        amount: 16
+
+  - play-minutes: 600      # 10 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: iron_block
+        amount: 1
+      - type: item
+        material: diamond
+        amount: 3
+      - type: item
+        material: experience_bottle
+        amount: 32
+
+  # ============ MIDGAME (10-50h) ============
+  - play-minutes: 1200     # 20 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond
+        amount: 8
+      - type: item
+        material: golden_apple
+        amount: 2
+      - type: item
+        material: experience_bottle
+        amount: 32
+
+  - play-minutes: 1440     # 24 Stunden (1 Tag)
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond
+        amount: 12
+      - type: item
+        material: golden_apple
+        amount: 3
+      - type: item
+        material: enchanting_table
+        amount: 1
+      - type: item
+        material: experience_bottle
+        amount: 48
+
+  - play-minutes: 1800     # 30 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond
+        amount: 16
+      - type: item
+        material: emerald
+        amount: 8
+      - type: item
+        material: experience_bottle
+        amount: 48
+
+  - play-minutes: 2400     # 40 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond_block
+        amount: 1
+      - type: item
+        material: golden_apple
+        amount: 5
+      - type: item
+        material: experience_bottle
+        amount: 64
+
+  - play-minutes: 3000     # 50 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond
+        amount: 24
+      - type: item
+        material: emerald
+        amount: 16
+      - type: item
+        material: anvil
+        amount: 1
+
+  # ============ LATEGAME (50-200h) ============
+  - play-minutes: 4320     # 3 Tage (72h)
+    display-item:
+      material: nether_star
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond_block
+        amount: 2
+      - type: item
+        material: emerald_block
+        amount: 1
+      - type: item
+        material: golden_apple
+        amount: 8
+      - type: item
+        material: experience_bottle
+        amount: 64
+
+  - play-minutes: 7200     # 5 Tage (120h)
+    display-item:
+      material: nether_star
+      amount: 1
+    rewards:
+      - type: item
+        material: netherite_ingot
+        amount: 1
+      - type: item
+        material: diamond_block
+        amount: 3
+      - type: item
+        material: experience_bottle
+        amount: 64
+
+  - play-minutes: 10080    # 7 Tage (168h)
+    display-item:
+      material: nether_star
+      amount: 1
+    rewards:
+      - type: item
+        material: netherite_ingot
+        amount: 2
+      - type: item
+        material: elytra
+        amount: 1
+      - type: item
+        material: golden_apple
+        amount: 16
+
+  - play-minutes: 14400    # 10 Tage (240h)
+    display-item:
+      material: nether_star
+      amount: 1
+    rewards:
+      - type: item
+        material: netherite_block
+        amount: 1
+      - type: item
+        material: beacon
+        amount: 1
+      - type: item
+        material: experience_bottle
+        amount: 64
+
+  # ============ ENDGAME (200h+) ============
+  - play-minutes: 21600    # 15 Tage (360h)
+    display-item:
+      material: nether_star
+      amount: 1
+    rewards:
+      - type: item
+        material: netherite_block
+        amount: 2
+      - type: item
+        material: totem_of_undying
+        amount: 1
+      - type: item
+        material: experience_bottle
+        amount: 64
+
+  - play-minutes: 36000    # 25 Tage (600h)
+    display-item:
+      material: nether_star
+      amount: 1
+    rewards:
+      - type: item
+        material: netherite_block
+        amount: 3
+      - type: item
+        material: shulker_box
+        amount: 1
+      - type: item
+        material: golden_apple
+        amount: 32
+
+  - play-minutes: 43200    # 30 Tage (720h)
+    display-item:
+      material: nether_star
+      amount: 1
+    rewards:
+      - type: item
+        material: netherite_block
+        amount: 5
+      - type: item
+        material: conduit
+        amount: 1
+      - type: item
+        material: elytra
+        amount: 1
+      - type: item
+        material: experience_bottle
+        amount: 64
+
+  - play-minutes: 72000    # 50 Tage (1200h)
+    display-item:
+      material: nether_star
+      amount: 1
+    rewards:
+      - type: item
+        material: netherite_block
+        amount: 8
+      - type: item
+        material: dragon_head
+        amount: 1
+      - type: item
+        material: experience_bottle
+        amount: 64
+
+gui:
+  title: "   &#529bf2&lGlobal Playtime Rewards"
+  scroll-type: FIXED
+  template: "BORDERED_LARGE"
+  item-templates:
+    default-reward:
+      material: clock
+      display-name: "&#f5e389%minutes% Minutes"
+    redeemable-reward:
+      material: clock
+      display-name: "&#f5e389%minutes% Minutes - &#a5f5a5Redeemable!"
+      enchanted: true
+    collected-reward:
+      material: clock
+      display-name: "&#f5e389%minutes% Minutes - &#7d7d7dCollected"
+    'P':
+      material: player_head
+      display-name: "&#A5B8FE&lProfile:"
+      skull-texture: mirror
+      lore:
+        - "&#c4f8ffNext Reward in: &f%lushrewards_global-playtime-rewards_time_until_next_reward%"
+        - "&#c4f8ffTotal Playtime: &f%lushrewards_global-playtime-rewards_playtime%"

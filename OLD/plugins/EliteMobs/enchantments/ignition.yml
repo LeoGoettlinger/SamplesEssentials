@@ -1,0 +1,7 @@
+isEnabled: true
+name: Ignition
+maxLevel: 3
+value: 14.0
+isEnabledForProcedurallyGeneratedItems: true
+maxEnchantmentLevel: 3
+generationChance: 0.3

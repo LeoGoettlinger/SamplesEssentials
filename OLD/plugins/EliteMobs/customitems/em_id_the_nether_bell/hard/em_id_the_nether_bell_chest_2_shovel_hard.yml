@@ -1,0 +1,13 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_SHOVEL
+name: '&e[Hard] Void Whisperer'
+lore:
+- '&eThe earth bends to the will'
+- '&eof this void tool.'
+enchantments:
+- DURABILITY,2
+- MENDING,1
+- EFFICIENCY,4
+itemType: unique
+scalability: scalable

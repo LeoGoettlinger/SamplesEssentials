@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&4Plague Launcher [Hard]'
+material: CROSSBOW
+lore:
+- '&cFires disease-ridden bolts.'
+enchantments:
+- PIERCING,5
+- QUICK_CHARGE,3
+- DURABILITY,3
+- MULTISHOT,1
+- MENDING,1
+potionEffects:
+- POISON,1,target,onHit
+itemType: unique
+scalability: scalable
+soulbound: true

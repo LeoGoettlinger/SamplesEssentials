@@ -1,0 +1,131 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobTargetPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: PLAY_SOUND
+      sValue: entity.evoker.prepare_wololo
+      Target:
+        targetType: SELF
+      repeatEvery: 50
+      times: 3
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: WAX_ON
+      Target:
+        targetType: SELF
+      repeatEvery: 10
+      times: 20
+    - action: POTION_EFFECT
+      potionEffectType: LEVITATION
+      amplifier: 0
+      duration: 200
+      Target:
+        targetType: SELF
+      repeatEvery: 100
+      times: 1
+    - action: TAG
+      wait: 10
+      tags:
+      - TwoRing
+      Target:
+        targetType: SELF
+    - action: RUN_SCRIPT
+      wait: 100
+      scripts:
+      - OneRing
+      - TwoRing
+    Cooldowns:
+      local: 333
+      global: 5
+  OneRing:
+    Zone:
+      shape: CYLINDER
+      radius: 5
+      borderRadius: 4
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,4,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: WAX_ON
+      Target:
+        targetType: ZONE_BORDER
+      repeatEvery: 5
+      times: 20
+    - action: SUMMON_ENTITY
+      sValue: ARROW
+      Target:
+        targetType: ZONE_BORDER
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: ACTION_TARGET
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          range: 40
+        normalize: true
+        multiplier: 3.0
+      repeatEvery: 10
+      times: 10
+  TwoRing:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 3
+      Target:
+        targetType: SELF
+        offset: 0,4,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: WAX_ON
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 5
+      times: 20
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - TwoRing
+    - action: SUMMON_ENTITY
+      sValue: PRIMED_TNT
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      RelativeVector:
+        SourceTarget:
+          targetType: ACTION_TARGET
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          range: 40
+        normalize: true
+        multiplier: 3.0
+      repeatEvery: 10
+      times: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - TwoRing
+  RemoveTagWhenHurt:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: UNTAG
+      tags:
+      - TwoRing
+      Target:
+        targetType: SELF
+    Cooldowns:
+      local: 80
+      global: 1
+# Generated with https://magmaguy.com/webapp/webapp.html !

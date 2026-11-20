@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Packing Crate
+lore:
+- Someone forgot the air holes.
+classLootFamily: TANK_HELMETS

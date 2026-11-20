@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&7After the Toll'
+lore:
+- '&7The edge trembles against the inside of the sheath.'

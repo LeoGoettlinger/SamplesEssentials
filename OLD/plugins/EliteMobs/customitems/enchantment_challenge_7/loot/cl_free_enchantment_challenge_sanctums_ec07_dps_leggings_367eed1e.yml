@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Winter Rush
+lore:
+- There is a warm room at the end of this.
+classLootFamily: DPS_LEGGINGS

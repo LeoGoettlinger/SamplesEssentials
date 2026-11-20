@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Ooze Reaper'
+material: NETHERITE_HOE
+level: 15
+lore:
+- '&cA crude scythe forged from'
+- '&cmaterials found in the cave.'
+- '&cReaps through slime and flesh.'
+enchantments:
+- DAMAGE_ALL,6
+- SWEEPING_EDGE,3
+- DURABILITY,4
+itemType: unique
+scalability: scalable

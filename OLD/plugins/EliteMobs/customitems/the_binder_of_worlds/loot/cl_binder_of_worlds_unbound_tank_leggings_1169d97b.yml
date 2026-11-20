@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&5Anchor of the Plane'
+lore:
+- '&5Heavy bands close around each knee.'
+- '&5They feel reassuringly real.'
+classLootFamily: TANK_LEGGINGS

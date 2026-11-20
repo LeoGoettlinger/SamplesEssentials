@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&d[Mythical] Enchanted Robe'
+material: DIAMOND_CHESTPLATE
+level: 40
+lore:
+- '&dThis enchanted robe enhances'
+- '&dyour combat power.'
+enchantments:
+- DAMAGE_ALL,6
+- DAMAGE_UNDEAD,5
+- PROTECTION_ENVIRONMENTAL,4
+- DURABILITY,3
+potionEffects:
+- INCREASE_DAMAGE,1,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

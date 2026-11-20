@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&dSpell Mirror'
+description:
+- '&7Negate the next hit every 15'
+- '&7seconds and answer it.'
+skillType: WANDS
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 2.0
+scalingPerLevel: 0.0
+cooldownSeconds: 15.0
+displayMaterial: GLASS
+loreTemplates:
+- '&7Negates one hit'
+- '&7Counter: &f$counterPercent% of the hit'
+- '&7Cooldown: &f$cooldown seconds'
+formattedBonusTemplate: Negate a hit every $cooldowns

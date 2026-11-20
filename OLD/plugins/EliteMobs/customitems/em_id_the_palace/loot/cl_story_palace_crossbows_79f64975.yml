@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&c[$difficulty] Stone Arbalist'
+lore:
+- '&cA crossbow carved from the'
+- '&cpalace''s foundations. Sturdy'
+- '&cand unyielding.'

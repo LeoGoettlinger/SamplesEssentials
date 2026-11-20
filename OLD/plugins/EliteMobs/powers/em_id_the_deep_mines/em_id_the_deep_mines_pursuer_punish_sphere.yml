@@ -1,0 +1,460 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Zone:
+      shape: SPHERE
+      radius: 20
+      borderRadius: 19
+      filter: ELITE
+      Target:
+        targetType: SELF
+        track: false
+    Actions:
+    - action: TAG
+      tags:
+      - InSphere
+      duration: 20
+      repeatEvery: 21
+      times: 10
+      Target:
+        targetType: ZONE_FULL
+        track: false
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: SMOKE_LARGE
+      repeatEvery: 20
+      times: 11
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.5
+        track: false
+    - action: TITLE_MESSAGE
+      title: '&dRUN!'
+      subtitle: '&dSoul Divergence!'
+      duration: 40
+      fadeIn: 5
+      fadeOut: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 15
+    - action: RUN_SCRIPT
+      wait: 20
+      scripts:
+      - Tag1
+    - action: RUN_SCRIPT
+      wait: 40
+      scripts:
+      - Tag2
+    - action: RUN_SCRIPT
+      wait: 60
+      scripts:
+      - Tag3
+    - action: RUN_SCRIPT
+      wait: 80
+      scripts:
+      - Tag4
+    - action: RUN_SCRIPT
+      wait: 100
+      scripts:
+      - Tag5
+    - action: RUN_SCRIPT
+      wait: 120
+      scripts:
+      - Tag6
+    - action: RUN_SCRIPT
+      wait: 140
+      scripts:
+      - Tag7
+    - action: RUN_SCRIPT
+      wait: 160
+      scripts:
+      - Tag8
+    - action: RUN_SCRIPT
+      wait: 180
+      scripts:
+      - Tag9
+    - action: RUN_SCRIPT
+      wait: 200
+      scripts:
+      - Tag10
+    Cooldowns:
+      local: 440
+      global: 60
+  Tag1:
+    Actions:
+    - action: TAG
+      tags:
+      - Dmg1
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - InSphere
+    - action: UNTAG
+      tags:
+      - Dmg1
+      Target:
+        targetType: SELF
+      wait: 19
+  Tag2:
+    Actions:
+    - action: TAG
+      tags:
+      - Dmg2
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - InSphere
+    - action: UNTAG
+      tags:
+      - Dmg2
+      Target:
+        targetType: SELF
+      wait: 19
+  Tag3:
+    Actions:
+    - action: TAG
+      tags:
+      - Dmg3
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - InSphere
+    - action: UNTAG
+      tags:
+      - Dmg3
+      Target:
+        targetType: SELF
+      wait: 19
+  Tag4:
+    Actions:
+    - action: TAG
+      tags:
+      - Dmg4
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - InSphere
+    - action: UNTAG
+      tags:
+      - Dmg4
+      Target:
+        targetType: SELF
+      wait: 19
+  Tag5:
+    Actions:
+    - action: TAG
+      tags:
+      - Dmg5
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - InSphere
+    - action: UNTAG
+      tags:
+      - Dmg5
+      Target:
+        targetType: SELF
+      wait: 19
+  Tag6:
+    Actions:
+    - action: TAG
+      tags:
+      - Dmg6
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - InSphere
+    - action: UNTAG
+      tags:
+      - Dmg6
+      Target:
+        targetType: SELF
+      wait: 19
+  Tag7:
+    Actions:
+    - action: TAG
+      tags:
+      - Dmg7
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - InSphere
+    - action: UNTAG
+      tags:
+      - Dmg7
+      Target:
+        targetType: SELF
+      wait: 19
+  Tag8:
+    Actions:
+    - action: TAG
+      tags:
+      - Dmg8
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - InSphere
+    - action: UNTAG
+      tags:
+      - Dmg8
+      Target:
+        targetType: SELF
+      wait: 19
+  Tag9:
+    Actions:
+    - action: TAG
+      tags:
+      - Dmg9
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - InSphere
+    - action: UNTAG
+      tags:
+      - Dmg9
+      Target:
+        targetType: SELF
+      wait: 19
+  Tag10:
+    Actions:
+    - action: TAG
+      tags:
+      - Dmg10
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - InSphere
+    - action: UNTAG
+      tags:
+      - Dmg10
+      Target:
+        targetType: SELF
+      wait: 19
+  Punish:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: MODIFY_DAMAGE
+      multiplier: 3.0
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg1
+    - action: MODIFY_DAMAGE
+      multiplier: 4.0
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg2
+    - action: MODIFY_DAMAGE
+      multiplier: 5.0
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg3
+    - action: MODIFY_DAMAGE
+      multiplier: 6.0
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg4
+    - action: MODIFY_DAMAGE
+      multiplier: 7.0
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg5
+    - action: MODIFY_DAMAGE
+      multiplier: 8.0
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg6
+    - action: MODIFY_DAMAGE
+      multiplier: 9.0
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg7
+    - action: MODIFY_DAMAGE
+      multiplier: 10.0
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg8
+    - action: MODIFY_DAMAGE
+      multiplier: 11.0
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg9
+    - action: MODIFY_DAMAGE
+      multiplier: 12.0
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg10
+    - action: PLAY_SOUND
+      sValue: entity.ghast.scream
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg1
+    - action: PLAY_SOUND
+      sValue: entity.ghast.scream
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg2
+    - action: PLAY_SOUND
+      sValue: entity.ghast.scream
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg3
+    - action: PLAY_SOUND
+      sValue: entity.ghast.scream
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg4
+    - action: PLAY_SOUND
+      sValue: entity.ghast.scream
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg5
+    - action: PLAY_SOUND
+      sValue: entity.ghast.scream
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg6
+    - action: PLAY_SOUND
+      sValue: entity.ghast.scream
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg7
+    - action: PLAY_SOUND
+      sValue: entity.ghast.scream
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg8
+    - action: PLAY_SOUND
+      sValue: entity.ghast.scream
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg9
+    - action: PLAY_SOUND
+      sValue: entity.ghast.scream
+      Target:
+        targetType: SELF
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - Dmg10
+# Generated with https://magmaguy.com/webapp/webapp.html !

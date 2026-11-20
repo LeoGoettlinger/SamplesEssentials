@@ -1,0 +1,29 @@
+leaderboard:
+  hunter:
+    b2dc97ce-2509-468f-a9d7-bac3016e047d:
+      position: 1
+      level: 1
+    83e83644-6975-4f03-ace0-1ad37afaf779:
+      position: 0
+      level: 1
+  digger:
+    b5909030-8510-40e7-96c8-cef23c09a180:
+      position: 1
+      level: 2
+    00000000-0000-0000-0009-01f316de4b9d:
+      position: 2
+      level: 1
+    83e83644-6975-4f03-ace0-1ad37afaf779:
+      position: 0
+      level: 4
+  lumberjack:
+    b5909030-8510-40e7-96c8-cef23c09a180:
+      position: 1
+      level: 1
+    83e83644-6975-4f03-ace0-1ad37afaf779:
+      position: 0
+      level: 2
+  traveler:
+    40b72de7-730c-4111-a19a-c786ed47fbc1:
+      position: 0
+      level: 2

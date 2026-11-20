@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Shy Visor
+lore:
+- You can hide behind this instead.
+classLootFamily: TANK_HELMETS

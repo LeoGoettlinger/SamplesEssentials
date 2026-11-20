@@ -1,0 +1,28 @@
+transportRoutes: []
+name: <g:#9A8AAA:#AA9ABA>Alaric Greystone</g>
+role: <g:#8A7A9A:#9A8AAA><Hallowed Haunt></g>
+greetings:
+- ''
+dialog: []
+farewell: []
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:armorer]=VillagerProfession[name=translation{key='entity.minecraft.villager.armorer',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x000000009ab5d7a8@7e1f67fa,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x000000009ab5da08@730799ea,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_armorer,
+  fixedRange=Optional.empty], tradeSetsByLevel={1=>ResourceKey[minecraft:trade_set
+  / minecraft:armorer/level_1], 2=>ResourceKey[minecraft:trade_set / minecraft:armorer/level_2],
+  3=>ResourceKey[minecraft:trade_set / minecraft:armorer/level_3], 4=>ResourceKey[minecraft:trade_set
+  / minecraft:armorer/level_4], 5=>ResourceKey[minecraft:trade_set / minecraft:armorer/level_5]}]}}
+scripts: []
+isEnabled: true
+spawnLocation: em_adventurers_guild,291.5,92,295.5,180,0
+spawnLocations: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+disguise: custom:em_the_hallowed_haunt_alaric
+customDisguiseData: player em_the_hallowed_haunt_alaric setskin {"uuid":"899defd5-a0c9-4fa1-ac81-c24d597a2553","name":"Unknown","textureProperties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTc1NDg4MjkzOTUzNiwKICAicHJvZmlsZUlkIiA6ICJkYjQwYmNjNWUzMDE0ZmZjOGVlOWQxNDU5MTcyYjdhNCIsCiAgInByb2ZpbGVOYW1lIiA6ICJhWGUxOCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xODQ5NTI1NmZiZWViYjBkY2M3MTI4Mjg2MTljMzBjNTBmNjM1MGZjOWZlM2E4ZGQ4YjI5YWY2YmJkNTEyMDU0IgogICAgfQogIH0KfQ==","signature":"FLLx/2pMyQYHZlHWR33WttxatUO9su4sUJ/NO0xFXLElaebpl2Vw+ie/Gj/RoJP3dnqRpdvWVO4O9+1V61Ur9vnKrN8ptP8nYC9DoJ1vzlo5tV/1019RjDc8hzEkY9d7oWtWjSznn+jDGUypZ/6W322/ONKPm1ZXRICve77QlRS/Fdwt5R+NJHeFjJUMb7oOnEnXSvg6/PlgQ+XuQF5susqhxuAaRIWys45tNYqw66WyLfcMcdfWvJr5TMoJK7IEcxmryp7rUska0LkWzJepu/GQDizUDG0nLB7b+G9phmAtESOBXue+gO7INfI3BBqi5Fej4nEn4iYjQwTPYjIlJnVIhI9f4fpQABwBYXDnQtHJiILxDqA6IWzGI2sE3PwCpeGsxwx5cNftY26HGpciC6szKscWkqWZIagRyXZ4tQ61nRxERHIbcYNbGludUDa07R0CvXIyUdWwuIg61eP7RIO3SzDoEBkpxspkkY5VNCe/IoC1/zXnqTpZcdilEiNXVi9jBwZ1Yv1+0VmZT2mKhayF6g+FXw7FGETCwaLmpRjy2dZz2qj/A+dLktJ1DK49Vtqg4NnnYCeNoNo/ymSuAZq2JQGvCM6QYCCjEw//Grq32+ol6i+tR0hju7qN6aCBvTG8dUjzJ8kdMpSYqNcfOkPRjqtV4ty9VvJmyvIfwIQ="}]}
+customModel: em_ag_alaricgreystone
+command: em dungeontp the_hallowed_haunt_dynamic_dungeon.yml
+syncMovement: true

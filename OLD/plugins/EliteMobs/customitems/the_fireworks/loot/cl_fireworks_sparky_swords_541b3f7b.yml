@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&cCurtain Call'
+lore:
+- '&cThe ribbon on the hilt survived the show.'
+- '&cThe rest of the decorations did not.'

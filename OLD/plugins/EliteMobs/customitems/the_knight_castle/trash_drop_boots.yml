@@ -1,0 +1,11 @@
+potionEffects: []
+isEnabled: true
+material: NETHERITE_BOOTS
+name: '&bDamaged Boots'
+lore:
+- '&bAlmost useless.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+itemType: UNIQUE
+scalability: scalable
+level: 95

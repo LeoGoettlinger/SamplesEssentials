@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&7Sealed Crossing'
+lore:
+- '&7A board from a gate that never reopened.'

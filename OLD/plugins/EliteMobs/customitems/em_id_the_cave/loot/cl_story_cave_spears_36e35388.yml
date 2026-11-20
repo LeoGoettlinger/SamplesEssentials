@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&c[$difficulty] Corroded Pike'
+lore:
+- '&cA spear eaten away by acidic'
+- '&cslime, yet still deadly sharp.'
+- '&cLeaves a burning sensation.'

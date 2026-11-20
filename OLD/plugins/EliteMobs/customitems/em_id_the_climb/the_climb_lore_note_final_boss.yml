@@ -1,0 +1,18 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&4Torn Note'
+material: PAPER
+lore:
+- '&4I have given you the gift of thought and mind. Do not waste it.'
+- '&4The miners are not enough, I need more material.'
+- '&4They must have come from somewhere, there must be a settlement nearby.'
+- '&4Find it. Bring back the ones that shine bright.'
+- '&4I do not care what you do with the dull ones, turn them or extinguish them.'
+- '&4The Boiler will be coming with you, it will follow any order you give it.'
+- '&4Use it to burn away anything that tries to stop you.'
+- '&4Unlike you, The Boiler has not been burdened with the gift of thought.'
+- '&4It will not do anything unless you order it. Remember that.'
+- '&4Should you fail, I will tear you apart and rebuild you myself.'
+scalability: scalable
+itemType: unique

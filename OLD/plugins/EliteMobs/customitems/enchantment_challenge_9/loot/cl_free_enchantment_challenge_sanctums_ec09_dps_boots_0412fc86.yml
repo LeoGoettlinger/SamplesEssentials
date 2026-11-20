@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Crunching Steps
+lore:
+- Everyone heard you enter.
+classLootFamily: DPS_BOOTS

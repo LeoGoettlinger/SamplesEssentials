@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Elbow Room
+lore:
+- The dance got a little crowded.
+classLootFamily: DPS_CHESTPLATES

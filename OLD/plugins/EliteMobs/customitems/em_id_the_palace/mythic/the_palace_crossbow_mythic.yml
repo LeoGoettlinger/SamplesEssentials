@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Stone Arbalist'
+material: CROSSBOW
+level: 35
+lore:
+- '&cA crossbow carved from the'
+- '&cpalace''s foundations. Sturdy'
+- '&cand unyielding.'
+enchantments:
+- PIERCING,5
+- QUICK_CHARGE,3
+- DURABILITY,5
+itemType: unique
+scalability: scalable

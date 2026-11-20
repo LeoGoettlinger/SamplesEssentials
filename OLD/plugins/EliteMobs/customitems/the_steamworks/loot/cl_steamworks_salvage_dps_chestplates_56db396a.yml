@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&bActuator Harness'
+lore:
+- '&bThe straps pass through vacant piston housings.'
+- '&bThere is just enough room to breathe between them.'
+classLootFamily: DPS_CHESTPLATES

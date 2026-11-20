@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&aStocking Stuffer'
+lore:
+- '&7Too wide for an ordinary stocking.'
+- '&7Santa insists it will fit.'

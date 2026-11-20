@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&7Unfinished Shield'
+lore:
+- '&7The maker left before fitting the final rivet.'

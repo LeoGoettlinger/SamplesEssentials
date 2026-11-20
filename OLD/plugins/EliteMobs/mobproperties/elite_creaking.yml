@@ -1,0 +1,7 @@
+isEnabled: false
+entityType: CREAKING
+name: '&fLvl &2$level &fElite &2Creaking'
+deathMessages:
+- $player &cwas slain by $entity&c!
+baseDamageV2: 2.0
+behavior: native

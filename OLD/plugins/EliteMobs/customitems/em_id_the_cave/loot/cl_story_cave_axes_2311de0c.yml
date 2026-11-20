@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&c[$difficulty] Slimed Axe'
+lore:
+- '&cBeautiful green slime adorns this axe.'

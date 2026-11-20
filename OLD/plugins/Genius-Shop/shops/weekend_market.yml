@@ -1,0 +1,471 @@
+gui-name: '&d&lWeekend Market'
+rows: 6
+permission: ''
+available-times:
+  - Saturday-Sunday
+  - "00:00-23:59"
+items:
+- material: DIAMOND_BLOCK
+  name: '&bDiamond Block'
+  price: 4100
+  amount: 1
+  lore:
+  - '&79 Diamonds = 1 Block'
+  - '&7Weekend special pricing!'
+  - '&a11% off normal price!'
+  sell-price: 2870
+- material: EMERALD_BLOCK
+  name: '&aEmerald Block'
+  price: 5000
+  amount: 1
+  lore:
+  - '&79 Emeralds = 1 Block'
+  - '&7Weekend special pricing!'
+  - '&a10% off normal price!'
+  sell-price: 3500
+- material: GOLD_BLOCK
+  name: '&6Gold Block'
+  price: 2500
+  amount: 4
+  lore:
+  - '&79 Gold Ingots = 1 Block'
+  - '&7Weekend bulk deal!'
+  sell-price: 1750
+- material: IRON_BLOCK
+  name: '&fIron Block'
+  price: 1050
+  amount: 4
+  lore:
+  - '&79 Iron Ingots = 1 Block'
+  - '&7Weekend bulk deal!'
+  sell-price: 735
+- material: NETHERITE_BLOCK
+  name: '&8Netherite Block'
+  price: 68000
+  amount: 1
+  lore:
+  - '&79 Netherite Ingots = 1 Block'
+  - '&7Weekend special pricing!'
+  - '&a10% off!'
+  sell-price: 47600
+- material: AMETHYST_BLOCK
+  name: '&5Amethyst Block'
+  price: 160
+  amount: 16
+  lore:
+  - '&74 Amethyst Shards = 1 Block'
+  - '&7Weekend discount!'
+  sell-price: 112
+- material: COPPER_BLOCK
+  name: '&6Copper Block'
+  price: 350
+  amount: 8
+  lore:
+  - '&79 Copper Ingots = 1 Block'
+  - '&7Weekend discount!'
+  sell-price: 245
+- material: REDSTONE_BLOCK
+  name: '&cRedstone Block'
+  price: 600
+  amount: 8
+  lore:
+  - '&79 Redstone = 1 Block'
+  - '&7Weekend discount!'
+  sell-price: 420
+- material: LAPIS_BLOCK
+  name: '&9Lapis Block'
+  price: 440
+  amount: 8
+  lore:
+  - '&79 Lapis Lazuli = 1 Block'
+  - '&7Weekend discount!'
+  sell-price: 308
+- material: TOTEM_OF_UNDYING
+  name: '&eTotem of Undying'
+  price: 7500
+  sell-price: 5250
+  amount: 1
+  lore:
+  - '&7Weekend exclusive item'
+  - '&6Very powerful!'
+- material: ANCIENT_DEBRIS
+  name: '&8Ancient Debris'
+  price: 2100
+  sell-price: 1470
+  amount: 1
+  lore:
+  - '&7Weekend market exclusive'
+- material: NETHER_STAR
+  name: '&eNether Star'
+  price: 13000
+  amount: 1
+  lore:
+  - '&7Weekend special pricing!'
+  sell-price: 9100
+- material: HEART_OF_THE_SEA
+  name: '&cHeart of the Sea'
+  price: 17000
+  sell-price: 11900
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+  - '&bRare crafting material!'
+- material: NETHERITE_INGOT
+  name: '&8Netherite Ingot'
+  price: 9000
+  sell-price: 6300
+  amount: 1
+  lore:
+  - '&7Weekend discount!'
+- material: TRIDENT
+  name: '&bTrident'
+  price: 42000
+  sell-price: 29400
+  amount: 1
+  lore:
+  - '&7Weekend exclusive weapon'
+  - '&bRare drop only!'
+- material: NETHERITE_SWORD
+  name: '&8Netherite Sword'
+  price: 27000
+  amount: 1
+  lore:
+  - '&7Weekend discount!'
+  sell-price: 18900
+- material: NETHERITE_CHESTPLATE
+  name: '&8Netherite Chestplate'
+  price: 52000
+  amount: 1
+  lore:
+  - '&7Weekend discount!'
+  sell-price: 36400
+#- material: ELYTRA
+#  name: '&bElytra'
+#  price: 90000
+#  sell-price: 63000
+#  amount: 1
+#  lore:
+#  - '&7Weekend special!'
+#  - '&d10% off normal price!'
+- material: MACE
+  name: '&dMace'
+  price: 55000
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+  - '&dNew 1.21 weapon!'
+  sell-price: 38500
+- material: DRAGON_HEAD
+  name: '&5Dragon Head'
+  price: 27000
+  sell-price: 18900
+  amount: 1
+  lore:
+  - '&7Rare collectible'
+  - '&dWeekend only!'
+- material: WITHER_SKULL
+  name: '&8Wither Skeleton Skull'
+  price: 11000
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+  - '&8Needed for Wither boss!'
+  sell-price: 7700
+- material: BEACON
+  name: '&bBeacon'
+  price: 22000
+  amount: 1
+  lore:
+  - '&7Weekend discount!'
+  - '&bCrafting-safe price!'
+  sell-price: 15400
+- material: CONDUIT
+  name: '&bConduit'
+  price: 32000
+  amount: 1
+  lore:
+  - '&7Weekend discount!'
+  - '&bUnderwater beacon!'
+  sell-price: 22400
+- material: SHULKER_BOX
+  name: '&dShulker Box'
+  price: 19000
+  amount: 1
+  lore:
+  - '&7Weekend discount!'
+  sell-price: 13300
+- material: ENDER_CHEST
+  name: '&5Ender Chest'
+  price: 450
+  amount: 1
+  lore:
+  - '&7Weekend discount!'
+  sell-price: 315
+- material: MUSIC_DISC_PIGSTEP
+  name: '&dMusic Disc - Pigstep'
+  price: 6500
+  sell-price: 4550
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+  - '&dRare nether disc!'
+- material: MUSIC_DISC_OTHERSIDE
+  name: '&dMusic Disc - Otherside'
+  price: 6500
+  sell-price: 4550
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+- material: MUSIC_DISC_5
+  name: '&dMusic Disc - 5'
+  price: 6500
+  sell-price: 4550
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+- material: MUSIC_DISC_RELIC
+  name: '&dMusic Disc - Relic'
+  price: 13000
+  sell-price: 9100
+  amount: 1
+  lore:
+  - '&7Ultra rare weekend exclusive!'
+  - '&dArchaeology disc!'
+- material: SCULK_CATALYST
+  name: '&1Sculk Catalyst'
+  price: 120
+  sell-price: 84
+  amount: 8
+  lore:
+  - '&7Weekend discount!'
+- material: SCULK_SHRIEKER
+  name: '&1Sculk Shrieker'
+  price: 160
+  sell-price: 112
+  amount: 8
+  lore:
+  - '&7Weekend discount!'
+- material: BUDDING_AMETHYST
+  name: '&5Budding Amethyst'
+  price: 600
+  amount: 4
+  lore:
+  - '&7Weekend discount!'
+  sell-price: 420
+- material: CRYING_OBSIDIAN
+  name: '&5Crying Obsidian'
+  price: 400
+  amount: 8
+  lore:
+  - '&7Weekend discount!'
+  sell-price: 280
+- material: BLUE_ICE
+  name: '&9Blue Ice'
+  price: 250
+  amount: 8
+  lore:
+  - '&7Weekend discount!'
+  sell-price: 175
+- material: SPONGE
+  name: '&eSponge'
+  price: 160
+  amount: 8
+  lore:
+  - '&7Weekend discount!'
+  sell-price: 112
+- material: ALLAY_SPAWN_EGG
+  name: '&bAllay Spawn Egg'
+  price: 4500
+  sell-price: 3150
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+  - '&bItem-collecting friend!'
+- material: AXOLOTL_SPAWN_EGG
+  name: '&dAxolotl Spawn Egg'
+  price: 3000
+  sell-price: 2100
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+- material: FROG_SPAWN_EGG
+  name: '&2Frog Spawn Egg'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+- material: SNIFFER_SPAWN_EGG
+  name: '&dSniffer Spawn Egg'
+  price: 7500
+  sell-price: 5250
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+  - '&dAncient seed finder!'
+- material: CAMEL_SPAWN_EGG
+  name: '&6Camel Spawn Egg'
+  price: 3800
+  sell-price: 2660
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+- material: BUNDLE
+  name: '&eBundle'
+  price: 1300
+  amount: 1
+  lore:
+  - '&7Weekend discount!'
+  - '&eStore multiple items!'
+  sell-price: 910
+- material: DECORATED_POT
+  name: '&6Decorated Pot'
+  price: 160
+  amount: 4
+  lore:
+  - '&7Weekend discount!'
+  - '&6Archaeology item!'
+  sell-price: 112
+- material: TRIAL_KEY
+  name: '&eTrial Key'
+  price: 550
+  sell-price: 385
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+  - '&eFrom trial chambers!'
+- material: OMINOUS_BOTTLE
+  name: '&cOminous Bottle'
+  price: 850
+  sell-price: 595
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+  - '&cBad Omen source!'
+- material: HEAVY_CORE
+  name: '&8Heavy Core'
+  price: 1100
+  sell-price: 770
+  amount: 1
+  lore:
+  - '&7Weekend exclusive!'
+  - '&8For crafting Mace!'
+- material: SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&fSentry Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: VEX_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&5Vex Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: WILD_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&2Wild Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: COAST_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&bCoast Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: DUNE_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&6Dune Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&eWayfinder Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: RIB_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&cRib Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: TIDE_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&9Tide Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: WARD_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&dWard Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&7Silence Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&cSnout Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: EYE_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&5Eye Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&bSpire Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: HOST_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&8Host Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: RAISER_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&6Raiser Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&fShaper Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'
+- material: FLOW_ARMOR_TRIM_SMITHING_TEMPLATE
+  name: '&dFlow Armor Trim'
+  price: 2800
+  sell-price: 1960
+  amount: 1
+  lore:
+  - '&dWeekend exclusive trim!'

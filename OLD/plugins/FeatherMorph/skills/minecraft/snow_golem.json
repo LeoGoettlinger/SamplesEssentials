@@ -1,0 +1,20 @@
+{
+  "skillCooldown": 15,
+  "skillId": "morph:launch_projective",
+  "abilities": [
+    "morph:takes_damage_from_water",
+    "morph:no_fall_damage",
+    "morph:snowy"
+  ],
+  "settings": {
+    "morph:launch_projective": {
+      "delay": 0,
+      "warning_sound_name": "",
+      "name": "minecraft:snowball",
+      "speed_multiplier": 1.0,
+      "sound_name": "entity.snow_golem.shoot",
+      "sound_distance": 8,
+      "max_target_distance": 0
+    }
+  }
+}

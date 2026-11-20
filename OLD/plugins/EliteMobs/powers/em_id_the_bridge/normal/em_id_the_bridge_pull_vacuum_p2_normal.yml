@@ -1,0 +1,102 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Pull:
+    Events:
+    - EliteMobTargetPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Zone:
+      shape: DOME
+      radius: 7
+      borderRadius: 6
+      Target:
+        targetType: SELF
+        track: true
+      filter: PLAYER
+    Actions:
+    - action: TITLE_MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 30
+      title: '&eVacuum Warning!'
+      duration: 95
+      fadeIn: 1
+      fadeOut: 1
+    - action: SPAWN_PARTICLE
+      wait: 100
+      particles:
+      - particle: EXPLOSION_NORMAL
+        speed: 0.05
+      Target:
+        targetType: ZONE_BORDER
+        track: true
+        coverage: 0.1
+      repeatEvery: 5
+      times: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: PUSH
+      wait: 100
+      RelativeVector:
+        SourceTarget:
+          targetType: NEARBY_PLAYERS
+          range: 7
+        DestinationTarget:
+          targetType: SELF
+          offset: 0,3,0
+          track: true
+        normalize: true
+        multiplier: 0.5
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      repeatEvery: 1
+      times: 50
+    - action: RUN_SCRIPT
+      wait: 100
+      scripts:
+      - FluidLava
+      - FluidWater
+      onlyRunOneScript: true
+    Cooldowns:
+      local: 400
+      global: 50
+  FluidLava:
+    Zone:
+      shape: SPHERE
+      radius: 3
+      Target:
+        targetType: SELF
+        offset: 0,3,0
+    Actions:
+    - action: PLACE_BLOCK
+      material: LAVA
+      duration: 5
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 5
+      times: 10
+  FluidWater:
+    Zone:
+      shape: SPHERE
+      radius: 4
+      borderRadius: 3
+      Target:
+        targetType: SELF
+        offset: 0,4,0
+    Actions:
+    - action: PLACE_BLOCK
+      wait: 10
+      material: WATER
+      duration: 100
+      Target:
+        targetType: ZONE_FULL
+    - action: PLACE_BLOCK
+      wait: 10
+      material: BARRIER
+      duration: 50
+      Target:
+        targetType: ZONE_BORDER

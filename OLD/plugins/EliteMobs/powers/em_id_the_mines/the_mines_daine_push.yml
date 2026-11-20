@@ -1,0 +1,700 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobEnterCombatEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - Talk
+      - Push1
+    - action: RUN_SCRIPT
+      wait: 50
+      scripts:
+      - Push2
+    - action: RUN_SCRIPT
+      wait: 100
+      scripts:
+      - Push3
+    - action: RUN_SCRIPT
+      wait: 150
+      scripts:
+      - Push4
+    - action: RUN_SCRIPT
+      wait: 200
+      scripts:
+      - Push5
+    - action: RUN_SCRIPT
+      wait: 250
+      scripts:
+      - Push6
+    - action: RUN_SCRIPT
+      wait: 300
+      scripts:
+      - Push7
+    - action: RUN_SCRIPT
+      wait: 350
+      scripts:
+      - Push8
+    - action: RUN_SCRIPT
+      wait: 400
+      scripts:
+      - Push9
+    - action: RUN_SCRIPT
+      wait: 450
+      scripts:
+      - Push10
+    - action: RUN_SCRIPT
+      wait: 500
+      scripts:
+      - Push11
+    - action: RUN_SCRIPT
+      wait: 550
+      scripts:
+      - Push12
+    - action: RUN_SCRIPT
+      wait: 600
+      scripts:
+      - Push13
+    - action: RUN_SCRIPT
+      wait: 650
+      scripts:
+      - Push14
+    - action: RUN_SCRIPT
+      wait: 700
+      scripts:
+      - Push15
+    - action: RUN_SCRIPT
+      wait: 750
+      scripts:
+      - Push16
+    - action: RUN_SCRIPT
+      wait: 800
+      scripts:
+      - Push17
+    - action: RUN_SCRIPT
+      wait: 850
+      scripts:
+      - Push18
+    - action: RUN_SCRIPT
+      wait: 900
+      scripts:
+      - Push19
+    - action: RUN_SCRIPT
+      wait: 950
+      scripts:
+      - Push20
+    - action: RUN_SCRIPT
+      wait: 1000
+      scripts:
+      - Push21
+    - action: RUN_SCRIPT
+      wait: 1050
+      scripts:
+      - Push22
+      - Push22V
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    Cooldowns:
+      local: 99999
+      global: 20
+  Talk:
+    Actions:
+    - action: MESSAGE
+      sValue: '&4[Soulweaver Daine] &fYour little delving mission ends here!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+    - action: MESSAGE
+      wait: 10
+      sValue: '&7&oYou have this feeling you should try your best to stay ahead of
+        the force barrier...'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+    - action: TITLE_MESSAGE
+      title: '&cWarning!'
+      subtitle: '&4Force Barrier Approaching!'
+      duration: 40
+      fadeIn: 5
+      fadeOut: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+  Push1:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-145,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push2:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-141,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push3:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-137,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push4:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-133,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push5:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-129,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push6:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-125,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push7:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-121,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push8:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-117,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push9:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-113,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push10:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-109,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push11:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-105,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push12:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-101,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push13:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-97,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push14:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-93,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push15:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-89,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push16:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-85,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push17:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-81,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push18:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-77,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push19:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-73,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push20:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-69,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push21:
+    Zone:
+      shape: CUBOID
+      x: 30
+      y: 30
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-65,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      times: 5
+    - action: PUSH
+      vValue: 0,3,4
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      times: 5
+  Push22:
+    Zone:
+      shape: CUBOID
+      x: 35
+      y: 35
+      z: 100
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-100,0,0
+    Actions:
+    - action: PUSH
+      vValue: 0,1,2
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: TELEPORT
+      FinalTarget:
+        targetType: LOCATION
+        location: same_as_boss,234,24,-40,0,0
+      Target:
+        targetType: ZONE_FULL
+      wait: 100
+      repeatEvery: 100
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: TELEPORT
+      wait: 110
+      FinalTarget:
+        targetType: NEARBY_PLAYERS
+        range: 120
+      Target:
+        targetType: SELF
+    - action: SET_MOB_AWARE
+      wait: 115
+      bValue: false
+      duration: 25
+      Target:
+        targetType: SELF
+  Push22V:
+    Zone:
+      shape: CUBOID
+      x: 35
+      y: 35
+      z: 4
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,232,27,-51,0,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

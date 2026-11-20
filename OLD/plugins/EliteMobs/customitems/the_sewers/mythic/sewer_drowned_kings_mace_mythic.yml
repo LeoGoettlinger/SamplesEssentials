@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&4Drowned King''s Cudgel [Mythic]'
+material: MACE
+lore:
+- '&cRusted but still deadly, this mace'
+- '&chas crushed many sewer invaders.'
+enchantments:
+- DAMAGE_ALL,9
+- KNOCKBACK,3
+- DURABILITY,5
+- MENDING,1
+potionEffects:
+- WEAKNESS,1,target,onHit
+- POISON,1,target,onHit
+- SLOW,1,target,onHit
+itemType: unique
+scalability: scalable
+soulbound: true

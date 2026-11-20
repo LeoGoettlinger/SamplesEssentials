@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&e[Hard] Mastercraft Headgear'
+material: NETHERITE_HELMET
+level: 30
+lore:
+- '&eNo arrow will be able to pierce'
+- '&ethis finely crafted helmet.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,5
+- PROTECTION_EXPLOSIONS,4
+- PROTECTION_PROJECTILE,7
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

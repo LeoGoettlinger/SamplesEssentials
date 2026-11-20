@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Slimed Chestplate'
+material: DIAMOND_CHESTPLATE
+level: 15
+lore:
+- '&cBeing covered in goo feels so good!'
+enchantments:
+- DAMAGE_ALL,3
+- DURABILITY,7
+- PROTECTION_ENVIRONMENTAL,2
+- DAMAGE_UNDEAD,7
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

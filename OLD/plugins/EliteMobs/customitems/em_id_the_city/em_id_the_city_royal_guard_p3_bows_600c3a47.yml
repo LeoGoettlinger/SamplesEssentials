@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&c[$difficulty] City Sentinel Bow'
+lore:
+- '&cUsed by the city''s watchtower'
+- '&carchers to defend the walls.'

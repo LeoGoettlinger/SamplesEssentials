@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&8Tide-Touched Bow'
+lore:
+- '&8A strip of robe binds the lower limb.'
+- '&8It smells of the ocean.'

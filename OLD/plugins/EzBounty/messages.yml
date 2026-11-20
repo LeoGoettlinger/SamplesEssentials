@@ -1,0 +1,123 @@
+# EzBounty Messages Configuration
+# Use & for color codes
+# Placeholders: {player}, {target}, {amount}, {total}, {killer}
+
+prefix: "&2lɴɪxᴏʀɪᴀ &8▸ "
+
+# General messages
+no-permission: "{prefix} &cYou don't have permission to use this command."
+reload-success: "{prefix} &aConfiguration reloaded successfully."
+player-not-found: "{prefix} &cPlayer '{player}' could not be found."
+player-never-joined: "{prefix} &cPlayer '{player}' has never joined the server."
+insufficient-funds: "{prefix} &cYou need {amount} to do that."
+cooldown-active: "{prefix} &cPlease wait {time} seconds before placing another bounty."
+
+# Bounty creation
+bounty-created: "{prefix} &aYou have placed a bounty of {amount} on {target}."
+bounty-created-broadcast: "{prefix} &e{player} placed a bounty of {amount} on {target}."
+bounty-added: "{prefix} &aYou added {amount} to {target}'s bounty. New total: {total}"
+bounty-added-broadcast: "{prefix} &e{player} added {amount} to {target}'s bounty. New total: {total}"
+bounty-self-not-allowed: "{prefix} &cYou cannot place a bounty on yourself."
+bounty-too-low: "{prefix} &cThe bounty must be at least {min}."
+bounty-too-high: "{prefix} &cThe bounty cannot exceed {max}."
+bounty-total-too-high: "{prefix} &cThe total bounty on this player cannot exceed {max}."
+bounty-invalid-amount: "{prefix} &cInvalid amount. Please enter a number."
+
+# Bounty collection
+bounty-claimed: "{prefix} &aYou collected {amount} for killing {target}."
+bounty-claimed-broadcast: "{prefix} &e{killer} collected a bounty of {amount} for killing {target}."
+bounty-removed: "{prefix} &aThe bounty on {target} has been removed."
+no-active-bounty: "{prefix} &cThere is no active bounty on {target}."
+
+# Bounty list
+no-bounties: "{prefix} &cThere are currently no active bounties."
+bounty-list-header: "{prefix} &6Active Bounties"
+bounty-list-entry: "{prefix} &e{target}: &a{amount} &7(by {player})"
+bounty-list-footer: "{prefix} &6End of list"
+
+# GUI messages
+gui-bounty-item-name: "&6{target}"
+gui-bounty-item-lore:
+  - "&7Total Bounty: &a{amount}"
+  - "&7Contributors: &e{count}"
+  - ""
+  - "&eClick to view details"
+gui-previous-page: "&aPrevious Page"
+gui-next-page: "&aNext Page"
+gui-close: "&cClose"
+gui-create-bounty: "&6Create New Bounty"
+gui-create-target: "&eClick to set target (chat)"
+gui-create-target-selected: "&eSelected: {target}"
+gui-create-amount: "&eClick to set amount (chat)"
+gui-create-amount-selected: "&eSelected: {amount}"
+gui-create-confirm: "&aConfirm Create"
+gui-create-cancel: "&cCancel"
+gui-create-target-prompt: "{prefix} &ePlease type the target player's name in chat."
+gui-create-amount-prompt: "{prefix} &ePlease type the bounty amount in chat."
+gui-create-cancelled: "{prefix} &cBounty creation cancelled."
+gui-create-missing-target: "{prefix} &cYou must set a target before confirming."
+gui-create-missing-amount: "{prefix} &cYou must set an amount before confirming."
+gui-create-failure: "{prefix} &cFailed to create bounty. Check server logs."
+gui-create-target-set: "{prefix} &aTarget set to {target}."
+gui-create-amount-set: "{prefix} &aAmount set to {amount}."
+bounty-removed-admin: "{prefix} &aRemoved bounty on {target}."
+bounty-not-exists: "{prefix} &cNo bounty exists on {target}."
+gui-no-bounties-item: "&cNo Active Bounties"
+vault-not-found: "{prefix} &cVault or economy plugin not found. Economy features are disabled."
+economy-error: "{prefix} &cAn error occurred while processing the transaction. Please try again later."
+
+storage-save-failed: "{prefix} &cFailed to save bounty data. Check server logs."
+storage-load-failed: "{prefix} &cFailed to load bounty data. Check server logs."
+mysql-connection-failed: "{prefix} &cFailed to connect to MySQL database. Check configuration."
+mysql-init-failed: "{prefix} &cFailed to initialize MySQL tables. Check database permissions."
+gui-info-created: "&6Created: &e{date}"
+gui-info-target: "&6Target: &e{target}"
+gui-info-title: "&6&lBounty Info"
+gui-info-amount: "&6Amount: &e{amount}"
+gui-info-contributors: "&6Contributors"
+gui-info-contributor-entry: "&7{player}: &a{amount}"
+gui-info-no-contributors: "&7No contributors"
+usage-bounty: "{prefix} &eUsage: /bounty [list|create|add|info|remove|leaderboard] [args]"
+usage-bounty-create: "{prefix} &eUsage: /bounty create <player> <amount>"
+usage-bounty-add: "{prefix} &eUsage: /bounty add <player> <amount>"
+usage-bounty-info: "{prefix} &eUsage: /bounty info <player>"
+usage-bounty-remove: "{prefix} &eUsage: /bounty remove <player>"
+gui-history-title: "&6&lPayout History"
+gui-history-item-lore:
+  - "&7{date}"
+  - "&6{target} &7- &a{amount}"
+  - ""
+  - "&eClick to view bounty details if active"
+gui-history-detail-title: "&6&lPayout Detail"
+gui-history-empty-lore:
+  - "&7No payout history to display"
+# Economy integration
+vault-not-found: "{prefix} &cVault is not installed or economy is not set up!"
+economy-error: "{prefix} &cAn error occurred while processing the transaction."
+
+# Storage messages
+storage-save-failed: "{prefix} &cFailed to save bounty data!"
+storage-load-failed: "{prefix} &cFailed to load bounty data!"
+mysql-connection-failed: "{prefix} &cFailed to connect to MySQL database!"
+mysql-init-failed: "{prefix} &cFailed to initialize MySQL tables!"
+
+# Usage messages
+ 
+usage-bounty-create: "&eUsage: /bounty create <player> <amount>"
+usage-bounty-add: "&eUsage: /bounty add <player> <amount>"
+usage-bounty-info: "&eUsage: /bounty info <player>"
+usage-bounty-remove: "&eUsage: /bounty remove <player>"
+
+# Leaderboard
+leaderboard-header: "&6&m-------&r &6&lBounty Leaderboard &6&m-------"
+leaderboard-entry: "&e#{rank} &6{player}: &a{amount}"
+leaderboard-footer: "&6&m---------------------------------"
+
+usage-bounty: "&eUsage: /bounty [list|create|add|info|remove|leaderboard] [args]"
+
+# History
+history-header: "{prefix} &6Your Payout History"
+history-entry: "{prefix} &e{date} &6{target} &a{amount}"
+history-footer: "{prefix} &6End of history"
+no-history: "{prefix} &cYou have no recorded payouts."
+no-permission-history-others: "{prefix} &cYou don't have permission to view other players' payout history."

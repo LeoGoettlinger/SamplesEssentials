@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&0Ritual Witness'
+lore:
+- '&0&kThe stock bears the marks of many vigils.'
+- '&0&kOnly one witness returned.'

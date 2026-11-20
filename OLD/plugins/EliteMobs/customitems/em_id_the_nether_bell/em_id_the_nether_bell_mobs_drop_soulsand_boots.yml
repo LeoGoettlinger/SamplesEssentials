@@ -1,0 +1,16 @@
+potionEffects: []
+isEnabled: true
+material: LEATHER_BOOTS
+name: '&fSand Skimmers'
+lore:
+- '&fWorn by long-lost explorers,'
+- '&fin this desolate void.'
+- '&fLittle more than scrap now.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,1
+- SOUL_SPEED,1
+- VANISHING_CURSE,1
+scalability: scalable
+level: 55
+itemType: unique

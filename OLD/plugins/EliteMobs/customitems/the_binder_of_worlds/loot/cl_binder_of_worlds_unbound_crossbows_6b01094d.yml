@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&5Riftcatcher'
+lore:
+- '&5A grain of end stone is caught in the latch.'
+- '&5It refuses to fall out.'

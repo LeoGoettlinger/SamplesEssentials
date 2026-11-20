@@ -1,0 +1,5 @@
+name: Channeling
+isEnabled: true
+maxLevelV2: 1
+value: 6.0
+isEnabledForProcedurallyGeneratedItems: true

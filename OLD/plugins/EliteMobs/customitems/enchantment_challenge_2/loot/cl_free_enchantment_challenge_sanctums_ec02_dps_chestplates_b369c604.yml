@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Bounding Bib
+lore:
+- The buckle looks suspiciously like a carrot.
+classLootFamily: DPS_CHESTPLATES

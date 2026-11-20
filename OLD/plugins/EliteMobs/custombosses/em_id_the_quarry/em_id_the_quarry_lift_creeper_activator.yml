@@ -1,0 +1,97 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: ZOMBIE
+disguise: CREEPER
+name: $normalLevel &eMagicked Creeper
+level: dynamic # 40
+healthMultiplier: 1.2
+damageMultiplier: 0.01
+movementSpeedAttribute: 0.28
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+powers:
+- implosion.yml
+- em_id_the_quarry_stand_guard.yml
+- em_the_quarry_creeper_explosion.yml
+frozen: false
+followDistance: 40
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+cullReinforcements: false
+eliteScript:
+  cloak:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: POTION_EFFECT
+      wait: 5
+      potionEffectType: INVISIBILITY
+      amplifier: 1
+      duration: 20
+      Target:
+        targetType: SELF
+      repeatEvery: 19
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - cloak
+    - action: TAG
+      tags:
+      - cloak
+      Target:
+        targetType: SELF
+  decloak:
+    Events:
+    - EliteMobTargetPlayerEvent
+    Actions:
+    - action: MESSAGE
+      sValue: '&7&oYou have a feeling that something is wrong...'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+    - action: POTION_EFFECT
+      potionEffectType: BLINDNESS
+      amplifier: 2
+      duration: 45
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+    - action: UNTAG
+      wait: 20
+      tags:
+      - cloak
+      Target:
+        targetType: SELF
+    - action: SUMMON_REINFORCEMENT
+      sValue: em_id_the_quarry_lift_creeper.yml
+      Target:
+        targetType: LOCATIONS
+        locations:
+        - same_as_boss,351.5,114.5,79.5,0.0,0.0
+        - same_as_boss,373.5,114.5,89.5,0.0,0.0
+        - same_as_boss,366.5,114.5,85.5,0.0,0.0
+        - same_as_boss,369.5,114.5,78.5,0.0,0.0
+        - same_as_boss,371.5,114.5,69.5,0.0,0.0
+        - same_as_boss,363.5,114.5,70.5,0.0,0.0
+        - same_as_boss,355.5,114.5,70.5,0.0,0.0
+        - same_as_boss,351.5,114.5,66.5,0.0,0.0
+        - same_as_boss,362.5,114.5,75.5,0.0,0.0
+    - action: SUMMON_REINFORCEMENT
+      wait: 300
+      sValue: em_id_the_quarry_royal_wizard_one.yml
+      Target:
+        targetType: LOCATIONS
+        locations:
+        - same_as_boss,351.5,114.5,79.5,0.0,0.0
+    Cooldowns:
+      local: 9999
+      global: 5
+spawnLocations:
+- em_id_the_quarry,358.5,104.5,91.5,0.0,0.0:1709648373913
+classLoot: false

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Knee Bunger
+lore:
+- Bend knees. Not blade.
+classLootFamily: DPS_LEGGINGS

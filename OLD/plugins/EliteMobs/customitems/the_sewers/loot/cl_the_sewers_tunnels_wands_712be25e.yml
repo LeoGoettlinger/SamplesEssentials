@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&2Sluice Spark'
+lore:
+- '&2The little lamp has lost its glass.'
+weaponType: WANDS

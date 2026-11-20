@@ -1,0 +1,164 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobEnterCombatEvent
+    - EliteMobDamagedByEliteMobEvent
+    - EliteMobDamagedByPlayerEvent
+    - EliteMobDamagedEvent
+    - EliteMobTargetPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - Mumble1
+      - Mumble2
+      - Mumble3
+      - Mumble4
+      - Mumble5
+      - Mumble6
+      - Mumble7
+      - Mumble8
+      - Mumble9
+      - Mumble10
+      onlyRunOneScript: true
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    Cooldowns:
+      local: 268
+      global: 20
+  Mumble1:
+    Actions:
+    - action: MESSAGE
+      sValue: '&4[Soulweaver Daine] &fWhat kind of terrible things will I turn your
+        soul into...hmm...'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  Mumble2:
+    Actions:
+    - action: MESSAGE
+      sValue: '&4[Soulweaver Daine] &fI will truly enjoy ripping you apart and putting
+        you back together hah hah hah!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  Mumble3:
+    Actions:
+    - action: MESSAGE
+      sValue: '&4[Soulweaver Daine] &fDid you see what I did to the villagers? Their
+        souls were so weak...'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  Mumble4:
+    Actions:
+    - action: MESSAGE
+      sValue: '&4[Soulweaver Daine] &fI can feel it deep inside of you, it burns bright
+        like dragon fire. I cannot wait to rip it out!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  Mumble5:
+    Actions:
+    - action: MESSAGE
+      sValue: '&4[Soulweaver Daine] &fOh! How they screamed! It was such a sweet melody
+        of agony and pain...'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  Mumble6:
+    Actions:
+    - action: MESSAGE
+      sValue: '&4[Soulweaver Daine] &fDid you know that immature souls are my favorite.
+        You can do so many things with them, turn them into whatever you want...split
+        them apart...join them together...CRUSH THEM INTO TINY LITTLE BITS!!!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  Mumble7:
+    Actions:
+    - action: MESSAGE
+      sValue: '&4[Soulweaver Daine] &fThere is no escaping from my web...'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  Mumble8:
+    Actions:
+    - action: MESSAGE
+      sValue: '&4[Soulweaver Daine] &fWhich part of you shall I tear off first...hmm...so
+        many choices...the foot...your arm...maybe just the top your skull...HA HA
+        HA!!!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  Mumble9:
+    Actions:
+    - action: MESSAGE
+      sValue: '&4[Soulweaver Daine] &fYOUR SOUL WILL BE MINE!!!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  Mumble10:
+    Actions:
+    - action: MESSAGE
+      sValue: '&4[Soulweaver Daine] &fHow exciting! I haven''t had this much fun in
+        a long time! Mmm...'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

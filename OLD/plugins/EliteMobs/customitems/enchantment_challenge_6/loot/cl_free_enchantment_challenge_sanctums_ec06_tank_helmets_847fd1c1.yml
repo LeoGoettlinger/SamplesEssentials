@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Beastly Helmet
+lore:
+- Feels like you're wearing a rock.
+classLootFamily: TANK_HELMETS

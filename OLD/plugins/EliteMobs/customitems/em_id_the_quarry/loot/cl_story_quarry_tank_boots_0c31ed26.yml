@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Brake Heels'
+lore:
+- '&7Dig in when the platform starts to move.'
+classLootFamily: TANK_BOOTS

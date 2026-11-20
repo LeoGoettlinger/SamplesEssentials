@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Grinning Brow
+lore:
+- That is not your smile.
+classLootFamily: DPS_HELMETS

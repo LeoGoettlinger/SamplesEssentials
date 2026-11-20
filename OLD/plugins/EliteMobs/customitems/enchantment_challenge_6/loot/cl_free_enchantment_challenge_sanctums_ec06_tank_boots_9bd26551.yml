@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Stone Soles
+lore:
+- The floor is definitely losing.
+classLootFamily: TANK_BOOTS

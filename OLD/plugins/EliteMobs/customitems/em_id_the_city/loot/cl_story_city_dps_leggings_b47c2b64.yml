@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7City Striders'
+lore:
+- '&7Dust from the deserted streets has settled in the folds.'
+classLootFamily: DPS_LEGGINGS

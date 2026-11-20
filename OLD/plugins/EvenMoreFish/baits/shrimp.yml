@@ -1,0 +1,43 @@
+id: shrimp
+disabled: false
+silent: false
+format: <#ff7777>{name}
+sort-index: 2
+application-weight: 150
+catch-weight: 100
+max-baits: 64
+can-be-caught: true
+drop-quantity: 3
+infinite: false
+disable-use-alert: false
+purchase:
+  price: 50
+  quantity: 6
+  economy-types:
+    - Vault
+item:
+  material: NAUTILUS_SHELL
+  displayname: "<#ff7777>Shrimps"
+  glowing: true
+  lore:
+    - "<gray>Fresh shrimps from the ocean."
+    - "<gray>Boosts Common & Rare fish."
+fish-modifiers:
+  Common:
+    Carp: "*2"
+    Bluefish: "*2"
+    Haddock: "*2"
+  Rare:
+    Sunfish: "*2"
+    Goldfish: "*2"
+    Nemo: "*2"
+catch-event:
+  - HEALTH:5
+recipe:
+  type: shaped
+  shape:
+    - sss
+    - sss
+    - sss
+  ingredients:
+    s: seagrass

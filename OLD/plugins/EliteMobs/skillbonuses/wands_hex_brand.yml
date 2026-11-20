@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&5Hex Brand'
+description:
+- '&7Missiles can brand enemies to'
+- '&7take more of your damage.'
+skillType: WANDS
+bonusType: PROC
+unlockTier: 1
+baseValue: 0.11
+scalingPerLevel: 0.002
+procChance: 0.15
+displayMaterial: ENDER_EYE
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Branded: &f+$brandBonus% damage from you'
+- '&8Lasts 6 seconds'
+formattedBonusTemplate: +$brandBonus% vs branded

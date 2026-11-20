@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Hopalong Trousers
+lore:
+- Grass stains on both knees. Again.
+classLootFamily: DPS_LEGGINGS

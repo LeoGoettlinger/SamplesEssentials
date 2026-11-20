@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Desolation Harvester'
+material: NETHERITE_HOE
+level: 50
+lore:
+- '&cA scythe that reaps across'
+- '&cthe barren wastes. It cuts'
+- '&cthrough life itself.'
+enchantments:
+- DAMAGE_ALL,8
+- SWEEPING_EDGE,4
+- DURABILITY,6
+itemType: unique
+scalability: scalable

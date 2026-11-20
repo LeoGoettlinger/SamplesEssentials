@@ -1,0 +1,15 @@
+potionEffects: []
+isEnabled: true
+material: IRON_HOE
+name: '&bClockwork Hoe [Normal]'
+lore:
+- '&bA precision farming tool with automated'
+- '&btilling mechanisms. Its gears tick steadily'
+- '&bas it works, never tiring or slowing down.'
+enchantments:
+- DIG_SPEED,3
+- DURABILITY,4
+- MENDING,1
+itemType: UNIQUE
+scalability: scalable
+soulbound: true

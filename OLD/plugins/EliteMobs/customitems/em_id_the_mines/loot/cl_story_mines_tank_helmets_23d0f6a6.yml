@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Forger''s Cap'
+lore:
+- '&7The inside has been hammered back into shape.'
+classLootFamily: TANK_HELMETS

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&2[$difficulty] Shaped Leggings'
+lore:
+- '&2Has a very musky scent to it.'
+classLootFamily: DPS_LEGGINGS

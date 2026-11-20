@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&c[$difficulty] Stone Striders'
+lore:
+- '&cSharp long spikes protrude'
+- '&cout of these black stone boots.'
+classLootFamily: DPS_BOOTS

@@ -1,0 +1,12 @@
+# /checkgamemode <Spieler>
+command /checkgamemode <player>:
+    permission: admin.checkgamemode
+    permission message: &cDu hast keine Berechtigung für diesen Befehl!
+    trigger:
+        set {_p} to arg-1
+        set {_gm} to gamemode of {_p}
+        
+        send "&e========== &c&lGAMEMODE-CHECK &e==========" to player
+        send "&7Spieler: &e%{_p}%" to player
+        send "&7Aktueller Spielmodus: &a%{_gm}%" to player
+        send "&e======================================" to player

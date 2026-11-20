@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Normal] Mining Helm'
+material: IRON_HELMET
+level: 40
+lore:
+- '&fProtects the head from the big ouch.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,2
+- PROTECTION_EXPLOSIONS,1
+- elitemobs:loud_strikes,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Root Braces
+lore:
+- Solid footing amongst all those roots.
+classLootFamily: TANK_BOOTS

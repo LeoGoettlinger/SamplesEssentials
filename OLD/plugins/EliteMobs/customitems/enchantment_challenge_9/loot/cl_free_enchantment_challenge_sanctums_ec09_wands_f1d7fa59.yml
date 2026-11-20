@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: Fine Crack
+lore:
+- The apprentice says it was there already.
+weaponType: WANDS

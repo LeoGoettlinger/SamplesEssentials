@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Joined Guards'
+lore:
+- '&7The straps hold together pieces that should not fit.'
+classLootFamily: TANK_LEGGINGS

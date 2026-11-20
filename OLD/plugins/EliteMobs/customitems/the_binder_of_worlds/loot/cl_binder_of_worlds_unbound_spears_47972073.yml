@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&5Far Shore'
+lore:
+- '&5The point seems a little too distant.'
+- '&5Your hand is certain of the haft.'

@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&7Lift Gate'
+lore:
+- '&7The gate was small. The drop beyond it was not.'

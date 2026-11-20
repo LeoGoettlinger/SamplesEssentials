@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Last Vigil'
+lore:
+- '&7No one came to relieve the wearer.'
+classLootFamily: TANK_BOOTS

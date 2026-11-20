@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&4Drowned King''s Boots'
+lore:
+- '&cFormerly the boots of the'
+- '&cdevilish Drowned King!'
+classLootFamily: TANK_BOOTS

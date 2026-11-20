@@ -1,0 +1,30 @@
+# StructureCraft Configuration
+
+# List of worlds where structure generation is disabled
+disabled-worlds:
+  - "CB1"
+#  - "Farmwelt_nether"
+#  - "Farmwelt_the_end"
+
+# Generation settings
+generation:
+  # Base chance for any structure to spawn in a chunk (0.0 to 1.0)
+  base-chance: 0.15
+  
+  # Rarity weights (must add up to 1.0)
+  rarity-weights:
+    common: 0.7
+    rare: 0.25
+    epic: 0.05
+  
+  # World radius for generation (in blocks)
+  world-radius: 1000000
+  
+  # Number of generation attempts per world
+  attempts-per-world: 1000
+  
+  # Chunks to process per server tick (higher = faster but more lag)
+  chunks-per-tick: 5
+
+  debug:
+  log-unknown-blocks: true

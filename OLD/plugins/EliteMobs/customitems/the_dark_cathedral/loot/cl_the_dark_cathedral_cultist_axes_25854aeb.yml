@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&0Altar Divider'
+lore:
+- '&0&kAn old offering stain marks the edge.'
+- '&0&kThe altar has since been replaced.'

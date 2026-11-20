@@ -1,0 +1,55 @@
+# Fisher Job Configuration
+
+# Job Display Settings
+job:
+  name: "Fisher"
+  short-name: "FS"
+  icon: FISHING_ROD
+  description:
+    - ""
+    - "&#FFFFFFCatch fish and treasures from"
+    - "&#FFFFFFthe water to earn money!"
+    - ""
+    - "&#FFD700Earnings:"
+    - "&#FFFFFF► Fish: $3.0 - $5.0"
+    - "&#FFFFFF► Treasure: $8.0 - $15.0"
+    - "&#FFFFFF► Junk: $0.5 - $1.0"
+    - ""
+    - "&#00FF00Click to view details!"
+
+# Payment Configuration for Fishing
+# Format: MATERIAL: payment_amount
+payments:
+  # Raw Fish
+  COD: 3.0
+  SALMON: 4.0
+  TROPICAL_FISH: 5.0
+  PUFFERFISH: 5.0
+
+  # Cooked Fish
+  COOKED_COD: 3.5
+  COOKED_SALMON: 4.5
+
+  # Treasure Items
+  BOW: 8.0
+  ENCHANTED_BOOK: 15.0
+  FISHING_ROD: 8.0
+  NAME_TAG: 12.0
+  NAUTILUS_SHELL: 10.0
+  SADDLE: 10.0
+  LILY_PAD: 2.0
+
+  # Junk Items
+  BOWL: 0.5
+  LEATHER: 1.0
+  LEATHER_BOOTS: 1.0
+  ROTTEN_FLESH: 0.5
+  STICK: 0.3
+  STRING: 0.5
+  BONE: 0.8
+  INK_SAC: 1.0
+  TRIPWIRE_HOOK: 1.5
+
+  # Special Items
+  BAMBOO: 2.0
+  COCOA_BEANS: 2.5

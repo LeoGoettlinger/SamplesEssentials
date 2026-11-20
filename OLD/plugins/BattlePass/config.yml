@@ -1,0 +1,15 @@
+# ================================
+# BattlePass Configuration
+# Plugin by ResistanceCore
+# ================================
+
+season:
+  name: "Season 2 - Amethyst"
+  max-tier: 50
+  exp-per-tier: 1000
+
+messages:
+  prefix: "&6&lᴘɪxᴇʟᴀᴛᴛᴀᴄᴋ &8▸ "
+  tier-up: "&6✨ &eTIER UP! &6You reached Tier %tier%!"
+  quest-complete: "&a✓ Quest Completed: &6%quest%"
+  reward-claimed: "&a✓ Claimed reward: &6%reward%"

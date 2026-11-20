@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Expedition Poker'
+material: IRON_SWORD
+level: 40
+lore:
+- '&fExploring can be dangerous but'
+- '&fnot if you have one of these.'
+enchantments:
+- DAMAGE_UNDEAD,4
+- DAMAGE_ALL,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

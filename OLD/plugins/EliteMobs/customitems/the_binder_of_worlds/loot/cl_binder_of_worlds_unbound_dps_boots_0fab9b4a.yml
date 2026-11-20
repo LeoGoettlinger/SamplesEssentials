@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&5Edgewalker Soles'
+lore:
+- '&5Pale dust remains in the treads.'
+- '&5No shore you know has sand like this.'
+classLootFamily: DPS_BOOTS

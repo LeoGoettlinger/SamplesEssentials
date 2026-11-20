@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Front Bunger
+lore:
+- Walk forward. Look scary.
+classLootFamily: DPS_CHESTPLATES

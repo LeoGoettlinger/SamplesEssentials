@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: Little Finger
+lore:
+- The rest of the hand is missing.
+weaponType: WANDS

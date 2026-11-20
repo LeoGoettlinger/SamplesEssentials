@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&8Navekeeper''s Staff'
+lore:
+- '&8The knots resemble closed eyes.'
+- '&8One has been carved open.'
+weaponType: STAVES

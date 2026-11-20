@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&dThroneward Arbalest'
+lore:
+- '&dEvery bolt was counted by the royal quartermaster.'

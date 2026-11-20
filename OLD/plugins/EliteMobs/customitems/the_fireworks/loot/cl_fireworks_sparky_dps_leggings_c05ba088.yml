@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&cConfetti Trousers'
+lore:
+- '&cBits of red paper fill the pockets.'
+- '&cYou will be finding them for weeks.'
+classLootFamily: DPS_LEGGINGS

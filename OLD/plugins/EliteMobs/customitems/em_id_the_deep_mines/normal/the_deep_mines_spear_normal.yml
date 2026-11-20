@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Fiend Trident'
+material: NETHERITE_SPEAR
+level: 45
+lore:
+- '&cA demonic spear that pierces'
+- '&cboth flesh and soul. Forged'
+- '&cin the Nether Fiend''s flames.'
+enchantments:
+- IMPALING,5
+- DAMAGE_ALL,5
+- DURABILITY,4
+- FIRE_ASPECT,1
+itemType: unique
+scalability: scalable

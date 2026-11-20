@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Normal] Old Stone Cutter'
+material: NETHERITE_SWORD
+level: 35
+lore:
+- '&fA sharp blade capable of cutting stone.'
+enchantments:
+- DAMAGE_UNDEAD,5
+- DAMAGE_ALL,4
+- DAMAGE_ARTHROPODS,4
+- DURABILITY,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

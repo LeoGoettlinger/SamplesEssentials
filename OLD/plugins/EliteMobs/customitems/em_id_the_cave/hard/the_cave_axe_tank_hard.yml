@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Boiled Axe'
+material: DIAMOND_AXE
+level: 15
+lore:
+- '&cIf you want attention...'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,7
+- DAMAGE_ALL,4
+- elitemobs:loud_strikes,3
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

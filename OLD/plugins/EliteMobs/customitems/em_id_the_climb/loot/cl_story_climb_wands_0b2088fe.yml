@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&7Faded Command'
+lore:
+- '&7A short baton found amongst old harness straps.'
+weaponType: WANDS

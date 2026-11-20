@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Icebox Plate
+lore:
+- Nobody asked for cold storage.
+classLootFamily: TANK_CHESTPLATES

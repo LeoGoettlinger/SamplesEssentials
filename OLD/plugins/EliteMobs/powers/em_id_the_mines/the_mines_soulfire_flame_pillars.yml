@@ -1,0 +1,1178 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - ElitePhaseSwitchEvent
+    Actions:
+    - action: TITLE_MESSAGE
+      subtitle: '&6Beware the flames!'
+      duration: 40
+      fadeIn: 5
+      fadeOut: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 30
+    - action: RUN_SCRIPT
+      scripts:
+      - RunSets1
+      - RunSets2
+      - RunSets3
+      - RunSets4
+      - RunSets5
+      - RunSets6
+      - RunSets7
+      - RunSets8
+      - RunSets9
+      - RunSets10
+      - RunSets11
+      - RunSets12
+      - RunSets13
+      - RunSets14
+      - RunSets15
+      - RunSets16
+      onlyRunOneScript: true
+    - action: RUN_SCRIPT
+      scripts:
+      - RunSets1
+      - RunSets2
+      - RunSets3
+      - RunSets4
+      - RunSets5
+      - RunSets6
+      - RunSets7
+      - RunSets8
+      - RunSets9
+      - RunSets10
+      - RunSets11
+      - RunSets12
+      - RunSets13
+      - RunSets14
+      - RunSets15
+      - RunSets16
+      onlyRunOneScript: true
+    - action: RUN_SCRIPT
+      scripts:
+      - RunSets1
+      - RunSets2
+      - RunSets3
+      - RunSets4
+      - RunSets5
+      - RunSets6
+      - RunSets7
+      - RunSets8
+      - RunSets9
+      - RunSets10
+      - RunSets11
+      - RunSets12
+      - RunSets13
+      - RunSets14
+      - RunSets15
+      - RunSets16
+      onlyRunOneScript: true
+    - action: RUN_SCRIPT
+      scripts:
+      - RunSets1
+      - RunSets2
+      - RunSets3
+      - RunSets4
+      - RunSets5
+      - RunSets6
+      - RunSets7
+      - RunSets8
+      - RunSets9
+      - RunSets10
+      - RunSets11
+      - RunSets12
+      - RunSets13
+      - RunSets14
+      - RunSets15
+      - RunSets16
+      onlyRunOneScript: true
+    Cooldowns:
+      local: 999
+      global: 20
+  RunSets1:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs1
+      - FlamePillars1
+  RunSets2:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs2
+      - FlamePillars2
+  RunSets3:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs3
+      - FlamePillars3
+  RunSets4:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs4
+      - FlamePillars4
+  RunSets5:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs5
+      - FlamePillars5
+  RunSets6:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs6
+      - FlamePillars6
+  RunSets7:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs7
+      - FlamePillars7
+  RunSets8:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs8
+      - FlamePillars8
+  RunSets9:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs9
+      - FlamePillars9
+  RunSets10:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs10
+      - FlamePillars10
+  RunSets11:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs11
+      - FlamePillars11
+  RunSets12:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs12
+      - FlamePillars12
+  RunSets13:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs13
+      - FlamePillars13
+  RunSets14:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs14
+      - FlamePillars14
+  RunSets15:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs15
+      - FlamePillars15
+  RunSets16:
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - FlamePillarsVs16
+      - FlamePillars16
+  FlamePillarsVs1:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,-2,-7
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars1:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,-2,-7
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs2:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 7,-2,-7
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars2:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 7,-2,-7
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs3:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 7,-2,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars3:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 7,-2,0
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs4:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 7,-2,7
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars4:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 7,-2,7
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs5:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,-2,7
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars5:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,-2,7
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs6:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -7,-2,7
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars6:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -7,-2,7
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs7:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -7,-2,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars7:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -7,-2,0
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+  FlamePillarsVs8:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -7,-2,-7
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars8:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -7,-2,-7
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs9:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,-2,-13
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars9:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,-2,-13
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs10:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 10,-2,-11
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars10:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 10,-2,-11
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs11:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 14,-2,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars11:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 14,-2,0
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs12:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 12,-2,12
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars12:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 12,-2,12
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs13:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,-2,14
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars13:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,-2,14
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs14:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -11,-2,12
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars14:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -11,-2,12
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs15:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -13,-2,0
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars15:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -13,-2,0
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillarsVs16:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -11,-2,-8
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: FLAME
+        x: 0
+        y: 75
+        z: 0
+        amount: 0
+      - particle: FLAME
+        speed: 0.025
+      Target:
+        targetType: ZONE_BORDER
+        coverage: 0.3
+      repeatEvery: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  FlamePillars16:
+    Zone:
+      shape: CYLINDER
+      radius: 2
+      borderRadius: 1
+      height: 10
+      Target:
+        targetType: SELF_SPAWN
+        offset: -11,-2,-8
+    Actions:
+    - action: POTION_EFFECT
+      wait: 40
+      potionEffectType: HARM
+      amplifier: 0
+      duration: 10
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: SET_ON_FIRE
+      wait: 20
+      duration: 40
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 10
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

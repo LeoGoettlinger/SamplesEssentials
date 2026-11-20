@@ -1,0 +1,65 @@
+'1':
+  DisplayName: <white>Iron</white> <gray>(<white>Lv. 1</white>)</gray>
+  Icon:
+    Material: minecraft:iron_ingot
+    Lore: []
+  MaxMembers: 3
+  VaultSize: 0
+  Features: []
+'2':
+  DisplayName: <soft_orange>Copper</soft_orange> <gray>(<white>Lv. 2</white>)</gray>
+  Icon:
+    Material: minecraft:copper_ingot
+    Lore: []
+  MaxMembers: 5
+  VaultSize: 0
+  Features:
+  - NAME_BASE_COLOR
+  - RENAMING
+  Requirements:
+    money:
+      Type: currency
+      CurrencyId: vault
+      Amount: 5000.0
+'3':
+  DisplayName: <yellow>Gold</yellow> <gray>(<white>Lv. 3</white>)</gray>
+  Icon:
+    Material: minecraft:gold_ingot
+    Lore: []
+  MaxMembers: 7
+  VaultSize: 18
+  Features:
+  - VAULT
+  Requirements:
+    money:
+      Type: currency
+      CurrencyId: vault
+      Amount: 15000.0
+'4':
+  DisplayName: <soft_aqua>Platinum</soft_aqua> <gray>(<white>Lv. 4</white>)</gray>
+  Icon:
+    Material: minecraft:diamond
+    Lore: []
+  MaxMembers: 9
+  VaultSize: 45
+  Features:
+  - NAME_DECORATIONS
+  Requirements:
+    money:
+      Type: currency
+      CurrencyId: vault
+      Amount: 30000.0
+'5':
+  DisplayName: <soft_green>Emerald</soft_green> <gray>(<white>Lv. 5</white>)</gray>
+  Icon:
+    Material: minecraft:emerald
+    Lore: []
+  MaxMembers: 11
+  VaultSize: 90
+  Features:
+  - NAME_GRADIENT_COLOR
+  Requirements:
+    money:
+      Type: currency
+      CurrencyId: vault
+      Amount: 100000.0

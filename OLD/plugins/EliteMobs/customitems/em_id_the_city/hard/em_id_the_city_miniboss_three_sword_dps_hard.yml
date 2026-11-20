@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&d[Hard] City Guard Sword'
+material: DIAMOND_SWORD
+level: 30
+lore:
+- '&dStill sharp after all these years.'
+enchantments:
+- DAMAGE_UNDEAD,5
+- DAMAGE_ALL,4
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

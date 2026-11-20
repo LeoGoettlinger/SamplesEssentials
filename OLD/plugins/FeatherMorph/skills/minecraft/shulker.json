@@ -1,0 +1,18 @@
+{
+  "skillCooldown": 40,
+  "skillId": "morph:launch_projective",
+  "abilities": [
+    "morph:no_fall_damage"
+  ],
+  "settings": {
+    "morph:launch_projective": {
+      "delay": 0,
+      "warning_sound_name": "",
+      "name": "minecraft:shulker_bullet",
+      "speed_multiplier": 0.0,
+      "sound_name": "entity.shulker.shoot",
+      "sound_distance": 15,
+      "max_target_distance": 15
+    }
+  }
+}

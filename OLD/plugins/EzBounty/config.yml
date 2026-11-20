@@ -1,0 +1,94 @@
+# EzBounty Configuration
+# Professional bounty system with GUI and flexible storage
+
+# Storage configuration
+storage:
+  # Storage type: yaml or mysql
+  type: yaml
+  
+  # MySQL configuration (only used if type is mysql)
+  mysql:
+    host: localhost
+    port: 3306
+    database: minecraft
+    username: root
+    password: password
+    table-prefix: ezbounty_
+    # Connection pool settings
+    pool:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+# Bounty settings
+bounty:
+  # Minimum bounty amount that can be placed
+  min-amount: 100.0
+  # Maximum bounty amount that can be placed (set to -1 for no limit)
+  max-amount: -1
+  # Maximum total bounty per player (set to -1 for no limit)
+  max-total-per-player: -1
+  # Whether players can place bounties on themselves
+  allow-self-bounty: false
+  # Cooldown in seconds between placing bounties (0 to disable)
+  create-cooldown: 15
+  # Tax percentage taken from bounty when collected (0-100)
+  tax-percentage: 0.0
+  # Whether to announce bounty creation in chat
+  announce-create: true
+  # Whether to announce bounty collection in chat
+  announce-collect: true
+  # Whether to refund bounty if target player is banned/removed
+  refund-on-ban: true
+  # Minimum amount to add to existing bounty
+  min-add-amount: 50.0
+
+# GUI settings
+gui:
+  # Bounty list GUI
+  list:
+    title: "&6&lKopfgelder"
+    size: 54  # Must be a multiple of 9 (9, 18, 27, 36, 45, 54)
+    # Items per page (leave room for navigation buttons)
+    items-per-page: 45
+    
+  # Create bounty GUI
+  create:
+    title: "&6&lKopfgeld erstellen"
+    
+  # Bounty info GUI
+  info:
+    title: "&6&lKopfgeld Info"
+
+  # Payout history GUI (optional)
+  history:
+    title: "&6&lAuszahlungs History"
+    # Items per page for history GUI (leave empty to use gui.list.items-per-page)
+    items-per-page: 45
+    # Date format for history entries
+    date-format: "yyyy-MM-dd HH:mm"
+
+# Currency formatting
+currency:
+  # Symbol to display for currency
+  symbol: "©"
+  # Position of symbol (before or after)
+  symbol-position: before
+  # Decimal places to display
+  decimal-places: 2
+  # Thousands separator
+  thousands-separator: "."
+  # Decimal separator
+  decimal-separator: ","
+
+# Performance settings
+performance:
+  # How often to save data to storage (in ticks, 20 ticks = 1 second)
+  save-interval: 2000  # 5 minutes
+  # Whether to save data asynchronously
+  async-save: true
+
+# Debug mode
+debug: false

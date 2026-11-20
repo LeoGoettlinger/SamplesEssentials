@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Hard] White Flame Chausses'
+material: DIAMOND_LEGGINGS
+level: 20
+lore:
+- '&2So pure, so blinding...'
+enchantments:
+- DAMAGE_UNDEAD,7
+- DAMAGE_ARTHROPODS,4
+- PROTECTION_FIRE,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

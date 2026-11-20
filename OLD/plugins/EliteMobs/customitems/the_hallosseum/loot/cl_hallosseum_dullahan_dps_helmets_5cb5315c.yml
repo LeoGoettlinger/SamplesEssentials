@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&4Riderless Visor'
+lore:
+- '&4A narrow view of a moonless road.'
+- '&4Nothing moves behind you.'
+classLootFamily: DPS_HELMETS

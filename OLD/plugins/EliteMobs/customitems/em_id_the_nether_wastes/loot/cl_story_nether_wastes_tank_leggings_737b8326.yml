@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Boundary Guards'
+lore:
+- '&7The joints are packed with dark flakes of stone.'
+classLootFamily: TANK_LEGGINGS

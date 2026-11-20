@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&d[Hard] Spell Focus'
+material: DIAMOND_HELMET
+level: 40
+lore:
+- '&dAllows the wearer to focus'
+- '&dtheir strength.'
+enchantments:
+- DAMAGE_UNDEAD,5
+- DAMAGE_ALL,4
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,2
+potionEffects:
+- GLOWING,1,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&cMidnight Route Leggings'
+lore:
+- '&7The route is stitched inside the lining.'
+- '&7The last stop is the North Pole.'
+classLootFamily: DPS_LEGGINGS

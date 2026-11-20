@@ -1,0 +1,16 @@
+{
+  "playerName": "Loulou1110xxx",
+  "unlockedDisguiseIdentifiers": [
+    "minecraft:spider",
+    "player:Herbert0102",
+    "player:EinWischmopp",
+    "minecraft:creeper",
+    "minecraft:zombie"
+  ],
+  "showDisguiseToSelf": true,
+  "shownDisplayToSelfHint": false,
+  "shownServerSkillHint": false,
+  "shownClientSkillHint": false,
+  "shownMorphHint": true,
+  "shownMorphClientHint": false
+}

@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Royal Shield'
+material: SHIELD
+level: 40
+lore:
+- '&fA shield carried by the Royal Dwarven'
+- '&fGuards in The Quarry.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- PROTECTION_PROJECTILE,3
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

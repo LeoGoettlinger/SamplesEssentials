@@ -1,0 +1,14 @@
+isEnabled: true
+material: IRON_BOOTS
+name: '&f[Mythical] Tainted Boots'
+lore:
+- '&fOnce a fine piece of armor'
+- '&fnow corrupted by the void.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- PROTECTION_PROJECTILE,4
+- elitemobs:loud_strikes,3
+potionEffects: []
+scalability: scalable
+level: 55
+itemType: unique

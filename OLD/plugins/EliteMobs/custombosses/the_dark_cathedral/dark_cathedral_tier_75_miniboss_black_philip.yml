@@ -1,0 +1,106 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+isEnabled: true
+entityType: RAVAGER
+disguise: GOAT
+name: $minibossLevel &cBlack Philip
+bossType: MINIBOSS
+level: dynamic # 16
+healthMultiplier: 6.0
+damageMultiplier: 0.66
+dropsEliteMobsLoot: false
+isRegionalBoss: true
+instanced: true
+leashRadius: 30
+followDistance: 28
+spawnCooldown: 360
+powers:
+- invulnerability_knockback.yml
+- invulnerability_arrow.yml
+- attack_push.yml
+- attack_gravity.yml
+spawnLocations:
+- em_the_dark_cathedral,37.5,91,-84.5,0.0,0.0
+eliteScript:
+  Sleep:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: SET_MOB_AI
+      Target:
+        targetType: SELF
+      bValue: false
+  Wake:
+    Events:
+    - ZoneEnterEvent
+    - EliteMobDamagedEvent
+    Zone:
+      shape: SPHERE
+      radius: 8
+      Target:
+        targetType: SELF
+    Actions:
+    - action: SET_MOB_AI
+      Target:
+        targetType: SELF
+      bValue: true
+classLoot: true
+classLootRank: MINIBOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: dark_cathedral_boss_drop_boots_normal.yml
+  chance: 0.05
+  difficultyID: 0
+- filename: dark_cathedral_boss_drop_trident_normal.yml
+  chance: 0.01
+  difficultyID: 0
+- filename: dark_cathedral_boss_drop_boots_hard.yml
+  chance: 0.05
+  difficultyID: 1
+- filename: dark_cathedral_boss_drop_trident_hard.yml
+  chance: 0.01
+  difficultyID: 1
+- filename: dark_cathedral_boss_drop_boots_mythic.yml
+  chance: 0.05
+  difficultyID: 2
+- filename: dark_cathedral_boss_drop_trident_mythic.yml
+  chance: 0.01
+  difficultyID: 2
+- filename: cl_the_dark_cathedral_faithful_swords_30e72cc6.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_axes_f1b20aa6.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_bows_d76a362f.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_crossbows_076f942d.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_tridents_28508d03.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_hoes_2d2c853e.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_maces_d2dd5459.yml
+  chance: 1.0
+- filename: dark_cathedral_tier_75_miniboss_black_philip_spears_cffdebf8.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_staves_b1c4dea8.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_wands_32487c0d.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_dps_helmets_ef3945e4.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_dps_chestplates_2a9b5cf6.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_dps_leggings_1e651a89.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_dps_boots_bb4a0ba4.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_tank_helmets_2b053b66.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_tank_chestplates_e67a3bf8.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_tank_leggings_8790e6aa.yml
+  chance: 1.0
+- filename: cl_the_dark_cathedral_faithful_tank_boots_f382efff.yml
+  chance: 1.0
+- filename: dark_cathedral_tier_75_miniboss_black_philip_shields_45d4a56e.yml
+  chance: 1.0

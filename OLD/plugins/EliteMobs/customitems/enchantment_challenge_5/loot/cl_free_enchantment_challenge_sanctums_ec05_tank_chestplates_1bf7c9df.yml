@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Poke-me-not
+lore:
+- Your new favorite chestplate.
+classLootFamily: TANK_CHESTPLATES

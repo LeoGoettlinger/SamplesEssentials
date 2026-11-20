@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Snowcap
+lore:
+- Not the mountain kind.
+classLootFamily: TANK_HELMETS

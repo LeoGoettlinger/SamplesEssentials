@@ -1,0 +1,183 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: DROWNED
+customModel: em_id_the_nether_bell_model
+isBaby: true
+mainHand: TRIDENT
+name: $bossLevel &cThe Void Bell
+level: dynamic # 55
+healthMultiplier: 11.0
+damageMultiplier: 0.3
+movementSpeedAttribute: 1.0E-4
+song: name=elitemobs:void_bell_fight_soundtrack length=88008
+phases:
+- em_id_the_nether_bell_boss_void_bell_p2.yml:0.60
+- em_id_the_nether_bell_boss_void_bell_p3.yml:0.30
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+powers:
+- invulnerability_knockback.yml
+- invulnerability_arrow.yml
+- invulnerability_fall_damage.yml
+- invulnerability_fire.yml
+- em_id_the_nether_bell_void_start.yml
+- em_id_the_nether_bell_wake_phase1.yml
+- filename: skeleton_tracking_arrow.yml
+  difficultyID:
+  - 1
+  - 2
+- filename: shield_wall.yml
+  difficultyID:
+  - 2
+frozen: false
+followDistance: 80
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+eliteScript:
+  SpawnPrep:
+    Events:
+    - EliteMobSpawnEvent
+    Actions:
+    - action: PLACE_BLOCK
+      Target:
+        targetType: SELF
+      material: AIR
+    - action: SET_MOB_AWARE
+      bValue: false
+      Target:
+        targetType: SELF
+    - action: TELEPORT
+      Target:
+        targetType: SELF
+      FinalTarget:
+        targetType: SELF_SPAWN
+      repeatEvery: 200
+    - action: TAG
+      Target:
+        targetType: SELF
+      tags:
+      - VoidBell
+    - action: RUN_SCRIPT
+      repeatEvery: 60
+      scripts:
+      - GoodPotions
+    - action: RUN_SCRIPT
+      repeatEvery: 60
+      scripts:
+      - BadPotions
+  GoodPotions:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SPEED
+      amplifier: 0
+      duration: 60
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 30
+      Conditions:
+        hasTags:
+        - Green1
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+    - action: POTION_EFFECT
+      potionEffectType: STRENGTH
+      amplifier: 0
+      duration: 60
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 30
+      Conditions:
+        hasTags:
+        - Green2
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+    - action: POTION_EFFECT
+      potionEffectType: NIGHT_VISION
+      amplifier: 0
+      duration: 300
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 30
+      Conditions:
+        hasTags:
+        - Green3
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+  BadPotions:
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOWNESS
+      amplifier: 0
+      duration: 60
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 30
+      Conditions:
+        hasTags:
+        - Red1
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+    - action: POTION_EFFECT
+      potionEffectType: HUNGER
+      amplifier: 3
+      duration: 60
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 30
+      Conditions:
+        hasTags:
+        - Red2
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+    - action: POTION_EFFECT
+      potionEffectType: DARKNESS
+      amplifier: 0
+      duration: 220
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 30
+      Conditions:
+        hasTags:
+        - Red3
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+  TridentToss:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: PLAY_SOUND
+      sValue: minecraft:item.trident.throw
+      volume: 1.3
+      Target:
+        targetType: SELF
+    - action: SUMMON_ENTITY
+      wait: 33
+      sValue: TRIDENT
+      repeatEvery: 10
+      times: 3
+      Target:
+        targetType: SELF
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+        DestinationTarget:
+          targetType: NEARBY_PLAYERS
+          range: 30
+        normalize: true
+        multiplier: 2.5
+    Cooldowns:
+      local: 160
+      global: 1
+spawnLocations:
+- em_id_the_nether_bell,0.5,96,3.5,0.0,0.0
+classLoot: false

@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Slimed Sword'
+material: IRON_SWORD
+level: 15
+lore:
+- '&cIt is kind of hard to grip it well.'
+enchantments:
+- DAMAGE_ALL,5
+- DURABILITY,3
+- DAMAGE_ARTHROPODS,3
+- DAMAGE_UNDEAD,5
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

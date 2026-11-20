@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&2[$difficulty] Boar Boots'
+lore:
+- '&2Very tough and durable.'
+classLootFamily: DPS_BOOTS

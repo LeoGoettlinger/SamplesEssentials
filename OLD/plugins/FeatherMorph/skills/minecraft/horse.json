@@ -1,0 +1,23 @@
+{
+  "skillCooldown": 20,
+  "skillId": "morph:fake_equip",
+  "abilities": [
+    "morph:attribute_modify"
+  ],
+  "settings": {
+    "morph:attribute_modify": {
+      "modifiers": [
+        {
+          "name": "minecraft:movement_speed",
+          "type": "multiply_base",
+          "value": 0.5
+        },
+        {
+          "name": "minecraft:step_height",
+          "type": "add",
+          "value": 0.4
+        }
+      ]
+    }
+  }
+}

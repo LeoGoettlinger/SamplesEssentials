@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Mystic Longbow'
+material: BOW
+level: 40
+lore:
+- '&cA bow that channels the'
+- '&cwizards'' elemental powers.'
+- '&cArrows shimmer with magic.'
+enchantments:
+- ARROW_DAMAGE,7
+- ARROW_FIRE,2
+- DURABILITY,6
+itemType: unique
+scalability: scalable

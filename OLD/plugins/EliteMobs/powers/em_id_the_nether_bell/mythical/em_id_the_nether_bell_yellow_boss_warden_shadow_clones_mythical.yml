@@ -1,0 +1,524 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  MainScript:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      shape: CYLINDER
+      radius: 6
+      height: 1
+      Target:
+        targetType: LOCATION
+        location: same_as_boss,66.5,65,205.5,-123.0,0
+    Actions:
+    - action: POTION_EFFECT
+      wait: 140
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+      potionEffectType: BLINDNESS
+      amplifier: 0
+      duration: 60
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: TELEPORT
+      wait: 145
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 50
+      FinalTarget:
+        targetType: ZONE_FULL
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: TAG
+      Target:
+        targetType: SELF
+      tags:
+      - FindMe
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: TAG
+      wait: 170
+      Target:
+        targetType: SELF
+      tags:
+      - PlsStop
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: RUN_SCRIPT
+      wait: 150
+      scripts:
+      - DelayedActions
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    Cooldowns:
+      local: 99999
+      global: 1
+  RemoveTag:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: UNTAG
+      Target:
+        targetType: SELF
+      tags:
+      - FindMe
+      Conditions:
+        hasTags:
+        - PlsStop
+        Target:
+          targetType: SELF
+    - action: DAMAGE
+      Target:
+        targetType: NEARBY_MOBS
+        range: 60
+      multiplier: 99.9
+      Conditions:
+        hasTags:
+        - ShadowClone
+        Target:
+          targetType: ACTION_TARGET
+  DelayedActions:
+    Zone:
+      shape: CYLINDER
+      radius: 30
+      height: 1
+      Target:
+        targetType: SELF_SPAWN
+        offset: 0,2,0
+    Actions:
+    - action: POTION_EFFECT
+      Target:
+        targetType: SELF
+      potionEffectType: SLOW
+      amplifier: 20
+      duration: 20
+      repeatEvery: 19
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      potionEffectType: DARKNESS
+      amplifier: 0
+      duration: 100
+      repeatEvery: 50
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      sValue: '&7The darkness is sapping your life force. Find the &eHolder of Misery
+        &7before it is too late!'
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLAY_SOUND
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      sValue: minecraft:ambient.cave
+      pitch: 0.8
+      volume: 0.8
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: SUMMON_REINFORCEMENT
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.03
+      sValue: em_id_the_nether_bell_beam_boss_yellow_3_warden_power_dummy.yml
+      Conditions:
+        conditionType: FILTERING
+        locationIsAir: true
+        Target:
+          targetType: ACTION_TARGET
+    - action: TITLE_MESSAGE
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c25'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 20
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c24'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 40
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c23'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 60
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c22'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 80
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c21'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 100
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c20'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 120
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c19'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 140
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c18'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 160
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c17'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 180
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c16'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 200
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c15'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 220
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c14'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 240
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c13'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 260
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c12'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 280
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c11'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 300
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c10'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 320
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c9'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 340
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c8'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 360
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c7'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 380
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c6'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 400
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c5'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 420
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c4'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 440
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c3'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 460
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c2'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 480
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c1'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: TITLE_MESSAGE
+      wait: 500
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      title: ''
+      subtitle: '&c0'
+      duration: 20
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: POTION_EFFECT
+      wait: 520
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      potionEffectType: WITHER
+      amplifier: 4
+      duration: 200
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF
+    - action: MESSAGE
+      wait: 520
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 60
+      sValue: '&7The darkness consumes your heart...'
+      Conditions:
+        hasTags:
+        - FindMe
+        Target:
+          targetType: SELF

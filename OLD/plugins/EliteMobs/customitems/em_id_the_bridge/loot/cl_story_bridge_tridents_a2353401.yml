@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&7Foundation Fork'
+lore:
+- '&7Three points cut from a broken support.'

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&8Worn Leggings'
+lore:
+- '&8Smells like incense.'
+classLootFamily: TANK_LEGGINGS

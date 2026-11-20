@@ -1,0 +1,165 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: MINIBOSS
+customDisguiseData: player em_id_the_deep_mines_twisted_excavator setskin {"id":"d5c46eca-bfaa-413d-8224-0228211445f5","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTU5ODEwNTUwODE2OCwKICAicHJvZmlsZUlkIiA6ICJmMzA1ZjA5NDI0NTg0ZjU4YmEyYjY0ZjAyZDcyNDYyYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJqcm9ja2EzMyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS83MmU0ZGI4ZTg3NDZiMjVjNGQzZjVhODJjYTUyZWUyZjQ4M2Q0NDA2NzY2ZGNjM2MzY2Y3OWExNmU4MzFmY2EyIgogICAgfQogIH0KfQ==","signature":"p4RGtbs0TIpSDcRn3Xd4RzPfjhatjt3hABjGzbc/YCjPHegdC/zVmnGOmz/jYv8FOXP2VIwqe1TGaUWW+GVoBlNeTwJjgFAPbvhjwgFj3f79f2QVspAbRQ/DzRfmtJYxBQ0TX+hjD20QBgGk+jdbhBnSPyIT5GlrCD0kwAI0bIQo++UGlHAEgNbg4lgth8qe/Ao0IJvray6N/CsABgazHzEkHyjRi0ChgToAAAXNmSb7EZ9hMbiN99XElIQp0Nh7Op1nUaTmiGxbvqDSwsggsBu/+QFevqfoDdJP4979VFydb6H9TvVwucPBE695kHtrmMf3nbzl3eRHVrk3tPIMmu1K2U9nR+ZEUQGf8Y+FPLWNxEXUQn/kNolnCysag+D2SEvd7CjBKJCthBzV3lzDiTlYZngjybnlBXUymqavZDTtSbsi8xhLZtLJ/OmVHALftttCiDE38DKdWTL80IEfbAGF6V7hxN8Fo0b8qMzUeL0/5gHbQV/LVa7beVD0LCNQtu0ZxpB+iB8g/pEFnLa2cGC2lEtnAumqlqLyr3uL9sI1Zdjp53wVgY6/7RPnZBs70iizfpgZswbq1pU2xFb5of5lkpLLd2iFDvyG766tgKNRrjaLkKfpuMMF1pO+jtSzqEh0OZpJ8EPQC33ctuqTCNtKTSeSD8vDf2VaPo3tbgk="}],"legacy":false}
+damageMultiplier: 0.95
+disguise: custom:em_id_the_deep_mines_twisted_excavator
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  'false':
+    Actions:
+    - Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        hasTags:
+        - slow
+      Target:
+        targetType: SELF
+      action: POTION_EFFECT
+      amplifier: 99
+      duration: 20
+      potionEffectType: SLOW
+      repeatEvery: 19
+      wait: 5
+    - Target:
+        targetType: SELF
+      action: TAG
+      tags:
+      - slow
+    Events:
+    - EliteMobSpawnEvent
+  'true':
+    Actions:
+    - Target:
+        targetType: SELF
+      action: UNTAG
+      tags:
+      - slow
+    Events:
+    - EliteMobTargetPlayerEvent
+entityType: DROWNED
+followDistance: 80
+frozen: false
+healthMultiplier: 3.7
+instanced: true
+isEnabled: true
+isRegionalBoss: true
+level: dynamic # 45
+mainHand: TRIDENT
+movementSpeedAttribute: 0.33
+name: $minibossLevel &eTwisted Excavator
+normalizedCombat: true
+offHand: NETHERITE_PICKAXE
+powers:
+- difficultyID:
+  - 1
+  - 2
+  filename: em_id_the_deep_mines_miniboss_summon_vex.yml
+- difficultyID:
+  - 0
+  filename: em_id_the_deep_mines_miniboss_drown_0.yml
+- difficultyID:
+  - 1
+  filename: em_id_the_deep_mines_miniboss_drown_1.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_deep_mines_miniboss_drown_2.yml
+- difficultyID:
+  - 1
+  - 2
+  filename: shield_wall.yml
+- difficultyID:
+  - 2
+  filename: plasma_blaster.yml
+spawnLocations:
+- em_id_the_deep_mines,-118.5,142.5,-85.5,0.0,0.0
+classLoot: true
+classLootRank: MINIBOSS
+classLootDifficulty: AUTO
+uniqueLootList:
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_deep_mines_miniboss_boots_dps_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_deep_mines_miniboss_chestplate_dps_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_deep_mines_miniboss_helmet_dps_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_deep_mines_miniboss_leggings_dps_normal.yml
+- chance: 0.1
+  difficultyID: 0
+  filename: em_id_the_deep_mines_miniboss_trident_tank_normal.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_deep_mines_miniboss_boots_dps_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_deep_mines_miniboss_chestplate_dps_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_deep_mines_miniboss_helmet_dps_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_deep_mines_miniboss_leggings_dps_hard.yml
+- chance: 0.1
+  difficultyID: 1
+  filename: em_id_the_deep_mines_miniboss_trident_tank_hard.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_deep_mines_miniboss_boots_dps_mythical.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_deep_mines_miniboss_chestplate_dps_mythical.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_deep_mines_miniboss_helmet_dps_mythical.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_deep_mines_miniboss_leggings_dps_mythical.yml
+- chance: 0.1
+  difficultyID: 2
+  filename: em_id_the_deep_mines_miniboss_trident_tank_mythical.yml
+- filename: cl_story_deep_mines_swords_8d15cf02.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_axes_cedd4aa4.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_bows_b6c8d98d.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_crossbows_30ddf671.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tridents_ef892282.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_hoes_1230f16b.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_maces_26754aa4.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_spears_d7ace56c.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_staves_ddb894eb.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_wands_508977f6.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_helmets_e5cd2ef5.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_chestplates_2a0f5219.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_leggings_1965d4e3.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_dps_boots_35d9f72a.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_helmets_2c10cdd9.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_chestplates_d332b108.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_leggings_00e66b52.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_tank_boots_e2e4be2e.yml
+  chance: 1.0
+- filename: cl_story_deep_mines_shields_a907d85d.yml
+  chance: 1.0

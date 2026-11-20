@@ -1,0 +1,429 @@
+gui-name: '&8Farming Shop'
+rows: 6
+permission: ''
+items:
+- material: WHEAT_SEEDS
+  name: '&aWheat Seeds'
+  price: 10
+  sell-price: 7
+  amount: 16
+- material: BEETROOT_SEEDS
+  name: '&cBeetroot Seeds'
+  price: 15
+  sell-price: 10
+  amount: 16
+- material: MELON_SEEDS
+  name: '&aMelon Seeds'
+  price: 20
+  sell-price: 14
+  amount: 16
+- material: PUMPKIN_SEEDS
+  name: '&6Pumpkin Seeds'
+  price: 20
+  sell-price: 14
+  amount: 16
+- material: TORCHFLOWER_SEEDS
+  name: '&eTorchflower Seeds'
+  price: 80
+  sell-price: 56
+  amount: 8
+- material: PITCHER_PLANT
+  name: '&dPitcher Plant'
+  price: 100
+  sell-price: 70
+  amount: 4
+- material: WHEAT
+  name: '&eWheat'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: CARROT
+  name: '&6Carrot'
+  price: 20
+  sell-price: 14
+  amount: 16
+- material: POTATO
+  name: '&ePotato'
+  price: 20
+  sell-price: 14
+  amount: 16
+- material: BEETROOT
+  name: '&cBeetroot'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: MELON_SLICE
+  name: '&aMelon Slice'
+  price: 6
+  sell-price: 4
+  amount: 32
+- material: PUMPKIN
+  name: '&6Pumpkin'
+  price: 40
+  sell-price: 28
+  amount: 16
+- material: CARVED_PUMPKIN
+  name: '&6Carved Pumpkin'
+  price: 50
+  sell-price: 35
+  amount: 8
+- material: SWEET_BERRIES
+  name: '&cSweet Berries'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: GLOW_BERRIES
+  name: '&eGlow Berries'
+  price: 50
+  sell-price: 35
+  amount: 16
+- material: SUGAR_CANE
+  name: '&aSugar Cane'
+  price: 35
+  sell-price: 24
+  amount: 16
+- material: SUGAR
+  name: '&fSugar'
+  price: 15
+  sell-price: 10
+  amount: 16
+- material: CACTUS
+  name: '&aCactus'
+  price: 35
+  sell-price: 24
+  amount: 16
+- material: RED_MUSHROOM
+  name: '&cRed Mushroom'
+  price: 30
+  sell-price: 21
+  amount: 16
+- material: BROWN_MUSHROOM
+  name: '&6Brown Mushroom'
+  price: 30
+  sell-price: 21
+  amount: 16
+- material: RED_MUSHROOM_BLOCK
+  name: '&cRed Mushroom Block'
+  price: 120
+  sell-price: 84
+  amount: 8
+- material: BROWN_MUSHROOM_BLOCK
+  name: '&6Brown Mushroom Block'
+  price: 120
+  sell-price: 84
+  amount: 8
+- material: MUSHROOM_STEM
+  name: '&8Mushroom Stem'
+  price: 80
+  sell-price: 56
+  amount: 8
+- material: NETHER_WART
+  name: '&4Nether Wart'
+  price: 60
+  sell-price: 42
+  amount: 16
+- material: FERN
+  name: '&2Fern'
+  price: 15
+  sell-price: 10
+  amount: 16
+- material: LARGE_FERN
+  name: '&2Large Fern'
+  price: 30
+  sell-price: 21
+  amount: 8
+- material: TALL_GRASS
+  name: '&2Tall Grass'
+  price: 10
+  sell-price: 7
+  amount: 16
+- material: DEAD_BUSH
+  name: '&8Dead Bush'
+  price: 8
+  sell-price: 6
+  amount: 16
+- material: DANDELION
+  name: '&eDandelion'
+  price: 15
+  sell-price: 10
+  amount: 16
+- material: POPPY
+  name: '&cPoppy'
+  price: 15
+  sell-price: 10
+  amount: 16
+- material: BLUE_ORCHID
+  name: '&9Blue Orchid'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: ALLIUM
+  name: '&dAllium'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: AZURE_BLUET
+  name: '&fAzure Bluet'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: RED_TULIP
+  name: '&cRed Tulip'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: ORANGE_TULIP
+  name: '&6Orange Tulip'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: PINK_TULIP
+  name: '&dPink Tulip'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: WHITE_TULIP
+  name: '&fWhite Tulip'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: OXEYE_DAISY
+  name: '&eOxeye Daisy'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: CORNFLOWER
+  name: '&9Cornflower'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: LILY_OF_THE_VALLEY
+  name: '&fLily of the Valley'
+  price: 30
+  sell-price: 21
+  amount: 16
+- material: WITHER_ROSE
+  name: '&8Wither Rose'
+  price: 500
+  sell-price: 350
+  amount: 4
+- material: SUNFLOWER
+  name: '&eSunflower'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: ROSE_BUSH
+  name: '&cRose Bush'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: PEONY
+  name: '&dPeony'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: LILAC
+  name: '&dLilac'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: CHERRY_LEAVES
+  name: '&dCherry Leaves'
+  price: 30
+  amount: 16
+  sell-price: 21
+- material: PINK_PETALS
+  name: '&dPink Petals'
+  price: 40
+  amount: 16
+  sell-price: 28
+- material: SPORE_BLOSSOM
+  name: '&dSpore Blossom'
+  price: 80
+  amount: 8
+  sell-price: 56
+- material: TORCHFLOWER
+  name: '&eTorchflower'
+  price: 100
+  amount: 8
+  sell-price: 70
+- material: KELP
+  name: '&2Kelp'
+  price: 15
+  sell-price: 10
+  amount: 16
+- material: SEAGRASS
+  name: '&aSeagrass'
+  price: 15
+  sell-price: 10
+  amount: 16
+- material: SEA_PICKLE
+  name: '&aSea Pickle'
+  price: 50
+  sell-price: 35
+  amount: 8
+- material: LILY_PAD
+  name: '&2Lily Pad'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: VINE
+  name: '&2Vine'
+  price: 15
+  amount: 16
+  sell-price: 10
+- material: GLOW_LICHEN
+  name: '&eGlow Lichen'
+  price: 40
+  amount: 16
+  sell-price: 28
+- material: MOSS_CARPET
+  name: '&aMoss Carpet'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: HANGING_ROOTS
+  name: '&2Hanging Roots'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: BAMBOO
+  name: '&aBamboo'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: COCOA_BEANS
+  name: '&6Cocoa Beans'
+  price: 20
+  sell-price: 14
+  amount: 16
+- material: BONE_MEAL
+  name: '&fBone Meal'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: BONE
+  name: '&fBone'
+  price: 30
+  sell-price: 21
+  amount: 16
+- material: HAY_BLOCK
+  name: '&eHay Bale'
+  price: 160
+  sell-price: 112
+  amount: 8
+- material: HONEYCOMB
+  name: '&6Honeycomb'
+  price: 60
+  amount: 16
+  sell-price: 42
+- material: HONEY_BOTTLE
+  name: '&6Honey Bottle'
+  price: 80
+  amount: 8
+  sell-price: 56
+- material: APPLE
+  name: '&cApple'
+  price: 30
+  amount: 16
+  sell-price: 21
+- material: GLOWSTONE_DUST
+  name: '&eGlowstone Dust'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: OAK_LEAVES
+  name: '&aOak Leaves'
+  price: 15
+  amount: 16
+  sell-price: 10
+- material: SPRUCE_LEAVES
+  name: '&aSpruce Leaves'
+  price: 15
+  amount: 16
+  sell-price: 10
+- material: BIRCH_LEAVES
+  name: '&aBirch Leaves'
+  price: 15
+  amount: 16
+  sell-price: 10
+- material: DARK_OAK_LEAVES
+  name: '&2Dark Oak Leaves'
+  price: 18
+  amount: 16
+  sell-price: 13
+- material: JUNGLE_LEAVES
+  name: '&aJungle Leaves'
+  price: 18
+  amount: 16
+  sell-price: 13
+- material: ACACIA_LEAVES
+  name: '&aAcacia Leaves'
+  price: 18
+  amount: 16
+  sell-price: 13
+- material: MANGROVE_LEAVES
+  name: '&2Mangrove Leaves'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: AZALEA_LEAVES
+  name: '&aAzalea Leaves'
+  price: 25
+  amount: 16
+  sell-price: 18
+- material: FLOWERING_AZALEA_LEAVES
+  name: '&dFlowering Azalea Leaves'
+  price: 30
+  amount: 16
+  sell-price: 21
+- material: OAK_SAPLING
+  name: '&aOak Sapling'
+  price: 30
+  amount: 8
+  sell-price: 21
+- material: SPRUCE_SAPLING
+  name: '&aSpruce Sapling'
+  price: 30
+  amount: 8
+  sell-price: 21
+- material: BIRCH_SAPLING
+  name: '&aBirch Sapling'
+  price: 30
+  amount: 8
+  sell-price: 21
+- material: DARK_OAK_SAPLING
+  name: '&2Dark Oak Sapling'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: JUNGLE_SAPLING
+  name: '&aJungle Sapling'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: ACACIA_SAPLING
+  name: '&aAcacia Sapling'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: MANGROVE_PROPAGULE
+  name: '&2Mangrove Propagule'
+  price: 40
+  amount: 8
+  sell-price: 28
+- material: CHERRY_SAPLING
+  name: '&dCherry Sapling'
+  price: 50
+  amount: 8
+  sell-price: 35
+- material: AZALEA
+  name: '&aAzalea'
+  price: 40
+  amount: 8
+  sell-price: 28
+- material: FLOWERING_AZALEA
+  name: '&dFlowering Azalea'
+  price: 50
+  amount: 8
+  sell-price: 35

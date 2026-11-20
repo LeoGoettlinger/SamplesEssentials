@@ -1,0 +1,8 @@
+usage: '&cUsage: /libertybans changereason <id> <new reason>'
+no-permission: '&cSorry, you cannot use this.'
+not-found: '&7No punishment exists with ID &e%ID%&7.'
+ # The success message. All the usual punishment variables can be used here.
+ # The old punishment reason is available with %OLD_REASON%.
+success: '&7Changed reason of punishment &e%ID%&7 from ''%OLD_REASON%'' to ''%REASON%.'''
+ # Whether to enable this addon at all
+enable: true

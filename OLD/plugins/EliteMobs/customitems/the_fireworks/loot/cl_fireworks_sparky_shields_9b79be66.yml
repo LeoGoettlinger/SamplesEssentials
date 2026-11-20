@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&cShowstopper Sign'
+lore:
+- '&cThe painted arrow points to the exit.'
+- '&cFor once, the sign has good advice.'

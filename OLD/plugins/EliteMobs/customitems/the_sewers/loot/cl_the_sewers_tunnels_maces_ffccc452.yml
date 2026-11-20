@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&2Manhole Knocker'
+lore:
+- '&2Do not test it on your own access cover.'

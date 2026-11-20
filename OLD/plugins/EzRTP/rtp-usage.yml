@@ -1,0 +1,65 @@
+players:
+  06d19fc6-552e-41ed-8f57-d01fc2139970:
+    Farmwelt:
+      lastRtp: 1781346236107
+      usage:
+        daily: 0
+        weekly: 0
+    PixelRealm_the_end:
+      lastRtp: 1786089964886
+      usage:
+        daily: 0
+        weekly: 1
+    PixelRealm:
+      lastRtp: 1788456904227
+      usage:
+        daily: 3
+        weekly: 3
+  6a535505-f68e-48a3-8fb1-4662976454cd:
+    Farmwelt:
+      lastRtp: 1781200360109
+      usage:
+        daily: 0
+        weekly: 0
+  db604362-5504-42bd-a269-3d6ccf63fd3b:
+    Farmwelt:
+      lastRtp: 1781433365258
+      usage:
+        daily: 0
+        weekly: 0
+  6ba7088f-15f1-41b7-8f62-aad9485e8716:
+    Farmwelt:
+      lastRtp: 1781543295994
+      usage:
+        daily: 0
+        weekly: 0
+  3a751516-f598-4f5e-914a-047d5bb4b587:
+    PixelRealm:
+      lastRtp: 1788457416249
+      usage:
+        daily: 1
+        weekly: 10
+  b5909030-8510-40e7-96c8-cef23c09a180:
+    PixelRealm:
+      lastRtp: 1786099749619
+      usage:
+        daily: 0
+        weekly: 3
+  b40e7053-5e55-4165-b55e-cf05345e70cf:
+    PixelRealm:
+      lastRtp: 1787668917268
+      usage:
+        daily: 0
+        weekly: 1
+  dc91418f-2b44-4ead-b2ed-1b73672804f7:
+    PixelRealm:
+      lastRtp: 1788045371417
+      usage:
+        daily: 0
+        weekly: 1
+  00000000-0000-0000-0009-01f4e6f71946:
+    PixelRealm:
+      lastRtp: 1788374368791
+      usage:
+        daily: 1
+        weekly: 1

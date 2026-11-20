@@ -1,0 +1,97 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: PILLAGER
+name: $normalLevel &cEncased Miner
+level: dynamic # 20
+mainHand: CROSSBOW
+instanced: true
+healthMultiplier: 1.75
+damageMultiplier: 0.85
+movementSpeedAttribute: 0.3
+frozen: false
+# leashRadius: 30
+followDistance: 30
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+isRegionalBoss: true
+normalizedCombat: true
+dropsRandomLoot: false
+powers:
+- filename: attack_fire.yml
+  difficultyID:
+  - 1
+  - 2
+disguise: custom:the_mines_undying
+customDisguiseData: player the_mines_undying setskin {"id":"12375eb4-bd4e-4874-a44f-cc4e3710b4e7","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY3NjQ1MzY0OTc4NSwKICAicHJvZmlsZUlkIiA6ICJlZDUzZGQ4MTRmOWQ0YTNjYjRlYjY1MWRjYmE3N2U2NiIsCiAgInByb2ZpbGVOYW1lIiA6ICI0MTQxNDE0MWgiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYThjYmM2YmM2NTFhNDg3YTc4NDQ5N2M1NWNhYTBhZTMxYzZkNTRhN2RjYzY3NTJlMGYwMDBmYTQ1OWEzZDNiIgogICAgfQogIH0KfQ==","signature":"oCb3SUaJe/wC693n3TVPMmsMN3R4Xt2ic+wS4RBIISNc9gYokeGHuYS98isXF8cUqXEsbFbt4WLYOiM/Pi3U0a3jLdhyJ4nMVGZJQR6GR/vZHa5sWylvUAj1mPukHb/3X3Z85IFKEG+mcpELmp96g+oaROThEPJMhqbiAoN9NzOKIB0ChU3Bq40b8mkwZqxJAaRXQESs+EOH1Z+MK2OC3mww2lt1oTDLY6N46ilnhU1H4rKznKN1zxv6bIbxJLwreNCM0DTHRCt5IqbWcqPm0bCf2JFPIuoN1+PkQGTwvPNavYacH4qP/iagDbJs7DbmB6rURyzt2Ub6Faka0WCcVjEqZZXGxj84jhgmHmAcE8qZ+Xj6C9ps0zlq7IJcBqSrXuUuIOgXwIhkWFTRLY22cc/HUe4bpN8s6SRbvFRu42kc/YeKE86NlL83K3+iptwzClHpjpe1JGmvamOmyNthv3l/oYJWf1Ge1jhlaG5kMt6VjlfahZuJ4GSBOTyNLCkF8pW0MFR8gv+ISRGTd3lwm0C5ZpsxIOOtAu91iLuDfT0KGBEDNyr1NoYyomXY1CmFowXvkagizzVuUdhICD/9m9cYRj+DxkilxXj8OhFvd4zJzlZGsRDBdps7bBaD0ro+b94W4c6FMVagonzo09eVxosYrki2F9ocjJHhRXB8LU4="}],"legacy":false}
+eliteScript:
+  HealSelf:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: HEAL
+      amplifier: 0
+      duration: 20
+      Target:
+        targetType: SELF
+    Cooldowns:
+      local: 111
+      global: 20
+spawnLocations:
+- em_id_the_mines,238.5,108.5,89.5,0.0,0.0:1676457445065
+- em_id_the_mines,222.5,113.5,132.5,0.0,0.0:1676457445066
+- em_id_the_mines,226.5,127.5,104.5,0.0,0.0:1676457445042
+- em_id_the_mines,268.5,130.5,111.5,0.0,0.0:1676457445097
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: the_mines_undying_drop_shovel_normal.yml
+  chance: 0.01
+  difficultyID: 0
+- filename: the_mines_undying_drop_shovel_hard.yml
+  chance: 0.01
+  difficultyID: 1
+- filename: the_mines_undying_drop_shovel_mythic.yml
+  chance: 0.01
+  difficultyID: 2
+- filename: cl_story_mines_swords_f5c77fe4.yml
+  chance: 1.0
+- filename: cl_story_mines_axes_23aac663.yml
+  chance: 1.0
+- filename: cl_story_mines_bows_a6d16b50.yml
+  chance: 1.0
+- filename: cl_story_mines_crossbows_bc046011.yml
+  chance: 1.0
+- filename: cl_story_mines_tridents_e00d07bd.yml
+  chance: 1.0
+- filename: cl_story_mines_hoes_94e447fa.yml
+  chance: 1.0
+- filename: cl_story_mines_maces_96b8e254.yml
+  chance: 1.0
+- filename: cl_story_mines_spears_258f1267.yml
+  chance: 1.0
+- filename: cl_story_mines_staves_9801a7fb.yml
+  chance: 1.0
+- filename: cl_story_mines_wands_88a081b9.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_helmets_d62cc6c8.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_chestplates_527dffa2.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_leggings_3c7084ec.yml
+  chance: 1.0
+- filename: cl_story_mines_dps_boots_87c73439.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_helmets_23d0f6a6.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_chestplates_905e88bf.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_leggings_cccc8016.yml
+  chance: 1.0
+- filename: cl_story_mines_tank_boots_e7f99614.yml
+  chance: 1.0
+- filename: cl_story_mines_shields_687daaca.yml
+  chance: 1.0

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Stomping Trousers
+lore:
+- The hems are beyond saving.
+classLootFamily: DPS_LEGGINGS

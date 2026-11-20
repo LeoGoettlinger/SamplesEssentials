@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: No Hug Zone
+lore:
+- Please greet the summoner from a distance.
+classLootFamily: TANK_CHESTPLATES

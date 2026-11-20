@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Hellfire Crossbow'
+material: CROSSBOW
+level: 45
+lore:
+- '&cA crossbow that shoots bolts'
+- '&cof pure flame and hatred.'
+enchantments:
+- PIERCING,4
+- QUICK_CHARGE,3
+- DURABILITY,3
+itemType: unique
+scalability: scalable

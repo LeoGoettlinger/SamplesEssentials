@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Charred Apron
+lore:
+- The front took most of the heat.
+classLootFamily: DPS_CHESTPLATES

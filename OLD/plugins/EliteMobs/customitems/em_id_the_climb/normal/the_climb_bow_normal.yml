@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Skeletal Longbow'
+material: BOW
+level: 10
+lore:
+- '&cStrung with dried sinew and'
+- '&cbound in bone. Deadly accurate.'
+enchantments:
+- ARROW_DAMAGE,2
+- ARROW_KNOCKBACK,1
+itemType: unique
+scalability: scalable

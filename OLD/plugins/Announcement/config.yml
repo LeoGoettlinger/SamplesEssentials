@@ -1,0 +1,38 @@
+#when broadcast is true, console will get announcements too.
+broadcast: true
+#when ordered is true, announcements will sent in order.
+ordered: false
+#time between announcements, in seconds.
+delay: 300
+command:
+  name: "announcement"
+  description: "command to announce custom messages"
+  usage: "/announcement <message>"
+  permission: "announcement.use"
+# true = creates a custom minimessage instance (allows <centered> tag)
+# false = uses server's default minimessage instance (no <centered> tag)
+use_custom_minimessage: true
+#Formatting docs: https://docs.adventure.kyori.net/minimessage/format.html
+template:
+  - ""
+  - "<centered><gradient:#FF8B13:#E06FF2><bold>ANNOUNCEMENT</bold></gradient></centered>"
+  - ""
+  - "<centered><gray><announcement></centered>"
+  - ""
+announcements:
+  - 'Kanntest du schon <gold>unser Marktsystem? <gray>( <yellow>/shop <gray> )'
+  - 'Kanntest du schon <gold>unser Auktionshaus? <gray>( <yellow>/ah <gray> )'
+  - 'Wir haben auch <gold>Glückskisten! <gray>Diese stehen am Spawn! ( <yellow>/warp Spawn <gray> ) Viel Glück!'
+  - 'Kanntest du schon <gold>unser Grabsystem? <gray>Wenn du stirbst mache einfach <yellow>/deathchests <gray>, dort wählst du dann dein Grab aus und kannst dich hinteleportieren!'
+  - '<red>Server von<gold> SampleCraft & xMasterBob & JayJay! <gray>( Made by SampleCraft )'
+  - '<yellow> Viel Glück! Be a Legend... <gray>(Technoblade never dies!)'
+  - 'Bist du schon auf <gold>unserem Discord? -> <yellow><click:open_url:"https://dc.gg/pixelattack">dc.gg/pixelattack <gray>! Dort kannst du dich bewerben, an Giveaways teilnehmen, Hilfe erhalten, Bugs reporten, Spieler reporten etc.'
+  - 'Du siehst dass ein Spieler etwas <gold>illegales tut? <gray>Dann gehe auf unseren Discord <gray>( <yellow>dc.gg/pixelattack <gray>)'
+  - '<yellow>Wusstest du schon?<gray> Deine Votes helfen uns enorm! In der Hoster Lobby(wenn der Server startet) <gold>/vote pixelattack'
+  - 'Kanntest du schon unsere <yellow>Vote‑Links</yellow><gray>?
+<newline><click:open_url:"https://serverliste.net/server/5663"><gold>serverliste.net</gold><gray> → https://serverliste.net/server/5663</gray></click>
+<newline><click:open_url:"https://www.mc-liste.de/server/293"><gold>mc-liste.de</gold><gray> → https://www.mc-liste.de/server/293</gray></click>
+<newline><click:open_url:"https://topminecraftservers.org/vote/44325"><gold>topminecraftservers</gold><gray> → https://topminecraftservers.org/vote/44325</gray></click>
+<newline><click:open_url:"https://minecraftpocket-servers.com/server/134075/"><gold>mc‑pocket‑servers</gold><gray> → https://minecraftpocket-servers.com/server/134075/</gray></click>
+<newline><click:open_url:"https://minecraftservers.org/server/692193"><gold>minecraftservers.org</gold><gray> → https://minecraftservers.org/server/692193</gray></click>
+<newline><click:open_url:"https://minecraft.buzz/server/pixelrealm"><gold>minecraft.buzz</gold><gray> → https://minecraft.buzz/server/pixelrealm</gray></click>'

@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&e[Mythical] Ancient Leg Armor'
+material: DIAMOND_LEGGINGS
+level: 25
+lore:
+- '&eNot the most comfortable leggings'
+- '&ebut they will keep you safe.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,10
+- PROTECTION_FIRE,6
+- PROTECTION_EXPLOSIONS,5
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

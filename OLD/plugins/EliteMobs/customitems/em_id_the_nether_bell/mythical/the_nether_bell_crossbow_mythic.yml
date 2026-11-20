@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Void Striker'
+material: CROSSBOW
+level: 55
+lore:
+- '&cBolts fired from this crossbow'
+- '&cseem to bend space itself.'
+enchantments:
+- PIERCING,6
+- QUICK_CHARGE,3
+- DURABILITY,7
+itemType: unique
+scalability: scalable

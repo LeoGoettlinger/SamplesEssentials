@@ -1,0 +1,71 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  DodgeThis:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      Shape: CYLINDER
+      radius: 4
+      borderRadius: 3
+    Actions:
+    - action: TITLE_MESSAGE
+      subtitle: Dodge This!
+      duration: 20
+      fadeIn: 1
+      fadeOut: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 20
+      wait: 5
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: TELEPORT
+      FinalTarget:
+        targetType: SELF_SPAWN
+      Target:
+        targetType: SELF
+    - action: POTION_EFFECT
+      Target:
+        targetType: SELF
+      potionEffectType: SLOW
+      amplifier: 6
+      duration: 100
+    - action: POTION_EFFECT
+      potionEffectType: LEVITATION
+      amplifier: 1
+      duration: 150
+      Target:
+        targetType: SELF
+      wait: 10
+    - action: SET_MOB_AWARE
+      bValue: false
+      duration: 100
+      Target:
+        targetType: SELF
+      wait: 10
+    - action: SUMMON_ENTITY
+      Target:
+        targetType: ZONE_BORDER
+      sValue: ARROW
+      wait: 40
+      repeatEvery: 20
+      times: 8
+      RelativeVector:
+        SourceTarget:
+          targetType: SELF
+          offset: 0,2,0
+        DestinationTarget:
+          targetType: ACTION_TARGET
+        normalize: true
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    Cooldowns:
+      local: 440
+      global: 20

@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Boiled Chestplate'
+material: DIAMOND_CHESTPLATE
+level: 15
+lore:
+- '&cWhy does this smell like hot dogs?'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,7
+- DURABILITY,4
+- DAMAGE_ALL,3
+- elitemobs:loud_strikes,2
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

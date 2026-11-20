@@ -1,0 +1,18 @@
+isEnabled: true
+material: NETHERITE_HELMET
+name: '&d[Hard] Dominator Helmet'
+lore:
+- '&dThis helmet whispers promises of power.'
+- '&dIts resonance chills you to the bone.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,6
+- PROTECTION_FIRE,6
+- PROTECTION_PROJECTILE,6
+- PROTECTION_EXPLOSIONS,6
+- THORNS,2
+- elitemobs:loud_strikes,2
+potionEffects:
+- REGENERATION,0,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

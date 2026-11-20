@@ -1,0 +1,17 @@
+potionEffects: []
+isEnabled: true
+material: NETHERITE_HELMET
+name: '&d[Normal] Void Bell Helmet'
+lore:
+- '&dThe helmet is shaped like a bell.'
+- '&dAs you wear it you can hear a faint ringing.'
+- '&dHissing intensifies as you enter combat.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,4
+- DAMAGE_ALL,4
+- DAMAGE_ARTHROPODS,4
+- DAMAGE_UNDEAD,4
+- THORNS,1
+scalability: scalable
+level: 55
+itemType: unique

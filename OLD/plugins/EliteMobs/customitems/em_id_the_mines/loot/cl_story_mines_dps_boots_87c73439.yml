@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Threadbare Steps'
+lore:
+- '&7The soles are all that remain of the original pair.'
+classLootFamily: DPS_BOOTS

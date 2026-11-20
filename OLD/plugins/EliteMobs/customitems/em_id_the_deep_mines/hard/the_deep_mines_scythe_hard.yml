@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Abyssal Reaper'
+material: NETHERITE_HOE
+level: 45
+lore:
+- '&cA scythe that reaps both'
+- '&cstone and soul in the deep'
+- '&cmines. It whispers of darkness.'
+enchantments:
+- DAMAGE_ALL,8
+- SWEEPING_EDGE,4
+- DURABILITY,5
+itemType: unique
+scalability: scalable

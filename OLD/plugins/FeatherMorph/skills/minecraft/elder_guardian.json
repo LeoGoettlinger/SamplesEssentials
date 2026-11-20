@@ -1,0 +1,20 @@
+{
+  "skillCooldown": 1200,
+  "skillId": "morph:apply_effect",
+  "abilities": [
+    "morph:breathe_under_water",
+    "morph:dryout_in_air"
+  ],
+  "settings": {
+    "morph:apply_effect": {
+      "duration": 6000,
+      "acquires_water": true,
+      "show_guardian": true,
+      "multiplier": 2,
+      "sound": "entity.elder_guardian.curse",
+      "name": "minecraft:mining_fatigue",
+      "sound_distance": 50,
+      "apply_distance": 50
+    }
+  }
+}

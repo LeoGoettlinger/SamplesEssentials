@@ -1,0 +1,15 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_AXE
+name: '&e[Hard] Void Chipper'
+lore:
+- '&eA tool capable of coaxing life'
+- '&eout of even the most barren'
+- '&elandscapes.'
+enchantments:
+- DURABILITY,2
+- MENDING,1
+- EFFICIENCY,4
+level: 55
+itemType: unique
+scalability: scalable

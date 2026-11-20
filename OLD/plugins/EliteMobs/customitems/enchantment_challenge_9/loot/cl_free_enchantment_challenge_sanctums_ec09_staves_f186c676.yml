@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: Glassblower's Rod
+lore:
+- A ring of old glass clings to the tip.
+weaponType: STAVES

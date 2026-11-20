@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Frozen Braces'
+lore:
+- '&7Stiff joints remember a much colder night.'
+classLootFamily: TANK_LEGGINGS

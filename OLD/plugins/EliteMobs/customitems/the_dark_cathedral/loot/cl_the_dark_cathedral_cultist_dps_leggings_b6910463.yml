@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&0Altarbound Striders'
+lore:
+- '&0&kEach knee has worn a shallow hollow.'
+- '&0&kThe vigil lasted longer than a lifetime.'
+classLootFamily: DPS_LEGGINGS

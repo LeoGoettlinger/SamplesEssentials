@@ -1,0 +1,65 @@
+# /control <Spieler> - Übernahme starten oder beenden
+command /control <player>:
+    permission: admin.control
+    permission message: &cDu hast keine Berechtigung für die Übernahme!
+    trigger:
+        set {_p} to arg-1
+        
+        # Wenn du den Spieler bereits kontrollierst -> Kontrolle beenden
+        if {controlling::%uuid of player%} is set:
+            set {_target} to {controlling::%uuid of player%}
+            
+            delete {controlling::%uuid of player%}
+            delete {controlled_by::%uuid of {_target}%}
+            
+            # Spieler-Modi zurücksetzen
+            execute console command "gamemode survival %player%"
+            send "&a&l[CONTROL] &eDu hast die Kontrolle über %{_target}% beendet!" to player
+            stop
+            
+        # Kontrolle starten
+        if {_p} is player:
+            send "&cDu kannst dich nicht selbst kontrollieren!" to player
+            stop
+            
+        set {controlling::%uuid of player%} to {_p}
+        set {controlled_by::%uuid of {_p}%} to player
+        
+        # Admin unsichtbar machen & zum Spieler teleportieren
+        execute console command "gamemode spectator %player%"
+        teleport player to {_p}
+        
+        send "&a&l[CONTROL] &eDu kontrollierst nun &b%{_p}%&e!" to player
+        send "&7Tippe &e/control %{_p}% &7erneut, um die Kontrolle zu beenden." to player
+        send "&7Alles was du im Chat schreibst, wird im Namen von &b%{_p}% &7gesendet!" to player
+
+# Verhindert, dass der kontrollierte Spieler sich bewegt
+on any move:
+    if {controlled_by::%uuid of player%} is set:
+        cancel event
+
+# Verhindert, dass der kontrollierte Spieler Befehle nutzt
+on command:
+    if {controlled_by::%uuid of player%} is set:
+        cancel event
+        send "&cDu wirst derzeit von einem Admin kontrolliert!" to player
+
+# Nachrichten des Admins im Namen des Spielers senden
+on chat:
+    if {controlling::%uuid of player%} is set:
+        cancel event
+        set {_target} to {controlling::%uuid of player%}
+        make {_target} chat message
+        send "&7&o[Control-Chat gesendet als %{_target}%]" to player
+
+# Verhindert, dass der kontrollierte Spieler im Chat schreibt
+on chat:
+    if {controlled_by::%uuid of player%} is set:
+        cancel event
+        send "&cDu kannst während der Kontrolle nicht schreiben!" to player
+
+# Schützt vor Server-Disconnects (Fluchtversuchen)
+on join:
+    if {controlled_by::%uuid of player%} is set:
+        wait 2 ticks
+        send "&c&lFluchtversuch zwecklos! &7Du wirst immer noch kontrolliert!" to player

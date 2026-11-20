@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&4Filth Bow [Normal]'
+material: BOW
+lore:
+- '&cCoated in toxic sludge from'
+- '&cthe deepest sewers.'
+enchantments:
+- ARROW_DAMAGE,5
+- ARROW_INFINITE,1
+- DURABILITY,1
+potionEffects:
+- POISON,0,target,onHit
+itemType: unique
+scalability: scalable
+soulbound: true

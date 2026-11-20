@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Beastly Leggings
+lore:
+- Heavy, real heavy.
+classLootFamily: TANK_LEGGINGS

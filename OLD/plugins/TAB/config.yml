@@ -1,0 +1,254 @@
+header-footer:
+  enabled: true
+  designs:
+    world-test:
+      display-condition: '%world%=test'
+      header:
+      - Server by SampleCraft
+      footer:
+      - Von SkyCraftTV
+    default:
+      header:
+      - ''
+      - '&2&lɴɪxᴏʀɪᴀ'
+      - ''
+      - ''
+      - '<#FFFFFF>ʙᴜɪʟᴅ <#FFD700>✦<#FFFFFF> sᴜʀᴠɪᴠᴇ <#FFD700>✦<#FFFFFF> ᴀᴅᴠᴇɴᴛᴜʀᴇ'
+      - '<#FFD700>&m                                                </#FF8C00>'
+      - ''
+      footer:
+      - '<#FFD700>&m                                                </#FF8C00>'
+      - ''
+      - '<#AAAAAA>ᴏɴʟɪɴᴇ: <#FFFFFF>%online% <#555555>|</#555555> ᴘɪɴɢ: <#00FF00>%ping%ᴍs'
+      - '<#AAAAAA>%animation:time%'
+      - ''
+      - '<#AAAAAA>ᴘᴏᴡᴇʀᴇᴅ ʙʏ: <#FFC300>sᴀᴍᴘʟᴇᴄʀᴀғᴛ'
+      - '<#AAAAAA>ᴅɪsᴄᴏʀᴅ: <#7289DA>ᴅᴄ.ɢɢ/ɴɪxᴏʀɪᴀ</#7289DA>'
+      - '<#AAAAAA>ᴇᴍᴀɪʟ: <#FFAA00>ɴɪxᴏʀɪᴀ@sᴀᴍᴘʟᴇᴄʀᴀғᴛ.ɴᴇᴛ'
+      - '<#AAAAAA>ᴡᴇʙ: <#FF5555>ɴɪxᴏʀɪᴀ.ɴᴇᴛ</#FF5555>'
+      - ''
+tablist-name-formatting:
+  enabled: true
+  disable-condition: '%world%=disabledworld'
+scoreboard-teams:
+  enabled: true
+  enable-collision: true
+  invisible-nametags: false
+  sorting-types:
+  - GROUPS:Owner,owner-für-bob,Dev-Leitung,Dev,Admin,Co-Admin,Partner,Team-Leitung,Co-Team-Leitung,Mod-Plus,Mod,Sup-Plus,Sup,OP,Builder,OG-Rang,Platin,Premium,Spieler,default
+  - PLACEHOLDER_A_TO_Z:%player%
+  case-sensitive-sorting: true
+  can-see-friendly-invisibles: false
+  disable-condition: '%world%=disabledworld'
+playerlist-objective:
+  enabled: true
+  value: '%ping%'
+  fancy-value: '&7Ping: %ping%'
+  title: SampleCraft
+  render-type: INTEGER
+  disable-condition: '%world%=disabledworld'
+belowname-objective:
+  enabled: true
+  value: '%health%'
+  title: '&cLeben'
+  fancy-value: '&c%health%'
+  fancy-value-default: NPC
+  disable-condition: '%world%=disabledworld'
+prevent-spectator-effect:
+  enabled: false
+bossbar:
+  enabled: false
+  toggle-command: /bossbar
+  remember-toggle-choice: false
+  hidden-by-default: false
+  bars:
+    ServerInfo:
+      style: PROGRESS
+      color: '%animation:barcolors%'
+      progress: '100'
+      text: '&fSampleCraft'
+scoreboard:
+  enabled: true
+  toggle-command: /sb
+  remember-toggle-choice: false
+  hidden-by-default: false
+  delay-on-join-milliseconds: 0
+  scoreboards:
+    scoreboard-1.20.3+:
+      title: "\uE001"
+      display-condition: '%player-version-id%>=765;%bedrock%=false'
+      lines:
+      - ''
+      - ''
+      - '<#FFC300>&l⊱ ɢᴇɴᴇʀᴀʟ ⊰</#FF8C00>'
+      - '<#FFFFFF>▸ <#AAAAAA>sᴘɪᴇʟᴇʀ: <#FFFFFF>%online%'
+      - '<#FFFFFF>▸ <#AAAAAA>ʀᴀɴɢ: <#D500F9>%luckperms_primary_group_name%</#D500F9>'
+      - '<#FFFFFF>▸ <#AAAAAA>ᴄʟᴀɴ: <#FFFFFF>%vrxclans_tag%'
+      - '<#FFFFFF>▸ <#AAAAAA>ᴘɪɴɢ: <#00E676>%ping%ᴍs</#00E676>'
+      - '<#FFFFFF>▸ <#AAAAAA>ᴋɪʟʟs: <#FF5555>%statistic_player_kills%'
+      - '<#FFFFFF>▸ <#AAAAAA>ᴛᴏᴅᴇ: <#AAAAAA>%statistic_deaths%'
+      - '<#FFFFFF>▸ <#AAAAAA>ᴡᴇʟᴛ: <#40C4FF>%world%</#40C4FF>'
+      - ''
+      - '<#FFC300>&l⊱ ᴡäʜʀᴜɴɢᴇɴ ⊰</#FF8C00>'
+      - '<#D500F9>◆ <#FFFFFF>ᴀᴍᴇᴛʜʏsᴛs: <#D500F9>%excellenteconomy_balance_short_amethysts%'
+      - '<#FFAB00>◆ <#FFFFFF>ᴄʜᴇᴀᴛᴄᴏɪɴs: <#FFAB00>%excellenteconomy_balance_short_cheatcoins%'
+      - '<#00B0FF>◆ <#FFFFFF>ᴀᴍᴇᴛʜʏꜱᴛ-ꜱʜᴀʀᴅꜱ: <#00B0FF>%excellenteconomy_balance_short_amethystshards%'
+    #  - '<#00E676>❖ <#FFFFFF>Starter-Keys: <#00E676>%excellentcrates_openings_available_starter-crate%'
+    #  - '<#FF5252>❖ <#FFFFFF>OP-Keys: <#FF5252>%excellentcrates_openings_available_op_kiste%'
+    #  - '<#FFAB00>❖ <#FFFFFF>Plot-Keys: <#FFAB00>%excellentcrates_openings_available_plotcrate%'
+      - ''
+      - '<#555555>ᴅᴄ.ɢɢ/ɴɪxᴏʀɪᴀ</#555555>'
+    scoreboard-bedrock:
+      title: <#FFC300>&l⊱ ᴘɪxᴇʟᴀᴛᴛᴀᴄᴋ ⊰</#FF8C00>
+      display-condition: '%bedrock%=true'
+      lines:
+      - ''
+      - '<#FFFFFF>▸ <#AAAAAA>sᴘɪᴇʟᴇʀ: <#FFFFFF>%online%'
+      - '<#FFFFFF>▸ <#AAAAAA>ʀᴀɴɢ: <#D500F9>%luckperms_primary_group_name%</#D500F9>'
+      - '<#FFFFFF>▸ <#AAAAAA>ᴄʟᴀɴ: <#FFFFFF>%vrxclans_tag%'
+      - '<#FFFFFF>▸ <#AAAAAA>ᴘɪɴɢ: <#00E676>%ping%ᴍs</#00E676>'
+      - '<#FFFFFF>▸ <#AAAAAA>ᴋɪʟʟs: <#FF5555>%statistic_player_kills%'
+      - '<#FFFFFF>▸ <#AAAAAA>ᴛᴏᴅᴇ: <#AAAAAA>%statistic_deaths%'
+      - '<#FFFFFF>▸ <#AAAAAA>ᴡᴇʟᴛ: <#40C4FF>%world%</#40C4FF>'
+      - ''
+      - '<#FFC300>&l⊱ ᴡäʜʀᴜɴɢᴇɴ ⊰</#FF8C00>'
+      - '<#D500F9>◆ <#FFFFFF>ᴀᴍᴇᴛʜʏsᴛs: <#D500F9>%excellenteconomy_balance_short_amethysts%'
+      - '<#FFAB00>◆ <#FFFFFF>ᴄʜᴇᴀᴛᴄᴏɪɴs: <#FFAB00>%excellenteconomy_balance_short_cheatcoins%'
+      - '<#00B0FF>◆ <#FFFFFF>ᴀᴍᴇᴛʜʏꜱᴛ-ꜱʜᴀʀᴅꜱ: <#00B0FF>%excellenteconomy_balance_short_ogcoins%'
+    #  - '<#00E676>❖ <#FFFFFF>Starter-Keys: <#00E676>%excellentcrates_openings_available_starter-crate%'
+    #  - '<#FF5252>❖ <#FFFFFF>OP-Keys: <#FF5252>%excellentcrates_openings_available_op_kiste%'
+    #  - '<#FFAB00>❖ <#FFFFFF>Plot-Keys: <#FFAB00>%excellentcrates_openings_available_plotcrate%'
+      - ''
+      - '<#555555>ᴅᴄ.ɢɢ/ɴɪxᴏʀɪᴀ</#555555>'
+layout:
+  enabled: false
+  direction: COLUMNS
+  default-skin: mineskin:37e93c8e12cd426cb28fce31969e0674
+  enable-remaining-players-text: true
+  remaining-players-text: '... and %s more'
+  empty-slot-ping-value: 1000
+  layouts:
+    default:
+      fixed-slots:
+      - '1|&3Server by:&f:'
+      - 2|&bmyserver.net
+      - '3|&8&m                       '
+      - '4|&3Name&f:'
+      - 5|&b%player%
+      - '7|&3Rank&f:'
+      - '8|Rank: %group%'
+      - '10|&3World&f:'
+      - 11|&b%world%
+      - '13|&3Time&f:'
+      - 14|&b%time%
+      - '21|&3Teamspeak&f:'
+      - 22|&bts.myserver.net
+      - '23|&8&m                       '
+      - '41|&3Store&f:'
+      - 42|&bshop.myserver.net
+      - '43|&8&m                       '
+      groups:
+        staff:
+          slots:
+          - 24-40
+          display-condition: permission:tab.staff
+        players:
+          slots:
+          - 44-80
+ping-spoof:
+  enabled: false
+  value: 0
+global-playerlist:
+  enabled: false
+  display-others-as-spectators: false
+  display-vanished-players-as-spectators: true
+  isolate-unlisted-servers: false
+  update-latency: false
+  spy-servers:
+  - spyserver1
+  - spyserver2
+  server-groups:
+    lobbies:
+    - lobby1
+    - lobby2
+    group2:
+    - server1
+    - server2
+placeholders:
+  date-format: dd.MM.yyyy
+  time-format: 'HH:mm:ss / h:mm'
+  time-offset: 2
+  register-tab-expansion: false
+  locale: de-DE
+placeholder-output-replacements:
+  '%essentials_vanished%':
+    'yes': '&7| Vanished'
+    'no': ''
+conditions:
+  nick:
+    conditions:
+    - '%player%=%essentials_nickname%'
+    true: '%player%'
+    false: ~%essentials_nickname%
+placeholder-refresh-intervals:
+  default-refresh-interval: 500
+  '%server_uptime%': 1000
+  '%server_tps_1_colored%': 1000
+  '%server_unique_joins%': 5000
+  '%player_health%': 200
+  '%player_ping%': 1000
+  '%vault_prefix%': 1000
+  '%rel_factionsuuid_relation_color%': 1000
+assign-groups-by-permissions: false
+primary-group-finding-list:
+- Owner
+- Dev
+- Admin
+- Mod
+- Sup
+- OP
+- Platin
+- Builder
+- Premium
+- Spieler
+permission-refresh-interval: 1000
+debug: false
+mysql:
+  enabled: false
+  host: 127.0.0.1
+  port: 3306
+  database: tab
+  username: user
+  password: password
+  useSSL: true
+proxy-support:
+  enabled: true
+  type: PLUGIN
+  plugin:
+    name: RedisBungee
+  redis:
+    url: redis://:password@localhost:6379/0
+  rabbitmq:
+    exchange: plugin
+    url: amqp://guest:guest@localhost:5672/%2F
+  channel-name-suffix: custom
+components:
+  minimessage-support: true
+  disable-shadow-for-heads: true
+config-version: 6
+per-world-playerlist:
+  enabled: false
+  allow-bypass-permission: false
+  ignore-effect-in-worlds:
+  - ignoredworld
+  - build
+  shared-playerlist-world-groups:
+    lobby:
+    - lobby1
+    - lobby2
+    minigames:
+    - paintball
+    - bedwars
+compensate-for-packetevents-bug: false
+use-bukkit-permissions-manager: false
+use-online-uuid-in-tablist: true

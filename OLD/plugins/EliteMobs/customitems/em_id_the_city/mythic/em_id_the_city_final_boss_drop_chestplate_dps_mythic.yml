@@ -1,0 +1,17 @@
+isEnabled: true
+potionEffects: []
+name: '&e[Mythical] Mastercraft Breastplate'
+material: NETHERITE_CHESTPLATE
+level: 30
+lore:
+- '&eYou are not sure if you should wear this'
+- '&eor display it on the wall of your house.'
+enchantments:
+- THORNS,6
+- DAMAGE_ALL,10
+- DAMAGE_ARTHROPODS,4
+- DAMAGE_UNDEAD,5
+- PROTECTION_ENVIRONMENTAL,4
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&aUnbroken Escutcheon'
+lore:
+- '&aThe paint surrendered before the guard did.'

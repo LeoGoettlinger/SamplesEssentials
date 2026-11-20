@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&bDamaged Boots'
+lore:
+- '&bAlmost useless.'
+classLootFamily: TANK_BOOTS

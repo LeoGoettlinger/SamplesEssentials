@@ -1,0 +1,8 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:no_fall_damage"
+  ],
+  "settings": {}
+}

@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&f[Mythical] Bolt Launcher'
+material: CROSSBOW
+level: 20
+lore:
+- '&fYou can run but you cannot dodge.'
+enchantments:
+- PIERCING,10
+- MULTISHOT,6
+- DAMAGE_ALL,5
+potionEffects:
+- GLOWING,2,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

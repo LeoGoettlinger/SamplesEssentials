@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&4October Harvest'
+lore:
+- '&4A harvest blade left beside an empty saddle.'
+- '&4The field has been silent since.'

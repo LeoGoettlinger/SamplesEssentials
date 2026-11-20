@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&4Sunken Herald''s Coat'
+lore:
+- '&4The crest remains visible through the water stains.'
+classLootFamily: DPS_CHESTPLATES

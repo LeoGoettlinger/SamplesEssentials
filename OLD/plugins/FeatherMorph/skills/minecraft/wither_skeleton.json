@@ -1,0 +1,20 @@
+{
+  "skillCooldown": 20,
+  "skillId": "morph:fake_equip",
+  "abilities": [
+    "morph:fire_resistance",
+    "morph:potion_on_attack",
+    "morph:reduce_wither_damage"
+  ],
+  "settings": {
+    "morph:potion_on_attack": {
+      "duration": 200,
+      "name": "minecraft:wither",
+      "amplifier": 0
+    },
+    "morph:reduce_wither_damage": {
+      "amount": 1.0,
+      "is_percentage": true
+    }
+  }
+}

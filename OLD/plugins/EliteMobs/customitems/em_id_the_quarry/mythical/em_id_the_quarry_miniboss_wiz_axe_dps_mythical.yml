@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&d[Mythical] Light Shining Axe'
+material: DIAMOND_AXE
+level: 40
+lore:
+- '&dThis weapon is ethereal. It seems'
+- '&dit has been crafted from light itself.'
+enchantments:
+- DAMAGE_UNDEAD,4
+- DURABILITY,3
+potionEffects:
+- POISON,1,target,onHit
+- WITHER,1,target,onHit
+- SLOW,1,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&8Haunted Spear'
+material: NETHERITE_SPEAR
+lore:
+- '&7Cursed by restless spirits,'
+- '&7it thirsts for blood.'
+enchantments:
+- IMPALING,5
+- DAMAGE_ALL,4
+- DAMAGE_UNDEAD,5
+potionEffects:
+- WEAKNESS,1,target,onHit
+- WITHER,0,target,onHit
+itemType: unique
+scalability: scalable
+soulbound: true

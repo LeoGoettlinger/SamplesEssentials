@@ -1,0 +1,16 @@
+isEnabled: true
+material: NETHERITE_AXE
+name: '&d[Hard] Dominator Axe'
+lore:
+- '&dThis axe feels alive in your hands, pulsing with a dark rhythm.'
+enchantments:
+- DAMAGE_ALL,8
+- FIRE_ASPECT,1
+- DURABILITY,2
+- elitemobs:loud_strikes,2
+potionEffects:
+- SLOWNESS,1,target,onHit
+- WEAKNESS,0,target,onHit
+scalability: scalable
+level: 55
+itemType: unique

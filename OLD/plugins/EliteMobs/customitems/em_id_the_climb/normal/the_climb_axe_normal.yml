@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Feral Cleaver'
+material: NETHERITE_AXE
+level: 10
+lore:
+- '&cChipped and worn from taming'
+- '&cwild beasts. Still effective'
+- '&con flesh and bone.'
+enchantments:
+- DAMAGE_ALL,3
+- DURABILITY,2
+itemType: unique
+scalability: scalable

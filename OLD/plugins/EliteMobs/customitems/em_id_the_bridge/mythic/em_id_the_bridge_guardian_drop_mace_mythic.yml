@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&dStone Crusher [Mythic]'
+material: MACE
+level: 25
+lore:
+- '&cShatter stone with ancient might!'
+enchantments:
+- DAMAGE_ALL,7
+- KNOCKBACK,3
+- FIRE_ASPECT,2
+- PROTECTION_ENVIRONMENTAL,4
+scalability: scalable
+itemType: unique
+soulbound: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

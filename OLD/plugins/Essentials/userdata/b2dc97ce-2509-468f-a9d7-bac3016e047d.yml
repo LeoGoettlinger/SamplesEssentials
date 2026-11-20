@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 10.131.100.9
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1791466981453
+  login: 1791465672916
+money: '0'
+last-account-name: Waider0621
+lastlocation:
+  world: f7b9d6a4-0776-481f-976b-15e3b76d6a75
+  world-name: PixelAttack
+  x: -1.3681451533495732
+  y: 165.48807418356535
+  z: -32.0367751528877
+  yaw: 9.03680419921875
+  pitch: 14.850004196166992
+logoutlocation:
+  world: f7b9d6a4-0776-481f-976b-15e3b76d6a75
+  world-name: PixelAttack
+  x: -6.3982632409552656
+  y: 163.15064476380292
+  z: 19.03239616816374
+  yaw: -176.55471801757812
+  pitch: 22.50003433227539

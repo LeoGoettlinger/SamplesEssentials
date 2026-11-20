@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&aAmazing Treat!'
+material: GOLDEN_APPLE
+lore:
+- '&eAn amazing snack!'
+scalability: scalable
+itemType: unique

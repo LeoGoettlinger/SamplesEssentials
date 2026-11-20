@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&a[Hard] Worn Chestplate'
+material: DIAMOND_CHESTPLATE
+level: 30
+lore:
+- '&aIt will absorb zero hits.'
+enchantments:
+- DAMAGE_ALL,3
+- DAMAGE_ARTHROPODS,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

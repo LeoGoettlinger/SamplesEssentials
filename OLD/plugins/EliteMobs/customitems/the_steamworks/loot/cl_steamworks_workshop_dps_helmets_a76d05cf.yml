@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&bFiling Visor'
+lore:
+- '&bTiny curls of metal cling to the rim.'
+- '&bThe view through the slit is surprisingly clear.'
+classLootFamily: DPS_HELMETS

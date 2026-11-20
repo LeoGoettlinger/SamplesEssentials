@@ -1,0 +1,65 @@
+isEnabled: true
+customObjectives:
+  Objective1:
+    amount: '1'
+    filename: em_id_the_nether_bell_boss_void_bell_p1.yml
+    objectiveType: KILL_CUSTOM
+customRewards:
+- currencyAmount=550:amount=1:chance=1
+- filename=elite_scrap_tiny.yml:amount=1:chance=0.3
+- filename=elite_scrap_small.yml:amount=1:chance=0.2
+- filename=elite_scrap_medium.yml:amount=1:chance=0.1
+- filename=elite_scrap_large.yml:amount=1:chance=0.05
+- filename=elite_scrap_huge.yml:amount=1:chance=0.01
+- filename=enchanted_book_damage_all.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_arthropods.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_undead.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_environmental.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_explosions.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fall.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fire.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_projectile.yml:amount=1:chance=0.1
+- filename=story_dungeons_quest_10_charm.yml:amount=1:chance=1.0
+questAcceptPermission: elitequest.story_dungeons_quest_9_nether_vacation.yml
+questLockoutPermission: elitequest.story_dungeons_quest_10_the_void_bell.yml
+questLockoutMinutes: 10080
+name: '&2The Nether Bell!'
+questLore:
+- We have managed to get our eyes on what caused the corruption, it is a great artifact
+  of power, the energy it emits is overwhelming.
+- It is in some sort of temple, from what we can tell the temple was formed naturally…
+- One of our scouts was affected by the artifact’s powers, the scout lost all self-control
+  and started going towards the temple.
+- It took 3 of our members to stop the scout and drag him back.
+- Later the scout described being overwhelmed by an urge to go in and interact with
+  the artifact.
+- All of this is very concerning, the temple and the artifact are natural occurrences
+  in the Nether it would seem.
+- Are there more of these artifacts in the Nether I wonder?
+- And if there are, then how many? I do not like any of this.
+- Raw Nether energies pooling and slamming into each other and creating something
+  new and sinister…
+- The artifact itself looks like a bell so we have decided to name it The Void Bell.
+- From what we know the artifact has the following powers, mind domination, ability
+  to resurrect the dead, grant eternal un-life, and that’s just the ones we can confirm.
+- Who knows what else it might be capable of.
+- We do know that greater willpower can resist its mind dominating effects, at least
+  for a while.
+- Even the strongest will would succumb to its mind domination sooner or later.
+temporaryPermissions: []
+questAcceptDialog:
+- '&e[Wallitz]&f I place my full trust in you to complete this mission, you have a
+  strong will. Go to The Temple and destroy The Void Bell.'
+- '&7&oI have a really bad feeling about this.'
+questCompleteMessage:
+- '&e[Wallitz]&f So it is done. As could be expected from our number one guild member!
+  I heard that destroying The Void Bell released quite a shock-wave of energy. This
+  was quite of an adventure, who knew we would end up going into the Nether.'
+- '&e[Wallitz]&f Excuse me, but I must go and write an extensive report on what we
+  have uncovered. Powerful artifacts forming in the Nether is not good news, I must
+  make sure this discovery is shared with as many people as possible.'
+- '&7&oThe ringing in your head is still there but it is growing weaker, with enough
+  time it should go away completely.'
+questCompleteCommands: []
+turnInNPC: story_dungeons_quest_giver.yml
+QuestLevel: 0

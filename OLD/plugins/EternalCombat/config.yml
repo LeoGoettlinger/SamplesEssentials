@@ -1,0 +1,580 @@
+#  
+#  _____ _     EternalCombat      _ _____                 _           _    
+# |  ___| |  o()xxx[{:::::::::>  | /  __ \               | |         | |   
+# | |__ | |_ ___ _ __ _ __   __ _| | /  \/ ___  _ __ ___ | |__   __ _| |_  
+# |  __|| __/ _ \ '__| '_ \ / _` | | |    / _ \| '_ ` _ \| '_ \ / _` | __| 
+# | |___| ||  __/ |  | | | | (_| | | \__/\ (_) | | | | | | |_) | (_| | |_  
+# \____/ \__\___|_|  |_| |_|\__,_|_|\____/\___/|_| |_| |_|_.__/ \__,_|\__| 
+#  
+#  
+# Settings for the plugin.
+# Modify these to customize the plugin's behavior.
+settings:
+  # Notify players about new plugin updates when they join the server.
+  # Set to 'true' to enable update notifications, or 'false' to disable them.
+  notifyAboutUpdates: false
+  # The duration (in seconds) that a player remains in combat after being attacked.
+  # After this time expires, the player will no longer be considered in combat.
+  combatTimerDuration: 20s
+  # List of worlds where combat logging is disabled.
+  # Players in these worlds will not be tagged or affected by combat rules.
+  ignoredWorlds:
+  - minigames
+
+#  
+# Settings related to Ender Pearls.
+# Configure cooldowns, restrictions, and other behaviors for Ender Pearls during combat.
+pearl:
+  # Is pearl damage to be enabled?
+  # This will work globally
+  pearlThrowDamageEnabled: true
+  # Set true, If you want to disable throwing pearls during combat
+  # This will work globally, but can be overridden by region settings
+  pearlThrowDisabledDuringCombat: true
+  # Set true, If you want add cooldown to pearls
+  pearlCooldownEnabled: true
+  # Block throwing pearls with delay?
+  # If you set this to for example 3s, player will have to wait 3 seconds before throwing another pearl
+  pearlThrowDelay: 10s
+  # Message sent when player tries to throw ender pearl, but are disabled
+  pearlThrowBlockedDuringCombat: <red>Werfen von Enderperlen ist im Kampf verboten!
+  # Message sent when player tries to throw ender pearl, but has delay
+  pearlThrowBlockedDelayDuringCombat: <red>Du musst {TIME} warten, bevor du die nächste Perle werfen kannst!
+
+#  
+# Custom effects applied during combat.
+# Configure effects like blindness, slowness, or other debuffs that are applied to players in combat.
+effect:
+  # Do you want to add effects to players in combat?
+  customEffectsEnabled: false
+  # If the option above is set to true, you can add effects to players in combat below
+  # You can find a list of all potion effects here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
+  # Correct format: 'EFFECT_TYPE:AMPLIFIER' Amplifier strength starts from 0, so level 1 gives effect strength 2
+  # Example: SPEED:1, RESISTANCE:0
+  customEffects:
+    DAMAGE_RESISTANCE: 0
+    SPEED: 1
+
+#  
+# This section contains effects displayed on death of the player
+death:
+  # Settings related to lightning effect upon death
+  # Setting both afterEveryDeath and inCombat to false will disable this feature completely
+  lightning:
+    # Should lightning spawn on every death?
+    afterEveryDeath: false
+    # Should lightning spawn on ONLY deaths in combat?
+    inCombat: true
+  # Settings for the Arc Raiders style flare (firework)
+  # Setting both afterEveryDeath and inCombat to false will disable this feature completely
+  firework:
+    # Should firework (flare) spawn on every death?
+    afterEveryDeath: false
+    # Should firework (flare) spawn on ONLY deaths in combat? (Simuliert deine "fire_particles")
+    inCombat: true
+    # Power of firework - how long till explosion (please enter positive number)
+    power: 1
+    # The firework (flare) effect type (BALL, BALL_LARGE, STAR, BURST, CREEPER)
+    # Reference: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html
+    fireworkType: BURST
+    # Hex color for the firework (flare)
+    primaryColor: '#ff4500'
+    # Hex color for the fade of firework (flare)
+    fadeColor: '#8b0000'
+    # Toggle on/off additional particles spawned in the firework (flare) path
+    particlesEnabled: true
+    # The main trail particle (e.g., CAMPFIRE_COSY_SMOKE, SMOKE_LARGE)
+    # Reference: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+    mainParticle: FLAME
+    # Count of main particles spawned on each tick
+    mainParticleCount: 5
+    # The secondary trail particle (e.g., CAMPFIRE_COSY_SMOKE, SMOKE_LARGE)
+    # Reference: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html
+    secondaryParticle: LARGE_SMOKE
+    # Count of secondary particles spawned on each tick
+    secondaryParticleCount: 3
+
+#  
+# Customize how items are dropped when a player dies during combat.
+# Configure whether items drop, how they drop, and any additional rules for item drops.
+drop:
+  # The event priority at which the head drop logic should run.
+  # Options: LOWEST, LOW, NORMAL, HIGH, HIGHEST, MONITOR
+  # Useful if you want to control when drops are processed relative to other plugins.
+  # Default: NORMAL
+  dropEventPriority: LOW
+  # UNCHANGED - The default way of item drop defined by the engine
+  # PERCENT - Drops a fixed percentage of items
+  # PLAYERS_HEALTH - Drops inverted percentage of the player's health (i.e. if the player has, for example, 80% HP, he will drop 20% of items. Only works when the player escapes from combat by quiting game)
+  dropType: UNCHANGED
+  # What percentage of items should drop from the player? (Only if Drop Type is set to PERCENT)
+  dropItemPercent: 100
+  # This option is responsible for the lowest percentage of the player that can drop (i.e. if the player leaves the game while he has 100% of his HP, the percentage of items that is set in this option will drop, if you set this option to 0, then nothing will drop from such a player)
+  playersHealthPercentClamp: 20
+  # Does the drop modification affect the experience drop?
+  affectExperience: false
+  
+  # If true, players can drop their head on death based on chance settings below.
+  headDropEnabled: false
+  # Chance for a head to drop on death (0-100).
+  # Set to 0 to disable even if feature is enabled.
+  # Example: 25.0 means 25% chance.
+  headDropChance: 0.0
+  # Only drop the head if the player was in combat at time of death.
+  headDropOnlyInCombat: true
+  # The display name of the dropped head.
+  # Placeholders: {PLAYER}, {KILLER}
+  # Example: "{PLAYER}'s Head"
+  headDropDisplayName: '{PLAYER}''s Head'
+  # Lore lines shown on the head item.
+  # Placeholders: {PLAYER}, {KILLER}
+  # Set to [] to disable lore entirely.
+  headDropLore:
+  - Slain by {KILLER}
+  - Collected in battle
+
+#  
+# Settings related to knockback during combat.
+# Configure knockback settings and behaviors for players in combat.
+knockback:
+  # Horizontal knockback strength multiplier.
+  # This controls how far the player is pushed horizontally.
+  #
+  # Applied in: direction.multiply(multiplier)
+  # Example: 1.0 ≈ 2–4 blocks push
+  multiplier: 1.0
+  # Vertical velocity applied when the player is considered on ground.
+  #
+  # Used when Y velocity is near zero (< 0.08).
+  # Higher values = more upward knockback.
+  # Recommended: 0.15 - 0.3
+  vertical: 0.2
+  # Force teleport settings for players that fail to be knocked back outside the region.
+  # If a player cannot be knocked back outside the region after multiple attempts,
+  # they will be teleported to a safe location outside the region after a short delay.
+  # This ensures players don't get stuck inside the region due to knockback failures.
+  forceTeleport:
+    # Delay before force teleport is applied after entering a region.
+    # Recommended: 1-3 seconds to allow knockback attempts before teleporting.
+    delay: 1s
+    # Blocks that are considered unsafe to stand on when searching for ground.
+    # These blocks will be ignored during safe ground detection.
+    #
+    # Used in findSafeGround():
+    # - Skips these blocks even if they are solid
+    # - Prevents teleporting onto dangerous or invalid blocks
+    #
+    # Examples:
+    # - BARRIER (invisible collision)
+    # - LAVA / WATER (damage / movement issues)
+    # - CACTUS / MAGMA (damage blocks)
+    unsafeGroundBlocks:
+    - BARRIER
+    - BEDROCK
+    - BUBBLE_COLUMN
+    - CACTUS
+    - COBWEB
+    - FIRE
+    - LAVA
+    - MAGMA_BLOCK
+    - POWDER_SNOW
+    - SEAGRASS
+    - SOUL_FIRE
+    - SWEET_BERRY_BUSH
+    - TALL_SEAGRASS
+    - TNT
+    - WATER
+    - WITHER_ROSE
+    # Safe blocks that players can be teleported into
+    # These blocks don't cause damage and allow free movement
+    # Players can safely spawn in these blocks or pass through them
+    # Includes air, grass, flowers, and other non-solid blocks
+    airBlocks:
+    - ACTIVATOR_RAIL
+    - AIR
+    - ALLIUM
+    - AZURE_BLUET
+    - BLUE_ORCHID
+    - CAVE_AIR
+    - COMPARATOR
+    - CORNFLOWER
+    - CRIMSON_FUNGUS
+    - CRIMSON_ROOTS
+    - DANDELION
+    - DEAD_BUSH
+    - DETECTOR_RAIL
+    - LARGE_FERN
+    - LEVER
+    - LILAC
+    - LILY_OF_THE_VALLEY
+    - ORANGE_TULIP
+    - OXEYE_DAISY
+    - PEONY
+    - PINK_TULIP
+    - POPPY
+    - POWERED_RAIL
+    - RAIL
+    - REDSTONE_TORCH
+    - REDSTONE_WALL_TORCH
+    - REDSTONE_WIRE
+    - RED_TULIP
+    - REPEATER
+    - ROSE_BUSH
+    - SEAGRASS
+    - SHORT_GRASS
+    - SNOW
+    - SOUL_TORCH
+    - SOUL_WALL_TORCH
+    - STRING
+    - STRUCTURE_VOID
+    - SUNFLOWER
+    - TALL_GRASS
+    - TALL_SEAGRASS
+    - TORCH
+    - VINE
+    - VOID_AIR
+    - WALL_TORCH
+    - WARPED_FUNGUS
+    - WARPED_ROOTS
+    - WHITE_TULIP
+    - WITHER_ROSE
+
+#  
+# Border Settings
+# Configure the border that appears during combat.
+border:
+  # Border view distance in blocks
+  distance: 6.5
+  #  
+  # Border block animation settings
+  # Configure the block animation that appears during combat.
+  block:
+    # Enable block animation? (Deaktiviert, da du keinen Forcefield/Claim-Schutz nutzt)
+    enabled: false
+    # Block type used for rendering the border
+    # Custom: RAINBOW_GLASS, RAINBOW_WOOL, RAINBOW_TERRACOTTA, RAINBOW_CONCRETE
+    # Vanilla: https://javadocs.packetevents.com/com/github/retrooper/packetevents/protocol/world/states/type/StateTypes.html
+    type: RAINBOW_GLASS
+    # Delay between each async animation update (need restart to apply)
+    # Lower values will decrease performance but will make the animation smoother
+    # Higher values will increase performance
+    updateDelay: 250ms
+    # Delay between each chunk cache update (need restart to apply)
+    # Lower values will decrease performance
+    # Higher values will increase performance but may cause overlapping existing blocks (this does not modify the world)
+    chunkCacheDelay: 300ms
+  #  
+  # Border particle animation settings
+  # Configure the particle animation that appears during combat.
+  particle:
+    # Enable particle animation? (Deaktiviert, da du keinen Forcefield/Claim-Schutz nutzt)
+    enabled: false
+    # Particle type - https://javadocs.packetevents.com/com/github/retrooper/packetevents/protocol/particle/type/ParticleTypes.html
+    type: DUST
+    # Particle color (used only for DUST or ENTITY_EFFECT particle type)
+    # You can set hex color e.g. "#ca4c45" or use "RAINBOW" to generate rainbow gradient based on x and z coordinates.
+    color: RAINBOW
+    count: 1
+    scale: 1.7
+    maxSpeed: 0.0
+    offsetX: 0.2
+    offsetY: 0.2
+    offsetZ: 0.2
+
+#  
+# Settings related to block placement during combat.
+# Configure restrictions and behaviors for block placement while players are in combat.
+blockPlacement:
+  # Prevent players from placing blocks during combat.
+  # Set to 'true' to block block placement while in combat.
+  disableBlockPlacing: false
+  # Restrict block placement above or below a specific Y coordinate.
+  # Available modes: ABOVE (blocks cannot be placed above the Y coordinate), BELOW (blocks cannot be placed below the Y coordinate).
+  blockPlacementMode: ABOVE
+  # Custom name for the block placement mode used in messages.
+  # This name will be displayed in notifications related to block placement restrictions.
+  blockPlacementModeDisplayName: above
+  # Define the Y coordinate for block placement restrictions.
+  # This value is relative to the selected block placement mode (ABOVE or BELOW).
+  blockPlacementYCoordinate: 40
+  # Restrict the placement of specific blocks during combat.
+  # Add blocks to this list to prevent their placement. Leave the list empty to block all blocks.
+  # Note: This feature requires 'disableBlockPlacing' to be enabled.
+  restrictedBlockTypes: []
+
+#  
+# Settings related to crystal PvP.
+# Configure behaviors, restrictions, and features specific to crystal PvP combat.
+crystalPvp:
+  # Should player be tagged when damaged from crystal explosion set by other player
+  tagFromCrystals: true
+  #Should player be tagged when damaged from respawn anchor explosion set by other player
+  tagFromRespawnAnchor: true
+
+#  
+# Settings related to commands during combat.
+# Configure command restrictions and behaviors for players in combat.
+commands:
+  # Set the mode for command restrictions during combat.
+  # Available modes: WHITELIST (only listed commands are allowed), BLACKLIST (listed commands are blocked).
+  commandRestrictionMode: WHITELIST
+  # List of commands affected by the command restriction mode.
+  # In BLACKLIST mode, these commands are blocked. In WHITELIST mode, only these commands are allowed.
+  restrictedCommands:
+  - msg
+  - r
+  - reply
+  - tell
+  - w
+  - whisper
+  - shop
+  - buy
+  - sell
+  - ah
+  - email
+  - teamchat
+  - clanchat
+  - combat
+  - ec
+  - enderchest
+
+#  
+# Settings related to the plugin's admin commands and features.
+# Configure admin-specific settings and behaviors for the plugin.
+admin:
+  # Exclude server administrators from combat tagging and being tagged.
+  # Set to 'true' to prevent admins from being tagged or tagging others.
+  # Set to 'false' to allow admins to participate in combat.
+  excludeAdminsFromCombat: true
+  # Exclude players in creative mode from combat tagging and being tagged.
+  # Set to 'true' to prevent creative mode players from being tagged or tagging others.
+  # Set to 'false' to allow creative mode players to participate in combat.
+  excludeCreativePlayersFromCombat: true
+
+#  
+# Settings related to regions.
+# Configure region-specific settings and behaviors for combat.
+regions:
+  # List of regions where combat is restricted.
+  # Players in these regions will not be able to engage in combat.
+  blockedRegions: []
+  # Prevent players from entering regions where PVP is disabled by WorldGuard.
+  # Set to 'true' to enforce this restriction, or 'false' to allow PVP in all regions.
+  preventPvpInRegions: false
+  # Define the radius of restricted regions if WorldGuard is not used.
+  # This setting is based on the default spawn region.
+  restrictedRegionRadius: 10
+
+#  
+# Settings related to combat and player tagging.
+# Configure combat rules, and behaviors for player tagging.
+combat:
+  # Automatically release the attacker from combat when the victim dies.
+  # Set to 'true' to enable this feature, or 'false' to keep the attacker in combat.
+  releaseAttackerOnVictimDeath: true
+  # Disable the use of elytra during combat.
+  # Set to 'true' to prevent players from using elytra while in combat.
+  disableElytraUsage: false
+  # Disable the use of elytra when a player takes damage.
+  # Set to 'true' to disable elytra usage upon taking damage, even when the player is mid-air.
+  disableElytraOnDamage: false
+  # Prevent players from flying during combat.
+  # Flying players will fall to the ground if this is enabled.
+  disableFlying: false
+  # Forcefully unequip elytra when a player enters combat.
+  # This prevents players from abusing glide by jumping before being tagged.
+  # The elytra will be moved to the player's inventory.
+  # Recommended: true
+  unequipElytraOnCombat: false
+  # Prevent players from boosting themselves while flying with fireworks
+  # This setting blocks usage of fireworks to boost elytra flight during combat
+  disableFireworks: false
+  # Enable or disable combat logging for damage caused by non-player entities.
+  # Set to 'true' to log damage from non-player sources, or 'false' to disable this feature.
+  enableDamageCauseLogging: false
+  # Set the mode for logging damage causes.
+  # Available modes: WHITELIST (only listed causes are logged), BLACKLIST (all causes except listed ones are logged).
+  damageCauseRestrictionMode: WHITELIST
+  # List of damage causes to be logged based on the selected mode.
+  # In WHITELIST mode, only these causes are logged. In BLACKLIST mode, all causes except these are logged.
+  # For a full list of damage causes, visit: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html
+  loggedDamageCauses:
+  - LAVA
+  - CONTACT
+  - FIRE
+  - FIRE_TICK
+  # List of projectile types that do not trigger combat tagging.
+  # Players hit by these projectiles will not be tagged as in combat.
+  # For a full list of entity types, visit: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
+  ignoredProjectileTypes:
+  - ENDER_PEARL
+  - EGG
+  # The event priority at which quit punishments should be handled.
+  # This determines when the plugin processes combat log punishment during PlayerQuitEvent.
+  # Options: LOWEST, LOW, NORMAL, HIGH, HIGHEST, MONITOR
+  # Tip: Set to LOWEST or LOW if you want quit punishments to happen before most other plugins.
+  # Default: NORMAL
+  quitPunishmentEventPriority: LOW
+  # List of kick reasons where players will NOT be punished for combat logging.
+  # If this list is empty, players are ALWAYS punished when kicked during combat.
+  # If one of the listed phrases is found in the kick reason (case-insensitive),
+  # the player will NOT be punished.
+  # Example: 'Timed out', 'Kicked for inactivity', etc.
+  # To always punish players on kick, set: whitelistedKickReasons: []
+  whitelistedKickReasons:
+  - Kicked for inactivity
+  - Timed out
+  - Server is restarting
+
+#  
+# Settings related to inventory access during combat.
+# Configure which inventories players can or cannot access while in combat.
+inventory:
+  # Inventory access restriction mode during combat
+  # ALLOW_ALL - Players can open all inventories during combat
+  # BLOCK_ALL - Players cannot open any inventories during combat
+  # BLACKLIST - Block only inventories listed in restrictedInventoryTypes
+  # WHITELIST - Allow only inventories listed in restrictedInventoryTypes
+  inventoryAccessMode: ALLOW_ALL
+  # List of inventory types to restrict or allow (depending on the mode)
+  # In BLACKLIST mode: these inventories will be blocked
+  # In WHITELIST mode: only these inventories will be allowed
+  # Available types: CHEST, ENDER_CHEST, DISPENSER, DROPPER, FURNACE, WORKBENCH,
+  # CRAFTING, ENCHANTING, BREWING, MERCHANT, BEACON, ANVIL, SMITHING, HOPPER,
+  # SHULKER_BOX, BARREL, BLAST_FURNACE, LECTERN, SMOKER, LOOM, CARTOGRAPHY,
+  # GRINDSTONE, STONECUTTER, COMPOSTER, CHISELED_BOOKSHELF, JUKEBOX, SMITHING_NEW,
+  # CRAFTER, DECORATED_POT
+  # Note: PLAYER and CREATIVE inventories are never blocked to prevent game-breaking issues
+  # Full list: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/inventory/InventoryType.html
+  restrictedInventoryTypes: []
+
+#  
+# Settings related to placeholders used in the plugin.
+# Configure default values returned by placeholders
+placeholders:
+  # Text returned by %eternalcombat_isInCombat_formatted% placeholder when the player is in combat
+  isInCombatFormattedTrue: Im Kampf
+  # Text returned by %eternalcombat_isInCombat_formatted% placeholder when the player is out of combat
+  isInCombatFormattedFalse: Nicht im Kampf
+
+#  
+# Customize the messages displayed by the plugin.
+# Modify these to change the text and formatting of notifications and alerts.
+messagesSettings:
+  # Customize messages related to admin commands and notifications.
+  # These messages are displayed to server administrators.
+  admin:
+    # Message displayed when the console attempts to use a player-only command.
+    # This message informs the console that the command is not available for non-players.
+    onlyForPlayers: <gradient:red:dark_red>❌ Dieser Befehl ist nur für Spieler!</gradient>
+    # Message displayed to an admin when they tag a player.
+    # The {PLAYER} placeholder is replaced with the tagged player's name.
+    adminTagPlayer: <gradient:#00b3ff:#0066ff>⚔ <gray>Spieler markiert:</gray> <white>{PLAYER}</white></gradient>
+    # Message displayed when an admin tags multiple players.
+    # The {FIRST_PLAYER} and {SECOND_PLAYER} placeholders are replaced with the players' names.
+    adminTagMultiplePlayers: <gradient:#00b3ff:#0066ff>⚔ <gray>Markiert:</gray> <white>{FIRST_PLAYER}</white> <gray>und</gray> <white>{SECOND_PLAYER}</white></gradient>
+    # Message displayed to an admin when they remove a player from combat.
+    # The {PLAYER} placeholder is replaced with the player's name.
+    adminUntagPlayer: <gradient:#00ff88:#00b300>✌ <gray>Kampfmarkierung von</gray> <white>{PLAYER}</white> <gray>entfernt</gray></gradient>
+    # Message displayed to an admin when they remove a player from combat.
+    # The {PLAYER} placeholder is replaced with the player's name.
+    adminUntagAll: <gradient:#00ff88:#00b300>✌ <gray>Kampfmarkierung von</gray> <white>{COUNT}</white> <gray>Spielern entfernt</gray></gradient>
+    # Message displayed when an admin attempts to untag a player who is not in combat.
+    # This message informs the admin that the player is not currently in combat.
+    adminPlayerNotInCombat: <gradient:red:dark_red>❌ <white>{PLAYER}</white> ist nicht im Kampf!</gradient>
+    # Message displayed when a player is in combat.
+    # The {PLAYER} placeholder is replaced with the player's name.
+    playerInCombat: <gradient:#ff6666:#ff0000>⚔ <white>{PLAYER}</white> <gray>ist im Kampf!</gray></gradient>
+    # Message displayed when a player is not in combat.
+    # The {PLAYER} placeholder is replaced with the player's name.
+    playerNotInCombat: <gradient:#00ff00:#00b300>✌ <white>{PLAYER}</white> <gray>ist sicher</gray></gradient>
+    # Message displayed when an admin attempts to tag themselves.
+    # This message informs the admin that they cannot tag themselves.
+    adminCannotTagSelf: <gradient:red:dark_red>❌ Du kannst dich nicht selbst markieren!</gradient>
+    # Message displayed when an admin disables combat tagging for themselves.
+    # The {TIME} placeholder is replaced with the remaining fight time.
+    adminTagOutSelf: <gradient:#00b3ff:#0066ff>🛡 <gray>Eigener Schutz aktiv für</gray> <white>{TIME}</white></gradient>
+    # Message displayed when an admin disables combat tagging for another player.
+    # The {PLAYER} placeholder is replaced with the player's name.
+    # The {TIME} placeholder is replaced with the remaining fight time.
+    adminTagOut: <gradient:#00b3ff:#0066ff>🛡 <gray>Geschützt</gray> <white>{PLAYER}</white> <gray>für</gray> <white>{TIME}</white></gradient>
+    # Message displayed to a player when their combat tagging is disabled.
+    # The {TIME} placeholder is replaced with the remaining fight time.
+    playerTagOut: <gradient:#00ff88:#00b300>🛡 <gray>Schutz aktiv für</gray> <white>{TIME}</white></gradient>
+    # Message displayed when an admin reenables combat tagging for a player.
+    # The {PLAYER} placeholder is replaced with the player's name.
+    adminTagOutOff: <gradient:#00ff88:#00b300>✌ <gray>Markierung für</gray> <white>{PLAYER}</white> <gray>wieder aktiviert</gray></gradient>
+    # Message displayed to a player when their combat tagging is reenabled.
+    # This message informs the player that they can now be tagged again.
+    playerTagOutOff: ''
+    # Message displayed when an admin attempts to tag a player who has tag-out enabled.
+    # This message informs the admin that the player cannot be tagged at this time.
+    adminTagOutCanceled: <gradient:red:dark_red>❌ Spieler hat Schutz vor Markierung!</gradient>
+    # Message displayed when an admin checks combat statistics.
+    # The {COUNT} placeholder is replaced with the number of players currently in combat.
+    combatStats: <gradient:#ff6666:#ff0000>⚔ <gray>Spieler im Kampf:</gray> <white>{COUNT}</white></gradient>
+  
+  #  
+  # Configure the combat log notification displayed to players.
+  # You can use the {TIME} variable to display the remaining combat time.
+  #  
+  combatNotification:
+    actionbar: 'Combat <red>{TIME}</red>'
+  # Would you like to display milliseconds instead of seconds in combat notification 
+  withoutMillis: true
+  # Message displayed when a player lacks permission to execute a command.
+  # The {PERMISSION} placeholder is replaced with the required permission.
+  noPermission: <gradient:red:dark_red>Du hast keine Berechtigung <dark_gray>(<gray>{PERMISSION}</gray>)</dark_gray> dafür!</gradient>
+  # Message displayed when a specified player is not found.
+  # This message is shown when a command targets a player who is not online or does not exist.
+  playerNotFound: <gradient:#ff0000:#ff6b6b>Spieler nicht gefunden!</gradient>
+  # Message displayed when a player enters combat.
+  # This message warns the player not to leave the server while in combat.
+  playerTagged: <gradient:red:yellow>⚠ <white>Du bist im Kampf!</white> <u>Verlasse nicht den Server!</gradient>
+  # Message displayed when a player leaves combat.
+  # This message informs the player that they can safely leave the server.
+  playerUntagged: <gradient:#00ff00:#00b300>✌ <white>Kampf beendet!</white> Du kannst den Server jetzt sicher verlassen!</gradient>
+  # Broadcast message displayed when a player logs out during combat.
+  # The {PLAYER} placeholder is replaced with the player's name.
+  playerLoggedOutDuringCombat: <gradient:red:dark_red>⚠ <white>{PLAYER}</white> hat sich während des Kampfes ausgeloggt!</gradient>
+  # Message displayed when a player attempts to use a disabled command during combat.
+  # This message informs the player that the command is prohibited while in combat.
+  commandDisabledDuringCombat: <gradient:red:yellow>⚠ <white>Befehl blockiert!</white> Im Kampf nicht verfügbar!</gradient>
+  # Message displayed when a player attempts to use an elytra during combat.
+  # This includes gliding, equipping, or having it forcefully removed.
+  # Informs the player that elytra usage is disabled in combat.
+  elytraDisabledDuringCombat: <gradient:red:yellow>⚠ <white>Elytra deaktiviert!</white> Im Kampf nicht nutzbar!</gradient>
+  # Message displayed when a player uses a command with incorrect arguments.
+  # The {USAGE} placeholder is replaced with the correct command syntax.
+  invalidCommandUsage: '<gray>Benutzung: <gradient:gold:yellow>{USAGE}</gradient>'
+  # Message displayed when a player attempts to open their inventory during combat.
+  # This message informs the player that inventory access is blocked while in combat.
+  inventoryBlockedDuringCombat: <gradient:red:dark_red>⚠ <white>Inventar-Zugriff</white> ist im Kampf eingeschränkt!</gradient>
+  # Message displayed when a player attempts to place a block during combat.
+  # The {MODE} placeholder is replaced with the block placement mode (ABOVE/BELOW).
+  # The {Y} placeholder is replaced with the Y coordinate set in the config.
+  blockPlacingBlockedDuringCombat: <gradient:red:yellow>⚠ Blockplatzierung <white>{MODE} Y:{Y}</white> ist eingeschränkt!</gradient>
+  # Message sent to the player using fireworks when fireworks during elytra flight are disabled
+  fireworksDisabled:
+    actionbar: <gradient:red:yellow>⚠ Du kannst im Kampf keine Feuerwerke nutzen ⚠</gradient>
+  # Message displayed when a player attempts to enter a restricted region during combat.
+  # This message informs the player that they cannot enter the region while in combat.
+  cantEnterOnRegion: <gradient:red:dark_red>⚠ Eingeschränkter Bereich!</gradient> <white>Kann im Kampf nicht betreten werden!</white>
+
+# ==============================================================================
+# WICHTIGER HINWEIS ZU FEHLENDEN FEATURES (Kill Rewards & Newbie Protection)
+# ==============================================================================
+# Die von dir genutzten Features "kill_rewards" und "newbie_protection" sind 
+# NICHT Teil der Standard-config.yml von EternalCombat. 
+# 
+# Lösungsmöglichkeiten:
+# 1. Kill Rewards: Prüfe, ob im EternalCombat-Ordner eine separate "rewards.yml" 
+#    oder "punishments.yml" existiert. Falls ja, trage dort deinen Befehl ein:
+#    - 'cheatcoins give {KILLER} 1000'
+#    Falls nicht, benötigst du ein kleines Addon oder ein Plugin wie "CombatReward".
+#
+# 2. Newbie Protection: EternalCombat fokussiert sich rein auf Combat-Logging. 
+#    Für den 10-Minuten-Newbie-Schutz empfiehlt sich ein dediziertes, leichtgewichtiges 
+#    Plugin wie "SpawnShield" oder "NewbieProtect", da dies die Performance schont 
+#    und genau diesen einen Zweck erfüllt, ohne die Combat-Log-Config aufzublähen.
+# ==============================================================================

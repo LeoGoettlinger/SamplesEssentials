@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&f[Mythical] Spun Netherite Helmet'
+material: NETHERITE_HELMET
+level: 20
+lore:
+- '&fProtects that which matters most.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,6
+- PROTECTION_FALL,5
+- PROTECTION_PROJECTILE,10
+- elitemobs:loud_strikes,3
+potionEffects:
+- DAMAGE_RESISTANCE,2,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,22 @@
+isEnabled: true
+name: '&c[Mythical] Ember Gear'
+material: NETHERITE_CHESTPLATE
+level: 45
+lore:
+- '&cFire and smoke given form.'
+- '&cThe armor does not hurt you'
+- '&cwhen worn but it is slightly'
+- '&cuncomfortable to wear.'
+enchantments:
+- PROTECTION_EXPLOSIONS,10
+- PROTECTION_FIRE,7
+- PROTECTION_FALL,6
+- PROTECTION_PROJECTILE,5
+- PROTECTION_ENVIRONMENTAL,4
+- DURABILITY,3
+- elitemobs:loud_strikes,3
+potionEffects:
+- GLOWING,2,target,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

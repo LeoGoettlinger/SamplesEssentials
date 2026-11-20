@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythical] Stone Plate'
+material: DIAMOND_CHESTPLATE
+level: 25
+lore:
+- '&cDoes not provide much protection.'
+enchantments:
+- DAMAGE_UNDEAD,10
+- DAMAGE_ARTHROPODS,6
+- PROTECTION_ENVIRONMENTAL,5
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

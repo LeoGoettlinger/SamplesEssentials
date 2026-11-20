@@ -1,0 +1,18 @@
+isEnabled: true
+material: DIAMOND_CHESTPLATE
+name: '&0Cursed Chestplate'
+lore:
+- '&0&kA shroud of forgotten rituals,'
+- '&0&kthis chestplate binds the wearer'
+- '&0&kto the will of Cthulhu.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,5
+- PROTECTION_FIRE,5
+- PROTECTION_PROJECTILE,5
+- PROTECTION_EXPLOSIONS,5
+- THORNS,4
+- elitemobs:critical_strikes,3
+potionEffects:
+- RESISTANCE,1,self,continuous
+itemType: unique
+scalability: scalable

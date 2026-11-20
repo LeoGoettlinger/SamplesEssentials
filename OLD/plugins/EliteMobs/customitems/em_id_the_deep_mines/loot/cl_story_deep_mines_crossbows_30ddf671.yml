@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&c[$difficulty] Hellfire Crossbow'
+lore:
+- '&cA crossbow that shoots bolts'
+- '&cof pure flame and hatred.'

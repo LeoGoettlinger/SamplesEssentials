@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&0Congregation''s Eye'
+lore:
+- '&0&kThe crest faces inward toward the wearer.'
+- '&0&kIt was made that way deliberately.'
+classLootFamily: DPS_HELMETS

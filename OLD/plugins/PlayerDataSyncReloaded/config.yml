@@ -1,0 +1,77 @@
+# Global Settings
+debug: false
+
+# Auto-Save Settings (Safe guard against crashes)
+autosave:
+  enabled: true
+  interval: 300 # In seconds (5 minutes)
+
+# Exclusion Settings
+exclusions:
+  # Worlds where players will NOT have their data saved/loaded
+  worlds:
+    - "no_sync_world"
+  # Items that will NOT be synced (by Material name)
+  items:
+#    - "BARRIER"
+#    - "BEDROCK"
+
+# Storage Settings
+storage:
+  type: "mariadb" # mysql, mariadb, postgres, mongodb
+  host: "185.213.27.90"
+  port: 3306
+  database: "sc_inventories"
+  username: "root"
+  password: "ye#GS2jwbP&km1kxRnn#"
+  # Connection URL for MongoDB Cloud (Atlas) or advanced setups
+  connection_url: "mongodb+srv://user:pass@host/database"
+
+# Migration Settings (Used only for /pds migrate command)
+# This is the TARGET storage where data will be moved TO.
+migration:
+  legacy: false # Set to true if migrating from the OLD PlayerDataSync version
+  type: "mongodb"
+  host: "localhost"
+  port: 27017
+  database: "minecraft_new"
+  username: "root"
+  password: ""
+  connection_url: ""
+
+# Redis Settings (Highly recommended for cross-server syncing)
+redis:
+  enabled: false
+  host: "localhost"
+  port: 6379
+  password: ""
+  ssl: false
+
+# Security Settings (Safe from decoding)
+security:
+  # 16+ characters for AES encryption. Leave empty to disable.
+  encryption_key: ""
+
+# Sync Settings (true = sync, false = don't sync)
+sync:
+  inventory: true
+  ender_chest: true
+  health: true
+  food: true
+  experience: true
+  potion_effects: true
+  advancements: true
+  statistics: true
+  game_mode: true
+  flight: true
+  location: false
+  attributes: true
+  pdc: true # Persistent Data Container
+  economy: false # Vault Economy
+
+# Message Settings
+messages:
+  prefix: "&8[&bSync&8] &r"
+  sync_started: "&7Syncing your data..."
+  sync_complete: "&aData synced successfully!"
+  sync_failed: "&cFailed to sync your data. Please contact an admin."

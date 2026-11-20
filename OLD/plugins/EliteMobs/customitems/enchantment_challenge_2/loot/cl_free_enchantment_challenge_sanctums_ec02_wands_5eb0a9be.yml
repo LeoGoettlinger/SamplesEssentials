@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: Twitching Twig
+lore:
+- It was tucked behind one very long ear.
+weaponType: WANDS

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: Tiny Conductor
+lore:
+- Wave it like you mean it.
+weaponType: WANDS

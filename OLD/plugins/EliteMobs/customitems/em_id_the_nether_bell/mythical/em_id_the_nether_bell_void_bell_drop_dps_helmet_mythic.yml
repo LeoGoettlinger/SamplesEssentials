@@ -1,0 +1,18 @@
+isEnabled: true
+material: NETHERITE_HELMET
+name: '&d[Mythical] Void Bell Helmet'
+lore:
+- '&dThe helmet is shaped like a bell.'
+- '&dAs you wear it you can hear a faint ringing.'
+- '&dHissing intensifies as you enter combat.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,8
+- DAMAGE_ALL,8
+- DAMAGE_ARTHROPODS,8
+- DAMAGE_UNDEAD,8
+- THORNS,3
+potionEffects:
+- NIGHT_VISION,0,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

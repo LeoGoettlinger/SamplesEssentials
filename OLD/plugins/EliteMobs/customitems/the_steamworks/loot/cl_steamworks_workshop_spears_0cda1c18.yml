@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&bGantry Needle'
+lore:
+- '&bA cable eye remains at the butt of the shaft.'
+- '&bNothing in the workshop could thread it.'

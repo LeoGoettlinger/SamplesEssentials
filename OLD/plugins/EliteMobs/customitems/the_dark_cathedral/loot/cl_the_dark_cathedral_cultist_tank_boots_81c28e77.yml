@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&0Last Worship'
+lore:
+- '&0&kThe heels are dark with candle wax.'
+- '&0&kThe final candles went out together.'
+classLootFamily: TANK_BOOTS

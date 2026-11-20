@@ -1,0 +1,105 @@
+# Hunter Job Configuration
+
+# Job Display Settings
+job:
+  name: "Hunter"
+  short-name: "HT"
+  icon: IRON_SWORD
+  description:
+    - ""
+    - "&#FFFFFFHunt animals and hostile mobs"
+    - "&#FFFFFFto earn money as a hunter!"
+    - ""
+    - "&#FFD700Earnings:"
+    - "&#FFFFFF► Animals: $2.0 - $5.0"
+    - "&#FFFFFF► Hostile Mobs: $4.0 - $15.0"
+    - "&#FFFFFF► Bosses: $50.0 - $100.0"
+    - ""
+    - "&#00FF00Click to view details!"
+
+# Payment Configuration for Killing Entities
+# Format: ENTITY_TYPE: payment_amount
+# Only entities with spawn eggs are included
+payments:
+  # Passive Animals
+  PIG: 2.0
+  COW: 2.5
+  SHEEP: 2.5
+  CHICKEN: 2.0
+  RABBIT: 2.0
+  HORSE: 4.0
+  DONKEY: 4.0
+  MULE: 4.0
+  LLAMA: 3.5
+  TRADER_LLAMA: 3.5
+  CAT: 3.0
+  OCELOT: 3.0
+  WOLF: 3.0
+  PARROT: 3.0
+  FOX: 3.0
+  PANDA: 4.0
+  POLAR_BEAR: 4.0
+  TURTLE: 3.5
+  BEE: 2.0
+  GOAT: 3.0
+  AXOLOTL: 3.5
+  GLOW_SQUID: 3.0
+  SQUID: 2.5
+  DOLPHIN: 4.0
+  STRIDER: 3.5
+  FROG: 2.5
+  TADPOLE: 1.0
+  CAMEL: 4.0
+  SNIFFER: 5.0
+  MOOSHROOM: 3.0
+
+  # Hostile Mobs
+  ZOMBIE: 4.0
+  HUSK: 4.5
+  DROWNED: 5.0
+  ZOMBIE_VILLAGER: 5.0
+  SKELETON: 4.5
+  STRAY: 5.0
+  CREEPER: 5.0
+  SPIDER: 4.0
+  CAVE_SPIDER: 4.5
+  ENDERMAN: 6.0
+  WITCH: 6.0
+  SLIME: 3.0
+  MAGMA_CUBE: 4.0
+  BLAZE: 7.0
+  GHAST: 8.0
+  ZOMBIFIED_PIGLIN: 5.0
+  PIGLIN: 5.0
+  PIGLIN_BRUTE: 8.0
+  HOGLIN: 6.0
+  ZOGLIN: 7.0
+  ENDERMITE: 3.0
+  SILVERFISH: 3.0
+  GUARDIAN: 7.0
+  ELDER_GUARDIAN: 15.0
+  SHULKER: 8.0
+  PHANTOM: 6.0
+  VEX: 5.0
+  EVOKER: 10.0
+  VINDICATOR: 7.0
+  PILLAGER: 6.0
+  RAVAGER: 12.0
+  WITHER_SKELETON: 8.0
+  WARDEN: 30.0
+  BREEZE: 8.0
+
+  # Bosses
+  ENDER_DRAGON: 100.0
+  WITHER: 75.0
+
+  # Neutral Mobs
+  IRON_GOLEM: 8.0
+  SNOW_GOLEM: 2.0
+  ZOMBIE_HORSE: 4.0
+  SKELETON_HORSE: 4.0
+
+  # Other
+  BAT: 1.5
+  VILLAGER: 0.0
+  WANDERING_TRADER: 0.0

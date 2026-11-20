@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&1[$difficulty] Guardian Leggings'
+lore:
+- '&1They protected the Undead Guardian'
+- '&1and now they protect you.'
+classLootFamily: TANK_LEGGINGS

@@ -1,0 +1,50 @@
+# /check SPIELERNAME
+command /check <player>:
+    permission: admin.check
+    permission message: &cDu hast keine Berechtigung für diesen Befehl!
+    trigger:
+        set {_p} to arg-1
+        
+        # Grundlegende Spieler-Infos
+        send "&e========== &c&lCHECK: %{_p}% &e==========" to player
+        send "&7Ping: &e%{_p}'s ping% ms" to player
+        send "&7Gamemode: &e%gamemode of {_p}%" to player
+        send "&7Leben: &c%health of {_p}% / %max health of {_p}% &7Herzen" to player
+        send "&7Hunger: &e%food level of {_p}% / 20" to player
+        send "&7Position: &e%world of {_p}% &7(&e%x-coordinate of {_p}%, %y-coordinate of {_p}%, %z-coordinate of {_p}%&7)" to player
+        send "&e----------------------------------" to player
+        
+        # Rüstung & Inventar-Check
+        send "&c&lRÜSTUNG & INVENTAR:" to player
+        
+        # Helm
+        if helmet of {_p} is set:
+            send "&7- Helm: &a%helmet of {_p}%" to player
+        else:
+            send "&7- Helm: &cKeiner" to player
+            
+        # Brustplatte
+        if chestplate of {_p} is set:
+            send "&7- Brust: &a%chestplate of {_p}%" to player
+        else:
+            send "&7- Brust: &cKeine" to player
+            
+        # Hose
+        if leggings of {_p} is set:
+            send "&7- Hose: &a%leggings of {_p}%" to player
+        else:
+            send "&7- Hose: &cKeine" to player
+            
+        # Schuhe
+        if boots of {_p} is set:
+            send "&7- Schuhe: &a%boots of {_p}%" to player
+        else:
+            send "&7- Schuhe: &cKeine" to player
+            
+        # Hand-Item
+        if tool of {_p} is set:
+            send "&7- Haupt-Hand: &a%tool of {_p}%" to player
+        else:
+            send "&7- Haupt-Hand: &cLeer" to player
+            
+        send "&e==================================" to player

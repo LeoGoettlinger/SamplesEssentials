@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Hard] Obsidian Helmet'
+material: IRON_HELMET
+level: 45
+lore:
+- '&fIt will protect you from a few hits here and there.'
+enchantments:
+- DAMAGE_UNDEAD,5
+- DAMAGE_ALL,3
+- DURABILITY,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

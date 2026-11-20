@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&7Last Ascent'
+lore:
+- '&7The soles carry frost from the forgotten path.'
+classLootFamily: DPS_BOOTS

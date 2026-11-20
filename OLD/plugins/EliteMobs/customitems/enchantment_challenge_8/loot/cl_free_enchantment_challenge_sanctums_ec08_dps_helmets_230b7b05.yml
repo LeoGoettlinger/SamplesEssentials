@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Brow Bunger
+lore:
+- Eyes here, shrap outside.
+classLootFamily: DPS_HELMETS

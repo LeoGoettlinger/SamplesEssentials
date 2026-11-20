@@ -1,0 +1,17 @@
+isEnabled: true
+potionEffects: []
+name: '&e[Normal] Mastercraft Leggings'
+material: NETHERITE_LEGGINGS
+level: 30
+lore:
+- '&eA lot of work was put into these'
+- '&eleggings to make them both'
+- '&ecomfortable and shielding.'
+enchantments:
+- PROTECTION_FIRE,3
+- PROTECTION_ENVIRONMENTAL,5
+- PROTECTION_FALL,4
+- elitemobs:loud_strikes,1
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

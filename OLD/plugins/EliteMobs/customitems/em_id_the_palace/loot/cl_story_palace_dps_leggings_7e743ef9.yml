@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&7Royal Stride'
+lore:
+- '&7The knees bear the wear of countless ceremonies.'
+classLootFamily: DPS_LEGGINGS

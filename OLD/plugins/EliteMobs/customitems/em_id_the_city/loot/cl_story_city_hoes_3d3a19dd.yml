@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&c[$difficulty] Executioner Scythe'
+lore:
+- '&cOnce used for the city''s most'
+- '&cgrim sentences. Its edge still'
+- '&csings with authority.'

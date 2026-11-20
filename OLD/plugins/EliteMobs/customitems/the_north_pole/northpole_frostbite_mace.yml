@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&bFrostbite Mace'
+material: MACE
+lore:
+- '&7Frozen solid in eternal winter,'
+- '&7This mace brings the chill of death.'
+- '&7I''m too much!'
+enchantments:
+- DAMAGE_ALL,3
+- KNOCKBACK,2
+- DURABILITY,3
+- MENDING,1
+potionEffects:
+- SLOW,2,target,onHit
+- SPEED,0,self,continuous
+scalability: scalable
+itemType: unique
+soulbound: true

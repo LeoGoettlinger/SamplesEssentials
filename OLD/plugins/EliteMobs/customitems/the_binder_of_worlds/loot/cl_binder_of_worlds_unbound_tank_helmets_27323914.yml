@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&5Unbroken Firmament'
+lore:
+- '&5A round helm without a maker mark.'
+- '&5Its crown bears four shallow crystal scars.'
+classLootFamily: TANK_HELMETS

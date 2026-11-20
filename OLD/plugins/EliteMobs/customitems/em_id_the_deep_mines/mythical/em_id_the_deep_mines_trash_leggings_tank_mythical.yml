@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Chainmail Pants'
+material: IRON_LEGGINGS
+level: 45
+lore:
+- '&fThese leggings are made out of nothing but chainmail.'
+enchantments:
+- PROTECTION_EXPLOSIONS,7
+- PROTECTION_ENVIRONMENTAL,4
+- DURABILITY,3
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

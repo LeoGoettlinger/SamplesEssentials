@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Sleet Front
+lore:
+- Button up before going outside.
+classLootFamily: DPS_CHESTPLATES

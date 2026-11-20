@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: Jangling Trousers
+lore:
+- Sneaking is out of the question.
+classLootFamily: DPS_LEGGINGS

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&bBench Guard'
+lore:
+- '&bA neat row of screw holes follows the upper edge.'
+- '&bThe bench it protected has not survived.'

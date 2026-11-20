@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&d[Hard] Enchanted Robe'
+material: DIAMOND_CHESTPLATE
+level: 40
+lore:
+- '&dThis enchanted robe enhances'
+- '&dyour combat power.'
+enchantments:
+- DAMAGE_ALL,5
+- DAMAGE_UNDEAD,4
+- PROTECTION_ENVIRONMENTAL,3
+- DURABILITY,2
+potionEffects:
+- INCREASE_DAMAGE,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

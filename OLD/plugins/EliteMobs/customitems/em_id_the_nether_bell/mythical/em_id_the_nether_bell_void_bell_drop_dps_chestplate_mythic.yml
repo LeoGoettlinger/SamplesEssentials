@@ -1,0 +1,17 @@
+isEnabled: true
+material: NETHERITE_CHESTPLATE
+name: '&d[Mythical] Void Bell Chestplate'
+lore:
+- '&dThis chestplate is very heavy.'
+- '&dWearing it makes you feel empowered.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,8
+- DAMAGE_ALL,8
+- DAMAGE_ARTHROPODS,8
+- DAMAGE_UNDEAD,8
+- THORNS,3
+potionEffects:
+- STRENGTH,1,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

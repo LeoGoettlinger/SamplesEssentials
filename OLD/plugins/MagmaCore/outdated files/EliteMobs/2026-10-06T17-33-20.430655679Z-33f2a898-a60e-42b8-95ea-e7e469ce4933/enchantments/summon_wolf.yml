@@ -1,0 +1,5 @@
+name: Summon Wolf
+isEnabled: true
+maxLevelV2: 1
+value: 20.0
+isEnabledForProcedurallyGeneratedItems: false

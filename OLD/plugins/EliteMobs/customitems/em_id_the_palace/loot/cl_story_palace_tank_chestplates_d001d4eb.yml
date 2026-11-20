@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Stoneward Plate'
+lore:
+- '&7The old king''s seal is still clear beneath the dust.'
+classLootFamily: TANK_CHESTPLATES

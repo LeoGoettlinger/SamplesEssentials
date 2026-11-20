@@ -1,0 +1,18 @@
+isEnabled: true
+potionEffects: []
+name: '&d[Mythical] Rune Shield'
+material: SHIELD
+level: 45
+lore:
+- '&dOf dwarven origin. Unfortunately the runes'
+- '&dhave completely faded away and no longer'
+- '&dhave any effect.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,8
+- PROTECTION_PROJECTILE,5
+- PROTECTION_EXPLOSIONS,4
+- DURABILITY,3
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

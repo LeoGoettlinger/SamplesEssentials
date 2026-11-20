@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&c[$difficulty] Slimed Leggings'
+lore:
+- '&cBetter try and not sit down on'
+- '&canything important.'
+classLootFamily: DPS_LEGGINGS

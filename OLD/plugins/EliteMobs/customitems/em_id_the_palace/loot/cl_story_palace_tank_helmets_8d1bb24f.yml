@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Palace Dome'
+lore:
+- '&7The curve echoes the ceiling over the throne.'
+classLootFamily: TANK_HELMETS

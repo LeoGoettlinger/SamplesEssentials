@@ -1,0 +1,90 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: RUN_SCRIPT
+      scripts:
+      - PressurePush
+      - PressurePull
+    - action: PLAY_SOUND
+      sValue: ambient.cave
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+    - action: MESSAGE
+      sValue: '&e[Mob name] &fCome to me...'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+    Cooldowns:
+      local: 400
+      global: 50
+  PressurePush:
+    Zone:
+      shape: CYLINDER
+      radius: 30
+      height: 3
+      Target:
+        targetType: SELF
+        offset: 0,1,0
+        track: true
+    Actions:
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: CLOUD
+      Target:
+        targetType: ZONE_FULL
+        track: true
+        coverage: 0.01
+      repeatEvery: 10
+      times: 18
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+    - action: PUSH
+      vValue: 0,-2,0
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 1
+      times: 180
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+  PressurePull:
+    Zone:
+      shape: SPHERE
+      radius: 16
+      Target:
+        targetType: SELF
+        track: true
+      filter: PLAYER
+    Actions:
+    - action: PUSH
+      RelativeVector:
+        SourceTarget:
+          targetType: NEARBY_PLAYERS
+          range: 15
+        DestinationTarget:
+          targetType: SELF
+          track: true
+        normalize: true
+        multiplier: 0.1
+      Target:
+        targetType: ZONE_FULL
+        track: true
+      repeatEvery: 3
+      times: 60
+      Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

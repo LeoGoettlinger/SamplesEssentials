@@ -1,0 +1,15 @@
+potionEffects: []
+isEnabled: true
+material: NETHERITE_SPEAR
+name: '&bBolt Spear [Hard]'
+lore:
+- '&bA mechanized spear that crackles with'
+- '&belectrical energy stored in capacitor coils.'
+- '&bPerfect for piercing through armor plating.'
+enchantments:
+- IMPALING,4
+- DAMAGE_ALL,3
+- LOYALTY,2
+itemType: UNIQUE
+scalability: scalable
+soulbound: true

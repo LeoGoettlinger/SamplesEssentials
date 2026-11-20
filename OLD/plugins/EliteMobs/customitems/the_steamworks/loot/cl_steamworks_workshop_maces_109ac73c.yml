@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&bSetting Mallet'
+lore:
+- '&bThe head is square only where it never struck anything.'
+- '&bThose corners are getting hard to find.'

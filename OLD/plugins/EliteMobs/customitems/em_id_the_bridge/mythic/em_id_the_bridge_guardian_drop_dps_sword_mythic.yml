@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&dStone Ripper [Mythic]'
+material: DIAMOND_SWORD
+level: 25
+lore:
+- '&cMakes killing monsters twice as fun!'
+enchantments:
+- DAMAGE_ALL,10
+- DAMAGE_UNDEAD,6
+- DAMAGE_ARTHROPODS,5
+- PROTECTION_ENVIRONMENTAL,4
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

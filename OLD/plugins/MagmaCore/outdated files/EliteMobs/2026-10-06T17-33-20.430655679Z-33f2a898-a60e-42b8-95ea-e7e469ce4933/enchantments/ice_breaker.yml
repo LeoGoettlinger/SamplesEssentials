@@ -1,0 +1,6 @@
+name: Ice Breaker
+isEnabled: true
+maxLevelV2: 2
+value: 10.0
+isEnabledForProcedurallyGeneratedItems: false
+maxEnchantmentLevel: 2

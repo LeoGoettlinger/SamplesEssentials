@@ -1,0 +1,48 @@
+isEnabled: true
+name: '&2Free Enchantment Challenges'
+customInfo:
+- All free enchantment challenges!
+dungeonSizeCategory: LAIR
+environment: NORMAL
+protect: true
+contentType: META_PACKAGE
+containedPackages:
+- enchantment_challenge_1_sanctum.yml
+- enchantment_challenge_2_sanctum.yml
+- enchantment_challenge_3_sanctum.yml
+- enchantment_challenge_4_sanctum.yml
+- enchantment_challenge_5_sanctum.yml
+- enchantment_challenge_6_sanctum.yml
+- enchantment_challenge_7_sanctum.yml
+- enchantment_challenge_8_sanctum.yml
+- enchantment_challenge_9_sanctum.yml
+- enchantment_challenge_10_sanctum.yml
+setupMenuDescription:
+- '&2Free challenges that players can randomly'
+- '&2get teleported to when enchanting elite items!'
+dungeonLockoutMinutes: 4320
+# isEnabled: true
+# name: '&2[000-100] &fFree Enchantment Challenges'
+# customInfo:
+# - '&f10 free enchantment challenge dungeons!'
+# dungeonSizeCategory: SANCTUM
+# environment: NORMAL
+# protect: true
+# contentType: META_PACKAGE
+# containedPackages:
+# - enchantment_challenge_10_sanctum.yml
+# - enchantment_challenge_9_sanctum.yml
+# - enchantment_challenge_8_sanctum.yml
+# - enchantment_challenge_7_sanctum.yml
+# - enchantment_challenge_6_sanctum.yml
+# - enchantment_challenge_5_sanctum.yml
+# - enchantment_challenge_4_sanctum.yml
+# - enchantment_challenge_3_sanctum.yml
+# - enchantment_challenge_2_sanctum.yml
+# - enchantment_challenge_1_sanctum.yml
+# setupMenuDescription:
+# - '&2Adds 10 free enchantment challenge sanctums.'
+# - '&2When players enchant items they have a chance'
+# - '&2to be pulled into a randomly selected challenge.'
+# - '&2Winning enchants the item, losing cancels it.'
+dungeonVersion: 9 # Fixed meta pack package name not matching the generated default

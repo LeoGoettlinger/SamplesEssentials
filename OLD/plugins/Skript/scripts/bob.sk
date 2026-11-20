@@ -1,0 +1,30 @@
+# /bob SPIELERNAME [ZEIT] [GRUND]
+command /bob <offline player> [<timespan>] [<text>]:
+    permission: admin.bob
+    permission message: &cDu bist nicht befugt, jemanden zu bobben!
+    trigger:
+        set {_p} to arg-1
+        set {_time} to arg-2
+        set {_reason} to arg-3
+        
+        if {_reason} is not set:
+            set {_reason} to "Du wurdest gebobbt!"
+            
+        if {_time} is set:
+            # Temporärer Ban über LibertyBans
+            execute console command "tempban %{_p}% %{_time}% %{_reason}%"
+            broadcast "&c&l[BOB] &e%{_p}% &7wurde für &b%{_time}% &7gebobbt! (&c%{_reason}%&7)"
+        else:
+            # Permanenter Ban über LibertyBans
+            execute console command "ban %{_p}% %{_reason}%"
+            broadcast "&c&l[BOB] &e%{_p}% &7wurde &cpermanent &7gebobbt! (&c%{_reason}%&7)"
+
+# /unbob SPIELERNAME
+command /unbob <offline player>:
+    permission: admin.bob
+    permission message: &cDu bist nicht befugt, jemanden zu entbobben!
+    trigger:
+        set {_p} to arg-1
+        # Entbannen über LibertyBans
+        execute console command "unban %{_p}%"
+        broadcast "&a&l[UNBOB] &e%{_p}% &7wurde wieder entbobbt!"

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Slush Kickers
+lore:
+- The wet socks are your problem.
+classLootFamily: DPS_BOOTS

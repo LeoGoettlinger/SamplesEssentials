@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&dSabatons of the Siege'
+lore:
+- '&dSoot remains in every joint.'
+classLootFamily: TANK_BOOTS

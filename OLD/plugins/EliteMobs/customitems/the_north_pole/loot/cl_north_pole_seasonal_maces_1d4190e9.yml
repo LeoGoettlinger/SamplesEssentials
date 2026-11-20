@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&aSugarplum Mallet'
+lore:
+- '&7The sweets came out rather flat.'
+- '&7The cook called it a new recipe.'

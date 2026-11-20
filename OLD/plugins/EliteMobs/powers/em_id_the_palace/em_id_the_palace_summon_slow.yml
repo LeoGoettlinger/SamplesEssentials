@@ -1,0 +1,18 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Slow:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    - EliteMobDamagedByPlayerEvent
+    Actions:
+    - action: POTION_EFFECT
+      potionEffectType: SLOW
+      amplifier: 1
+      duration: 60
+      Target:
+        targetType: DIRECT_TARGET
+    Cooldowns:
+      local: 360
+      global: 50
+# Generated with https://magmaguy.com/webapp/webapp.html !

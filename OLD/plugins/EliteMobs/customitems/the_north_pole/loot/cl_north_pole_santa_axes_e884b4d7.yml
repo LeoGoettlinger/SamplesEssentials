@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&cYuletide Chopper'
+lore:
+- '&7One clean cut for every chimney log.'
+- '&7Christmas Eve is a long night.'

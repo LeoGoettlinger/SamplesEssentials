@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&8Procession Striders'
+lore:
+- '&8The knees are stained by the chapel floor.'
+- '&8The stains form no familiar pattern.'
+classLootFamily: DPS_LEGGINGS

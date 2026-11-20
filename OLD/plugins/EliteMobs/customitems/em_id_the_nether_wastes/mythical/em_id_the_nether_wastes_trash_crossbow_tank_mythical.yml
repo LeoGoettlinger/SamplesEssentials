@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Infested Crossbow'
+material: CROSSBOW
+level: 50
+lore:
+- '&fSmells like mold...'
+enchantments:
+- DURABILITY,7
+- PROTECTION_ENVIRONMENTAL,4
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

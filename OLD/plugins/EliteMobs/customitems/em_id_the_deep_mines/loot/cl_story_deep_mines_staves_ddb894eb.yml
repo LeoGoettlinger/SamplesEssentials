@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: WOODEN_SPEAR
+name: '&7Foreman''s Measure'
+lore:
+- '&7The shift marks continue long after the names stop.'
+weaponType: STAVES

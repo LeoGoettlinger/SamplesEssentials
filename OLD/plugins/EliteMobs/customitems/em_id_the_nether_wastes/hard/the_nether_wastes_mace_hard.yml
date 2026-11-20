@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Obsidian Breaker'
+material: MACE
+level: 50
+lore:
+- '&cForged from volcanic obsidian.'
+- '&cIt shatters even the hardest'
+- '&cmaterials with ease.'
+enchantments:
+- DAMAGE_ALL,8
+- KNOCKBACK,3
+- DURABILITY,6
+- FIRE_ASPECT,2
+itemType: unique
+scalability: scalable

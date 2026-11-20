@@ -1,0 +1,12 @@
+potionEffects: []
+isEnabled: true
+material: IRON_BOOTS
+name: '&8Worn Sandals'
+lore:
+- '&8The holes at the bottom'
+- '&8really help with the airflow.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,1
+- PROTECTION_FIRE,1
+itemType: unique
+scalability: scalable

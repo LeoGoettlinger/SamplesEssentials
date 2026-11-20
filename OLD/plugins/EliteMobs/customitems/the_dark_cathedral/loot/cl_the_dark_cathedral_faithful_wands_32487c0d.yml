@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&8Brine Taper'
+lore:
+- '&8A wick is wound around the handle.'
+- '&8It has never been burned.'
+weaponType: WANDS

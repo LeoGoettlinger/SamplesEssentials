@@ -1,0 +1,139 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: ZOMBIE
+isBaby: false
+name: $normalLevel &eNether Shroom
+level: dynamic # 50
+healthMultiplier: 1.2
+damageMultiplier: 0.5
+movementSpeedAttribute: 0.35
+powers:
+- invulnerability_arrow.yml
+- invulnerability_fire.yml
+- filename: attack_blinding.yml
+  difficultyID:
+  - 1
+  - 2
+- filename: attack_gravity.yml
+  difficultyID:
+  - 2
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+frozen: false
+followDistance: 15
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+disguise: custom:em_id_the_nether_wastes_nether_shroom
+customDisguiseData: player em_id_the_nether_wastes_nether_shroom setskin {"id":"ebc6f487-4973-4941-9f41-30f957de3a00","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTY4OTI2NjE1MjExMSwKICAicHJvZmlsZUlkIiA6ICJlOWRlMDE0NjExZDI0NGY5OTVjNmNiMjhkMDk5MWExNSIsCiAgInByb2ZpbGVOYW1lIiA6ICJFbGl6YWJldGhUcnVzcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS80MzZhYzQzNzhjOTlhMGIxYWQ1NjcyNjE4ODIxMGZhNGU2ZDI4YTRhYjk1MWQzYmFlZTM1OTEyNjcwNTI3MGM1IgogICAgfQogIH0KfQ==","signature":"Z057s/MMryjQI0zTUrZDMCSS9+U1pnfY4Gfy1hdZPYBbuZlhOIAxIIRUoeP5fvRBOA6OlOuqsWvH1ihDNhX/KSAmJzIaaCyuCG4yb6ps63v/3mzdO4oJLR2pzB8iOMOBIsBRaEhf6CDhko2C3Moz5SC6Evn9AClt0E8NCXiINOciGU8i8tMM7JYk3JTswW2KWoBC05AO4c6I/FptYIoASpFZuy9Ie3CefRmTNsFfrSXhocWMNiYici9CB6iyz2Fm491U0imJpqx2i20iCuk8J9VbrGpu94i7sbzkZwCl7983RSa+u5k36q3TNmEg03xUlqoB4icOWN+kQc50MJs81IYnvnLqGwLYukiTExPlJ+CmoUE6bLIOQV8g/P8O1OecLw4IXQx9pSKdoUwb/eNNUsQ8Uk7yHtkgCBKN8CCLbN+s5hZ84+zLa1T5ITnrDfm3BBpjJ5yOFq6pK3WF7YuyOfwxrzs69vi/AMTQ68t8UVWzjHOG2nzQKIA3mlSbZ1RIpy5RgpGM3axwzJeTo1rLP4YGewf6XHStPeQkehotbUKcIzuq4hbdMHAZfpcCq0he7oXw6T5ulA4by9cDCLOgQZpZfDZdI4rvgZUkN12jH0WmrfHGqde2qRcoGS4u3tlw3YCXXQCa3UuhGEtkdCDBYQSbhs2i5DTcm7zaTGp38Bg="}],"legacy":false}
+spawnLocations:
+- em_id_the_nether_wastes,47.5,81.5,15.5,0.0,0.0
+- em_id_the_nether_wastes,57.5,81.5,-8.5,0.0,0.0
+- em_id_the_nether_wastes,64.5,81.5,-21.5,0.0,0.0
+- em_id_the_nether_wastes,73.5,82.5,-66.5,0.0,0.0
+- em_id_the_nether_wastes,95.5,82.5,-82.5,0.0,0.0
+- em_id_the_nether_wastes,121.5,76.5,-91.5,0.0,0.0
+- em_id_the_nether_wastes,156.5,74.5,-100.5,0.0,0.0
+- em_id_the_nether_wastes,226.5,72.5,-111.5,0.0,0.0
+- em_id_the_nether_wastes,248.5,60.5,-79.5,0.0,0.0
+- em_id_the_nether_wastes,273.5,59.5,-76.5,0.0,0.0
+- em_id_the_nether_wastes,325.5,55.5,-86.5,0.0,0.0
+- em_id_the_nether_wastes,377.5,51.5,-40.5,0.0,0.0
+- em_id_the_nether_wastes,378.5,51.5,-7.5,0.0,0.0
+- em_id_the_nether_wastes,376.5,50.5,38.5,0.0,0.0
+- em_id_the_nether_wastes,405.5,42.5,87.5,0.0,0.0
+- em_id_the_nether_wastes,382.5,39.5,126.5,0.0,0.0
+- em_id_the_nether_wastes,382.5,39.5,126.5,0.0,0.0
+- em_id_the_nether_wastes,382.5,39.5,126.5,0.0,0.0
+- em_id_the_nether_wastes,366.5,39.5,163.5,0.0,0.0
+- em_id_the_nether_wastes,330.5,39.5,184.5,0.0,0.0
+- em_id_the_nether_wastes,273.5,26.5,195.5,0.0,0.0
+- em_id_the_nether_wastes,268.5,26.5,195.5,0.0,0.0
+- em_id_the_nether_wastes,233.5,28.5,228.5,0.0,0.0
+- em_id_the_nether_wastes,181.5,28.5,219.5,0.0,0.0
+- em_id_the_nether_wastes,181.5,28.5,219.5,0.0,0.0
+- em_id_the_nether_wastes,131.5,37.5,208.5,0.0,0.0
+- em_id_the_nether_wastes,244.5,-8.5,3.5,0.0,0.0
+- em_id_the_nether_wastes,231.5,-14.5,159.5,0.0,0.0
+- em_id_the_nether_wastes,145.5,-5.5,130.5,0.0,0.0
+classLoot: true
+classLootRank: TRASH
+classLootDifficulty: AUTO
+uniqueLootList:
+- filename: em_id_the_nether_wastes_trash_crossbow_tank_normal.yml
+  chance: 0.04
+  difficultyID: 0
+- filename: em_id_the_nether_wastes_trash_crossbow_tank_hard.yml
+  chance: 0.04
+  difficultyID: 1
+- filename: em_id_the_nether_wastes_trash_crossbow_tank_mythical.yml
+  chance: 0.04
+  difficultyID: 2
+- filename: em_id_the_nether_wastes_trash_helmet_tank_normal.yml
+  chance: 0.04
+  difficultyID: 0
+- filename: em_id_the_nether_wastes_trash_helmet_tank_hard.yml
+  chance: 0.04
+  difficultyID: 1
+- filename: em_id_the_nether_wastes_trash_helmet_tank_mythical.yml
+  chance: 0.04
+  difficultyID: 2
+- filename: em_id_the_nether_wastes_trash_leggings_tank_normal.yml
+  chance: 0.04
+  difficultyID: 0
+- filename: em_id_the_nether_wastes_trash_leggings_tank_hard.yml
+  chance: 0.04
+  difficultyID: 1
+- filename: em_id_the_nether_wastes_trash_leggings_tank_mythical.yml
+  chance: 0.04
+  difficultyID: 2
+- filename: em_id_the_nether_wastes_trash_shield_tank_normal.yml
+  chance: 0.04
+  difficultyID: 0
+- filename: em_id_the_nether_wastes_trash_shield_tank_hard.yml
+  chance: 0.04
+  difficultyID: 1
+- filename: em_id_the_nether_wastes_trash_shield_tank_mythical.yml
+  chance: 0.04
+  difficultyID: 2
+- filename: cl_story_nether_wastes_swords_83b45875.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_axes_333869f1.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_bows_cc5e7a54.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_crossbows_1a9685cb.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_tridents_a02afff2.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_hoes_05039adb.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_maces_b1ff4934.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_spears_9bbf0b16.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_staves_9b61ac58.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_wands_a6ec916c.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_dps_helmets_09aa1d2f.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_dps_chestplates_bdf38d96.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_dps_leggings_f42a3272.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_dps_boots_8d90cb1a.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_tank_helmets_14aab8a2.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_tank_chestplates_9a121351.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_tank_leggings_737b8326.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_tank_boots_1f4808ab.yml
+  chance: 1.0
+- filename: cl_story_nether_wastes_shields_3102f87a.yml
+  chance: 1.0

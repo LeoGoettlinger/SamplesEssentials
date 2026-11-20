@@ -1,0 +1,16 @@
+potionEffects: []
+isEnabled: true
+material: BOW
+name: '&4[Hard] Nether Bow'
+lore:
+- '&8The flames of the nether'
+- '&8are imbued within this bow'
+- '&8scorching any that dare'
+- '&8stand in its path.'
+enchantments:
+- FLAME,1
+- POWER,4
+- PUNCH,2
+level: 55
+itemType: unique
+scalability: scalable

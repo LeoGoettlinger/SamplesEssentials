@@ -1,0 +1,84 @@
+id: reefGuardian
+disabled: false
+allowed-rarities:
+  - Common
+  - Rare
+  - Epic
+allowed-fish:
+  Common:
+    - Cod
+    - Atlantic Cod
+    - Rockfish
+    - Tuna
+    - Mackerel
+    - Spanish Mackerel
+    - Salmon
+    - Pufferfish
+    - Tropical Fish
+    - Red Mullet
+    - Anchovy
+    - Haddock
+    - Bluefish
+    - Carp
+    - Silver Carp
+    - Grass Carp
+    - Koi Carp
+    - Black Carp
+    - Lemon Shark
+    - Sea Snail
+    - Eel
+    - Tadpole
+    - Seagull Feather
+  Rare:
+    - Penguin Feather
+    - Nemo
+    - Dory
+    - Squid Ink
+    - Squid
+    - Coral
+    - Jellyfish
+    - Temperate Frog
+    - Cold Frog
+    - Warm Frog
+    - Electric Eel
+    - Sunfish
+    - Goldfish
+  Epic:
+    - Glowing Jellyfish
+    - Dolphin
+    - Turtle
+    - Anemone
+    - Shiny Pickle
+    - Penguin
+    - Axolotl
+    - Rainbow Trout
+    - Crab
+    - Hermit Crab
+    - Whale
+    - Clownfish
+    - Breaded Fish Fillet
+    - Coinfish
+    - Kelpfish
+item:
+  material: FISHING_ROD
+  displayname: "<#00ffff>Reef Guardian Rod"
+  glowing: true
+  head-64: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWQ2MjA2ZGZlMzRkMmVkYzM4MmI1NWI2MDU2ODI1ODRlOWQ4ZWVhMGFjMzVmN2M0NzM4ZGRlY2ZjZmQ5NTlmNyJ9fX0=
+  lore:
+    - "<gray>A rod blessed by the ocean"
+    - "<gray>guardian itself."
+    - ""
+    - "<gray>Specialized for reef dwellers."
+    - ""
+    - "<#00ffff>► Catches Common, Rare & Epic fish"
+recipe:
+  type: shaped
+  shape:
+    - nnn
+    - nfn
+    - sts
+  ingredients:
+    n: nautilus_shell
+    f: fishing_rod
+    s: string
+    t: prismarine

@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&bEcho Bolt'
+description:
+- '&7Missiles can echo and'
+- '&7strike again.'
+skillType: WANDS
+bonusType: PROC
+unlockTier: 3
+baseValue: 1.0
+scalingPerLevel: 0.0
+procChance: 0.1
+displayMaterial: ECHO_SHARD
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Repeats the hit 0.5s later'
+formattedBonusTemplate: $procChance% echo

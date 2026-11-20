@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&5Riftwatch Visor'
+lore:
+- '&5The slit is narrow enough to hide a horizon.'
+- '&5Look through it one world at a time.'
+classLootFamily: DPS_HELMETS

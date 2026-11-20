@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&e[Mythical] Mastercraft Brand'
+material: NETHERITE_SWORD
+level: 30
+lore:
+- '&eYou are uncertain what this blade'
+- '&eis made out of. It seems to have'
+- '&ea great effect against the undead.'
+enchantments:
+- DAMAGE_ALL,6
+- DAMAGE_ARTHROPODS,7
+- DAMAGE_UNDEAD,12
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&2Sluice Chopper'
+lore:
+- '&2Issued after the third blockage fought back.'

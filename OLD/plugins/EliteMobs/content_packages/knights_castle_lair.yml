@@ -1,0 +1,62 @@
+isEnabled: true
+name: '&2[Dynamic] &fThe Knight''s Castle'
+customInfo:
+- '&fChallenge the knights of the castle!'
+dungeonSizeCategory: LAIR
+worldName: em_knight_castle
+environment: NORMAL
+protect: true
+playerInfo: |-
+  Difficulty: &chard
+  $bossCount level $lowestTier Big Boss!
+  &6Face an honorable duel!
+regionEnterMessage: '&fAssault the castle!'
+regionLeaveMessage: '&fNow leaving the castle!'
+startLocation: em_knight_castle,-20.5,6.2,55.5,-120,0
+teleportLocation: em_knight_castle,-33.5,3.5,48.5,-17,0
+dungeonObjectives:
+- filename=the_castle_charlemagne_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: the_knight_castle
+contentLevel: -1
+difficulties:
+- levelSync: '+5'
+  id: 0
+  name: normal
+- levelSync: '+0'
+  id: 1
+  name: hard
+- levelSync: '-5'
+  id: 2
+  name: mythic
+setupMenuDescription:
+- '&2A dynamic Lair!'
+dungeonLockoutMinutes: 4320
+# isEnabled: true
+# name: '&2[Dynamic] &cThe Knight''s Castle'
+# customInfo:
+# - '&fA mighty fortress guarded by'
+# - '&fKing Charlemagne and his knights!'
+# dungeonSizeCategory: LAIR
+# worldName: em_knight_castle
+# environment: NORMAL
+# protect: true
+# dungeonConfigFolderName: the_knight_castle
+# teleportLocation: em_knight_castle,-33.5,3.5,48.5,-17,0
+# startLocation: em_knight_castle,-20.5,6.2,55.5,-120,0
+# dungeonObjectives:
+# - filename=the_castle_charlemagne_p1.yml
+# dungeonLockoutMinutes: 1440
+# contentType: DYNAMIC_DUNGEON
+# contentLevel: -1
+# difficulties:
+# - levelSync: '+5'
+# name: normal
+# id: 0
+# - levelSync: '+0'
+# name: hard
+# id: 1
+# - levelSync: '-5'
+# name: mythic
+# id: 2
+dungeonVersion: 14 # Fixed final boss scripts targeting a static world instead of instances

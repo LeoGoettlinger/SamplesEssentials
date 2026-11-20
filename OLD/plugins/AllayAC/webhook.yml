@@ -1,0 +1,15 @@
+enabled: true
+webhook-url: "https://discord.com/api/webhooks/1524823744785285375/2DHt5hr4KiRR6KtA0iHkG7EajivkZxnTl44at5Xk082pTROZi_FLpu_iVkRTN020FOYd"
+username: "AllayAC"
+format: "**[AllayAC]** `%player%` flagged `%check%` [VL: %vl%] %detail%"
+min-vl-to-send: 5
+batch-interval-ms: 500
+hourly-summary: false
+mention-role-id: ""
+mention-vl-threshold: 50
+feed-from-engine: true
+feed-from-security: true
+feed-from-punishments: true
+embed-title: "**AllayAC Alert**"
+embed-color: "#FF0000"
+include-timestamp: true

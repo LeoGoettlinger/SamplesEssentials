@@ -1,0 +1,79 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: BOSS
+customDisguiseData: player em_id_the_deep_mines_the_pursuer setskin {"id":"ba37b7af-061b-4dff-846f-7bf10fc2d6ba","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTYyOTYyNTY0NjYxNiwKICAicHJvZmlsZUlkIiA6ICJmMTA0NzMxZjljYTU0NmI0OTkzNjM4NTlkZWY5N2NjNiIsCiAgInByb2ZpbGVOYW1lIiA6ICJ6aWFkODciLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTY2Njg3Zjg4MjJmNTJmMWY4ODU0N2E5YTk1ODM4ZDg3MmM3ZWYyM2Y5NGNiZDkyMDE2NDgyYzE0Y2M2OWQwNSIKICAgIH0KICB9Cn0=","signature":"RGNEZObjreuUopyS0DrlSl7BR/wDrU0rp/lugkOfsPT8Im7ivHISYTw92GaWEEy2EF1k3ANyxbzQu0DgBMG4BCR/KJbQMn9mzfvSSzMGNEp9CsreGkjUdLX+hQYAqEsj0rW5KIkXoM+LxYvhzm+/wX+knLOGup6A02t+JSsJRcou0iCP63QfDCxKFBBjl7HQ63GKlf7g+tXzX9hOOSj+U7HYggTb8pXRR+Ld/K+O8lKaMp/slTi7ucTb/g4lbWR0eUawrc/gSIJ1IQYhzRasFv3a4XcL6HkoXJn78owD4iTz60p8gvsuGkhMI9lHsd/hfdAaOChobLU/3Qtt04GWwxvq79ie1CeM96OwkY+o4l0tFSB0RLIv7U5ntzO2a597ZnPXSeIXZfz+L2CVqDJrQVZA2v/AcSLCmhDFY4O/a8ZPgeni8a+pUmQQCzLuAt0UxieiFqybXyjTx0RoXW8o/bgMFqFIMBjQBHsevliZqQsIxzSB2m3dQShpGnQNS/M84wBxhwOHWiefPpM7yel9QaPRdi15RJg5Qow+GmtQlUuDjC4T0ZEri5dN23CNxzyPbL0WLiUZua4O+r1RGryHk1iwbU+NRgjEgD7jzi0Ks3w94RWNtT81ZEmu1YpAg4c9x/palpqu1KVmmei58GUDn7S1QzjdFBnI2sxjqrv0F4o="}],"legacy":false}
+customModel: deep_mines_specter_2
+damageMultiplier: 0.8
+disguise: custom:em_id_the_deep_mines_the_pursuer
+dropsEliteMobsLoot: false
+dropsRandomLoot: false
+dropsVanillaLoot: false
+eliteScript:
+  PushBarrier:
+    Actions:
+    - Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+      Target:
+        targetType: ZONE_FULL
+      action: PUSH
+      repeatEvery: 1
+      vValue: 0,0,1
+    - Conditions:
+        Target:
+          targetType: SELF
+        conditionType: BLOCKING
+        isAlive: true
+      Target:
+        coverage: 0.02
+        targetType: ZONE_FULL
+      action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_LARGE
+      repeatEvery: 10
+    Cooldowns:
+      global: 1
+      local: 99999
+    Events:
+    - EliteMobTargetPlayerEvent
+    - EliteMobDamagedByPlayerEvent
+    Zone:
+      Target:
+        location: same_as_boss,62.5,106,257.5,0,0
+        targetType: LOCATION
+      shape: CUBOID
+      x: 15
+      y: 20
+      z: 2
+entityType: SKELETON
+followDistance: 99
+frozen: false
+healthMultiplier: 12.0
+instanced: true
+isEnabled: true
+isRegionalBoss: true
+level: dynamic # 45
+mainHand: BOW
+movementSpeedAttribute: 0.33
+name: $bossLevel &dNether Fiend
+normalizedCombat: true
+powers:
+- invulnerability_fire.yml
+- difficultyID:
+  - 0
+  filename: em_id_the_deep_mines_pursuer_lava_sweep_0.yml
+- difficultyID:
+  - 1
+  filename: em_id_the_deep_mines_pursuer_lava_sweep_1.yml
+- difficultyID:
+  - 2
+  filename: em_id_the_deep_mines_pursuer_lava_sweep_2.yml
+- difficultyID:
+  - 1
+  filename: arrow_rain.yml
+- difficultyID:
+  - 2
+  filename: attack_freeze.yml
+classLoot: false

@@ -1,0 +1,59 @@
+isEnabled: true
+customObjectives:
+  Objective1:
+    amount: '1'
+    filename: em_id_the_city_mini_boss_one.yml
+    objectiveType: KILL_CUSTOM
+  Objective2:
+    amount: '1'
+    filename: em_id_the_city_mini_boss_three.yml
+    objectiveType: KILL_CUSTOM
+  Objective3:
+    amount: '1'
+    filename: em_id_the_city_royal_guard_p1.yml
+    objectiveType: KILL_CUSTOM
+customRewards:
+- currencyAmount=300:amount=1:chance=1
+- filename=elite_scrap_tiny.yml:amount=1:chance=0.3
+- filename=elite_scrap_small.yml:amount=1:chance=0.2
+- filename=elite_scrap_medium.yml:amount=1:chance=0.1
+- filename=elite_scrap_large.yml:amount=1:chance=0.05
+- filename=elite_scrap_huge.yml:amount=1:chance=0.01
+- filename=enchanted_book_damage_all.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_arthropods.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_undead.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_environmental.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_explosions.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fall.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fire.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_projectile.yml:amount=1:chance=0.1
+- filename=story_dungeons_quest_5_sword.yml:amount=1:chance=1.0
+questAcceptPermission: elitequest.story_dungeons_quest_4_bridged.yml
+questLockoutPermission: elitequest.story_dungeons_quest_5_the_underground.yml
+questLockoutMinutes: 10080
+name: '&2The Underground!'
+questLore:
+- With the guardian gone our scouts were able to go ahead and gather some valuable
+  information.
+- The city is ancient, way older than you, me and this guild.
+- A dwarven city, seems like they settled there a long time ago and were mining in
+  the area.
+- Our scouts have sighted some of the dwarves, but something is wrong.
+- They are just shambling about, but they do not appear undead either.
+- We are not sure what is going on. There is a palace at the end of the city, go down
+  there and clear the way to the palace so our guild can examine the city in more
+  detail.
+temporaryPermissions: []
+questAcceptDialog:
+- '&e[Wallitz]&f Don’t bother trying to talk to the dwarves, we had a guild member
+  try that already. It did not go so well…'
+- '&7&oAn underground city, should be interesting.'
+- '&7Interact with the nearby &fDwarf Olav &7teleporter to start the quest.'
+questCompleteMessage:
+- '&e[Wallitz]&f Our forty-seventh-best guild member returns! I hear from our scouts
+  that the dwarves were completely gone mentally. I wonder if their greed led them
+  to some horrible fate?'
+- '&7&oI should speak to &e&oWallitz&7&o when I am ready to continue.'
+questCompleteCommands: []
+turnInNPC: story_dungeons_quest_giver.yml
+QuestLevel: 0

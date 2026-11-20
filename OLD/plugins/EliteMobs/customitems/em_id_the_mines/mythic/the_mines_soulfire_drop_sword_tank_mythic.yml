@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&2[Mythical] Twilight'
+material: DIAMOND_SWORD
+level: 20
+lore:
+- '&2When the darkness comes, this will keep it at bay.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,10
+- PROTECTION_PROJECTILE,6
+- DAMAGE_ALL,5
+- elitemobs:loud_strikes,3
+potionEffects:
+- GLOWING,1,target,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

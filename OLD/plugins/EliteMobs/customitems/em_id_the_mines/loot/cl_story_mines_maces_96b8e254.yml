@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&c[$difficulty] Soulbound Hammer'
+lore:
+- '&cA hammer infused with captured'
+- '&csouls. Each strike echoes with'
+- '&cthe wails of the damned.'

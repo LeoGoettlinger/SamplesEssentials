@@ -1,0 +1,138 @@
+exempted: '&c&o%TARGET%&7 cannot be punished.'
+clear-track-when-punishment-revoked: false
+tracks:
+  spamming:
+    count-active: true
+    progressions:
+      4:
+        scope: ''
+        type: 'MUTE'
+        duration: 'perm'
+        reason: 'MUTE: Da du spamst was gegen unsere Server-Regeln ist haben wir deine Chat-Ability permanent deaktiviert'
+      3:
+        scope: ''
+        type: 'MUTE'
+        duration: '30d'
+        reason: 'MUTE: Da du spamst was gegen unsere Server-Regeln ist haben wir deine Chat-Ability temporaer deaktiviert'
+      2:
+        scope: ''
+        type: 'WARN'
+        duration: 'perm'
+        reason: 'WARN: Da du spamst verwarnen wir dich hiermit zum 2. mal!'
+      1:
+        scope: ''
+        type: 'WARN'
+        duration: '15d'
+        reason: 'WARN: Da du spamst verwarnen wir dich hiermit!'
+
+  hacking:
+    count-active: false
+    progressions:
+      2:
+        scope: ''
+        type: 'BAN'
+        duration: 'perm'
+        reason: 'HACKING: Da du hackst und damit unsere Server-Regeln missachtet haben wir uns entschieden dich permanent vom Netzwerk auszuschliessen!'
+      1:
+        scope: ''
+        type: 'BAN'
+        duration: '40d'
+        reason: 'HACKING: Da du hackst und damit unsere Server-Regeln missachtet haben wir uns entschieden dich temporaer vom Netzwerk auszuschliessen!'
+
+  hausverbot:
+    count-active: false
+    progressions:
+      1:
+        scope: ''
+        type: 'BAN'
+        duration: 'perm'
+        reason: 'HAUSVERBOT: Da du zu oft unsere Regeln missachtet hast, haben wir entschieden dich permanent vom Server auszuschliessen!'
+
+  auszeit:
+    count-active: false
+    progressions:
+      7:
+        scope: ''
+        type: 'BAN'
+        duration: 'perm'
+        reason: 'HAUSVERBOT: Da du zu oft unsere Regeln missachtet hast, haben wir entschieden dich permanent vom Server auszuschliessen!'
+      6:
+        scope: ''
+        type: 'BAN'
+        duration: '70d'
+        reason: 'AUSZEIT: Da du gegen unsere Regeln verstossen hast, schliessen wir dich temporaer vom Netzwerk aus!'
+      5:
+        scope: ''
+        type: 'BAN'
+        duration: '30d'
+        reason: 'AUSZEIT: Da du gegen unsere Regeln verstossen hast, schliessen wir dich temporaer vom Netzwerk aus!'
+      4:
+        scope: ''
+        type: 'BAN'
+        duration: '5d'
+        reason: 'AUSZEIT: Da du gegen unsere Regeln verstossen hast, schliessen wir dich temporaer vom Netzwerk aus!'
+      3:
+        scope: ''
+        type: 'BAN'
+        duration: '2d'
+        reason: 'AUSZEIT: Da du gegen unsere Regeln verstossen hast, schliessen wir dich temporaer vom Netzwerk aus!'
+      2:
+        scope: ''
+        type: 'BAN'
+        duration: '6h'
+        reason: 'AUSZEIT: Da du gegen unsere Regeln verstossen hast, schliessen wir dich temporaer vom Netzwerk aus!'
+      1:
+        scope: ''
+        type: 'BAN'
+        duration: '15m'
+        reason: 'AUSZEIT: Da du gegen unsere Regeln verstossen hast, schliessen wir dich temporaer vom Netzwerk aus!'
+
+  mute:
+    count-active: false
+    progressions:
+      7:
+        scope: ''
+        type: 'BAN'
+        duration: 'perm'
+        reason: 'HAUSVERBOT: Da du zu oft unsere Regeln missachtet hast, haben wir entschieden dich permanent vom Server auszuschliessen!'
+      6:
+        scope: ''
+        type: 'BAN'
+        duration: '70d'
+        reason: 'AUSZEIT: Da du gegen unsere Regeln verstossen hast, schliessen wir dich temporaer vom Netzwerk aus!'
+      5:
+        scope: ''
+        type: 'BAN'
+        duration: '30d'
+        reason: 'AUSZEIT: Da du gegen unsere Regeln verstossen hast, schliessen wir dich temporaer vom Netzwerk aus!'
+      4:
+        scope: ''
+        type: 'MUTE'
+        duration: '5d'
+        reason: 'CHAT-AUSZEIT: Da du gegen unsere Chat-Regeln verstossen hast, schliessen wir dich temporaer vom Chat des Netzwerks aus!'
+      3:
+        scope: ''
+        type: 'MUTE'
+        duration: '2d'
+        reason: 'CHAT-AUSZEIT: Da du gegen unsere Chat-Regeln verstossen hast, schliessen wir dich temporaer vom Chat des Netzwerks aus!'
+      2:
+        scope: ''
+        type: 'MUTE'
+        duration: '6h'
+        reason: 'CHAT-AUSZEIT: Da du gegen unsere Chat-Regeln verstossen hast, schliessen wir dich temporaer vom Chat des Netzwerks aus!'
+      1:
+        scope: ''
+        type: 'MUTE'
+        duration: '15m'
+        reason: 'CHAT-AUSZEIT: Da du gegen unsere Chat-Regeln verstossen hast, schliessen wir dich temporaer vom Chat des Netzwerks aus!'
+
+conflicting: '&7The punishment cannot be added due to a conflict (i.e. &e%TARGET%&7 is already banned or muted).'
+track-does-not-exist: '&cThe track ''%TRACK_ARG%'' does not exist.'
+success-message: '&aPunished &c&o%VICTIM%&a (&e%TYPE%&a) for &o%DURATION%&r&a because of &e&o%REASON%&a.'
+usage: '&cUsage: /libertybans punish <victim> <track>'
+permission:
+  layouts-generally: '&cSorry, you cannot use layouts.'
+  uuid: '&cYou may not do this to players.'
+  ip-address: '&cYou may not do this to IP addresses.'
+  both: '&cYou may not do this to players and their IP addresses.'
+enable: true

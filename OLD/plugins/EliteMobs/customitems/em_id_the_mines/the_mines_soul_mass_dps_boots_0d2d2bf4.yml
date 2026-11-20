@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&2[$difficulty] Ethereal Boots'
+lore:
+- '&2Walking like a ghost.'
+classLootFamily: DPS_BOOTS

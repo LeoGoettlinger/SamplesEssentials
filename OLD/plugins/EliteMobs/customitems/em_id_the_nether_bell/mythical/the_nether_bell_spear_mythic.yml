@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Nullifier Spear'
+material: NETHERITE_SPEAR
+level: 55
+lore:
+- '&cA spear forged in the void''s'
+- '&cimage. It pierces reality'
+- '&citself, leaving emptiness.'
+enchantments:
+- IMPALING,8
+- DAMAGE_ALL,10
+- DURABILITY,7
+itemType: unique
+scalability: scalable

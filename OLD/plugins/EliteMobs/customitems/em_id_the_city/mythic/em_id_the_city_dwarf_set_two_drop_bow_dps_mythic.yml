@@ -1,0 +1,13 @@
+isEnabled: true
+potionEffects: []
+name: '&a[Mythical] Rotted Bow'
+material: BOW
+level: 30
+lore:
+- '&aSmells lovely.'
+enchantments:
+- DAMAGE_ALL,3
+- DAMAGE_UNDEAD,4
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

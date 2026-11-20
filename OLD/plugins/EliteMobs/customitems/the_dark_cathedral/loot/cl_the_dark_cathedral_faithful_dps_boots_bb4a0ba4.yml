@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&8Salt-Stained Steps'
+lore:
+- '&8Fine grains fall from the heels.'
+- '&8There is always a little more.'
+classLootFamily: DPS_BOOTS

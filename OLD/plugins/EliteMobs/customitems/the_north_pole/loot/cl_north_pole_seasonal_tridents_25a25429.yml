@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&aThree-Pronged Tree Topper'
+lore:
+- '&7The star went missing last December.'
+- '&7This has been up there ever since.'

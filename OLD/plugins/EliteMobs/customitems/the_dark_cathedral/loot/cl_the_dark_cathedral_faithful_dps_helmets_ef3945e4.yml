@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&8Abyssal Lookout'
+lore:
+- '&8The narrow visor faces the open sea.'
+- '&8The watch changes after dark.'
+classLootFamily: DPS_HELMETS

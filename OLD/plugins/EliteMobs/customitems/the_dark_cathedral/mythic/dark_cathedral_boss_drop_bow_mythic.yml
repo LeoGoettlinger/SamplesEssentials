@@ -1,0 +1,20 @@
+isEnabled: true
+material: BOW
+name: '&0Bow of Shadows'
+lore:
+- '&0&kArrows blessed by'
+- '&0&kthe dark gods.'
+enchantments:
+- ARROW_DAMAGE,7
+- ARROW_INFINITE,1
+- DURABILITY,3
+- ARROW_FIRE,1
+- ARROW_KNOCKBACK,2
+potionEffects:
+- DARKNESS,2,target,onHit
+- GLOWING,1,target,onHit
+- WITHER,1,target,onHit
+itemType: unique
+scalability: scalable
+customModelID: 3117304
+soulbound: true

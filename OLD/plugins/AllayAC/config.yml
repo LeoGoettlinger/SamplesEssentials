@@ -1,0 +1,549 @@
+global:
+  enabled: true
+  verbose: true
+messages:
+  language: "de"
+  prefix: "&6&lᴘɪxᴇʟʀᴇᴀʟᴍ &8▸ "
+platform:
+  bedrock:
+    name-prefix: "."
+    exempt-from-checks: true
+    log-joins: true
+  viaversion:
+    version-aware-checks: true
+    log-versions: false
+advanced:
+  self-test-on-startup: true
+  max-ping-for-checks: -1
+  min-tps-for-checks: -1
+database:
+  enabled: true
+  file: "violations.db"
+  flush-interval-ms: 1000
+  max-records-per-player: 1000
+  auto-delete-days: 90
+modules:
+  # ============================================================
+  # 1. AntiVPN — IP/Proxy detection via ip-api.com + ipinfo.io
+  # ============================================================
+  anti-vpn:
+    enabled: true
+    kick-reason: "&c[AllayAC] &fVPN / Proxy connections are not allowed."
+    provider: "both"
+    max-requests-per-hour: 100
+    cache-ttl-hours: 24
+    action: "kick"
+    skip-private-ips: true
+  # ============================================================
+  # 2. AntiBot — IP rate limit + bot-like name patterns
+  # ============================================================
+  anti-bot:
+    enabled: false
+    kick-reason: "&c[AllayAC] &fBot connection detected."
+    max-joins-per-ip: 3
+    max-joins-per-minute: 10
+    flag-name-patterns: [".*\\d{4,}.*", ".*(bot|hack|cheat).*"]
+    action: "kick"
+  # ============================================================
+  # 3. ClientBlocker — BLACKLIST of clients (kick when block=true)
+  #    Each entry: block=true  -> kick the player using this client
+  #                block=false -> log only, player allowed
+  #    Hack clients are NOT listed here — they're in HackBlocker.
+  #    This is the admin's free-form blacklist: flip block=true on
+  #    any legit/utility client to disallow it on the server.
+  # ============================================================
+  client-blocker:
+    enabled: true
+    kick-reason: "&c[AllayAC] &fClient &7%client% &fis not allowed on this server."
+    log-legitimate: true
+    log-unknown: true
+    clients:
+      # --- LEGITIMATE CLIENTS (block: false = allow+log, block: true = kick) ---
+      vanilla:           { name: "Vanilla",          type: legit,      block: false }
+      lunarclient:       { name: "Lunar Client",     type: legit,      block: false }
+      badlion:           { name: "Badlion Client",   type: legit,      block: true }
+      labymod:           { name: "LabyMod",          type: legit,      block: false }
+      feather:           { name: "Feather Client",    type: legit,      block: false }
+      pvplounge:         { name: "PvPLounge",         type: legit,      block: true }
+      # --- MODLOADERS ---
+      forge:             { name: "Forge",             type: modloader,  block: true }
+      fabric:            { name: "Fabric",            type: modloader,  block: false }
+      quilt:             { name: "Quilt",             type: modloader,  block: false }
+      neoforge:          { name: "NeoForge",         type: modloader,  block: false }
+      rift:              { name: "Rift",              type: modloader,  block: true }
+      liteloader:        { name: "LiteLoader",        type: modloader,  block: true }
+      risugamis_modloader: { name: "Risugami's ModLoader", type: modloader, block: true }
+      # --- UTILITY ---
+      optifine:          { name: "OptiFine",          type: utility,    block: true }
+      essentials:        { name: "EssentialsX Brand", type: utility,    block: false }
+      # --- SERVER SOFTWARE ---
+      spigot:            { name: "Spigot",             type: legit,      block: false }
+      paper:             { name: "Paper",              type: legit,      block: false }
+  # ============================================================
+  # 4. HackBlocker — BLOCKS hack clients (single source of truth)
+  #    Each hack-client entry has BOTH `brands` (matched against
+  #    minecraft:brand plugin message) AND `channels` (matched
+  #    against custom registered plugin channels). Use the
+  #    %client% placeholder in kick-reason to include the client
+  #    name in the kick message.
+  # ============================================================
+  hack-blocker:
+    enabled: true
+    kick-reason: "&c[AllayAC] &fHack client &7%client% &fis not allowed."
+    max-payload-size: 32767
+    clients:
+      # --- MAJOR HACK CLIENTS (block: true) ---
+      wurst:
+        block: true
+        name: "Wurst"
+        brands: ["wurst"]
+        channels: ["wurst:main", "wurst:settings"]
+      impact:
+        block: true
+        name: "Impact"
+        brands: ["impact"]
+        channels: ["impact:main", "impact:command"]
+      liquidbounce:
+        block: true
+        name: "LiquidBounce"
+        brands: ["liquidbounce", "liquid_bounce", "lb-client"]
+        channels: ["liquidbounce:main", "lb:channel"]
+      sigma:
+        block: true
+        name: "Sigma"
+        brands: ["sigma"]
+        channels: ["sigma:main"]
+      vape:
+        block: true
+        name: "Vape"
+        brands: ["vape"]
+        channels: ["vape:main", "vape:cosmetics"]
+      ares:
+        block: true
+        name: "Ares"
+        brands: ["ares"]
+        channels: ["ares:main"]
+      salhack:
+        block: true
+        name: "SalHack"
+        brands: ["salhack", "sal_hack"]
+        channels: ["salhack:main"]
+      future:
+        block: true
+        name: "Future"
+        brands: ["future-client", "futureclient"]
+        channels: ["future:main"]
+      novoline:
+        block: true
+        name: "Novoline"
+        brands: ["novoline", "novo"]
+        channels: ["novoline:main"]
+      ricin:
+        block: true
+        name: "Ricin"
+        brands: ["ricin"]
+        channels: ["ricin:main"]
+      frost:
+        block: true
+        name: "Frost"
+        brands: ["frost"]
+        channels: ["frost:main"]
+      meteor:
+        block: true
+        name: "Meteor"
+        brands: ["meteor-client", "meteorclient"]
+        channels: ["meteor:main"]
+      baritone:
+        block: true
+        name: "Baritone"
+        brands: ["baritone"]
+        channels: ["baritone:control", "baritone:paths"]
+      inertia:
+        block: true
+        name: "Inertia"
+        brands: ["inertia"]
+        channels: ["inertia:main"]
+      aristois:
+        block: true
+        name: "Aristois"
+        brands: ["aristois"]
+        channels: ["aristois:main"]
+      delta:
+        block: true
+        name: "Delta"
+        brands: ["delta-client", "deltaclient"]
+        channels: ["delta:main"]
+      doomsday:
+        block: true
+        name: "Doomsday"
+        brands: ["doomsday", "doomsdayclient"]
+        channels: ["doomsday:main"]
+      rusherhack:
+        block: true
+        name: "RusherHack"
+        brands: ["rusherhack", "rusher"]
+        channels: ["rusherhack:main"]
+      iconatic:
+        block: true
+        name: "Iconatic"
+        brands: ["iconatic"]
+        channels: ["iconatic:main"]
+      lithium:
+        block: true
+        name: "Lithium"
+        brands: ["lithium-client", "lithiumclient"]
+        channels: ["lithium:main"]
+      smoke:
+        block: true
+        name: "Smoke"
+        brands: ["smoke"]
+        channels: ["smoke:main"]
+      xulu:
+        block: true
+        name: "Xulu"
+        brands: ["xulu"]
+        channels: ["xulu:main"]
+      akrien:
+        block: true
+        name: "Akrien"
+        brands: ["akrien"]
+        channels: ["akrien:main"]
+      cosmicexplosion:
+        block: true
+        name: "CosmicExplosion"
+        brands: ["cosmicexplosion", "cosmic"]
+        channels: ["cosmic:main"]
+      posionclient:
+        block: true
+        name: "PosionClient"
+        brands: ["posion", "posionclient"]
+        channels: ["posion:main"]
+      ighclient:
+        block: true
+        name: "IGHClient"
+        brands: ["igh", "ighclient"]
+        channels: ["igh:main"]
+      resistanceclient:
+        block: true
+        name: "ResistanceClient"
+        brands: ["resistance", "resistanceclient"]
+        channels: ["resistance:main"]
+      quickrelief:
+        block: true
+        name: "QuickRelief"
+        brands: ["quickrelief", "quick_relief"]
+        channels: ["quickrelief:main"]
+      badcompany:
+        block: true
+        name: "BadCompany"
+        brands: ["badcompany", "bad_company"]
+        channels: ["badcompany:main"]
+      bullish:
+        block: true
+        name: "Bullish"
+        brands: ["bullish"]
+        channels: ["bullish:main"]
+      insolence:
+        block: true
+        name: "Insolence"
+        brands: ["insolence"]
+        channels: ["insolence:main"]
+      spectator:
+        block: true
+        name: "Spectator"
+        brands: ["spectator-client"]
+        channels: ["spectator:main"]
+      zerotwo:
+        block: true
+        name: "ZeroTwo"
+        brands: ["zerotwo", "zero_two"]
+        channels: ["zerotwo:main"]
+      rising:
+        block: true
+        name: "Rising"
+        brands: ["rising"]
+        channels: ["rising:main"]
+      risen:
+        block: true
+        name: "Risen"
+        brands: ["risen"]
+        channels: ["risen:main"]
+      divine:
+        block: true
+        name: "Divine"
+        brands: ["divine"]
+        channels: ["divine:main"]
+      atom:
+        block: true
+        name: "Atom"
+        brands: ["atom-client"]
+        channels: ["atom:main"]
+      bladerunner:
+        block: true
+        name: "BladeRunner"
+        brands: ["bladerunner"]
+        channels: ["bladerunner:main"]
+      nivia:
+        block: true
+        name: "Nivia"
+        brands: ["nivia"]
+        channels: ["nivia:main"]
+      nova:
+        block: true
+        name: "Nova"
+        brands: ["nova-client"]
+        channels: ["nova:main"]
+      weave:
+        block: true
+        name: "Weave"
+        brands: ["weave-client"]
+        channels: ["weave:main"]
+      ascension:
+        block: true
+        name: "Ascension"
+        brands: ["ascension"]
+        channels: ["ascension:main"]
+      richpresence:
+        block: true
+        name: "RichPresence"
+        brands: ["richpresence"]
+        channels: ["richpresence:main"]
+      rich:
+        block: true
+        name: "Rich"
+        brands: ["rich-client"]
+        channels: ["rich:main"]
+      moon:
+        block: true
+        name: "Moon"
+        brands: ["moon-client"]
+        channels: ["moon:main"]
+      serpent:
+        block: true
+        name: "Serpent"
+        brands: ["serpent"]
+        channels: ["serpent:main"]
+      # --- NEW: Drip client (drip.gg) ---
+      drip:
+        block: true
+        name: "Drip"
+        brands: ["drip", "dripclient", "drip-client"]
+        channels: ["drip:main", "drip:command"]
+      # --- ADD MORE HACK CLIENTS HERE ---
+      # Format:
+      #   client-key:
+      #     block: true
+      #     name: "Display Name"
+      #     brands: ["brand1", "brand2"]
+      #     channels: ["channel1", "channel2"]
+  # ============================================================
+  # 5. ModBlocker — blocks known Minecraft mods
+  #    Detects via plugin channel registration OR brand channel.
+  #    Use `%mod%` placeholder in kick-reason to include mod name.
+  # ============================================================
+  mod-blocker:
+    enabled: true
+    kick-reason: "&c[AllayAC] &fMod &7%mod% &fis not allowed on this server."
+    detect-via: "both"   # channels | brand | both
+    mods:
+      # --- MINIMAP MODS ---
+      journeymap:
+        block: true
+        name: "JourneyMap"
+        channels: ["journeymap:api", "journeymap:chunkdata", "journeymap:player_data_tracker"]
+        brands: ["journeymap"]
+      xaeros_minimap:
+        block: false
+        name: "Xaero's Minimap"
+        channels: ["xaerominimap:main", "xaerominimap:obsync", "xaerominimap:newversion"]
+        brands: ["xaeros_minimap", "xaerominimap"]
+      xaeros_worldmap:
+        block: false
+        name: "Xaero's World Map"
+        channels: ["xaeroworldmap:main"]
+        brands: ["xaeros_worldmap", "xaeroworldmap"]
+      mapwriter:
+        block: true
+        name: "MapWriter"
+        channels: ["mapwriter:chunkdata", "mapwriter:fulldata"]
+        brands: ["mapwriter"]
+      voxelmap:
+        block: true
+        name: "VoxelMap"
+        channels: ["voxelmap:chunkdata"]
+        brands: ["voxelmap"]
+      antique_atlas:
+        block: true
+        name: "Antique Atlas"
+        channels: ["antiqueatlas:atlas"]
+        brands: ["antiqueatlas"]
+      # --- UTILITY/HACK MODS ---
+      freecam:
+        block: true
+        name: "FreeCam"
+        channels: []
+        brands: ["freecam", "free_cam"]
+      flashback:
+        block: false
+        name: "Flashback"
+        channels: ["flashback:main", "flashback:record"]
+        brands: ["flashback"]
+      replay_mod:
+        block: true
+        name: "Replay Mod"
+        channels: ["replaymod:replay_channel"]
+        brands: ["replaymod"]
+      world_downloader:
+        block: true
+        name: "World Downloader"
+        channels: ["wdl:control", "wdl:init", "wdl:request"]
+        brands: ["worlddownloader", "wdl"]
+      schematica:
+        block: true
+        name: "Schematica"
+        channels: ["schematica:printer", "schematica:peripheral"]
+        brands: ["schematica"]
+      litematica:
+        block: false
+        name: "Litematica"
+        channels: ["litematica:printer"]
+        brands: ["litematica"]
+      minihud:
+        block: true
+        name: "MiniHUD"
+        channels: ["minihud:packet_handler"]
+        brands: ["minihud"]
+      # --- HUD/INFORMATION MODS ---
+      tod_3d:
+        block: true
+        name: "Time of Day 3D"
+        channels: []
+        brands: ["tod3d", "tod_3d"]
+      dynamic_surroundings:
+        block: true
+        name: "Dynamic Surroundings"
+        channels: []
+        brands: ["dynamicsurroundings"]
+      # --- RECORDING / TIMING MODS ---
+      moon_time:
+        block: true
+        name: "Moon Time"
+        channels: ["moontime:main"]
+        brands: ["moontime"]
+      # --- MULTIPLEX MODS ---
+      multiconnect:
+        block: true
+        name: "multiconnect"
+        channels: ["multiconnect:server_protocols"]
+        brands: ["multiconnect"]
+      # --- OTHER RESTRICTED MODS ---
+      chest_tracker:
+        block: true
+        name: "ChestTracker"
+        channels: ["chesttracker:main"]
+        brands: ["chesttracker"]
+      schematic:
+        block: true
+        name: "Schematic"
+        channels: ["schematic:printer"]
+        brands: []
+      itemscroller:
+        block: true
+        name: "ItemScroller"
+        channels: ["itemscroller:main"]
+        brands: ["itemscroller"]
+      tweaksfork:
+        block: true
+        name: "TweaksFork"
+        channels: []
+        brands: ["tweaksfork"]
+  # ============================================================
+  # 6. CrashItem — NBT exploit detection (oversized books/lores/names)
+  # ============================================================
+  crash-item:
+    enabled: true
+    kick-reason: "&c[AllayAC] &fCrash item exploit detected."
+    max-book-page-chars: 16384
+    max-book-pages: 100
+    max-lore-lines: 50
+    max-display-name-chars: 512
+    action: "kick"
+  # ============================================================
+  # 7. OPProtection — block unauthorized OP attempts
+  # ============================================================
+  op-protection:
+    enabled: false
+    kick-reason: "&c[AllayAC] &fUnauthorized OP attempt blocked."
+    block-unauthorized-op: true
+    block-dangerous-commands: false
+  # ============================================================
+  # 8. CommandBlocker — block dangerous commands + hide tab-completion
+  # ============================================================
+  command-blocker:
+    enabled: true
+    kick-reason: "&c[AllayAC] &fBlocked command."
+    blocked-commands: ["/stop","/restart","/reload","/save-all","/gamerule","//calc","//eval"]
+    hide-from-tab-complete: false
+    block-injection: true
+  # ============================================================
+  # 9. Lockdown — temporarily lock the server
+  # ============================================================
+  lockdown:
+    enabled: true
+    message: "&c[AllayAC] Server is in lockdown mode."
+    allow-admins: true
+    allow-whitelisted: true
+  # ============================================================
+  # 10. AutoClicker — CPS analysis + std-dev machine detection
+  # ============================================================
+  auto-clicker:
+    enabled: true
+    kick-reason: "&c[AllayAC] &fAutoClicker detected."
+    flag-cps: 15
+    hard-cps: 25
+    sample-size: 20
+  # ============================================================
+  # 11. FastBow — flag players releasing bows too quickly
+  # ============================================================
+  fast-bow:
+    enabled: true
+    kick-reason: "&c[AllayAC] &fFastBow detected."
+    min-charge-ms: 1000
+  # ============================================================
+  # 12. FastEat — flag players eating/drinking too quickly
+  # ============================================================
+  fast-eat:
+    enabled: true
+    kick-reason: "&c[AllayAC] &fFastEat detected."
+    min-eat-ms: 1500
+    exempt-creative: true
+  # ============================================================
+  # 13. FastHeal — flag unusually rapid healing
+  # ============================================================
+  fast-heal:
+    enabled: true
+    kick-reason: "&c[AllayAC] &fFastHeal detected."
+    min-interval-ms: 1500
+  # ============================================================
+  # 14. ChatSpam — per-player rate limit + repeat detection
+  # ============================================================
+  chat-spam:
+    enabled: true
+    kick-reason: "&c[AllayAC] &fChat spam detected."
+    max-messages-per-3s: 5
+    max-repeats: 3
+  # ============================================================
+  # Auxiliary toggles
+  # ============================================================
+  database:
+    enabled: true
+  discord-webhook:
+    enabled: true
+  self-test:
+    enabled: true
+  bedrock-detection:
+    enabled: true
+  via-version-detection:
+    enabled: true
+  flag-event-listener:
+    enabled: true

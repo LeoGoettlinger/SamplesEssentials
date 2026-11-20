@@ -1,0 +1,16 @@
+potionEffects: []
+isEnabled: true
+material: DIAMOND_LEGGINGS
+name: '&0Cursed Leggings'
+lore:
+- '&0&kWoven from the tendrils of nightmares,'
+- '&0&kthese leggings grant unnatural speed'
+- '&0&kat a terrible price.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- PROTECTION_FIRE,3
+- PROTECTION_PROJECTILE,3
+- THORNS,1
+- elitemobs:critical_strikes,1
+itemType: unique
+scalability: scalable

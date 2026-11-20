@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&cGreat Sack Cuirass'
+lore:
+- '&7Its broad plates carry deep strap marks.'
+- '&7The sack must have been heavy.'
+classLootFamily: TANK_CHESTPLATES

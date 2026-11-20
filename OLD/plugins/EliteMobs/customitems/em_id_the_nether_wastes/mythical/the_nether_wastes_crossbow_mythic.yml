@@ -1,0 +1,14 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Volcanic Arbalest'
+material: CROSSBOW
+level: 50
+lore:
+- '&cA heavy crossbow that fires'
+- '&cbolts of hardened lava.'
+enchantments:
+- PIERCING,5
+- QUICK_CHARGE,3
+- DURABILITY,7
+itemType: unique
+scalability: scalable

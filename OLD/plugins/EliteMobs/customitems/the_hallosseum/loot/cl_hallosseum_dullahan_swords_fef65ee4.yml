@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&4Midnight Invitation'
+lore:
+- '&4Your name is scratched into the guard.'
+- '&4You do not remember accepting.'

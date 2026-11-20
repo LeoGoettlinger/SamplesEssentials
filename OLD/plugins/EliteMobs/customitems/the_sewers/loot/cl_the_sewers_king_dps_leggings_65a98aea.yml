@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&4Courtwalker Leggings'
+lore:
+- '&4The tailoring belongs to a palace above ground.'
+classLootFamily: DPS_LEGGINGS

@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&dAncient Impaler [Mythic]'
+material: DIAMOND_SPEAR
+level: 25
+lore:
+- '&cPierce through the ages!'
+enchantments:
+- IMPALING,7
+- PIERCING,3
+- LOYALTY,3
+- PROTECTION_ENVIRONMENTAL,4
+scalability: scalable
+itemType: unique
+soulbound: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

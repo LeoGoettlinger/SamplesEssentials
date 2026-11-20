@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&dOathkeeper''s Legplates'
+lore:
+- '&dEach buckle carries a different household seal.'
+classLootFamily: TANK_LEGGINGS

@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&eStarfall Volley'
+description:
+- '&7A missile hit calls down a'
+- '&7volley of bolts every 20 seconds.'
+skillType: WANDS
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 0.7
+scalingPerLevel: 0.004
+cooldownSeconds: 20.0
+displayMaterial: NETHER_STAR
+loreTemplates:
+- '&7Bolts: &f$bolts &7at &f$boltPercent%&7 of the hit'
+- '&7Up to 4 enemies'
+- '&7Cooldown: &f$cooldown seconds'
+formattedBonusTemplate: $bolts bolts at $boltPercent%

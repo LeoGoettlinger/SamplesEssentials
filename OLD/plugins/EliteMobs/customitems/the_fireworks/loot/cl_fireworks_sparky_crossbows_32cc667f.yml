@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&cLast Salute'
+lore:
+- '&cSoot fills every groove in the stock.'
+- '&cAt least the trigger is still clean.'

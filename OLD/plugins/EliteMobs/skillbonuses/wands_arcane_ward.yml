@@ -1,0 +1,14 @@
+isEnabled: true
+name: '&dArcane Ward'
+description:
+- '&7Take less damage from projectiles'
+- '&7while holding a wand.'
+skillType: WANDS
+bonusType: PASSIVE
+unlockTier: 1
+baseValue: 0.1
+scalingPerLevel: 0.001
+displayMaterial: AMETHYST_SHARD
+loreTemplates:
+- '&7Projectile damage taken: &f-$reduction%'
+formattedBonusTemplate: -$reduction% projectile damage

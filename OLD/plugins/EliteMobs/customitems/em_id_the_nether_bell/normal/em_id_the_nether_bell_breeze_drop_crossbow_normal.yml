@@ -1,0 +1,15 @@
+potionEffects: []
+isEnabled: true
+material: CROSSBOW
+name: '&d[Normal] Nether-Void Crossbow'
+lore:
+- '&8A weapon of immense power,'
+- '&8forged from the essence of'
+- '&8the Nether and the Void.'
+enchantments:
+- QUICK_CHARGE,2
+- PIERCING,2
+- MULTISHOT,1
+level: 55
+itemType: unique
+scalability: scalable

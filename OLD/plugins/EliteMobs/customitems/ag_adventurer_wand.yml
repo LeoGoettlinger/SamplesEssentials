@@ -1,0 +1,15 @@
+isEnabled: true
+material: BLAZE_ROD
+name: '&aAdventurer''s Wand'
+lore:
+- '&7Awarded by Casus for completing your first class trial.'
+enchantments:
+- POWER,3
+- UNBREAKING,2
+- freeminecraftmodels:multicast,2
+potionEffects: []
+scalability: FIXED
+itemType: UNIQUE
+weaponType: WANDS
+fmmItemModel: fmm_default_arcane_wand
+level: 1

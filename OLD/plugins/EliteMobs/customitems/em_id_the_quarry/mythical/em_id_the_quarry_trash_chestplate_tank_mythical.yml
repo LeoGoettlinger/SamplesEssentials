@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Mythical] Mining Chestpiece'
+material: IRON_CHESTPLATE
+level: 40
+lore:
+- '&fFlying rocks are no issue'
+- '&fwhen wearing this.'
+enchantments:
+- PROTECTION_EXPLOSIONS,4
+- PROTECTION_ENVIRONMENTAL,3
+- elitemobs:loud_strikes,3
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

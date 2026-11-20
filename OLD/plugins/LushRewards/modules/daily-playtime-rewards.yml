@@ -1,0 +1,254 @@
+# ============================================
+# Daily Playtime Rewards - Stündliche Ziele die täglich zurücksetzen
+# Reset: Täglich (1 = jeden Tag)
+# ============================================
+type: playtime-rewards
+enabled: true
+
+# How often (in days) to reset (1 = daily)
+reset-playtime-at: 1
+# Time in minutes between checking whether any online players need to receive rewards
+refresh-time: 1
+# Whether notifications should be sent when rewards are claimable
+enable-notifications: true
+
+goals:
+  # ============ KURZE SESSIONS (15-60 Min) ============
+  - play-minutes: 15     # 15 Minuten - Quick Login
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: bread
+        amount: 4
+      - type: item
+        material: torch
+        amount: 8
+
+  - play-minutes: 30     # 30 Minuten - Halbstündchen
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: iron_ingot
+        amount: 2
+      - type: item
+        material: coal
+        amount: 4
+      - type: item
+        material: experience_bottle
+        amount: 4
+
+  - play-minutes: 60     # 1 Stunde
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: iron_ingot
+        amount: 4
+      - type: item
+        material: gold_ingot
+        amount: 2
+      - type: item
+        material: experience_bottle
+        amount: 8
+
+  # ============ MITTLERE SESSIONS (1-3h) ============
+  - play-minutes: 90     # 1.5 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: iron_ingot
+        amount: 8
+      - type: item
+        material: lapis_lazuli
+        amount: 4
+      - type: item
+        material: experience_bottle
+        amount: 12
+
+  - play-minutes: 120    # 2 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond
+        amount: 2
+      - type: item
+        material: iron_ingot
+        amount: 8
+      - type: item
+        material: experience_bottle
+        amount: 16
+
+  - play-minutes: 150    # 2.5 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond
+        amount: 3
+      - type: item
+        material: redstone
+        amount: 8
+      - type: item
+        material: experience_bottle
+        amount: 16
+
+  - play-minutes: 180    # 3 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond
+        amount: 4
+      - type: item
+        material: emerald
+        amount: 2
+      - type: item
+        material: experience_bottle
+        amount: 24
+
+  # ============ LÄNGERE SESSIONS (3-6h) ============
+  - play-minutes: 240    # 4 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond
+        amount: 6
+      - type: item
+        material: golden_apple
+        amount: 1
+      - type: item
+        material: experience_bottle
+        amount: 24
+
+  - play-minutes: 300    # 5 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond
+        amount: 8
+      - type: item
+        material: emerald
+        amount: 4
+      - type: item
+        material: experience_bottle
+        amount: 32
+
+  # ============ MARATHON SESSIONS (6h+) ============
+  - play-minutes: 360    # 6 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond
+        amount: 10
+      - type: item
+        material: golden_apple
+        amount: 2
+      - type: item
+        material: experience_bottle
+        amount: 32
+
+  - play-minutes: 420    # 7 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond_block
+        amount: 1
+      - type: item
+        material: golden_apple
+        amount: 2
+      - type: item
+        material: experience_bottle
+        amount: 48
+
+  - play-minutes: 480    # 8 Stunden - Hardcore Session
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond_block
+        amount: 1
+      - type: item
+        material: emerald
+        amount: 8
+      - type: item
+        material: golden_apple
+        amount: 3
+      - type: item
+        material: experience_bottle
+        amount: 48
+
+  - play-minutes: 540    # 9 Stunden
+    display-item:
+      material: clock
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond_block
+        amount: 2
+      - type: item
+        material: golden_apple
+        amount: 4
+      - type: item
+        material: experience_bottle
+        amount: 48
+
+  - play-minutes: 600    # 10 Stunden - Marathon!
+    display-item:
+      material: nether_star
+      amount: 1
+    rewards:
+      - type: item
+        material: diamond_block
+        amount: 2
+      - type: item
+        material: emerald_block
+        amount: 1
+      - type: item
+        material: golden_apple
+        amount: 5
+      - type: item
+        material: experience_bottle
+        amount: 64
+
+gui:
+  title: "    &#529bf2&lDaily Playtime Rewards"
+  scroll-type: FIXED
+  template: "BORDERED_LARGE"
+  item-templates:
+    default-reward:
+      material: clock
+      display-name: "&#f5e389%minutes% Minutes"
+    redeemable-reward:
+      material: clock
+      display-name: "&#f5e389%minutes% Minutes - &#a5f5a5Redeemable!"
+      enchanted: true
+    collected-reward:
+      material: clock
+      display-name: "&#f5e389%minutes% Minutes - &#7d7d7dCollected"
+    'P':
+      material: player_head
+      display-name: "&#A5B8FE&lProfile:"
+      skull-texture: mirror
+      lore:
+        - "&#c4f8ffNext Reward in: &f%lushrewards_daily-playtime-rewards_time_until_next_reward%"
+        - "&#c4f8ffToday's Playtime: &f%lushrewards_daily-playtime-rewards_playtime%"

@@ -1,0 +1,549 @@
+gui-name: '&8Misc Shop'
+rows: 6
+permission: ''
+items:
+- material: TORCH
+  name: '&eTorch'
+  price: 10
+  amount: 32
+  sell-price: 7
+- material: SOUL_TORCH
+  name: '&8Soul Torch'
+  price: 15
+  amount: 32
+  sell-price: 10
+- material: LANTERN
+  name: '&eLantern'
+  price: 80
+  amount: 8
+  sell-price: 56
+- material: SOUL_LANTERN
+  name: '&8Soul Lantern'
+  price: 90
+  amount: 8
+  sell-price: 63
+- material: CANDLE
+  name: '&fCandle'
+  price: 30
+  amount: 8
+  sell-price: 21
+- material: LADDER
+  name: '&eLadder'
+  price: 15
+  amount: 16
+  sell-price: 10
+- material: SCAFFOLDING
+  name: '&eScaffolding'
+  price: 20
+  amount: 32
+  sell-price: 14
+- material: NAME_TAG
+  name: '&fName Tag'
+  price: 500
+  sell-price: 350
+  amount: 1
+- material: LEAD
+  name: '&fLead'
+  price: 200
+  sell-price: 140
+  amount: 2
+- material: COMPASS
+  name: '&eCompass'
+  price: 80
+  sell-price: 56
+  amount: 1
+- material: RECOVERY_COMPASS
+  name: '&dRecovery Compass'
+  price: 500
+  sell-price: 350
+  amount: 1
+- material: CLOCK
+  name: '&eClock'
+  price: 80
+  sell-price: 56
+  amount: 1
+- material: SPYGLASS
+  name: '&bSpyglass'
+  price: 300
+  sell-price: 210
+  amount: 1
+- material: SHEARS
+  name: '&eShears'
+  price: 150
+  sell-price: 105
+  amount: 1
+- material: FISHING_ROD
+  name: '&eFishing Rod'
+  price: 200
+  sell-price: 140
+  amount: 1
+- material: CRAFTING_TABLE
+  name: '&eCrafting Table'
+  price: 30
+  amount: 4
+  sell-price: 21
+- material: CARTOGRAPHY_TABLE
+  name: '&eCartography Table'
+  price: 120
+  amount: 1
+  sell-price: 84
+- material: STONECUTTER
+  name: '&7Stonecutter'
+  price: 100
+  amount: 1
+  sell-price: 70
+- material: LOOM
+  name: '&eLoom'
+  price: 80
+  amount: 1
+  sell-price: 56
+- material: GRINDSTONE
+  name: '&7Grindstone'
+  price: 100
+  amount: 1
+  sell-price: 70
+- material: FLETCHING_TABLE
+  name: '&eFletching Table'
+  price: 80
+  amount: 1
+  sell-price: 56
+- material: BUCKET
+  name: '&7Bucket'
+  price: 50
+  amount: 1
+  sell-price: 35
+- material: WATER_BUCKET
+  name: '&9Water Bucket'
+  price: 150
+  sell-price: 105
+  amount: 1
+- material: LAVA_BUCKET
+  name: '&6Lava Bucket'
+  price: 200
+  sell-price: 140
+  amount: 1
+- material: MILK_BUCKET
+  name: '&fMilk Bucket'
+  price: 120
+  sell-price: 84
+  amount: 1
+- material: POWDER_SNOW_BUCKET
+  name: '&fPowder Snow Bucket'
+  price: 180
+  sell-price: 126
+  amount: 1
+- material: AXOLOTL_BUCKET
+  name: '&dAxolotl Bucket'
+  price: 350
+  sell-price: 245
+  amount: 1
+- material: TADPOLE_BUCKET
+  name: '&2Tadpole Bucket'
+  price: 250
+  sell-price: 175
+  amount: 1
+- material: PUFFERFISH_BUCKET
+  name: '&ePufferfish Bucket'
+  price: 300
+  sell-price: 210
+  amount: 1
+- material: TROPICAL_FISH_BUCKET
+  name: '&dTropical Fish Bucket'
+  price: 400
+  sell-price: 280
+  amount: 1
+- material: EXPERIENCE_BOTTLE
+  name: '&aBottle o'' Enchanting'
+  price: 150
+  sell-price: 105
+  amount: 8
+- material: ENCHANTING_TABLE
+  name: '&5Enchanting Table'
+  price: 800
+  amount: 1
+  sell-price: 560
+- material: BOOK
+  name: '&eBook'
+  price: 30
+  amount: 16
+  sell-price: 21
+- material: WRITABLE_BOOK
+  name: '&eBook and Quill'
+  price: 80
+  amount: 1
+  sell-price: 56
+- material: LAPIS_LAZULI
+  name: '&9Lapis Lazuli'
+  price: 50
+  sell-price: 35
+  amount: 8
+- material: OAK_BOAT
+  name: '&6Oak Boat'
+  price: 60
+  amount: 1
+  sell-price: 42
+- material: BIRCH_BOAT
+  name: '&fBirch Boat'
+  price: 60
+  amount: 1
+  sell-price: 42
+- material: DARK_OAK_BOAT
+  name: '&8Dark Oak Boat'
+  price: 60
+  amount: 1
+  sell-price: 42
+- material: MANGROVE_BOAT
+  name: '&2Mangrove Boat'
+  price: 70
+  amount: 1
+  sell-price: 49
+- material: CHERRY_BOAT
+  name: '&dCherry Boat'
+  price: 70
+  amount: 1
+  sell-price: 49
+- material: BAMBOO_RAFT
+  name: '&aBamboo Raft'
+  price: 70
+  amount: 1
+  sell-price: 49
+- material: ENDER_PEARL
+  name: '&5Ender Pearl'
+  price: 120
+  sell-price: 84
+  amount: 8
+- material: SNOWBALL
+  name: '&fSnowball'
+  price: 5
+  sell-price: 4
+  amount: 32
+- material: EGG
+  name: '&fEgg'
+  price: 5
+  sell-price: 4
+  amount: 32
+- material: FIRE_CHARGE
+  name: '&6Fire Charge'
+  price: 80
+  amount: 8
+  sell-price: 56
+- material: TNT
+  name: '&cTNT'
+  price: 300
+  amount: 4
+  sell-price: 210
+- material: ARROW
+  name: '&eArrow'
+  price: 10
+  amount: 32
+  sell-price: 7
+- material: FIREWORK_ROCKET
+  name: '&eFirework Rocket'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: FIREWORK_STAR
+  name: '&eFirework Star'
+  price: 30
+  amount: 8
+  sell-price: 21
+- material: GUNPOWDER
+  name: '&7Gunpowder'
+  price: 60
+  sell-price: 42
+  amount: 16
+- material: STRING
+  name: '&fString'
+  price: 40
+  sell-price: 28
+  amount: 16
+- material: SLIME_BALL
+  name: '&aSlime Ball'
+  price: 50
+  sell-price: 35
+  amount: 16
+- material: INK_SAC
+  name: '&8Ink Sac'
+  price: 15
+  amount: 16
+  sell-price: 10
+- material: GLOW_INK_SAC
+  name: '&eGlow Ink Sac'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: SCUTE
+  name: '&2Scute'
+  price: 80
+  amount: 8
+  sell-price: 56
+- material: NAUTILUS_SHELL
+  name: '&bNautilus Shell'
+  price: 500
+  amount: 4
+  sell-price: 350
+- material: DRAGON_BREATH
+  name: '&5Dragon Breath'
+  price: 2000
+  sell-price: 1400
+  amount: 4
+- material: SHULKER_SHELL
+  name: '&dShulker Shell'
+  price: 8000
+  sell-price: 5600
+  amount: 1
+- material: WITHER_SKULL
+  name: '&8Wither Skeleton Skull'
+  price: 12000
+  amount: 1
+  sell-price: 8400
+- material: ZOMBIE_HEAD
+  name: '&2Zombie Head'
+  price: 3000
+  amount: 1
+  sell-price: 2100
+- material: SKELETON_SKULL
+  name: '&fSkeleton Skull'
+  price: 3000
+  amount: 1
+  sell-price: 2100
+- material: CREEPER_HEAD
+  name: '&aCreeper Head'
+  price: 3000
+  amount: 1
+  sell-price: 2100
+- material: PIGLIN_HEAD
+  name: '&6Piglin Head'
+  price: 4000
+  amount: 1
+  sell-price: 2800
+- material: DRAGON_HEAD
+  name: '&5Dragon Head'
+  price: 30000
+  sell-price: 21000
+  amount: 1
+- material: MAP
+  name: '&eMap'
+  price: 100
+  amount: 1
+  sell-price: 70
+- material: FILLED_MAP
+  name: '&eFilled Map'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: SADDLE
+  name: '&6Saddle'
+  price: 500
+  sell-price: 350
+  amount: 1
+- material: ARMOR_STAND
+  name: '&eArmor Stand'
+  price: 100
+  amount: 1
+  sell-price: 70
+- material: PAINTING
+  name: '&ePainting'
+  price: 30
+  amount: 4
+  sell-price: 21
+- material: ITEM_FRAME
+  name: '&eItem Frame'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: GLOW_ITEM_FRAME
+  name: '&eGlow Item Frame'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: BUNDLE
+  name: '&eBundle'
+  price: 1500
+  amount: 1
+  sell-price: 1050
+- material: DECORATED_POT
+  name: '&6Decorated Pot'
+  price: 200
+  amount: 4
+  sell-price: 140
+- material: WHITE_DYE
+  name: '&fWhite Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: ORANGE_DYE
+  name: '&6Orange Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: MAGENTA_DYE
+  name: '&dMagenta Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: LIGHT_BLUE_DYE
+  name: '&bLight_Blue Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: YELLOW_DYE
+  name: '&eYellow Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: LIME_DYE
+  name: '&aLime Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: PINK_DYE
+  name: '&dPink Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: GRAY_DYE
+  name: '&8Gray Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: LIGHT_GRAY_DYE
+  name: '&7Light_Gray Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: CYAN_DYE
+  name: '&3Cyan Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: PURPLE_DYE
+  name: '&5Purple Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: BLUE_DYE
+  name: '&9Blue Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: BROWN_DYE
+  name: '&6Brown Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: GREEN_DYE
+  name: '&2Green Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: RED_DYE
+  name: '&cRed Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: BLACK_DYE
+  name: '&8Black Dye'
+  price: 20
+  amount: 8
+  sell-price: 14
+- material: ANGLER_POTTERY_SHERD
+  name: '&6Angler Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: ARCHER_POTTERY_SHERD
+  name: '&6Archer Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: ARMS_UP_POTTERY_SHERD
+  name: '&6Arms_Up Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: BLADE_POTTERY_SHERD
+  name: '&6Blade Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: BREWER_POTTERY_SHERD
+  name: '&6Brewer Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: BURN_POTTERY_SHERD
+  name: '&6Burn Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: DANGER_POTTERY_SHERD
+  name: '&6Danger Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: EXPLORER_POTTERY_SHERD
+  name: '&6Explorer Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: FRIEND_POTTERY_SHERD
+  name: '&6Friend Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: HEART_POTTERY_SHERD
+  name: '&6Heart Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: HEARTBREAK_POTTERY_SHERD
+  name: '&6Heartbreak Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: HOWL_POTTERY_SHERD
+  name: '&6Howl Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: MINER_POTTERY_SHERD
+  name: '&6Miner Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: MOURNER_POTTERY_SHERD
+  name: '&6Mourner Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: PLENTY_POTTERY_SHERD
+  name: '&6Plenty Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: PRIZE_POTTERY_SHERD
+  name: '&6Prize Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: SHEAF_POTTERY_SHERD
+  name: '&6Sheaf Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: SHELTER_POTTERY_SHERD
+  name: '&6Shelter Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: SKULL_POTTERY_SHERD
+  name: '&6Skull Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140
+- material: SNORT_POTTERY_SHERD
+  name: '&6Snort Sherd'
+  price: 200
+  amount: 1
+  sell-price: 140

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&7Courtward Brow'
+lore:
+- '&7The visor opens towards the royal seat.'
+classLootFamily: DPS_HELMETS

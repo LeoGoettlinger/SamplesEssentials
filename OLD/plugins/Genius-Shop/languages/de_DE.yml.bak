@@ -1,0 +1,272 @@
+config-version: 4
+
+messages:
+  prefix: '&6&lᴘɪxᴇʟʀᴇᴀʟᴍ &8▸ '
+  no-permission: '%prefix%&cDu hast keine Berechtigung, das zu tun.'
+  player-only: '&cNur Spieler können diesen Befehl verwenden.'
+  shop-not-found: '&cShop ''&e%shop%&c'' wurde nicht gefunden.'
+  shop-no-permission: '%prefix%&cDu hast keine Berechtigung, den &e%shop%&c Shop zu
+    öffnen.'
+  shop-not-available: |-
+    %prefix%&cDer &e%shop%&c Shop ist derzeit nicht verfügbar!
+    %prefix%&7Verfügbar: &e%available-times%
+  shop-always-available: '&aImmer'
+  economy-not-ready: '&cDas Wirtschaftssystem ist nicht bereit.'
+  not-enough-money: '&cDu kannst dir &7%amount%x &4%item%&c für &4%price% nicht leisten.'
+  buy-success: '&eDu hast &7%amount%x &6%item%&e für &6%price% gekauft.'
+  payment-error: '&cBei der Zahlung ist ein Fehler aufgetreten.'
+  
+  # Selling
+  cannot-sell: '%prefix%&cDu kannst diesen Gegenstand nicht verkaufen.'
+  no-items-to-sell: '%prefix%&cDu hast keine &e%item%&c zum Verkaufen.'
+  sell-success: '%prefix%&aDu hast &7%amount%x &6%item%&a für &6%price% verkauft.'
+  sell-all-success: '%prefix%&aDu hast insgesamt &7%amount%x &6%item%&a für &6%price%
+    verkauft.'
+  
+  # Buying guard
+  cannot-buy: '%prefix%&cDu kannst diesen Gegenstand nicht kaufen.'
+  
+  # Reload
+  reload-no-permission: '%prefix%&cDu hast keine Berechtigung, das Plugin neu zu laden.'
+  reload-success: '%prefix%&aGenius-Shop wurde neu geladen.'
+  reload-failed: '%prefix%&cNeu laden fehlgeschlagen, überprüfe die Konsole.'
+  update-available: '%prefix%&aEin neues Update ist verfügbar! &7(&c%current% &7->
+    &a%new%&7)'
+  
+  # Time and Date
+  time-separator: ', '
+  time-range-separator: '-'
+  date-range-separator: ' bis '
+  day-range-separator: ' bis '
+  # Natural language connectors
+  and: ' und '
+  during: ' während '
+  between: ' zwischen '
+  'true': ' am '
+  in: ' im '
+  in-the-month-of: ' im Monat '
+  # Use \n for a new line
+  line-break: |2+
+
+  day-suffix-st: .
+  day-suffix-nd: .
+  day-suffix-rd: .
+  day-suffix-th: .
+  
+  # Time and Date Translations
+  days:
+    monday: Montag
+    tuesday: Dienstag
+    wednesday: Mittwoch
+    thursday: Donnerstag
+    friday: Freitag
+    saturday: Samstag
+    sunday: Sonntag
+    mon: Mo
+    tue: Di
+    wed: Mi
+    thu: Do
+    fri: Fr
+    sat: Sa
+    sun: So
+  months:
+    january: Januar
+    february: Februar
+    march: März
+    april: April
+    may: Mai
+    june: Juni
+    july: Juli
+    august: August
+    september: September
+    october: Oktober
+    november: November
+    december: Dezember
+    jan: Jan
+    feb: Feb
+    mar: Mär
+    apr: Apr
+    may_short: Mai
+    jun: Jun
+    jul: Jul
+    aug: Aug
+    sep: Sep
+    oct: Okt
+    nov: Nov
+    dec: Dez
+
+web-editor:
+  title: Genius Shop - Konfigurations-Editor
+  hero-title: ⛏️ GENIUS SHOP EDITOR
+  hero-subtitle: Konfiguriere deinen Shop mit Live-Minecraft-Vorschau
+  beta-badge: ⚠️ BETA - Einige Funktionen funktionieren möglicherweise noch nicht
+  bug-report: 🐛 Fehler oder fehlende Funktionen melden
+  auto-save: Auto-Speichern
+  animations: Animationen
+  history: VERLAUF
+  reload: NEU LADEN
+  save-tab: TAB SPEICHERN
+  publish-all: ALLES VERÖFFENTLICHEN
+  logout: ABMELDEN
+  tabs:
+    main-menu: HAUPTMENÜ
+    shop: SHOP
+    purchase: KAUFEN
+    sell: VERKAUFEN
+    gui-settings: GUI EINSTELLUNGEN
+  preview-loading: Lädt...
+  prev: ZURÜCK
+  next: WEITER
+  page-indicator: Seite %page%/%total%
+  main-menu:
+    title: HAUPTMENÜ EDITOR
+    buttons-count: '%count% Schaltflächen'
+    settings: EINSTELLUNGEN
+    add-button: SCHALTFLÄCHE HINZUFÜGEN
+  shop:
+    current-file: AKTUELLE SHOP-DATEI
+    loading: Shops werden geladen...
+    create-new: NEUEN SHOP ERSTELLEN
+    title: SHOP INHALT
+    items-count: '%count% Gegenstände'
+    sort-label: 'Sortieren nach:'
+    sort:
+      slot: Slot
+      name: Name
+      material: Material
+      price: Kaufpreis
+      sell-price: Verkaufspreis
+      id: ID
+    search-placeholder: Suche nach Name oder Material...
+    add-item: GEGENSTAND HINZUFÜGEN
+    delete-file: Shop-Datei löschen
+  purchase:
+    title: KAUF-KONFIGURATION
+    menu-settings: MENÜ EINSTELLUNGEN
+  sell:
+    title: VERKAUFS-KONFIGURATION
+    menu-settings: MENÜ EINSTELLUNGEN
+  gui-settings:
+    title: GLOBALE GUI EINSTELLUNGEN
+    save: GUI EINSTELLUNGEN SPEICHERN
+  tips:
+    title: SCHNELLE TIPPS
+    tip1: ✨ Klicke auf Gegenstände in der Vorschau, um sie zu bearbeiten
+    tip2: 🎨 Echte Minecraft-Texturen werden angezeigt
+    tip3: 💾 Auto-Speichern hält deine Änderungen sicher
+    tip4: 🔄 Nutze SYNC, um vom Server neu zu laden
+    tip5: 📄 Erstelle mehrere Shop-Dateien
+  modals:
+    edit-item: Gegenstand bearbeiten
+    edit-button: Menü-Schaltfläche bearbeiten
+    delete: Löschen
+    cancel: Abbrechen
+    save: Speichern
+    confirm-title: Aktion bestätigen
+    confirm-button: Bestätigen
+    alert-title: Nachricht
+    error-title: Fehler
+    success-title: Erfolg
+    warning-title: Warnung
+    prompt-title: Wert eingeben
+    save-confirm-title: Speichern bestätigen
+    activity-detail-title: Änderungsdetails
+    rollback: ZURÜCKSETZEN
+    rollback-success: Aktion erfolgreich zurückgesetzt
+    refresh: AKTUALISIEREN
+    clear: ALLES LÖSCHEN
+    history-log: VERLAUFSPROTOKOLL
+    about-history-title: ÜBER DAS VERLAUFSPROTOKOLL
+    about-history-text: Verfolge alle von Benutzern vorgenommenen Änderungen. Klicke
+      auf einen Eintrag für einen Vorher/Nachher-Vergleich.
+    no-activity: Noch keine Aktivitäten
+    session-expired: Sitzung abgelaufen. Bitte erneut anmelden.
+    item-updated: Gegenstand aktualisiert
+    item-removed: Gegenstand entfernt
+    remove-confirm: Bist du sicher, dass du diesen %item% entfernen möchtest?
+    remove-file-confirm: Bist du sicher, dass du %file% DAUERHAFT vom Server LÖSCHEN
+      möchtest? Dies kann nicht rückgängig gemacht werden!
+    reload-confirm: Bist du sicher, dass du alle Konfigurationen vom Server neu laden
+      möchtest? Alle ungespeicherten Änderungen gehen verloren.
+    logout-confirm: Bist du sicher, dass du dich abmelden möchtest?
+    shop-created: Neuer Shop erstellt
+    shop-removed: Shop-Datei entfernt
+    file-saved: Datei erfolgreich gespeichert
+    save-error: Fehler beim Speichern der Datei
+    publish-success: Alle Änderungen erfolgreich veröffentlicht
+    publish-error: Veröffentlichung fehlgeschlagen
+    reload-success: Konfiguration vom Server neu geladen
+    reload-error: Fehler beim Neuladen der Konfiguration
+    delete-error: Löschen fehlgeschlagen
+    shop-exists: Ein Shop mit diesem Namen existiert bereits!
+    enter-filename: 'Gib den neuen Shop-Dateinamen ein (z.B. werkzeuge.yml):'
+    publishing: Veröffentliche...
+    fields:
+      material: Material
+      material-hint: Minecraft Materialname (z.B. DIAMOND_SWORD)
+      display-name: Anzeigename
+      display-name-hint: Unterstützt & Farbcodes
+      slot: Slot
+      slot-hint: Position in der GUI (absoluter Index)
+      buy-price: Kaufpreis
+      buy-price-hint: 0 = kann nicht gekauft werden
+      sell-price: Verkaufspreis
+      sell-price-hint: 0 = kann nicht verkauft werden
+      amount: Anzahl
+      lore: Lore (eine pro Zeile)
+      enchantments: Verzauberungen
+      enchantments-hint: 'Format: VERZAUBERUNG:STUFE (z.B. SHARPNESS:5)'
+      spawner-type: Spawner-Typ
+      spawner-type-hint: Entity-Typ für den Spawner
+      potion-type: Trank-Typ
+      potion-type-hint: Basis-Trankeffekt
+      potion-level: Trank-Stufe
+      potion-level-hint: 0 = Standard, 1+ = benutzerdefinierte Stärke
+      hide-attributes: Attribute verstecken
+      hide-additional: Zusatzinfos verstecken
+      require-name: Name erforderlich
+      require-name-hint: Exakte Namensübereinstimmung zum Verkauf erforderlich
+      require-lore: Lore erforderlich
+      require-lore-hint: Exakte Lore-Übereinstimmung zum Verkauf erforderlich
+      unstable-tnt: Instabiles TNT
+      player-limit: Spieler-Limit
+      player-limit-hint: Gesamtmenge, die ein Spieler kaufen/verkaufen kann (0 = unbegrenzt)
+      dynamic-pricing: Dynamische Preise
+      min-price: Mindestpreis
+      min-price-hint: Minimaler dynamischer Preis
+      max-price: Maximalpreis
+      max-price-hint: Maximaler dynamischer Preis
+      price-change: Preisänderung
+      price-change-hint: Preisänderung pro gekauftem/verkauftem Gegenstand
+    item-location: Seite %page%, Slot %slot%
+    new-item-name: '&eNeuer Gegenstand'
+    new-item-lore: '&7Über den Web-Editor hinzugefügt'
+    new-shop-name: '&eNeuer Shop'
+    click-to-open: '&7Klicken zum Öffnen'
+    buying-title: '&8Kauf von '
+    selling-title: '&8Verkauf von '
+    confirm-purchase: '&aKAUF BESTÄTIGEN'
+    confirm-sell: '&aVERKAUF BESTÄTIGEN'
+    sell-all: '&6ALLES VERKAUFEN'
+  login:
+    title: Login - Genius Shop Editor
+    heading: GENIUS SHOP
+    subtitle: Konfigurations-Editor
+    requirements-title: Voraussetzungen
+    req1: Du musst auf dem Minecraft-Server eingeloggt sein
+    req2: Du benötigst Admin-Rechte (geniusshop.admin oder OP)
+    req3: Dein Passwort ist deine Spieler-UUID
+    username-label: Minecraft Benutzername
+    username-placeholder: Dein Name im Spiel
+    password-label: Passwort (Deine UUID)
+    password-placeholder: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    password-hint: 'UUID im Spiel erhalten: Befehl /uuid ausführen oder auf https://mcuuid.net/
+      prüfen'
+    login-button: Anmelden
+  footer:
+    description: Ein leistungsstarker Konfigurations-Editor für Minecraft Shop-Plugins
+      mit Live-Vorschau
+    github: Auf GitHub bewerten
+    issues: Probleme melden
+    made-with: Mit ❤️ von Dralle für die Minecraft-Community erstellt
+    copyright: © 2025 Genius Shop - Open Source Projekt

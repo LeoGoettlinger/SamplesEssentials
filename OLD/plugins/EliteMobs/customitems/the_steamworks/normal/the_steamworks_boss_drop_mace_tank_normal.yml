@@ -1,0 +1,15 @@
+potionEffects: []
+isEnabled: true
+material: MACE
+name: '&bPressure Hammer [Normal]'
+lore:
+- '&bA massive pneumatic hammer that uses'
+- '&bcompressed steam to deliver crushing blows.'
+- '&bIts weight makes it perfect for holding ground.'
+enchantments:
+- DAMAGE_ALL,3
+- KNOCKBACK,2
+- DURABILITY,4
+itemType: UNIQUE
+scalability: scalable
+soulbound: true

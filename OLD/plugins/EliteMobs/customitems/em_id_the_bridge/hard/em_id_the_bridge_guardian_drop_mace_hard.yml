@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&6Stone Crusher [Hard]'
+material: MACE
+level: 25
+lore:
+- '&cShatter stone with ancient might!'
+enchantments:
+- DAMAGE_ALL,6
+- KNOCKBACK,3
+- PROTECTION_ENVIRONMENTAL,3
+scalability: scalable
+itemType: unique
+soulbound: true
+# Generated with https://magmaguy.com/webapp/webapp.html !

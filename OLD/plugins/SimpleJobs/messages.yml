@@ -1,0 +1,36 @@
+# SimpleJobs Messages Configuration
+# Support for Hex Colors: &#RRGGBB (e.g., &#FF5555)
+# Support for Gradients: <gradient:#FF0000:#0000FF>text</gradient>
+# Placeholders: {player}, {job}, {money}, {multiplier}, {max_jobs}, {current_jobs}
+
+prefix: "<gradient:#FFD700:#FFA500>[SimpleJobs]</gradient> "
+
+# General Messages
+no-permission: "{prefix}&#FF5555You don't have permission to do that!"
+player-only: "{prefix}&#FF5555This command can only be used by players!"
+reload-success: "{prefix}&#00FF00Plugin reloaded successfully!"
+invalid-job: "{prefix}&#FF5555Invalid job: &#FFFFFF{job}"
+job-not-found: "{prefix}&#FF5555Job not found!"
+
+# Job Join/Leave Messages
+job-joined: "{prefix}&#00FF00You have joined the &#FFFF00{job} &#00FF00job!"
+job-left: "{prefix}&#FFD700You have left the &#FFFF00{job} &#FFD700job!"
+already-in-job: "{prefix}&#FF5555You are already in the &#FFFF00{job} &#FF5555job!"
+not-in-job: "{prefix}&#FF5555You are not in the &#FFFF00{job} &#FF5555job!"
+max-jobs-reached: "{prefix}&#FF5555You have reached the maximum number of jobs! &#FFFFFF({current_jobs}/{max_jobs})"
+job-slot-required: "{prefix}&#FF5555You need a job slot to join this job!"
+
+# Job Info Messages
+job-info-header: "{prefix}&#FFFF00Your Current Jobs:"
+job-info-line: "  &#FFD700► &#FFFFFF{job} &#00FF00(x{multiplier} multiplier)"
+job-info-none: "{prefix}&#FFFF00You are not in any jobs yet!"
+job-info-footer: "  &#FFFF00Jobs: &#FFFFFF{current_jobs}/{max_jobs}"
+
+# Payment Messages
+payment-received: "{prefix}&#00FF00+${money} &#FFFFFF({item}) &#FFD700[{job}]"
+
+# Command Usage
+usage-main: "{prefix}&#FFFF00Usage: &#FFFFFF/sj <reload|jobs|info>"
+usage-jobs: "{prefix}&#FFFF00Usage: &#FFFFFF/sj jobs [join|leave] <jobname>"
+usage-join: "{prefix}&#FFFF00Usage: &#FFFFFF/sj jobs join <jobname>"
+usage-leave: "{prefix}&#FFFF00Usage: &#FFFFFF/sj jobs leave <jobname>"

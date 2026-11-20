@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Sticky Crossbow'
+material: CROSSBOW
+level: 15
+lore:
+- '&cA crossbow mechanism that'
+- '&csticks and jams with slime,'
+- '&cbut fires devastating shots.'
+enchantments:
+- PIERCING,4
+- QUICK_CHARGE,3
+- DURABILITY,5
+itemType: unique
+scalability: scalable

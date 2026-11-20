@@ -1,0 +1,34 @@
+id: epicElixir
+disabled: false
+silent: false
+format: <light_purple>{name}
+sort-index: 5
+application-weight: 7
+catch-weight: 5
+max-baits: 16
+can-be-caught: true
+drop-quantity: 1
+infinite: false
+disable-use-alert: false
+purchase:
+  price: 5000
+  quantity: 1
+  economy-types:
+    - Vault
+item:
+  material: HONEY_BOTTLE
+  displayname: "<light_purple>Epic Elixir"
+  glowing: true
+  lore:
+    - "<gray>A magical elixir that"
+    - "<gray>attracts Epic fish."
+rarity-modifiers:
+  Epic: "*2"
+catch-event:
+  - EXP:50
+recipe:
+  type: shapeless
+  ingredients:
+    - honey_bottle
+    - glowstone
+    - lapis_lazuli

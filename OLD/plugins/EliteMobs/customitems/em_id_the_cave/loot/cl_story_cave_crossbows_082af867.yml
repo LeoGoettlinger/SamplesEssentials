@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: CROSSBOW
+name: '&c[$difficulty] Sticky Crossbow'
+lore:
+- '&cA crossbow mechanism that'
+- '&csticks and jams with slime,'
+- '&cbut fires devastating shots.'

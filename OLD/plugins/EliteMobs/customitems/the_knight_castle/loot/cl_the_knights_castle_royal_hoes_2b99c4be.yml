@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HOE
+name: '&dReaper of the Court'
+lore:
+- '&dNo harvest feast followed its final work.'

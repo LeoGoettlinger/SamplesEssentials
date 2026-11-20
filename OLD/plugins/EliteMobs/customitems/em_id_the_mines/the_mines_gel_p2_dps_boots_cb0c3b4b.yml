@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&2[$difficulty] Gellers'
+lore:
+- '&2You feel like you could stand in place for days.'
+classLootFamily: DPS_BOOTS

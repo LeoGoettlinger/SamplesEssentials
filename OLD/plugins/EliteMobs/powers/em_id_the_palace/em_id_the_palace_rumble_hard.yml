@@ -1,0 +1,86 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  Trigger:
+    Events:
+    - EliteMobDamagedByPlayerEvent
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 40
+      scripts:
+      - Rumble
+    - action: TITLE_MESSAGE
+      subtitle: '&dRumble Warning!'
+      duration: 30
+      fadeIn: 5
+      fadeOut: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 80
+    - action: MESSAGE
+      sValue: '&d[Old Stone King] &fEat bedrock!'
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 80
+      wait: 40
+    Cooldowns:
+      local: 500
+      global: 100
+  Rumble:
+    Zone:
+      shape: CYLINDER
+      radius: 40
+      height: 1
+      Target:
+        targetType: SELF
+        offset: 0,60,0
+    Actions:
+    - action: SPAWN_FALLING_BLOCK
+      material: BEDROCK
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.02
+      landingScripts:
+      - Landing
+  Landing:
+    Zone:
+      shape: DOME
+      radius: 3
+      Target:
+        targetType: LANDING_LOCATION
+        track: true
+    Actions:
+    - action: PLAY_SOUND
+      Target:
+        targetType: LANDING_LOCATION
+      sValue: minecraft:entity.generic.explode
+    - action: SPAWN_PARTICLE
+      particles:
+      - particle: EXPLOSION_NORMAL
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.1
+      repeatEvery: 5
+      times: 4
+    - action: PUSH
+      vValue: 0,-10,0
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 5
+      times: 4
+    - action: DAMAGE
+      multiplier: 2
+      Target:
+        targetType: ZONE_FULL
+      repeatEvery: 5
+      times: 4
+    - action: POTION_EFFECT
+      potionEffectType: WEAKNESS
+      amplifier: 0
+      duration: 100
+      repeatEvery: 5
+      times: 4
+      Target:
+        targetType: ZONE_FULL
+# Generated with https://magmaguy.com/webapp/webapp.html !

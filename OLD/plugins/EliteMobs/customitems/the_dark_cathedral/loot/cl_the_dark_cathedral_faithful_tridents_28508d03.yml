@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: TRIDENT
+name: '&8Follower''s Trident'
+lore:
+- '&8Three points face the empty altar.'
+- '&8Nobody kneels with their back to it.'

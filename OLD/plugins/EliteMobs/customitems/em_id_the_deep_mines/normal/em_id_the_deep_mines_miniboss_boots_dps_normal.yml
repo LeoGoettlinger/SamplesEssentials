@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&d[Normal] Rune Boots'
+material: DIAMOND_BOOTS
+level: 45
+lore:
+- '&dThe insides of these boots are covered'
+- '&din tiny glowing runes.'
+enchantments:
+- DAMAGE_ALL,4
+- DAMAGE_UNDEAD,3
+- DAMAGE_ARTHROPODS,2
+- DURABILITY,1
+potionEffects:
+- SLOW_FALLING,0,self,continuous
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

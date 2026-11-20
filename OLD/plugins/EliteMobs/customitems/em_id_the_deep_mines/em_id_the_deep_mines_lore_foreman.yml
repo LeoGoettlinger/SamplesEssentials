@@ -1,0 +1,20 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+name: '&fAsh Covered Note'
+material: PAPER
+lore:
+- '&fThe tunnels stretch endlessly,'
+- '&fswallowing our hopes and fears alike.'
+- '&fDeeper we dig, deeper into the heart'
+- '&fof madness. The chime grows louder,'
+- '&fechoing in the chambers of my mind.'
+- '&fI am the foreman, leader of fools'
+- '&fentranced by promises of untold '
+- '&friches. The Nether calls to me,'
+- '&fits flames dancing in my dreams.'
+- '&fI see visions of power, of dominion'
+- '&fover worlds unseen. But the price...'
+- '&fthe price is steep...'
+scalability: scalable
+itemType: unique

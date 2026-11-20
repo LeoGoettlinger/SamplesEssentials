@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&2[$difficulty] Gel Bow'
+lore:
+- '&2This was stuck in the Gel Head''s head.'

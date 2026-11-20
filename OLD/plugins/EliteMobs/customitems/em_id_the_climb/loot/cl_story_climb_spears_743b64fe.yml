@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SPEAR
+name: '&c[$difficulty] Beastmaster Lance'
+lore:
+- '&cUsed to control wild beasts'
+- '&cand unruly undead. Still'
+- '&cdripping with ancient blood.'

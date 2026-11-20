@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythical] Stone Helmet'
+material: DIAMOND_HELMET
+level: 25
+lore:
+- '&cAs black as the night.'
+- '&cSparkling in the darkness.'
+enchantments:
+- DAMAGE_ALL,10
+- DAMAGE_UNDEAD,6
+- PROTECTION_ENVIRONMENTAL,5
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

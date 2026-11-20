@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&f[Mythical] Daine''s Soulweaver Armor'
+material: NETHERITE_CHESTPLATE
+level: 20
+lore:
+- '&fFriggin lil'' witch, I''m gonna devour you.'
+- '&fCasting spells like I never had no values.'
+enchantments:
+- THORNS,10
+- DAMAGE_ALL,7
+- DAMAGE_ARTHROPODS,6
+- DAMAGE_UNDEAD,5
+- PROTECTION_ENVIRONMENTAL,5
+potionEffects:
+- INCREASE_DAMAGE,2,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

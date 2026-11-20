@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&bShift Cutter'
+lore:
+- '&bA notch in the grip marks every completed shift.'
+- '&bThe grip is almost entirely notches.'

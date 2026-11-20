@@ -1,0 +1,16 @@
+isEnabled: true
+material: CROSSBOW
+name: '&d[Hard] Nether-Void Crossbow'
+lore:
+- '&8A weapon of immense power,'
+- '&8forged from the essence of'
+- '&8the Nether and the Void.'
+enchantments:
+- QUICK_CHARGE,3
+- PIERCING,3
+- MULTISHOT,1
+potionEffects:
+- SLOW_FALLING,0,self,continuous
+level: 55
+itemType: unique
+scalability: scalable

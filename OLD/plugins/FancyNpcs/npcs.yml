@@ -1,0 +1,631 @@
+npcs:
+  ea69d89b-1352-44cb-a328-1e2229be3114:
+    name: Orders
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Orders
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -1.4937275720102234
+      y: 162.0
+      z: -44.42456941297191
+      yaw: -0.22340725
+      pitch: 2.8840508
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: orders
+  e1d011ae-250d-46c8-ab87-5821e0ce24c6:
+    name: OPCrate
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: OPCrate
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -15.587834908105998
+      y: 162.0
+      z: -44.65675937495941
+      yaw: -2.1529236
+      pitch: -1.63358
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      RIGHT_CLICK:
+        '1':
+          action: player_command
+          value: crate open season-crate
+      LEFT_CLICK:
+        '1':
+          action: player_command
+          value: crate preview season-crate
+  774c4ba9-0d8b-4b44-b2f2-0740173f5d7e:
+    name: Auctionhouse
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Auctionhouse
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -4.483995877978087
+      y: 162.0
+      z: -44.411928635921534
+      yaw: 0.68718046
+      pitch: 4.38998
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: ah
+        '2':
+          action: message
+          value: Um ein Item ins AH einzustellen, schreibe /ah sell [Deinen Preis]
+            und das Item in deiner Hand wird dafür verkauft!
+  78a7e4f4-e8e5-4b1a-87e6-dd5bf10916cf:
+    name: Regeln
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Regeln
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -18.500474203597253
+      y: 161.0
+      z: -37.55941927800608
+      yaw: -89.458046
+      pitch: 4.00472
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: rules
+  6452b979-524c-4bfd-8415-8ad80aeb73df:
+    name: StarterCrate
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: StarterCrate
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -16.653371765483254
+      y: 161.0
+      z: -42.53940183139127
+      yaw: 0.2492138
+      pitch: 10.869174
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      RIGHT_CLICK:
+        '1':
+          action: player_command
+          value: crate open starter-crate
+      LEFT_CLICK:
+        '1':
+          action: player_command
+          value: crate preview starter-crate
+  c573870d-19c7-4198-8ce4-7e9ed71b9d81:
+    name: Discord
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Discord
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -18.426441800955413
+      y: 161.0
+      z: -36.47194171298844
+      yaw: -91.22655
+      pitch: 0.43255094
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: message
+          value: Bist du schon auf <gold>unserem Discord? -> <yellow><click:open_url:"https://dc.gg/pixelattack">dc.gg/pixelattack
+            <gray>! Dort kannst du dich bewerben, an Giveaways teilnehmen, Hilfe erhalten,
+            Bugs reporten, Spieler reporten etc.
+  ad83b987-e20f-4c07-84b5-51504c590d4a:
+    name: Event
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Event
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: 1.5615165221794092
+      y: 161.0
+      z: -35.53616249179241
+      yaw: 91.54852
+      pitch: -3.0694902
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: warp event
+        '2':
+          action: message
+          value: Aktuell findet kein Event statt :/
+  69b280d7-640f-4dcd-b3fe-d94ea13158fd:
+    name: Vote
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Vote
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -18.47666128565254
+      y: 161.0
+      z: -35.52333021584653
+      yaw: -89.64919
+      pitch: -0.3554534
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: message
+          value: Kanntest du schon unsere <yellow>Vote‑Links</yellow><gray>?<newline><click:open_url:"https://serverliste.net/server/5663"><gold>serverliste.net</gold><gray>
+            → https://serverliste.net/server/5663</gray></click><newline><click:open_url:"https://www.mc-liste.de/server/293"><gold>mc-liste.de</gold><gray>
+            → https://www.mc-liste.de/server/293</gray></click><newline><click:open_url:"https://topminecraftservers.org/vote/44325"><gold>topminecraftservers</gold><gray>
+            → https://topminecraftservers.org/vote/44325</gray></click><newline><click:open_url:"https://minecraftpocket-servers.com/server/134075/"><gold>mc‑pocket‑servers</gold><gray>
+            → https://minecraftpocket-servers.com/server/134075/</gray></click><newline><click:open_url:"https://minecraftservers.org/server/692193"><gold>minecraftservers.org</gold><gray>
+            → https://minecraftservers.org/server/692193</gray></click><newline><click:open_url:"https://minecraft.buzz/server/pixelrealm"><gold>minecraft.buzz</gold><gray>
+            → https://minecraft.buzz/server/pixelrealm</gray></click>
+  7575c308-ff23-4768-9945-283bc0941ae1:
+    name: StashCrate
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: StashCrate
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -14.07899427101789
+      y: 161.0
+      z: -43.533489359064134
+      yaw: 0.018737793
+      pitch: 2.0787838
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      RIGHT_CLICK:
+        '1':
+          action: player_command
+          value: crate open plotcrate
+      LEFT_CLICK:
+        '1':
+          action: player_command
+          value: crate preview plotcrate
+  9c41a6f0-fcb4-4942-8000-0d4e4e2462ab:
+    name: EliteCreate
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: EliteCreate
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -11.498726040305511
+      y: 161.0
+      z: -42.496121185974076
+      yaw: 1.7551539
+      pitch: 1.9386775
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+  e300093e-7145-417b-8077-8244ea28e39c:
+    name: Shop
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Shop
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -5.486230241477626
+      y: 161.0
+      z: -42.47433088839934
+      yaw: -2.7976427
+      pitch: 1.5881947
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: shop
+  41754e88-0d77-4542-b970-a4af5edfff56:
+    name: SeasonCrate
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: SeasonCrate
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -12.390386502323132
+      y: 162.0
+      z: -44.51935213968009
+      yaw: -0.52456665
+      pitch: 7.979821
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      RIGHT_CLICK:
+        '1':
+          action: player_command
+          value: crate open season-crate
+      LEFT_CLICK:
+        '1':
+          action: player_command
+          value: crate preview season-crate
+  15a69c31-67c4-4413-967a-94f41debd3e5:
+    name: Bounties
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Bounties
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -2.961212692835695
+      y: 161.0
+      z: -43.54802820639615
+      yaw: -0.50325775
+      pitch: -2.6668854
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: bounty
+  69912c22-a32a-4370-a881-ee7c648d2b7e:
+    name: Nether
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Nether
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: 1.457322772977383
+      y: 161.0
+      z: -37.51079926547566
+      yaw: 89.9048
+      pitch: -0.5305322
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: nether
+  1f968ad7-5451-408e-b95a-d05a54f915c6:
+    name: RTP
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: RTP
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: 1.4625391794471587
+      y: 161.0
+      z: -36.484221454226805
+      yaw: 89.7123
+      pitch: -2.7194102
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: rtp
+  a7764c50-c071-4571-b13b-256f0b6164a3:
+    name: End
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: End
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: 1.4555511581261489
+      y: 161.0
+      z: -38.537387839555294
+      yaw: 89.16935
+      pitch: 0.15235616
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: end
+  5dd0f0ea-0712-45eb-9a1b-5a3d73247792:
+    name: Homes
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Homes
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -18.544678069335184
+      y: 161.0
+      z: -38.51137013174344
+      yaw: -88.9325
+      pitch: -0.26791832
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: home
+  000c8009-673f-419d-8bfc-7119dfa96d23:
+    name: Shop-Sell
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Shop-Sell
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -0.4794467570744999
+      y: 161.0
+      z: -42.56308901953279
+      yaw: 1.1249292
+      pitch: 2.498779
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: shop sell
+  684e648e-9d5a-4316-89d6-594e7a386ccd:
+    name: Raengeshop
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Raengeshop
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -2.911476904012501
+      y: 162.0
+      z: -45.51161877247857
+      yaw: 1.0716248
+      pitch: 1.7984476
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      ANY_CLICK:
+        '1':
+          action: player_command
+          value: ranks
+  69491028-4cf1-4b22-b7d4-19f471524e35:
+    name: Rewards
+    creator: 06d19fc6-552e-41ed-8f57-d01fc2139970
+    displayName: Rewards
+    type: PLAYER
+    location:
+      world: Nixoria-SMP
+      x: -14.04048530725009
+      y: 162.0
+      z: -45.280586734947455
+      yaw: -1.2776489
+      pitch: 4.7051897
+    showInTab: false
+    spawnEntity: true
+    collidable: true
+    glowing: false
+    glowingColor: white
+    turnToPlayer: false
+    turnToPlayerDistance: -1
+    interactionCooldown: 0.0
+    scale: 1.0
+    visibility_distance: -1
+    visibility: ALL
+    skin:
+      mirrorSkin: false
+    actions:
+      RIGHT_CLICK:
+        '1':
+          action: player_command
+          value: rewards claim *
+      LEFT_CLICK:
+        '1':
+          action: player_command
+          value: rewards

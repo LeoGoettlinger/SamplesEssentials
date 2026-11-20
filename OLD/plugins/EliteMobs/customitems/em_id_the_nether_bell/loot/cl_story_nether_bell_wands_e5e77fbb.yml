@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&7Quiet Hiss'
+lore:
+- '&7A narrow rod marked with rings of black dust.'
+weaponType: WANDS

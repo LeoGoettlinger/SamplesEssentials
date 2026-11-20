@@ -1,0 +1,15 @@
+potionEffects: []
+isEnabled: true
+material: TRIDENT
+name: '&5[Normal] Void Trident'
+lore:
+- '&8Forged in the heart of oblivion'
+- '&8this trident crackles with the'
+- '&8energy of the void.'
+enchantments:
+- LOYALTY,2
+- IMPALING,3
+- RIPTIDE,2
+level: 55
+itemType: unique
+scalability: scalable

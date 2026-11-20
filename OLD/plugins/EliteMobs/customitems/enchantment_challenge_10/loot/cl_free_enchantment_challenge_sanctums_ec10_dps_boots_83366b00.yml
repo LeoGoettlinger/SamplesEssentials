@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: Heel Rattle
+lore:
+- Every step adds to the racket.
+classLootFamily: DPS_BOOTS

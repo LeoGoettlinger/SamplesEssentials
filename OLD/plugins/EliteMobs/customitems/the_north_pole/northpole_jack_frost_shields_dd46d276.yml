@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&bFrosted Pane'
+lore:
+- '&7The window was frozen shut.'
+- '&7Jack took the whole frame.'

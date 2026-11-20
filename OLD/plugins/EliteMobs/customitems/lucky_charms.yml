@@ -1,0 +1,12 @@
+name: <g:#FFD700:#32CD32>Lucky Charms</g>
+lore:
+- '&aPart of a complete breakfast!'
+- '&cNote: Absolutely not a part of'
+- '&ca complete breakfast.'
+isEnabled: true
+material: COOKIE
+enchantments:
+- VANISHING_CURSE,1
+potionEffects:
+- LUCK,0,self,continuous
+dropWeight: '1'

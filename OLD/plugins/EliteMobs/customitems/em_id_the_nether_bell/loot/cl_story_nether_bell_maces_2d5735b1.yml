@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: MACE
+name: '&c[$difficulty] Void Toll'
+lore:
+- '&cA mace that resonates with'
+- '&cthe bell''s void energy. Each'
+- '&cstrike rings with emptiness.'

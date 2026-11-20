@@ -1,0 +1,26 @@
+id: infiniteBait
+disabled: true
+silent: false
+format: <light_purple>{name}
+sort-index: 10
+application-weight: 1
+catch-weight: 1
+max-baits: 1
+can-be-caught: false
+drop-quantity: 0
+infinite: true
+disable-use-alert: true
+purchase:
+  price: 800000
+  quantity: 1
+  economy-types:
+    - Vault
+item:
+  material: ENDER_PEARL
+  displayname: "<light_purple>Infinite Bait"
+  glowing: true
+  lore:
+    - "<gray>An infinite bait for testing."
+    - "<gray>Grants a permanent Legendary boost."
+rarity-modifiers:
+  Legendary: "*2"

@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&e[Hard] Ancient Nullifier'
+material: DIAMOND_CHESTPLATE
+level: 25
+lore:
+- '&eThis black stone armor will absorb'
+- '&elarge amounts of damage.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,7
+- PROTECTION_EXPLOSIONS,5
+- PROTECTION_PROJECTILE,4
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

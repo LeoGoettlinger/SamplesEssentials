@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&0The Unopened Gate'
+lore:
+- '&0&kThe face shows a door below the sea.'
+- '&0&kEvery carving around it faces away.'

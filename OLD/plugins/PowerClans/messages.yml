@@ -1,0 +1,219 @@
+prefix: "&7[&bPowerClans&7] "
+
+general:
+  only-players: "{prefix}&cThis command is for players only."
+  no-permission: "{prefix}&cYou don't have permission."
+  player-not-found: "{prefix}&cPlayer not found."
+  invalid-number: "{prefix}&cPlease enter a valid number."
+  reload: "{prefix}&aConfiguration reloaded."
+
+clan:
+  already-in-clan: "{prefix}&cYou are already in a clan."
+  not-in-clan: "{prefix}&cYou are not in a clan."
+  not-leader: "{prefix}&cOnly the leader can do this."
+  not-enough-rank: "{prefix}&cYou don't have enough rank."
+  clan-not-found: "{prefix}&cClan not found."
+  player-not-in-clan: "{prefix}&cThat player is not in your clan."
+  cannot-target-self: "{prefix}&cYou cannot target yourself."
+  cannot-target-higher: "{prefix}&cYou cannot target a player with equal or higher rank."
+  friendly-fire-blocked: "{prefix}&cYou cannot attack a clanmate!"
+
+create:
+  usage: "{prefix}&cUsage: /clan create <name> <tag>"
+  name-length: "{prefix}&cName length must be between {min} and {max} characters."
+  tag-length: "{prefix}&cTag length must be between {min} and {max} characters."
+  name-invalid: "{prefix}&cName contains invalid characters."
+  tag-invalid: "{prefix}&cTag contains invalid characters."
+  name-taken: "{prefix}&cA clan with that name already exists."
+  tag-taken: "{prefix}&cThat tag is already taken."
+  not-enough-money: "{prefix}&cNot enough money. Required: &e{cost}"
+  success: "{prefix}&aClan &e{name} &7[&b{tag}&7] &ahas been created!"
+
+disband:
+  success: "{prefix}&cClan &e{name} &chas been disbanded."
+  broadcast: "{prefix}&cThe clan &e{name} &chas been disbanded."
+
+invite:
+  usage: "{prefix}&cUsage: /clan invite <player>"
+  already-in-clan: "{prefix}&cThat player is already in a clan."
+  clan-full: "{prefix}&cThe clan is full ({max} members)."
+  sent: "{prefix}&aInvitation sent to &e{player}&a."
+  received: "{prefix}&aYou have been invited to clan &e{name} &7[&b{tag}&7]"
+  received-hint: "{prefix}&e/clan accept &7- accept | &e/clan deny &7- decline"
+
+accept:
+  no-invite: "{prefix}&cYou have no pending invitations."
+  clan-gone: "{prefix}&cThat clan no longer exists."
+  clan-full: "{prefix}&cThe clan is full."
+  success: "{prefix}&aYou joined clan &e{name}&a."
+  broadcast: "{prefix}&e{player} &ahas joined the clan."
+
+deny:
+  no-invite: "{prefix}&cYou have no pending invitations."
+  success: "{prefix}&cInvitation declined."
+
+leave:
+  leader-cannot: "{prefix}&cThe leader cannot leave. Use &e/clan setleader <player> &cor &e/clan disband"
+  success: "{prefix}&cYou left clan &e{name}&c."
+  broadcast: "{prefix}&e{player} &chas left the clan."
+
+kick:
+  usage: "{prefix}&cUsage: /clan kick <player>"
+  success: "{prefix}&e{player} &ahas been kicked."
+  target: "{prefix}&cYou have been kicked from clan &e{name}&c."
+
+promote:
+  usage: "{prefix}&cUsage: /clan promote <player>"
+  already-max: "{prefix}&cThat player already has the highest promotable rank."
+  success: "{prefix}&e{player} &ahas been promoted to &eOfficer&a."
+
+demote:
+  usage: "{prefix}&cUsage: /clan demote <player>"
+  not-officer: "{prefix}&cThat player is not an Officer."
+  success: "{prefix}&e{player} &ahas been demoted to &eMember&a."
+
+setleader:
+  usage: "{prefix}&cUsage: /clan setleader <player>"
+  already-leader: "{prefix}&cYou are already the leader."
+  success: "{prefix}&aLeadership transferred to &e{player}&a."
+  target: "{prefix}&aYou are now the leader of clan &e{name}&a."
+
+info:
+  usage: "{prefix}&cUsage: /clan info [clan]"
+  header: "&8&m─────────────────────────────"
+  title: "&b&l{name} &7[&b{tag}&7]"
+  description: "&7Description: &f{desc}"
+  leader: "&7Leader: &e{leader}"
+  level: "&7Level: &a{level}"
+  members: "&7Members: &e{count}&7/&e{max}"
+  stats: "&7Kills: &a{kills} &7Deaths: &c{deaths} &7K/D: &6{kdr}"
+  bank: "&7Bank: &e{bank}"
+  pvp: "&7Friendly PvP: {status}"
+  pvp-on: "&aEnabled"
+  pvp-off: "&cDisabled"
+  created: "&7Created: &f{date}"
+  officers-label: "&7Officers: {list}"
+  members-label: "&7Members: {list}"
+  footer: "&8&m─────────────────────────────"
+
+list:
+  empty: "{prefix}&cNo clans exist."
+  header: "&8&m─────────────────────────────"
+  title: "&b&lClan List:"
+  entry: "&7{num}. &b{name} &7[&b{tag}&7] &eLvl.{level} &7({members})"
+  footer: "&8&m─────────────────────────────"
+
+top:
+  empty: "{prefix}&cNo clans exist."
+  header: "&8&m─────────────────────────────"
+  title: "&6&lTop Clans:"
+  entry: "&6#{num} &b{name} &7[&b{tag}&7] &aLvl.{level} &7K:{kills} D:{deaths}"
+  footer: "&8&m─────────────────────────────"
+
+chat:
+  toggle-on: "{prefix}&7Clan chat: &aEnabled"
+  toggle-off: "{prefix}&7Clan chat: &cDisabled"
+  format: "&7[&bClan&7] &e{player}&7: &f{message}"
+
+desc:
+  usage: "{prefix}&cUsage: /clan desc <description>"
+  success: "{prefix}&aDescription updated."
+
+pvp:
+  toggle: "{prefix}&7Friendly PvP: {status}"
+  on: "&aEnabled"
+  off: "&cDisabled"
+
+deposit:
+  no-economy: "{prefix}&cEconomy is not available."
+  usage: "{prefix}&cUsage: /clan deposit <amount>"
+  amount-positive: "{prefix}&cAmount must be greater than 0."
+  not-enough-money: "{prefix}&cNot enough money."
+  success: "{prefix}&aYou deposited &e{amount} &ainto the clan bank."
+
+levelup:
+  max-level: "{prefix}&cThe clan is already at max level."
+  not-enough-bank: "{prefix}&cNot enough in the bank. Required: &e{cost} &7(have: {bank})"
+  success: "{prefix}&aClan leveled up to &e{level}&a!"
+
+help:
+  header: "&8&m─────────────────────────────"
+  title: "&b&lPowerClans &7- Help"
+  menu: "&e/clan &7- Open menu"
+  create: "&e/clan create <name> <tag> &7- Create clan"
+  disband: "&e/clan disband &7- Disband clan"
+  invite: "&e/clan invite <player> &7- Invite player"
+  accept-deny: "&e/clan accept/deny &7- Accept/Decline invite"
+  leave: "&e/clan leave &7- Leave clan"
+  kick: "&e/clan kick <player> &7- Kick player"
+  promote-demote: "&e/clan promote/demote <player> &7- Promote/Demote"
+  setleader: "&e/clan setleader <player> &7- Transfer leadership"
+  info: "&e/clan info [clan] &7- Clan info"
+  list-cmd: "&e/clan list &7- Clan list"
+  top-cmd: "&e/clan top &7- Top clans"
+  chat-cmd: "&e/clan chat [message] &7- Clan chat"
+  desc-cmd: "&e/clan desc <text> &7- Set description"
+  pvp-cmd: "&e/clan pvp &7- Toggle friendly PvP"
+  deposit-cmd: "&e/clan deposit <amount> &7- Deposit to bank"
+  levelup-cmd: "&e/clan levelup &7- Level up clan"
+  footer: "&8&m─────────────────────────────"
+
+gui:
+  main-title: "&8&lPowerClans"
+  members-title: "&8&lClan Members"
+  top-title: "&8&lTop Clans"
+  create-clan: "&a&lCreate Clan"
+  create-clan-lore: "&7/clan create <name> <tag>"
+  clan-list: "&e&lClan List"
+  clan-list-lore: "&7All server clans"
+  top-clans: "&6&lTop Clans"
+  top-clans-lore: "&7Best clans"
+  accept-invite: "&b&lAccept Invitation"
+  accept-invite-lore: "&7/clan accept"
+  members-btn: "&e&lMembers"
+  members-btn-lore: "&7View members"
+  clan-chat: "&a&lClan Chat"
+  clan-chat-on: "&7Status: &aEnabled"
+  clan-chat-off: "&7Status: &cDisabled"
+  clan-chat-toggle: "&7Click to toggle"
+  invite-btn: "&b&lInvite"
+  invite-btn-lore: "&7/clan invite <player>"
+  levelup-btn: "&a&lLevel Up"
+  levelup-current: "&7Current: &a{level}"
+  levelup-cost: "&7Cost: &e{cost}"
+  levelup-bank: "&7Bank: &e{bank}"
+  pvp-btn: "&e&lFriendly PvP"
+  pvp-status-on: "&7Status: &aEnabled"
+  pvp-status-off: "&7Status: &cDisabled"
+  disband-btn: "&c&lDisband Clan"
+  disband-btn-lore: "&7Delete permanently"
+  leave-btn: "&c&lLeave Clan"
+  leave-btn-lore: "&7Leave the clan"
+  deposit-btn: "&e&lDeposit"
+  deposit-btn-lore: "&7/clan deposit <amount>"
+  back-btn: "&c&lBack"
+  back-btn-lore: "&7To main menu"
+  info-tag: "&7Tag: &b{tag}"
+  info-level: "&7Level: &a{level}"
+  info-members: "&7Members: &e{count}/{max}"
+  info-kills: "&7Kills: &a{kills}"
+  info-deaths: "&7Deaths: &c{deaths}"
+  info-kdr: "&7K/D: &6{kdr}"
+  info-bank: "&7Bank: &e{bank}"
+  role-leader: "&7Role: &6Leader"
+  role-officer: "&7Role: &bOfficer"
+  role-member: "&7Role: &fMember"
+  top-entry: "&6#{num} &b{name}"
+  top-tag: "&7Tag: &b{tag}"
+  top-level: "&7Level: &a{level}"
+  top-members: "&7Members: &e{count}"
+  top-kdr: "&7K/D: &6{kdr}"
+  confirm-disband: "{prefix}&cConfirm with command: &e/clan disband"
+  hint-create: "{prefix}&7Use: &e/clan create <name> <tag>"
+  hint-invite: "{prefix}&7Use: &e/clan invite <player>"
+  hint-deposit: "{prefix}&7Use: &e/clan deposit <amount>"
+
+roles:
+  leader: "Leader"
+  officer: "Officer"
+  member: "Member"

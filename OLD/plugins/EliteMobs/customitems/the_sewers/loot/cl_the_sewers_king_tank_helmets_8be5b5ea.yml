@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&4Deepcourt Visor'
+lore:
+- '&4The visor bears the dents of a final retreat.'
+classLootFamily: TANK_HELMETS

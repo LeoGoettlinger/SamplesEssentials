@@ -1,0 +1,13 @@
+{
+  "skillCooldown": 40,
+  "skillId": "morph:teleport",
+  "abilities": [
+    "morph:takes_damage_from_water",
+    "morph:night_vision"
+  ],
+  "settings": {
+    "morph:teleport": {
+      "max_distance": 32
+    }
+  }
+}

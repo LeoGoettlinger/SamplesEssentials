@@ -1,0 +1,2065 @@
+gui-name: '&8Blocks Shop'
+rows: 6
+permission: ''
+items:
+- material: STONE
+  name: '&fStone'
+  price: 5
+  sell-price: 4
+  amount: 64
+- material: COBBLESTONE
+  name: '&7Cobblestone'
+  price: 3
+  sell-price: 2
+  amount: 64
+- material: SMOOTH_STONE
+  name: '&fSmooth Stone'
+  price: 8
+  amount: 16
+  sell-price: 6
+- material: STONE_BRICKS
+  name: '&fStone Bricks'
+  price: 10
+  amount: 16
+  sell-price: 7
+- material: CHISELED_STONE_BRICKS
+  name: '&fChiseled Stone Bricks'
+  price: 12
+  amount: 16
+  sell-price: 8
+- material: CRACKED_STONE_BRICKS
+  name: '&7Cracked Stone Bricks'
+  price: 12
+  amount: 16
+  sell-price: 8
+- material: MOSSY_STONE_BRICKS
+  name: '&aMossy Stone Bricks'
+  price: 12
+  amount: 16
+  sell-price: 8
+- material: POLISHED_GRANITE
+  name: '&fPolished Granite'
+  price: 12
+  amount: 16
+  sell-price: 8
+- material: POLISHED_DIORITE
+  name: '&fPolished Diorite'
+  price: 12
+  amount: 16
+  sell-price: 8
+- material: POLISHED_ANDESITE
+  name: '&fPolished Andesite'
+  price: 12
+  amount: 16
+  sell-price: 8
+- material: GRANITE
+  name: '&6Granite'
+  price: 9
+  amount: 32
+  sell-price: 6
+- material: DIORITE
+  name: '&7Diorite'
+  price: 9
+  amount: 32
+  sell-price: 6
+- material: ANDESITE
+  name: '&8Andesite'
+  price: 9
+  amount: 32
+  sell-price: 6
+- material: CALCITE
+  name: '&fCalcite'
+  price: 9
+  amount: 64
+  sell-price: 6
+- material: DEEPSLATE
+  name: '&8Deepslate'
+  price: 3
+  sell-price: 2
+  amount: 64
+- material: COBBLED_DEEPSLATE
+  name: '&8Cobbled Deepslate'
+  price: 3
+  sell-price: 2
+  amount: 32
+- material: POLISHED_DEEPSLATE
+  name: '&8Polished Deepslate'
+  price: 6
+  amount: 16
+  sell-price: 4
+- material: DEEPSLATE_BRICKS
+  name: '&8Deepslate Bricks'
+  price: 8
+  amount: 16
+  sell-price: 6
+- material: DEEPSLATE_TILES
+  name: '&8Deepslate Tiles'
+  price: 8
+  amount: 16
+  sell-price: 6
+- material: CHISELED_DEEPSLATE
+  name: '&8Chiseled Deepslate'
+  price: 10
+  amount: 16
+  sell-price: 7
+- material: CRACKED_DEEPSLATE_BRICKS
+  name: '&8Cracked Deepslate Bricks'
+  price: 10
+  amount: 16
+  sell-price: 7
+- material: CRACKED_DEEPSLATE_TILES
+  name: '&8Cracked Deepslate Tiles'
+  price: 10
+  amount: 16
+  sell-price: 7
+- material: TUFF
+  name: '&7Tuff'
+  price: 4
+  sell-price: 3
+  amount: 64
+- material: TUFF_BRICKS
+  name: '&7Tuff Bricks'
+  price: 4
+  amount: 32
+  sell-price: 3
+- material: POLISHED_TUFF
+  name: '&7Polished Tuff'
+  price: 6
+  amount: 16
+  sell-price: 4
+- material: CHISELED_TUFF
+  name: '&7Chiseled Tuff'
+  price: 8
+  amount: 16
+  sell-price: 6
+- material: BASALT
+  name: '&8Basalt'
+  price: 6
+  sell-price: 4
+  amount: 32
+- material: POLISHED_BASALT
+  name: '&8Polished Basalt'
+  price: 10
+  amount: 16
+  sell-price: 7
+- material: BLACKSTONE
+  name: '&8Blackstone'
+  price: 8
+  sell-price: 6
+  amount: 32
+- material: POLISHED_BLACKSTONE
+  name: '&8Polished Blackstone'
+  price: 12
+  amount: 16
+  sell-price: 8
+- material: BLACKSTONE_BRICKS
+  name: '&8Blackstone Bricks'
+  price: 14
+  amount: 16
+  sell-price: 10
+- material: CHISELED_POLISHED_BLACKSTONE
+  name: '&8Chiseled Blackstone'
+  price: 16
+  amount: 16
+  sell-price: 11
+- material: CRACKED_POLISHED_BLACKSTONE_BRICKS
+  name: '&8Cracked Blackstone Bricks'
+  price: 14
+  amount: 16
+  sell-price: 10
+- material: CRACKED_NETHER_BRICKS
+  name: '&cCracked Nether Bricks'
+  price: 60
+  amount: 16
+  sell-price: 42
+- material: DIRT
+  name: '&6Dirt'
+  price: 3
+  sell-price: 2
+  amount: 64
+- material: GRASS_BLOCK
+  name: '&aGrass Block'
+  price: 25
+  sell-price: 18
+  amount: 64
+- material: DIRT_PATH
+  name: '&6Dirt Path'
+  price: 20
+  sell-price: 14
+  amount: 64
+- material: PODZOL
+  name: '&aPodzol'
+  price: 30
+  sell-price: 21
+  amount: 64
+- material: MYCELIUM
+  name: '&5Mycelium'
+  price: 40
+  sell-price: 28
+  amount: 64
+- material: MOSS_BLOCK
+  name: '&aMoss Block'
+  price: 35
+  amount: 16
+  sell-price: 24
+- material: MUD
+  name: '&6Mud'
+  price: 8
+  sell-price: 6
+  amount: 64
+- material: MUD_BRICKS
+  name: '&6Mud Bricks'
+  price: 16
+  amount: 16
+  sell-price: 11
+- material: PACKED_MUD
+  name: '&6Packed Mud'
+  price: 12
+  amount: 16
+  sell-price: 8
+- material: COARSE_DIRT
+  name: '&6Coarse Dirt'
+  price: 4
+  sell-price: 3
+  amount: 64
+- material: ROOTED_DIRT
+  name: '&2Rooted Dirt'
+  price: 10
+  sell-price: 7
+  amount: 16
+- material: FARMLAND
+  name: '&6Farmland'
+  price: 15
+  amount: 16
+  sell-price: 10
+- material: SAND
+  name: '&eSand'
+  price: 6
+  sell-price: 4
+  amount: 64
+- material: RED_SAND
+  name: '&6Red Sand'
+  price: 8
+  sell-price: 6
+  amount: 32
+- material: SUSPICIOUS_SAND
+  name: '&6Suspicious Sand'
+  price: 50
+  sell-price: 35
+  amount: 8
+- material: GRAVEL
+  name: '&7Gravel'
+  price: 6
+  sell-price: 4
+  amount: 64
+- material: SUSPICIOUS_GRAVEL
+  name: '&7Suspicious Gravel'
+  price: 50
+  sell-price: 35
+  amount: 8
+- material: CLAY
+  name: '&fClay'
+  price: 10
+  sell-price: 7
+  amount: 64
+- material: SANDSTONE
+  name: '&eSandstone'
+  price: 12
+  amount: 16
+  sell-price: 8
+- material: SMOOTH_SANDSTONE
+  name: '&eSmooth Sandstone'
+  price: 14
+  amount: 16
+  sell-price: 10
+- material: CUT_SANDSTONE
+  name: '&eCut Sandstone'
+  price: 14
+  amount: 16
+  sell-price: 10
+- material: RED_SANDSTONE
+  name: '&6Red Sandstone'
+  price: 14
+  amount: 16
+  sell-price: 10
+- material: OAK_LOG
+  name: '&6Oak Log'
+  price: 15
+  amount: 16
+  sell-price: 10
+- material: SPUCE_LOG
+  name: '&6Spruce Log'
+  price: 15
+  amount: 16
+  sell-price: 10
+- material: BIRCH_LOG
+  name: '&fBirch Log'
+  price: 15
+  amount: 16
+  sell-price: 10
+- material: DARK_OAK_LOG
+  name: '&8Dark Oak Log'
+  price: 18
+  amount: 16
+  sell-price: 13
+- material: JUNGLE_LOG
+  name: '&6Jungle Log'
+  price: 18
+  amount: 16
+  sell-price: 13
+- material: ACACIA_LOG
+  name: '&6Acacia Log'
+  price: 18
+  amount: 16
+  sell-price: 13
+- material: MANGROVE_LOG
+  name: '&2Mangrove Log'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: CHERRY_LOG
+  name: '&dCherry Log'
+  price: 22
+  amount: 16
+  sell-price: 15
+- material: BAMBOO_BLOCK
+  name: '&aBamboo Block'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: OAK_PLANKS
+  name: '&6Oak Planks'
+  price: 10
+  amount: 64
+  sell-price: 7
+- material: SPRUCE_PLANKS
+  name: '&6Spruce Planks'
+  price: 10
+  amount: 64
+  sell-price: 7
+- material: BIRCH_PLANKS
+  name: '&fBirch Planks'
+  price: 10
+  amount: 64
+  sell-price: 7
+- material: DARK_OAK_PLANKS
+  name: '&8Dark Oak Planks'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: JUNGLE_PLANKS
+  name: '&6Jungle Planks'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: ACACIA_PLANKS
+  name: '&6Acacia Planks'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: MANGROVE_PLANKS
+  name: '&2Mangrove Planks'
+  price: 14
+  amount: 32
+  sell-price: 10
+- material: CHERRY_PLANKS
+  name: '&dCherry Planks'
+  price: 16
+  amount: 32
+  sell-price: 11
+- material: BAMBOO_PLANKS
+  name: '&aBamboo Planks'
+  price: 14
+  amount: 32
+  sell-price: 10
+- material: STRIPPED_OAK_LOG
+  name: '&6Stripped Oak Log'
+  price: 18
+  amount: 16
+  sell-price: 13
+- material: STRIPPED_SPRUCE_LOG
+  name: '&6Stripped Spruce Log'
+  price: 18
+  amount: 16
+  sell-price: 13
+- material: STRIPPED_BIRCH_LOG
+  name: '&fStripped Birch Log'
+  price: 18
+  amount: 16
+  sell-price: 13
+- material: STRIPPED_DARK_OAK_LOG
+  name: '&8Stripped Dark Oak Log'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: STRIPPED_JUNGLE_LOG
+  name: '&6Stripped Jungle Log'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: STRIPPED_ACACIA_LOG
+  name: '&6Stripped Acacia Log'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: STRIPPED_CHERRY_LOG
+  name: '&dStripped Cherry Log'
+  price: 24
+  amount: 16
+  sell-price: 17
+- material: STRIPPED_MANGROVE_LOG
+  name: '&2Stripped Mangrove Log'
+  price: 22
+  amount: 16
+  sell-price: 15
+- material: OAK_DOOR
+  name: '&6Oak Door'
+  price: 40
+  amount: 4
+  sell-price: 28
+- material: SPRUCE_DOOR
+  name: '&6Spruce Door'
+  price: 40
+  amount: 4
+  sell-price: 28
+- material: BIRCH_DOOR
+  name: '&fBirch Door'
+  price: 40
+  amount: 4
+  sell-price: 28
+- material: DARK_OAK_DOOR
+  name: '&8Dark_Oak Door'
+  price: 45
+  amount: 4
+  sell-price: 31
+- material: JUNGLE_DOOR
+  name: '&6Jungle Door'
+  price: 45
+  amount: 4
+  sell-price: 31
+- material: ACACIA_DOOR
+  name: '&6Acacia Door'
+  price: 45
+  amount: 4
+  sell-price: 31
+- material: MANGROVE_DOOR
+  name: '&2Mangrove Door'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: CHERRY_DOOR
+  name: '&dCherry Door'
+  price: 55
+  amount: 4
+  sell-price: 38
+- material: BAMBOO_DOOR
+  name: '&aBamboo Door'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: CRIMSON_DOOR
+  name: '&cCrimson Door'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: WARPED_DOOR
+  name: '&2Warped Door'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: OAK_TRAPDOOR
+  name: '&6Oak Trapdoor'
+  price: 30
+  amount: 4
+  sell-price: 21
+- material: SPRUCE_TRAPDOOR
+  name: '&6Spruce Trapdoor'
+  price: 30
+  amount: 4
+  sell-price: 21
+- material: BIRCH_TRAPDOOR
+  name: '&fBirch Trapdoor'
+  price: 30
+  amount: 4
+  sell-price: 21
+- material: DARK_OAK_TRAPDOOR
+  name: '&8Dark_Oak Trapdoor'
+  price: 35
+  amount: 4
+  sell-price: 24
+- material: JUNGLE_TRAPDOOR
+  name: '&6Jungle Trapdoor'
+  price: 35
+  amount: 4
+  sell-price: 24
+- material: ACACIA_TRAPDOOR
+  name: '&6Acacia Trapdoor'
+  price: 35
+  amount: 4
+  sell-price: 24
+- material: MANGROVE_TRAPDOOR
+  name: '&2Mangrove Trapdoor'
+  price: 38
+  amount: 4
+  sell-price: 27
+- material: CHERRY_TRAPDOOR
+  name: '&dCherry Trapdoor'
+  price: 42
+  amount: 4
+  sell-price: 29
+- material: CRIMSON_TRAPDOOR
+  name: '&cCrimson Trapdoor'
+  price: 38
+  amount: 4
+  sell-price: 27
+- material: WARPED_TRAPDOOR
+  name: '&2Warped Trapdoor'
+  price: 38
+  amount: 4
+  sell-price: 27
+- material: OAK_FENCE
+  name: '&6Oak Fence'
+  price: 25
+  amount: 16
+  sell-price: 18
+- material: OAK_FENCE_GATE
+  name: '&6Oak Fence Gate'
+  price: 30
+  amount: 8
+  sell-price: 21
+- material: SPRUCE_FENCE
+  name: '&6Spruce Fence'
+  price: 25
+  amount: 16
+  sell-price: 18
+- material: SPRUCE_FENCE_GATE
+  name: '&6Spruce Fence Gate'
+  price: 30
+  amount: 8
+  sell-price: 21
+- material: BIRCH_FENCE
+  name: '&fBirch Fence'
+  price: 25
+  amount: 16
+  sell-price: 18
+- material: BIRCH_FENCE_GATE
+  name: '&fBirch Fence Gate'
+  price: 30
+  amount: 8
+  sell-price: 21
+- material: DARK_OAK_FENCE
+  name: '&8Dark_Oak Fence'
+  price: 30
+  amount: 16
+  sell-price: 21
+- material: DARK_OAK_FENCE_GATE
+  name: '&8Dark_Oak Fence Gate'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: JUNGLE_FENCE
+  name: '&6Jungle Fence'
+  price: 30
+  amount: 16
+  sell-price: 21
+- material: JUNGLE_FENCE_GATE
+  name: '&6Jungle Fence Gate'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: ACACIA_FENCE
+  name: '&6Acacia Fence'
+  price: 30
+  amount: 16
+  sell-price: 21
+- material: ACACIA_FENCE_GATE
+  name: '&6Acacia Fence Gate'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: MANGROVE_FENCE
+  name: '&2Mangrove Fence'
+  price: 32
+  amount: 16
+  sell-price: 22
+- material: MANGROVE_FENCE_GATE
+  name: '&2Mangrove Fence Gate'
+  price: 37
+  amount: 8
+  sell-price: 26
+- material: CHERRY_FENCE
+  name: '&dCherry Fence'
+  price: 35
+  amount: 16
+  sell-price: 24
+- material: CHERRY_FENCE_GATE
+  name: '&dCherry Fence Gate'
+  price: 40
+  amount: 8
+  sell-price: 28
+- material: CRIMSON_FENCE
+  name: '&cCrimson Fence'
+  price: 32
+  amount: 16
+  sell-price: 22
+- material: CRIMSON_FENCE_GATE
+  name: '&cCrimson Fence Gate'
+  price: 37
+  amount: 8
+  sell-price: 26
+- material: WARPED_FENCE
+  name: '&2Warped Fence'
+  price: 32
+  amount: 16
+  sell-price: 22
+- material: WARPED_FENCE_GATE
+  name: '&2Warped Fence Gate'
+  price: 37
+  amount: 8
+  sell-price: 26
+- material: GLASS
+  name: '&fGlass'
+  price: 30
+  amount: 32
+  sell-price: 21
+- material: TINTED_GLASS
+  name: '&8Tinted Glass'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: WHITE_STAINED_GLASS
+  name: '&fWhite Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: WHITE_STAINED_GLASS_PANE
+  name: '&fWhite Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: ORANGE_STAINED_GLASS
+  name: '&6Orange Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: ORANGE_STAINED_GLASS_PANE
+  name: '&6Orange Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: MAGENTA_STAINED_GLASS
+  name: '&dMagenta Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: MAGENTA_STAINED_GLASS_PANE
+  name: '&dMagenta Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: LIGHT_BLUE_STAINED_GLASS
+  name: '&bLight_Blue Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: LIGHT_BLUE_STAINED_GLASS_PANE
+  name: '&bLight_Blue Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: YELLOW_STAINED_GLASS
+  name: '&eYellow Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: YELLOW_STAINED_GLASS_PANE
+  name: '&eYellow Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: LIME_STAINED_GLASS
+  name: '&aLime Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: LIME_STAINED_GLASS_PANE
+  name: '&aLime Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: PINK_STAINED_GLASS
+  name: '&dPink Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: PINK_STAINED_GLASS_PANE
+  name: '&dPink Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: GRAY_STAINED_GLASS
+  name: '&8Gray Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: GRAY_STAINED_GLASS_PANE
+  name: '&8Gray Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: LIGHT_GRAY_STAINED_GLASS
+  name: '&7Light_Gray Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: LIGHT_GRAY_STAINED_GLASS_PANE
+  name: '&7Light_Gray Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: CYAN_STAINED_GLASS
+  name: '&3Cyan Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: CYAN_STAINED_GLASS_PANE
+  name: '&3Cyan Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: PURPLE_STAINED_GLASS
+  name: '&5Purple Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: PURPLE_STAINED_GLASS_PANE
+  name: '&5Purple Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: BLUE_STAINED_GLASS
+  name: '&9Blue Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: BLUE_STAINED_GLASS_PANE
+  name: '&9Blue Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: BROWN_STAINED_GLASS
+  name: '&6Brown Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: BROWN_STAINED_GLASS_PANE
+  name: '&6Brown Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: GREEN_STAINED_GLASS
+  name: '&2Green Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: GREEN_STAINED_GLASS_PANE
+  name: '&2Green Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: RED_STAINED_GLASS
+  name: '&cRed Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: RED_STAINED_GLASS_PANE
+  name: '&cRed Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: BLACK_STAINED_GLASS
+  name: '&8Black Stained Glass'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: BLACK_STAINED_GLASS_PANE
+  name: '&8Black Glass Pane'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: WHITE_CONCRETE
+  name: '&fWhite Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: WHITE_CONCRETE_POWDER
+  name: '&fWhite Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: ORANGE_CONCRETE
+  name: '&6Orange Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: ORANGE_CONCRETE_POWDER
+  name: '&6Orange Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: MAGENTA_CONCRETE
+  name: '&dMagenta Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: MAGENTA_CONCRETE_POWDER
+  name: '&dMagenta Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: LIGHT_BLUE_CONCRETE
+  name: '&bLight_Blue Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: LIGHT_BLUE_CONCRETE_POWDER
+  name: '&bLight_Blue Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: YELLOW_CONCRETE
+  name: '&eYellow Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: YELLOW_CONCRETE_POWDER
+  name: '&eYellow Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: LIME_CONCRETE
+  name: '&aLime Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: LIME_CONCRETE_POWDER
+  name: '&aLime Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: PINK_CONCRETE
+  name: '&dPink Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: PINK_CONCRETE_POWDER
+  name: '&dPink Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: GRAY_CONCRETE
+  name: '&8Gray Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: GRAY_CONCRETE_POWDER
+  name: '&8Gray Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: LIGHT_GRAY_CONCRETE
+  name: '&7Light_Gray Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: LIGHT_GRAY_CONCRETE_POWDER
+  name: '&7Light_Gray Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: CYAN_CONCRETE
+  name: '&3Cyan Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: CYAN_CONCRETE_POWDER
+  name: '&3Cyan Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: PURPLE_CONCRETE
+  name: '&5Purple Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: PURPLE_CONCRETE_POWDER
+  name: '&5Purple Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: BLUE_CONCRETE
+  name: '&9Blue Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: BLUE_CONCRETE_POWDER
+  name: '&9Blue Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: BROWN_CONCRETE
+  name: '&6Brown Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: BROWN_CONCRETE_POWDER
+  name: '&6Brown Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: GREEN_CONCRETE
+  name: '&2Green Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: GREEN_CONCRETE_POWDER
+  name: '&2Green Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: RED_CONCRETE
+  name: '&cRed Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: RED_CONCRETE_POWDER
+  name: '&cRed Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: BLACK_CONCRETE
+  name: '&8Black Concrete'
+  price: 40
+  amount: 32
+  sell-price: 28
+- material: BLACK_CONCRETE_POWDER
+  name: '&8Black Concrete Powder'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: WHITE_WOOL
+  name: '&fWhite Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: WHITE_CARPET
+  name: '&fWhite Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: ORANGE_WOOL
+  name: '&6Orange Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: ORANGE_CARPET
+  name: '&6Orange Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: MAGENTA_WOOL
+  name: '&dMagenta Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: MAGENTA_CARPET
+  name: '&dMagenta Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: LIGHT_BLUE_WOOL
+  name: '&bLight_Blue Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: LIGHT_BLUE_CARPET
+  name: '&bLight_Blue Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: YELLOW_WOOL
+  name: '&eYellow Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: YELLOW_CARPET
+  name: '&eYellow Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: LIME_WOOL
+  name: '&aLime Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: LIME_CARPET
+  name: '&aLime Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: PINK_WOOL
+  name: '&dPink Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: PINK_CARPET
+  name: '&dPink Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: GRAY_WOOL
+  name: '&8Gray Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: GRAY_CARPET
+  name: '&8Gray Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: LIGHT_GRAY_WOOL
+  name: '&7Light_Gray Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: LIGHT_GRAY_CARPET
+  name: '&7Light_Gray Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: CYAN_WOOL
+  name: '&3Cyan Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: CYAN_CARPET
+  name: '&3Cyan Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: PURPLE_WOOL
+  name: '&5Purple Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: PURPLE_CARPET
+  name: '&5Purple Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: BLUE_WOOL
+  name: '&9Blue Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: BLUE_CARPET
+  name: '&9Blue Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: BROWN_WOOL
+  name: '&6Brown Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: BROWN_CARPET
+  name: '&6Brown Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: GREEN_WOOL
+  name: '&2Green Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: GREEN_CARPET
+  name: '&2Green Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: RED_WOOL
+  name: '&cRed Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: RED_CARPET
+  name: '&cRed Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: BLACK_WOOL
+  name: '&8Black Wool'
+  price: 25
+  amount: 32
+  sell-price: 18
+- material: BLACK_CARPET
+  name: '&8Black Carpet'
+  price: 12
+  amount: 32
+  sell-price: 8
+- material: TERRACOTTA
+  name: '&6Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: WHITE_TERRACOTTA
+  name: '&fWhite Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: ORANGE_TERRACOTTA
+  name: '&6Orange Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: MAGENTA_TERRACOTTA
+  name: '&dMagenta Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: LIGHT_BLUE_TERRACOTTA
+  name: '&bLight_Blue Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: YELLOW_TERRACOTTA
+  name: '&eYellow Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: LIME_TERRACOTTA
+  name: '&aLime Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: PINK_TERRACOTTA
+  name: '&dPink Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: GRAY_TERRACOTTA
+  name: '&8Gray Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: LIGHT_GRAY_TERRACOTTA
+  name: '&7Light_Gray Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: CYAN_TERRACOTTA
+  name: '&3Cyan Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: PURPLE_TERRACOTTA
+  name: '&5Purple Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: BLUE_TERRACOTTA
+  name: '&9Blue Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: BROWN_TERRACOTTA
+  name: '&6Brown Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: GREEN_TERRACOTTA
+  name: '&2Green Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: RED_TERRACOTTA
+  name: '&cRed Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: BLACK_TERRACOTTA
+  name: '&8Black Terracotta'
+  price: 35
+  amount: 32
+  sell-price: 24
+- material: WHITE_GLAZED_TERRACOTTA
+  name: '&fWhite Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: ORANGE_GLAZED_TERRACOTTA
+  name: '&6Orange Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: MAGENTA_GLAZED_TERRACOTTA
+  name: '&dMagenta Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: LIGHT_BLUE_GLAZED_TERRACOTTA
+  name: '&bLight_Blue Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: YELLOW_GLAZED_TERRACOTTA
+  name: '&eYellow Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: LIME_GLAZED_TERRACOTTA
+  name: '&aLime Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: PINK_GLAZED_TERRACOTTA
+  name: '&dPink Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: GRAY_GLAZED_TERRACOTTA
+  name: '&8Gray Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: LIGHT_GRAY_GLAZED_TERRACOTTA
+  name: '&7Light_Gray Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: CYAN_GLAZED_TERRACOTTA
+  name: '&3Cyan Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: PURPLE_GLAZED_TERRACOTTA
+  name: '&5Purple Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: BLUE_GLAZED_TERRACOTTA
+  name: '&9Blue Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: BROWN_GLAZED_TERRACOTTA
+  name: '&6Brown Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: GREEN_GLAZED_TERRACOTTA
+  name: '&2Green Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: RED_GLAZED_TERRACOTTA
+  name: '&cRed Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: BLACK_GLAZED_TERRACOTTA
+  name: '&8Black Glazed Terracotta'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: WHITE_BED
+  name: '&fWhite Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: ORANGE_BED
+  name: '&6Orange Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: MAGENTA_BED
+  name: '&dMagenta Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: LIGHT_BLUE_BED
+  name: '&bLight_Blue Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: YELLOW_BED
+  name: '&eYellow Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: LIME_BED
+  name: '&aLime Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: PINK_BED
+  name: '&dPink Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: GRAY_BED
+  name: '&8Gray Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: LIGHT_GRAY_BED
+  name: '&7Light_Gray Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: CYAN_BED
+  name: '&3Cyan Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: PURPLE_BED
+  name: '&5Purple Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: BLUE_BED
+  name: '&9Blue Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: BROWN_BED
+  name: '&6Brown Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: GREEN_BED
+  name: '&2Green Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: RED_BED
+  name: '&cRed Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: BLACK_BED
+  name: '&8Black Bed'
+  price: 100
+  amount: 4
+  sell-price: 70
+- material: WHITE_BANNER
+  name: '&fWhite Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: ORANGE_BANNER
+  name: '&6Orange Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: MAGENTA_BANNER
+  name: '&dMagenta Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: LIGHT_BLUE_BANNER
+  name: '&bLight_Blue Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: YELLOW_BANNER
+  name: '&eYellow Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: LIME_BANNER
+  name: '&aLime Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: PINK_BANNER
+  name: '&dPink Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: GRAY_BANNER
+  name: '&8Gray Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: LIGHT_GRAY_BANNER
+  name: '&7Light_Gray Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: CYAN_BANNER
+  name: '&3Cyan Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: PURPLE_BANNER
+  name: '&5Purple Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: BLUE_BANNER
+  name: '&9Blue Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: BROWN_BANNER
+  name: '&6Brown Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: GREEN_BANNER
+  name: '&2Green Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: RED_BANNER
+  name: '&cRed Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: BLACK_BANNER
+  name: '&8Black Banner'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: CANDLE
+  name: '&fCandle'
+  price: 30
+  amount: 8
+  sell-price: 21
+- material: WHITE_CANDLE
+  name: '&fWhite Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: ORANGE_CANDLE
+  name: '&6Orange Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: MAGENTA_CANDLE
+  name: '&dMagenta Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: LIGHT_BLUE_CANDLE
+  name: '&bLight_Blue Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: YELLOW_CANDLE
+  name: '&eYellow Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: LIME_CANDLE
+  name: '&aLime Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: PINK_CANDLE
+  name: '&dPink Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: GRAY_CANDLE
+  name: '&8Gray Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: LIGHT_GRAY_CANDLE
+  name: '&7Light_Gray Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: CYAN_CANDLE
+  name: '&3Cyan Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: PURPLE_CANDLE
+  name: '&5Purple Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: BLUE_CANDLE
+  name: '&9Blue Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: BROWN_CANDLE
+  name: '&6Brown Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: GREEN_CANDLE
+  name: '&2Green Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: RED_CANDLE
+  name: '&cRed Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: BLACK_CANDLE
+  name: '&8Black Candle'
+  price: 35
+  amount: 8
+  sell-price: 24
+- material: NETHERRACK
+  name: '&cNetherrack'
+  price: 15
+  sell-price: 10
+  amount: 64
+- material: NETHER_BRICKS
+  name: '&cNether Bricks'
+  price: 60
+  amount: 16
+  sell-price: 42
+- material: RED_NETHER_BRICKS
+  name: '&cRed Nether Bricks'
+  price: 60
+  amount: 16
+  sell-price: 42
+- material: NETHER_WART_BLOCK
+  name: '&4Nether Wart Block'
+  price: 80
+  amount: 16
+  sell-price: 56
+- material: WARPED_WART_BLOCK
+  name: '&2Warped Wart Block'
+  price: 80
+  amount: 16
+  sell-price: 56
+- material: SOUL_SAND
+  name: '&8Soul Sand'
+  price: 30
+  sell-price: 21
+  amount: 16
+- material: SOUL_SOIL
+  name: '&8Soul Soil'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: GLOWSTONE
+  name: '&eGlowstone'
+  price: 80
+  sell-price: 56
+  amount: 16
+- material: CRIMSON_STEM
+  name: '&cCrimson Stem'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: WARPED_STEM
+  name: '&2Warped Stem'
+  price: 25
+  sell-price: 18
+  amount: 16
+- material: CRIMSON_PLANKS
+  name: '&cCrimson Planks'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: WARPED_PLANKS
+  name: '&2Warped Planks'
+  price: 18
+  amount: 32
+  sell-price: 13
+- material: CRIMSON_NYLIUM
+  name: '&cCrimson Nylium'
+  price: 30
+  amount: 16
+  sell-price: 21
+- material: WARPED_NYLIUM
+  name: '&2Warped Nylium'
+  price: 30
+  amount: 16
+  sell-price: 21
+- material: WEEPING_VINES
+  name: '&4Weeping Vines'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: TWISTING_VINES
+  name: '&2Twisting Vines'
+  price: 20
+  amount: 16
+  sell-price: 14
+- material: NETHER_GOLD_ORE
+  name: '&6Nether Gold Ore'
+  price: 100
+  sell-price: 70
+  amount: 8
+- material: ANCIENT_DEBRIS
+  name: '&8Ancient Debris'
+  price: 2500
+  sell-price: 1750
+  amount: 1
+- material: END_STONE
+  name: '&eEnd Stone'
+  price: 80
+  sell-price: 56
+  amount: 16
+- material: END_STONE_BRICKS
+  name: '&eEnd Stone Bricks'
+  price: 90
+  amount: 16
+  sell-price: 63
+- material: PURPUR_BLOCK
+  name: '&5Purpur Block'
+  price: 100
+  amount: 16
+  sell-price: 70
+- material: PURPUR_PILLAR
+  name: '&5Purpur Pillar'
+  price: 100
+  amount: 16
+  sell-price: 70
+- material: CHORUS_PLANT
+  name: '&5Chorus Plant'
+  price: 50
+  sell-price: 35
+  amount: 16
+- material: END_ROD
+  name: '&eEnd Rod'
+  price: 120
+  sell-price: 84
+  amount: 8
+- material: COAL_BLOCK
+  name: '&8Coal Block'
+  price: 180
+  amount: 8
+  lore:
+  - '&89 Coal = 1 Block'
+  sell-price: 126
+- material: IRON_BLOCK
+  name: '&fIron Block'
+  price: 1200
+  amount: 4
+  lore:
+  - '&79 Iron Ingots = 1 Block'
+  - '&89 Iron = 1 Block'
+  sell-price: 840
+- material: GOLD_BLOCK
+  name: '&6Gold Block'
+  price: 2700
+  amount: 4
+  lore:
+  - '&79 Gold Ingots = 1 Block'
+  - '&89 Gold = 1 Block'
+  sell-price: 1890
+- material: REDSTONE_BLOCK
+  name: '&cRedstone Block'
+  price: 650
+  amount: 8
+  lore:
+  - '&79 Redstone = 1 Block'
+  - '&89 Redstone = 1 Block'
+  sell-price: 455
+- material: LAPIS_BLOCK
+  name: '&9Lapis Block'
+  price: 470
+  amount: 8
+  lore:
+  - '&79 Lapis Lazuli = 1 Block'
+  - '&89 Lapis = 1 Block'
+  sell-price: 329
+- material: EMERALD_BLOCK
+  name: '&aEmerald Block'
+  price: 5400
+  amount: 1
+  lore:
+  - '&79 Emeralds = 1 Block'
+  - '&89 Emeralds = 1 Block'
+  sell-price: 3780
+- material: DIAMOND_BLOCK
+  name: '&bDiamond Block'
+  price: 4500
+  amount: 1
+  lore:
+  - '&79 Diamonds = 1 Block'
+  - '&89 Diamonds = 1 Block'
+  sell-price: 3150
+- material: COPPER_BLOCK
+  name: '&6Copper Block'
+  price: 380
+  amount: 8
+  lore:
+  - '&79 Copper Ingots = 1 Block'
+  - '&89 Copper = 1 Block'
+  sell-price: 266
+- material: NETHERITE_BLOCK
+  name: '&8Netherite Block'
+  price: 72000
+  amount: 1
+  lore:
+  - '&79 Netherite Ingots = 1 Block'
+  - '&89 Netherite = 1 Block'
+  sell-price: 50400
+- material: AMETHYST_BLOCK
+  name: '&5Amethyst Block'
+  price: 200
+  amount: 16
+  lore:
+  - '&74 Amethyst Shards = 1 Block'
+  - '&94 Amethyst = 1 Block'
+  sell-price: 140
+- material: BUDDING_AMETHYST
+  name: '&5Budding Amethyst'
+  price: 800
+  amount: 4
+  lore:
+  - '&9Rare amethyst source'
+  sell-price: 560
+- material: RAW_IRON_BLOCK
+  name: '&fRaw Iron Block'
+  price: 450
+  amount: 8
+  sell-price: 315
+- material: RAW_GOLD_BLOCK
+  name: '&6Raw Gold Block'
+  price: 1050
+  amount: 8
+  sell-price: 735
+- material: RAW_COPPER_BLOCK
+  name: '&6Raw Copper Block'
+  price: 130
+  amount: 8
+  sell-price: 91
+- material: QUARTZ_BLOCK
+  name: '&fQuartz Block'
+  price: 80
+  amount: 16
+  sell-price: 56
+- material: QUARTZ_PILLAR
+  name: '&fQuartz Pillar'
+  price: 80
+  amount: 16
+  sell-price: 56
+- material: SMOOTH_QUARTZ
+  name: '&fSmooth Quartz'
+  price: 90
+  amount: 16
+  sell-price: 63
+- material: BRICKS
+  name: '&cBricks'
+  price: 60
+  amount: 16
+  sell-price: 42
+- material: OBSIDIAN
+  name: '&5Obsidian'
+  price: 250
+  amount: 8
+  sell-price: 175
+- material: CRYING_OBSIDIAN
+  name: '&5Crying Obsidian'
+  price: 500
+  amount: 8
+  sell-price: 350
+- material: PACKED_ICE
+  name: '&bPacked Ice'
+  price: 120
+  amount: 16
+  sell-price: 84
+- material: BLUE_ICE
+  name: '&9Blue Ice'
+  price: 300
+  amount: 8
+  sell-price: 210
+- material: PRISMARINE
+  name: '&bPrismarine'
+  price: 140
+  amount: 16
+  sell-price: 98
+- material: PRISMARINE_BRICKS
+  name: '&bPrismarine Bricks'
+  price: 160
+  amount: 16
+  sell-price: 112
+- material: DARK_PRISMARINE
+  name: '&8Dark Prismarine'
+  price: 160
+  amount: 16
+  sell-price: 112
+- material: SEA_LANTERN
+  name: '&bSea Lantern'
+  price: 180
+  amount: 8
+  sell-price: 126
+- material: DRIED_KELP_BLOCK
+  name: '&2Dried Kelp Block'
+  price: 30
+  amount: 16
+  sell-price: 21
+- material: IRON_BARS
+  name: '&7Iron Bars'
+  price: 30
+  amount: 16
+  sell-price: 21
+- material: CHAIN
+  name: '&7Chain'
+  price: 40
+  amount: 8
+  sell-price: 28
+- material: BOOKSHELF
+  name: '&eBookshelf'
+  price: 60
+  amount: 8
+  sell-price: 42
+- material: CHISELED_BOOKSHELF
+  name: '&eChiseled Bookshelf'
+  price: 80
+  amount: 8
+  sell-price: 56
+- material: LECTERN
+  name: '&eLectern'
+  price: 80
+  amount: 4
+  sell-price: 56
+- material: COMPOSTER
+  name: '&2Composter'
+  price: 60
+  amount: 4
+  sell-price: 42
+- material: BARREL
+  name: '&6Barrel'
+  price: 60
+  amount: 4
+  sell-price: 42
+- material: FLOWER_POT
+  name: '&6Flower Pot'
+  price: 15
+  amount: 8
+  sell-price: 10
+- material: PAINTING
+  name: '&ePainting'
+  price: 30
+  amount: 4
+  sell-price: 21
+- material: ITEM_FRAME
+  name: '&eItem Frame'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: GLOW_ITEM_FRAME
+  name: '&eGlow Item Frame'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: SPONGE
+  name: '&eSponge'
+  price: 200
+  amount: 8
+  sell-price: 140
+- material: WET_SPONGE
+  name: '&9Wet Sponge'
+  price: 250
+  amount: 8
+  sell-price: 175
+- material: HONEYCOMB_BLOCK
+  name: '&6Honeycomb Block'
+  price: 100
+  amount: 8
+  sell-price: 70
+- material: COPPER_BULB
+  name: '&6Copper Bulb'
+  price: 45
+  amount: 8
+  sell-price: 31
+- material: CRAFTER
+  name: '&eCrafter'
+  price: 300
+  amount: 4
+  sell-price: 210
+- material: DRIPSTONE_BLOCK
+  name: '&7Dripstone Block'
+  price: 40
+  sell-price: 28
+  amount: 16
+- material: POINTED_DRIPSTONE
+  name: '&7Pointed Dripstone'
+  price: 15
+  sell-price: 10
+  amount: 16
+- material: SCULK
+  name: '&1Sculk'
+  price: 60
+  sell-price: 42
+  amount: 16
+- material: SCULK_CATALYST
+  name: '&1Sculk Catalyst'
+  price: 150
+  sell-price: 105
+  amount: 4
+- material: SCULK_SHRIEKER
+  name: '&1Sculk Shrieker'
+  price: 200
+  sell-price: 140
+  amount: 4
+- material: SCULK_SENSOR
+  name: '&1Sculk Sensor'
+  price: 120
+  sell-price: 84
+  amount: 4
+- material: CALIBRATED_SCULK_SENSOR
+  name: '&1Calibrated Sculk Sensor'
+  price: 200
+  amount: 4
+  sell-price: 140
+- material: CUT_COPPER
+  name: '&6Cut Copper'
+  price: 50
+  amount: 16
+  sell-price: 35
+- material: CUT_COPPER_STAIRS
+  name: '&6Cut Copper Stairs'
+  price: 50
+  amount: 8
+  sell-price: 35
+- material: CUT_COPPER_SLAB
+  name: '&6Cut Copper Slab'
+  price: 25
+  amount: 16
+  sell-price: 18
+- material: WAXED_COPPER_BLOCK
+  name: '&6Waxed Copper Block'
+  price: 400
+  amount: 8
+  sell-price: 280
+- material: WAXED_CUT_COPPER
+  name: '&6Waxed Cut Copper'
+  price: 55
+  amount: 16
+  sell-price: 38
+- material: OXIDIZED_COPPER
+  name: '&6Oxidized Copper'
+  price: 350
+  amount: 8
+  sell-price: 245
+- material: WEATHERED_COPPER
+  name: '&6Weathered Copper'
+  price: 360
+  amount: 8
+  sell-price: 252
+- material: OAK_SIGN
+  name: '&6Oak Sign'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: OAK_HANGING_SIGN
+  name: '&6Oak Hanging Sign'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: SPRUCE_SIGN
+  name: '&6Spruce Sign'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: SPRUCE_HANGING_SIGN
+  name: '&6Spruce Hanging Sign'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: BIRCH_SIGN
+  name: '&fBirch Sign'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: BIRCH_HANGING_SIGN
+  name: '&fBirch Hanging Sign'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: DARK_OAK_SIGN
+  name: '&8Dark_Oak Sign'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: DARK_OAK_HANGING_SIGN
+  name: '&8Dark_Oak Hanging Sign'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: JUNGLE_SIGN
+  name: '&6Jungle Sign'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: JUNGLE_HANGING_SIGN
+  name: '&6Jungle Hanging Sign'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: ACACIA_SIGN
+  name: '&6Acacia Sign'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: ACACIA_HANGING_SIGN
+  name: '&6Acacia Hanging Sign'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: MANGROVE_SIGN
+  name: '&2Mangrove Sign'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: MANGROVE_HANGING_SIGN
+  name: '&2Mangrove Hanging Sign'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: CHERRY_SIGN
+  name: '&dCherry Sign'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: CHERRY_HANGING_SIGN
+  name: '&dCherry Hanging Sign'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: BAMBOO_SIGN
+  name: '&aBamboo Sign'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: BAMBOO_HANGING_SIGN
+  name: '&aBamboo Hanging Sign'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: CRIMSON_SIGN
+  name: '&cCrimson Sign'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: CRIMSON_HANGING_SIGN
+  name: '&cCrimson Hanging Sign'
+  price: 50
+  amount: 4
+  sell-price: 35
+- material: WARPED_SIGN
+  name: '&2Warped Sign'
+  price: 25
+  amount: 4
+  sell-price: 18
+- material: WARPED_HANGING_SIGN
+  name: '&2Warped Hanging Sign'
+  price: 50
+  amount: 4
+  sell-price: 35

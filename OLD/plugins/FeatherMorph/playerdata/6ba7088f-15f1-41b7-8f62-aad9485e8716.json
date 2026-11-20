@@ -1,0 +1,21 @@
+{
+  "playerName": "Jajaj09",
+  "unlockedDisguiseIdentifiers": [
+    "minecraft:pig",
+    "minecraft:cow",
+    "minecraft:armor_stand",
+    "minecraft:chicken",
+    "minecraft:skeleton",
+    "minecraft:zombie",
+    "minecraft:zombie_villager",
+    "minecraft:trader_llama",
+    "minecraft:wandering_trader",
+    "player:RobinR74"
+  ],
+  "showDisguiseToSelf": false,
+  "shownDisplayToSelfHint": false,
+  "shownServerSkillHint": false,
+  "shownClientSkillHint": false,
+  "shownMorphHint": true,
+  "shownMorphClientHint": false
+}

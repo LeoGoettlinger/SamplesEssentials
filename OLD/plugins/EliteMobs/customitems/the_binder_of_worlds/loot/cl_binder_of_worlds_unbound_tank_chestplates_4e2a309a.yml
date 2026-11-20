@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&5Last World Bastion'
+lore:
+- '&5The outer plates are scored with long arcs.'
+- '&5The lining survived untouched.'
+classLootFamily: TANK_CHESTPLATES

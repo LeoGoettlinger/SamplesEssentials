@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&2Sewer Spelunker''s Sword'
+lore:
+- '&aThe up and coming sewer'
+- '&aexplorer''s essential sword!'

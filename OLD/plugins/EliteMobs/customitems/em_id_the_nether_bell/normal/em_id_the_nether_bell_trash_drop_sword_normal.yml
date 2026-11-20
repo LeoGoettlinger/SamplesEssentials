@@ -1,0 +1,14 @@
+isEnabled: true
+material: STONE_SWORD
+name: '&f[Normal] Tainted Sword'
+lore:
+- '&fOnce a fine weapon'
+- '&fnow corrupted by the void.'
+enchantments:
+- DAMAGE_ALL,1
+- FIRE_ASPECT,1
+- elitemobs:loud_strikes,1
+potionEffects: []
+scalability: scalable
+level: 55
+itemType: unique

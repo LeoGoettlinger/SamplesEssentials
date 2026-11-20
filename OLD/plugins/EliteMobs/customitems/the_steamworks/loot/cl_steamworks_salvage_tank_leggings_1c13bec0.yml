@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&bNetherite Plate Pipes [$difficulty]'
+lore:
+- '&bFully functional as leggings with'
+- '&bonly some minor modifications...'
+classLootFamily: TANK_LEGGINGS

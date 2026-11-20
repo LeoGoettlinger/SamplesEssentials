@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&2Inspection Cover'
+lore:
+- '&2Officially missing from the western drain.'

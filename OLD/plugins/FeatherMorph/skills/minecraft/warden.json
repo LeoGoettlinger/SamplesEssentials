@@ -1,0 +1,36 @@
+{
+  "skillCooldown": 94,
+  "skillId": "morph:sonic_boom",
+  "abilities": [
+    "morph:fire_resistance",
+    "morph:attribute_modify",
+    "morph:warden",
+    "morph:warden_less_aware"
+  ],
+  "settings": {
+    "morph:attribute_modify": {
+      "modifiers": [
+        {
+          "name": "minecraft:movement_speed",
+          "type": "multiply_base",
+          "value": -0.6
+        },
+        {
+          "name": "minecraft:knockback_resistance",
+          "type": "add",
+          "value": 1.0
+        },
+        {
+          "name": "minecraft:attack_damage",
+          "type": "add",
+          "value": 30.0
+        },
+        {
+          "name": "minecraft:attack_speed",
+          "type": "multiply_base",
+          "value": -0.6
+        }
+      ]
+    }
+  }
+}

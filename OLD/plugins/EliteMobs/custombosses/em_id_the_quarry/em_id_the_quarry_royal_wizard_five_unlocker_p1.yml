@@ -1,0 +1,34 @@
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL
+isEnabled: true
+entityType: WITCH
+name: $normalLevel &dSpellkeeper Totem
+level: dynamic # 40
+healthMultiplier: 3.5
+damageMultiplier: 0.6
+movementSpeedAttribute: 1.0E-4
+phases:
+- em_id_the_quarry_royal_wizard_five_unlocker_p2.yml:0.66
+- em_id_the_quarry_royal_wizard_five_unlocker_p3.yml:0.33
+powers:
+- invulnerability_fire.yml
+- invulnerability_arrow.yml
+- invulnerability_fireworks.yml
+- invulnerability_knockback.yml
+- plasma_blaster.yml
+- skeleton_tracking_arrow.yml
+instanced: true
+isRegionalBoss: true
+normalizedCombat: true
+frozen: false
+# leashRadius: 30
+followDistance: 600
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+disguise: custom:the_quarry_wizard_totem
+customDisguiseData: player the_quarry_wizard_totem setskin {"id":"bf893265-0905-4341-831a-34f67d54df41","name":"Unknown","properties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTcwOTYzNzM2MTgwOSwKICAicHJvZmlsZUlkIiA6ICJhNTdmZDE5MGZmM2U0YjBkYTEzMmY2OGUzOTU3ZjViMSIsCiAgInByb2ZpbGVOYW1lIiA6ICJ4SGFubmFoNyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xZTQ1YzI5MTkzM2FjYmI0MDQzYTJmOTUyYWFhMDA2ZWNjMWIwNmRiMjQ1MWJiODgwY2MwZTllYjRjYTBjMDQyIgogICAgfQogIH0KfQ==","signature":"ncxAVLqKIj8hQwjNCA6d+ZuDfo4ydCm5dliqHPozrcsxybVhCR6KnqR6n76c1rezNe9qBuLEfOyiVvTl2mLyw2wj9n4kORWWtN4LKIA2DnLTryvrq7F8hmnJ4ljaB9w6L1mWlt6QBOChhcYY/bFRUGKFH82DvpKJwModzVLYY3z17ch08t9wexklGy3BHuOqG5SufSfSFcJWdTbienNO3eUGb6Sk/UMj4OOArxI/1sNjfD2grkEh8CRolGnqWoDIyHDEk0uGkwM9aorQj39PSCCdAm+pJrj6uc9a0/w2tPJwFPj/jpUk14TV0ozUoSObsVTpPSz1f1YGoRckqGUo1lRqdhcyuz+0bhrGWdUOe76CCvviYF0twPOT/uua7tLtkyL5BdbO6zxo91zrW/WWI4+HpO4fCYpqHSXwfsSFB6SxuBJe2KdfetYxMHMVx9otT0FCO+zMqNg9D0EHujUOODTO4q/UyX/gesHYN7Jhq5GIcmwlEEpr+1qZ3z0vU5V87arC2azmNPQcrvCVmnoPFbDIBAu2m7JVHAPBIzll5YfA2OhpRJl7prGGGaVig9Q70iGN95yKFWpVGOJKdvUcNWmtlhdFUUGqmb758wggJbR1Risy32cmX96v/AAYwTqH0c1k1O4sMVJBEamk9S8d98d6r9X2eFhaUn4VuuxMbng="}],"legacy":false}
+spawnLocations:
+- em_id_the_quarry,388.5,-35,90.5,48.0,0.0
+classLoot: false

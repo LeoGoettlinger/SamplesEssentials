@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&4Churchyard Bulwark'
+lore:
+- '&4The plates carry an old cemetery crest.'
+- '&4The names beneath it are worn smooth.'
+classLootFamily: TANK_CHESTPLATES

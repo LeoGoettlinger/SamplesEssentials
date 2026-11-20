@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&d[Hard] Nether Infused Circlet'
+material: NETHERITE_HELMET
+level: 50
+lore:
+- '&dYou sense powerful energy radiate from this circlet.'
+enchantments:
+- DAMAGE_UNDEAD,8
+- DAMAGE_ARTHROPODS,6
+- DAMAGE_ALL,5
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_PROJECTILE,3
+- DURABILITY,2
+potionEffects:
+- SPEED,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

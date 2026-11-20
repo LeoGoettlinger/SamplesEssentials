@@ -1,0 +1,18 @@
+isEnabled: true
+material: NETHERITE_CHESTPLATE
+name: '&d[Hard] Dominator Chestplate'
+lore:
+- '&dThe weight of this chestplate is immense.'
+- '&dIts dark energy seems to amplify your own.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,6
+- PROTECTION_FIRE,6
+- PROTECTION_PROJECTILE,6
+- PROTECTION_EXPLOSIONS,6
+- THORNS,2
+- elitemobs:loud_strikes,2
+potionEffects:
+- RESISTANCE,1,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

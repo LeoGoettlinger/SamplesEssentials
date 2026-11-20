@@ -1,0 +1,17 @@
+{
+  "the_cave_sanctum.idle": {
+    "sounds": [
+      "custom/the_cave_sanctum_lobby"
+    ]
+ },
+  "the_cave_sanctum.phase1": {
+    "sounds": [
+      "custom/the_cave_sanctum_phase_1"
+    ]
+ },
+   "the_cave_sanctum.phase2": {
+    "sounds": [
+      "custom/the_cave_sanctum_phase_2"
+    ]
+ }
+}

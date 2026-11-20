@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&a[$difficulty] Worn Chestplate'
+lore:
+- '&aIt will absorb zero hits.'
+classLootFamily: DPS_CHESTPLATES

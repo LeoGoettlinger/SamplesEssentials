@@ -1,0 +1,17 @@
+name: '&aRicochet'
+description:
+- '&7Arrows can bounce to'
+- '&7hit nearby enemies.'
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7Ricochet Damage: &f$ricochetDamage%'
+- '&7Range: &f$range blocks'
+formattedBonusTemplate: $ricochetDamage% ricochet damage
+isEnabled: true
+skillType: BOWS
+bonusType: PROC
+unlockTier: 3
+baseValue: 0.5
+scalingPerLevel: 0.01
+procChance: 0.15
+displayMaterial: SLIME_BALL

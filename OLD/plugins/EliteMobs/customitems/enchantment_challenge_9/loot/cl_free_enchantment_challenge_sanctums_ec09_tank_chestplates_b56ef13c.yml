@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Glassplate
+lore:
+- Better not touch it, unless you want a cut.
+classLootFamily: TANK_CHESTPLATES

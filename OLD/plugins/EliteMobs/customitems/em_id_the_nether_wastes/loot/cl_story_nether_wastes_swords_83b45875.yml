@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_SWORD
+name: '&f[$difficulty] Infested Sword'
+lore:
+- '&fWould be an effective weapon if it wasn''t covered in mold.'

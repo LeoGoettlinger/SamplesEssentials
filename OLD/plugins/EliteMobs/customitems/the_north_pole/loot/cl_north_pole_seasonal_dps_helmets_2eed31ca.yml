@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: '&aWorkshop Lookout'
+lore:
+- '&7A bell hangs above the brow.'
+- '&7The elves can hear the foreman coming.'
+classLootFamily: DPS_HELMETS

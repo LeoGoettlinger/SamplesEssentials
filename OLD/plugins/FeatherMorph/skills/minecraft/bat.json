@@ -1,0 +1,14 @@
+{
+  "skillCooldown": 0,
+  "skillId": "morph:none",
+  "abilities": [
+    "morph:can_fly",
+    "morph:night_vision"
+  ],
+  "settings": {
+    "morph:can_fly": {
+      "fly_speed": 0.05,
+      "minimum_hunger": 6
+    }
+  }
+}

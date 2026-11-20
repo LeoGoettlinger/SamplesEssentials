@@ -1,0 +1,20 @@
+invalid-duration: '&cInvalid duration specified.'
+no-punishments-to-rollback: '&e%OPERATOR%&7 has not punished anyone in the specified time period.'
+usage: '&cUsage: /libertybans staffrollback <operator> [time]'
+no-permission: '&cSorry, you cannot use this.'
+ # If enabled, users will be sent a confirmation message asking if they wish to proceed with the rollback
+ # The confirmation feature uses a confirmation code which is intended to be used with clickable text.
+confirmation:
+   # The amount of time, in seconds, before the confirmation code expires.
+  expiration-time-seconds: 60
+  invalid-code: '&cInvalid confirmation code.'
+  nonexistent-code: '&cThat confirmation has either expired or it does not exist.'
+  message:
+    - '&7You are about to purge all punishments by &e%OPERATOR%&7, numbering &e%COUNT%&7 in total.&f'
+    - '&c&lThis cannot be undone. ||&aClick here to confirm.||ttp:&7Click here||cmd:/libertybans staffrollback confirm:%CONFIRMATION_CODE%'
+   # Whether to enable this feature
+  enable: true
+
+success: '&7Rolled back &e%COUNT%&7 punishments by &e%OPERATOR%&7.'
+ # Whether to enable this addon at all
+enable: true

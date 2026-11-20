@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_BOOTS
+name: '&bAnchor Soles'
+lore:
+- '&bThe original mounting holes run through the heels.'
+- '&bSomeone thoughtfully filled them with cork.'
+classLootFamily: TANK_BOOTS

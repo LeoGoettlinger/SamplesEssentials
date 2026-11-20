@@ -1,0 +1,20 @@
+warmup-seconds: 5
+cooldown-seconds: 300
+max-attempts: 30
+
+worlds:
+  overworld:
+    world-name: Farmwelt
+    radius: 5000
+    min-y: 60
+  nether:
+    world-name: Farmwelt_nether
+    radius: 4000
+    min-y: 40
+  end:
+    world-name: Farmwelt_the_end
+    radius: 3000
+    min-y: 50
+
+gui:
+  fill-empty-slots: true

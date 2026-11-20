@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: SHIELD
+name: '&7Closed Flue'
+lore:
+- '&7The hinges no longer move. The board still holds.'

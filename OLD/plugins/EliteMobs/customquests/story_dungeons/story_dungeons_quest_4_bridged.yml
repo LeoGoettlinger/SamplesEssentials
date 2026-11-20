@@ -1,0 +1,49 @@
+isEnabled: true
+customObjectives:
+  Objective1:
+    amount: '1'
+    filename: the_bridge_ancient_guardian_p1.yml
+    objectiveType: KILL_CUSTOM
+customRewards:
+- currencyAmount=250:amount=1:chance=1
+- filename=elite_scrap_tiny.yml:amount=1:chance=0.3
+- filename=elite_scrap_small.yml:amount=1:chance=0.2
+- filename=elite_scrap_medium.yml:amount=1:chance=0.1
+- filename=elite_scrap_large.yml:amount=1:chance=0.05
+- filename=elite_scrap_huge.yml:amount=1:chance=0.01
+- filename=enchanted_book_damage_all.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_arthropods.yml:amount=1:chance=0.1
+- filename=enchanted_book_damage_undead.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_environmental.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_explosions.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fall.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_fire.yml:amount=1:chance=0.1
+- filename=enchanted_book_protection_projectile.yml:amount=1:chance=0.1
+- filename=story_dungeons_quest_4_boots.yml:amount=1:chance=1.0
+questAcceptPermission: elitequest.story_dungeons_quest_3_the_soulweaver.yml
+questLockoutPermission: elitequest.story_dungeons_quest_4_bridged.yml
+questLockoutMinutes: 10080
+name: '&2Bridged!'
+questLore:
+- Ah, just in time. So, we looked at the remains of that weaver creature that was
+  down in the mines.
+- We are certain that it is a Nether being. How it made its way up here, I have no
+  clue.
+- We had managed to open the gate that was blocking the way into that underground
+  city you mentioned.
+- You need to go there and see what you can uncover...
+- Oh, right! There is a guardian blocking the way into the city, and it doesn’t look
+  friendly so you will need to deal with that first.
+temporaryPermissions: []
+questAcceptDialog:
+- '&e[Wallitz]&f It looks ancient so hopefully it has weakened through the ages and
+  won’t give you too much trouble.'
+- '&7&oAn ancient guardian on a bridge, this should be fun...'
+- '&7Interact with the nearby &fOld Dwarf Jotun &7teleporter to start the quest.'
+questCompleteMessage:
+- '&e[Wallitz]&f Managed to beat that old guardian, eh? Excellent work. Would not
+  expect anything else from our fifty-sixth-best guild member!'
+- '&7&oLet''s see if &e&oWallitz&7&o has more tasks for me.'
+questCompleteCommands: []
+turnInNPC: story_dungeons_quest_giver.yml
+QuestLevel: 0

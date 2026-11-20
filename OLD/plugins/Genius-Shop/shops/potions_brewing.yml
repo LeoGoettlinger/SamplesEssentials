@@ -1,0 +1,737 @@
+gui-name: '&5Potions & Brewing'
+rows: 6
+permission: ''
+items:
+- material: BREWING_STAND
+  name: '&cBrewing Stand'
+  price: 300
+  sell-price: 210
+  amount: 1
+  lore:
+  - '&7Brew potions at this stand'
+- material: BLAZE_ROD
+  name: '&6Blaze Rod'
+  price: 200
+  sell-price: 140
+  amount: 8
+  lore:
+  - '&7Essential brewing fuel'
+- material: BLAZE_POWDER
+  name: '&6Blaze Powder'
+  price: 120
+  sell-price: 84
+  amount: 8
+  lore:
+  - '&7Potion strength modifier'
+- material: NETHER_WART
+  name: '&4Nether Wart'
+  price: 60
+  sell-price: 42
+  amount: 16
+  lore:
+  - '&7Base for awkward potions'
+- material: GLISTERING_MELON
+  name: '&eGlistering Melon'
+  price: 100
+  sell-price: 70
+  amount: 8
+  lore:
+  - '&7Healing potion ingredient'
+- material: GHAST_TEAR
+  name: '&fGhast Tear'
+  price: 250
+  sell-price: 175
+  amount: 4
+  lore:
+  - '&7Regeneration ingredient'
+- material: SPIDER_EYE
+  name: '&8Spider Eye'
+  price: 30
+  sell-price: 21
+  amount: 16
+  lore:
+  - '&7Poison potion ingredient'
+- material: FERMENTED_SPIDER_EYE
+  name: '&8Fermented Spider Eye'
+  price: 60
+  sell-price: 42
+  amount: 8
+  lore:
+  - '&7Corrupts potion effects'
+- material: MAGMA_CREAM
+  name: '&6Magma Cream'
+  price: 80
+  sell-price: 56
+  amount: 8
+  lore:
+  - '&7Fire Resistance ingredient'
+- material: GOLDEN_CARROT
+  name: '&6Golden Carrot'
+  price: 150
+  sell-price: 105
+  amount: 8
+  lore:
+  - '&7Night Vision ingredient'
+- material: RABBIT_FOOT
+  name: '&aRabbit Foot'
+  price: 120
+  sell-price: 84
+  amount: 4
+  lore:
+  - '&7Jump Boost ingredient'
+- material: TURTLE_HELMET
+  name: '&2Turtle Helmet'
+  price: 500
+  sell-price: 350
+  amount: 1
+  lore:
+  - '&7Turtle Master ingredient'
+- material: PHANTOM_MEMBRANE
+  name: '&fPhantom Membrane'
+  price: 150
+  sell-price: 105
+  amount: 8
+  lore:
+  - '&7Slow Falling ingredient'
+- material: DRAGON_BREATH
+  name: '&5Dragon Breath'
+  price: 2000
+  sell-price: 1400
+  amount: 4
+  lore:
+  - '&7Makes lingering potions'
+  - '&5Extremely rare!'
+- material: GLASS_BOTTLE
+  name: '&7Glass Bottle'
+  price: 10
+  sell-price: 7
+  amount: 16
+  lore:
+  - '&7Hold your potions'
+- material: SPECTRAL_ARROW
+  name: '&fSpectral Arrow'
+  price: 40
+  sell-price: 28
+  amount: 16
+  lore:
+  - '&7Glowing effect on hit'
+- material: ARROW
+  name: '&fArrow'
+  price: 10
+  sell-price: 7
+  amount: 32
+  lore:
+  - '&7Basic ammunition'
+  # ============================================================
+  # Normale Potions
+  # ============================================================
+
+  - material: POTION
+    name: '&bSpeed Potion'
+    lore:
+      - '&7Move faster'
+      - ''
+      - '&aBuy: &6$100'
+    price: 100
+    amount: 1
+    potion-type: SPEED
+
+  - material: POTION
+    name: '&cStrength Potion'
+    lore:
+      - '&7Increase damage'
+      - ''
+      - '&aBuy: &6$150'
+    price: 150
+    amount: 1
+    potion-type: STRENGTH
+
+  - material: POTION
+    name: '&cHealing Potion'
+    lore:
+      - '&7Instant healing'
+      - ''
+      - '&aBuy: &6$200'
+    price: 200
+    amount: 1
+    potion-type: INSTANT_HEAL
+
+  - material: POTION
+    name: '&4Harming Potion'
+    lore:
+      - '&7Instant damage'
+      - ''
+      - '&aBuy: &6$160'
+    price: 160
+    amount: 1
+    potion-type: INSTANT_DAMAGE
+
+  - material: POTION
+    name: '&2Poison Potion'
+    lore:
+      - '&7Poisons target'
+      - ''
+      - '&aBuy: &6$120'
+    price: 120
+    amount: 1
+    potion-type: POISON
+
+  - material: POTION
+    name: '&dRegeneration Potion'
+    lore:
+      - '&7Regenerates health'
+      - ''
+      - '&aBuy: &6$180'
+    price: 180
+    amount: 1
+    potion-type: REGENERATION
+
+  - material: POTION
+    name: '&9Night Vision Potion'
+    lore:
+      - '&7See in the dark'
+      - ''
+      - '&aBuy: &6$80'
+    price: 80
+    amount: 1
+    potion-type: NIGHT_VISION
+
+  - material: POTION
+    name: '&fInvisibility Potion'
+    lore:
+      - '&7Become invisible'
+      - ''
+      - '&aBuy: &6$140'
+    price: 140
+    amount: 1
+    potion-type: INVISIBILITY
+
+  - material: POTION
+    name: '&aJump Boost Potion'
+    lore:
+      - '&7Jump higher'
+      - ''
+      - '&aBuy: &6$120'
+    price: 120
+    amount: 1
+    potion-type: JUMP_BOOST
+
+  - material: POTION
+    name: '&6Fire Resistance Potion'
+    lore:
+      - '&7Immune to fire'
+      - ''
+      - '&aBuy: &6$140'
+    price: 140
+    amount: 1
+    potion-type: FIRE_RESISTANCE
+
+  - material: POTION
+    name: '&8Slowness Potion'
+    lore:
+      - '&7Move slower'
+      - ''
+      - '&aBuy: &6$80'
+    price: 80
+    amount: 1
+    potion-type: SLOWNESS
+
+  - material: POTION
+    name: '&3Water Breathing Potion'
+    lore:
+      - '&7Breathe underwater'
+      - ''
+      - '&aBuy: &6$120'
+    price: 120
+    amount: 1
+    potion-type: WATER_BREATHING
+
+  - material: POTION
+    name: '&7Weakness Potion'
+    lore:
+      - '&7Reduce damage'
+      - ''
+      - '&aBuy: &6$90'
+    price: 90
+    amount: 1
+    potion-type: WEAKNESS
+
+  - material: POTION
+    name: '&eLuck Potion'
+    lore:
+      - '&7Better loot chances'
+      - ''
+      - '&aBuy: &6$200'
+    price: 200
+    amount: 1
+    potion-type: LUCK
+
+  - material: POTION
+    name: '&2Turtle Master Potion'
+    lore:
+      - '&7Resistance but slower'
+      - ''
+      - '&aBuy: &6$170'
+    price: 170
+    amount: 1
+    potion-type: TURTLE_MASTER
+
+  - material: POTION
+    name: '&fSlow Falling Potion'
+    lore:
+      - '&7Fall slowly'
+      - ''
+      - '&aBuy: &6$160'
+    price: 160
+    amount: 1
+    potion-type: SLOW_FALLING
+
+  # Neuerer Minecraft-Content. Entferne diese Einträge,
+  # falls dein Server/Plugin sie nicht unterstützt.
+  - material: POTION
+    name: '&bWind Charged Potion'
+    lore:
+      - '&7Emits wind burst'
+      - ''
+      - '&aBuy: &6$180'
+    price: 180
+    amount: 1
+    potion-type: WIND_CHARGED
+
+  - material: POTION
+    name: '&cWeaving Potion'
+    lore:
+      - '&7Move through cobwebs'
+      - ''
+      - '&aBuy: &6$180'
+    price: 180
+    amount: 1
+    potion-type: WEAVING
+
+  - material: POTION
+    name: '&aOozing Potion'
+    lore:
+      - '&7Summons slimes'
+      - ''
+      - '&aBuy: &6$180'
+    price: 180
+    amount: 1
+    potion-type: OOZING
+
+  - material: POTION
+    name: '&8Infestation Potion'
+    lore:
+      - '&7Infests blocks'
+      - ''
+      - '&aBuy: &6$180'
+    price: 180
+    amount: 1
+    potion-type: INFESTATION
+
+  # ============================================================
+  # Splash Potions
+  # ============================================================
+
+  - material: SPLASH_POTION
+    name: '&bSpeed Splash Potion'
+    lore:
+      - '&7Move faster'
+      - ''
+      - '&aBuy: &6$150'
+    price: 150
+    amount: 1
+    potion-type: SPEED
+
+  - material: SPLASH_POTION
+    name: '&cStrength Splash Potion'
+    lore:
+      - '&7Increase damage'
+      - ''
+      - '&aBuy: &6$200'
+    price: 200
+    amount: 1
+    potion-type: STRENGTH
+
+  - material: SPLASH_POTION
+    name: '&cHealing Splash Potion'
+    lore:
+      - '&7Instant healing'
+      - ''
+      - '&aBuy: &6$250'
+    price: 250
+    amount: 1
+    potion-type: INSTANT_HEAL
+
+  - material: SPLASH_POTION
+    name: '&4Harming Splash Potion'
+    lore:
+      - '&7Instant damage'
+      - ''
+      - '&aBuy: &6$210'
+    price: 210
+    amount: 1
+    potion-type: INSTANT_DAMAGE
+
+  - material: SPLASH_POTION
+    name: '&2Poison Splash Potion'
+    lore:
+      - '&7Poisons target'
+      - ''
+      - '&aBuy: &6$170'
+    price: 170
+    amount: 1
+    potion-type: POISON
+
+  - material: SPLASH_POTION
+    name: '&dRegeneration Splash Potion'
+    lore:
+      - '&7Regenerates health'
+      - ''
+      - '&aBuy: &6$230'
+    price: 230
+    amount: 1
+    potion-type: REGENERATION
+
+  - material: SPLASH_POTION
+    name: '&9Night Vision Splash Potion'
+    lore:
+      - '&7See in the dark'
+      - ''
+      - '&aBuy: &6$130'
+    price: 130
+    amount: 1
+    potion-type: NIGHT_VISION
+
+  - material: SPLASH_POTION
+    name: '&fInvisibility Splash Potion'
+    lore:
+      - '&7Become invisible'
+      - ''
+      - '&aBuy: &6$190'
+    price: 190
+    amount: 1
+    potion-type: INVISIBILITY
+
+  - material: SPLASH_POTION
+    name: '&aJump Boost Splash Potion'
+    lore:
+      - '&7Jump higher'
+      - ''
+      - '&aBuy: &6$170'
+    price: 170
+    amount: 1
+    potion-type: JUMP_BOOST
+
+  - material: SPLASH_POTION
+    name: '&6Fire Resistance Splash Potion'
+    lore:
+      - '&7Immune to fire'
+      - ''
+      - '&aBuy: &6$190'
+    price: 190
+    amount: 1
+    potion-type: FIRE_RESISTANCE
+
+  - material: SPLASH_POTION
+    name: '&8Slowness Splash Potion'
+    lore:
+      - '&7Move slower'
+      - ''
+      - '&aBuy: &6$130'
+    price: 130
+    amount: 1
+    potion-type: SLOWNESS
+
+  - material: SPLASH_POTION
+    name: '&3Water Breathing Splash Potion'
+    lore:
+      - '&7Breathe underwater'
+      - ''
+      - '&aBuy: &6$170'
+    price: 170
+    amount: 1
+    potion-type: WATER_BREATHING
+
+  - material: SPLASH_POTION
+    name: '&7Weakness Splash Potion'
+    lore:
+      - '&7Reduce damage'
+      - ''
+      - '&aBuy: &6$140'
+    price: 140
+    amount: 1
+    potion-type: WEAKNESS
+
+  - material: SPLASH_POTION
+    name: '&eLuck Splash Potion'
+    lore:
+      - '&7Better loot chances'
+      - ''
+      - '&aBuy: &6$250'
+    price: 250
+    amount: 1
+    potion-type: LUCK
+
+  - material: SPLASH_POTION
+    name: '&2Turtle Master Splash Potion'
+    lore:
+      - '&7Resistance but slower'
+      - ''
+      - '&aBuy: &6$220'
+    price: 220
+    amount: 1
+    potion-type: TURTLE_MASTER
+
+  - material: SPLASH_POTION
+    name: '&fSlow Falling Splash Potion'
+    lore:
+      - '&7Fall slowly'
+      - ''
+      - '&aBuy: &6$210'
+    price: 210
+    amount: 1
+    potion-type: SLOW_FALLING
+
+  - material: SPLASH_POTION
+    name: '&bWind Charged Splash Potion'
+    lore:
+      - '&7Emits wind burst'
+      - ''
+      - '&aBuy: &6$230'
+    price: 230
+    amount: 1
+    potion-type: WIND_CHARGED
+
+  - material: SPLASH_POTION
+    name: '&cWeaving Splash Potion'
+    lore:
+      - '&7Move through cobwebs'
+      - ''
+      - '&aBuy: &6$230'
+    price: 230
+    amount: 1
+    potion-type: WEAVING
+
+  - material: SPLASH_POTION
+    name: '&aOozing Splash Potion'
+    lore:
+      - '&7Summons slimes'
+      - ''
+      - '&aBuy: &6$230'
+    price: 230
+    amount: 1
+    potion-type: OOZING
+
+  - material: SPLASH_POTION
+    name: '&8Infestation Splash Potion'
+    lore:
+      - '&7Infests blocks'
+      - ''
+      - '&aBuy: &6$230'
+    price: 230
+    amount: 1
+    potion-type: INFESTATION
+
+  # ============================================================
+  # Tipped Arrows
+  # ============================================================
+
+  - material: TIPPED_ARROW
+    name: '&bSpeed Arrow'
+    lore:
+      - '&7Arrows with speed effect'
+      - ''
+      - '&aBuy: &6$50'
+    price: 50
+    amount: 8
+    potion-type: SPEED
+
+  - material: TIPPED_ARROW
+    name: '&cStrength Arrow'
+    lore:
+      - '&7Arrows with strength effect'
+      - ''
+      - '&aBuy: &6$75'
+    price: 75
+    amount: 8
+    potion-type: STRENGTH
+
+  - material: TIPPED_ARROW
+    name: '&cHealing Arrow'
+    lore:
+      - '&7Arrows with healing effect'
+      - ''
+      - '&aBuy: &6$100'
+    price: 100
+    amount: 8
+    potion-type: INSTANT_HEAL
+
+  - material: TIPPED_ARROW
+    name: '&4Harming Arrow'
+    lore:
+      - '&7Arrows with harming effect'
+      - ''
+      - '&aBuy: &6$80'
+    price: 80
+    amount: 8
+    potion-type: INSTANT_DAMAGE
+
+  - material: TIPPED_ARROW
+    name: '&2Poison Arrow'
+    lore:
+      - '&7Arrows with poison effect'
+      - ''
+      - '&aBuy: &6$50'
+    price: 50
+    amount: 8
+    potion-type: POISON
+
+  - material: TIPPED_ARROW
+    name: '&dRegeneration Arrow'
+    lore:
+      - '&7Arrows with regeneration effect'
+      - ''
+      - '&aBuy: &6$90'
+    price: 90
+    amount: 8
+    potion-type: REGENERATION
+
+  - material: TIPPED_ARROW
+    name: '&9Night Vision Arrow'
+    lore:
+      - '&7Arrows with night vision effect'
+      - ''
+      - '&aBuy: &6$40'
+    price: 40
+    amount: 8
+    potion-type: NIGHT_VISION
+
+  - material: TIPPED_ARROW
+    name: '&fInvisibility Arrow'
+    lore:
+      - '&7Arrows with invisibility effect'
+      - ''
+      - '&aBuy: &6$70'
+    price: 70
+    amount: 8
+    potion-type: INVISIBILITY
+
+  - material: TIPPED_ARROW
+    name: '&aJump Boost Arrow'
+    lore:
+      - '&7Arrows with jump boost effect'
+      - ''
+      - '&aBuy: &6$60'
+    price: 60
+    amount: 8
+    potion-type: JUMP_BOOST
+
+  - material: TIPPED_ARROW
+    name: '&6Fire Resistance Arrow'
+    lore:
+      - '&7Arrows with fire resistance effect'
+      - ''
+      - '&aBuy: &6$70'
+    price: 70
+    amount: 8
+    potion-type: FIRE_RESISTANCE
+
+  - material: TIPPED_ARROW
+    name: '&8Slowness Arrow'
+    lore:
+      - '&7Arrows with slowness effect'
+      - ''
+      - '&aBuy: &6$40'
+    price: 40
+    amount: 8
+    potion-type: SLOWNESS
+
+  - material: TIPPED_ARROW
+    name: '&3Water Breathing Arrow'
+    lore:
+      - '&7Arrows with water breathing effect'
+      - ''
+      - '&aBuy: &6$60'
+    price: 60
+    amount: 8
+    potion-type: WATER_BREATHING
+
+  - material: TIPPED_ARROW
+    name: '&7Weakness Arrow'
+    lore:
+      - '&7Arrows with weakness effect'
+      - ''
+      - '&aBuy: &6$45'
+    price: 45
+    amount: 8
+    potion-type: WEAKNESS
+
+  - material: TIPPED_ARROW
+    name: '&eLuck Arrow'
+    lore:
+      - '&7Arrows with luck effect'
+      - ''
+      - '&aBuy: &6$100'
+    price: 100
+    amount: 8
+    potion-type: LUCK
+
+  - material: TIPPED_ARROW
+    name: '&2Turtle Master Arrow'
+    lore:
+      - '&7Arrows with turtle master effect'
+      - ''
+      - '&aBuy: &6$85'
+    price: 85
+    amount: 8
+    potion-type: TURTLE_MASTER
+
+  - material: TIPPED_ARROW
+    name: '&fSlow Falling Arrow'
+    lore:
+      - '&7Arrows with slow falling effect'
+      - ''
+      - '&aBuy: &6$80'
+    price: 80
+    amount: 8
+    potion-type: SLOW_FALLING
+
+  - material: TIPPED_ARROW
+    name: '&bWind Charged Arrow'
+    lore:
+      - '&7Arrows with wind charged effect'
+      - ''
+      - '&aBuy: &6$90'
+    price: 90
+    amount: 8
+    potion-type: WIND_CHARGED
+
+  - material: TIPPED_ARROW
+    name: '&cWeaving Arrow'
+    lore:
+      - '&7Arrows with weaving effect'
+      - ''
+      - '&aBuy: &6$90'
+    price: 90
+    amount: 8
+    potion-type: WEAVING
+
+  - material: TIPPED_ARROW
+    name: '&aOozing Arrow'
+    lore:
+      - '&7Arrows with oozing effect'
+      - ''
+      - '&aBuy: &6$90'
+    price: 90
+    amount: 8
+    potion-type: OOZING
+
+  - material: TIPPED_ARROW
+    name: '&8Infestation Arrow'
+    lore:
+      - '&7Arrows with infestation effect'
+      - ''
+      - '&aBuy: &6$90'
+    price: 90
+    amount: 8
+    potion-type: INFESTATION

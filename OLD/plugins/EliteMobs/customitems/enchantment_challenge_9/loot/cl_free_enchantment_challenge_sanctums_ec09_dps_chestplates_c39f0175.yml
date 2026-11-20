@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Cutglass Front
+lore:
+- Sharp dressing has its drawbacks.
+classLootFamily: DPS_CHESTPLATES

@@ -1,0 +1,17 @@
+isEnabled: true
+material: BOW
+name: '&4[Mythical] Nether Bow'
+lore:
+- '&8The flames of the nether'
+- '&8are imbued within this bow'
+- '&8scorching any that dare'
+- '&8stand in its path.'
+enchantments:
+- FLAME,1
+- POWER,5
+- PUNCH,2
+potionEffects:
+- FIRE_RESISTANCE,0,self,continuous
+level: 55
+itemType: unique
+scalability: scalable

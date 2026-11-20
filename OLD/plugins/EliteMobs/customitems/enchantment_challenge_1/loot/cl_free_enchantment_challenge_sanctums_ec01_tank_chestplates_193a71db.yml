@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Banked Coal Plate
+lore:
+- The straps are the only clean part.
+classLootFamily: TANK_CHESTPLATES

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_HELMET
+name: Skell Helm
+lore:
+- Double up your skull with this fine helmet.
+classLootFamily: TANK_HELMETS

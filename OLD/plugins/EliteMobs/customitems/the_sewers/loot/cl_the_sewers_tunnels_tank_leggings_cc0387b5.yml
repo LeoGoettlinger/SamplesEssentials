@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_LEGGINGS
+name: '&2Sewer Spelunker''s Leggings'
+lore:
+- '&aThe up and coming sewer'
+- '&aexplorer''s essential leggings!'
+classLootFamily: TANK_LEGGINGS

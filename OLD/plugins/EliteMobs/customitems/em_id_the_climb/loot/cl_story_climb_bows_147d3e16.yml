@@ -1,0 +1,8 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BOW
+name: '&7Forsaken String'
+lore:
+- '&7The bow has been left drawn against the cold.'

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&7Last Garrison'
+lore:
+- '&7The straps were mended until there was no room left.'
+classLootFamily: TANK_CHESTPLATES

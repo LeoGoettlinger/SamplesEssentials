@@ -1,0 +1,203 @@
+
+debug: false
+
+prefix: "&7[&5Custom &cWeapons&7]"
+
+weapons:
+  reaper_scythe:
+    enabled: true
+    custom_model_data: 1001
+    cooldown: 86400
+    curse_duration: 120
+    weakness_duration: 30
+    slowness_duration: 30
+    weakness_amplifier: 0
+    slowness_amplifier: 0
+    launch_strength: 1.5
+    recipe:
+      shape:
+        - "RNR"
+        - "BHB"
+        - "BBB"
+      ingredients:
+        R: REDSTONE_BLOCK
+        N: NETHER_STAR
+        B: BLACKSTONE
+        H: NETHERITE_HOE
+      description: "Curses enemies with death in 2 minutes unless they consume an Enchanted Golden Apple"
+    crafting:
+      enabled: true
+      discover_recipe: true
+      crafted: false
+
+  stormbringer:
+    enabled: true
+    custom_model_data: 1002
+    cooldown: 60
+    resistance_duration: 999999
+    resistance_amplifier: 1
+    lightning_damage: 5
+    direct_damage: 6.0
+    strike_distance: 30
+    recipe:
+      shape:
+        - "DSD"
+        - "BHB"
+        - "DSD"
+      ingredients:
+        D: DIAMOND_BLOCK
+        S: HEART_OF_THE_SEA
+        B: BLAZE_ROD
+        H: NETHERITE_AXE
+      description: "Grants resistance and summons lightning upon foes"
+    crafting:
+      enabled: true
+      discover_recipe: true
+      crafted: false
+
+  cursed_dagger:
+    enabled: true
+    custom_model_data: 1003
+    cooldown: 60
+    poison_chance: 0.5
+    poison_duration: 15
+    poison_amplifier: 1
+    blindness_chance: 0.25
+    blindness_duration: 5
+    invisibility_duration: 5
+    recipe:
+      shape:
+        - "GAG"
+        - "WSW"
+        - "NMN"
+      ingredients:
+        G: ENCHANTED_GOLDEN_APPLE
+        A: PUFFERFISH_BUCKET
+        W: WITHER_ROSE
+        S: IRON_SWORD
+        N: FERMENTED_SPIDER_EYE
+        M: PUFFERFISH_BUCKET
+      description: "Has a 25% chance to blind enemies and applies poison on hit"
+    crafting:
+      enabled: true
+      discover_recipe: true
+      crafted: false
+
+  soul_reaver:
+    enabled: true
+    cooldown: 0
+    health_gain: 6
+    xp_levels_gain: 5
+    explosion_power: 8.0
+    explosion_damage: true
+    explosion_fire: false
+    explosion_timeframe: 10
+    daily_xp_limit: 50
+    teleport_distance: 5
+    recipe:
+      shape:
+        - "WNW"
+        - "NSN"
+        - "SON"
+      ingredients:
+        W: WITHER_SKELETON_SKULL
+        N: NETHER_STAR
+        S: DIAMOND_SWORD
+        O: SOUL_SAND
+      description: "Consuming souls grants health and XP, causes explosive soul bursts"
+    crafting:
+      enabled: true
+      discover_recipe: true
+      crafted: false
+
+  gravity_shifter:
+    enabled: true
+    cooldown: 60
+    jump_prevention_duration: 10
+    movement_slow_duration: 5
+    movement_slow_percentage: 0.2
+    recipe:
+      shape:
+        - "BAB"
+        - "ETE"
+        - "SAS"
+      ingredients:
+        B: NETHERITE_BLOCK
+        A: AMETHYST_SHARD
+        E: ENDER_PEARL
+        T: TRIDENT
+        S: STONE
+      description: "Slows enemy movement by 20% and prevents jumping"
+    crafting:
+      enabled: true
+      discover_recipe: true
+      crafted: false
+
+  blink_blade:
+    enabled: true
+    cooldown: 0
+    teleport_chance: 0.30
+    speed_duration: 5
+    speed_amplifier: 1
+    recipe:
+      shape:
+        - "DND"
+        - "SGS"
+        - "EZE"
+      ingredients:
+        D: DIAMOND_BLOCK
+        N: NETHER_STAR
+        S: NETHERITE_SWORD
+        G: GOLDEN_SWORD
+        E: ENDER_EYE
+        Z: ENDER_PEARL
+      description: "Has a 30% chance to teleport behind enemies on hit"
+    crafting:
+      enabled: true
+      discover_recipe: true
+      crafted: false
+
+crafting:
+  auto_discover: true
+  exact_amounts: true
+  broadcast_craft: true
+  require-permission-to-craft: false
+  announce-first-craft: true
+  one_per_server: true
+
+messages:
+  no-permission: "&cYou don't have permission to use this command."
+  player-not-found: "&cPlayer not found."
+  weapon-not-found: "&cWeapon not found."
+  config-reloaded: "&aConfiguration reloaded successfully."
+  on-cooldown: "&cThis weapon is on cooldown. Please wait {time} seconds."
+  weapon-given: "&aGave {weapon} to {player}."
+  curse-applied: "&4You have been cursed! Find an Enchanted Golden Apple within 2 minutes or face death."
+  curse-countdown: "&4Curse will kill you in {time}."
+  curse-removed: "&aThe curse has been lifted!"
+  lightning-protection: "&bYou feel protected by the storm's power."
+  lightning-strike: "&9Lightning strikes your opponent!"
+  poison-applied: "&2You poisoned your enemy!"
+  blindness-applied: "&8Your enemy can't see!"
+  soul-consumed: "&5You consumed a soul and gained strength!"
+  gravity-applied: "&7Your opponent is bound by gravity!"
+  teleport-success: "&dYou blinked behind your opponent!"
+  recipe-discovered: "&aYou discovered the recipe for {weapon}!"
+  crafting-success: "&aYou crafted a {weapon}!"
+  crafting-broadcast: "&a{player} has crafted the first {weapon}!"
+  weapon-already-crafted: "&cThis weapon has already been crafted and cannot be crafted again!"
+  stacked-material-required: "&cYou need a full stack of {amount}x {material} to craft this weapon!"
+  insufficient-materials: "&cYou need at least {amount}x {material} to craft this weapon!"
+  reaper_scythe:
+    death-message: "&c{player} has been claimed by the Reaper's Scythe!"
+  weapon:
+    soul_reaver:
+      explosion: "&5Soul explosion triggered!"
+      soul-consumed: "&5You consumed a soul, gaining health and experience!"
+      xp-cooldown: "&cYou've reached your daily XP limit. Cooldown remaining: {time}"
+      xp-limit-reached: "&cYou've reached the daily XP gain limit of {limit} levels"
+      no-right-click: "&cThe Soul Reaver now unleashes explosions when your victims die!"
+
+storage:
+  type: yaml
+  save-interval: 300

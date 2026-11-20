@@ -1,0 +1,7 @@
+isEnabled: false
+entityType: SULFUR_CUBE
+name: '&fLvl &2$level &fElite &2Sulfur Cube'
+deathMessages:
+- $player &cwas slain by $entity&c!
+baseDamageV2: 2.0
+behavior: basic_melee.lua

@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: Solid Front
+lore:
+- Not much give in this one.
+classLootFamily: TANK_CHESTPLATES

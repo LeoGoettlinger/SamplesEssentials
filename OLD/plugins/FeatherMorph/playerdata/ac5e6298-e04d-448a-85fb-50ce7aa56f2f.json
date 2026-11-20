@@ -1,0 +1,31 @@
+{
+  "playerName": "SteveWurst",
+  "unlockedDisguiseIdentifiers": [
+    "minecraft:enderman",
+    "minecraft:pig",
+    "minecraft:creeper",
+    "minecraft:zombie",
+    "minecraft:spider",
+    "minecraft:zombified_piglin",
+    "minecraft:wither_skeleton",
+    "minecraft:blaze",
+    "minecraft:skeleton",
+    "minecraft:silverfish",
+    "player:emilioop",
+    "minecraft:phantom",
+    "minecraft:ghast",
+    "minecraft:sheep",
+    "minecraft:magma_cube",
+    "minecraft:piglin",
+    "minecraft:drowned",
+    "minecraft:endermite",
+    "minecraft:bogged",
+    "minecraft:breeze"
+  ],
+  "showDisguiseToSelf": false,
+  "shownDisplayToSelfHint": false,
+  "shownServerSkillHint": false,
+  "shownClientSkillHint": false,
+  "shownMorphHint": true,
+  "shownMorphClientHint": false
+}

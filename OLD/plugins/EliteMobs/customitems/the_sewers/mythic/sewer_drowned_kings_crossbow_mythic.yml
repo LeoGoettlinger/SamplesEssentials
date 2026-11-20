@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&4Plague Launcher [Mythic]'
+material: CROSSBOW
+lore:
+- '&cFires disease-ridden bolts.'
+enchantments:
+- PIERCING,6
+- QUICK_CHARGE,3
+- DURABILITY,5
+- MULTISHOT,1
+- MENDING,1
+potionEffects:
+- POISON,2,target,onHit
+- WEAKNESS,1,target,onHit
+itemType: unique
+scalability: scalable
+soulbound: true

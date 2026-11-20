@@ -1,0 +1,14 @@
+menuName: '[EM] Getloot menu'
+tierTranslation: Level
+itemFilterTranslation: Filter by items of this level.
+isEnabled: true
+infoButton:
+  material: PLAYER_HEAD
+leftButton:
+  material: PLAYER_HEAD
+rightButton:
+  material: PLAYER_HEAD
+previousLoot:
+  material: PLAYER_HEAD
+nextLoot:
+  material: PLAYER_HEAD

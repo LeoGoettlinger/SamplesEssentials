@@ -1,0 +1,15 @@
+potionEffects: []
+isEnabled: true
+material: BOW
+name: '&bGear-Strung Bow [Normal]'
+lore:
+- '&bAn intricate bow mechanism powered by'
+- '&bgears and springs, increasing draw speed'
+- '&band arrow velocity beyond normal limits.'
+enchantments:
+- ARROW_DAMAGE,3
+- ARROW_FIRE,1
+- DURABILITY,3
+itemType: UNIQUE
+scalability: scalable
+soulbound: true

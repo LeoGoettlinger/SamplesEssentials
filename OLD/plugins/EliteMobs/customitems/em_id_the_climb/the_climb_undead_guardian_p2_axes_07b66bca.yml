@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_AXE
+name: '&1[$difficulty] Guardian Axe'
+lore:
+- '&1This axe was frozen solid to'
+- '&1the corpse''s back. It''s yours now.'

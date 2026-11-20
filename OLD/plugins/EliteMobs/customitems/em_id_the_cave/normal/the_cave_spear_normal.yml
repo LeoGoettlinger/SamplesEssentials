@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Normal] Corroded Pike'
+material: NETHERITE_SPEAR
+level: 15
+lore:
+- '&cA spear eaten away by acidic'
+- '&cslime, yet still deadly sharp.'
+- '&cLeaves a burning sensation.'
+enchantments:
+- IMPALING,3
+- DAMAGE_ALL,3
+- DURABILITY,3
+itemType: unique
+scalability: scalable

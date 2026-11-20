@@ -1,0 +1,10 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: BLAZE_ROD
+name: '&bCircuit Stylus'
+lore:
+- '&bThe handle is wrapped in layers of old wiring.'
+- '&bDifferent mechanics preferred different colours.'
+weaponType: WANDS

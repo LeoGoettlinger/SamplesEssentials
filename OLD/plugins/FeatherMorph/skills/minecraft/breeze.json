@@ -1,0 +1,19 @@
+{
+  "skillCooldown": 40,
+  "skillId": "morph:launch_projective",
+  "abilities": [
+    "morph:normal_jump_boost",
+    "morph:no_fall_damage"
+  ],
+  "settings": {
+    "morph:launch_projective": {
+      "delay": 0,
+      "warning_sound_name": "",
+      "name": "minecraft:wind_charge",
+      "speed_multiplier": 1.0,
+      "sound_name": "entity.breeze.shoot",
+      "sound_distance": 16,
+      "max_target_distance": 0
+    }
+  }
+}

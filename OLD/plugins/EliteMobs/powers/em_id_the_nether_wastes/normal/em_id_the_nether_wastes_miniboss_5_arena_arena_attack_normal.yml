@@ -1,0 +1,61 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  GlassCrack:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Actions:
+    - action: RUN_SCRIPT
+      wait: 40
+      scripts:
+      - GlassWarning
+      - GlassStrike
+    Cooldowns:
+      local: 300
+      global: 60
+  GlassWarning:
+    Actions:
+    - action: TITLE_MESSAGE
+      title: '&cWARNING!'
+      subtitle: '&fThe glass below you is cracking!'
+      duration: 30
+      fadeIn: 5
+      fadeOut: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        range: 40
+  GlassStrike:
+    Zone:
+      shape: CYLINDER
+      radius: 1
+      height: 1
+      Target:
+        targetType: NEARBY_PLAYERS
+        offset: 0,-1,0
+        range: 40
+        track: false
+    Actions:
+    - action: STRIKE_LIGHTNING
+      Target:
+        targetType: ZONE_FULL
+        range: 40
+        track: false
+    - action: PLAY_SOUND
+      sValue: minecraft:block.glass.break
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 10
+    - action: PLACE_BLOCK
+      material: AIR
+      duration: 400
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 60
+    - action: PLAY_SOUND
+      sValue: minecraft:block.glass.break
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      wait: 60

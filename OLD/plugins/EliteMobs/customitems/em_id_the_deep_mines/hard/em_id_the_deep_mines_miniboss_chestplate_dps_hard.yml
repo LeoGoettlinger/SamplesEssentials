@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&d[Hard] Rune Armor'
+material: DIAMOND_CHESTPLATE
+level: 45
+lore:
+- '&dBeautiful dwarven runes cover this armor.'
+- '&dEvery now and then you notice the runes'
+- '&demit a slight warm glow.'
+enchantments:
+- DAMAGE_ALL,6
+- DAMAGE_UNDEAD,4
+- DAMAGE_ARTHROPODS,3
+- DURABILITY,2
+potionEffects:
+- DAMAGE_RESISTANCE,0,self,onHit
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

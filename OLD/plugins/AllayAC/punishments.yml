@@ -1,0 +1,98 @@
+# AllayAC Punishments by SampleCraft
+# N:M = fire at N, then N+M... (M=0 = once)
+# Commands: [alert] [webhook] [log] kick|ban %player% %kick_reason%
+#
+# The %kick_reason% placeholder is resolved from config.yml
+# (modules.<name>.kick-reason). If not set, a default reason is used.
+Punishments:
+  AntiVPN:
+    remove-violations-after: 86400
+    commands:
+    - 1:0 [alert]
+    - 1:0 [webhook]
+    - 1:0 kick %player% %kick_reason%
+  AntiBot:
+    remove-violations-after: 3600
+    commands:
+    - 1:0 [alert]
+    - 1:0 [webhook]
+    - 1:0 kick %player% %kick_reason%
+  ClientBlocker:
+    remove-violations-after: 86400
+    commands:
+    - 1:0 [alert]
+    - 1:0 [webhook]
+    - 1:0 kick %player% %kick_reason%
+  HackBlocker:
+    remove-violations-after: 86400
+    commands:
+    - 1:0 [alert]
+    - 1:0 [webhook]
+    - 1:0 kick %player% %kick_reason%
+  ModBlocker:
+    remove-violations-after: 86400
+    commands:
+    - 1:0 [alert]
+    - 1:0 [webhook]
+    - 1:0 kick %player% %kick_reason%
+  CrashItem:
+    remove-violations-after: 3600
+    commands:
+    - 1:0 [alert]
+    - 1:0 [webhook]
+    - 2:0 kick %player% %kick_reason%
+  OPProtection:
+    remove-violations-after: -1
+    commands:
+    - 1:0 [alert]
+    - 1:0 [webhook]
+    - 1:0 ban %player% %kick_reason%
+  CommandBlocker:
+    remove-violations-after: 3600
+    commands:
+    - 1:0 [alert]
+    - 1:0 [webhook]
+    - 5:0 kick %player% %kick_reason%
+  Lockdown:
+    remove-violations-after: -1
+    commands:
+    - 1:0 [alert]
+    - 1:0 [webhook]
+  AutoClicker:
+    remove-violations-after: 300
+    commands:
+    - 10:5 [alert]
+    - 10:5 [webhook]
+    - 20:5 [log]
+    - 50:0 kick %player% %kick_reason%
+  FastBow:
+    remove-violations-after: 300
+    commands:
+    - 5:3 [alert]
+    - 5:3 [webhook]
+    - 10:0 kick %player% %kick_reason%
+  FastEat:
+    remove-violations-after: 300
+    commands:
+    - 5:3 [alert]
+    - 5:3 [webhook]
+    - 10:0 kick %player% %kick_reason%
+  FastHeal:
+    remove-violations-after: 300
+    commands:
+    - 5:3 [alert]
+    - 5:3 [webhook]
+  ChatSpam:
+    remove-violations-after: 180
+    commands:
+    - 3:2 [alert]
+    - 3:2 [webhook]
+    - 10:5 [log]
+    - 20:0 kick %player% %kick_reason%
+  AutoChatMod:
+    remove-violations-after: 600
+    commands:
+    - 1:0 [alert]
+    - 5:2 [webhook]
+    - 20:0 [log]
+    - 30:0 kick %player% %kick_reason%

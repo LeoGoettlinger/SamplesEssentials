@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&2[Hard] Scorching Armor'
+material: DIAMOND_CHESTPLATE
+level: 20
+lore:
+- '&2Everything will burn...'
+enchantments:
+- THORNS,7
+- PROTECTION_ENVIRONMENTAL,4
+- PROTECTION_FIRE,3
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

@@ -1,0 +1,127 @@
+isEnabled: true
+powerType: UNIQUE
+eliteScript:
+  GustWarning:
+    Events:
+    - PlayerDamagedByEliteMobEvent
+    Zone:
+      shape: CYLINDER
+      radius: 7
+      height: 5
+      Target:
+        targetType: NEARBY_PLAYERS
+        offset: 0,-1,0
+        range: 20
+        track: false
+    Actions:
+    - action: TITLE_MESSAGE
+      Target:
+        targetType: ZONE_FULL
+      subtitle: '&cGUST WARNING!!!'
+      duration: 50
+      fadeIn: 5
+      fadeOut: 5
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: MESSAGE
+      Target:
+        targetType: ZONE_FULL
+      sValue: '&cYou feel a strong gust of wind forming!!!'
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: SPAWN_PARTICLE
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      particles:
+      - particle: SMOKE_NORMAL
+        speed: 0.1
+      repeatEvery: 5
+      times: 12
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLAY_SOUND
+      Target:
+        targetType: ZONE_FULL
+      sValue: minecraft:entity.evoker.prepare_summon
+      volume: 0.02
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: RUN_SCRIPT
+      scripts:
+      - Gust
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    Cooldowns:
+      local: 300
+      global: 100
+  Gust:
+    Zone:
+      shape: CYLINDER
+      radius: 7
+      height: 7
+      Target:
+        targetType: NEARBY_PLAYERS
+        offset: 0,-2,0
+        range: 20
+        track: false
+    Actions:
+    - action: SPAWN_PARTICLE
+      wait: 60
+      Target:
+        targetType: ZONE_FULL
+        coverage: 0.3
+        track: false
+      particles:
+      - particle: CLOUD
+        speed: 0.2
+        amount: 0
+        y: 3
+      repeatEvery: 2
+      times: 50
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PUSH
+      wait: 60
+      Target:
+        targetType: ZONE_FULL
+        track: false
+      vValue: 0,1,0
+      repeatEvery: 1
+      times: 100
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF
+    - action: PLAY_SOUND
+      Target:
+        targetType: ZONE_FULL
+      sValue: minecraft:entity.ender_dragon.flap
+      volume: 0.02
+      wait: 60
+      repeatEvery: 20
+      times: 5
+      Conditions:
+        conditionType: BLOCKING
+        isAlive: true
+        Target:
+          targetType: SELF

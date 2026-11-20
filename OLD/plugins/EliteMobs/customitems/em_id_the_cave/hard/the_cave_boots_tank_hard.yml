@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Boiled Boots'
+material: DIAMOND_BOOTS
+level: 15
+lore:
+- '&cThe boiling did not get rid of the smell.'
+enchantments:
+- PROTECTION_FALL,3
+- PROTECTION_ENVIRONMENTAL,7
+- DURABILITY,4
+- DAMAGE_ALL,3
+- elitemobs:loud_strikes,2
+itemType: unique
+scalability: scalable
+# Generated with https://magmaguy.com/webapp/webapp.html !

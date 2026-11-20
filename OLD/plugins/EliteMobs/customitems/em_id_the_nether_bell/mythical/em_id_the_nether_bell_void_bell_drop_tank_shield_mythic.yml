@@ -1,0 +1,18 @@
+isEnabled: true
+material: SHIELD
+name: '&d[Mythical] Dominator Shield'
+lore:
+- '&dThis shield is strangely warm to the touch.'
+- '&dA constant hissing emanates from its surface.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,8
+- PROTECTION_FIRE,8
+- PROTECTION_PROJECTILE,8
+- PROTECTION_EXPLOSIONS,8
+- THORNS,3
+- elitemobs:loud_strikes,3
+potionEffects:
+- HEALTH_BOOST,2,self,continuous
+scalability: scalable
+level: 55
+itemType: unique

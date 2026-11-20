@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Hard] Slimed Maul'
+material: MACE
+level: 15
+lore:
+- '&cA heavy weapon covered in'
+- '&cslimy residue from The Boiler.'
+- '&cIt sticks to enemies on impact.'
+enchantments:
+- DAMAGE_ALL,6
+- KNOCKBACK,3
+- DURABILITY,4
+itemType: unique
+scalability: scalable

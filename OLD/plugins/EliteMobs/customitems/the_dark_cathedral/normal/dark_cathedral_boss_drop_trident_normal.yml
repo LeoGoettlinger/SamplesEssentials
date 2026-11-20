@@ -1,0 +1,15 @@
+potionEffects: []
+isEnabled: true
+material: TRIDENT
+name: '&0Cursed Trident'
+lore:
+- '&0&kA weapon forged in the depths of R''lyeh,'
+- '&0&kits touch brings forth the chill'
+- '&0&kof the ocean floor.'
+enchantments:
+- LOYALTY,2
+- IMPALING,3
+- CHANNELING,1
+- RIPTIDE,2
+itemType: unique
+scalability: scalable

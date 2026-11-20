@@ -1,0 +1,16 @@
+isEnabled: true
+potionEffects: []
+name: '&f[Hard] Old Stone Carver'
+material: NETHERITE_AXE
+level: 35
+lore:
+- '&fNot even stone can dull this axe.'
+enchantments:
+- PROTECTION_FIRE,7
+- PROTECTION_PROJECTILE,5
+- PROTECTION_EXPLOSIONS,5
+- DURABILITY,4
+- elitemobs:loud_strikes,2
+scalability: scalable
+itemType: unique
+# Generated with https://magmaguy.com/webapp/webapp.html !

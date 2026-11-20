@@ -1,0 +1,11 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&3[$difficulty] Bone Champion''s Pride'
+lore:
+- '&3Even though heavily faded'
+- '&3you can still make out faint'
+- '&3markings that once adorned this armor.'
+classLootFamily: TANK_CHESTPLATES

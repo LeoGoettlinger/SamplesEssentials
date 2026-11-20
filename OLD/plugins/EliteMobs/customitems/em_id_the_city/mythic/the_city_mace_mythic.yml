@@ -1,0 +1,15 @@
+isEnabled: true
+potionEffects: []
+name: '&c[Mythic] Royal Enforcer'
+material: MACE
+level: 30
+lore:
+- '&cThe weapon of the city guard''s'
+- '&celite enforcers. Heavy and'
+- '&crelentless in its judgment.'
+enchantments:
+- DAMAGE_ALL,9
+- KNOCKBACK,3
+- DURABILITY,5
+itemType: unique
+scalability: scalable

@@ -1,0 +1,14 @@
+potionEffects: []
+isEnabled: true
+material: GOLDEN_AXE
+name: '&e[Mythical] War Axe'
+lore:
+- '&eA fine weapon for'
+- '&esplitting skulls.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,3
+- DAMAGE_ALL,5
+- DURABILITY,3
+itemType: unique
+scalability: scalable
+level: 10

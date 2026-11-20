@@ -1,0 +1,9 @@
+enchantments: []
+potionEffects: []
+isEnabled: true
+itemType: CLASS_LOOT
+material: DIAMOND_CHESTPLATE
+name: '&aForlorn Surcoat'
+lore:
+- '&aA faded crest marks the side that lost.'
+classLootFamily: DPS_CHESTPLATES

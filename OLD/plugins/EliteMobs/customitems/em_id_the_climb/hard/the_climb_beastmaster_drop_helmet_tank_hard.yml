@@ -1,0 +1,14 @@
+potionEffects: []
+isEnabled: true
+material: NETHERITE_HELMET
+name: '&d[Hard] Beastmaster''s Helm'
+lore:
+- '&dA powerful piece of headgear.'
+enchantments:
+- PROTECTION_ENVIRONMENTAL,7
+- DAMAGE_ALL,3
+- DURABILITY,4
+- elitemobs:loud_strikes,2
+itemType: unique
+scalability: scalable
+level: 10
