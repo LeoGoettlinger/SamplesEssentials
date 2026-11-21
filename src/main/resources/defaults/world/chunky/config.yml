@@ -1,0 +1,12 @@
+# Chunky pre-generation settings (merged from Chunky-Bukkit)
+language: en
+# Resume saved tasks after a restart
+continue-on-restart: false
+# Do not print progress to the console
+silent: false
+# Seconds between progress broadcasts
+update-interval: 1
+# Chunks generated per server tick (25 keeps the server responsive)
+chunks-per-tick: 25
+# Seconds to mute progress broadcasts after /chunky quiet <seconds> (0 = off)
+quiet-interval: 0

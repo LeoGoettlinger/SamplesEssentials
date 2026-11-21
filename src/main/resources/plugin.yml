@@ -117,6 +117,10 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  chunky:
+    description: Pre-generate chunks around a centre
+    usage: /chunky <help|world|center|radius|corners|spawn|shape|selection|start|pause|continue|cancel|progress|silent|reload>
+    permission: samplese.chunky
   axafkzone:
     description: Manage AFK zones with timed rewards
     usage: /axafkzone <help|wand|create|delete|redefine|tp|reload>
@@ -291,6 +295,9 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.chunky:
+    description: Use /chunky pre-generation
+    default: op
   samplese.afkzone:
     description: Manage AFK zones
     default: op
