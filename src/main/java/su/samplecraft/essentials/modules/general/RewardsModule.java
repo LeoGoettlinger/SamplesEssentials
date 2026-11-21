@@ -145,7 +145,8 @@ public final class RewardsModule extends EssentialsModule implements Listener {
                         : Integer.parseInt(String.valueOf(minutesRaw));
                 RewardDefinition definition = new RewardDefinition();
                 Map<?, ?> display = raw.get("display-item") instanceof Map<?, ?> map ? map : Map.of();
-                definition.material = material(String.valueOf(display.getOrDefault("material", "clock")));
+                String displayMaterial = display.get("material") == null ? "clock" : String.valueOf(display.get("material"));
+                definition.material = material(displayMaterial);
                 definition.amount = display.get("amount") instanceof Number n ? n.intValue() : 1;
                 if (raw.get("rewards") instanceof List<?> rewardList) {
                     for (Object entry : rewardList) {
