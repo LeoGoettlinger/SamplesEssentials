@@ -1,0 +1,60 @@
+# Item sign system (merged from RHSignItem)
+#
+# Messages are MiniMessage/legacy mixed; see lang/en/general/signitem.yml.
+# Signature templates support %text% (only DEFAULT), %player%, %date% and %time%.
+
+settings:
+  content:
+    DEFAULT:
+      - "<white>%text%"
+      - ""
+      - "<gray>Signed by <green><bold>%player%<reset><gray> on <yellow><bold>%date%<reset> <yellow><bold>%time%<reset>"
+    SHORT:
+      - "<gray>Signed by <green><bold>%player%<reset><gray> on <yellow><bold>%date%<reset> <yellow><bold>%time%<reset>"
+  formats:
+    date: "dd/MM/yyyy"
+    time: "HH:mm:ss"
+  # Maximum stack size that may be signed at once (1-64)
+  max-stack-size: 1
+  auto-lock:
+    enabled: false
+    # When true only players with samplese.signitem.autolock get the auto-lock
+    permission-based: true
+  item-blacklist:
+    - STRUCTURE_VOID
+    - LIGHT
+    - JIGSAW
+  deny-items-with-lore: false
+  offhand-item-mode:
+    enabled: false
+    type: GLOW_INK_SAC
+    use-on-action: true
+  enable-sounds: true
+  vault:
+    enabled: true
+    cost: 250.00
+    actions:
+      sign: true
+      delete: true
+      lock: true
+      unlock: true
+      rename: true
+    messages:
+      payment-successful: true
+      payment-failed: true
+
+# Shown by /sign help
+help-lines:
+  - "&7- - - &8[&6Item Sign System&8] &7- - -"
+  - ""
+  - " &f/sign <text> &8- &7signs the held item with <aqua>text"
+  - " &f/sign &8- &7signs the item with the short template"
+  - " &f/sign delete &8- &7removes the signature"
+  - " &f/sign lock &8- &7locks the item"
+  - " &f/sign unlock &8- &7unlocks the item"
+  - ""
+  - " &f/rename <text> &8- &7renames the held item"
+
+# Shown by a bare /rename
+rename-help-lines:
+  - "&7Usage: &f/rename <text>"

@@ -109,6 +109,14 @@ commands:
     description: Open the rewards menu
     usage: /rewards [gui|claim|reload|edit-user|set-playtime]
     permission: samplese.rewards
+  sign:
+    description: Sign, lock or delete the signature of the held item
+    usage: /sign [text|delete|lock|unlock|help|version]
+    permission: samplese.signitem
+  rename:
+    description: Rename the item in your hand
+    usage: /rename <text>
+    permission: samplese.signitem.rename
   xaero:
     description: Force fair-mode or disable the Xaero minimap
     usage: /xaero <scope> <fair-mode|disable> [true|false|unset]
@@ -278,6 +286,18 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.signitem:
+    description: Sign and lock items
+    default: true
+  samplese.signitem.rename:
+    description: Rename items
+    default: true
+  samplese.signitem.admin:
+    description: Remove signatures and locks of other players
+    default: op
+  samplese.signitem.autolock:
+    description: Auto-lock every signed item
+    default: op
   samplese.xaero:
     description: Edit Xaero minimap settings
     default: op
