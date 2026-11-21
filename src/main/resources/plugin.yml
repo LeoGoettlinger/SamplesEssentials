@@ -101,6 +101,10 @@ commands:
     description: List frozen players
     usage: /freezelist
     permission: samplese.freeze
+  bounty:
+    description: Open the bounty menu, or add a bounty
+    usage: /bounty [add <player> <amount>]
+    permission: samplese.bounty
   # social
   friend:
     description: Open the friend menu (add, remove, list, requests)
@@ -192,6 +196,9 @@ permissions:
     default: true
   samplese.friends:
     description: Use the friend system
+    default: true
+  samplese.bounty:
+    description: Use the bounty system
     default: true
   samplese.friends.bypasslimit:
     description: Bypass the friend limit

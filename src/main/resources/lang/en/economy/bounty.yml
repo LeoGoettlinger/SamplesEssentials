@@ -1,0 +1,13 @@
+# categoria: economy - module: bounty (merged from AsBounty-1.0.0.jar)
+usage: "{prefix}<red>Usage: <white>/{label} add <player> <amount>"
+invalid-amount: "{prefix}<red>Invalid bounty amount!"
+below-min: "{prefix}<red>The minimum bounty is <white>${min}<red>."
+above-max: "{prefix}<red>The maximum bounty is <white>${max}<red>."
+cannot-self: "{prefix}<red>You cannot add a bounty to yourself!"
+player-not-found: "{prefix}<red>Player not found!"
+not-enough-balance: "{prefix}<red>You don't have enough money for that bounty."
+no-economy: "{prefix}<red>No economy is loaded, bounties are unavailable."
+bounty-added: "{prefix}<white>You added <red>${amount}<white> to <green>{target}<white>'s bounty."
+bounty-added-on-you: "{prefix}<green>{user}<white> added <red>${amount}<white> to your bounty."
+claimed: "{prefix}<green>You claimed <white>${amount}<green> from <white>{victim}<green>'s bounty!"
+search-prompt: "{prefix}<green>Type the name you want to search for (or <white>cancel<green>)."

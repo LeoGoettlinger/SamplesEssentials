@@ -1,0 +1,34 @@
+# Merged from AsBounty-1.0.0.jar (structure of the old config)
+economy:
+  provider: VAULT
+  currency-format: '#,##0.##'
+  abbreviations:
+    enabled: true
+    formats:
+      - K
+      - M
+      - B
+      - T
+
+if-kill-myself-get-reward: false
+
+limits:
+  min-amount: 10
+  max-amount: 1000000000
+
+gui:
+  title: "&8Bounties (Page %page%/%max%)"
+  head-name: "&#00fc88%name%"
+  head-lore:
+    - "&fBounty: &7$%bounty%"
+
+sounds:
+  bounty-added:
+    enabled: true
+    sound: ENTITY_PLAYER_LEVELUP
+  no-perm:
+    enabled: true
+    sound: BLOCK_ANVIL_LAND
+  gui-click:
+    enabled: true
+    sound: UI_BUTTON_CLICK
