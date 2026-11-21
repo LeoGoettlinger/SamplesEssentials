@@ -28,7 +28,18 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build jar
-        run: ./gradlew --no-daemon --stacktrace build
+        run: |
+          set +e
+          ./gradlew --no-daemon --console=plain build 2>&1 | tee build-log.txt
+          status=${PIPESTATUS[0]}
+          if [ "$status" -ne 0 ] && [ "${{ github.event_name }}" = "push" ]; then
+            git config user.name "SamplesEssentials Bot"
+            git config user.email "bot@samplecraft.su"
+            git add -f build-log.txt
+            git commit -q -m "chore: build log (failed build) [skip ci]" || true
+            git push || true
+          fi
+          exit "$status"
 
       - name: Upload jar (artifact)
         uses: actions/upload-artifact@v4
