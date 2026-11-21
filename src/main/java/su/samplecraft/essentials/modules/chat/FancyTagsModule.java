@@ -138,8 +138,8 @@ public final class FancyTagsModule extends EssentialsModule implements Listener 
                         Key.key(symbol.atlas() == null ? "minecraft:blocks" : symbol.atlas()),
                         Key.key(symbol.sprite() == null ? "stone" : symbol.sprite())));
                 case "playerHead" -> Component.object(ObjectContents.playerHead()
-                        .profileProperty(new com.destroystokyo.paper.profile.ProfileProperty(
-                                "textures", symbol.value(), symbol.signature()))
+                        .profileProperty(net.kyori.adventure.text.object.PlayerHeadObjectContents
+                                .property("textures", symbol.value(), symbol.signature()))
                         .build());
                 default -> Text.parse(symbol.value() == null ? "" : symbol.value());
             });
@@ -404,7 +404,7 @@ public final class FancyTagsModule extends EssentialsModule implements Listener 
         if (stack.getItemMeta() instanceof SkullMeta meta && meta.getOwningPlayer() != null) {
             OfflinePlayer owner = meta.getOwningPlayer();
             return Component.object(ObjectContents.playerHead()
-                    .name(Component.text(owner.getName() == null ? "?" : owner.getName()))
+                    .name(owner.getName() == null ? "?" : owner.getName())
                     .build());
         }
         return Component.empty();
