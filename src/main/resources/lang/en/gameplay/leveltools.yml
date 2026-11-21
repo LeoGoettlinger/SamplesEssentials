@@ -1,0 +1,9 @@
+# categoria: gameplay - module: leveltools (merged from LevelTools-2.1.2.jar)
+reloaded: "{prefix}<green>Successfully reloaded LevelTools!"
+usage: "{prefix}<red>You can't do that - usage: /leveltools <reload|resetall|resethand|info>"
+player-not-found: "{prefix}<red>You can't do that - player <white>{player}</white> not found."
+item-not-tool: "{prefix}<red>The item in hand is not supported by LevelTools!"
+reset-all: "{prefix}<green>Successfully reset all tool XP/levels for <white>{player}</white> ({count} items)."
+reset-hand: "{prefix}<green>Successfully reset the hand tool's XP/levels for <white>{player}</white>."
+info: "{prefix}<gray>Profile <white>{profile}<gray>: level <white>{level}<gray>, XP <white>{xp}</white>/<white>{max_xp}<gray> (max {max_level})."
+help-header: "{prefix}<gold>LevelTools:"

@@ -19,6 +19,7 @@ import su.samplecraft.essentials.modules.gameplay.BiggerEnderChestModule;
 import su.samplecraft.essentials.modules.gameplay.DarkDropModule;
 import su.samplecraft.essentials.modules.gameplay.DragonEggEnhancementsModule;
 import su.samplecraft.essentials.modules.gameplay.GravesModule;
+import su.samplecraft.essentials.modules.gameplay.LevelToolsModule;
 import su.samplecraft.essentials.modules.gameplay.OpenSitModule;
 import su.samplecraft.essentials.modules.gameplay.SpawnElytraModule;
 import su.samplecraft.essentials.modules.general.StarterKitModule;
@@ -108,6 +109,7 @@ public final class SamplesEssentials extends JavaPlugin {
         moduleManager.register(new DarkDropModule(this));
         moduleManager.register(new DragonEggEnhancementsModule(this));
         moduleManager.register(new GravesModule(this));
+        moduleManager.register(new LevelToolsModule(this));
         moduleManager.register(new OpenSitModule(this));
         moduleManager.register(new SpawnElytraModule(this));
         // categoria: moderation

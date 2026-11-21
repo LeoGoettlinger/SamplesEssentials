@@ -1,0 +1,22 @@
+# Merged from LevelTools-2.1.2.jar (config.yml) - profiles live next to this file
+messages:
+  no_permission: "&cYou do not have permission to execute this command!"
+  successful_reload: "&aSuccessfully reloaded LevelTools!"
+  item_not_tool: "&cThe item in hand is not supported by LevelTools!"
+  successfully_reset_tools: "&aSuccessfully reset all tool XP/Levels for {player}."
+  successfully_reset_hand_tool: "&aSuccessfully reset tool in hand's XP/Levels for {player}."
+
+# HIGHER_OF_BOTH | LOWER_OF_BOTH | ADD_BOTH
+anvil_combine: "ADD_BOTH"
+
+# Mathematical formula for the XP needed for the next level.
+# Placeholder: {current_level}
+level_xp_formula: "100 + {current_level} * 100"
+
+# Should player-placed blocks count towards XP?
+playerPlacedBlocks: false
+
+level_up_sound:
+  sound: "ENTITY_PLAYER_LEVELUP"
+  pitch: 1.0
+  volume: 1.0

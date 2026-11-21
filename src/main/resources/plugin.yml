@@ -105,6 +105,11 @@ commands:
     description: Open the bounty menu, or add a bounty
     usage: /bounty [add <player> <amount>]
     permission: samplese.bounty
+  leveltools:
+    description: Manage LevelTools
+    usage: /leveltools <reload|resetall|resethand|info>
+    aliases: [lt]
+    permission: samplese.leveltools
   ca:
     description: Open the auction house
     usage: /ca [sell|bid <price>|view|listed|expired]
@@ -245,6 +250,12 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.leveltools:
+    description: Use LevelTools
+    default: true
+  samplese.leveltools.admin:
+    description: Administer LevelTools
+    default: op
   samplese.auction:
     description: Use the auction house
     default: true
