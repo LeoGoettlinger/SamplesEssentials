@@ -1,0 +1,21 @@
+name: XaeroForceDisabler
+version: '1.5'
+main: drqad.fairXaero.XaeroForceDisabler
+api-version: '1.21'
+author: ['drqad']
+commands:
+  xaero:
+    description: Xaero map related commands
+    usage: /<command> <scope> <setting> [value]
+    permission: xaero.edit
+    permission-message: "§cYou don't have permission to use this command."
+permissions:
+  xaero.edit:
+    description: Allows using all /xaero commands
+    default: op
+  xaero.ignoredisable:
+    description: Bypasses the map disabling packet
+    default: false
+  xaero.ignorefair:
+    description: Bypasses the fair mode packet
+    default: false

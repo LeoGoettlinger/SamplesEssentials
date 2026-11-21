@@ -1,0 +1,125 @@
+package ch.njol.skript.expressions;
+
+import ch.njol.skript.Skript;
+import ch.njol.skript.aliases.ItemType;
+import ch.njol.skript.classes.Changer;
+import ch.njol.skript.doc.Description;
+import ch.njol.skript.doc.Example;
+import ch.njol.skript.doc.Name;
+import ch.njol.skript.doc.RequiredPlugins;
+import ch.njol.skript.doc.Since;
+import ch.njol.skript.expressions.base.SimplePropertyExpression;
+import ch.njol.util.Math2;
+import ch.njol.util.coll.CollectionUtils;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.event.Event;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.Nullable;
+
+@Name("Maximum Stack Size")
+@Description({"The maximum stack size of an item (e.g. 64 for torches, 16 for buckets, 1 for swords, etc.) or inventory.", "In 1.20.5+, the maximum stack size of items can be changed to any integer from 1 to 99, and stacked up to the maximum stack size of the inventory they're in."})
+@Example.Examples({@Example("send \"You can hold %max stack size of player's tool% of %type of player's tool% in a slot.\" to player"), @Example("set the maximum stack size of inventory of all players to 16"), @Example("add 8 to the maximum stack size of player's tool"), @Example("reset the maximum stack size of {_gui}")})
+@Since({"2.1, 2.10 (changeable, inventories)"})
+@RequiredPlugins({"Spigot 1.20.5+ (changeable)"})
+public class ExprMaxStack extends SimplePropertyExpression<Object, Integer> {
+   private static final boolean CHANGEABLE_ITEM_STACK_SIZE = Skript.methodExists(ItemMeta.class, "setMaxStackSize", Integer.class);
+
+   @Nullable
+   public Integer convert(Object from) {
+      if (from instanceof ItemType itemType) {
+         return getMaxStackSize(itemType);
+      } else {
+         return from instanceof Inventory inventory ? inventory.getMaxStackSize() : null;
+      }
+   }
+
+   @Nullable
+   @Override
+   public Class<?>[] acceptChange(Changer.ChangeMode mode) {
+      return switch (mode) {
+         case ADD, REMOVE, RESET, SET -> {
+            if (!CHANGEABLE_ITEM_STACK_SIZE && ItemType.class.isAssignableFrom(this.getExpr().getReturnType())) {
+               Skript.error("Changing the maximum stack size of items requires Minecraft 1.20.5 or newer!");
+               yield null;
+            } else {
+               yield CollectionUtils.array(Integer.class);
+            }
+         }
+         default -> null;
+      };
+   }
+
+   @Override
+   public void change(Event event, @Nullable Object[] delta, Changer.ChangeMode mode) {
+      int change = delta == null ? 0 : ((Number)delta[0]).intValue();
+
+      for (Object source : this.getExpr().getArray(event)) {
+         if (source instanceof ItemType itemType) {
+            if (CHANGEABLE_ITEM_STACK_SIZE) {
+               int size = getMaxStackSize(itemType);
+               switch (mode) {
+                  case ADD:
+                     size += change;
+                     break;
+                  case REMOVE:
+                     size -= change;
+                  case RESET:
+                  default:
+                     break;
+                  case SET:
+                     size = change;
+               }
+
+               ItemMeta meta = itemType.getItemMeta();
+               meta.setMaxStackSize(mode != Changer.ChangeMode.RESET ? Math2.fit(1, size, 99) : null);
+               itemType.setItemMeta(meta);
+            }
+         } else if (source instanceof Inventory inventory) {
+            int size = inventory.getMaxStackSize();
+            switch (mode) {
+               case ADD:
+                  size += change;
+                  break;
+               case REMOVE:
+                  size -= change;
+                  break;
+               case RESET:
+                  size = Bukkit.createInventory(null, inventory.getType()).getMaxStackSize();
+                  break;
+               case SET:
+                  size = change;
+            }
+
+            inventory.setMaxStackSize(size);
+         }
+      }
+   }
+
+   @Override
+   public Class<? extends Integer> getReturnType() {
+      return Integer.class;
+   }
+
+   @Override
+   protected String getPropertyName() {
+      return "maximum stack size";
+   }
+
+   private static int getMaxStackSize(ItemType itemType) {
+      Object item = itemType.getRandomStackOrMaterial();
+      if (item instanceof ItemStack stack) {
+         return stack.getMaxStackSize();
+      } else if (item instanceof Material material) {
+         return material.getMaxStackSize();
+      } else {
+         throw new UnsupportedOperationException();
+      }
+   }
+
+   static {
+      register(ExprMaxStack.class, Integer.class, "max[imum] stack[[ ]size]", "itemtypes/inventories");
+   }
+}

@@ -1,0 +1,43 @@
+package org.skriptlang.skript.bukkit.bossbar.elements.expressions;
+
+import ch.njol.skript.doc.Description;
+import ch.njol.skript.doc.Example;
+import ch.njol.skript.doc.Name;
+import ch.njol.skript.doc.Since;
+import ch.njol.skript.expressions.base.SimplePropertyExpression;
+import org.bukkit.boss.BossBar;
+import org.bukkit.entity.Boss;
+import org.bukkit.entity.Entity;
+import org.jetbrains.annotations.Nullable;
+import org.skriptlang.skript.registration.DefaultSyntaxInfos;
+import org.skriptlang.skript.registration.SyntaxRegistry;
+
+@Name("Boss Bar From Boss")
+@Description({"Returns a boss bar from one or more bosses.\n"})
+@Example("on spawn of wither:\n    set title of boss bar of event-entity to \"<red>Angry Wither\"\n")
+@Since({"2.16"})
+public class ExprBossBarFromEntity extends SimplePropertyExpression<Entity, BossBar> {
+   public static void register(SyntaxRegistry registry) {
+      registry.register(
+         SyntaxRegistry.EXPRESSION,
+         ((DefaultSyntaxInfos.Expression.Builder)infoBuilder(ExprBossBarFromEntity.class, BossBar.class, "boss[ ]bar", "entities", false)
+               .supplier(ExprBossBarFromEntity::new))
+            .build()
+      );
+   }
+
+   @Nullable
+   public BossBar convert(Entity entity) {
+      return entity instanceof Boss boss ? boss.getBossBar() : null;
+   }
+
+   @Override
+   public Class<BossBar> getReturnType() {
+      return BossBar.class;
+   }
+
+   @Override
+   protected String getPropertyName() {
+      return "boss bar";
+   }
+}

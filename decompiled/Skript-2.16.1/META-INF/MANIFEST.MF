@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Name: ch/njol/skript
+Automatic-Module-Name: ch.njol.skript
+Sealed: true
+Class-Path: bstats-bukkit-3.2.1.jar bstats-base-3.2.1.jar
+

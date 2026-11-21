@@ -1,0 +1,18 @@
+package org.sethomegui.SetHomeGUI.libs.mysql.cj.xdevapi;
+
+public enum JsonLiteral implements JsonValue {
+   TRUE("true"),
+   FALSE("false"),
+   NULL("null");
+
+   public final String value;
+
+   private JsonLiteral(String val) {
+      this.value = val;
+   }
+
+   @Override
+   public String toString() {
+      return this.value;
+   }
+}

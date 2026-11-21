@@ -1,0 +1,143 @@
+package ch.njol.skript.test.runner;
+
+import ch.njol.skript.Skript;
+import ch.njol.skript.config.Node;
+import ch.njol.skript.doc.Description;
+import ch.njol.skript.doc.Name;
+import ch.njol.skript.doc.NoDoc;
+import ch.njol.skript.lang.Condition;
+import ch.njol.skript.lang.Effect;
+import ch.njol.skript.lang.Expression;
+import ch.njol.skript.lang.SkriptParser;
+import ch.njol.skript.lang.TriggerItem;
+import ch.njol.skript.lang.VerboseAssert;
+import ch.njol.skript.log.ParseLogHandler;
+import ch.njol.skript.log.SkriptLogger;
+import ch.njol.skript.util.LiteralUtils;
+import ch.njol.util.Kleenean;
+import org.bukkit.event.Event;
+import org.jetbrains.annotations.Nullable;
+import org.skriptlang.skript.lang.script.Script;
+
+@Name("Assert")
+@Description({"Assert that condition is true. Test fails when it is not."})
+@NoDoc
+public class EffAssert extends Effect {
+   private static final String DEFAULT_ERROR = "Assertion failed.";
+   @Nullable
+   private Condition condition;
+   private Script script;
+   private int line;
+   @Nullable
+   private Expression<String> errorMsg;
+   @Nullable
+   private Expression<?> expected;
+   @Nullable
+   private Expression<?> got;
+   private boolean shouldFail;
+
+   @Override
+   public boolean init(Expression<?>[] exprs, int matchedPattern, Kleenean isDelayed, SkriptParser.ParseResult parseResult) {
+      if (isDelayed == Kleenean.TRUE && !parseResult.hasTag("unsafely") && !TestMode.JUNIT && !TestMode.DEV_MODE) {
+         Skript.error("Assertions cannot be delayed");
+         return false;
+      } else {
+         String conditionString = parseResult.regexes.get(0).group();
+         if (matchedPattern < 2) {
+            this.errorMsg = (Expression<String>)exprs[0];
+         }
+
+         boolean canInit = true;
+         if (exprs.length > 1) {
+            this.expected = LiteralUtils.defendExpression(exprs[1]);
+            this.got = LiteralUtils.defendExpression(exprs[2]);
+            canInit = LiteralUtils.canInitSafely(this.expected, this.got);
+         }
+
+         this.shouldFail = parseResult.mark != 0;
+         this.script = this.getParser().getCurrentScript();
+         Node node = this.getParser().getNode();
+         this.line = node != null ? node.getLine() : -1;
+
+         try (ParseLogHandler logHandler = SkriptLogger.startParseLogHandler()) {
+            this.condition = Condition.parse(conditionString, "Can't understand this condition: " + conditionString);
+            if (this.shouldFail) {
+               return true;
+            }
+
+            if (this.condition == null) {
+               logHandler.printError();
+            } else {
+               logHandler.printLog();
+            }
+         }
+
+         return this.condition != null && canInit;
+      }
+   }
+
+   @Override
+   protected void execute(Event event) {
+   }
+
+   @Nullable
+   @Override
+   public TriggerItem walk(Event event) {
+      if (this.shouldFail && this.condition == null) {
+         return this.getNext();
+      } else if (this.condition.check(event) == this.shouldFail) {
+         String message = this.errorMsg != null ? this.errorMsg.getOptionalSingle(event).orElse("Assertion failed.") : "Assertion failed.";
+         String expectedMessage = "";
+         String gotMessage = "";
+         if (this.expected != null) {
+            expectedMessage = VerboseAssert.getExpressionValue(this.expected, event);
+         }
+
+         if (this.got != null) {
+            gotMessage = VerboseAssert.getExpressionValue(this.got, event);
+         }
+
+         if (this.condition instanceof VerboseAssert) {
+            if (expectedMessage.isEmpty()) {
+               expectedMessage = ((VerboseAssert)this.condition).getExpectedMessage(event);
+            }
+
+            if (gotMessage.isEmpty()) {
+               gotMessage = ((VerboseAssert)this.condition).getReceivedMessage(event);
+            }
+         }
+
+         if (!expectedMessage.isEmpty() && !gotMessage.isEmpty()) {
+            message = message + " (Expected " + expectedMessage + ", but got " + gotMessage + ")";
+         }
+
+         if (SkriptJUnitTest.getCurrentJUnitTest() != null) {
+            TestTracker.junitTestFailed(SkriptJUnitTest.getCurrentJUnitTest(), message);
+         } else if (this.line >= 0) {
+            TestTracker.testFailed(message, this.script, this.line);
+         } else {
+            TestTracker.testFailed(message, this.script);
+         }
+
+         return null;
+      } else {
+         return this.getNext();
+      }
+   }
+
+   @Override
+   public String toString(@Nullable Event event, boolean debug) {
+      return this.condition == null ? "assertion" : "assert " + this.condition.toString(event, debug);
+   }
+
+   static {
+      if (TestMode.ENABLED) {
+         Skript.registerEffect(
+            EffAssert.class,
+            "assert [:unsafely] <.+> [(1:to fail)] with [error] %string%",
+            "assert [:unsafely] <.+> [(1:to fail)] with [error] %string%, expected [value] %object%, [and] (received|got) [value] %object%",
+            "assert [:unsafely] <.+> [(1:to fail)]"
+         );
+      }
+   }
+}

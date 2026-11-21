@@ -1,0 +1,63 @@
+package org.sethomegui.SetHomeGUI.libs.mysql.cj.result;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.Constants;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.Messages;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.PropertySet;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.exceptions.NumberOutOfRange;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.util.DataTypeUtil;
+
+public class IntegerValueFactory extends AbstractNumericValueFactory<Integer> {
+   public IntegerValueFactory(PropertySet pset) {
+      super(pset);
+   }
+
+   public Integer createFromBigInteger(BigInteger i) {
+      if (!this.jdbcCompliantTruncationForReads
+         || i.compareTo(Constants.BIG_INTEGER_MIN_INTEGER_VALUE) >= 0 && i.compareTo(Constants.BIG_INTEGER_MAX_INTEGER_VALUE) <= 0) {
+         return i.intValue();
+      } else {
+         throw new NumberOutOfRange(Messages.getString("ResultSet.NumberOutOfRange", new Object[]{i, this.getTargetTypeName()}));
+      }
+   }
+
+   public Integer createFromLong(long l) {
+      if (!this.jdbcCompliantTruncationForReads || l >= -2147483648L && l <= 2147483647L) {
+         return (int)l;
+      } else {
+         throw new NumberOutOfRange(Messages.getString("ResultSet.NumberOutOfRange", new Object[]{Long.valueOf(l).toString(), this.getTargetTypeName()}));
+      }
+   }
+
+   public Integer createFromBigDecimal(BigDecimal d) {
+      if (!this.jdbcCompliantTruncationForReads
+         || d.compareTo(Constants.BIG_DECIMAL_MIN_INTEGER_VALUE) >= 0 && d.compareTo(Constants.BIG_DECIMAL_MAX_INTEGER_VALUE) <= 0) {
+         return (int)d.longValue();
+      } else {
+         throw new NumberOutOfRange(Messages.getString("ResultSet.NumberOutOfRange", new Object[]{d, this.getTargetTypeName()}));
+      }
+   }
+
+   public Integer createFromDouble(double d) {
+      if (!this.jdbcCompliantTruncationForReads || !(d < -2.1474836E9F) && !(d > 2.147483647E9)) {
+         return (int)d;
+      } else {
+         throw new NumberOutOfRange(Messages.getString("ResultSet.NumberOutOfRange", new Object[]{d, this.getTargetTypeName()}));
+      }
+   }
+
+   public Integer createFromBit(byte[] bytes, int offset, int length) {
+      long l = DataTypeUtil.bitToLong(bytes, offset, length);
+      if (this.jdbcCompliantTruncationForReads && l >> 32 != 0L) {
+         throw new NumberOutOfRange(Messages.getString("ResultSet.NumberOutOfRange", new Object[]{Long.valueOf(l).toString(), this.getTargetTypeName()}));
+      } else {
+         return (int)l;
+      }
+   }
+
+   @Override
+   public String getTargetTypeName() {
+      return Integer.class.getName();
+   }
+}

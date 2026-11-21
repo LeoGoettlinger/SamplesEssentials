@@ -1,0 +1,49 @@
+package org.sethomegui.SetHomeGUI.libs.mysql.cj.xdevapi;
+
+import java.util.concurrent.CompletableFuture;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.Messages;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.MysqlxSession;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.x.XMessage;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.x.XMessageBuilder;
+
+public class RemoveStatementImpl extends FilterableStatement<RemoveStatement, Result> implements RemoveStatement {
+   RemoveStatementImpl(MysqlxSession mysqlxSession, String schema, String collection, String criteria) {
+      super(new DocFilterParams(schema, collection, false));
+      this.mysqlxSession = mysqlxSession;
+      if (criteria != null && criteria.trim().length() != 0) {
+         this.filterParams.setCriteria(criteria);
+      } else {
+         throw new XDevAPIError(Messages.getString("RemoveStatement.0", new String[]{"criteria"}));
+      }
+   }
+
+   @Deprecated
+   @Override
+   public RemoveStatement orderBy(String... sortFields) {
+      return (RemoveStatement)super.orderBy(sortFields);
+   }
+
+   public Result executeStatement() {
+      return this.mysqlxSession.query(this.getMessageBuilder().buildDelete(this.filterParams), new UpdateResultBuilder<>());
+   }
+
+   @Override
+   protected XMessage getPrepareStatementXMessage() {
+      return this.getMessageBuilder().buildPrepareDelete(this.preparedStatementId, this.filterParams);
+   }
+
+   protected Result executePreparedStatement() {
+      return this.mysqlxSession.query(this.getMessageBuilder().buildPrepareExecute(this.preparedStatementId, this.filterParams), new UpdateResultBuilder<>());
+   }
+
+   @Override
+   public CompletableFuture<Result> executeAsync() {
+      return this.mysqlxSession
+         .queryAsync(((XMessageBuilder)this.mysqlxSession.<XMessage>getMessageBuilder()).buildDelete(this.filterParams), new UpdateResultBuilder<>());
+   }
+
+   @Deprecated
+   public RemoveStatement where(String searchCondition) {
+      return (RemoveStatement)super.where(searchCondition);
+   }
+}

@@ -1,0 +1,21 @@
+package simplexity.simpleplayerfreeze.listeners;
+
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityPickupItemEvent;
+import simplexity.simpleplayerfreeze.Util;
+import simplexity.simpleplayerfreeze.configs.ConfigHandler;
+
+public class PickupListener implements Listener {
+   @EventHandler
+   public void onPickup(EntityPickupItemEvent pickupEvent) {
+      if (ConfigHandler.getInstance().shouldPreventItemPickup()) {
+         if (pickupEvent.getEntity() instanceof Player player) {
+            if (Util.isFrozen(player)) {
+               pickupEvent.setCancelled(true);
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,27 @@
+package ch.njol.skript.conditions;
+
+import ch.njol.skript.conditions.base.PropertyCondition;
+import ch.njol.skript.doc.Description;
+import ch.njol.skript.doc.Example;
+import ch.njol.skript.doc.Name;
+import ch.njol.skript.doc.Since;
+import org.bukkit.entity.Entity;
+
+@Name("Is on Ground")
+@Description({"Checks whether an entity is on ground."})
+@Example("player is not on ground")
+@Since({"2.2-dev26"})
+public class CondIsOnGround extends PropertyCondition<Entity> {
+   public boolean check(Entity entity) {
+      return entity.isOnGround();
+   }
+
+   @Override
+   protected String getPropertyName() {
+      return "on ground";
+   }
+
+   static {
+      PropertyCondition.register(CondIsOnGround.class, "on [the] ground", "entities");
+   }
+}

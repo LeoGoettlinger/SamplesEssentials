@@ -1,0 +1,216 @@
+package org.sethomegui.SetHomeGUI.libs.mysql.cj.jdbc;
+
+import java.sql.SQLException;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.Messages;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.jdbc.exceptions.SQLError;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.jdbc.ha.LoadBalancedConnectionProxy;
+
+public class ConnectionGroup {
+   private String groupName;
+   private long connections = 0L;
+   private long activeConnections = 0L;
+   private HashMap<Long, LoadBalancedConnectionProxy> connectionProxies = new HashMap<>();
+   private Lock connectionProxiesLock = new ReentrantLock();
+   private Set<String> hostList = new HashSet<>();
+   private boolean isInitialized = false;
+   private long closedProxyTotalPhysicalConnections = 0L;
+   private long closedProxyTotalTransactions = 0L;
+   private int activeHosts = 0;
+   private Set<String> closedHosts = new HashSet<>();
+   private final Lock lock = new ReentrantLock();
+
+   ConnectionGroup(String groupName) {
+      this.groupName = groupName;
+   }
+
+   public long registerConnectionProxy(LoadBalancedConnectionProxy proxy, List<String> localHostList) {
+      this.lock.lock();
+
+      long currentConnectionId;
+      try {
+         if (!this.isInitialized) {
+            this.hostList.addAll(localHostList);
+            this.isInitialized = true;
+            this.activeHosts = localHostList.size();
+         }
+
+         currentConnectionId = ++this.connections;
+         this.connectionProxies.put(currentConnectionId, proxy);
+      } finally {
+         this.lock.unlock();
+      }
+
+      this.activeConnections++;
+      return currentConnectionId;
+   }
+
+   public String getGroupName() {
+      return this.groupName;
+   }
+
+   public Collection<String> getInitialHosts() {
+      return this.hostList;
+   }
+
+   public int getActiveHostCount() {
+      return this.activeHosts;
+   }
+
+   public Collection<String> getClosedHosts() {
+      return this.closedHosts;
+   }
+
+   public long getTotalLogicalConnectionCount() {
+      return this.connections;
+   }
+
+   public long getActiveLogicalConnectionCount() {
+      return this.activeConnections;
+   }
+
+   public long getActivePhysicalConnectionCount() {
+      long result = 0L;
+      Map<Long, LoadBalancedConnectionProxy> proxyMap = new HashMap<>();
+      this.connectionProxiesLock.lock();
+
+      try {
+         proxyMap.putAll(this.connectionProxies);
+      } finally {
+         this.connectionProxiesLock.unlock();
+      }
+
+      for (LoadBalancedConnectionProxy proxy : proxyMap.values()) {
+         result += proxy.getActivePhysicalConnectionCount();
+      }
+
+      return result;
+   }
+
+   public long getTotalPhysicalConnectionCount() {
+      long allConnections = this.closedProxyTotalPhysicalConnections;
+      Map<Long, LoadBalancedConnectionProxy> proxyMap = new HashMap<>();
+      this.connectionProxiesLock.lock();
+
+      try {
+         proxyMap.putAll(this.connectionProxies);
+      } finally {
+         this.connectionProxiesLock.unlock();
+      }
+
+      for (LoadBalancedConnectionProxy proxy : proxyMap.values()) {
+         allConnections += proxy.getTotalPhysicalConnectionCount();
+      }
+
+      return allConnections;
+   }
+
+   public long getTotalTransactionCount() {
+      long transactions = this.closedProxyTotalTransactions;
+      Map<Long, LoadBalancedConnectionProxy> proxyMap = new HashMap<>();
+      this.connectionProxiesLock.lock();
+
+      try {
+         proxyMap.putAll(this.connectionProxies);
+      } finally {
+         this.connectionProxiesLock.unlock();
+      }
+
+      for (LoadBalancedConnectionProxy proxy : proxyMap.values()) {
+         transactions += proxy.getTransactionCount();
+      }
+
+      return transactions;
+   }
+
+   public void closeConnectionProxy(LoadBalancedConnectionProxy proxy) {
+      this.activeConnections--;
+      this.connectionProxies.remove(proxy.getConnectionGroupProxyID());
+      this.closedProxyTotalPhysicalConnections = this.closedProxyTotalPhysicalConnections + proxy.getTotalPhysicalConnectionCount();
+      this.closedProxyTotalTransactions = this.closedProxyTotalTransactions + proxy.getTransactionCount();
+   }
+
+   public void removeHost(String hostPortPair) throws SQLException {
+      this.removeHost(hostPortPair, false);
+   }
+
+   public void removeHost(String hostPortPair, boolean removeExisting) throws SQLException {
+      this.removeHost(hostPortPair, removeExisting, true);
+   }
+
+   public void removeHost(String hostPortPair, boolean removeExisting, boolean waitForGracefulFailover) throws SQLException {
+      this.lock.lock();
+
+      try {
+         if (this.activeHosts == 1) {
+            throw SQLError.createSQLException(Messages.getString("ConnectionGroup.0"), null);
+         }
+
+         if (!this.hostList.remove(hostPortPair)) {
+            throw SQLError.createSQLException(Messages.getString("ConnectionGroup.1", new Object[]{hostPortPair}), null);
+         }
+
+         this.activeHosts--;
+         if (removeExisting) {
+            Map<Long, LoadBalancedConnectionProxy> proxyMap = new HashMap<>();
+            this.connectionProxiesLock.lock();
+
+            try {
+               proxyMap.putAll(this.connectionProxies);
+            } finally {
+               this.connectionProxiesLock.unlock();
+            }
+
+            for (LoadBalancedConnectionProxy proxy : proxyMap.values()) {
+               if (waitForGracefulFailover) {
+                  proxy.removeHostWhenNotInUse(hostPortPair);
+               } else {
+                  proxy.removeHost(hostPortPair);
+               }
+            }
+         }
+
+         this.closedHosts.add(hostPortPair);
+      } finally {
+         this.lock.unlock();
+      }
+   }
+
+   public void addHost(String hostPortPair) {
+      this.addHost(hostPortPair, false);
+   }
+
+   public void addHost(String hostPortPair, boolean forExisting) {
+      this.lock.lock();
+
+      try {
+         if (this.hostList.add(hostPortPair)) {
+            this.activeHosts++;
+         }
+      } finally {
+         this.lock.unlock();
+      }
+
+      if (forExisting) {
+         Map<Long, LoadBalancedConnectionProxy> proxyMap = new HashMap<>();
+         this.connectionProxiesLock.lock();
+
+         try {
+            proxyMap.putAll(this.connectionProxies);
+         } finally {
+            this.connectionProxiesLock.unlock();
+         }
+
+         for (LoadBalancedConnectionProxy proxy : proxyMap.values()) {
+            proxy.addHost(hostPortPair);
+         }
+      }
+   }
+}

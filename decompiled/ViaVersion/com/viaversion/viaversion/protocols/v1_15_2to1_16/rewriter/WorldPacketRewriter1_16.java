@@ -1,0 +1,103 @@
+package com.viaversion.viaversion.protocols.v1_15_2to1_16.rewriter;
+
+import com.viaversion.nbt.tag.CompoundTag;
+import com.viaversion.nbt.tag.IntArrayTag;
+import com.viaversion.nbt.tag.LongArrayTag;
+import com.viaversion.nbt.tag.StringTag;
+import com.viaversion.nbt.tag.Tag;
+import com.viaversion.viaversion.api.connection.UserConnection;
+import com.viaversion.viaversion.api.protocol.remapper.PacketHandlers;
+import com.viaversion.viaversion.api.type.Types;
+import com.viaversion.viaversion.api.type.types.chunk.ChunkType1_15;
+import com.viaversion.viaversion.api.type.types.chunk.ChunkType1_16;
+import com.viaversion.viaversion.libs.gson.JsonElement;
+import com.viaversion.viaversion.protocols.v1_14_4to1_15.packet.ClientboundPackets1_15;
+import com.viaversion.viaversion.protocols.v1_15_2to1_16.Protocol1_15_2To1_16;
+import com.viaversion.viaversion.util.CompactArrayUtil;
+import com.viaversion.viaversion.util.Key;
+import com.viaversion.viaversion.util.UUIDUtil;
+import java.util.UUID;
+import java.util.Map.Entry;
+
+public class WorldPacketRewriter1_16 {
+   public static void register(Protocol1_15_2To1_16 protocol) {
+      protocol.getBlockRewriter().registerLevelChunk(ClientboundPackets1_15.LEVEL_CHUNK, ChunkType1_15.TYPE, ChunkType1_16.TYPE, (connection, chunk) -> {
+         chunk.setIgnoreOldLightData(chunk.isFullChunk());
+         CompoundTag heightMaps = chunk.getHeightMap();
+
+         for (Tag heightMapTag : heightMaps.values()) {
+            LongArrayTag heightMap = (LongArrayTag)heightMapTag;
+            int[] heightMapData = new int[256];
+            CompactArrayUtil.iterateCompactArray(9, heightMapData.length, heightMap.getValue(), (i, v) -> heightMapData[i] = v);
+            heightMap.setValue(CompactArrayUtil.createCompactArrayWithPadding(9, heightMapData.length, i -> heightMapData[i]));
+         }
+
+         if (chunk.getBlockEntities() != null) {
+            for (CompoundTag blockEntity : chunk.getBlockEntities()) {
+               handleBlockEntity(protocol, connection, blockEntity);
+            }
+         }
+      });
+      protocol.registerClientbound(ClientboundPackets1_15.LIGHT_UPDATE, new PacketHandlers() {
+         @Override
+         public void register() {
+            this.map(Types.VAR_INT);
+            this.map(Types.VAR_INT);
+            this.handler(wrapper -> wrapper.write(Types.BOOLEAN, true));
+         }
+      });
+      protocol.registerClientbound(ClientboundPackets1_15.BLOCK_ENTITY_DATA, wrapper -> {
+         wrapper.passthrough(Types.BLOCK_POSITION1_14);
+         wrapper.passthrough(Types.UNSIGNED_BYTE);
+         CompoundTag tag = wrapper.passthrough(Types.NAMED_COMPOUND_TAG);
+         handleBlockEntity(protocol, wrapper.user(), tag);
+      });
+   }
+
+   private static void handleBlockEntity(Protocol1_15_2To1_16 protocol, UserConnection connection, CompoundTag compoundTag) {
+      StringTag idTag = compoundTag.getStringTag("id");
+      if (idTag != null) {
+         String id = Key.namespaced(idTag.getValue());
+         if (id.equals("minecraft:conduit")) {
+            Tag targetUuidTag = compoundTag.remove("target_uuid");
+            if (!(targetUuidTag instanceof StringTag)) {
+               return;
+            }
+
+            UUID targetUuid = UUID.fromString((String)targetUuidTag.getValue());
+            compoundTag.put("Target", new IntArrayTag(UUIDUtil.toIntArray(targetUuid)));
+         } else if (id.equals("minecraft:skull") && compoundTag.getCompoundTag("Owner") != null) {
+            CompoundTag ownerTag = compoundTag.removeUnchecked("Owner");
+            Tag ownerUuidTag = ownerTag.remove("Id");
+            if (ownerUuidTag instanceof StringTag) {
+               UUID ownerUuid = UUID.fromString(((StringTag)ownerUuidTag).getValue());
+               ownerTag.put("Id", new IntArrayTag(UUIDUtil.toIntArray(ownerUuid)));
+            }
+
+            CompoundTag skullOwnerTag = new CompoundTag();
+
+            for (Entry<String, Tag> entry : ownerTag.entrySet()) {
+               skullOwnerTag.put(entry.getKey(), entry.getValue());
+            }
+
+            compoundTag.put("SkullOwner", skullOwnerTag);
+         } else if (id.equals("minecraft:sign")) {
+            for (int i = 1; i <= 4; i++) {
+               StringTag line = compoundTag.getStringTag("Text" + i);
+               if (line != null) {
+                  JsonElement text = protocol.getComponentRewriter().processText(connection, line.getValue());
+                  compoundTag.putString("Text" + i, text.toString());
+               }
+            }
+         } else if (id.equals("minecraft:mob_spawner")) {
+            CompoundTag spawnDataTag = compoundTag.getCompoundTag("SpawnData");
+            if (spawnDataTag != null) {
+               StringTag spawnDataIdTag = spawnDataTag.getStringTag("id");
+               if (spawnDataIdTag != null && spawnDataIdTag.getValue().equals("minecraft:zombie_pigman")) {
+                  spawnDataIdTag.setValue("minecraft:zombified_piglin");
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,10 @@
+package org.sethomegui.SetHomeGUI.libs.libs.org.snakeyaml.engine.v2.resolver;
+
+import org.sethomegui.SetHomeGUI.libs.libs.org.snakeyaml.engine.v2.nodes.Tag;
+
+public class FailsafeScalarResolver extends BaseScalarResolver {
+   @Override
+   protected void addImplicitResolvers() {
+      this.addImplicitResolver(Tag.NULL, EMPTY, null);
+   }
+}

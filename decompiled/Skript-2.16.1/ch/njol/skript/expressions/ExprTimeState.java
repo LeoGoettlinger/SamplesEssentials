@@ -1,0 +1,58 @@
+package ch.njol.skript.expressions;
+
+import ch.njol.skript.Skript;
+import ch.njol.skript.doc.Description;
+import ch.njol.skript.doc.Example;
+import ch.njol.skript.doc.Name;
+import ch.njol.skript.doc.Since;
+import ch.njol.skript.expressions.base.WrapperExpression;
+import ch.njol.skript.lang.Expression;
+import ch.njol.skript.lang.ExpressionType;
+import ch.njol.skript.lang.SkriptParser;
+import ch.njol.skript.registrations.EventValues;
+import ch.njol.util.Kleenean;
+import org.bukkit.event.Event;
+import org.jetbrains.annotations.Nullable;
+
+@Name("Former/Future State")
+@Description({"Represents the value of an expression before an event happened or the value it will have directly after the event, e.g. the old or new level respectively in a <a href='#level_change'>level change event</a>.", "Note: The past, future and present states of an expression are sometimes called 'time states' of an expression.", "Note 2: If you don't specify whether to use the past or future state of an expression that has different values, its default value will be used which is usually the value after the event."})
+@Example.Examples({@Example("on teleport:\n\tformer world was \"world_nether\" # or 'world was'\n\tworld will be \"world\" # or 'world after the event is'\n"), @Example("on tool change:\n\tpast tool is an axe\n\tthe tool after the event will be air\n"), @Example("on weather change:\n\tset {weather::%world%::old} to past weather\n\tset {weather::%world%::current} to the new weather\n")})
+@Since({"1.1"})
+public class ExprTimeState extends WrapperExpression<Object> {
+   @Override
+   public boolean init(Expression<?>[] expressions, int matchedPattern, Kleenean isDelayed, SkriptParser.ParseResult parseResult) {
+      Expression<?> expr = expressions[0];
+      if (isDelayed == Kleenean.TRUE) {
+         Skript.error("Cannot use time states after the event has already passed");
+         return false;
+      } else if (!expr.setTime(matchedPattern >= 2 ? EventValues.TIME_FUTURE : EventValues.TIME_PAST)) {
+         Skript.error(expr + " does not have a " + (matchedPattern >= 2 ? "future" : "past") + " state");
+         return false;
+      } else {
+         this.setExpr((Expression<? extends Object>)expr);
+         return true;
+      }
+   }
+
+   @Override
+   public String toString(@Nullable Event event, boolean debug) {
+      return "the " + (this.getTime() == EventValues.TIME_PAST ? "past" : "future") + " state of " + this.getExpr().toString(event, debug);
+   }
+
+   @Override
+   public boolean setTime(int time) {
+      return time == this.getTime();
+   }
+
+   static {
+      Skript.registerExpression(
+         ExprTimeState.class,
+         Object.class,
+         ExpressionType.PROPERTY,
+         "[the] (former|past|old) [state] [of] %~objects%",
+         "%~objects% before [the event]",
+         "[the] (future|to-be|new) [state] [of] %~objects%",
+         "%~objects%(-to-be| after[(wards| the event)])"
+      );
+   }
+}

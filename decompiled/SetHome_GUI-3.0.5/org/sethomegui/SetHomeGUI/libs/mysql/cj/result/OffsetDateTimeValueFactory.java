@@ -1,0 +1,92 @@
+package org.sethomegui.SetHomeGUI.libs.mysql.cj.result;
+
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeParseException;
+import java.util.TimeZone;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.Messages;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.PropertyKey;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.PropertySet;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.exceptions.DataConversionException;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.exceptions.DataReadException;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.InternalDate;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.InternalTime;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.InternalTimestamp;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.a.MysqlTextValueDecoder;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.util.StringUtils;
+
+public class OffsetDateTimeValueFactory extends AbstractDateTimeValueFactory<OffsetDateTime> {
+   private TimeZone defaultTimeZone;
+   private TimeZone connectionTimeZone;
+
+   public OffsetDateTimeValueFactory(PropertySet pset, TimeZone defaultTimeZone, TimeZone connectionTimeZone) {
+      super(pset);
+      this.defaultTimeZone = defaultTimeZone;
+      this.connectionTimeZone = connectionTimeZone;
+   }
+
+   public OffsetDateTime localCreateFromDate(InternalDate idate) {
+      if (idate.getYear() == 0 && idate.getMonth() == 0 && idate.getDay() == 0) {
+         throw new DataReadException(Messages.getString("ResultSet.InvalidZeroDate"));
+      } else {
+         return LocalDateTime.of(idate.getYear(), idate.getMonth(), idate.getDay(), 0, 0, 0, 0).atZone(this.defaultTimeZone.toZoneId()).toOffsetDateTime();
+      }
+   }
+
+   public OffsetDateTime localCreateFromTime(InternalTime it) {
+      if (it.getHours() >= 0 && it.getHours() < 24) {
+         return LocalDateTime.of(1970, 1, 1, it.getHours(), it.getMinutes(), it.getSeconds(), it.getNanos())
+            .atZone(this.defaultTimeZone.toZoneId())
+            .toOffsetDateTime();
+      } else {
+         throw new DataReadException(Messages.getString("ResultSet.InvalidTimeValue", new Object[]{it.toString()}));
+      }
+   }
+
+   public OffsetDateTime localCreateFromTimestamp(InternalTimestamp its) {
+      if (its.getYear() == 0 && its.getMonth() == 0 && its.getDay() == 0) {
+         throw new DataReadException(Messages.getString("ResultSet.InvalidZeroDate"));
+      } else {
+         return LocalDateTime.of(its.getYear(), its.getMonth(), its.getDay(), its.getHours(), its.getMinutes(), its.getSeconds(), its.getNanos())
+            .atZone((this.pset.getBooleanProperty(PropertyKey.preserveInstants).getValue() ? this.connectionTimeZone : this.defaultTimeZone).toZoneId())
+            .toOffsetDateTime();
+      }
+   }
+
+   public OffsetDateTime localCreateFromDatetime(InternalTimestamp its) {
+      if (its.getYear() == 0 && its.getMonth() == 0 && its.getDay() == 0) {
+         throw new DataReadException(Messages.getString("ResultSet.InvalidZeroDate"));
+      } else {
+         return LocalDateTime.of(its.getYear(), its.getMonth(), its.getDay(), its.getHours(), its.getMinutes(), its.getSeconds(), its.getNanos())
+            .atZone((this.pset.getBooleanProperty(PropertyKey.preserveInstants).getValue() ? this.connectionTimeZone : this.defaultTimeZone).toZoneId())
+            .toOffsetDateTime();
+      }
+   }
+
+   public OffsetDateTime createFromBytes(byte[] bytes, int offset, int length, Field f) {
+      if (length == 0 && this.pset.getBooleanProperty(PropertyKey.emptyStringsConvertToZero).getValue()) {
+         return this.createFromLong(0L);
+      } else {
+         String s = StringUtils.toString(bytes, offset, length, f.getEncoding());
+         byte[] newBytes = s.getBytes();
+         if (MysqlTextValueDecoder.isDate(s)) {
+            return this.createFromDate(MysqlTextValueDecoder.getDate(newBytes, 0, newBytes.length));
+         } else if (MysqlTextValueDecoder.isTime(s)) {
+            return this.createFromTime(MysqlTextValueDecoder.getTime(newBytes, 0, newBytes.length, f.getDecimals()));
+         } else if (MysqlTextValueDecoder.isTimestamp(s)) {
+            return this.createFromTimestamp(MysqlTextValueDecoder.getTimestamp(newBytes, 0, newBytes.length, f.getDecimals()));
+         } else {
+            try {
+               return OffsetDateTime.parse(s.replace(" ", "T"));
+            } catch (DateTimeParseException var8) {
+               throw new DataConversionException(Messages.getString("ResultSet.UnableToConvertString", new Object[]{s, this.getTargetTypeName()}));
+            }
+         }
+      }
+   }
+
+   @Override
+   public String getTargetTypeName() {
+      return OffsetDateTime.class.getName();
+   }
+}

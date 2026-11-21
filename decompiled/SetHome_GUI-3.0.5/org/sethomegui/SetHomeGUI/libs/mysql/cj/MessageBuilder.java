@@ -1,0 +1,16 @@
+package org.sethomegui.SetHomeGUI.libs.mysql.cj;
+
+import java.util.List;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.Message;
+
+public interface MessageBuilder<M extends Message> {
+   M buildSqlStatement(String var1);
+
+   M buildSqlStatement(String var1, List<Object> var2);
+
+   M buildClose();
+
+   M buildComQuery(M var1, Session var2, String var3, Query var4, String var5);
+
+   M buildComQuery(M var1, Session var2, PreparedQuery var3, QueryBindings var4, String var5);
+}

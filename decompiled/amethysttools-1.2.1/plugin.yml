@@ -1,0 +1,17 @@
+name: AmethystTools
+version: 1.2.1
+main: com.amethysttools.AmethystToolsPlugin
+api-version: "1.21.11"
+authors: [dominik-kaspar-dev]
+commands:
+  amethysttools:
+    description: Admin command for AmethystTools
+    usage: /at <give|reload>
+    aliases: [at, atools]
+permissions:
+  amethysttools.use:
+    description: Allows using Amethyst tool abilities
+    default: true
+  amethysttools.admin:
+    description: Allows giving tools and reloading config
+    default: op

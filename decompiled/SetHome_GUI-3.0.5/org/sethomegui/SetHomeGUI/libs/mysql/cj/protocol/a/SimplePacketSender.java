@@ -1,0 +1,36 @@
+package org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.a;
+
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.MessageSender;
+
+public class SimplePacketSender implements MessageSender<NativePacketPayload> {
+   private BufferedOutputStream outputStream;
+
+   public SimplePacketSender(BufferedOutputStream outputStream) {
+      this.outputStream = outputStream;
+   }
+
+   @Override
+   public void send(byte[] packet, int packetLen, byte packetSequence) throws IOException {
+      PacketSplitter packetSplitter = new PacketSplitter(packetLen);
+
+      while (packetSplitter.nextPacket()) {
+         this.outputStream.write(NativeUtils.encodeMysqlThreeByteInteger(packetSplitter.getPacketLen()));
+         this.outputStream.write(packetSequence++);
+         this.outputStream.write(packet, packetSplitter.getOffset(), packetSplitter.getPacketLen());
+      }
+
+      this.outputStream.flush();
+   }
+
+   @Override
+   public MessageSender<NativePacketPayload> undecorateAll() {
+      return this;
+   }
+
+   @Override
+   public MessageSender<NativePacketPayload> undecorate() {
+      return this;
+   }
+}

@@ -1,0 +1,228 @@
+package com.viaversion.viabackwards.protocol.v1_12to1_11_1.rewriter;
+
+import com.viaversion.nbt.tag.CompoundTag;
+import com.viaversion.viabackwards.api.rewriters.LegacyEntityRewriter;
+import com.viaversion.viabackwards.protocol.v1_12to1_11_1.Protocol1_12To1_11_1;
+import com.viaversion.viabackwards.protocol.v1_12to1_11_1.storage.ParrotStorage;
+import com.viaversion.viabackwards.protocol.v1_12to1_11_1.storage.ShoulderTracker;
+import com.viaversion.viaversion.api.minecraft.entities.EntityTypes1_12.EntityType;
+import com.viaversion.viaversion.api.minecraft.entities.EntityTypes1_12.ObjectType;
+import com.viaversion.viaversion.api.minecraft.entitydata.EntityData;
+import com.viaversion.viaversion.api.minecraft.entitydata.types.EntityDataTypes1_12;
+import com.viaversion.viaversion.api.protocol.packet.PacketWrapper;
+import com.viaversion.viaversion.api.protocol.remapper.PacketHandlers;
+import com.viaversion.viaversion.api.type.Types;
+import com.viaversion.viaversion.libs.gson.JsonElement;
+import com.viaversion.viaversion.protocols.v1_11_1to1_12.packet.ClientboundPackets1_12;
+import com.viaversion.viaversion.protocols.v1_9_1to1_9_3.packet.ClientboundPackets1_9_3;
+
+public class EntityPacketRewriter1_12 extends LegacyEntityRewriter<ClientboundPackets1_12, Protocol1_12To1_11_1> {
+   public EntityPacketRewriter1_12(Protocol1_12To1_11_1 protocol) {
+      super(protocol);
+   }
+
+   protected void registerPackets() {
+      ((Protocol1_12To1_11_1)this.protocol).registerClientbound(ClientboundPackets1_12.ADD_ENTITY, new PacketHandlers() {
+         public void register() {
+            this.map(Types.VAR_INT);
+            this.map(Types.UUID);
+            this.map(Types.BYTE);
+            this.map(Types.DOUBLE);
+            this.map(Types.DOUBLE);
+            this.map(Types.DOUBLE);
+            this.map(Types.BYTE);
+            this.map(Types.BYTE);
+            this.map(Types.INT);
+            this.handler(EntityPacketRewriter1_12.this.getObjectTrackerHandler());
+            this.handler(EntityPacketRewriter1_12.this.getObjectRewriter(ObjectType::findById));
+            this.handler(((Protocol1_12To1_11_1)EntityPacketRewriter1_12.this.protocol).getItemRewriter().getFallingBlockHandler());
+         }
+      });
+      this.registerTracker(ClientboundPackets1_12.ADD_EXPERIENCE_ORB, EntityType.EXPERIENCE_ORB);
+      this.registerTracker(ClientboundPackets1_12.ADD_GLOBAL_ENTITY, EntityType.LIGHTNING_BOLT);
+      ((Protocol1_12To1_11_1)this.protocol).registerClientbound(ClientboundPackets1_12.ADD_MOB, new PacketHandlers() {
+         public void register() {
+            this.map(Types.VAR_INT);
+            this.map(Types.UUID);
+            this.map(Types.VAR_INT);
+            this.map(Types.DOUBLE);
+            this.map(Types.DOUBLE);
+            this.map(Types.DOUBLE);
+            this.map(Types.BYTE);
+            this.map(Types.BYTE);
+            this.map(Types.BYTE);
+            this.map(Types.SHORT);
+            this.map(Types.SHORT);
+            this.map(Types.SHORT);
+            this.map(Types.ENTITY_DATA_LIST1_12, Types.ENTITY_DATA_LIST1_9);
+            this.handler(EntityPacketRewriter1_12.this.getTrackerHandler());
+            this.handler(EntityPacketRewriter1_12.this.getMobSpawnRewriter1_11(Types.ENTITY_DATA_LIST1_9));
+         }
+      });
+      this.registerTracker(ClientboundPackets1_12.ADD_PAINTING, EntityType.PAINTING);
+      ((Protocol1_12To1_11_1)this.protocol).registerClientbound(ClientboundPackets1_12.ADD_PLAYER, new PacketHandlers() {
+         public void register() {
+            this.map(Types.VAR_INT);
+            this.map(Types.UUID);
+            this.map(Types.DOUBLE);
+            this.map(Types.DOUBLE);
+            this.map(Types.DOUBLE);
+            this.map(Types.BYTE);
+            this.map(Types.BYTE);
+            this.map(Types.ENTITY_DATA_LIST1_12, Types.ENTITY_DATA_LIST1_9);
+            this.handler(EntityPacketRewriter1_12.this.getTrackerAndDataHandler(Types.ENTITY_DATA_LIST1_9, EntityType.PLAYER));
+         }
+      });
+      ((Protocol1_12To1_11_1)this.protocol).registerClientbound(ClientboundPackets1_12.LOGIN, new PacketHandlers() {
+         public void register() {
+            this.map(Types.INT);
+            this.map(Types.UNSIGNED_BYTE);
+            this.map(Types.INT);
+            this.handler(EntityPacketRewriter1_12.this.getDimensionHandler(1));
+            this.handler(EntityPacketRewriter1_12.this.playerTrackerHandler());
+            this.handler(wrapper -> {
+               ShoulderTracker tracker = (ShoulderTracker)wrapper.user().get(ShoulderTracker.class);
+               tracker.setEntityId((Integer)wrapper.get(Types.INT, 0));
+            });
+            this.handler(packetWrapper -> {
+               PacketWrapper wrapper = PacketWrapper.create(ClientboundPackets1_9_3.AWARD_STATS, packetWrapper.user());
+               wrapper.write(Types.VAR_INT, 1);
+               wrapper.write(Types.STRING, "achievement.openInventory");
+               wrapper.write(Types.VAR_INT, 1);
+               wrapper.scheduleSend(Protocol1_12To1_11_1.class);
+            });
+         }
+      });
+      this.registerRespawn(ClientboundPackets1_12.RESPAWN);
+      this.registerRemoveEntities(ClientboundPackets1_12.REMOVE_ENTITIES);
+      this.registerSetEntityData(ClientboundPackets1_12.SET_ENTITY_DATA, Types.ENTITY_DATA_LIST1_12, Types.ENTITY_DATA_LIST1_9);
+      ((Protocol1_12To1_11_1)this.protocol).registerClientbound(ClientboundPackets1_12.UPDATE_ATTRIBUTES, new PacketHandlers() {
+         public void register() {
+            this.map(Types.VAR_INT);
+            this.map(Types.INT);
+            this.handler(wrapper -> {
+               int size = (Integer)wrapper.get(Types.INT, 0);
+               int newSize = size;
+
+               for (int i = 0; i < size; i++) {
+                  String key = (String)wrapper.read(Types.STRING);
+                  if (key.equals("generic.flyingSpeed")) {
+                     newSize--;
+                     wrapper.read(Types.DOUBLE);
+                     int modSize = (Integer)wrapper.read(Types.VAR_INT);
+
+                     for (int j = 0; j < modSize; j++) {
+                        wrapper.read(Types.UUID);
+                        wrapper.read(Types.DOUBLE);
+                        wrapper.read(Types.BYTE);
+                     }
+                  } else {
+                     wrapper.write(Types.STRING, key);
+                     wrapper.passthrough(Types.DOUBLE);
+                     int modSize = (Integer)wrapper.passthrough(Types.VAR_INT);
+
+                     for (int j = 0; j < modSize; j++) {
+                        wrapper.passthrough(Types.UUID);
+                        wrapper.passthrough(Types.DOUBLE);
+                        wrapper.passthrough(Types.BYTE);
+                     }
+                  }
+               }
+
+               if (newSize != size) {
+                  wrapper.set(Types.INT, 0, newSize);
+               }
+            });
+         }
+      });
+   }
+
+   protected void registerRewrites() {
+      this.mapEntityTypeWithData(EntityType.PARROT, EntityType.BAT)
+         .plainName()
+         .spawnEntityData(storage -> storage.add(new EntityData(12, EntityDataTypes1_12.BYTE, (byte)0)));
+      this.mapEntityTypeWithData(EntityType.ILLUSIONER, EntityType.EVOKER).plainName();
+      this.filter().handler((event, data) -> {
+         if (data.dataType() == EntityDataTypes1_12.COMPONENT) {
+            ((Protocol1_12To1_11_1)this.protocol).getComponentRewriter().processText(event.user(), (JsonElement)data.getValue());
+         }
+      });
+      this.filter().type(EntityType.EVOKER).removeIndex(12);
+      this.filter().type(EntityType.ILLUSIONER).index(0).handler((event, data) -> {
+         byte mask = (Byte)data.getValue();
+         if ((mask & 32) == 32) {
+            mask &= -33;
+         }
+
+         data.setValue(mask);
+      });
+      this.filter().type(EntityType.PARROT).handler((event, data) -> {
+         if (!event.trackedEntity().has(ParrotStorage.class)) {
+            event.trackedEntity().put(new ParrotStorage());
+         }
+      });
+      this.filter().type(EntityType.PARROT).cancel(12);
+      this.filter().type(EntityType.PARROT).index(13).handler((event, data) -> {
+         ParrotStorage storage = (ParrotStorage)event.trackedEntity().get(ParrotStorage.class);
+         boolean isSitting = ((Byte)data.getValue() & 1) == 1;
+         boolean isTamed = ((Byte)data.getValue() & 4) == 4;
+         if (!storage.isTamed() && isTamed) {
+         }
+
+         storage.setTamed(isTamed);
+         if (isSitting) {
+            event.setIndex(12);
+            data.setValue((byte)1);
+            storage.setSitting(true);
+         } else if (storage.isSitting()) {
+            event.setIndex(12);
+            data.setValue((byte)0);
+            storage.setSitting(false);
+         } else {
+            event.cancel();
+         }
+      });
+      this.filter().type(EntityType.PARROT).cancel(14);
+      this.filter().type(EntityType.PARROT).cancel(15);
+      this.filter().type(EntityType.PLAYER).index(15).handler((event, data) -> {
+         CompoundTag tag = (CompoundTag)data.getValue();
+         ShoulderTracker tracker = (ShoulderTracker)event.user().get(ShoulderTracker.class);
+         if (tag.isEmpty() && tracker.getLeftShoulder() != null) {
+            tracker.setLeftShoulder(null);
+            tracker.update();
+         } else if (tag.getStringTag("id") != null && event.entityId() == tracker.getEntityId()) {
+            String id = tag.getStringTag("id").getValue();
+            if (tracker.getLeftShoulder() == null || !tracker.getLeftShoulder().equals(id)) {
+               tracker.setLeftShoulder(id);
+               tracker.update();
+            }
+         }
+
+         event.cancel();
+      });
+      this.filter().type(EntityType.PLAYER).index(16).handler((event, data) -> {
+         CompoundTag tag = (CompoundTag)event.data().getValue();
+         ShoulderTracker tracker = (ShoulderTracker)event.user().get(ShoulderTracker.class);
+         if (tag.isEmpty() && tracker.getRightShoulder() != null) {
+            tracker.setRightShoulder(null);
+            tracker.update();
+         } else if (tag.getStringTag("id") != null && event.entityId() == tracker.getEntityId()) {
+            String id = tag.getStringTag("id").getValue();
+            if (tracker.getRightShoulder() == null || !tracker.getRightShoulder().equals(id)) {
+               tracker.setRightShoulder(id);
+               tracker.update();
+            }
+         }
+
+         event.cancel();
+      });
+   }
+
+   public com.viaversion.viaversion.api.minecraft.entities.EntityType typeFromId(int typeId) {
+      return EntityType.findById(typeId);
+   }
+
+   public com.viaversion.viaversion.api.minecraft.entities.EntityType objectTypeFromId(int typeId, int data) {
+      return ObjectType.getEntityType(typeId, data);
+   }
+}

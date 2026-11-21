@@ -1,0 +1,6 @@
+package com.viaversion.viaversion.protocols.v1_21_9to1_21_11.packet;
+
+import com.viaversion.viaversion.api.protocol.packet.ClientboundPacketType;
+
+public interface ClientboundPacket1_21_11 extends ClientboundPacketType {
+}

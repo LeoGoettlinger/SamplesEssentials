@@ -1,0 +1,19 @@
+name: StarterKit
+version: '2.0'
+main: dev.hercoon.starterKit.StarterKit
+api-version: '1.21'
+authors: [ hercoon ]
+description: Advanced starter kit plugin with inventory cloning and selector support.
+
+commands:
+  sk:
+    description: Main command for StarterKit.
+    aliases: [starterkit, srk]
+    usage: /sk <help|clone|give|remove|reload>
+    permission: starterkit.admin
+    permission-message: "§cYou do not have permission to manage starter kits."
+
+permissions:
+  starterkit.admin:
+    description: Allows full access to all StarterKit commands.
+    default: op

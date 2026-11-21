@@ -1,0 +1,93 @@
+package kotlin.sequences
+
+import java.util.NoSuchElementException
+
+internal class FilteringSequence<T>(sequence: Sequence<Any>, sendWhen: Boolean = true, predicate: (Any) -> Boolean) : Sequence<T> {
+   private final val sequence: Sequence<Any>
+   private final val sendWhen: Boolean
+   private final val predicate: (Any) -> Boolean
+
+   init {
+      this.sequence = sequence;
+      this.sendWhen = sendWhen;
+      this.predicate = predicate;
+   }
+
+   public override operator fun iterator(): Iterator<Any> {
+      return new java.util.Iterator<T>(this) {
+         private final java.util.Iterator<T> iterator;
+         private int nextState;
+         private T nextItem;
+
+         {
+            this.this$0 = `$receiver`;
+            this.iterator = FilteringSequence.access$getSequence$p(`$receiver`).iterator();
+            this.nextState = -1;
+         }
+
+         public final java.util.Iterator<T> getIterator() {
+            return this.iterator;
+         }
+
+         public final int getNextState() {
+            return this.nextState;
+         }
+
+         public final void setNextState(int var1) {
+            this.nextState = var1;
+         }
+
+         public final T getNextItem() {
+            return this.nextItem;
+         }
+
+         public final void setNextItem(T var1) {
+            this.nextItem = (T)var1;
+         }
+
+         private final void calcNext() {
+            while (this.iterator.hasNext()) {
+               val item: Any = this.iterator.next();
+               if (FilteringSequence.access$getPredicate$p(this.this$0).invoke(item) as java.lang.Boolean
+                  == FilteringSequence.access$getSendWhen$p(this.this$0)) {
+                  this.nextItem = (T)item;
+                  this.nextState = 1;
+                  return;
+               }
+            }
+
+            this.nextState = 0;
+         }
+
+         @Override
+         public T next() {
+            if (this.nextState == -1) {
+               this.calcNext();
+            }
+
+            if (this.nextState == 0) {
+               throw new NoSuchElementException();
+            } else {
+               val result: Any = this.nextItem;
+               this.nextItem = null;
+               this.nextState = -1;
+               return (T)result;
+            }
+         }
+
+         @Override
+         public boolean hasNext() {
+            if (this.nextState == -1) {
+               this.calcNext();
+            }
+
+            return this.nextState == 1;
+         }
+
+         @Override
+         public void remove() {
+            throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+         }
+      };
+   }
+}

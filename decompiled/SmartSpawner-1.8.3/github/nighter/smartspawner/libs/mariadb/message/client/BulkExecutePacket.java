@@ -1,0 +1,192 @@
+package github.nighter.smartspawner.libs.mariadb.message.client;
+
+import github.nighter.smartspawner.libs.mariadb.BasePreparedStatement;
+import github.nighter.smartspawner.libs.mariadb.client.Context;
+import github.nighter.smartspawner.libs.mariadb.client.socket.Writer;
+import github.nighter.smartspawner.libs.mariadb.client.util.Parameter;
+import github.nighter.smartspawner.libs.mariadb.client.util.Parameters;
+import github.nighter.smartspawner.libs.mariadb.export.MaxAllowedPacketException;
+import github.nighter.smartspawner.libs.mariadb.export.Prepare;
+import github.nighter.smartspawner.libs.mariadb.message.server.PrepareResultPacket;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public final class BulkExecutePacket implements RedoableWithPrepareClientMessage {
+   private final String command;
+   private final BasePreparedStatement prep;
+   private List<Parameters> batchParameterList;
+   private Prepare prepareResult;
+   private boolean mightBeBulkResult;
+
+   public BulkExecutePacket(Prepare prepareResult, List<Parameters> batchParameterList, String command, BasePreparedStatement prep) {
+      this.batchParameterList = batchParameterList;
+      this.prepareResult = prepareResult;
+      this.command = command;
+      this.prep = prep;
+   }
+
+   @Override
+   public void saveParameters() {
+      List<Parameters> savedList = new ArrayList<>(this.batchParameterList.size());
+
+      for (Parameters parameterList : this.batchParameterList) {
+         savedList.add(parameterList.clone());
+      }
+
+      this.batchParameterList = savedList;
+   }
+
+   @Override
+   public int encode(Writer writer, Context context, Prepare newPrepareResult) throws IOException, SQLException {
+      int statementId = newPrepareResult != null && newPrepareResult.getStatementId() != -1
+         ? newPrepareResult.getStatementId()
+         : (this.prepareResult != null ? this.prepareResult.getStatementId() : -1);
+      Iterator<Parameters> paramIterator = this.batchParameterList.iterator();
+      Parameters parameters = paramIterator.next();
+      int parameterCount = parameters.size();
+      Parameter[] parameterHeaderType = new Parameter[parameterCount];
+
+      for (int i = 0; i < parameterCount; i++) {
+         parameterHeaderType[i] = parameters.get(i);
+      }
+
+      byte[] lastCmdData = null;
+      int bulkPacketNo = 0;
+      this.mightBeBulkResult = context.hasClientCapability(137438953472L);
+
+      label118:
+      while (true) {
+         bulkPacketNo++;
+         writer.initPacket();
+         writer.writeByte(-6);
+         writer.writeInt(statementId);
+         writer.writeShort((short)(this.mightBeBulkResult ? 192 : 128));
+
+         for (int i = 0; i < parameterCount; i++) {
+            writer.writeShort((short)parameterHeaderType[i].getBinaryEncodeType());
+         }
+
+         if (lastCmdData != null) {
+            if (writer.throwMaxAllowedLength(lastCmdData.length)) {
+               throw new MaxAllowedPacketException("query size is >= to max_allowed_packet", writer.getCmdLength() != 0L);
+            }
+
+            writer.writeBytes(lastCmdData);
+            writer.mark();
+            lastCmdData = null;
+            if (!paramIterator.hasNext()) {
+               break;
+            }
+
+            parameters = paramIterator.next();
+         }
+
+         while (true) {
+            for (int i = 0; i < parameterCount; i++) {
+               Parameter param = parameters.get(i);
+               if (param.isNull()) {
+                  writer.writeByte(1);
+               } else {
+                  writer.writeByte(0);
+                  param.encodeBinary(writer, context);
+               }
+            }
+
+            if (!writer.bufIsDataAfterMark() && !writer.isMarked() && writer.hasFlushed()) {
+               writer.flush();
+               if (!paramIterator.hasNext()) {
+                  break label118;
+               }
+
+               parameters = paramIterator.next();
+               int j = 0;
+
+               while (true) {
+                  if (j >= parameterCount) {
+                     continue label118;
+                  }
+
+                  parameterHeaderType[j] = parameters.get(j);
+                  j++;
+               }
+            }
+
+            if (writer.isMarked() && writer.throwMaxAllowedLength(writer.pos())) {
+               writer.flushBufferStopAtMark();
+               writer.mark();
+               lastCmdData = writer.resetMark();
+               break;
+            }
+
+            writer.mark();
+            if (writer.bufIsDataAfterMark()) {
+               lastCmdData = writer.resetMark();
+               break;
+            }
+
+            if (!paramIterator.hasNext()) {
+               break label118;
+            }
+
+            parameters = paramIterator.next();
+
+            for (int ix = 0; ix < parameterCount; ix++) {
+               if (parameterHeaderType[ix].getBinaryEncodeType() != parameters.get(ix).getBinaryEncodeType() && !parameters.get(ix).isNull()) {
+                  writer.flush();
+                  int j = 0;
+
+                  while (true) {
+                     if (j >= parameterCount) {
+                        continue label118;
+                     }
+
+                     parameterHeaderType[j] = parameters.get(j);
+                     j++;
+                  }
+               }
+            }
+         }
+      }
+
+      writer.flush();
+      return bulkPacketNo;
+   }
+
+   @Override
+   public boolean mightBeBulkResult() {
+      return this.mightBeBulkResult;
+   }
+
+   @Override
+   public int batchUpdateLength() {
+      return this.batchParameterList.size();
+   }
+
+   @Override
+   public String getCommand() {
+      return this.command;
+   }
+
+   @Override
+   public BasePreparedStatement prep() {
+      return this.prep;
+   }
+
+   @Override
+   public boolean binaryProtocol() {
+      return true;
+   }
+
+   @Override
+   public String description() {
+      return "BULK: " + this.command;
+   }
+
+   @Override
+   public void setPrepareResult(PrepareResultPacket prepareResult) {
+      this.prepareResult = prepareResult;
+   }
+}

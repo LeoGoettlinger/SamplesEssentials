@@ -1,0 +1,50 @@
+package org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.x;
+
+import com.google.protobuf.Message;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.exceptions.WrongArgumentException;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.MessageListener;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.ProtocolEntity;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.ProtocolEntityFactory;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.ResultBuilder;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.x.protobuf.Mysqlx;
+
+public class ResultMessageListener<R> implements MessageListener<XMessage> {
+   private ResultBuilder<?> resultBuilder;
+   private CompletableFuture<R> future;
+   private Map<Class<? extends Message>, ProtocolEntityFactory<? extends ProtocolEntity, XMessage>> messageToProtocolEntityFactory = new HashMap<>();
+
+   public ResultMessageListener(
+      Map<Class<? extends Message>, ProtocolEntityFactory<? extends ProtocolEntity, XMessage>> messageToProtocolEntityFactory,
+      ResultBuilder<R> resultBuilder,
+      CompletableFuture<R> future
+   ) {
+      this.messageToProtocolEntityFactory = messageToProtocolEntityFactory;
+      this.resultBuilder = resultBuilder;
+      this.future = future;
+   }
+
+   public boolean processMessage(XMessage message) {
+      Class<? extends Message> msgClass = (Class<? extends Message>)message.getMessage().getClass();
+      if (Mysqlx.Error.class.equals(msgClass)) {
+         this.future.completeExceptionally(new XProtocolError(Mysqlx.Error.class.cast(message.getMessage())));
+      } else if (!this.messageToProtocolEntityFactory.containsKey(msgClass)) {
+         this.future.completeExceptionally(new WrongArgumentException("Unhandled msg class (" + msgClass + ") + msg=" + message.getMessage()));
+      } else {
+         if (!this.resultBuilder.addProtocolEntity(this.messageToProtocolEntityFactory.get(msgClass).createFromMessage(message))) {
+            return false;
+         }
+
+         this.future.complete((R)this.resultBuilder.build());
+      }
+
+      return true;
+   }
+
+   @Override
+   public void error(Throwable ex) {
+      this.future.completeExceptionally(ex);
+   }
+}

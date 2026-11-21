@@ -1,0 +1,25 @@
+# StarterKit v2 Default Config
+# These are mapped to specific slots (0-8 is the hotbar)
+starterkit:
+  items:
+    '0':
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: WOODEN_SWORD
+    '1':
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: WOODEN_PICKAXE
+    '2':
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: WOODEN_AXE
+    '3':
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: SHIELD
+    '4':
+      ==: org.bukkit.inventory.ItemStack
+      v: 3955
+      type: COOKED_COD
+      amount: 13

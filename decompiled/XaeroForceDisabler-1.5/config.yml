@@ -1,0 +1,30 @@
+# XaeroForceDisabler Configuration
+#
+# Command Usage:
+# /xaero <scope> <setting> [value]
+# Scopes: global, world, world_nether, etc.
+# Settings: fair-mode, disable
+# Values: true, false
+#
+# Example:
+# /xaero global fair-mode true   - Enables fair mode globally
+# /xaero world_nether disable true - Disables minimap in the nether
+#
+# If a setting is not explicitly set in an override, it inherits the global value.
+# Priority: Disable > Fair Mode > Reset (if both false)
+
+debug: false
+
+# Global settings applied to all worlds unless overridden
+global:
+  fair-mode: false
+  disable: false
+
+# World-specific overrides
+overrides:
+  # Example:
+  # world_nether:
+  #   fair-mode: true
+  world: {}
+  world_nether: {}
+  world_the_end: {}

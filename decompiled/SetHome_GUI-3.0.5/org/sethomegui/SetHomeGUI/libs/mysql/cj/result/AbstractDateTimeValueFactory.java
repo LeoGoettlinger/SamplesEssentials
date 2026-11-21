@@ -1,0 +1,109 @@
+package org.sethomegui.SetHomeGUI.libs.mysql.cj.result;
+
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.Messages;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.PropertyDefinitions;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.PropertyKey;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.PropertySet;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.exceptions.DataConversionException;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.InternalDate;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.InternalTime;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.InternalTimestamp;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.protocol.a.MysqlTextValueDecoder;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.util.StringUtils;
+
+public abstract class AbstractDateTimeValueFactory<T> extends DefaultValueFactory<T> {
+   public AbstractDateTimeValueFactory(PropertySet pset) {
+      super(pset);
+   }
+
+   abstract T localCreateFromDate(InternalDate var1);
+
+   abstract T localCreateFromTime(InternalTime var1);
+
+   abstract T localCreateFromTimestamp(InternalTimestamp var1);
+
+   abstract T localCreateFromDatetime(InternalTimestamp var1);
+
+   @Override
+   public T createFromDate(InternalDate idate) {
+      if (idate.isZero()) {
+         switch ((PropertyDefinitions.ZeroDatetimeBehavior)this.pset.getEnumProperty(PropertyKey.zeroDateTimeBehavior).getValue()) {
+            case CONVERT_TO_NULL:
+               return null;
+            case ROUND:
+               return this.localCreateFromDate(new InternalDate(1, 1, 1));
+         }
+      }
+
+      return this.localCreateFromDate(idate);
+   }
+
+   @Override
+   public T createFromTime(InternalTime it) {
+      return this.localCreateFromTime(it);
+   }
+
+   @Override
+   public T createFromTimestamp(InternalTimestamp its) {
+      if (its.isZero()) {
+         switch ((PropertyDefinitions.ZeroDatetimeBehavior)this.pset.getEnumProperty(PropertyKey.zeroDateTimeBehavior).getValue()) {
+            case CONVERT_TO_NULL:
+               return null;
+            case ROUND:
+               return this.localCreateFromTimestamp(new InternalTimestamp(1, 1, 1, 0, 0, 0, 0, 0));
+         }
+      }
+
+      return this.localCreateFromTimestamp(its);
+   }
+
+   @Override
+   public T createFromDatetime(InternalTimestamp its) {
+      if (its.isZero()) {
+         switch ((PropertyDefinitions.ZeroDatetimeBehavior)this.pset.getEnumProperty(PropertyKey.zeroDateTimeBehavior).getValue()) {
+            case CONVERT_TO_NULL:
+               return null;
+            case ROUND:
+               return this.localCreateFromDatetime(new InternalTimestamp(1, 1, 1, 0, 0, 0, 0, 0));
+         }
+      }
+
+      return this.localCreateFromDatetime(its);
+   }
+
+   @Override
+   public T createFromYear(long year) {
+      if (this.pset.getBooleanProperty(PropertyKey.yearIsDateType).getValue()) {
+         if (year < 100L) {
+            if (year <= 69L) {
+               year += 100L;
+            }
+
+            year += 1900L;
+         }
+
+         return this.createFromDate(new InternalDate((int)year, 1, 1));
+      } else {
+         return this.createFromLong(year);
+      }
+   }
+
+   @Override
+   public T createFromBytes(byte[] bytes, int offset, int length, Field f) {
+      if (length == 0 && this.pset.getBooleanProperty(PropertyKey.emptyStringsConvertToZero).getValue()) {
+         return this.createFromLong(0L);
+      } else {
+         String s = StringUtils.toString(bytes, offset, length, f.getEncoding());
+         byte[] newBytes = s.getBytes();
+         if (MysqlTextValueDecoder.isDate(s)) {
+            return this.createFromDate(MysqlTextValueDecoder.getDate(newBytes, 0, newBytes.length));
+         } else if (MysqlTextValueDecoder.isTime(s)) {
+            return this.createFromTime(MysqlTextValueDecoder.getTime(newBytes, 0, newBytes.length, f.getDecimals()));
+         } else if (MysqlTextValueDecoder.isTimestamp(s)) {
+            return this.createFromTimestamp(MysqlTextValueDecoder.getTimestamp(newBytes, 0, newBytes.length, f.getDecimals()));
+         } else {
+            throw new DataConversionException(Messages.getString("ResultSet.UnableToConvertString", new Object[]{s, this.getTargetTypeName()}));
+         }
+      }
+   }
+}

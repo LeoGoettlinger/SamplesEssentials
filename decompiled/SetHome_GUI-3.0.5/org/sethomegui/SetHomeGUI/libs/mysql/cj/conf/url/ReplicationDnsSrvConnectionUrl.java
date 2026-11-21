@@ -1,0 +1,126 @@
+package org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.url;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.Messages;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.BooleanPropertyDefinition;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.ConnectionUrl;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.ConnectionUrlParser;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.HostInfo;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.HostsListView;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.conf.PropertyKey;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.exceptions.ExceptionFactory;
+import org.sethomegui.SetHomeGUI.libs.mysql.cj.exceptions.InvalidConnectionAttributeException;
+
+public class ReplicationDnsSrvConnectionUrl extends ConnectionUrl {
+   private static final String DEFAULT_HOST = "";
+   private static final int DEFAULT_PORT = -1;
+   private static final String TYPE_SOURCE = "SOURCE";
+   private static final String TYPE_REPLICA = "REPLICA";
+   private List<HostInfo> sourceHosts = new ArrayList<>();
+   private List<HostInfo> replicaHosts = new ArrayList<>();
+
+   public ReplicationDnsSrvConnectionUrl(ConnectionUrlParser connStrParser, Properties info) {
+      super(connStrParser, info);
+      this.type = ConnectionUrl.Type.REPLICATION_DNS_SRV_CONNECTION;
+      LinkedList<HostInfo> undefinedHosts = new LinkedList<>();
+
+      for (HostInfo hi : this.hosts) {
+         Map<String, String> hostProperties = hi.getHostProperties();
+         if (hostProperties.containsKey(PropertyKey.TYPE.getKeyName())) {
+            if ("SOURCE".equalsIgnoreCase(hostProperties.get(PropertyKey.TYPE.getKeyName()))) {
+               this.sourceHosts.add(hi);
+            } else if ("REPLICA".equalsIgnoreCase(hostProperties.get(PropertyKey.TYPE.getKeyName()))) {
+               this.replicaHosts.add(hi);
+            } else {
+               undefinedHosts.add(hi);
+            }
+         } else {
+            undefinedHosts.add(hi);
+         }
+      }
+
+      if (!undefinedHosts.isEmpty()) {
+         if (this.sourceHosts.isEmpty()) {
+            this.sourceHosts.add(undefinedHosts.removeFirst());
+         }
+
+         this.replicaHosts.addAll(undefinedHosts);
+      }
+
+      HostInfo srvHostSource = this.sourceHosts.isEmpty() ? null : this.sourceHosts.get(0);
+      Map<String, String> hostPropsSource = srvHostSource == null ? Collections.emptyMap() : srvHostSource.getHostProperties();
+      HostInfo srvHostReplica = this.replicaHosts.isEmpty() ? null : this.replicaHosts.get(0);
+      Map<String, String> hostPropsReplica = srvHostReplica == null ? Collections.emptyMap() : srvHostReplica.getHostProperties();
+      if (srvHostSource != null && srvHostReplica != null && !"".equals(srvHostSource.getHost()) && !"".equals(srvHostReplica.getHost())) {
+         if (this.sourceHosts.size() != 1 || this.replicaHosts.size() != 1) {
+            throw (InvalidConnectionAttributeException)ExceptionFactory.createException(
+               InvalidConnectionAttributeException.class, Messages.getString("ConnectionString.21")
+            );
+         } else if (srvHostSource.getPort() == -1 && srvHostReplica.getPort() == -1) {
+            if (!hostPropsSource.containsKey(PropertyKey.dnsSrv.getKeyName()) && !hostPropsReplica.containsKey(PropertyKey.dnsSrv.getKeyName())
+               || BooleanPropertyDefinition.booleanFrom(PropertyKey.dnsSrv.getKeyName(), hostPropsSource.get(PropertyKey.dnsSrv.getKeyName()), null)
+                  && BooleanPropertyDefinition.booleanFrom(PropertyKey.dnsSrv.getKeyName(), hostPropsReplica.get(PropertyKey.dnsSrv.getKeyName()), null)) {
+               if ((
+                     !hostPropsSource.containsKey(PropertyKey.PROTOCOL.getKeyName())
+                        || !hostPropsSource.get(PropertyKey.PROTOCOL.getKeyName()).equalsIgnoreCase("PIPE")
+                  )
+                  && (
+                     !hostPropsReplica.containsKey(PropertyKey.PROTOCOL.getKeyName())
+                        || !hostPropsReplica.get(PropertyKey.PROTOCOL.getKeyName()).equalsIgnoreCase("PIPE")
+                  )) {
+                  if (hostPropsSource.containsKey(PropertyKey.replicationConnectionGroup.getKeyName())
+                     || hostPropsReplica.containsKey(PropertyKey.replicationConnectionGroup.getKeyName())) {
+                     throw (InvalidConnectionAttributeException)ExceptionFactory.createException(
+                        InvalidConnectionAttributeException.class,
+                        Messages.getString("ConnectionString.25", new Object[]{PropertyKey.replicationConnectionGroup.getKeyName()})
+                     );
+                  }
+               } else {
+                  throw (InvalidConnectionAttributeException)ExceptionFactory.createException(
+                     InvalidConnectionAttributeException.class, Messages.getString("ConnectionString.24")
+                  );
+               }
+            } else {
+               throw (InvalidConnectionAttributeException)ExceptionFactory.createException(
+                  InvalidConnectionAttributeException.class, Messages.getString("ConnectionString.23", new Object[]{PropertyKey.dnsSrv.getKeyName()})
+               );
+            }
+         } else {
+            throw (InvalidConnectionAttributeException)ExceptionFactory.createException(
+               InvalidConnectionAttributeException.class, Messages.getString("ConnectionString.22")
+            );
+         }
+      } else {
+         throw (InvalidConnectionAttributeException)ExceptionFactory.createException(
+            InvalidConnectionAttributeException.class, Messages.getString("ConnectionString.20")
+         );
+      }
+   }
+
+   @Override
+   public String getDefaultHost() {
+      return "";
+   }
+
+   @Override
+   public int getDefaultPort() {
+      return -1;
+   }
+
+   @Override
+   public List<HostInfo> getHostsList(HostsListView view) {
+      switch (view) {
+         case SOURCES:
+            return this.getHostsListFromDnsSrv(this.sourceHosts.get(0));
+         case REPLICAS:
+            return this.getHostsListFromDnsSrv(this.replicaHosts.get(0));
+         default:
+            return super.getHostsList(HostsListView.ALL);
+      }
+   }
+}

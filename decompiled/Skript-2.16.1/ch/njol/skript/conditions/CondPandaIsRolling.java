@@ -1,0 +1,28 @@
+package ch.njol.skript.conditions;
+
+import ch.njol.skript.conditions.base.PropertyCondition;
+import ch.njol.skript.doc.Description;
+import ch.njol.skript.doc.Example;
+import ch.njol.skript.doc.Name;
+import ch.njol.skript.doc.Since;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Panda;
+
+@Name("Panda Is Rolling")
+@Description({"Whether a panda is rolling."})
+@Example("if last spawned panda is rolling:\n\tmake last spawned panda stop rolling\n")
+@Since({"2.11"})
+public class CondPandaIsRolling extends PropertyCondition<LivingEntity> {
+   public boolean check(LivingEntity entity) {
+      return entity instanceof Panda panda && panda.isRolling();
+   }
+
+   @Override
+   protected String getPropertyName() {
+      return "rolling";
+   }
+
+   static {
+      register(CondPandaIsRolling.class, "rolling", "livingentities");
+   }
+}
