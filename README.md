@@ -8,8 +8,17 @@ config folder, and all texts live in a per-categoria language folder.
 
 ## Excluded on purpose
 
-These stay as separate jars on the server: ExcellentEconomy, ExcellentCrates,
-Sentry, AxInventoryRestore, Genius-Shop / Shop, LibertyBans.
+These stay as separate jars on the server (never merged, never decompiled):
+
+| Plugin | Reason |
+| --- | --- |
+| ExcellentEconomy | stays standalone |
+| ExcellentCrates | stays standalone |
+| Sentry | stays standalone |
+| AxInventoryRestore | stays standalone |
+| Genius-Shop / Shop | stays standalone |
+| LibertyBans | stays standalone |
+| **TAB** | stays standalone (scoreboard/tablist needs its own lifecycle) |
 
 ## Build & download
 

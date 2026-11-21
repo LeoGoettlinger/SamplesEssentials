@@ -53,7 +53,7 @@ jobs:
             case "$lower" in
               excellenteconomy*|excellentcrates*|sentry*|axinventoryrestore*|genius-shop*|shop-*|shop)
                 echo "SKIP (excluded): $base"; continue ;;
-              libertybans*)
+              libertybans*|tab*)
                 echo "SKIP (excluded): $base"; continue ;;
             esac
             if [ -n "$ONLY" ]; then
