@@ -1,0 +1,30 @@
+package net.milkbowl.vault.economy;
+
+/**
+ * Compile-time mirror of Vault's {@code EconomyResponse} value object; never
+ * bundled, see {@link Economy}.
+ */
+public class EconomyResponse {
+
+    public final double amount;
+    public final double balance;
+    public final ResponseType type;
+    public final String errorMessage;
+
+    public EconomyResponse(double amount, double balance, ResponseType type, String errorMessage) {
+        this.amount = amount;
+        this.balance = balance;
+        this.type = type;
+        this.errorMessage = errorMessage;
+    }
+
+    public boolean transactionSuccess() {
+        return type == ResponseType.SUCCESS;
+    }
+
+    public enum ResponseType {
+        SUCCESS,
+        FAILURE,
+        NOT_IMPLEMENTED
+    }
+}
