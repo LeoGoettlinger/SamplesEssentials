@@ -14,39 +14,67 @@ To honour the JVM settings for this build a single-use Daemon process will be fo
 Daemon will be stopped at the end of the build 
 
 > Task :compileJava
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/social/FriendsModule.java:144: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-            player.playSound(player.getLocation(), Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
-                                                        ^
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/general/RewardsModule.java:327: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-            player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(raw.toUpperCase(Locale.ROOT)), 1f, 1f);
-                                                                   ^
 /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/AuctionModule.java:425: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
             player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(raw.toUpperCase(Locale.ROOT)), 1f, 1f);
                                                                    ^
 /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/BountyModule.java:413: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
             player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
                                                                    ^
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/AfkZoneModule.java:333: error: incompatible types: Component cannot be converted to String
+                        Text.parse(applyTime(title, remaining)),
+                                  ^
 /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:470: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
             player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(sound.toUpperCase(Locale.ROOT)),
                                                                    ^
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/general/RewardsModule.java:327: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+            player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(raw.toUpperCase(Locale.ROOT)), 1f, 1f);
+                                                                   ^
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/social/FriendsModule.java:144: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+            player.playSound(player.getLocation(), Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
+                                                        ^
 Note: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
 5 warnings
 
-> Task :processResources
-> Task :classes
-> Task :jar
-> Task :assemble
-> Task :compileTestJava NO-SOURCE
-> Task :processTestResources NO-SOURCE
-> Task :testClasses UP-TO-DATE
-> Task :test NO-SOURCE
-> Task :check UP-TO-DATE
-> Task :build
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795271579399.json
+> Task :compileJava FAILED
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795285418237.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/SamplesEssentials/SamplesEssentials/build/reports/problems/problems-report.html
 
-BUILD SUCCESSFUL in 52s
-3 actionable tasks: 3 executed
-Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.4.1/userguide/configuration_cache_enabling.html
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  Note: Recompile with -Xlint:deprecation for details.
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/AfkZoneModule.java:333: error: incompatible types: Component cannot be converted to String
+                          Text.parse(applyTime(title, remaining)),
+                                    ^
+  Note: Some input files use or override a deprecated API.
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/AuctionModule.java:425: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+              player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(raw.toUpperCase(Locale.ROOT)), 1f, 1f);
+                                                                     ^
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/BountyModule.java:413: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+              player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
+                                                                     ^
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:470: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+              player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(sound.toUpperCase(Locale.ROOT)),
+                                                                     ^
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/general/RewardsModule.java:327: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+              player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(raw.toUpperCase(Locale.ROOT)), 1f, 1f);
+                                                                     ^
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/social/FriendsModule.java:144: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+              player.playSound(player.getLocation(), Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
+                                                          ^
+  Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+  1 error
+  5 warnings
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 38s
+1 actionable task: 1 executed
