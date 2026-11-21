@@ -1,0 +1,4 @@
+# categoria: social - module: friends (merged from FriendZ-1.1.jar)
+# All player-facing texts live in social/friends/config.yml, like the original.
+# This file only holds module status messages.
+loaded: "{prefix}<gray>Friend system ready. Use <white>/friend<gray>."

@@ -1,0 +1,29 @@
+# Merged from FriendZ-1.1.jar (structure and defaults of the old config)
+# Prefix supports MiniMessage and & colour codes
+prefix: "&2FriendZ &8▸ "
+
+# Display a notification when a friend joins
+notify-friend-join: true
+
+# Maximum friends per player (samplese.friends.bypasslimit bypasses it)
+max-friends: 100
+
+# Friendship levels, colours per level band
+levels:
+  colors:
+    1-3: "&a"
+    4-6: "&b"
+    7-9: "&d"
+    10: "&6"
+
+list:
+  # Friends shown per page in /friend list
+  per-page: 8
+  sort-by: "LEVEL"
+
+sounds:
+  friend-added: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  friend-removed: "BLOCK_NOTE_BLOCK_BASS"
+  message-received: "ENTITY_PLAYER_LEVELUP"
+  request-sent: "BLOCK_NOTE_BLOCK_PLING"
+  request-received: "BLOCK_NOTE_BLOCK_CHIME"

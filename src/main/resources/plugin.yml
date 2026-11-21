@@ -101,6 +101,19 @@ commands:
     description: List frozen players
     usage: /freezelist
     permission: samplese.freeze
+  # social
+  friend:
+    description: Open the friend menu (add, remove, list, requests)
+    usage: /friend <add|remove|list|requests|accept|deny|level> [player]
+    permission: samplese.friends
+  msf:
+    description: Message a friend, or toggle a private chat with them
+    usage: /msf <player> <message> | /msf toggle <player>
+    permission: samplese.friends
+  friendz:
+    description: Friend system info and reload
+    usage: /friendz [reload]
+    permission: samplese.friends
   # world
   unloadworld:
     description: Unload a world
@@ -177,3 +190,9 @@ permissions:
   samplese.dragonegg:
     description: Use /dragoneggcoords
     default: true
+  samplese.friends:
+    description: Use the friend system
+    default: true
+  samplese.friends.bypasslimit:
+    description: Bypass the friend limit
+    default: op

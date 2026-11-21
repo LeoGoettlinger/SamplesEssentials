@@ -19,6 +19,7 @@ import su.samplecraft.essentials.modules.general.StarterKitModule;
 import su.samplecraft.essentials.modules.moderation.FreezeModule;
 import su.samplecraft.essentials.modules.moderation.StaffToolsModule;
 import su.samplecraft.essentials.modules.rtp.EzRtpModule;
+import su.samplecraft.essentials.modules.social.FriendsModule;
 import su.samplecraft.essentials.modules.rtp.PremiumRtpModule;
 import su.samplecraft.essentials.modules.rtp.SimpleRtpModule;
 import su.samplecraft.essentials.modules.world.ChunkManagerModule;
@@ -104,6 +105,8 @@ public final class SamplesEssentials extends JavaPlugin {
         moduleManager.register(new EzRtpModule(this));
         moduleManager.register(new PremiumRtpModule(this));
         moduleManager.register(new SimpleRtpModule(this));
+        // categoria: social
+        moduleManager.register(new FriendsModule(this));
         // categoria: world
         moduleManager.register(new ChunkManagerModule(this));
         moduleManager.register(new SmartSpawnerModule(this));
