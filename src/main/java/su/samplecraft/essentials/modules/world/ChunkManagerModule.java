@@ -73,7 +73,7 @@ public final class ChunkManagerModule extends EssentialsModule {
                 int freed = 0;
                 for (World world : plugin.getServer().getWorlds()) {
                     for (org.bukkit.Chunk chunk : world.getLoadedChunks()) {
-                        if (chunk.getPlayers().isEmpty() && !chunk.isForceLoaded()) {
+                        if (!chunk.isForceLoaded() && world.getPlayers().isEmpty()) {
                             world.unloadChunkRequest(chunk.getX(), chunk.getZ());
                             freed++;
                         }

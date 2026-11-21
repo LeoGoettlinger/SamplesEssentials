@@ -9,12 +9,16 @@ description = "All-in-one essentials suite for Paper 26.2-26.3, made by SampleCr
 repositories {
     mavenCentral()
     maven("https://repo.papermc.io/repository/maven-public/")
+    // Vault API (VaultUnlocked source build; the Vault jar itself is not on Maven Central)
+    maven("https://jitpack.io")
 }
 
 dependencies {
     // Provided by the server at runtime - never bundled into the jar.
     // 26.2.build.+ resolves to the newest stable Paper 26.2 build.
     compileOnly("io.papermc.paper:paper-api:26.2.build.+")
+    // Economy API used by the vault bridge and premium RTP (provided by VaultUnlocked on the server).
+    compileOnly("com.github.TheNewEconomy:Vault:2.20.2")
 }
 
 java {
