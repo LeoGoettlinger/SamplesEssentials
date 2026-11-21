@@ -105,6 +105,23 @@ commands:
     description: Open the bounty menu, or add a bounty
     usage: /bounty [add <player> <amount>]
     permission: samplese.bounty
+  home:
+    description: Open your homes menu
+    usage: /home [name|list]
+    aliases: [homes]
+    permission: samplese.homes
+  sethome:
+    description: Set a home
+    usage: /sethome [name]
+    permission: samplese.homes
+  delhome:
+    description: Delete a home
+    usage: /delhome <name>
+    permission: samplese.homes
+  homeadmin:
+    description: Administer homes
+    usage: /homeadmin <view|delete|import|reload>
+    permission: samplese.homes.admin
   order:
     description: Buy-order market
     usage: /order [new|browse|history|deliver|cancel|collect]
@@ -219,6 +236,18 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.homes:
+    description: Use homes
+    default: true
+  samplese.homes.unlimited:
+    description: Unlimited homes
+    default: false
+  samplese.homes.cooldown.bypass:
+    description: Skip the home teleport countdown
+    default: op
+  samplese.homes.admin:
+    description: Administer homes
+    default: op
   samplese.orders:
     description: Use the order market
     default: true

@@ -1,0 +1,17 @@
+# Merged from SetHome_GUI-3.0.5.jar (config.yml)
+default-permission: sethome.use
+name-regex: '^[A-Za-z0-9\s]{1,32}$'
+default-max-homes: 3
+chat-prompt-timeout: 60
+teleport-cooldown: 5
+cancel-on-move: true
+
+blacklisted-worlds: []
+blacklisted-words: []
+
+# Limiting uses permission nodes samplese.homes.max.<n> and samplese.homes.unlimited
+gui:
+  title: "&8Your homes"
+
+messages:
+  cancel-word: cancel

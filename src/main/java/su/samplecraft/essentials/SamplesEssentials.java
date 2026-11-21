@@ -27,6 +27,7 @@ import su.samplecraft.essentials.modules.social.FriendsModule;
 import su.samplecraft.essentials.modules.rtp.PremiumRtpModule;
 import su.samplecraft.essentials.modules.rtp.SimpleRtpModule;
 import su.samplecraft.essentials.modules.world.ChunkManagerModule;
+import su.samplecraft.essentials.modules.world.HomesModule;
 import su.samplecraft.essentials.modules.world.SmartSpawnerModule;
 
 /**
@@ -117,6 +118,7 @@ public final class SamplesEssentials extends JavaPlugin {
         moduleManager.register(new FriendsModule(this));
         // categoria: world
         moduleManager.register(new ChunkManagerModule(this));
+        moduleManager.register(new HomesModule(this));
         moduleManager.register(new SmartSpawnerModule(this));
     }
 
