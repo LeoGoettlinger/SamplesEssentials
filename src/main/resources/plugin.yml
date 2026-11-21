@@ -109,6 +109,10 @@ commands:
     description: Open the rewards menu
     usage: /rewards [gui|claim|reload|edit-user|set-playtime]
     permission: samplese.rewards
+  xaero:
+    description: Force fair-mode or disable the Xaero minimap
+    usage: /xaero <scope> <fair-mode|disable> [true|false|unset]
+    permission: samplese.xaero
   sli:
     description: Save your inventory and clear it
     usage: /sli [confirm]
@@ -274,6 +278,9 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.xaero:
+    description: Edit Xaero minimap settings
+    default: op
   samplese.rewards:
     description: Use /rewards
     default: true

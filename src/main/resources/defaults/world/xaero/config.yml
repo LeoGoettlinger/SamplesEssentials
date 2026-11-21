@@ -1,0 +1,25 @@
+# Xaero minimap control (merged from XaeroForceDisabler / "FairXaero")
+#
+# Command usage: /xaero <scope> <setting> [value]
+#   Scopes:   global, world, world_nether, ...
+#   Settings: fair-mode, disable
+#   Values:   true, false, unset
+#
+# Keys a world override does not define inherit the global value.
+# Priority: disable > fair-mode > reset.
+# Players with xaero.ignoredisable / xaero.ignorefair skip those packets.
+debug: false
+
+# Applied to every world unless overridden
+global:
+  fair-mode: false
+  disable: false
+
+# World-specific overrides
+overrides:
+  # Example:
+  # world_nether:
+  #   fair-mode: true
+  world: {}
+  world_nether: {}
+  world_the_end: {}
