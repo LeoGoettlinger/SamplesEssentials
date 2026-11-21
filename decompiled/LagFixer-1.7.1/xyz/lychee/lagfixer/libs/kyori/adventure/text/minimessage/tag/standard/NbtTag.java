@@ -1,0 +1,99 @@
+package xyz.lychee.lagfixer.libs.kyori.adventure.text.minimessage.tag.standard;
+
+import org.jetbrains.annotations.Nullable;
+import xyz.lychee.lagfixer.libs.kyori.adventure.key.Key;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.BlockNBTComponent;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.Component;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.EntityNBTComponent;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.NBTComponent;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.NBTComponentBuilder;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.StorageNBTComponent;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.minimessage.Context;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.minimessage.ParsingException;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.minimessage.internal.serializer.Emitable;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.minimessage.internal.serializer.SerializableResolver;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.minimessage.tag.Tag;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.minimessage.tag.resolver.ArgumentQueue;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+
+final class NbtTag {
+   private static final String NBT = "nbt";
+   private static final String DATA = "data";
+   private static final String BLOCK = "block";
+   private static final String ENTITY = "entity";
+   private static final String STORAGE = "storage";
+   private static final String INTERPRET = "interpret";
+   static final TagResolver RESOLVER = SerializableResolver.claimingComponent(StandardTags.names("nbt", "data"), NbtTag::resolve, NbtTag::emit);
+
+   private NbtTag() {
+   }
+
+   static Tag resolve(final ArgumentQueue args, final Context ctx) throws ParsingException {
+      String type = args.popOr("a type of block, entity, or storage is required").lowerValue();
+      NBTComponentBuilder<?, ?> builder;
+      if ("block".equals(type)) {
+         String pos = args.popOr("A position is required").value();
+
+         try {
+            builder = Component.blockNBT().pos(BlockNBTComponent.Pos.fromString(pos));
+         } catch (IllegalArgumentException var6) {
+            throw ctx.newException(var6.getMessage(), args);
+         }
+      } else if ("entity".equals(type)) {
+         builder = Component.entityNBT().selector(args.popOr("A selector is required").value());
+      } else {
+         if (!"storage".equals(type)) {
+            throw ctx.newException("Unknown nbt tag type '" + type + "'", args);
+         }
+
+         builder = Component.storageNBT().storage(Key.key(args.popOr("A storage key is required").value()));
+      }
+
+      builder.nbtPath(args.popOr("An NBT path is required").value());
+      if (args.hasNext()) {
+         String popped = args.pop().value();
+         if ("interpret".equalsIgnoreCase(popped)) {
+            builder.interpret(true);
+         } else {
+            builder.separator(ctx.deserialize(popped));
+            if (args.hasNext() && args.pop().value().equalsIgnoreCase("interpret")) {
+               builder.interpret(true);
+            }
+         }
+      }
+
+      return Tag.inserting((Component)builder.build());
+   }
+
+   @Nullable
+   static Emitable emit(final Component comp) {
+      String type;
+      String id;
+      if (comp instanceof BlockNBTComponent) {
+         type = "block";
+         id = ((BlockNBTComponent)comp).pos().asString();
+      } else if (comp instanceof EntityNBTComponent) {
+         type = "entity";
+         id = ((EntityNBTComponent)comp).selector();
+      } else {
+         if (!(comp instanceof StorageNBTComponent)) {
+            return null;
+         }
+
+         type = "storage";
+         id = ((StorageNBTComponent)comp).storage().asString();
+      }
+
+      return out -> {
+         NBTComponent<?, ?> nbt = (NBTComponent<?, ?>)comp;
+         out.tag("nbt").argument(type).argument(id).argument(nbt.nbtPath());
+         if (nbt.separator() != null) {
+            out.argument(nbt.separator());
+         }
+
+         if (nbt.interpret()) {
+            out.argument("interpret");
+         }
+      };
+   }
+}

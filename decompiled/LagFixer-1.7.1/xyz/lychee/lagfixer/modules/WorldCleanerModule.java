@@ -1,0 +1,656 @@
+package xyz.lychee.lagfixer.modules;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import lombok.Generated;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.World;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.HumanEntity;
+import org.bukkit.entity.Item;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
+import org.bukkit.entity.Projectile;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.HandlerList;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.ItemDespawnEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.scheduler.BukkitTask;
+import org.jetbrains.annotations.NotNull;
+import xyz.lychee.lagfixer.LagFixer;
+import xyz.lychee.lagfixer.Language;
+import xyz.lychee.lagfixer.hooks.LevelledMobsHook;
+import xyz.lychee.lagfixer.libs.kyori.adventure.audience.Audience;
+import xyz.lychee.lagfixer.libs.kyori.adventure.key.Key;
+import xyz.lychee.lagfixer.libs.kyori.adventure.sound.Sound;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.Component;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
+import xyz.lychee.lagfixer.managers.HookManager;
+import xyz.lychee.lagfixer.managers.ModuleManager;
+import xyz.lychee.lagfixer.managers.SupportManager;
+import xyz.lychee.lagfixer.objects.AbstractModule;
+import xyz.lychee.lagfixer.objects.WorldsMonitor;
+import xyz.lychee.lagfixer.utils.MessageUtils;
+import xyz.lychee.lagfixer.utils.ReflectionUtils;
+
+public class WorldCleanerModule extends AbstractModule implements Listener, CommandExecutor, Runnable {
+   private final List<ItemStack> items = Collections.synchronizedList(new ArrayList<>());
+   private final EnumSet<EntityType> creatures_list = EnumSet.noneOf(EntityType.class);
+   private final EnumSet<EntityType> projectiles_list = EnumSet.noneOf(EntityType.class);
+   private final ArrayList<Inventory> inventories = new ArrayList<>();
+   private final EnumSet<Material> items_abyss_blacklist = EnumSet.noneOf(Material.class);
+   private final ItemStack items_abyss_previous;
+   private final ItemStack items_abyss_next;
+   private final ItemStack items_abyss_filler;
+   private final EnumSet<Material> items_blacklist = EnumSet.noneOf(Material.class);
+   private BukkitTask task;
+   private int second;
+   private int interval;
+   private HashMap<Integer, String> messages;
+   private boolean alerts_enabled;
+   private Audience alerts_audience;
+   private boolean alerts_actionbar;
+   private boolean alerts_message;
+   private Sound alerts_clear_sound;
+   private boolean creatures_enabled;
+   private boolean creatures_named;
+   private boolean creatures_dropitems;
+   private boolean creatures_stacked;
+   private boolean creatures_levelled;
+   private boolean creatures_ignore_models;
+   private boolean creatures_listmode;
+   private boolean items_enabled;
+   private boolean items_disableitemdespawn;
+   private int items_timelived;
+   private boolean items_abyss_enabled;
+   private volatile boolean items_abyss_opened = false;
+   private boolean items_abyss_alerts;
+   private boolean items_abyss_itemdespawn;
+   private String items_abyss_permission;
+   private List<String> items_abyss_aliases = Collections.emptyList();
+   private int items_abyss_close;
+   private boolean projectiles_enabled;
+   private boolean projectiles_listmode;
+
+   public WorldCleanerModule(LagFixer plugin, ModuleManager manager) {
+      super(
+         plugin,
+         manager,
+         AbstractModule.Impact.MEDIUM,
+         "WorldCleaner",
+         new String[]{
+            "Cleans up old items on the ground to accelerate server performance.",
+            "Accumulation of items over time contributes to server lag, especially in densely populated or active servers.",
+            "Kills creatures to accelerate server performance.",
+            "Players can retrieve items from the Abyss inventory using the /abyss command."
+         },
+         "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTlkODA2Yjc1ZWM5NTAwNmM1ZWMzODY2YzU0OGM1NTcxYWYzZTc4OGM3ZDE2MjllZGU2NGJjMWI3NDg4NTljZCJ9fX0="
+      );
+      SupportManager support = SupportManager.getInstance();
+      this.items_abyss_previous = support.getNms()
+         .createSkull(
+            "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjg0ZjU5NzEzMWJiZTI1ZGMwNThhZjg4OGNiMjk4MzFmNzk1OTliYzY3Yzk1YzgwMjkyNWNlNGFmYmEzMzJmYyJ9fX0="
+         );
+      this.items_abyss_next = support.getNms()
+         .createSkull(
+            "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTYzMzlmZjJlNTM0MmJhMThiZGM0OGE5OWNjYTY1ZDEyM2NlNzgxZDg3ODI3MmY5ZDk2NGVhZDNiOGFkMzcwIn19fQ=="
+         );
+      this.items_abyss_filler = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
+      ItemMeta metaFiller = this.items_abyss_filler.getItemMeta();
+      if (metaFiller != null) {
+         metaFiller.setDisplayName(MessageUtils.fixColors(null, "&8#"));
+         this.items_abyss_filler.setItemMeta(metaFiller);
+      }
+   }
+
+   @EventHandler
+   public void onDespawn(ItemDespawnEvent e) {
+      if (e.getEntity().getPickupDelay() <= 10000) {
+         if (this.items_disableitemdespawn) {
+            e.setCancelled(true);
+         } else {
+            if (this.items_abyss_enabled && this.items_abyss_itemdespawn && this.clearItem(e.getEntity())) {
+               HookManager.StackerContainer stacker = HookManager.getInstance().getStackerHook();
+               if (stacker != null) {
+                  stacker.addItemsToList(e.getEntity(), this.items);
+               } else {
+                  this.items.add(e.getEntity().getItemStack());
+               }
+            }
+         }
+      }
+   }
+
+   @EventHandler
+   public void onClick(InventoryClickEvent e) {
+      Inventory inv = e.getClickedInventory();
+      if (inv != null && this.inventories.contains(inv)) {
+         ItemStack is = e.getCurrentItem();
+         if (is == null) {
+            return;
+         }
+
+         if (is.equals(this.items_abyss_next)) {
+            e.setCancelled(true);
+            int next = this.inventories.indexOf(inv) + 1;
+            if (next < this.inventories.size()) {
+               e.getWhoClicked().openInventory(this.inventories.get(next));
+            }
+         } else if (is.equals(this.items_abyss_previous)) {
+            e.setCancelled(true);
+            int previous = this.inventories.indexOf(inv) - 1;
+            if (previous >= 0) {
+               e.getWhoClicked().openInventory(this.inventories.get(previous));
+            }
+         } else if (is.equals(this.items_abyss_filler)) {
+            e.setCancelled(true);
+         }
+      }
+   }
+
+   public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
+      Component text;
+      if (!this.items_abyss_enabled) {
+         text = Language.getMainValue("disabled_module", true, Placeholder.unparsed("module", this.getName()));
+      } else if (this.items_abyss_permission != null && !this.items_abyss_permission.isEmpty() && !sender.hasPermission(this.items_abyss_permission)) {
+         text = Language.getMainValue("no_access", true, Placeholder.unparsed("permission", this.items_abyss_permission));
+      } else if (!this.items_abyss_opened) {
+         text = this.getLanguage().getComponent("items.abyss.closed", true);
+      } else if (sender instanceof Player player) {
+         if (this.inventories.isEmpty()) {
+            text = this.getLanguage().getComponent("items.abyss.empty", true);
+         } else {
+            player.openInventory(this.inventories.getFirst());
+            text = this.getLanguage().getComponent("items.abyss.opened", true);
+         }
+      } else {
+         text = Language.getMainValue("player_only", true);
+      }
+
+      if (text != null) {
+         this.getPlugin().getAudiences().sender(sender).sendMessage(text);
+      }
+
+      return false;
+   }
+
+   @Override
+   public void run() {
+      if (Bukkit.getOnlinePlayers().isEmpty()) {
+         this.second = this.interval + 1;
+      } else {
+         if (--this.second <= 0) {
+            HookManager.StackerContainer stacker = HookManager.getInstance().getStackerHook();
+            int creatures = 0;
+            int items = 0;
+            int projectiles = 0;
+
+            for (World world : this.getAllowedWorlds()) {
+               if (!world.getPlayers().isEmpty()) {
+                  for (Entity ent : world.getEntities()) {
+                     if (ent instanceof LivingEntity livingEntity) {
+                        if (this.creatures_enabled && this.clearCreature(livingEntity)) {
+                           if (this.creatures_dropitems) {
+                              livingEntity.damage(Double.MAX_VALUE);
+                           }
+
+                           ent.remove();
+                           creatures++;
+                        }
+                     } else if (ent instanceof Item item) {
+                        if (this.items_enabled && this.clearItem(item)) {
+                           ItemStack is = item.getItemStack();
+                           if (this.items_abyss_enabled && !this.items_abyss_blacklist.contains(is.getType()) && item.getLocation().getY() > -64.0) {
+                              if (stacker != null) {
+                                 stacker.addItemsToList(item, this.items);
+                              } else {
+                                 this.items.add(is.clone());
+                              }
+                           }
+
+                           ent.remove();
+                           items += is.getAmount();
+                        }
+                     } else if (ent instanceof Projectile projectile && this.projectiles_enabled && this.clearProjectile(projectile)) {
+                        ent.remove();
+                        projectiles++;
+                     }
+                  }
+               }
+            }
+
+            if (this.alerts_enabled) {
+               String message = this.messages.get(this.second);
+               if (message != null) {
+                  this.sendAlert(
+                     Language.createComponent(
+                        message,
+                        true,
+                        Placeholder.unparsed("remaining", Integer.toString(this.second)),
+                        Placeholder.unparsed("items", Integer.toString(items)),
+                        Placeholder.unparsed("creatures", Integer.toString(creatures)),
+                        Placeholder.unparsed("projectiles", Integer.toString(projectiles))
+                     )
+                  );
+               }
+
+               if (this.alerts_clear_sound != null) {
+                  this.alerts_audience.playSound(this.alerts_clear_sound);
+               }
+            }
+
+            if (this.items_abyss_enabled && !this.items.isEmpty()) {
+               String guiName = this.getLanguage().getString("items.abyss.gui.name", true);
+               Collection<ItemStack> toStore = new ArrayList<>(this.items);
+               this.items.clear();
+               int page = 0;
+
+               while (!toStore.isEmpty()) {
+                  Inventory inv = Bukkit.createInventory(null, 54, guiName.replace("<page>", Integer.toString(++page)));
+
+                  for (int i = 45; i < 52; i++) {
+                     inv.setItem(i, this.items_abyss_filler);
+                  }
+
+                  inv.setItem(52, this.items_abyss_previous);
+                  inv.setItem(53, this.items_abyss_next);
+                  toStore = inv.addItem(toStore.toArray(new ItemStack[0])).values();
+                  this.inventories.add(inv);
+               }
+
+               if (this.inventories.isEmpty()) {
+                  return;
+               }
+
+               this.items_abyss_opened = true;
+               if (this.items_abyss_alerts) {
+                  this.sendAlert(this.getLanguage().getComponent("items.abyss.open", true));
+               }
+
+               SupportManager.getInstance().getFork().runLater(false, () -> {
+                  this.items_abyss_opened = false;
+                  this.inventories.forEach(invx -> {
+                     new HashSet(invx.getViewers()).forEach(HumanEntity::closeInventory);
+                     invx.clear();
+                  });
+                  this.inventories.clear();
+                  if (this.items_abyss_alerts) {
+                     this.sendAlert(this.getLanguage().getComponent("items.abyss.close", true));
+                  }
+               }, this.items_abyss_close, TimeUnit.SECONDS);
+            }
+
+            this.second = this.interval + 1;
+         } else if (this.alerts_enabled && this.messages.containsKey(this.second)) {
+            WorldsMonitor worldsMonitor = SupportManager.getInstance().getWorldsMonitor();
+            this.sendAlert(
+               Language.createComponent(
+                  this.messages.get(this.second),
+                  true,
+                  Placeholder.unparsed("remaining", Integer.toString(this.second)),
+                  Placeholder.unparsed("items", Long.toString(worldsMonitor.getItems())),
+                  Placeholder.unparsed("creatures", Long.toString(worldsMonitor.getCreatures())),
+                  Placeholder.unparsed("projectiles", Long.toString(worldsMonitor.getProjectiles()))
+               )
+            );
+         }
+      }
+   }
+
+   @Override
+   public void load() throws IOException {
+      SupportManager support = SupportManager.getInstance();
+      support.getFork().registerCommand(this.getPlugin(), "abyss", this.items_abyss_aliases, this);
+      this.task = support.getFork().runTimer(false, this, 1L, 1L, TimeUnit.SECONDS);
+      Bukkit.getPluginManager().registerEvents(this, this.getPlugin());
+   }
+
+   public void sendAlert(Component text) {
+      if (this.alerts_message) {
+         this.alerts_audience.sendMessage(text);
+      }
+
+      if (this.alerts_actionbar) {
+         this.alerts_audience.sendActionBar(text);
+      }
+   }
+
+   public boolean clearCreature(LivingEntity ent) {
+      if (this.creatures_list.contains(ent.getType()) == this.creatures_listmode && !(ent instanceof HumanEntity)) {
+         HookManager hookManager = HookManager.getInstance();
+         HookManager.ModelContainer model = hookManager.getModelHook();
+         if (this.creatures_ignore_models && model != null && model.hasModel(ent)) {
+            return false;
+         } else {
+            LevelledMobsHook hook = hookManager.getHookIfLoaded(LevelledMobsHook.class);
+            if (hook != null && hook.isLevelled(ent)) {
+               return this.creatures_levelled;
+            } else {
+               HookManager.StackerContainer stacker = hookManager.getStackerHook();
+               if (stacker != null && stacker.isStacked(ent)) {
+                  return this.creatures_stacked;
+               } else {
+                  return ent.getCustomName() != null ? this.creatures_named : true;
+               }
+            }
+         }
+      } else {
+         return false;
+      }
+   }
+
+   public boolean clearItem(Item ent) {
+      return !ent.isInvulnerable()
+         && ent.getPickupDelay() < 200
+         && ent.getTicksLived() > this.items_timelived
+         && !this.items_blacklist.contains(ent.getItemStack().getType());
+   }
+
+   public boolean clearProjectile(Projectile ent) {
+      return this.getProjectiles_list().contains(ent.getType()) == this.isProjectiles_listmode();
+   }
+
+   @Override
+   public boolean loadConfig() {
+      this.interval = Math.max(this.getSection().getInt("interval"), 1);
+      this.second = this.interval + 1;
+      this.alerts_enabled = this.getSection().getBoolean("alerts.enabled");
+      this.alerts_message = this.getSection().getBoolean("alerts.message");
+      this.alerts_actionbar = this.getSection().getBoolean("alerts.actionbar");
+      boolean clear_sound_enabled = this.getSection().getBoolean("alerts.clear_sound.enabled");
+      Sound clear_sound = null;
+      if (clear_sound_enabled) {
+         double volume = this.getSection().getDouble("alerts.clear_sound.volume");
+         double pitch = this.getSection().getDouble("alerts.clear_sound.pitch");
+         String sound = this.getSection().getString("alerts.clear_sound.sound");
+         if (sound != null && !sound.isEmpty()) {
+            try {
+               clear_sound = Sound.sound(
+                  Key.key("minecraft", sound.toLowerCase()), Sound.Source.MASTER, (float)Math.clamp(volume, 0.0, 1.0), (float)Math.clamp(pitch, 0.0, 2.0)
+               );
+            } catch (Exception var12) {
+            }
+         }
+      }
+
+      this.alerts_clear_sound = clear_sound;
+      String permission = this.getSection().getString("alerts.permission");
+      boolean permissionDisabled = permission == null || permission.isEmpty();
+      this.alerts_audience = this.getPlugin().getAudiences().filter(s -> s instanceof Player && (permissionDisabled || s.hasPermission(permission)));
+      this.creatures_enabled = this.getSection().getBoolean("creatures.enabled");
+      if (this.creatures_enabled) {
+         this.creatures_named = this.getSection().getBoolean("creatures.named");
+         this.creatures_dropitems = this.getSection().getBoolean("creatures.drop_items");
+         this.creatures_stacked = this.getSection().getBoolean("creatures.stacked");
+         this.creatures_levelled = this.getSection().getBoolean("creatures.levelled");
+         this.creatures_ignore_models = HookManager.getInstance().getModelHook() == null || this.getSection().getBoolean("creatures.ignore_models");
+         this.creatures_listmode = this.getSection().getBoolean("creatures.list_mode");
+         ReflectionUtils.convertEnums(EntityType.class, this.creatures_list, this.getSection().getStringList("creatures.list"));
+      }
+
+      this.items_enabled = this.getSection().getBoolean("items.enabled");
+      if (this.items_enabled) {
+         this.items_timelived = this.getSection().getInt("items.time_lived") / 50;
+         this.items_disableitemdespawn = this.getSection().getBoolean("items.disable_item_despawn");
+         ReflectionUtils.convertEnums(Material.class, this.items_blacklist, this.getSection().getStringList("items.blacklist"));
+         this.items_abyss_enabled = this.getSection().getBoolean("items.abyss.enabled");
+         if (this.items_abyss_enabled) {
+            this.items_abyss_alerts = this.getSection().getBoolean("items.abyss.alerts");
+            this.items_abyss_permission = this.getSection().getString("items.abyss.command.permission");
+            this.items_abyss_aliases = this.getSection().getStringList("items.abyss.command.aliases");
+            this.items_abyss_itemdespawn = this.getSection().getBoolean("items.abyss.item_despawn");
+            this.items_abyss_close = this.getSection().getInt("items.abyss.close");
+            ReflectionUtils.convertEnums(Material.class, this.items_abyss_blacklist, this.getSection().getStringList("items.abyss.blacklist"));
+            ItemMeta metaPrevious = this.items_abyss_previous.getItemMeta();
+            if (metaPrevious != null) {
+               metaPrevious.setDisplayName(this.getLanguage().getString("items.abyss.gui.previous", false));
+               this.items_abyss_previous.setItemMeta(metaPrevious);
+            }
+
+            ItemMeta metaNext = this.items_abyss_next.getItemMeta();
+            if (metaNext != null) {
+               metaNext.setDisplayName(this.getLanguage().getString("items.abyss.gui.next", false));
+               this.items_abyss_next.setItemMeta(metaNext);
+            }
+         }
+      }
+
+      this.messages = new HashMap<>();
+
+      for (String str : Language.getYaml().getStringList("messages." + this.getName() + ".countingdown")) {
+         int equalSignIndex = str.indexOf(61);
+         if (equalSignIndex == -1) {
+            this.getPlugin().getLogger().warning("Skipping malformed countingdown message (no \"=\" found): " + str);
+         } else {
+            String index = str.substring(0, equalSignIndex);
+            String message = str.substring(equalSignIndex + 1);
+
+            try {
+               int parsedIndex = Integer.parseInt(index);
+               this.messages.put(parsedIndex, message);
+            } catch (NumberFormatException var11) {
+               this.getPlugin().getLogger().warning("Invalid index format in countingdown message: " + index + " for message \"" + message + "\"");
+            }
+         }
+      }
+
+      this.projectiles_enabled = this.getSection().getBoolean("projectiles.enabled");
+      if (this.projectiles_enabled) {
+         this.projectiles_listmode = this.getSection().getBoolean("projectiles.list_mode");
+         ReflectionUtils.convertEnums(EntityType.class, this.projectiles_list, this.getSection().getStringList("projectiles.list"));
+      }
+
+      return true;
+   }
+
+   @Override
+   public void disable() throws IOException {
+      HandlerList.unregisterAll(this);
+      if (this.task != null && !this.task.isCancelled()) {
+         this.task.cancel();
+      }
+
+      SupportManager.getInstance().getFork().unregisterCommand("abyss");
+   }
+
+   @Generated
+   public List<ItemStack> getItems() {
+      return this.items;
+   }
+
+   @Generated
+   public EnumSet<EntityType> getCreatures_list() {
+      return this.creatures_list;
+   }
+
+   @Generated
+   public EnumSet<EntityType> getProjectiles_list() {
+      return this.projectiles_list;
+   }
+
+   @Generated
+   public ArrayList<Inventory> getInventories() {
+      return this.inventories;
+   }
+
+   @Generated
+   public EnumSet<Material> getItems_abyss_blacklist() {
+      return this.items_abyss_blacklist;
+   }
+
+   @Generated
+   public ItemStack getItems_abyss_previous() {
+      return this.items_abyss_previous;
+   }
+
+   @Generated
+   public ItemStack getItems_abyss_next() {
+      return this.items_abyss_next;
+   }
+
+   @Generated
+   public ItemStack getItems_abyss_filler() {
+      return this.items_abyss_filler;
+   }
+
+   @Generated
+   public EnumSet<Material> getItems_blacklist() {
+      return this.items_blacklist;
+   }
+
+   @Generated
+   public BukkitTask getTask() {
+      return this.task;
+   }
+
+   @Generated
+   public int getSecond() {
+      return this.second;
+   }
+
+   @Generated
+   public int getInterval() {
+      return this.interval;
+   }
+
+   @Generated
+   public HashMap<Integer, String> getMessages() {
+      return this.messages;
+   }
+
+   @Generated
+   public boolean isAlerts_enabled() {
+      return this.alerts_enabled;
+   }
+
+   @Generated
+   public Audience getAlerts_audience() {
+      return this.alerts_audience;
+   }
+
+   @Generated
+   public boolean isAlerts_actionbar() {
+      return this.alerts_actionbar;
+   }
+
+   @Generated
+   public boolean isAlerts_message() {
+      return this.alerts_message;
+   }
+
+   @Generated
+   public Sound getAlerts_clear_sound() {
+      return this.alerts_clear_sound;
+   }
+
+   @Generated
+   public boolean isCreatures_enabled() {
+      return this.creatures_enabled;
+   }
+
+   @Generated
+   public boolean isCreatures_named() {
+      return this.creatures_named;
+   }
+
+   @Generated
+   public boolean isCreatures_dropitems() {
+      return this.creatures_dropitems;
+   }
+
+   @Generated
+   public boolean isCreatures_stacked() {
+      return this.creatures_stacked;
+   }
+
+   @Generated
+   public boolean isCreatures_levelled() {
+      return this.creatures_levelled;
+   }
+
+   @Generated
+   public boolean isCreatures_ignore_models() {
+      return this.creatures_ignore_models;
+   }
+
+   @Generated
+   public boolean isCreatures_listmode() {
+      return this.creatures_listmode;
+   }
+
+   @Generated
+   public boolean isItems_enabled() {
+      return this.items_enabled;
+   }
+
+   @Generated
+   public boolean isItems_disableitemdespawn() {
+      return this.items_disableitemdespawn;
+   }
+
+   @Generated
+   public int getItems_timelived() {
+      return this.items_timelived;
+   }
+
+   @Generated
+   public boolean isItems_abyss_enabled() {
+      return this.items_abyss_enabled;
+   }
+
+   @Generated
+   public boolean isItems_abyss_opened() {
+      return this.items_abyss_opened;
+   }
+
+   @Generated
+   public boolean isItems_abyss_alerts() {
+      return this.items_abyss_alerts;
+   }
+
+   @Generated
+   public boolean isItems_abyss_itemdespawn() {
+      return this.items_abyss_itemdespawn;
+   }
+
+   @Generated
+   public String getItems_abyss_permission() {
+      return this.items_abyss_permission;
+   }
+
+   @Generated
+   public List<String> getItems_abyss_aliases() {
+      return this.items_abyss_aliases;
+   }
+
+   @Generated
+   public int getItems_abyss_close() {
+      return this.items_abyss_close;
+   }
+
+   @Generated
+   public boolean isProjectiles_enabled() {
+      return this.projectiles_enabled;
+   }
+
+   @Generated
+   public boolean isProjectiles_listmode() {
+      return this.projectiles_listmode;
+   }
+}

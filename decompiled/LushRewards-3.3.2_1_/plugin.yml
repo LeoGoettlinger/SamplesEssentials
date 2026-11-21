@@ -1,0 +1,34 @@
+name: LushRewards
+version: 3.3.2
+main: org.lushplugins.lushrewards.LushRewards
+api-version: 1.16
+softdepend:
+- floodgate
+- MiniPlaceholders
+- MythicDungeons # Fixes incompatibility caused by this plugin
+- PlaceholderAPI
+- TimedRewards # Fixes incompatibility caused by this plugin
+folia-supported: true
+modrinth-project-id: djC8I9ui
+commands:
+  rewards:
+    description: Opens Rewards GUI
+    usage: /rewards
+    aliases:
+    - lushrewards
+permissions:
+  lushrewards.use:
+    description: Allows player to use the LushRewards plugin
+    default: true
+  lushrewards.use.daily-rewards:
+    description: Allows player to use daily rewards module
+    default: true
+  lushrewards.use.daily-playtime-rewards:
+    description: Allows player to use daily playtime rewards module
+    default: true
+  lushrewards.use.global-playtime-rewards:
+    description: Allows player to use global playtime rewards module
+    default: true
+  lushrewards.reload:
+    description: Allows player to reload the LushRewards plugin
+    default: op

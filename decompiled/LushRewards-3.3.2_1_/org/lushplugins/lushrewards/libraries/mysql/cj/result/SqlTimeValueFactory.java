@@ -1,0 +1,90 @@
+package org.lushplugins.lushrewards.libraries.mysql.cj.result;
+
+import java.sql.Time;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.TimeZone;
+import org.lushplugins.lushrewards.libraries.mysql.cj.Messages;
+import org.lushplugins.lushrewards.libraries.mysql.cj.WarningListener;
+import org.lushplugins.lushrewards.libraries.mysql.cj.conf.PropertySet;
+import org.lushplugins.lushrewards.libraries.mysql.cj.exceptions.DataReadException;
+import org.lushplugins.lushrewards.libraries.mysql.cj.exceptions.ExceptionFactory;
+import org.lushplugins.lushrewards.libraries.mysql.cj.exceptions.WrongArgumentException;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.InternalDate;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.InternalTime;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.InternalTimestamp;
+
+public class SqlTimeValueFactory extends AbstractDateTimeValueFactory<Time> {
+   private WarningListener warningListener;
+   private Calendar cal;
+
+   public SqlTimeValueFactory(PropertySet pset, Calendar calendar, TimeZone tz) {
+      super(pset);
+      if (calendar != null) {
+         this.cal = (Calendar)calendar.clone();
+      } else {
+         this.cal = Calendar.getInstance(tz, Locale.US);
+         this.cal.setLenient(false);
+      }
+   }
+
+   public SqlTimeValueFactory(PropertySet pset, Calendar calendar, TimeZone tz, WarningListener warningListener) {
+      this(pset, calendar, tz);
+      this.warningListener = warningListener;
+   }
+
+   Time localCreateFromDate(InternalDate idate) {
+      synchronized (this.cal) {
+         Time var10000;
+         try {
+            this.cal.clear();
+            var10000 = new Time(this.cal.getTimeInMillis());
+         } catch (IllegalArgumentException var5) {
+            throw (WrongArgumentException)ExceptionFactory.createException(WrongArgumentException.class, var5.getMessage(), var5);
+         }
+
+         return var10000;
+      }
+   }
+
+   public Time localCreateFromTime(InternalTime it) {
+      if (it.getHours() >= 0 && it.getHours() < 24) {
+         synchronized (this.cal) {
+            Time var10000;
+            try {
+               this.cal.set(1970, 0, 1, it.getHours(), it.getMinutes(), it.getSeconds());
+               this.cal.set(14, 0);
+               long ms = it.getNanos() / 1000000 + this.cal.getTimeInMillis();
+               var10000 = new Time(ms);
+            } catch (IllegalArgumentException var6) {
+               throw (WrongArgumentException)ExceptionFactory.createException(WrongArgumentException.class, var6.getMessage(), var6);
+            }
+
+            return var10000;
+         }
+      } else {
+         throw new DataReadException(Messages.getString("ResultSet.InvalidTimeValue", new Object[]{it.toString()}));
+      }
+   }
+
+   public Time localCreateFromDatetime(InternalTimestamp its) {
+      if (this.warningListener != null) {
+         this.warningListener.warningEncountered(Messages.getString("ResultSet.PrecisionLostWarning", new Object[]{"java.sql.Time"}));
+      }
+
+      return this.createFromTime(new InternalTime(its.getHours(), its.getMinutes(), its.getSeconds(), its.getNanos(), its.getScale()));
+   }
+
+   public Time localCreateFromTimestamp(InternalTimestamp its) {
+      if (this.warningListener != null) {
+         this.warningListener.warningEncountered(Messages.getString("ResultSet.PrecisionLostWarning", new Object[]{"java.sql.Time"}));
+      }
+
+      return this.createFromTime(new InternalTime(its.getHours(), its.getMinutes(), its.getSeconds(), its.getNanos(), its.getScale()));
+   }
+
+   @Override
+   public String getTargetTypeName() {
+      return Time.class.getName();
+   }
+}

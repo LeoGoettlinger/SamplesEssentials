@@ -1,0 +1,109 @@
+package xyz.lychee.lagfixer;
+
+import java.util.Arrays;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import lombok.Generated;
+import org.bukkit.Bukkit;
+import org.jetbrains.annotations.NotNull;
+
+public class ColoredLogger extends Logger {
+   public ColoredLogger() {
+      super(convertStringMessage("&e⚡"), null);
+      this.setParent(Bukkit.getLogger());
+      this.setLevel(Level.ALL);
+   }
+
+   private static String convertStringMessage(String message) {
+      if (message != null && !message.isEmpty()) {
+         StringBuilder result = new StringBuilder();
+         Pattern pattern = Pattern.compile("&([0-9a-fk-or])(?!.*\u0001)");
+         Matcher matcher = pattern.matcher(message);
+
+         int lastEnd;
+         for (lastEnd = 0; matcher.find(); lastEnd = matcher.end()) {
+            result.append(message, lastEnd, matcher.start());
+            char codeChar = matcher.group(1).charAt(0);
+            ColoredLogger.AnsiColor color = ColoredLogger.AnsiColor.getColorByCode(codeChar);
+            if (color != null) {
+               result.append(color.getAnsiColor());
+            } else {
+               result.append(matcher.group(0));
+            }
+         }
+
+         result.append(message.substring(lastEnd));
+         result.append(ColoredLogger.AnsiColor.RESET.getAnsiColor());
+         return result.toString();
+      } else {
+         return message;
+      }
+   }
+
+   public void sendHeader(String version) {
+      this.info(
+         "\n\n&fLagFixer &e%s &7- &fBest Performance Solution!&r\n&8░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n&8░&e██&6╗&8░░░░░░&e█████&6╗&8░░&e██████&6╗&8░░░&e███████&6╗&e██&6╗&e██&6╗&8░░&e██&6╗&e███████&6╗&e██████&6╗&8░░\n&8░&e██&6║&8░░░░░&e██&6╔══&e██&6╗&e██&6╔════╝&8░░░&e██&6╔════╝&e██&6║╚&e██&6╗&e██&6╔╝&e██&6╔════╝&e██&6╔══&e██&6╗&8░\n&8░&e██&6║&8░░░░░&e███████&6║&e██&6║&8░░&e███&6╗&8░░&e█████&6╗&8░░&e██&6║&8░&6╚&e███&6╔╝&8░&e█████&6╗&8░░&e██████&6╔╝&8░\n&8░&e██&6║&8░░░░░&e██&6╔══&e██&6║&e██&6║&8░░░&e██&6║&8░░&e██&6╔══╝&8░░&e██&6║&8░&e██&6╔&e██&6╗&8░&e██&6╔══╝&8░░&e██&6╔══&e██&6╗&8░\n&8░&e███████&6╗&e██&6║&8░░&e██&6║╚&e██████&6╔╝&8░░&e██&6║&8░░░░░&e██&6║&e██&6╔╝&8░&e██&6╗&e███████&6╗&e██&6║&8░░&e██&6║&8░\n&8░&6╚══════╝╚═╝&8░░&6╚═╝&8░&6╚═════╝&8░░░&6╚═╝&8░░░░░&6╚═╝╚═╝&8░░&6╚═╝╚══════╝╚═╝&8░░&6╚═╝&8░\n&8░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n&fRemember to leave a rating!&r &e★ ★ ★ ★ ★\n\n"
+            .formatted(version)
+      );
+   }
+
+   @Override
+   public void log(@NotNull LogRecord logRecord) {
+      logRecord.setMessage(convertStringMessage(logRecord.getMessage()));
+      super.log(logRecord);
+   }
+
+   private static enum AnsiColor {
+      BLACK('0', "\u001b[38;5;%dm", 0),
+      DARK_GREEN('2', "\u001b[38;5;%dm", 2),
+      DARK_RED('4', "\u001b[38;5;%dm", 1),
+      GOLD('6', "\u001b[38;5;%dm", 172),
+      DARK_GREY('8', "\u001b[38;5;%dm", 8),
+      GREEN('a', "\u001b[38;5;%dm", 10),
+      RED('c', "\u001b[38;5;%dm", 9),
+      YELLOW('e', "\u001b[38;5;%dm", 11),
+      DARK_BLUE('1', "\u001b[38;5;%dm", 4),
+      DARK_AQUA('3', "\u001b[38;5;%dm", 30),
+      DARK_PURPLE('5', "\u001b[38;5;%dm", 54),
+      GRAY('7', "\u001b[38;5;%dm", 246),
+      BLUE('9', "\u001b[38;5;%dm", 4),
+      AQUA('b', "\u001b[38;5;%dm", 51),
+      LIGHT_PURPLE('d', "\u001b[38;5;%dm", 13),
+      WHITE('f', "\u001b[38;5;%dm", 15),
+      STRIKETHROUGH('m', "\u001b[%dm", 9),
+      ITALIC('o', "\u001b[%dm", 3),
+      BOLD('l', "\u001b[%dm", 1),
+      UNDERLINE('n', "\u001b[%dm", 4),
+      RESET('r', "\u001b[%dm", 0);
+
+      private static final Map<Character, ColoredLogger.AnsiColor> chars = Arrays.stream(values())
+         .collect(Collectors.toMap(ColoredLogger.AnsiColor::getBukkitColor, Function.identity()));
+      private final char bukkitColor;
+      private final String ansiColor;
+
+      private AnsiColor(char bukkitColor, String pattern, int ansiCode) {
+         this.bukkitColor = bukkitColor;
+         this.ansiColor = String.format(pattern, ansiCode);
+      }
+
+      public static ColoredLogger.AnsiColor getColorByCode(char code) {
+         return chars.get(code);
+      }
+
+      @Generated
+      public char getBukkitColor() {
+         return this.bukkitColor;
+      }
+
+      @Generated
+      public String getAnsiColor() {
+         return this.ansiColor;
+      }
+   }
+}

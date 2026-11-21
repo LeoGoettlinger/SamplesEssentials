@@ -1,0 +1,111 @@
+package org.lushplugins.lushrewards.command.subcommand;
+
+import java.io.FileNotFoundException;
+import java.time.Instant;
+import java.util.List;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.lushplugins.lushrewards.LushRewards;
+import org.lushplugins.lushrewards.importer.DailyRewardsPlusImporter;
+import org.lushplugins.lushrewards.importer.NDailyRewardsImporter;
+import org.lushplugins.lushrewards.libraries.lushlib.command.SubCommand;
+import org.lushplugins.lushrewards.libraries.lushlib.libraries.chatcolor.ChatColorHandler;
+import org.lushplugins.lushrewards.storage.migrator.Migrator;
+import org.lushplugins.lushrewards.storage.migrator.Version3DataMigrator;
+
+public class ImportSubCommand extends SubCommand {
+   public ImportSubCommand() {
+      super("import");
+      this.addRequiredPermission("lushrewards.import");
+   }
+
+   @Override
+   public boolean execute(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args, @NotNull String[] fullArgs) {
+      if (args.length == 0) {
+         ChatColorHandler.sendMessage(
+            sender, LushRewards.getInstance().getConfigManager().getMessage("incorrect-usage").replace("%command-usage%", "/rewards import <plugin>")
+         );
+      }
+
+      String name = args[0];
+
+      Migrator configImporter;
+      try {
+         String startMs = name.toLowerCase();
+         switch (startMs) {
+            case "dailyrewardsplus":
+               configImporter = new DailyRewardsPlusImporter();
+               break;
+            case "ndailyrewards":
+               configImporter = new NDailyRewardsImporter();
+               break;
+            case "version2to3":
+               configImporter = new Version3DataMigrator();
+               break;
+            default:
+               configImporter = null;
+         }
+      } catch (FileNotFoundException var10) {
+         ChatColorHandler.sendMessage(sender, "&#ff6969Could not find files when attempting to import from &#d13636'" + name + "'");
+         return true;
+      }
+
+      if (configImporter != null) {
+         long startMs = Instant.now().toEpochMilli();
+         LushRewards.getMorePaperLib()
+            .scheduling()
+            .asyncScheduler()
+            .run(
+               () -> {
+                  try {
+                     if (configImporter.convert()) {
+                        ChatColorHandler.sendMessage(
+                           sender,
+                           "&#b7faa2Successfully imported configuration from &#66b04f'"
+                              + name
+                              + "' &#b7faa2in &#66b04f"
+                              + (Instant.now().toEpochMilli() - startMs)
+                              + "ms"
+                        );
+                        LushRewards.getInstance().getConfigManager().reloadConfig();
+                        ChatColorHandler.sendMessage(sender, LushRewards.getInstance().getConfigManager().getMessage("reload"));
+                     } else {
+                        ChatColorHandler.sendMessage(
+                           sender,
+                           "&#ff6969Failed to import configuration from &#d13636'"
+                              + name
+                              + "' &#ff6969in &#d13636"
+                              + (Instant.now().toEpochMilli() - startMs)
+                              + "ms"
+                        );
+                     }
+                  } catch (Exception var6x) {
+                     var6x.printStackTrace();
+                     ChatColorHandler.sendMessage(
+                        sender,
+                        "&#ff6969Failed to import configuration from &#d13636'"
+                           + name
+                           + "' &#ff6969in &#d13636"
+                           + (Instant.now().toEpochMilli() - startMs)
+                           + "ms"
+                     );
+                  }
+               }
+            );
+      } else {
+         ChatColorHandler.sendMessage(sender, "&#ff6969Failed to import configuration from &#d13636'" + name + "'");
+      }
+
+      return true;
+   }
+
+   @Nullable
+   @Override
+   public List<String> tabComplete(
+      @NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args, @NotNull String[] fullArgs
+   ) {
+      return List.of("DailyRewardsPlus", "NDailyRewards", "Version2to3");
+   }
+}

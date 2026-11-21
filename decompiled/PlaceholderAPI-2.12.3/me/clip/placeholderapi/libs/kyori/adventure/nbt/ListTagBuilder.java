@@ -1,0 +1,50 @@
+package me.clip.placeholderapi.libs.kyori.adventure.nbt;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+final class ListTagBuilder<T extends BinaryTag> implements ListBinaryTag.Builder<T> {
+   @Nullable
+   private List<BinaryTag> tags;
+   private final boolean permitsHeterogeneity;
+   private BinaryTagType<? extends BinaryTag> elementType;
+
+   ListTagBuilder(final boolean permitsHeterogeneity) {
+      this(permitsHeterogeneity, BinaryTagTypes.END);
+   }
+
+   ListTagBuilder(final boolean permitsHeterogeneity, final BinaryTagType<? extends BinaryTag> type) {
+      this.permitsHeterogeneity = permitsHeterogeneity;
+      this.elementType = type;
+   }
+
+   @NotNull
+   public ListBinaryTag.Builder<T> add(final BinaryTag tag) {
+      this.elementType = (BinaryTagType<? extends BinaryTag>)ListBinaryTagImpl.validateTagType(tag, this.elementType, this.permitsHeterogeneity);
+      if (this.tags == null) {
+         this.tags = new ArrayList<>();
+      }
+
+      this.tags.add(tag);
+      return this;
+   }
+
+   @NotNull
+   public ListBinaryTag.Builder<T> add(final Iterable<? extends T> tagsToAdd) {
+      for (T tag : tagsToAdd) {
+         this.add(tag);
+      }
+
+      return this;
+   }
+
+   @NotNull
+   @Override
+   public ListBinaryTag build() {
+      return (ListBinaryTag)(this.tags == null
+         ? ListBinaryTag.empty()
+         : new ListBinaryTagImpl(this.elementType, this.permitsHeterogeneity, new ArrayList<>(this.tags)));
+   }
+}

@@ -1,0 +1,112 @@
+package org.lushplugins.lushrewards.libraries.mysql.cj;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Spliterators;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collector;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
+import org.lushplugins.lushrewards.libraries.mysql.cj.conf.HostInfo;
+import org.lushplugins.lushrewards.libraries.mysql.cj.conf.PropertySet;
+import org.lushplugins.lushrewards.libraries.mysql.cj.exceptions.CJCommunicationsException;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.ColumnDefinition;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.Message;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.ResultBuilder;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.x.StatementExecuteOkBuilder;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.x.XProtocol;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.x.XProtocolError;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.x.XProtocolRowInputStream;
+import org.lushplugins.lushrewards.libraries.mysql.cj.result.Row;
+import org.lushplugins.lushrewards.libraries.mysql.cj.xdevapi.PreparableStatement;
+
+public class MysqlxSession extends CoreSession {
+   public MysqlxSession(HostInfo hostInfo, PropertySet propSet) {
+      super(hostInfo, propSet);
+      this.protocol = new XProtocol(hostInfo, propSet);
+      this.messageBuilder = this.protocol.getMessageBuilder();
+      this.protocol.connect(hostInfo.getUser(), hostInfo.getPassword(), hostInfo.getDatabase());
+   }
+
+   public MysqlxSession(XProtocol prot) {
+      super(null, prot.getPropertySet());
+      this.protocol = prot;
+      this.messageBuilder = this.protocol.getMessageBuilder();
+   }
+
+   @Override
+   public String getProcessHost() {
+      return this.protocol.getSocketConnection().getHost();
+   }
+
+   public int getPort() {
+      return this.protocol.getSocketConnection().getPort();
+   }
+
+   public XProtocol getProtocol() {
+      return (XProtocol)this.protocol;
+   }
+
+   @Override
+   public void quit() {
+      try {
+         this.protocol.close();
+      } catch (IOException var2) {
+         throw new CJCommunicationsException(var2);
+      }
+
+      super.quit();
+   }
+
+   @Override
+   public boolean isClosed() {
+      return !((XProtocol)this.protocol).isOpen();
+   }
+
+   public boolean supportsPreparedStatements() {
+      return ((XProtocol)this.protocol).supportsPreparedStatements();
+   }
+
+   public boolean readyForPreparingStatements() {
+      return ((XProtocol)this.protocol).readyForPreparingStatements();
+   }
+
+   public int getNewPreparedStatementId(PreparableStatement<?> preparableStatement) {
+      return ((XProtocol)this.protocol).getNewPreparedStatementId(preparableStatement);
+   }
+
+   public void freePreparedStatementId(int preparedStatementId) {
+      ((XProtocol)this.protocol).freePreparedStatementId(preparedStatementId);
+   }
+
+   public boolean failedPreparingStatement(int preparedStatementId, XProtocolError e) {
+      return ((XProtocol)this.protocol).failedPreparingStatement(preparedStatementId, e);
+   }
+
+   @Override
+   public <M extends Message, R, RES> RES query(M message, Predicate<Row> rowFilter, Function<Row, R> rowMapper, Collector<R, ?, RES> collector) {
+      this.protocol.send(message, 0);
+      ColumnDefinition metadata = this.protocol.readMetadata();
+      Iterator<Row> ris = new XProtocolRowInputStream(metadata, (XProtocol)this.protocol, null);
+      Stream<Row> stream = StreamSupport.stream(Spliterators.spliteratorUnknownSize(ris, 0), false);
+      if (rowFilter != null) {
+         stream = stream.filter(rowFilter);
+      }
+
+      RES result = stream.map(rowMapper).collect(collector);
+      this.protocol.readQueryResult(new StatementExecuteOkBuilder());
+      return result;
+   }
+
+   @Override
+   public <M extends Message, R extends QueryResult> R query(M message, ResultBuilder<R> resultBuilder) {
+      return ((XProtocol)this.protocol).query(message, resultBuilder);
+   }
+
+   @Override
+   public <M extends Message, R extends QueryResult> CompletableFuture<R> queryAsync(M message, ResultBuilder<R> resultBuilder) {
+      return ((XProtocol)this.protocol).queryAsync(message, resultBuilder);
+   }
+}

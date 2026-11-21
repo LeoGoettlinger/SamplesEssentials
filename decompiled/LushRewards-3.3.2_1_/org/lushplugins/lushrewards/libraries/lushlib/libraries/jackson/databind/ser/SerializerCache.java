@@ -1,0 +1,128 @@
+package org.lushplugins.lushrewards.libraries.lushlib.libraries.jackson.databind.ser;
+
+import java.util.concurrent.atomic.AtomicReference;
+import org.lushplugins.lushrewards.libraries.lushlib.libraries.jackson.databind.JavaType;
+import org.lushplugins.lushrewards.libraries.lushlib.libraries.jackson.databind.JsonMappingException;
+import org.lushplugins.lushrewards.libraries.lushlib.libraries.jackson.databind.JsonSerializer;
+import org.lushplugins.lushrewards.libraries.lushlib.libraries.jackson.databind.SerializerProvider;
+import org.lushplugins.lushrewards.libraries.lushlib.libraries.jackson.databind.ser.impl.ReadOnlyClassToSerializerMap;
+import org.lushplugins.lushrewards.libraries.lushlib.libraries.jackson.databind.util.LRUMap;
+import org.lushplugins.lushrewards.libraries.lushlib.libraries.jackson.databind.util.TypeKey;
+
+public final class SerializerCache {
+   public static final int DEFAULT_MAX_CACHED = 4000;
+   private final LRUMap<TypeKey, JsonSerializer<Object>> _sharedMap;
+   private final AtomicReference<ReadOnlyClassToSerializerMap> _readOnlyMap;
+
+   public SerializerCache() {
+      this(4000);
+   }
+
+   public SerializerCache(int maxCached) {
+      int initial = Math.min(64, maxCached >> 2);
+      this._sharedMap = new LRUMap<>(initial, maxCached);
+      this._readOnlyMap = new AtomicReference<>();
+   }
+
+   public ReadOnlyClassToSerializerMap getReadOnlyLookupMap() {
+      ReadOnlyClassToSerializerMap m = this._readOnlyMap.get();
+      return m != null ? m : this._makeReadOnlyLookupMap();
+   }
+
+   private final synchronized ReadOnlyClassToSerializerMap _makeReadOnlyLookupMap() {
+      ReadOnlyClassToSerializerMap m = this._readOnlyMap.get();
+      if (m == null) {
+         m = ReadOnlyClassToSerializerMap.from(this._sharedMap);
+         this._readOnlyMap.set(m);
+      }
+
+      return m;
+   }
+
+   public synchronized int size() {
+      return this._sharedMap.size();
+   }
+
+   public JsonSerializer<Object> untypedValueSerializer(Class<?> type) {
+      synchronized (this) {
+         return this._sharedMap.get(new TypeKey(type, false));
+      }
+   }
+
+   public JsonSerializer<Object> untypedValueSerializer(JavaType type) {
+      synchronized (this) {
+         return this._sharedMap.get(new TypeKey(type, false));
+      }
+   }
+
+   public JsonSerializer<Object> typedValueSerializer(JavaType type) {
+      synchronized (this) {
+         return this._sharedMap.get(new TypeKey(type, true));
+      }
+   }
+
+   public JsonSerializer<Object> typedValueSerializer(Class<?> cls) {
+      synchronized (this) {
+         return this._sharedMap.get(new TypeKey(cls, true));
+      }
+   }
+
+   public void addTypedSerializer(JavaType type, JsonSerializer<Object> ser) {
+      synchronized (this) {
+         if (this._sharedMap.put(new TypeKey(type, true), ser) == null) {
+            this._readOnlyMap.set(null);
+         }
+      }
+   }
+
+   public void addTypedSerializer(Class<?> cls, JsonSerializer<Object> ser) {
+      synchronized (this) {
+         if (this._sharedMap.put(new TypeKey(cls, true), ser) == null) {
+            this._readOnlyMap.set(null);
+         }
+      }
+   }
+
+   public void addAndResolveNonTypedSerializer(Class<?> type, JsonSerializer<Object> ser, SerializerProvider provider) throws JsonMappingException {
+      synchronized (this) {
+         if (this._sharedMap.put(new TypeKey(type, false), ser) == null) {
+            this._readOnlyMap.set(null);
+         }
+
+         if (ser instanceof ResolvableSerializer) {
+            ((ResolvableSerializer)ser).resolve(provider);
+         }
+      }
+   }
+
+   public void addAndResolveNonTypedSerializer(JavaType type, JsonSerializer<Object> ser, SerializerProvider provider) throws JsonMappingException {
+      synchronized (this) {
+         if (this._sharedMap.put(new TypeKey(type, false), ser) == null) {
+            this._readOnlyMap.set(null);
+         }
+
+         if (ser instanceof ResolvableSerializer) {
+            ((ResolvableSerializer)ser).resolve(provider);
+         }
+      }
+   }
+
+   public void addAndResolveNonTypedSerializer(Class<?> rawType, JavaType fullType, JsonSerializer<Object> ser, SerializerProvider provider) throws JsonMappingException {
+      synchronized (this) {
+         Object ob1 = this._sharedMap.put(new TypeKey(rawType, false), ser);
+         Object ob2 = this._sharedMap.put(new TypeKey(fullType, false), ser);
+         if (ob1 == null || ob2 == null) {
+            this._readOnlyMap.set(null);
+         }
+
+         if (ser instanceof ResolvableSerializer) {
+            ((ResolvableSerializer)ser).resolve(provider);
+         }
+      }
+   }
+
+   public synchronized void flush() {
+      this._sharedMap.clear();
+      this._readOnlyMap.set(null);
+   }
+}

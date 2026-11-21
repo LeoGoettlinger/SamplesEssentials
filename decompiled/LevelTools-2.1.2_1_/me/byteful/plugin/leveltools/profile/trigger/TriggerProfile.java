@@ -1,0 +1,125 @@
+package me.byteful.plugin.leveltools.profile.trigger;
+
+import me.byteful.plugin.leveltools.api.trigger.TriggerIds;
+import org.jetbrains.annotations.NotNull;
+
+public final class TriggerProfile {
+   private final String id;
+   private final String triggerId;
+   private final XpModifierConfig xpModifier;
+   private final TriggerFilter filter;
+   private final TriggerSlotFilter slotFilter;
+   private final TriggerSettings settings;
+
+   public TriggerProfile(
+      @NotNull String id, @NotNull String triggerId, @NotNull XpModifierConfig xpModifier, @NotNull TriggerFilter filter, @NotNull TriggerSettings settings
+   ) {
+      this(id, triggerId, xpModifier, filter, TriggerSlotFilter.all(), settings);
+   }
+
+   public TriggerProfile(
+      @NotNull String id,
+      @NotNull String triggerId,
+      @NotNull XpModifierConfig xpModifier,
+      @NotNull TriggerFilter filter,
+      @NotNull TriggerSlotFilter slotFilter,
+      @NotNull TriggerSettings settings
+   ) {
+      this.id = id;
+      this.triggerId = TriggerIds.normalize(triggerId);
+      this.xpModifier = xpModifier;
+      this.filter = filter;
+      this.slotFilter = slotFilter;
+      this.settings = settings;
+   }
+
+   public static TriggerProfile.Builder builder(@NotNull String id) {
+      return new TriggerProfile.Builder(id);
+   }
+
+   @NotNull
+   public String getId() {
+      return this.id;
+   }
+
+   @NotNull
+   public String getTriggerId() {
+      return this.triggerId;
+   }
+
+   @NotNull
+   public XpModifierConfig getXpModifier() {
+      return this.xpModifier;
+   }
+
+   @NotNull
+   public TriggerFilter getFilter() {
+      return this.filter;
+   }
+
+   @NotNull
+   public TriggerSlotFilter getSlotFilter() {
+      return this.slotFilter;
+   }
+
+   @NotNull
+   public TriggerSettings getSettings() {
+      return this.settings;
+   }
+
+   public double calculateXpModifier(@NotNull String source) {
+      return this.xpModifier.calculateModifier(source);
+   }
+
+   public boolean isSourceAllowed(@NotNull String source) {
+      return this.filter.isAllowed(source);
+   }
+
+   public static final class Builder {
+      private final String id;
+      private String triggerId;
+      private XpModifierConfig xpModifier;
+      private TriggerFilter filter = TriggerFilter.empty();
+      private TriggerSlotFilter slotFilter = TriggerSlotFilter.all();
+      private TriggerSettings settings = TriggerSettings.empty();
+
+      private Builder(@NotNull String id) {
+         this.id = id;
+      }
+
+      public TriggerProfile.Builder triggerId(@NotNull String triggerId) {
+         this.triggerId = triggerId;
+         return this;
+      }
+
+      public TriggerProfile.Builder xpModifier(@NotNull XpModifierConfig xpModifier) {
+         this.xpModifier = xpModifier;
+         return this;
+      }
+
+      public TriggerProfile.Builder filter(@NotNull TriggerFilter filter) {
+         this.filter = filter;
+         return this;
+      }
+
+      public TriggerProfile.Builder slotFilter(@NotNull TriggerSlotFilter slotFilter) {
+         this.slotFilter = slotFilter;
+         return this;
+      }
+
+      public TriggerProfile.Builder settings(@NotNull TriggerSettings settings) {
+         this.settings = settings;
+         return this;
+      }
+
+      public TriggerProfile build() {
+         if (this.triggerId == null) {
+            throw new IllegalStateException("TriggerId must be set");
+         } else if (this.xpModifier == null) {
+            throw new IllegalStateException("XpModifierConfig must be set");
+         } else {
+            return new TriggerProfile(this.id, this.triggerId, this.xpModifier, this.filter, this.slotFilter, this.settings);
+         }
+      }
+   }
+}

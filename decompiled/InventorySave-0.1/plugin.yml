@@ -1,0 +1,11 @@
+name: InventorySave
+version: '0.1'
+main: dev.huey.inventorysave.InventorySave
+api-version: '1.20'
+commands:
+  inventory:
+    description: "Save inventory"
+    usage: "§6Usages:\n§6- §e/inventory save <id>\n§6- §e/inventory load <id> [target]\n§6- §e/inventory delete <id>\n§6- §e/inventory list§r"
+    aliases:
+      - inv
+    permission: inventorysave.commands.general

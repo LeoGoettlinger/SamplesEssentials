@@ -1,0 +1,21 @@
+package xyz.lychee.lagfixer.libs.kyori.adventure.text.serializer.json;
+
+import java.io.IOException;
+import org.jetbrains.annotations.NotNull;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.Component;
+import xyz.lychee.lagfixer.libs.kyori.adventure.text.event.HoverEvent;
+import xyz.lychee.lagfixer.libs.kyori.adventure.util.Codec;
+
+public interface LegacyHoverEventSerializer {
+   @NotNull
+   HoverEvent.ShowItem deserializeShowItem(@NotNull Component input) throws IOException;
+
+   @NotNull
+   Component serializeShowItem(@NotNull HoverEvent.ShowItem input) throws IOException;
+
+   @NotNull
+   HoverEvent.ShowEntity deserializeShowEntity(@NotNull Component input, Codec.Decoder<Component, String, ? extends RuntimeException> componentDecoder) throws IOException;
+
+   @NotNull
+   Component serializeShowEntity(@NotNull HoverEvent.ShowEntity input, Codec.Encoder<Component, String, ? extends RuntimeException> componentEncoder) throws IOException;
+}

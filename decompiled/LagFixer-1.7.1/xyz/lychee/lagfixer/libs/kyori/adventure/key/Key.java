@@ -1,0 +1,132 @@
+package xyz.lychee.lagfixer.libs.kyori.adventure.key;
+
+import java.util.Comparator;
+import java.util.Objects;
+import java.util.OptionalInt;
+import java.util.stream.Stream;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import xyz.lychee.lagfixer.libs.kyori.examination.Examinable;
+import xyz.lychee.lagfixer.libs.kyori.examination.ExaminableProperty;
+
+public interface Key extends Comparable<Key>, Examinable, Namespaced, Keyed {
+   String MINECRAFT_NAMESPACE = "minecraft";
+   char DEFAULT_SEPARATOR = ':';
+
+   @NotNull
+   static Key key(@KeyPattern @NotNull final String string) {
+      return key(string, ':');
+   }
+
+   @NotNull
+   static Key key(@NotNull final String string, final char character) {
+      Objects.requireNonNull(string, "string");
+      int index = string.indexOf(character);
+      String namespace = index >= 1 ? string.substring(0, index) : "minecraft";
+      String value = index >= 0 ? string.substring(index + 1) : string;
+      return key(namespace, value);
+   }
+
+   @NotNull
+   static Key key(@NotNull final Namespaced namespaced, @KeyPattern.Value @NotNull final String value) {
+      return key(Objects.requireNonNull(namespaced, "namespaced").namespace(), value);
+   }
+
+   @NotNull
+   static Key key(@KeyPattern.Namespace @NotNull final String namespace, @KeyPattern.Value @NotNull final String value) {
+      return new KeyImpl(namespace, value);
+   }
+
+   @NotNull
+   static Comparator<? super Key> comparator() {
+      return KeyImpl.COMPARATOR;
+   }
+
+   static boolean parseable(@Nullable final String string) {
+      if (string == null) {
+         return false;
+      } else {
+         int index = string.indexOf(58);
+         String namespace = index >= 1 ? string.substring(0, index) : "minecraft";
+         String value = index >= 0 ? string.substring(index + 1) : string;
+         return parseableNamespace(namespace) && parseableValue(value);
+      }
+   }
+
+   static boolean parseableNamespace(@NotNull final String namespace) {
+      return !checkNamespace(namespace).isPresent();
+   }
+
+   @NotNull
+   static OptionalInt checkNamespace(@NotNull final String namespace) {
+      Objects.requireNonNull(namespace, "namespace");
+      int i = 0;
+
+      for (int length = namespace.length(); i < length; i++) {
+         if (!allowedInNamespace(namespace.charAt(i))) {
+            return OptionalInt.of(i);
+         }
+      }
+
+      return OptionalInt.empty();
+   }
+
+   static boolean parseableValue(@NotNull final String value) {
+      return !checkValue(value).isPresent();
+   }
+
+   @NotNull
+   static OptionalInt checkValue(@NotNull final String value) {
+      Objects.requireNonNull(value, "value");
+      int i = 0;
+
+      for (int length = value.length(); i < length; i++) {
+         if (!allowedInValue(value.charAt(i))) {
+            return OptionalInt.of(i);
+         }
+      }
+
+      return OptionalInt.empty();
+   }
+
+   static boolean allowedInNamespace(final char character) {
+      return KeyImpl.allowedInNamespace(character);
+   }
+
+   static boolean allowedInValue(final char character) {
+      return KeyImpl.allowedInValue(character);
+   }
+
+   @KeyPattern.Namespace
+   @NotNull
+   @Override
+   String namespace();
+
+   @KeyPattern.Value
+   @NotNull
+   String value();
+
+   @NotNull
+   String asString();
+
+   @NotNull
+   default String asMinimalString() {
+      return this.namespace().equals("minecraft") ? this.value() : this.asString();
+   }
+
+   @NotNull
+   @Override
+   default Stream<? extends ExaminableProperty> examinableProperties() {
+      return Stream.of(ExaminableProperty.of("namespace", this.namespace()), ExaminableProperty.of("value", this.value()));
+   }
+
+   default int compareTo(@NotNull final Key that) {
+      return comparator().compare(this, that);
+   }
+
+   @NotNull
+   @Override
+   default Key key() {
+      return this;
+   }
+}

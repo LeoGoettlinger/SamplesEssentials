@@ -1,0 +1,70 @@
+package org.lushplugins.lushrewards.libraries.mysql.cj.jdbc.interceptors;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+import java.util.function.Supplier;
+import org.lushplugins.lushrewards.libraries.mysql.cj.MysqlConnection;
+import org.lushplugins.lushrewards.libraries.mysql.cj.Query;
+import org.lushplugins.lushrewards.libraries.mysql.cj.exceptions.ExceptionFactory;
+import org.lushplugins.lushrewards.libraries.mysql.cj.interceptors.QueryInterceptor;
+import org.lushplugins.lushrewards.libraries.mysql.cj.jdbc.JdbcConnection;
+import org.lushplugins.lushrewards.libraries.mysql.cj.log.Log;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.Resultset;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.ServerSession;
+import org.lushplugins.lushrewards.libraries.mysql.cj.util.Util;
+
+public class ServerStatusDiffInterceptor implements QueryInterceptor {
+   private Map<String, String> preExecuteValues = new HashMap<>();
+   private Map<String, String> postExecuteValues = new HashMap<>();
+   private JdbcConnection connection;
+   private Log log;
+
+   @Override
+   public QueryInterceptor init(MysqlConnection conn, Properties props, Log l) {
+      this.connection = (JdbcConnection)conn;
+      this.log = l;
+      return this;
+   }
+
+   @Override
+   public <T extends Resultset> T postProcess(Supplier<String> sql, Query interceptedQuery, T originalResultSet, ServerSession serverSession) {
+      this.populateMapWithSessionStatusValues(this.postExecuteValues);
+      this.log.logInfo("Server status change for query:\n" + Util.calculateDifferences(this.preExecuteValues, this.postExecuteValues));
+      return null;
+   }
+
+   private void populateMapWithSessionStatusValues(Map<String, String> toPopulate) {
+      try (Statement stmt = this.connection.createStatement()) {
+         toPopulate.clear();
+
+         try (ResultSet rs = stmt.executeQuery("SHOW SESSION STATUS")) {
+            while (rs.next()) {
+               toPopulate.put(rs.getString(1), rs.getString(2));
+            }
+         }
+      } catch (SQLException var34) {
+         throw ExceptionFactory.createException(var34.getMessage(), var34);
+      }
+   }
+
+   @Override
+   public <T extends Resultset> T preProcess(Supplier<String> sql, Query interceptedQuery) {
+      this.populateMapWithSessionStatusValues(this.preExecuteValues);
+      return null;
+   }
+
+   @Override
+   public boolean executeTopLevelOnly() {
+      return true;
+   }
+
+   @Override
+   public void destroy() {
+      this.connection = null;
+      this.log = null;
+   }
+}

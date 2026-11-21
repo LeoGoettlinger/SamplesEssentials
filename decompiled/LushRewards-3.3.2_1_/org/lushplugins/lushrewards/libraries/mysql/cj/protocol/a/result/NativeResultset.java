@@ -1,0 +1,108 @@
+package org.lushplugins.lushrewards.libraries.mysql.cj.protocol.a.result;
+
+import java.util.HashMap;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.ColumnDefinition;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.Resultset;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.ResultsetRows;
+import org.lushplugins.lushrewards.libraries.mysql.cj.result.DefaultColumnDefinition;
+import org.lushplugins.lushrewards.libraries.mysql.cj.result.Field;
+import org.lushplugins.lushrewards.libraries.mysql.cj.result.Row;
+
+public class NativeResultset implements Resultset {
+   protected ColumnDefinition columnDefinition;
+   protected ResultsetRows rowData;
+   protected Resultset nextResultset = null;
+   protected int resultId;
+   protected long updateCount;
+   protected long updateId = -1L;
+   protected String serverInfo = null;
+   protected Row thisRow = null;
+
+   public NativeResultset() {
+   }
+
+   public NativeResultset(OkPacket ok) {
+      this.updateCount = ok.getUpdateCount();
+      this.updateId = ok.getUpdateID();
+      this.serverInfo = ok.getInfo();
+      this.columnDefinition = new DefaultColumnDefinition(new Field[0]);
+   }
+
+   public NativeResultset(ResultsetRows rows) {
+      this.columnDefinition = rows.getMetadata();
+      this.rowData = rows;
+      this.updateCount = this.rowData.size();
+      if (this.rowData.size() > 0) {
+         if (this.updateCount == 1L && this.thisRow == null) {
+            this.rowData.close();
+            this.updateCount = -1L;
+         }
+      } else {
+         this.thisRow = null;
+      }
+   }
+
+   @Override
+   public void setColumnDefinition(ColumnDefinition metadata) {
+      this.columnDefinition = metadata;
+   }
+
+   @Override
+   public ColumnDefinition getColumnDefinition() {
+      return this.columnDefinition;
+   }
+
+   @Override
+   public boolean hasRows() {
+      return this.rowData != null;
+   }
+
+   @Override
+   public int getResultId() {
+      return this.resultId;
+   }
+
+   @Override
+   public void initRowsWithMetadata() {
+      if (this.rowData != null) {
+         this.rowData.setMetadata(this.columnDefinition);
+      }
+
+      this.columnDefinition.setColumnToIndexCache(new HashMap<>());
+   }
+
+   @Override
+   public synchronized void setNextResultset(Resultset nextResultset) {
+      this.nextResultset = nextResultset;
+   }
+
+   @Override
+   public synchronized Resultset getNextResultset() {
+      return this.nextResultset;
+   }
+
+   @Override
+   public synchronized void clearNextResultset() {
+      this.nextResultset = null;
+   }
+
+   @Override
+   public long getUpdateCount() {
+      return this.updateCount;
+   }
+
+   @Override
+   public long getUpdateID() {
+      return this.updateId;
+   }
+
+   @Override
+   public String getServerInfo() {
+      return this.serverInfo;
+   }
+
+   @Override
+   public ResultsetRows getRows() {
+      return this.rowData;
+   }
+}

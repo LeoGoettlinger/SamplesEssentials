@@ -1,0 +1,71 @@
+package me.chancesd.pvpmanager.sdutils.utils;
+
+import org.bukkit.Bukkit;
+
+public enum MCVersion {
+   V1_21_11("1.21.11"),
+   V1_21_9("1.21.9"),
+   V1_21("1.21"),
+   V1_20_5("1.20.5"),
+   V1_20_4("1.20.4"),
+   V1_20_2("1.20.2"),
+   V1_20("1.20"),
+   V1_19_4("1.19.4"),
+   V1_19("1.19"),
+   V1_18("1.18"),
+   V1_17("1.17"),
+   V1_16_5("1.16.5"),
+   V1_16("1.16"),
+   V1_15("1.15"),
+   V1_14("1.14"),
+   V1_13_1("1.13.1"),
+   V1_13("1.13"),
+   V1_12("1.12"),
+   V1_11_2("1.11.2"),
+   V1_11("1.11"),
+   V1_10("1.10"),
+   V1_9("1.9"),
+   V1_8("1.8"),
+   OLD("old");
+
+   private static final MCVersion minecraftVersion = generateCurrentMcVersion();
+   private final String version;
+
+   private MCVersion(final String version) {
+      this.version = version;
+   }
+
+   private static MCVersion generateCurrentMcVersion() {
+      return Bukkit.getBukkitVersion().isEmpty() ? V1_20_4 : getMCVersion(Utils.stripTags(Bukkit.getBukkitVersion()));
+   }
+
+   public static MCVersion getMCVersion(String version) {
+      for (MCVersion mcVersion : values()) {
+         if (Utils.isVersionAtLeast(version, mcVersion.version)) {
+            return mcVersion;
+         }
+      }
+
+      return OLD;
+   }
+
+   public static final boolean isAtLeast(MCVersion version) {
+      return minecraftVersion.ordinal() <= version.ordinal();
+   }
+
+   public static final boolean isLowerThan(MCVersion version) {
+      return minecraftVersion.ordinal() > version.ordinal();
+   }
+
+   public static final boolean isHigherThan(MCVersion version) {
+      return minecraftVersion.ordinal() < version.ordinal();
+   }
+
+   public static MCVersion getMinecraftversion() {
+      return minecraftVersion;
+   }
+
+   public String getVersion() {
+      return this.version;
+   }
+}

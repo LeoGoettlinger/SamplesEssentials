@@ -1,0 +1,56 @@
+package xyz.lychee.lagfixer.libs.kyori.option;
+
+import java.util.Objects;
+import org.jspecify.annotations.Nullable;
+import xyz.lychee.lagfixer.libs.kyori.option.value.ValueType;
+
+final class OptionImpl<V> implements Option<V> {
+   private final String id;
+   private final ValueType<V> type;
+   @Nullable
+   private final V defaultValue;
+
+   OptionImpl(final String id, final ValueType<V> type, @Nullable final V defaultValue) {
+      this.id = id;
+      this.type = type;
+      this.defaultValue = defaultValue;
+   }
+
+   @Override
+   public String id() {
+      return this.id;
+   }
+
+   @Override
+   public ValueType<V> valueType() {
+      return this.type;
+   }
+
+   @Nullable
+   @Override
+   public V defaultValue() {
+      return this.defaultValue;
+   }
+
+   @Override
+   public boolean equals(@Nullable final Object other) {
+      if (this == other) {
+         return true;
+      } else if (other != null && this.getClass() == other.getClass()) {
+         OptionImpl<?> that = (OptionImpl<?>)other;
+         return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type);
+      } else {
+         return false;
+      }
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hash(this.id, this.type);
+   }
+
+   @Override
+   public String toString() {
+      return this.getClass().getSimpleName() + "{id=" + this.id + ",type=" + this.type + ",defaultValue=" + this.defaultValue + '}';
+   }
+}

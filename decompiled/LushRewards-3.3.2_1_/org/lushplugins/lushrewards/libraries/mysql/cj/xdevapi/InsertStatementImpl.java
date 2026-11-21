@@ -1,0 +1,52 @@
+package org.lushplugins.lushrewards.libraries.mysql.cj.xdevapi;
+
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import org.lushplugins.lushrewards.libraries.mysql.cj.MysqlxSession;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.x.XMessage;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.x.XMessageBuilder;
+
+public class InsertStatementImpl implements InsertStatement {
+   private MysqlxSession mysqlxSession;
+   private String schemaName;
+   private String tableName;
+   private InsertParams insertParams = new InsertParams();
+
+   InsertStatementImpl(MysqlxSession mysqlxSession, String schema, String table, String[] fields) {
+      this.mysqlxSession = mysqlxSession;
+      this.schemaName = schema;
+      this.tableName = table;
+      this.insertParams.setProjection(fields);
+   }
+
+   InsertStatementImpl(MysqlxSession mysqlxSession, String schema, String table, Map<String, Object> fieldsAndValues) {
+      this.mysqlxSession = mysqlxSession;
+      this.schemaName = schema;
+      this.tableName = table;
+      this.insertParams.setFieldsAndValues(fieldsAndValues);
+   }
+
+   public InsertResult execute() {
+      return this.mysqlxSession
+         .query(
+            ((XMessageBuilder)this.mysqlxSession.<XMessage>getMessageBuilder()).buildRowInsert(this.schemaName, this.tableName, this.insertParams),
+            new InsertResultBuilder()
+         );
+   }
+
+   @Override
+   public CompletableFuture<InsertResult> executeAsync() {
+      return this.mysqlxSession
+         .queryAsync(
+            ((XMessageBuilder)this.mysqlxSession.<XMessage>getMessageBuilder()).buildRowInsert(this.schemaName, this.tableName, this.insertParams),
+            new InsertResultBuilder()
+         );
+   }
+
+   @Override
+   public InsertStatement values(List<Object> row) {
+      this.insertParams.addRow(row);
+      return this;
+   }
+}

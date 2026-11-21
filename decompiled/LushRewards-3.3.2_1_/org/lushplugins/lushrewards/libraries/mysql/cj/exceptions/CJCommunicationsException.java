@@ -1,0 +1,37 @@
+package org.lushplugins.lushrewards.libraries.mysql.cj.exceptions;
+
+import org.lushplugins.lushrewards.libraries.mysql.cj.conf.PropertySet;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.PacketReceivedTimeHolder;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.PacketSentTimeHolder;
+import org.lushplugins.lushrewards.libraries.mysql.cj.protocol.ServerSession;
+
+public class CJCommunicationsException extends CJException {
+   private static final long serialVersionUID = 344035358493554245L;
+
+   public CJCommunicationsException() {
+   }
+
+   public CJCommunicationsException(String message) {
+      super(message);
+   }
+
+   public CJCommunicationsException(String message, Throwable cause) {
+      super(message, cause);
+   }
+
+   public CJCommunicationsException(Throwable cause) {
+      super(cause);
+   }
+
+   protected CJCommunicationsException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+      super(message, cause, enableSuppression, writableStackTrace);
+   }
+
+   public void init(
+      PropertySet propertySet, ServerSession serverSession, PacketSentTimeHolder packetSentTimeHolder, PacketReceivedTimeHolder packetReceivedTimeHolder
+   ) {
+      this.exceptionMessage = ExceptionFactory.createLinkFailureMessageBasedOnHeuristics(
+         propertySet, serverSession, packetSentTimeHolder, packetReceivedTimeHolder, this.getCause()
+      );
+   }
+}

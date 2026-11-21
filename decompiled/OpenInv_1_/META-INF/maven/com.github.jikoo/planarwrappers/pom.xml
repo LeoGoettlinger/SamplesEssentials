@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>planarwrappers</artifactId>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <executions>
+            <execution>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+              <id>prepare-agent</id>
+            </execution>
+            <execution>
+              <goals>
+                <goal>report</goal>
+              </goals>
+              <id>report</id>
+            </execution>
+          </executions>
+          <groupId>org.jacoco</groupId>
+          <version>0.8.12</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <groupId>org.apache.maven.plugins</groupId>
+          <version>3.5.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>3.1.0</version>
+          <executions>
+            <execution>
+              <phase>process-test-classes</phase>
+              <goals>
+                <goal>run</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <target>
+              <!--
+                ~ Delete test class that is supposed to not be loaded.
+                ~ Note that this cannot be done using a maven-compiler-plugin exclusion;
+                ~ it ignores exclusions that are dependencies of other classes.
+               -->
+              <delete file="target/test-classes/com/github/jikoo/planarwrappers/service/UnloadedService.class"/>
+            </target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>3.5.2</version>
+        <configuration>
+          <!-- GitHub Actions offers 2 cores for Linux. -->
+          <forkCount>2</forkCount>
+          <!-- Bukkit initializes so many static objects that we cannot reasonably reuse forks. -->
+          <reuseForks>false</reuseForks>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>3.1.0</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <artifactId>annotations</artifactId>
+      <groupId>org.jetbrains</groupId>
+      <scope>provided</scope>
+      <version>26.0.1</version>
+    </dependency>
+    <dependency>
+      <artifactId>spigot-api</artifactId>
+      <groupId>org.spigotmc</groupId>
+      <scope>provided</scope>
+      <version>1.21.4-R0.1-SNAPSHOT</version>
+    </dependency>
+    <!-- Optional runtime dependencies not exposed to dependents -->
+    <dependency>
+      <artifactId>VaultAPI</artifactId>
+      <groupId>com.github.MilkBowl</groupId>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+      <optional>true</optional>
+      <scope>provided</scope>
+      <version>1.7.1</version>
+    </dependency>
+    <!-- Testing -->
+    <dependency>
+      <artifactId>junit-jupiter</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <scope>test</scope>
+      <version>5.11.3</version>
+    </dependency>
+    <dependency>
+      <artifactId>hamcrest</artifactId>
+      <groupId>org.hamcrest</groupId>
+      <scope>test</scope>
+      <version>3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>5.14.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <groupId>com.github.jikoo</groupId>
+  <modelVersion>4.0.0</modelVersion>
+
+  <name>PlanarWrappers</name>
+
+  <profiles>
+    <profile>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <groupId>org.jacoco</groupId>
+          </plugin>
+        </plugins>
+      </build>
+      <id>sonarcloud</id>
+
+      <properties>
+        <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+        <sonar.language>java</sonar.language>
+        <sonar.organization>jikoo</sonar.organization>
+        <sonar.projectKey>Jikoo_PlanarWrappers</sonar.projectKey>
+      </properties>
+    </profile>
+  </profiles>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>spigot-repo</id>
+      <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+    </repository>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
+
+  <version>3.3.0</version>
+
+</project>
