@@ -13,8 +13,10 @@ on:
         default: ""
   push:
     branches: ["**"]
+    # Triggered by a marker file so batches can be started with a normal push.
     paths:
       - ".github/workflows/decompile.yml"
+      - "decompiled/BATCH.txt"
 
 jobs:
   decompile:
@@ -43,6 +45,7 @@ jobs:
       - name: Decompile non-excluded plugins
         run: |
           set -euo pipefail
+          set -x
           mkdir -p decompiled
           ONLY="${{ github.event.inputs.only }}"
           count=0
@@ -82,6 +85,18 @@ jobs:
           name: decompiled-sources
           path: decompiled
           if-no-files-found: warn
+
+      - name: Publish log for offline inspection
+        if: always()
+        run: |
+          set +e
+          git config user.name "SamplesEssentials Bot"
+          git config user.email "bot@samplecraft.su"
+          git add -f decompiled 2>/dev/null
+          git commit -m "chore: decompile log [skip ci]" 2>/dev/null
+          git pull --rebase
+          git push origin "HEAD:${GITHUB_REF_NAME}" 2>/dev/null
+          exit 0
 
       - name: Commit decompiled sources back to the branch
         run: |
