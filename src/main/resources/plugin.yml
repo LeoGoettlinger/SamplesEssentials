@@ -1,5 +1,5 @@
 name: SamplesEssentials
-version: ${project.version}
+version: ${version}
 main: su.samplecraft.essentials.SamplesEssentials
 api-version: '26.2'
 authors: [SampleCraft]
