@@ -305,7 +305,7 @@ public final class ChunkyModule extends EssentialsModule {
     /* ------------------------------------------------------------------ */
 
     private void saveTasks() {
-        File file = new File(getDataFolder(), "tasks.yml");
+        File file = new File(taskFolder(), "tasks.yml");
         org.bukkit.configuration.file.YamlConfiguration config = new org.bukkit.configuration.file.YamlConfiguration();
         for (Map.Entry<String, Task> entry : tasks.entrySet()) {
             String path = "tasks." + entry.getKey();
@@ -325,7 +325,7 @@ public final class ChunkyModule extends EssentialsModule {
     }
 
     private void restoreTasks() {
-        File file = new File(getDataFolder(), "tasks.yml");
+        File file = new File(taskFolder(), "tasks.yml");
         if (!file.isFile()) {
             return;
         }
@@ -361,7 +361,7 @@ public final class ChunkyModule extends EssentialsModule {
     }
 
     /** Folder used for the task file, next to the module config. */
-    private File getDataFolder() {
+    private File taskFolder() {
         File folder = new File(getModuleFolder(), "data");
         if (!folder.isDirectory()) {
             folder.mkdirs();
