@@ -105,6 +105,15 @@ commands:
     description: Open the bounty menu, or add a bounty
     usage: /bounty [add <player> <amount>]
     permission: samplese.bounty
+  order:
+    description: Buy-order market
+    usage: /order [new|browse|history|deliver|cancel|collect]
+    aliases: [orders]
+    permission: samplese.orders
+  orderadmin:
+    description: Administer the order market
+    usage: /orderadmin <list|purge|refund>
+    permission: samplese.orders.admin
   tags:
     description: List and preview fancy chat tags
     usage: /tags [list|test|reload|<tag>]
@@ -210,6 +219,12 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.orders:
+    description: Use the order market
+    default: true
+  samplese.orders.admin:
+    description: Administer the order market
+    default: op
   samplese.tags:
     description: Use /tags
     default: true

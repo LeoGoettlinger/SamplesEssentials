@@ -10,6 +10,7 @@ import su.samplecraft.essentials.modules.chat.ChatClearModule;
 import su.samplecraft.essentials.modules.chat.ChatFormatterModule;
 import su.samplecraft.essentials.modules.chat.FancyTagsModule;
 import su.samplecraft.essentials.modules.economy.BountyModule;
+import su.samplecraft.essentials.modules.economy.OrdersModule;
 import su.samplecraft.essentials.modules.economy.VaultBridgeModule;
 import su.samplecraft.essentials.modules.gameplay.AmethystToolsModule;
 import su.samplecraft.essentials.modules.gameplay.BiggerEnderChestModule;
@@ -94,6 +95,7 @@ public final class SamplesEssentials extends JavaPlugin {
         // categoria: economy
         moduleManager.register(new VaultBridgeModule(this));
         moduleManager.register(new BountyModule(this));
+        moduleManager.register(new OrdersModule(this));
         // categoria: general
         moduleManager.register(new StarterKitModule(this));
         // categoria: gameplay

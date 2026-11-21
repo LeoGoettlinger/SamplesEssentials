@@ -1,0 +1,20 @@
+# Merged from DonutOrders-1.9.2.jar (config.yml)
+update-check:
+  enabled: false
+  notify-ops-on-join: false
+
+orders:
+  # Default maximum simultaneous active orders (no rank/permission override)
+  default-limit: 1
+  # How many days an order lives before it expires and is refunded
+  default-expiry-days: 10
+  # Percentage tax taken from each payout to the seller
+  tax-percent: 0.0
+  # Announce new buy orders in chat to all online players except the creator
+  broadcast-on-create: true
+  # When not empty, only these materials may be ordered
+  allowed-items: []
+
+# Storage is a YAML file at economy/orders/data/orders.yml
+format:
+  price: '#,##0.##'
