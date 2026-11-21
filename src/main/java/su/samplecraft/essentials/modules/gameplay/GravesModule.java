@@ -23,7 +23,6 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
-import org.bukkit.profile.PlayerProfile;
 import org.jetbrains.annotations.NotNull;
 import su.samplecraft.essentials.SamplesEssentials;
 import su.samplecraft.essentials.config.ModuleStorage;
@@ -271,18 +270,10 @@ public final class GravesModule extends EssentialsModule implements Listener {
         Material material = graveMaterial();
         Block block = world.getBlockAt(record.x(), record.y(), record.z());
         block.setType(material, false);
-        if (material == Material.PLAYER_HEAD && block.getBlockData() instanceof org.bukkit.block.data.type.Skull skull) {
-            skull.setPlayerProfile(ownerProfile(record));
-            block.setBlockData(skull, false);
+        if (material == Material.PLAYER_HEAD && block.getState() instanceof org.bukkit.block.Skull skull) {
+            skull.setOwningPlayer(Bukkit.getOfflinePlayer(record.owner()));
+            skull.update(true, false);
         }
-    }
-
-    private PlayerProfile ownerProfile(GraveRecord record) {
-        Player online = Bukkit.getPlayer(record.owner());
-        if (online != null) {
-            return online.getPlayerProfile();
-        }
-        return Bukkit.createProfile(record.owner(), record.ownerName());
     }
 
     private Material graveMaterial() {
