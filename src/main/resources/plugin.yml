@@ -105,6 +105,10 @@ commands:
     description: Open the bounty menu, or add a bounty
     usage: /bounty [add <player> <amount>]
     permission: samplese.bounty
+  maintenance:
+    description: Manage maintenance mode
+    usage: /maintenance [on|off|status|starttimer|endtimer|aborttimer|schedule|whitelist|setmotd|setreason|reload|dump]
+    permission: samplese.maintenance
   home:
     description: Open your homes menu
     usage: /home [name|list]
@@ -236,6 +240,12 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.maintenance:
+    description: Manage maintenance mode
+    default: op
+  samplese.maintenance.bypass:
+    description: Join during maintenance
+    default: op
   samplese.homes:
     description: Use homes
     default: true

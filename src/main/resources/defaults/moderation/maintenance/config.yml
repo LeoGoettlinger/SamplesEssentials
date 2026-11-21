@@ -1,0 +1,31 @@
+# Merged from Maintenance-Paper-5.1.0.jar (config.yml)
+maintenance-enabled: false
+
+kick-message: "<red>This server is currently under maintenance!<br><yellow>Please check back later."
+
+ping-message:
+  enabled: true
+  reason: "Maintenance"
+  replace-reason-placeholder: true
+  messages:
+    default:
+      - "<red>Currently under maintenance<br><gradient:#fbffc2:#0fffff>We will be back soon!"
+  # Override the version text in the server list (protocol -1)
+  custom-player-count: false
+  player-count-message: "Maintenance"
+  # Hover lines for the player list, empty = untouched
+  player-count-hover: []
+
+timers:
+  start-now: "<green>Maintenance mode is now enabled."
+  end-now: "<green>Maintenance mode is now disabled."
+  start-scheduled: "<yellow>Maintenance will start in <white>%TIME%</white>!"
+  end-scheduled: "<yellow>Maintenance will end in <white>%TIME%</white>!"
+
+# Recurring maintenance windows, e.g.
+# scheduled-maintenance:
+#   MONDAY:
+#     - "04:00"
+scheduled-maintenance: {}
+
+whitelisted-players: []

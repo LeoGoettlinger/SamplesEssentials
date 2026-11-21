@@ -9,6 +9,7 @@ import su.samplecraft.essentials.modules.chat.AnnouncementModule;
 import su.samplecraft.essentials.modules.chat.ChatClearModule;
 import su.samplecraft.essentials.modules.chat.ChatFormatterModule;
 import su.samplecraft.essentials.modules.chat.FancyTagsModule;
+import su.samplecraft.essentials.modules.moderation.MaintenanceModule;
 import su.samplecraft.essentials.modules.economy.BountyModule;
 import su.samplecraft.essentials.modules.economy.OrdersModule;
 import su.samplecraft.essentials.modules.economy.VaultBridgeModule;
@@ -110,6 +111,7 @@ public final class SamplesEssentials extends JavaPlugin {
         // categoria: moderation
         moduleManager.register(new StaffToolsModule(this));
         moduleManager.register(new FreezeModule(this));
+        moduleManager.register(new MaintenanceModule(this));
         // categoria: rtp
         moduleManager.register(new EzRtpModule(this));
         moduleManager.register(new PremiumRtpModule(this));
