@@ -12,26 +12,35 @@ For more details see https://docs.gradle.org/9.4.1/release-notes.html
 
 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.4.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
 Daemon will be stopped at the end of the build 
+
+> Task :compileJava
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/StaffToolsModule.java:134: error: local variables referenced from a lambda expression must be final or effectively final
+                && cfgStringList("socialspy-commands").stream().anyMatch(c -> c.equalsIgnoreCase(label))) {
+                                                                                                 ^
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+1 error
+
 > Task :compileJava FAILED
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795264765491.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795264888838.json
+
+[Incubating] Problems report is available at: file:///home/runner/work/SamplesEssentials/SamplesEssentials/build/reports/problems/problems-report.html
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
 Execution failed for task ':compileJava'.
-> Could not resolve all files for configuration ':compileClasspath'.
-   > Could not resolve com.github.TheNewEconomy:Vault:2.20.2.
-     Required by:
-         root project 'SamplesEssentials'
-      > Could not resolve com.github.TheNewEconomy:Vault:2.20.2.
-         > Could not get resource 'https://jitpack.io/com/github/TheNewEconomy/Vault/2.20.2/Vault-2.20.2.pom'.
-            > Could not GET 'https://jitpack.io/com/github/TheNewEconomy/Vault/2.20.2/Vault-2.20.2.pom'. Received status code 401 from server: Unauthorized
+> Compilation failed; see the compiler output below.
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/StaffToolsModule.java:134: error: local variables referenced from a lambda expression must be final or effectively final
+                  && cfgStringList("socialspy-commands").stream().anyMatch(c -> c.equalsIgnoreCase(label))) {
+                                                                                                   ^
+  Note: Recompile with -Xlint:deprecation for details.
+  Note: Some input files use or override a deprecated API.
+  1 error
 
 * Try:
-> Run with --stacktrace option to get the stack trace.
-> Run with --info or --debug option to get more log output.
+> Check your code and dependencies to fix the compilation error(s)
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
-> Get more help at https://help.gradle.org.
 
-BUILD FAILED in 30s
+BUILD FAILED in 38s
 1 actionable task: 1 executed
