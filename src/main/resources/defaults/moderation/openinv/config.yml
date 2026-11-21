@@ -1,0 +1,14 @@
+# Merged from OpenInv.jar (config.yml)
+settings:
+  # allow | deny | permission
+  equal-access: allow
+  command:
+    open:
+      no-args-opens-self: false
+  searchcontainer:
+    max-radius: 10
+  disable-offline-access: false
+  disable-saving: false
+
+inventory-title: "&8Inventory: %player%"
+ender-title: "&8Ender chest: %player%"

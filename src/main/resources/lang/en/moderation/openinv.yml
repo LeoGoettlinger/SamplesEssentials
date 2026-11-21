@@ -1,0 +1,7 @@
+# categoria: moderation - module: openinv (merged from OpenInv.jar)
+no-access: "{prefix}<red>You can't do that - you may not open <white>{player}</white>'s inventory."
+offline-disabled: "{prefix}<red>Offline inventory access is disabled on this server."
+offline-readonly: "{prefix}<yellow>The view of <white>{player}</white> is read-only (the player is offline)."
+unknown-player: "{prefix}<red>You can't do that - player <white>{player}</white> was not found."
+usage: "{prefix}<red>Usage: /openinv [player] | /openender [player]"
+help-header: "{prefix}<gold>Inventory access:"

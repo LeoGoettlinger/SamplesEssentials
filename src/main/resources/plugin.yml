@@ -105,6 +105,14 @@ commands:
     description: Open the bounty menu, or add a bounty
     usage: /bounty [add <player> <amount>]
     permission: samplese.bounty
+  openinv:
+    description: Open a player inventory
+    usage: /openinv [player]
+    permission: samplese.openinv
+  openender:
+    description: Open a player ender chest
+    usage: /openender [player]
+    permission: samplese.openinv
   leveltools:
     description: Manage LevelTools
     usage: /leveltools <reload|resetall|resethand|info>
@@ -250,6 +258,24 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.openinv:
+    description: Open inventory views
+    default: true
+  samplese.openinv.other:
+    description: Open other players' inventories
+    default: op
+  samplese.openinv.modify:
+    description: Modify inventories opened with /openinv
+    default: op
+  samplese.openinv.offline:
+    description: Open offline players' inventories
+    default: op
+  samplese.openinv.ender:
+    description: Open ender chests
+    default: op
+  samplese.openinv.exempt:
+    description: Exempt from equal-access checks
+    default: op
   samplese.leveltools:
     description: Use LevelTools
     default: true
