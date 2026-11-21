@@ -1,13 +1,96 @@
-# Merged from EzRTP-3.4.3.jar (rtp.yml / limits.yml split flattened)
-rtp:
-  min-distance: 200
-  max-distance: 3000
-  max-attempts: 40
-  border-margin: 64
-  avoid-liquid: true
-  avoid-dangerous: true
-  max-y: 300
+# Merged from EzRTP-3.4.3.jar (rtp.yml + limits.yml + config.yml, flattened)
+#
+# Search behaviour ------------------------------------------------------
+# Candidate coordinate search pattern. Options: random, circle, square,
+# triangle, diamond  (uniform/circular/square/triangle/diamond strategies)
+search-pattern: random
+# Attempts per teleport (original: max-attempts: 16)
+max-attempts: 16
 
+# World: a fixed world name, or 'auto' to use the player's current world
+world: auto
+center:
+  x: 0
+  z: 0
+
+radius:
+  min: 500
+  # Max radius; when omitted the world border is used
+  max: 20000
+
+# Optional: restrict random teleport Y-levels (inclusive)
+min-y: 54
+max-y: 320
+
+# Set to true to enable debug logging for rejected random teleport locations
+debug-rejection-logging: false
+
+countdown-seconds: 5
+countdown:
+  cancel-on-move: true
+  cancel-distance: 2.0
+  warn-distance: 1.0
+  bossbar:
+    enabled: true
+    title: "<yellow>Teleporting in <white><seconds></white> seconds...</yellow>"
+    color: YELLOW
+    style: SOLID
+  particles:
+    enabled: true
+    type: ENCHANTMENT_TABLE
+    points: 12
+    radius: 1.2
+    height-offset: 0.8
+    extra: 0.0
+    secondary-particle: PORTAL
+    secondary-count: 6
+    secondary-offset: 0.35
+
+unsafe-blocks:
+  - WATER
+  - LAVA
+  - MAGMA_BLOCK
+  - POWDER_SNOW
+  - FIRE
+  - CAMPFIRE
+  - SOUL_FIRE
+
+safety:
+  recovery:
+    enabled: true
+    max-surface-scan-depth: 20
+    max-surface-scan-depth-nether: 128
+
+# Cooldowns / limits (original limits.yml) -------------------------------
+# Groups are resolved by permission: a key 'group.vip' needs
+# samplese.rtp.group.vip (original: ezrtp.group.vip).
 limits:
-  # Seconds between two /rtp uses (0 = no cooldown)
-  cooldown-seconds: 60
+  default:
+    cooldown-seconds: 300
+    daily-limit: 10
+    weekly-limit: 50
+    cost: 0.0
+  disable-daily-limit: false
+  human-readable-cooldown: true
+  worlds: {}
+  # Example:
+  # worlds:
+  #   world:
+  #     default: { cooldown-seconds: 300, daily-limit: 10, weekly-limit: 50, cost: 0.0 }
+  #     group.vip: { cooldown-seconds: 60, daily-limit: 50, weekly-limit: 200, cost: 0.0 }
+  bypass-permissions:
+    - ezrtp.bypass.cooldown
+    - ezrtp.bypass.limit
+
+messages:
+  force-legacy-colors: false
+  suppress-player: false
+
+on-join:
+  enabled: false
+  only-first-join: false
+  bypass-permission: ""
+  delay-ticks: 40
+
+centers:
+  named: {}
