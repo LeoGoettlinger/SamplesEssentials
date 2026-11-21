@@ -36,19 +36,25 @@ jobs:
           ./gradlew --no-daemon --console=plain build 2>&1 | tee build-log.txt
           exit ${PIPESTATUS[0]}
 
-      - name: Publish build log (so it can be read without Actions access)
+      - name: Publish jar + build log to docs/ (download directly from the repo)
         if: always() && github.event_name == 'push'
         run: |
+          set +e
+          mkdir -p docs
+          cp build-log.txt docs/build-log.txt
+          if compgen -G "build/libs/SamplesEssentials-*.jar" > /dev/null; then
+            cp build/libs/SamplesEssentials-*.jar docs/SamplesEssentials-latest.jar
+          fi
           git config user.name "SamplesEssentials Bot"
           git config user.email "bot@samplecraft.su"
-          git add -f build-log.txt
-          git commit -m "chore: build log [skip ci]" || true
-          git pull --rebase || true
-          git push
-
-      - name: Fail when the build failed
-        if: steps.gradle.outcome == 'failure'
-        run: exit 1
+          git add -f docs build-log.txt
+          if git diff --cached --quiet; then
+            echo "nothing to publish"
+            exit 0
+          fi
+          git commit -m "chore: publish jar + build log [skip ci]"
+          git pull --rebase
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Upload jar (artifact)
         uses: actions/upload-artifact@v4
@@ -56,6 +62,10 @@ jobs:
           name: SamplesEssentials-jar
           path: build/libs/SamplesEssentials-*.jar
           if-no-files-found: error
+
+      - name: Fail when the build failed
+        if: steps.gradle.outcome == 'failure'
+        run: exit 1
 
       - name: Attach jar to a release (on tag push)
         if: startsWith(github.ref, 'refs/tags/')
