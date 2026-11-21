@@ -18,14 +18,14 @@ dependencies {
 }
 
 java {
-    // Paper 26.x is compiled for Java 25; plugin bytecode targets 21 so it also
-    // loads fine on a JDK 21+ "paper-26.2.jar" next-gen Paper build.
+    // Paper 26.x requires Java 25 - the paper-api artifact itself is only
+    // consumable by a JVM-25 toolchain, and the server runs on Java 25.
     toolchain.languageVersion.set(JavaLanguageVersion.of(25))
 }
 
 tasks.withType<JavaCompile>().configureEach {
     options.encoding = "UTF-8"
-    options.release.set(21)
+    options.release.set(25)
     options.compilerArgs.addAll(listOf("-Xlint:-deprecation", "-parameters"))
 }
 

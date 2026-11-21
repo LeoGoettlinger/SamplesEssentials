@@ -58,5 +58,5 @@ missing keys fall back to English.
 | `/samplese reload` | reload configs, modules and language files |
 
 
-> Note: Paper 26.x is compiled for Java 25; the plugin itself targets Java 21
-> bytecode and is built against the newest stable Paper 26.2 API build.
+> Requires **Java 25** at runtime - Paper 26.x is built for Java 25 and the
+> plugin targets the newest stable Paper 26.2 API build.
