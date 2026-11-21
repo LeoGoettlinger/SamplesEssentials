@@ -105,6 +105,11 @@ commands:
     description: Open the bounty menu, or add a bounty
     usage: /bounty [add <player> <amount>]
     permission: samplese.bounty
+  ca:
+    description: Open the auction house
+    usage: /ca [sell|bid <price>|view|listed|expired]
+    aliases: [auction, crazyauctions]
+    permission: samplese.auction
   maintenance:
     description: Manage maintenance mode
     usage: /maintenance [on|off|status|starttimer|endtimer|aborttimer|schedule|whitelist|setmotd|setreason|reload|dump]
@@ -239,6 +244,18 @@ permissions:
     default: true
   samplese.bounty:
     description: Use the bounty system
+    default: true
+  samplese.auction:
+    description: Use the auction house
+    default: true
+  samplese.auction.admin:
+    description: Administer the auction house
+    default: op
+  samplese.auction.selling:
+    description: Create sell listings
+    default: true
+  samplese.auction.bidding:
+    description: Create bid listings
     default: true
   samplese.maintenance:
     description: Manage maintenance mode

@@ -1,0 +1,61 @@
+# Merged from CrazyAuctions-1.7.0.jar (config.yml)
+settings:
+  gui-name: "&4Auction House&8"
+  players-current-items: "&8Your Current Listings"
+  cancelled-expired-items: "&8Canceled/Expired Listings"
+  category-page-opens-first: false
+
+  sell-time: "2d"
+  bid-time: "2m 30s"
+  bid-winner-time: "20d"
+  bid-increment: 1
+
+  minimum-sell-price: 10
+  max-sell-price: 1000000
+  minimum-bid-price: 100
+  max-bid-price: 1000000
+
+  disallow-damaged-items: true
+
+  feature-toggle:
+    selling: true
+    bidding: true
+
+  broadcast-listing: true
+
+  sounds:
+    sold-item-sound: UI_BUTTON_CLICK
+    bid-sound: ENTITY_EXPERIENCE_ORB_PICKUP
+
+  gui-settings:
+    selling-item-lore:
+      - '&7-------------------------'
+      - '&aClick here to purchase.'
+      - ''
+      - '&9Price: &e$%price%'
+      - '&9Seller: &e%seller%'
+      - '&9Time Left: &e%time%'
+      - '&7-------------------------'
+    bidding-item-lore:
+      - '&7-------------------------'
+      - '&aClick here to bid.'
+      - ''
+      - '&9Price: &e$%price%'
+      - '&9Seller: &e%seller%'
+      - '&9Time Left: &e%time%'
+      - '&7-------------------------'
+    current-lore:
+      - '&7-------------------------'
+      - '&aClick here to cancel.'
+      - ''
+      - '&9Price: &e$%price%'
+      - '&7-------------------------'
+
+messages:
+  help:
+    - '&6/ca sell <price> &7- list the item in your hand'
+    - '&6/ca bid <price> &7- start a timed auction'
+    - '&6/ca view &7- browse sell listings'
+    - '&6/ca view bid &7- browse auctions'
+    - '&6/ca listed &7- cancel your listings'
+    - '&6/ca expired &7- collect expired/cancelled items'
