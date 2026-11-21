@@ -1,0 +1,6 @@
+# categoria: chat - module: fancytags (merged from FancyTags-unspecified.jar)
+reloaded: "{prefix}<green>Tags plugin has been reloaded!"
+list-header: "{prefix}<aqua>Listing all registered tags:"
+list-footer: "{prefix}<gray>Grant a tag with <white>samplese.tags.tag.<name></white>."
+help-header: "{prefix}<aqua>FancyTags commands:"
+unknown-tag: "{prefix}<red>There is no tag called '<white>{tag}</white>'."

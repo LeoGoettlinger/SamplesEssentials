@@ -8,6 +8,7 @@ import su.samplecraft.essentials.module.ModuleManager;
 import su.samplecraft.essentials.modules.chat.AnnouncementModule;
 import su.samplecraft.essentials.modules.chat.ChatClearModule;
 import su.samplecraft.essentials.modules.chat.ChatFormatterModule;
+import su.samplecraft.essentials.modules.chat.FancyTagsModule;
 import su.samplecraft.essentials.modules.economy.BountyModule;
 import su.samplecraft.essentials.modules.economy.VaultBridgeModule;
 import su.samplecraft.essentials.modules.gameplay.AmethystToolsModule;
@@ -88,6 +89,7 @@ public final class SamplesEssentials extends JavaPlugin {
         // categoria: chat
         moduleManager.register(new ChatClearModule(this));
         moduleManager.register(new ChatFormatterModule(this));
+        moduleManager.register(new FancyTagsModule(this));
         moduleManager.register(new AnnouncementModule(this));
         // categoria: economy
         moduleManager.register(new VaultBridgeModule(this));

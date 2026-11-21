@@ -1,0 +1,37 @@
+# Merged from FancyTags-unspecified.jar
+#
+# The tag definitions themselves live next to this file in tags.yml
+# (chat/fancytags/tags.yml). This file holds the behaviour settings of the
+# original PluginConfig plus the chat integration.
+
+cache-settings:
+  # Whether cache updates should be sent
+  enabled: true
+  # Whether players should be sent cache updates on join
+  on-join: true
+  # Whether players should continue being sent cache updates
+  on-timer: true
+  # How frequent the timer runs, in seconds
+  interval-duration: 300
+  # Spacing ratio used to push the tags off-screen in the title
+  off-screen-ratio: 2.5
+
+chat:
+  enabled: true
+  # Placeholders: {tags} {name} {message}
+  format: "{tags} {name} &8» &f{message}"
+  name-format: "{name}"
+  # Group overrides, group resolved through samplese.group.<name>
+  formats: {}
+  # Example:
+  # formats:
+  #   admin: "{tags} &c{name} &8» &f{message}"
+
+list:
+  per-line: 8
+
+mineskin:
+  # The original used MineSkin for signature generation when converting images to
+  # player heads. Kept for documentation; tags.yml stores finished values already.
+  api-key: ""
+  visibility: UNLISTED

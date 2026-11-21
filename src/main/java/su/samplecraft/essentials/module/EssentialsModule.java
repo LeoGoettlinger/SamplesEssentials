@@ -180,6 +180,31 @@ public abstract class EssentialsModule {
         return YamlConfiguration.loadConfiguration(file);
     }
 
+    /**
+     * Copies {@code defaults/<categoria>/<module>/<fileName>} into the module folder
+     * when it does not exist yet and returns the file (e.g. tags.yml, messages.yml).
+     */
+    protected File ensureDefaultFile(String fileName) {
+        File file = new File(getModuleFolder(), fileName);
+        if (file.isFile()) {
+            return file;
+        }
+        String resource = "defaults/" + categoria + "/" + name + "/" + fileName;
+        try (InputStream in = plugin.getResource(resource)) {
+            if (in == null) {
+                return file;
+            }
+            File parent = file.getParentFile();
+            if (parent != null && !parent.isDirectory()) {
+                parent.mkdirs();
+            }
+            Files.copy(in, file.toPath());
+        } catch (Exception e) {
+            plugin.getLogger().warning("Could not extract default " + resource + ": " + e.getMessage());
+        }
+        return file;
+    }
+
     /** Per-module config.yml, reloaded by /samplese reload. */
     protected YamlConfiguration config() {
         return config;
