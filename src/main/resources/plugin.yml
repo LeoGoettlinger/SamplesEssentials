@@ -50,8 +50,12 @@ commands:
   # gameplay
   biggerenderchest:
     description: Open your bigger ender chest
-    usage: /biggerenderchest
-    aliases: [bec]
+    usage: /biggerenderchest [see <player>|reload]
+    aliases: [bec, ec]
+  ecsee:
+    description: Open another player's ender chest through the selector GUI
+    usage: /ecsee [player]
+    permission: samplese.biggerenderchest.see
   amethysttools:
     description: Give yourself an amethyst tool
     usage: /amethysttools <pickaxe|axe|shovel|hoe>
@@ -156,3 +160,9 @@ permissions:
   samplese.smartspawner:
     description: Use smart spawner commands
     default: op
+  samplese.biggerenderchest.see:
+    description: Open other players' ender chests
+    default: op
+  samplese.biggerenderchest:
+    description: Open your bigger ender chest
+    default: true

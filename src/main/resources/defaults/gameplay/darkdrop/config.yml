@@ -1,4 +1,4 @@
-# Merged from DarkDrop-1.0.0(2).jar (values from the old server config)
+# Merged from DarkDrop-1.0.0(2).jar (values taken from the old server config)
 settings:
   # Height above the target the drop starts from
   spawn-height: 100
@@ -15,8 +15,11 @@ random-spawn:
   max-safe-y: 200
 
 loot:
-  # Chance in percent for good loot, the rest triggers the bad-loot package
+  # Chance in percent for a good chest, the rest becomes a bad chest.
+  # The outcome is only revealed when a player opens the chest.
   good-chance: 60.0
+  # How many items are placed into the chest
+  good-amount: 3
   # Item format: MATERIAL:amount
   good-items:
     - DIAMOND:3
@@ -25,8 +28,15 @@ loot:
     - NETHERITE_SCRAP:1
 
 bad-loot:
-  # Damage of the small landing explosion (0 = off)
+  # Bad outcome type:
+  # BAD_ITEM | FIRE | LIGHTNING | EXPLOSION | POISON | VOID_EFFECT | WITHER | NOTHING
+  type: WITHER
+  # How many times the effect is applied (lightning strikes / bad items)
+  amount: 1
+  # Damage of the small explosion (0 = off)
   explosion-damage: 4.0
+  # Extra lightning damage (0 = cosmetic strike only)
+  lightning-damage: 0.0
   fire-duration-seconds: 3
   fire-radius: 2
   effect-duration-seconds: 8

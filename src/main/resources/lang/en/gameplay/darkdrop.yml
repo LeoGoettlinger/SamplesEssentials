@@ -1,5 +1,9 @@
 # categoria: gameplay - module: darkdrop (merged from DarkDrop-1.0.0(2).jar)
-drop-start-chat: "{prefix}<dark_purple><bold>DarkDrop</bold> <gray>is descending from <white>100 blocks<gray> above!"
+drop-start-title: "<dark_purple><bold>DARKDROP</bold>"
+drop-start-subtitle: "<gray>A mysterious drop is descending..."
+drop-start-chat: "{prefix}<dark_purple><bold>DarkDrop</bold> <gray>is descending from <white>{height} blocks<gray> above!"
+drop-land-title: "<dark_purple><bold>IMPACT</bold>"
+drop-land-subtitle: "<gray>The DarkDrop has landed!"
 drop-land-chat: "{prefix}<dark_purple><bold>DarkDrop</bold> <gray>has landed!"
 actionbar-descending: "<dark_purple>DarkDrop <gray>descending... <yellow>{height} blocks <dark_gray>| <yellow>{seconds}s"
 loot-good-chat: "{prefix}<green><bold>Lucky!</bold> <gray>The DarkDrop contained great loot!"
