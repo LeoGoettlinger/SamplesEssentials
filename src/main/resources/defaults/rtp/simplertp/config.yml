@@ -1,0 +1,8 @@
+# Merged from Simple_RTP.jar
+min-distance: 100
+max-distance: 1000
+max-attempts: 25
+border-margin: 32
+avoid-liquid: true
+avoid-dangerous: true
+max-y: 300

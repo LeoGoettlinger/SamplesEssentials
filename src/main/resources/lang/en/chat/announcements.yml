@@ -1,0 +1,4 @@
+# categoria: chat - module: announcements (merged from announcement-1.4.jar)
+header: "{prefix}<gray>Announcements <dark_gray>(<white>{count}<dark_gray>)"
+sent: "{prefix}<green>Announcement <white>#{index}<green> was broadcast."
+none: "{prefix}<red>No announcements are configured."

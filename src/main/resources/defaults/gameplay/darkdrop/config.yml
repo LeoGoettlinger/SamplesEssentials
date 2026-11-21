@@ -1,0 +1,33 @@
+# Merged from DarkDrop-1.0.0(2).jar (values from the old server config)
+settings:
+  # Height above the target the drop starts from
+  spawn-height: 100
+  # Descend speed in blocks per second (smaller = slower)
+  descend-speed: 5.0
+  # Update interval in ticks (20 ticks = 1 second)
+  update-interval-ticks: 4
+
+random-spawn:
+  min-distance: 30
+  max-distance: 200
+  world-border-margin: 64
+  min-safe-y: 60
+  max-safe-y: 200
+
+loot:
+  # Chance in percent for good loot, the rest triggers the bad-loot package
+  good-chance: 60.0
+  # Item format: MATERIAL:amount
+  good-items:
+    - DIAMOND:3
+    - GOLDEN_APPLE:2
+    - EXPERIENCE_BOTTLE:8
+    - NETHERITE_SCRAP:1
+
+bad-loot:
+  # Damage of the small landing explosion (0 = off)
+  explosion-damage: 4.0
+  fire-duration-seconds: 3
+  fire-radius: 2
+  effect-duration-seconds: 8
+  effect-amplifier: 1

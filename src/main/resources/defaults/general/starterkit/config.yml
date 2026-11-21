@@ -1,0 +1,11 @@
+# Merged from StarterKitV2.jar
+# Item format: MATERIAL:amount   (e.g. BREAD:16)
+give-on-first-join: true
+join-delay-ticks: 20
+items:
+  - STONE_SWORD:1
+  - STONE_PICKAXE:1
+  - STONE_AXE:1
+  - STONE_SHOVEL:1
+  - BREAD:16
+  - OAK_LOG:8

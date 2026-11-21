@@ -1,0 +1,20 @@
+# Merged from BiggerEnderChest1.2.1.jar (structure of the old config)
+gui:
+  enderchest-title: "&5Ender Chest"
+
+features:
+  enable-vanilla-hook: true
+
+enderchest:
+  # Base size, upgraded by the permission nodes below
+  default-size: 27
+
+# Size ladder: grant samplese-style permissions to unlock bigger chests.
+# The node name is the permission, so "enderchest.slot.54" is granted via
+# LuckPerms as the permission node "enderchest.slot.54".
+slots:
+  enderchest.slot.36: 36
+  enderchest.slot.45: 45
+  enderchest.slot.54: 54
+
+disabled-worlds: []

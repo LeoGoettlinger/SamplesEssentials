@@ -1,0 +1,12 @@
+# Merged from SmartSpawner-1.8.3.jar
+# Change a spawner's mob by right-clicking it with a spawn egg
+rename-with-spawn-eggs: true
+# How far a player may look for /smartspawner
+max-distance: 8
+
+# Applied when a spawner is changed (-1 = leave untouched)
+spawn-delay:
+  min-ticks: -1
+  max-ticks: -1
+spawn-count: -1
+required-player-range: -1

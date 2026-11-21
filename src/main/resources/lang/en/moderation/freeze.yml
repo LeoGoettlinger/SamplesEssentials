@@ -1,0 +1,12 @@
+# categoria: moderation - module: freeze (merged from SimplePlayerFreeze-2.3.0.jar)
+done: "{prefix}<green>{player} is now <white>frozen<green>. <gray>{reason}"
+undone: "{prefix}<green>{player} is now <white>unfrozen<green>."
+froze-all: "{prefix}<green>Froze <white>{count}<green> players."
+unfroze-all: "{prefix}<green>Unfroze <white>{count}<green> players."
+you-frozen: "{prefix}<red><bold>You are frozen!</bold> <gray>Staff: <white>{by}<gray> - do not disconnect."
+you-unfrozen: "{prefix}<green>You were unfrozen by <white>{by}<green>."
+reminder: "<red>You are frozen - you cannot move."
+cannot-chat: "{prefix}<red>You can't chat while you are frozen."
+cannot-command: "{prefix}<red>You can't use commands while you are frozen."
+list-header: "{prefix}<gray>Frozen players <dark_gray>(<white>{count}<dark_gray>)"
+list-empty: "{prefix}<gray>No players are frozen."

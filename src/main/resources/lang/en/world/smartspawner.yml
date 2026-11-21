@@ -1,0 +1,6 @@
+# categoria: world - module: smartspawner (merged from SmartSpawner-1.8.3.jar)
+changed: "{prefix}<green>The spawner will now spawn <white>{type}<green>."
+not-a-spawner: "{prefix}<red>Look at a spawner first."
+unknown-entity: "{prefix}<red>Unknown entity <white>{entity}<red>."
+not-a-mob: "{prefix}<red><white>{entity}<red> cannot be used in a spawner."
+info: "{prefix}<gray>Spawner <white>{type}<gray> - delay <white>{min}<gray>-<white>{max}<gray> ticks, count <white>{count}<gray>, range <white>{range}<gray>."

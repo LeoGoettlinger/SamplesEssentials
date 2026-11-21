@@ -1,0 +1,9 @@
+# categoria: rtp - module: premiumrtp (merged from RexonRTP.jar)
+searching: "{prefix}<gray>Searching for a premium location..."
+success: "{prefix}<green>Premium teleport to <white>{x}, {z}<green> - enjoy the view! <gray>({cost})"
+failed: "{prefix}<red>No safe premium location found - your money was refunded."
+cancelled: "{prefix}<gray>Teleport cancelled."
+cooldown: "{prefix}<red>Premium RTP is on cooldown for <white>{seconds}s<red>."
+no-world: "{prefix}<red>The RTP world <white>{world}<red> does not exist."
+no-economy: "{prefix}<red>Premium RTP needs an economy but none is loaded."
+not-enough-money: "{prefix}<red>You need <white>{cost}<red> for a premium teleport."

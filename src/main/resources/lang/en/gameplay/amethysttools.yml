@@ -1,0 +1,5 @@
+# categoria: gameplay - module: amethysttools (merged from amethysttools-1.2.1.jar)
+received: "{prefix}<light_purple>You received an amethyst <white>{tool}<light_purple>."
+gave: "{prefix}<green>Gave an amethyst <white>{tool}<green> to <white>{player}<green>."
+unknown-tool: "{prefix}<red>Unknown tool. Available: <white>{items}"
+tool-expired: "{prefix}<red>Your amethyst tool has expired."

@@ -1,0 +1,13 @@
+# Merged from EzRTP-3.4.3.jar (rtp.yml / limits.yml split flattened)
+rtp:
+  min-distance: 200
+  max-distance: 3000
+  max-attempts: 40
+  border-margin: 64
+  avoid-liquid: true
+  avoid-dangerous: true
+  max-y: 300
+
+limits:
+  # Seconds between two /rtp uses (0 = no cooldown)
+  cooldown-seconds: 60

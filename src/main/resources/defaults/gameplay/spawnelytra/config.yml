@@ -1,0 +1,39 @@
+# Merged from spawnelytra-1.5.jar (structure of the old config)
+game_modes:
+  disable_in_creative: true
+  disable_in_adventure: false
+
+messages:
+  show_boost_activated: true
+
+visualization:
+  vertical_range: 20
+  update_frequency: 10
+
+worlds:
+  # Per-world spawn area. Copy this block and rename it to match your world.
+  # "default" is used for every world without its own section.
+  default:
+    enabled: true
+    # double_jump | sneak_jump
+    activation_mode: double_jump
+    # Radius used when the area is circular / all x2,y2,z2 are 0
+    radius: 100
+    spawn_area:
+      # circular | rectangular
+      area_type: circular
+      # auto: world spawn | advanced: the coordinates below
+      mode: auto
+      x: 0
+      y: 64
+      z: 0
+      x2: 0
+      y2: 0
+      z2: 0
+    boost:
+      enabled: true
+      strength: 4
+      # forward | upward
+      direction: forward
+      max_boosts: 1
+      show_hint: true

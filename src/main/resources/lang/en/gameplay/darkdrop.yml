@@ -1,0 +1,8 @@
+# categoria: gameplay - module: darkdrop (merged from DarkDrop-1.0.0(2).jar)
+drop-start-chat: "{prefix}<dark_purple><bold>DarkDrop</bold> <gray>is descending from <white>100 blocks<gray> above!"
+drop-land-chat: "{prefix}<dark_purple><bold>DarkDrop</bold> <gray>has landed!"
+actionbar-descending: "<dark_purple>DarkDrop <gray>descending... <yellow>{height} blocks <dark_gray>| <yellow>{seconds}s"
+loot-good-chat: "{prefix}<green><bold>Lucky!</bold> <gray>The DarkDrop contained great loot!"
+loot-bad-chat: "{prefix}<red><bold>Bad luck!</bold> <gray>That drop had a nasty surprise..."
+invalid-coordinates: "{prefix}<red>Invalid coordinates. Usage: <white>/darkdrop spawn <x> <y> <z> [world]"
+random-failed: "{prefix}<red>Could not find a safe random position. Try again."

@@ -1,0 +1,10 @@
+# Merged from SimplePlayerFreeze-2.3.0.jar
+# Show a "you are frozen" actionbar while frozen players try to move
+actionbar-reminder: true
+# Commands frozen players may still use
+allowed-commands:
+  - freeze
+  - unfreeze
+  - freezelist
+  - msg
+  - r

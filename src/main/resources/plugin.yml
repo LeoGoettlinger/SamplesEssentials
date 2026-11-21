@@ -1,0 +1,158 @@
+name: SamplesEssentials
+version: ${project.version}
+main: su.samplecraft.essentials.SamplesEssentials
+api-version: '26.2'
+authors: [SampleCraft]
+description: All-in-one essentials suite for Paper 26.2-26.3 - every former plugin is now a toggleable module.
+website: https://github.com/LeoGoettlinger/SamplesEssentials
+softdepend: [VaultUnlocked, Vault]
+
+commands:
+  # root / admin
+  samplese:
+    description: Root admin command (status, reload, toggle, module info)
+    usage: /samplese <status|reload|toggle <categoria/module>|modules|version>
+    aliases: [se]
+    permission: samplese.admin
+  # chat
+  clearchat:
+    description: Clear the server chat
+    usage: /clearchat [reason]
+    permission: samplese.chat.clear
+  chatclear:
+    description: Alias of /clearchat
+    usage: /chatclear [reason]
+    permission: samplese.chat.clear
+  announcements:
+    description: List or trigger chat announcements
+    usage: /announcements [send <index>]
+    permission: samplese.chat.announce
+  # general
+  starterkit:
+    description: Give yourself the starter kit
+    usage: /starterkit
+  # rtp
+  rtp:
+    description: Teleport to a random safe location
+    usage: /rtp [world]
+  forcertp:
+    description: Force a random teleport
+    usage: /forcertp [player]
+    permission: samplese.rtp.force
+  tpr:
+    description: Lightweight random teleport
+    usage: /tpr
+    permission: samplese.rtp
+  premiumrtp:
+    description: Premium random teleport with world bounds
+    usage: /premiumrtp
+    permission: samplese.rtp.premium
+  # gameplay
+  biggerenderchest:
+    description: Open your bigger ender chest
+    usage: /biggerenderchest
+    aliases: [bec]
+  amethysttools:
+    description: Give yourself an amethyst tool
+    usage: /amethysttools <pickaxe|axe|shovel|hoe>
+    permission: samplese.amethysttools
+  sit:
+    description: Sit down where you are looking
+    usage: /sit
+  spawnelytra:
+    description: Configure the spawn elytra
+    usage: /spawnelytra [give]
+    permission: samplese.spawnelytra
+  # moderation
+  vanish:
+    description: Toggle vanish
+    usage: /vanish
+    permission: samplese.staff
+  socialspy:
+    description: Toggle social spy
+    usage: /socialspy
+    permission: samplese.staff
+  staffchat:
+    description: Send a message to staff
+    usage: /staffchat <message>
+    aliases: [sc]
+    permission: samplese.staff
+  freeze:
+    description: Freeze or unfreeze a player
+    usage: /freeze <player|all>
+    permission: samplese.freeze
+  unfreeze:
+    description: Unfreeze a player
+    usage: /unfreeze <player|all>
+    permission: samplese.freeze
+  freezelist:
+    description: List frozen players
+    usage: /freezelist
+    permission: samplese.freeze
+  # world
+  unloadworld:
+    description: Unload a world
+    usage: /unloadworld <world>
+    permission: samplese.admin
+  chunkmanager:
+    description: Chunk / memory utilities
+    usage: /chunkmanager <status|gc>
+    permission: samplese.admin
+  smartspawner:
+    description: Inspect and edit spawners
+    usage: /smartspawner <info|set <entity>>
+    permission: samplese.smartspawner
+
+permissions:
+  samplese.*:
+    description: Full access to every SamplesEssentials module
+    default: op
+    children:
+      samplese.admin: true
+      samplese.chat.clear: true
+      samplese.chat.announce: true
+      samplese.chat.format: true
+      samplese.rtp: true
+      samplese.rtp.premium: true
+      samplese.rtp.force: true
+      samplese.staff: true
+      samplese.freeze: true
+      samplese.amethysttools: true
+      samplese.spawnelytra: true
+      samplese.smartspawner: true
+  samplese.admin:
+    description: Full admin access to SamplesEssentials
+    default: op
+  samplese.chat.clear:
+    description: Clear the server chat
+    default: op
+  samplese.chat.announce:
+    description: Manage announcements
+    default: op
+  samplese.chat.format:
+    description: Use colour codes in chat
+    default: op
+  samplese.rtp:
+    description: Use random teleport
+    default: true
+  samplese.rtp.premium:
+    description: Use premium random teleport
+    default: op
+  samplese.rtp.force:
+    description: Force random teleports for other players
+    default: op
+  samplese.staff:
+    description: Access staff tools (vanish, socialspy, staffchat)
+    default: op
+  samplese.freeze:
+    description: Freeze other players
+    default: op
+  samplese.amethysttools:
+    description: Receive amethyst tools
+    default: op
+  samplese.spawnelytra:
+    description: Manage the spawn elytra module
+    default: op
+  samplese.smartspawner:
+    description: Use smart spawner commands
+    default: op

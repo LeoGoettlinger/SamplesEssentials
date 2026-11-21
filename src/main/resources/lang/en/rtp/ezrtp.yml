@@ -1,0 +1,7 @@
+# categoria: rtp - module: ezrtp (merged from EzRTP-3.4.3.jar)
+searching: "{prefix}<gray>Searching for a safe location..."
+success: "{prefix}<green>Teleported to <white>{x}, {y}, {z}<green> in <white>{world}<green>."
+failed: "{prefix}<red>Could not find a safe spot. Please try again."
+cancelled: "{prefix}<gray>Teleport cancelled."
+cooldown: "{prefix}<red>Please wait <white>{seconds}s<red> before using /rtp again."
+forced: "{prefix}<green>Forced a random teleport for <white>{player}<green>."

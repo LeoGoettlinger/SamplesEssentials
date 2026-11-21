@@ -1,0 +1,31 @@
+# ---------------------------------------------------------------------------
+# SamplesEssentials - common language file
+# ---------------------------------------------------------------------------
+# Shared by ALL modules: the prefix and the generic answers shown across the
+# whole suite ("you can't do that because ...", "player not found", ...).
+#
+# Every categoria has its own folder with one file per module, see
+# lang/<categoria>/<module>.yml. Shared keys live here - this is the single
+# place to translate the plugin's basic vocabulary.
+#
+# Formatting: &a legacy colours and MiniMessage tags (<gradient:#..:#..>) both work.
+# Placeholders are written in braces, e.g. {player}, {world}, {x}.
+# ---------------------------------------------------------------------------
+
+prefix: "<gradient:#24d1ff:#7d5cff><bold>Samples</bold></gradient><dark_gray>» <gray>"
+
+reloaded: "{prefix}<green>All modules, configs and language files were reloaded."
+players-only: "{prefix}<red>Only players can use this."
+no-permission: "{prefix}<red>You can't do that - you don't have the permission <white>{permission}<red>."
+unknown-player: "{prefix}<red>The player <white>{player}<red> is not online."
+unknown-world: "{prefix}<red>The world <white>{world}<red> does not exist."
+unknown-module: "{prefix}<red>There is no module called <white>{module}<red>."
+usage: "{prefix}<red>Wrong usage. Try <white>{usage}<red>."
+disabled: "{prefix}<red>That module is currently disabled on this server."
+cancelled: "{prefix}<gray>Action cancelled."
+version: "{prefix}<gray>Version <white>{version}<gray> by <#7d5cff>SampleCraft<gray> - Paper 26.2-26.3."
+status-header: "{prefix}<gray>Modules: <green>{active}<gray>/<white>{total}<gray> active <dark_gray>| <gray>language: <white>{locale}"
+modules-header: "{prefix}<#7d5cff><bold>{categoria}"
+module-toggled: "{prefix}Module <white>{module}<gray> is now {state}<gray>."
+starterkit-failed: "{prefix}<red>The starter kit is not configured - check the module config.yml."
+world-guard: "{prefix}<red>You can't do that in this world."

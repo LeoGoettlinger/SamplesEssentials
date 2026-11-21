@@ -1,0 +1,6 @@
+# categoria: world - module: chunkmanager (merged from ChunkManager-1.3.1.jar)
+unknown-world: "{prefix}<red>The world <white>{world}<red> does not exist."
+unloaded: "{prefix}<green>World <white>{world}<green> unloaded."
+unload-failed: "{prefix}<red>Could not unload <white>{world}<red> - it may have players or be the main world."
+gc-done: "{prefix}<green>Chunk GC finished - <white>{count}<green> columns requested for unload."
+status: "{prefix}<gray>RAM <white>{used}<gray>/<white>{max} MB<dark_gray> | <gray>Chunks <white>{chunks}<dark_gray> | <gray>Worlds <white>{worlds}<dark_gray> | <gray>Players <white>{players}"

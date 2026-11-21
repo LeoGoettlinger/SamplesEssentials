@@ -1,0 +1,4 @@
+# categoria: chat - module: chatformatter (merged from LPC - Chat Formatter.jar)
+# The chat format itself is configured in chat/chatformatter/config.yml.
+reloaded: "{prefix}<green>Chat format reloaded."
+no-format: "{prefix}<gray>Formatting is disabled in the chat formatter config."

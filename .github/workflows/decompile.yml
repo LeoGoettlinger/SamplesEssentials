@@ -1,0 +1,97 @@
+name: Decompile OLD plugins
+
+# Decompiles the original plugin jars in OLD/plugins so the exact behaviour can
+# be ported into the modules. Results are written back into the repo under
+# decompiled/<plugin>/ and can be downloaded as an artifact.
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Optional comma separated jar name filters (e.g. OpenSit,spawnelytra)"
+        required: false
+        default: ""
+  push:
+    branches: ["**"]
+    paths:
+      - ".github/workflows/decompile.yml"
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Download Vineflower
+        run: |
+          set -euo pipefail
+          curl -sSL -o vineflower.jar \
+            https://github.com/Vineflower/vineflower/releases/download/1.11.1/vineflower-1.11.1.jar
+          ls -la vineflower.jar
+
+      - name: Decompile non-excluded plugins
+        run: |
+          set -euo pipefail
+          mkdir -p decompiled
+          ONLY="${{ github.event.inputs.only }}"
+          count=0
+          for jar in OLD/plugins/*.jar; do
+            base="$(basename "$jar" .jar)"
+            lower="$(echo "$base" | tr '[:upper:]' '[:lower:]')"
+            # plugins that stay as separate jars on the server
+            case "$lower" in
+              excellenteconomy*|excellentcrates*|sentry*|axinventoryrestore*|genius-shop*|shop-*|shop)
+                echo "SKIP (excluded): $base"; continue ;;
+              libertybans*)
+                echo "SKIP (excluded): $base"; continue ;;
+            esac
+            if [ -n "$ONLY" ]; then
+              match=0
+              IFS=',' read -ra filters <<< "$ONLY"
+              for f in "${filters[@]}"; do
+                if [[ "$lower" == *"$(echo "$f" | tr '[:upper:]' '[:lower:]')"* ]]; then match=1; fi
+              done
+              if [ "$match" -eq 0 ]; then continue; fi
+            fi
+            safe="$(echo "$base" | sed 's/[^A-Za-z0-9._-]/_/g')"
+            if [ -d "decompiled/$safe" ]; then
+              echo "already decompiled: $safe"; continue
+            fi
+            echo "==> decompiling $base"
+            mkdir -p "decompiled/$safe"
+            java -jar vineflower.jar "$jar" "decompiled/$safe" >/dev/null 2>&1 || true
+            count=$((count+1))
+            # keep the run bounded
+            if [ "$count" -ge 12 ]; then echo "batch limit reached, rerun for more"; break; fi
+          done
+
+      - name: Upload decompiled sources (artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: decompiled-sources
+          path: decompiled
+          if-no-files-found: warn
+
+      - name: Commit decompiled sources back to the branch
+        run: |
+          set -euo pipefail
+          git config user.name "SamplesEssentials Bot"
+          git config user.email "bot@samplecraft.su"
+          git add decompiled
+          if git diff --cached --quiet; then
+            echo "nothing new to commit"
+          else
+            git commit -m "chore: decompiled sources from OLD/plugins [skip ci]"
+            git push
+          fi

@@ -1,0 +1,76 @@
+# Merged from amethysttools-1.2.1.jar (values taken from the old server config)
+# Tools are built from this section. Each key is a tool name usable in
+# /amethysttools <name>. Tagged with a persistent data key so only these
+# tools mine the extra area, and they expire after expiry.days.
+
+items:
+  pickaxe:
+    aliases: [amethyst_pickaxe]
+    material: NETHERITE_PICKAXE
+    name: "&dAmethyst Pickaxe"
+    lore:
+      - "&7Mines in a configurable area"
+      - "&7Expires in: &e%time%"
+    unbreakable: false
+    glow: true
+    enchantments:
+      EFFICIENCY: 5
+      UNBREAKING: 3
+      SILK_TOUCH: 1
+  axe:
+    aliases: [amethyst_axe]
+    material: NETHERITE_AXE
+    name: "&dAmethyst Axe"
+    lore:
+      - "&7Fells the main tree trunk"
+      - "&7Expires in: &e%time%"
+    unbreakable: false
+    glow: true
+    enchantments:
+      EFFICIENCY: 5
+      UNBREAKING: 3
+  shovel:
+    aliases: [amethyst_shovel]
+    material: NETHERITE_SHOVEL
+    name: "&dAmethyst Shovel"
+    lore:
+      - "&7Digs a small area"
+      - "&7Expires in: &e%time%"
+    unbreakable: false
+    glow: true
+    enchantments:
+      EFFICIENCY: 5
+      UNBREAKING: 3
+  hoe:
+    aliases: [amethyst_hoe]
+    material: NETHERITE_HOE
+    name: "&dAmethyst Hoe"
+    lore:
+      - "&7Harvests in an area"
+      - "&7Expires in: &e%time%"
+    unbreakable: false
+    glow: true
+    enchantments:
+      EFFICIENCY: 5
+      UNBREAKING: 3
+
+# Mining area: radius 1 = 3x3, depth 1 = one block deep (old defaults)
+mining:
+  radius: 1
+  depth: 1
+  max-blocks: 64
+
+# Lifetime of one tool in days
+expiry:
+  days: 3
+
+blocked-materials:
+  - BEDROCK
+  - SPAWNER
+  - OBSIDIAN
+  - CRYING_OBSIDIAN
+  - END_PORTAL_FRAME
+  - END_PORTAL
+  - END_GATEWAY
+  - NETHER_PORTAL
+  - REINFORCED_DEEPSLATE

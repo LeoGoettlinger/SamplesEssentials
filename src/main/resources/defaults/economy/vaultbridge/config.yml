@@ -1,0 +1,5 @@
+# Vault economy bridge (VaultUnlocked stays installed as the service provider).
+# Show the player's balance after they join.
+show-balance-on-join: true
+# Delay in ticks before the message is sent (20 ticks = 1 second).
+join-delay-ticks: 20

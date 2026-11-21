@@ -1,0 +1,10 @@
+# Merged from RexonRTP.jar
+# Leave empty to use the player's current world
+world: ""
+cooldown-seconds: 30
+min-distance: 1000
+max-distance: 5000
+max-attempts: 60
+border-margin: 64
+# Cost through the Vault economy (0 = free)
+cost: 0.0

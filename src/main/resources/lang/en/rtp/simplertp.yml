@@ -1,0 +1,4 @@
+# categoria: rtp - module: simplertp (merged from Simple_RTP.jar)
+searching: "{prefix}<gray>Searching for a spot near you..."
+success: "{prefix}<green>Teleported to <white>{x}, {z}<green>!"
+failed: "{prefix}<red>No safe spot found. Try again!"

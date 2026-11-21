@@ -1,0 +1,24 @@
+# Merged from "LPC - Chat Formatter [1.7.10 - 1.21.11].jar"
+# Placeholders: {prefix} {suffix} {name} {displayname} {username} {world} {message}
+enabled: true
+
+# The format used for chat. & colours and MiniMessage both work.
+chat-format: "{prefix}{name}{suffix} <dark_gray>» <white>{message}"
+
+# Use the player's display name (keeps TAB/LuckPerms decorations) for {name}/{displayname}.
+use-displayname: true
+
+# Derive {prefix}/{suffix} from the decorated display name, e.g. "[Admin] Steve".
+# Set to false and use /luckperms to hand out permissions instead.
+derive-prefix-from-displayname: true
+
+# Fallbacks when no prefix/suffix could be derived.
+fallbacks:
+  prefix: ""
+  suffix: ""
+
+# Per-group overrides. The group is taken from the permission node
+# samplese.group.<name> (grant it in LuckPerms per rank).
+group-formats:
+#  admin: "&c[Admin] {prefix}{name}{suffix} &r&8» &f{message}"
+#  vip: "&6[VIP] {prefix}{name}{suffix} &r&8» &f{message}"

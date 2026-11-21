@@ -1,0 +1,6 @@
+# categoria: moderation - module: stafftools (merged from SModeration.jar)
+vanish: "{prefix}<gray>Vanish is now <white>{state}<gray>."
+socialspy: "{prefix}<gray>Socialspy is now <white>{state}<gray>."
+vanish-notice: "{prefix}<gray>{player}<gray> is now <white>{state}<gray>."
+staffchat-message: "<dark_aqua><bold>STAFF</bold> <dark_gray>| <white>{player}<gray>: <white>{message}"
+socialspy-format: "<dark_gray>[<gray>SPY<dark_gray>] <white>{player}<gray>: <gray>/{command}"

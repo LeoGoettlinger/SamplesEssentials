@@ -1,0 +1,2 @@
+# categoria: chat - module: chatclear (merged from ChatClear.jar)
+cleared: "{prefix}<yellow>Chat was cleared by <white>{player}<yellow>. <gray>{reason}"

@@ -1,0 +1,6 @@
+# categoria: gameplay - module: spawnelytra (merged from spawnelytra-1.5.jar)
+activated: "<gray>Elytra activated - <white>sneak while gliding to boost"
+press-to-boost: "{prefix}<gray>Press <white>sneak<gray> while gliding to boost."
+boost-activated: "<green>Boost!"
+not-enabled-here: "{prefix}<red>Spawn elytra is not enabled in this world."
+usage: "{prefix}<gray>Usage: <white>/spawnelytra <reload|visualize>"

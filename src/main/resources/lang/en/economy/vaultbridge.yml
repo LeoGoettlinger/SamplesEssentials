@@ -1,0 +1,3 @@
+# categoria: economy - module: vaultbridge (VaultUnlocked bridge)
+balance: "{prefix}<gray>Your balance: <green>{balance}"
+no-economy: "{prefix}<red>No economy plugin is registered right now."

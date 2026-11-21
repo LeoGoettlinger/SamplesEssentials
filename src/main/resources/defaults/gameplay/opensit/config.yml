@@ -1,0 +1,5 @@
+# Merged from OpenSit-1.0.6.jar
+# Require sneaking to sit on stairs/slabs
+require-sneak: true
+# Only allow stairs, no slabs
+only-stairs: false

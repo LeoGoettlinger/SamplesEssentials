@@ -1,0 +1,24 @@
+# Merged from announcement-1.4.jar
+# MiniMessage formatting is supported, {player_count} is replaced automatically.
+
+# Broadcast to console as well
+broadcast: true
+# true: announcements go out in order, false: random order
+ordered: true
+# Seconds between announcements
+delay: 300
+# Pad announcement lines to this width to emulate the old <centered> tag
+center-lines: true
+center-width: 52
+
+template:
+  - ""
+  - "<centered><gradient:#FF8B13:#E06FF2><bold>ANNOUNCEMENT</bold></gradient></centered>"
+  - ""
+  - "<centered><gray><announcement></centered>"
+  - ""
+
+announcements:
+  - 'Welcome! There are <gold>{player_count} <gray>players online right now.'
+  - 'Need help? Ask in chat or check out our Discord!'
+  - 'Remember to vote for the server - it really helps us!'

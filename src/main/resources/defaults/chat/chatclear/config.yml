@@ -1,0 +1,5 @@
+# Merged from ChatClear.jar
+# How many blank lines are sent before the clear notice (100 fills the chat).
+blank-lines: 100
+# Appended to the notice when no reason is given on the command line.
+default-reason: ""
