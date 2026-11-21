@@ -114,7 +114,12 @@ public final class EzRtpModule extends EssentialsModule implements Listener {
         command("forcertp", new ForceRtpCommand());
         onDisableHook(() -> {
             unbindCommands();
-            countdowns.values().forEach(c -> c.bar.removeAll());
+            countdowns.forEach((id, c) -> {
+                Player online = plugin.getServer().getPlayer(id);
+                if (online != null) {
+                    online.hideBossBar(c.bar);
+                }
+            });
             countdowns.clear();
             saveUsage();
         });
