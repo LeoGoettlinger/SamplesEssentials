@@ -14,33 +14,26 @@ To honour the JVM settings for this build a single-use Daemon process will be fo
 Daemon will be stopped at the end of the build 
 
 > Task :compileJava
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/StaffToolsModule.java:134: error: local variables referenced from a lambda expression must be final or effectively final
-                && cfgStringList("socialspy-commands").stream().anyMatch(c -> c.equalsIgnoreCase(label))) {
-                                                                                                 ^
 Note: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
-1 error
 
-> Task :compileJava FAILED
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795264888838.json
+> Task :processResources FAILED
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795265024139.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/SamplesEssentials/SamplesEssentials/build/reports/problems/problems-report.html
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
-Execution failed for task ':compileJava'.
-> Compilation failed; see the compiler output below.
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/StaffToolsModule.java:134: error: local variables referenced from a lambda expression must be final or effectively final
-                  && cfgStringList("socialspy-commands").stream().anyMatch(c -> c.equalsIgnoreCase(label))) {
-                                                                                                   ^
-  Note: Recompile with -Xlint:deprecation for details.
-  Note: Some input files use or override a deprecated API.
-  1 error
+Execution failed for task ':processResources'.
+> Could not copy file '/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/resources/plugin.yml' to '/home/runner/work/SamplesEssentials/SamplesEssentials/build/resources/main/plugin.yml'.
+   > Missing property (project) for Groovy template expansion. Defined keys [version].
 
 * Try:
-> Check your code and dependencies to fix the compilation error(s)
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
 
-BUILD FAILED in 38s
-1 actionable task: 1 executed
+BUILD FAILED in 41s
+2 actionable tasks: 2 executed
