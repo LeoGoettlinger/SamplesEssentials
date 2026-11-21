@@ -258,7 +258,7 @@ public final class AfkZoneModule extends EssentialsModule implements Listener {
                 iterator.remove();
                 if (player != null && player.isOnline()) {
                     player.sendActionBar(Component.empty());
-                    player.clearTitle();
+                    player.resetTitle();
                 }
             }
             // enter + timers
@@ -329,10 +329,13 @@ public final class AfkZoneModule extends EssentialsModule implements Listener {
             String title = config.getString("in-zone.title", "");
             String subtitle = config.getString("in-zone.subtitle", "");
             if ((title != null && !title.isBlank()) || (subtitle != null && !subtitle.isBlank())) {
-                player.sendTitle(
+                player.showTitle(net.kyori.adventure.title.Title.title(
                         Text.parse(applyTime(title, remaining)),
                         Text.parse(applyTime(subtitle, remaining)),
-                        0, 30, 10);
+                        net.kyori.adventure.title.Title.Times.times(
+                                java.time.Duration.ZERO,
+                                java.time.Duration.ofMillis(1600),
+                                java.time.Duration.ofMillis(400))));
             }
             String actionbar = config.getString("in-zone.actionbar", "");
             if (actionbar != null && !actionbar.isBlank()) {
