@@ -1,0 +1,47 @@
+# Merged from GravesX-2026.4.9.1.jar (grave.yml flattened to the settings we port)
+grave:
+  # Seconds a grave stays before it is removed and its items drop (0 = forever)
+  time: 10800
+  # Maximum graves per player when replace-oldest is enabled
+  max: 18
+  # Allow breaking a grave block (owner always may)
+  break: true
+  # Allow explosions to destroy graves
+  explode: false
+  # Remove the oldest grave when max is exceeded
+  replace-oldest: false
+  # Fallback: place a grave at the death location even if it is not safe to build on
+  ground: true
+  void: true
+  lava-top: true
+  water-bottom: true
+  world:
+    - ALL
+  auto-loot:
+    enabled: true
+  block:
+    enabled: true
+    # Material: PLAYER_HEAD, CHEST, BEACON
+    material: PLAYER_HEAD
+    # Loot the grave when a player walks over it
+    walk-over: false
+  hologram:
+    enabled: true
+    marker: true
+    height-line: 0.28
+    offset:
+      x: 0.0
+      y: -0.28
+      z: 0.0
+    line:
+      - '&7%owner_name_display%&r''s Grave &c☠'
+      - '&7%time_alive_remaining_formatted% &r| %state_protection%'
+      - '&fKilled By &c%killer_name_display%'
+  protection:
+    open:
+      owner: true
+      killer: true
+      other: false
+  piston-extend: true
+  notify-on-join: true
+  title: "&8Grave of %owner%"

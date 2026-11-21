@@ -105,6 +105,11 @@ commands:
     description: Open the bounty menu, or add a bounty
     usage: /bounty [add <player> <amount>]
     permission: samplese.bounty
+  grave:
+    description: List, teleport to and open your graves
+    usage: /grave <list|tp|open|count|reload>
+    aliases: [graves]
+    permission: samplese.graves
   # social
   friend:
     description: Open the friend menu (add, remove, list, requests)
@@ -200,6 +205,12 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.graves:
+    description: Create and use graves
+    default: true
+  samplese.graves.other:
+    description: Open and loot other players' graves
+    default: op
   samplese.friends.bypasslimit:
     description: Bypass the friend limit
     default: op
