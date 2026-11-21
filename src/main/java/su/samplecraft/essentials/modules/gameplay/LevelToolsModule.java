@@ -15,6 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.jetbrains.annotations.NotNull;
 import su.samplecraft.essentials.SamplesEssentials;
 import su.samplecraft.essentials.module.EssentialsModule;
 import su.samplecraft.essentials.util.Text;
@@ -398,20 +399,24 @@ public final class LevelToolsModule extends EssentialsModule implements Listener
                     case "player-command" -> player.performCommand(action.substring(parts[0].length()).trim());
                     case "enchant", "enchant2", "enchant3" -> applyEnchant(item, parts[1], Integer.parseInt(parts[2]), handler);
                     case "attribute" -> {
-                        if (item.getItemMeta() instanceof org.bukkit.inventory.meta.AttributeModifiersMeta modifiers) {
-                            org.bukkit.attribute.Attribute attribute;
-                            try {
-                                attribute = Registry.ATTRIBUTE.get(NamespacedKey.fromString(parts[1].toLowerCase(Locale.ROOT)));
-                            } catch (Exception e) {
-                                attribute = null;
+                        if (item.getItemMeta() != null) {
+                            org.bukkit.attribute.Attribute attribute = null;
+                            for (org.bukkit.attribute.Attribute candidate : org.bukkit.Registry.ATTRIBUTE) {
+                                String keyName = candidate.getKey().getKey();
+                                if (keyName.equalsIgnoreCase(parts[1].replace("generic.", ""))
+                                        || keyName.equalsIgnoreCase(parts[1])) {
+                                    attribute = candidate;
+                                    break;
+                                }
                             }
                             if (attribute != null) {
-                                modifiers.setAttributeModifier(attribute, new org.bukkit.attribute.AttributeModifier(
+                                ItemMeta meta = item.getItemMeta();
+                                meta.addAttributeModifier(attribute, new org.bukkit.attribute.AttributeModifier(
                                         new NamespacedKey(plugin, "leveltools_" + level),
                                         Double.parseDouble(parts[2]),
                                         org.bukkit.attribute.AttributeModifier.Operation.ADD_NUMBER,
                                         org.bukkit.inventory.EquipmentSlotGroup.MAINHAND));
-                                item.setItemMeta(modifiers);
+                                item.setItemMeta(meta);
                             }
                         }
                     }
