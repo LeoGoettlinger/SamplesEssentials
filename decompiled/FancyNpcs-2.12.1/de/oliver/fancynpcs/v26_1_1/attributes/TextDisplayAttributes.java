@@ -1,0 +1,26 @@
+package de.oliver.fancynpcs.v26_1_1.attributes;
+
+import de.oliver.fancynpcs.api.Npc;
+import de.oliver.fancynpcs.api.NpcAttribute;
+import de.oliver.fancynpcs.v26_1_1.ReflectionHelper;
+import io.papermc.paper.adventure.PaperAdventure;
+import java.util.ArrayList;
+import java.util.List;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.minecraft.world.entity.Display.TextDisplay;
+import org.bukkit.entity.EntityType;
+
+public class TextDisplayAttributes {
+   public static List<NpcAttribute> getAllAttributes() {
+      List<NpcAttribute> attributes = new ArrayList<>();
+      attributes.add(new NpcAttribute("text", new ArrayList<>(), List.of(EntityType.TEXT_DISPLAY), TextDisplayAttributes::setText));
+      return attributes;
+   }
+
+   private static void setText(Npc npc, String value) {
+      TextDisplay display = ReflectionHelper.getEntity(npc);
+      Component text = MiniMessage.miniMessage().deserialize(value);
+      display.setText(PaperAdventure.asVanilla(text));
+   }
+}

@@ -1,0 +1,26 @@
+# FriendZ Data File
+# DO NOT EDIT MANUALLY
+
+# Structure:
+# <player-uuid>:
+#   friends:
+#     - <friend-uuid-1>
+#     - <friend-uuid-2>
+#   levels:
+#     <friend-uuid-1>: 5
+#     <friend-uuid-2>: 3
+#   names:
+#     <friend-uuid-1>: CustomName1
+#     <friend-uuid-2>: CustomName2
+
+# Example data below:
+550e8400-e29b-41d4-a716-446655440000:
+  friends:
+    - 550e8400-e29b-41d4-a716-446655440001
+    - 550e8400-e29b-41d4-a716-446655440002
+  levels:
+    550e8400-e29b-41d4-a716-446655440001: 7
+    550e8400-e29b-41d4-a716-446655440002: 3
+  names:
+    550e8400-e29b-41d4-a716-446655440001: Steve
+    550e8400-e29b-41d4-a716-446655440002: Alex

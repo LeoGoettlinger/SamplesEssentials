@@ -1,0 +1,181 @@
+package com.sk89q.worldedit.command;
+
+import com.fastasyncworldedit.core.configuration.Caption;
+import com.sk89q.worldedit.EditSession;
+import com.sk89q.worldedit.LocalSession;
+import com.sk89q.worldedit.WorldEdit;
+import com.sk89q.worldedit.WorldEditException;
+import com.sk89q.worldedit.command.util.CommandPermissions;
+import com.sk89q.worldedit.command.util.CommandPermissionsConditionGenerator;
+import com.sk89q.worldedit.command.util.Logging;
+import com.sk89q.worldedit.command.util.WorldEditAsyncCommandBuilder;
+import com.sk89q.worldedit.command.util.annotation.Confirm;
+import com.sk89q.worldedit.command.util.annotation.Preload;
+import com.sk89q.worldedit.command.util.annotation.SynchronousSettingExpected;
+import com.sk89q.worldedit.entity.Player;
+import com.sk89q.worldedit.extension.platform.Actor;
+import com.sk89q.worldedit.extension.platform.Capability;
+import com.sk89q.worldedit.extension.platform.Locatable;
+import com.sk89q.worldedit.function.RegionFunction;
+import com.sk89q.worldedit.function.RegionMaskingFilter;
+import com.sk89q.worldedit.function.biome.BiomeReplace;
+import com.sk89q.worldedit.function.mask.Mask;
+import com.sk89q.worldedit.function.operation.Operations;
+import com.sk89q.worldedit.function.visitor.RegionVisitor;
+import com.sk89q.worldedit.math.BlockVector3;
+import com.sk89q.worldedit.regions.CuboidRegion;
+import com.sk89q.worldedit.regions.Region;
+import com.sk89q.worldedit.util.Location;
+import com.sk89q.worldedit.util.formatting.component.PaginationBox;
+import com.sk89q.worldedit.util.formatting.component.TextUtils;
+import com.sk89q.worldedit.util.formatting.text.Component;
+import com.sk89q.worldedit.util.formatting.text.TextComponent;
+import com.sk89q.worldedit.util.formatting.text.event.HoverEvent;
+import com.sk89q.worldedit.world.World;
+import com.sk89q.worldedit.world.biome.BiomeType;
+import com.sk89q.worldedit.world.registry.BiomeRegistry;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import org.enginehub.piston.annotation.Command;
+import org.enginehub.piston.annotation.CommandContainer;
+import org.enginehub.piston.annotation.param.Arg;
+import org.enginehub.piston.annotation.param.ArgFlag;
+import org.enginehub.piston.annotation.param.Switch;
+
+@CommandContainer(
+   superTypes = {CommandPermissionsConditionGenerator.Registration.class}
+)
+public class BiomeCommands {
+   @Command(
+      name = "biomelist",
+      aliases = {"biomels", "/biomelist", "/listbiomes"},
+      desc = "Gets all biomes available."
+   )
+   @CommandPermissions(
+      value = {"worldedit.biome.list"},
+      queued = false
+   )
+   public void biomeList(Actor actor, @ArgFlag(name = 'p',desc = "Page number.",def = {"1"}) int page) {
+      WorldEditAsyncCommandBuilder.createAndSendMessage(
+         actor,
+         () -> {
+            BiomeRegistry biomeRegistry = WorldEdit.getInstance()
+               .getPlatformManager()
+               .queryCapability(Capability.GAME_HOOKS)
+               .getRegistries()
+               .getBiomeRegistry();
+            PaginationBox paginationBox = PaginationBox.fromComponents(
+               "Available Biomes",
+               "/biomelist -p %page%",
+               BiomeType.REGISTRY
+                  .values()
+                  .stream()
+                  .map(
+                     biomeType -> TextComponent.builder().append(biomeType.id()).append(" (").append(biomeRegistry.getRichName(biomeType)).append(")").build()
+                  )
+                  .collect(Collectors.toList())
+            );
+            return paginationBox.create(page);
+         },
+         (Component)null
+      );
+   }
+
+   @Command(
+      name = "biomeinfo",
+      desc = "Get the biome of the targeted block.",
+      descFooter = "By default, uses all blocks in your selection."
+   )
+   @CommandPermissions({"worldedit.biome.info"})
+   public void biomeInfo(
+      Actor actor,
+      World world,
+      LocalSession session,
+      @Switch(name = 't',desc = "Use the block you are looking at.") boolean useLineOfSight,
+      @Switch(name = 'p',desc = "Use the block you are currently in.") boolean usePosition
+   ) throws WorldEditException {
+      BiomeRegistry biomeRegistry = WorldEdit.getInstance().getPlatformManager().queryCapability(Capability.GAME_HOOKS).getRegistries().getBiomeRegistry();
+      Set<BiomeType> biomes = new HashSet<>();
+      String messageKey;
+      if (useLineOfSight) {
+         if (!(actor instanceof Player)) {
+            actor.print(Caption.of("worldedit.raytrace.require-player"));
+            return;
+         }
+
+         Location blockPosition = ((Player)actor).getBlockTrace(300);
+         if (blockPosition == null) {
+            actor.print(Caption.of("worldedit.raytrace.noblock"));
+            return;
+         }
+
+         BiomeType biome = world.getBiome(blockPosition.toVector().toBlockPoint());
+         biomes.add(biome);
+         messageKey = "worldedit.biomeinfo.lineofsight";
+      } else if (usePosition) {
+         if (!(actor instanceof Locatable)) {
+            actor.print(Caption.of("worldedit.biomeinfo.not-locatable"));
+            return;
+         }
+
+         BiomeType biome = world.getBiome(((Locatable)actor).getLocation().toVector().toBlockPoint());
+         biomes.add(biome);
+         messageKey = "worldedit.biomeinfo.position";
+      } else {
+         for (BlockVector3 pt : session.getSelection(world)) {
+            biomes.add(world.getBiome(pt));
+         }
+
+         messageKey = "worldedit.biomeinfo.selection";
+      }
+
+      List<Component> components = biomes.stream()
+         .map(biomex -> biomeRegistry.getRichName(biomex).hoverEvent(HoverEvent.showText(TextComponent.of(biomex.id()))))
+         .collect(Collectors.toList());
+      actor.print(Caption.of(messageKey, TextUtils.join(components, TextComponent.of(", "))));
+   }
+
+   @Command(
+      name = "/setbiome",
+      desc = "Sets the biome of your current block or region.",
+      descFooter = "By default, uses all the blocks in your selection"
+   )
+   @Logging(Logging.LogMode.REGION)
+   @Preload(Preload.PreloadCheck.PRELOAD)
+   @SynchronousSettingExpected
+   @Confirm(Confirm.Processor.NULLABLE_REGION)
+   @CommandPermissions({"worldedit.biome.set"})
+   public void setBiome(
+      Actor actor,
+      World world,
+      LocalSession session,
+      EditSession editSession,
+      @Arg(desc = "Biome type.") BiomeType target,
+      @Switch(name = 'p',desc = "Use your current position") boolean atPosition
+   ) throws WorldEditException {
+      Mask mask = editSession.getMask();
+      Region region;
+      if (atPosition) {
+         if (!(actor instanceof Locatable)) {
+            actor.print(Caption.of("worldedit.setbiome.not-locatable"));
+            return;
+         }
+
+         BlockVector3 pos = ((Locatable)actor).getLocation().toVector().toBlockPoint();
+         region = new CuboidRegion(pos, pos);
+      } else {
+         region = session.getSelection(world);
+      }
+
+      RegionFunction replace = new BiomeReplace(editSession, target);
+      if (mask != null) {
+         replace = new RegionMaskingFilter(mask, replace);
+      }
+
+      RegionVisitor visitor = new RegionVisitor(region, replace);
+      Operations.completeLegacy(visitor);
+      actor.print(Caption.of("worldedit.setbiome.changed", TextComponent.of(visitor.getAffected() / (editSession.getMaxY() - editSession.getMinY()))));
+   }
+}

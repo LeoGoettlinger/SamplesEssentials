@@ -1,0 +1,74 @@
+package com.magmaguy.elitemobs.commands.admin;
+
+import com.magmaguy.elitemobs.api.internal.RemovalReason;
+import com.magmaguy.elitemobs.config.CommandMessagesConfig;
+import com.magmaguy.elitemobs.config.mobproperties.MobPropertiesConfig;
+import com.magmaguy.elitemobs.entitytracker.EntityTracker;
+import com.magmaguy.elitemobs.mobconstructor.EliteEntity;
+import java.util.ArrayList;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
+
+public class KillHandler {
+   public static void killAggressiveMobs(CommandSender commandSender) {
+      int counter = 0;
+
+      for (EliteEntity eliteEntity : new ArrayList<>(EntityTracker.getEliteMobEntities().values())) {
+         eliteEntity.remove(RemovalReason.OTHER);
+         counter++;
+      }
+
+      commandSender.sendMessage(CommandMessagesConfig.getKilledElitesMessage().replace("$count", String.valueOf(counter)));
+   }
+
+   public static void killEntityType(CommandSender commandSender, EntityType entityType) {
+      if (MobPropertiesConfig.isEligible(entityType)) {
+         int counter = 0;
+
+         for (EliteEntity eliteEntity : new ArrayList<>(EntityTracker.getEliteMobEntities().values())) {
+            if (eliteEntity.getLivingEntity() != null && eliteEntity.getLivingEntity().getType().equals(entityType)) {
+               eliteEntity.remove(RemovalReason.OTHER);
+               counter++;
+            }
+         }
+
+         commandSender.sendMessage(
+            CommandMessagesConfig.getKilledEliteTypeMessage().replace("$count", String.valueOf(counter)).replace("$type", entityType.toString())
+         );
+      } else {
+         commandSender.sendMessage(CommandMessagesConfig.getInvalidEliteTypeMessage());
+      }
+   }
+
+   public static void radiusKillAggressiveMobs(Player player, int radius) {
+      int counter = 0;
+
+      for (Entity entity : player.getNearbyEntities(radius, radius, radius)) {
+         EliteEntity eliteEntity = EntityTracker.getEliteMobEntity(entity);
+         if (eliteEntity != null) {
+            eliteEntity.remove(RemovalReason.OTHER);
+            counter++;
+         }
+      }
+
+      player.sendMessage(CommandMessagesConfig.getKilledElitesMessage().replace("$count", String.valueOf(counter)));
+   }
+
+   public static void radiusKillSpecificMobs(Player player, EntityType entityType, int radius) {
+      int counter = 0;
+
+      for (Entity entity : player.getNearbyEntities(radius, radius, radius)) {
+         if (entity.getType().equals(entityType)) {
+            EliteEntity eliteEntity = EntityTracker.getEliteMobEntity(entity);
+            if (eliteEntity != null) {
+               eliteEntity.remove(RemovalReason.OTHER);
+               counter++;
+            }
+         }
+      }
+
+      player.sendMessage(CommandMessagesConfig.getKilledElitesMessage().replace("$count", String.valueOf(counter)));
+   }
+}

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Version: 2.15.5-SNAPSHOT
+WorldEdit-Version: 2.15.5-SNAPSHOT
+WorldEdit-Kind: PLUGIN
+Main-Class: com.sk89q.worldedit.internal.util.InfoEntryPoint
+Class-Path: truezip.jar WorldEdit/truezip.jar ../truezip.jar ../WorldEdi
+ t/truezip.jar truevfs.jar WorldEdit/truevfs.jar ../truevfs.jar ../World
+ Edit/truevfs.jar js.jar WorldEdit/js.jar ../js.jar ../WorldEdit/js.jar
+paperweight-mappings-namespace: mojang
+FAWE-Plugin-Jar-Type: mojang
+

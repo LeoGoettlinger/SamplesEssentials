@@ -1,0 +1,43 @@
+# FriendZ Configuration
+
+# Prefix for plugin messages (supports MiniMessage formatting)
+prefix: "<aqua>[FriendZ]</aqua> "
+
+# Enable or disable GUI functionality (true = GUI enabled, false = commands only)
+enable-gui: true
+
+# Maximum number of friends (can be bypassed with friendz.bypasslimit permission)
+max-friends: 100
+
+# Display online notification when a friend joins
+notify-friend-join: true
+
+# Friendship levels - colors are implemented (supports MiniMessage formatting)
+levels:
+  # Colors for different friendship levels (1-10)
+  colors:
+    1-3: "<green>"    # Green
+    4-6: "<aqua>"     # Aqua
+    7-9: "<light_purple>"    # Light Purple
+    10: "<gold>"      # Gold
+
+# Friend list settings
+list:
+  # Number of friends displayed per page in command list (GUI is hardcoded to 21)
+  per-page: 8
+  
+  # Sort method for friend list (only LEVEL is implemented)
+  sort-by: "LEVEL"
+
+# Sounds (these work)
+sounds:
+  friend-added: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  friend-removed: "BLOCK_NOTE_BLOCK_BASS"
+  message-received: "ENTITY_PLAYER_LEVELUP"
+  request-sent: "BLOCK_NOTE_BLOCK_PLING"
+  request-received: "BLOCK_NOTE_BLOCK_CHIME"
+
+# MiniMessage settings
+minimessage:
+  # Enable MiniMessage formatting (set to false to use legacy color codes)
+  enabled: true

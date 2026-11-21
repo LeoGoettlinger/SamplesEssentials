@@ -1,0 +1,55 @@
+package com.oheers.fish.events;
+
+import com.gmail.nossr50.events.McMMOReplaceVanillaTreasureEvent;
+import com.gmail.nossr50.events.skills.fishing.McMMOPlayerFishingTreasureEvent;
+import com.oheers.fish.Checks;
+import com.oheers.fish.EvenMoreFish;
+import com.oheers.fish.Toggle;
+import com.oheers.fish.competition.CompetitionManager;
+import com.oheers.fish.config.MainConfig;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+
+public class McMMOTreasureEvent implements Listener {
+   private static final McMMOTreasureEvent mcmmoEvent = new McMMOTreasureEvent();
+
+   private McMMOTreasureEvent() {
+   }
+
+   public static McMMOTreasureEvent getInstance() {
+      return mcmmoEvent;
+   }
+
+   @EventHandler
+   public void mcMMOTreasure(McMMOReplaceVanillaTreasureEvent event) {
+      if (MainConfig.getInstance().disableMcMMOTreasure()) {
+         Toggle toggle = EvenMoreFish.getInstance().getToggle();
+         Player causingPlayer = event.getCausingPlayer();
+         if (causingPlayer == null || !toggle.isCustomFishingDisabled(causingPlayer)) {
+            if (!MainConfig.getInstance().isFishCatchOnlyInCompetition() || CompetitionManager.getInstance().isCompetitionActive()) {
+               event.setReplacementItemStack(event.getOriginalItem().getItemStack());
+            }
+         }
+      }
+   }
+
+   @EventHandler
+   public void mcMMOTreasure(McMMOPlayerFishingTreasureEvent event) {
+      if (MainConfig.getInstance().disableMcMMOTreasure()) {
+         PlayerInventory inventory = event.getPlayer().getInventory();
+         ItemStack main = inventory.getItemInMainHand();
+         ItemStack off = inventory.getItemInOffHand();
+         if (Checks.canUseRod(main) || Checks.canUseRod(off)) {
+            Toggle toggle = EvenMoreFish.getInstance().getToggle();
+            if (!toggle.isCustomFishingDisabled(event.getPlayer())) {
+               if (!MainConfig.getInstance().isFishCatchOnlyInCompetition() || CompetitionManager.getInstance().isCompetitionActive()) {
+                  event.setTreasure(null);
+               }
+            }
+         }
+      }
+   }
+}

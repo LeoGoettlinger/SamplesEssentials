@@ -1,0 +1,28 @@
+package com.fastasyncworldedit.core.extent.transform;
+
+import com.fastasyncworldedit.core.extent.ResettableExtent;
+import com.sk89q.worldedit.WorldEditException;
+import com.sk89q.worldedit.extent.Extent;
+import com.sk89q.worldedit.function.pattern.Pattern;
+import com.sk89q.worldedit.math.BlockVector3;
+import com.sk89q.worldedit.world.block.BlockStateHolder;
+
+public class PatternTransform extends ResettableExtent {
+   private final Pattern pattern;
+
+   public PatternTransform(Extent parent, Pattern pattern) {
+      super(parent);
+      this.pattern = pattern;
+   }
+
+   @Override
+   public <B extends BlockStateHolder<B>> boolean setBlock(BlockVector3 location, B block) throws WorldEditException {
+      return this.pattern.apply(this.getExtent(), location, location);
+   }
+
+   @Override
+   public <B extends BlockStateHolder<B>> boolean setBlock(int x, int y, int z, B block) throws WorldEditException {
+      BlockVector3 vector3 = BlockVector3.at(x, y, z);
+      return this.pattern.apply(this.extent, vector3, vector3);
+   }
+}

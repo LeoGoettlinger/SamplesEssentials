@@ -1,0 +1,39 @@
+package de.oliver.fancynpcs.v1_21_5.attributes;
+
+import de.oliver.fancynpcs.api.Npc;
+import de.oliver.fancynpcs.api.NpcAttribute;
+import de.oliver.fancynpcs.v1_21_5.ReflectionHelper;
+import java.util.ArrayList;
+import java.util.List;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup.RegistryLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.entity.animal.Chicken;
+import net.minecraft.world.entity.animal.ChickenVariant;
+import org.bukkit.entity.EntityType;
+
+public class ChickenAttributes {
+   public static List<NpcAttribute> getAllAttributes() {
+      List<NpcAttribute> attributes = new ArrayList<>();
+      attributes.add(new NpcAttribute("variant", getChickenVariantRegistry().listElementIds().map(id -> {
+         ResourceLocation location = id.location();
+         return location.getNamespace().equals("minecraft") ? location.getPath() : location.toString();
+      }).toList(), List.of(EntityType.CHICKEN), ChickenAttributes::setVariant));
+      return attributes;
+   }
+
+   private static void setVariant(Npc npc, String value) {
+      Chicken cow = ReflectionHelper.getEntity(npc);
+      Holder<ChickenVariant> variant = (Holder<ChickenVariant>)getChickenVariantRegistry()
+         .get(ResourceKey.create(Registries.CHICKEN_VARIANT, ResourceLocation.parse(value.toLowerCase())))
+         .orElseThrow();
+      cow.setVariant(variant);
+   }
+
+   private static RegistryLookup<ChickenVariant> getChickenVariantRegistry() {
+      return MinecraftServer.getServer().registryAccess().lookupOrThrow(Registries.CHICKEN_VARIANT);
+   }
+}

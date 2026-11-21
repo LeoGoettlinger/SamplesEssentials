@@ -1,0 +1,46 @@
+package de.oliver.cloud.brigadier.permission;
+
+import de.oliver.cloud.SenderMapper;
+import de.oliver.cloud.internal.CommandNode;
+import de.oliver.cloud.permission.Permission;
+import io.leangen.geantyref.GenericTypeReflector;
+import java.lang.reflect.Type;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.function.Predicate;
+import org.apiguardian.api.API;
+import org.apiguardian.api.API.Status;
+import org.checkerframework.checker.nullness.qual.NonNull;
+
+@API(
+   status = Status.INTERNAL,
+   since = "2.0.0"
+)
+public final class BrigadierPermissionPredicate<C, S> implements Predicate<S> {
+   private final SenderMapper<S, C> senderMapper;
+   private final BrigadierPermissionChecker<C> permissionChecker;
+   private final CommandNode<?> node;
+
+   public BrigadierPermissionPredicate(
+      @NonNull final SenderMapper<S, C> senderMapper, @NonNull final BrigadierPermissionChecker<C> permissionChecker, @NonNull final CommandNode<?> node
+   ) {
+      this.senderMapper = senderMapper;
+      this.permissionChecker = permissionChecker;
+      this.node = node;
+   }
+
+   @Override
+   public boolean test(@NonNull final S source) {
+      C cloudSender = this.senderMapper.map(source);
+      Map<Type, Permission> accessMap = this.node.nodeMeta().getOrDefault(CommandNode.META_KEY_ACCESS, Collections.emptyMap());
+
+      for (Entry<Type, Permission> entry : accessMap.entrySet()) {
+         if (GenericTypeReflector.isSuperType(entry.getKey(), cloudSender.getClass()) && this.permissionChecker.hasPermission(cloudSender, entry.getValue())) {
+            return true;
+         }
+      }
+
+      return false;
+   }
+}

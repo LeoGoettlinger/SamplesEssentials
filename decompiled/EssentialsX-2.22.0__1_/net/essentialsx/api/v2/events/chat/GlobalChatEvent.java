@@ -1,0 +1,25 @@
+package net.essentialsx.api.v2.events.chat;
+
+import java.util.Set;
+import net.essentialsx.api.v2.ChatType;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
+import org.bukkit.event.HandlerList;
+
+public class GlobalChatEvent extends ChatEvent implements Cancellable {
+   private static final HandlerList handlers = new HandlerList();
+
+   public GlobalChatEvent(
+      final boolean async, final ChatType chatType, final Player player, final String format, final String message, final Set<Player> recipients
+   ) {
+      super(async, chatType, player, format, message, recipients);
+   }
+
+   public static HandlerList getHandlerList() {
+      return handlers;
+   }
+
+   public HandlerList getHandlers() {
+      return handlers;
+   }
+}

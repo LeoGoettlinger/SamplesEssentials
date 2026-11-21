@@ -1,0 +1,40 @@
+name: EvenMoreFish
+version: 2.5.1
+main: com.oheers.fish.EvenMoreFish
+description: A fishing extension bringing an exciting new experience to fishing.
+authors:
+  - Oheers
+  - FireML
+  - sarhatabaot
+website: https://github.com/EvenMoreFish/EvenMoreFish
+libraries:
+  - com.devskiller.friendly-id:friendly-id:1.1.0
+  - org.apache.maven:maven-artifact:4.0.0-rc-7
+  - org.flywaydb:flyway-core:12.2.0
+  - org.flywaydb:flyway-mysql:12.2.0
+  - com.mysql:mysql-connector-j:9.7.0
+  - org.xerial:sqlite-jdbc:3.47.0.0
+api-version: "1.21"
+softdepend:
+  - AuraSkills
+  - Denizen
+  - EcoItems
+  - GriefPrevention
+  - HeadDatabase
+  - ItemsAdder
+  - mcMMO
+  - Nexo
+  - Oraxen
+  - PlayerPoints
+  - PlaceholderAPI
+  - RedProtect
+  - Vault
+  - WorldGuard
+  - ExcellentEconomy
+  - Essentials
+  - CMI
+  - SayanVanish
+  - AdvancedVanish
+loadbefore:
+  - AntiAC
+folia-supported: true

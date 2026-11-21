@@ -1,0 +1,27 @@
+package com.magmaguy.elitemobs.config.skillbonuses.premade;
+
+import com.magmaguy.elitemobs.config.skillbonuses.SkillBonusConfigFields;
+import com.magmaguy.elitemobs.skills.SkillType;
+import java.util.List;
+import org.bukkit.Material;
+
+public class MacesAvatarOfJudgmentConfig extends SkillBonusConfigFields {
+   public MacesAvatarOfJudgmentConfig() {
+      super(
+         "maces_avatar_of_judgment.yml",
+         true,
+         "&e&lAvatar of Judgment",
+         List.of("&7Become an avatar of divine wrath.", "&7Massive damage boost for 10s. 90s CD."),
+         SkillType.MACES,
+         4,
+         2.0,
+         0.03,
+         0.0,
+         90.0,
+         Material.NETHER_STAR,
+         true
+      );
+      this.loreTemplates = List.of("&7Damage Boost: &f+$damageBoost%", "&7Duration: &f10 seconds", "&7Cooldown: &f$cooldowns");
+      this.formattedBonusTemplate = "+$damageBoost% for 10s (CD: $cooldowns)";
+   }
+}

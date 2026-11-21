@@ -1,0 +1,256 @@
+package com.magmaguy.elitemobs.utils;
+
+import com.magmaguy.elitemobs.config.LegacyValueConverter;
+import com.magmaguy.elitemobs.magmacore.util.ChatColorConverter;
+import com.magmaguy.elitemobs.magmacore.util.Logger;
+import com.magmaguy.elitemobs.powers.scripts.primitives.ScriptFloat;
+import com.magmaguy.elitemobs.powers.scripts.primitives.ScriptInteger;
+import com.magmaguy.elitemobs.powers.scripts.primitives.ScriptVector;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.potion.PotionEffectType;
+import org.bukkit.util.Vector;
+
+public class MapListInterpreter {
+   private static void parsingErrorMessage(String key, Object value, String scriptName) {
+      Logger.warn("Failed to read value " + value + " for key " + key + " in script " + scriptName);
+   }
+
+   public static String parseString(String key, Object value, String scriptName) {
+      return ChatColorConverter.convert(value + "");
+   }
+
+   public static List<String> parseStringList(String key, Object value, String scriptName) {
+      if (value == null) {
+         return new ArrayList<>();
+      } else {
+         try {
+            return ChatColorConverter.convert((List<?>)value);
+         } catch (Exception var4) {
+            Logger.warn("Failed to get string list for key " + key + " with value " + value + " in script " + scriptName);
+            return new ArrayList<>();
+         }
+      }
+   }
+
+   public static Boolean parseBoolean(String key, Object value, String scriptName) {
+      try {
+         return value instanceof Boolean boo ? boo : Boolean.parseBoolean((String)value);
+      } catch (Exception var4) {
+         parsingErrorMessage(key, value, scriptName);
+         return null;
+      }
+   }
+
+   public static Integer parseInteger(String key, Object value, String scriptName) {
+      try {
+         if (value instanceof Integer intValue) {
+            return intValue;
+         } else if (value instanceof String stringValue) {
+            if (stringValue.contains("~")) {
+               String[] strings = stringValue.split("~");
+               return ThreadLocalRandom.current().nextInt(Integer.parseInt(strings[0]), Integer.parseInt(strings[1]) + 1);
+            } else {
+               return Integer.parseInt(stringValue);
+            }
+         } else {
+            Logger.warn("Failed to get integer value from " + value + " in script " + scriptName);
+            return null;
+         }
+      } catch (Exception var6) {
+         parsingErrorMessage(key, value, scriptName);
+         return null;
+      }
+   }
+
+   public static ScriptInteger parseScriptInteger(String key, Object value, String scriptName) {
+      try {
+         if (value instanceof Integer intValue) {
+            return new ScriptInteger(intValue);
+         } else if (value instanceof String stringValue) {
+            if (stringValue.contains("~")) {
+               String[] strings = stringValue.split("~", -1);
+               if (strings.length != 2) {
+                  throw new IllegalArgumentException("Expected two range endpoints");
+               } else {
+                  return new ScriptInteger(Integer.parseInt(strings[0]), Integer.parseInt(strings[1]));
+               }
+            } else {
+               return new ScriptInteger(Integer.parseInt(stringValue));
+            }
+         } else {
+            throw new IllegalArgumentException("Expected an integer or integer range");
+         }
+      } catch (Exception var6) {
+         throw new IllegalArgumentException("Invalid " + key + " value " + value + " in script " + scriptName, var6);
+      }
+   }
+
+   public static Double parseDouble(String key, Object value, String scriptName) {
+      try {
+         if (value instanceof Integer integer) {
+            return integer.doubleValue();
+         } else if (value instanceof Double dbl) {
+            return dbl;
+         } else {
+            return value instanceof String string ? Double.parseDouble(string) : null;
+         }
+      } catch (Exception var6) {
+         parsingErrorMessage(key, value, scriptName);
+         return null;
+      }
+   }
+
+   public static Float parseFloat(String key, Object value, String scriptName) {
+      try {
+         if (value instanceof Integer integer) {
+            return integer.floatValue();
+         } else if (value instanceof Double dbl) {
+            return dbl.floatValue();
+         } else {
+            return value instanceof String string ? Float.parseFloat(string) : null;
+         }
+      } catch (Exception var6) {
+         parsingErrorMessage(key, value, scriptName);
+         return null;
+      }
+   }
+
+   public static ScriptFloat parseScriptFloat(String key, Object value, String scriptName) {
+      try {
+         if (value instanceof Integer integer) {
+            return new ScriptFloat(integer.floatValue());
+         }
+
+         if (value instanceof Double dbl) {
+            return new ScriptFloat(dbl.floatValue());
+         }
+
+         if (value instanceof Float flt) {
+            return new ScriptFloat(flt);
+         }
+
+         if (value instanceof String string) {
+            if (((String)value).contains("~")) {
+               String[] strings = string.split("~", -1);
+               if (strings.length != 2) {
+                  throw new IllegalArgumentException("Expected two range endpoints");
+               }
+
+               return new ScriptFloat(Float.parseFloat(strings[0]), Float.parseFloat(strings[1]));
+            }
+
+            return new ScriptFloat(Float.parseFloat(string));
+         }
+      } catch (Exception var8) {
+         throw new IllegalArgumentException("Invalid " + key + " value " + value + " in script " + scriptName, var8);
+      }
+
+      throw new IllegalArgumentException("Invalid " + key + " value " + value + " in script " + scriptName);
+   }
+
+   public static <T extends Enum<T>> T parseEnum(String key, Object value, Class<T> enumClass, String scriptName) {
+      if (enumClass.isAssignableFrom(Particle.class)) {
+         value = LegacyValueConverter.parseParticle((String)value);
+      } else if (enumClass.isAssignableFrom(PotionEffectType.class)) {
+         value = LegacyValueConverter.parsePotionEffect((String)value);
+      } else if (enumClass.isAssignableFrom(Material.class)) {
+         value = LegacyValueConverter.parseMaterial((String)value);
+      }
+
+      try {
+         return Enum.valueOf(enumClass, (String)value);
+      } catch (Exception var5) {
+         parsingErrorMessage(key, value, scriptName);
+         return null;
+      }
+   }
+
+   public static <T extends Enum<T>> List<T> parseEnumList(String key, Object value, Class<T> enumClass, String scriptName) {
+      try {
+         if (value instanceof List<?> valueList) {
+            List<T> parsedList = new ArrayList<>();
+
+            for (Object rawEnum : valueList) {
+               if (!(rawEnum instanceof String)) {
+                  Logger.warn("Expected string, got something else!");
+                  parsingErrorMessage(key, value, scriptName);
+               } else {
+                  parsedList.add(Enum.valueOf(enumClass, (String)rawEnum));
+               }
+            }
+
+            return parsedList;
+         } else {
+            parsingErrorMessage(key, value, scriptName);
+            return null;
+         }
+      } catch (Exception var8) {
+         parsingErrorMessage(key, value, scriptName);
+         return null;
+      }
+   }
+
+   public static <T extends Enum<T>> List<List<T>> parseEnumListList(String key, Object value, Class<T> enumClass, String scriptName) {
+      List<List<T>> parsedList = new ArrayList<>();
+
+      try {
+         if (!(value instanceof List)) {
+            Logger.warn("Expected list, got something else!");
+            parsingErrorMessage(key, value, scriptName);
+            return parsedList;
+         } else {
+            for (Object rawLastList : (List)value) {
+               if (!(rawLastList instanceof List)) {
+                  Logger.warn("Expected list of list, got something else!");
+                  parsingErrorMessage(key, value, scriptName);
+                  return parsedList;
+               }
+
+               List<T> lastList = new ArrayList<>();
+
+               for (Object rawEnum : (List)rawLastList) {
+                  if (!(rawEnum instanceof String)) {
+                     Logger.warn("Expected string, got something else!");
+                     parsingErrorMessage(key, value, scriptName);
+                  } else {
+                     lastList.add(Enum.valueOf(enumClass, (String)rawEnum));
+                  }
+               }
+
+               parsedList.add(lastList);
+            }
+
+            return parsedList;
+         }
+      } catch (Exception var11) {
+         parsingErrorMessage(key, value, scriptName);
+         return parsedList;
+      }
+   }
+
+   public static Vector parseVector(String key, Object value, String scriptName) {
+      try {
+         String[] strings = ((String)value).split(",");
+         return new Vector(Double.parseDouble(strings[0]), Double.parseDouble(strings[1]), Double.parseDouble(strings[2]));
+      } catch (Exception var4) {
+         parsingErrorMessage(key, value, scriptName);
+         return new Vector(0, 0, 0);
+      }
+   }
+
+   public static ScriptVector parseScriptVector(String key, Object value, String scriptName) {
+      try {
+         String[] strings = ((String)value).split(",");
+         return new ScriptVector(
+            parseScriptFloat(key, strings[0], scriptName), parseScriptFloat(key, strings[1], scriptName), parseScriptFloat(key, strings[2], scriptName)
+         );
+      } catch (Exception var4) {
+         parsingErrorMessage(key, value, scriptName);
+         return new ScriptVector(new ScriptFloat(0.0F), new ScriptFloat(0.0F), new ScriptFloat(0.0F));
+      }
+   }
+}

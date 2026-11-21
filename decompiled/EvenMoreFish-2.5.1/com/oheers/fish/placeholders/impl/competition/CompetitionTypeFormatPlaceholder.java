@@ -1,0 +1,31 @@
+package com.oheers.fish.placeholders.impl.competition;
+
+import com.oheers.fish.competition.Competition;
+import com.oheers.fish.competition.CompetitionManager;
+import com.oheers.fish.messages.ConfigMessage;
+import com.oheers.fish.messages.abstracted.EMFMessage;
+import com.oheers.fish.placeholders.abstracted.EMFPlaceholder;
+import net.kyori.adventure.text.Component;
+import org.bukkit.OfflinePlayer;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
+public class CompetitionTypeFormatPlaceholder implements EMFPlaceholder {
+   @Override
+   public boolean shouldProcess(@NonNull String identifier) {
+      return identifier.equalsIgnoreCase("competition_type_format");
+   }
+
+   @Nullable
+   @Override
+   public String parsePAPI(@Nullable OfflinePlayer player, @NonNull String identifier) {
+      Competition activeComp = CompetitionManager.getInstance().getActiveCompetition();
+      if (activeComp != null && activeComp.getCompetitionType() != null) {
+         Component type = activeComp.getCompetitionType().getTypeVariable(activeComp);
+         EMFMessage typeFormat = activeComp.format(type);
+         return typeFormat.getLegacyMessage(null);
+      } else {
+         return ConfigMessage.PLACEHOLDER_NO_COMPETITION_RUNNING.getMessage().getLegacyMessage(null);
+      }
+   }
+}

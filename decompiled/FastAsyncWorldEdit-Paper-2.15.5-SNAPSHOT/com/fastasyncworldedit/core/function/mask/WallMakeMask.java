@@ -1,0 +1,29 @@
+package com.fastasyncworldedit.core.function.mask;
+
+import com.sk89q.worldedit.function.mask.Mask;
+import com.sk89q.worldedit.math.BlockVector3;
+import com.sk89q.worldedit.regions.Region;
+
+public class WallMakeMask implements Mask {
+   private final Region region;
+
+   public WallMakeMask(Region region) {
+      this.region = region.clone();
+   }
+
+   @Override
+   public boolean test(BlockVector3 position) {
+      int x = position.x();
+      int y = position.y();
+      int z = position.z();
+      return !this.region.contains(x, y, z + 1)
+         || !this.region.contains(x, y, z - 1)
+         || !this.region.contains(x + 1, y, z)
+         || !this.region.contains(x - 1, y, z);
+   }
+
+   @Override
+   public Mask copy() {
+      return new WallMakeMask(this.region);
+   }
+}

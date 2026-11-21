@@ -1,0 +1,76 @@
+package com.earth2me.essentials.libs.kyori.adventure.platform.bukkit;
+
+import com.earth2me.essentials.libs.kyori.adventure.bossbar.BossBar;
+import com.earth2me.essentials.libs.kyori.adventure.platform.facet.Facet;
+import com.earth2me.essentials.libs.kyori.adventure.platform.facet.FacetAudience;
+import com.earth2me.essentials.libs.kyori.adventure.platform.facet.FacetAudienceProvider;
+import com.earth2me.essentials.libs.kyori.adventure.platform.viaversion.ViaFacet.ActionBar;
+import com.earth2me.essentials.libs.kyori.adventure.platform.viaversion.ViaFacet.ActionBarTitle;
+import com.earth2me.essentials.libs.kyori.adventure.platform.viaversion.ViaFacet.Chat;
+import com.earth2me.essentials.libs.kyori.adventure.platform.viaversion.ViaFacet.TabList;
+import com.earth2me.essentials.libs.kyori.adventure.platform.viaversion.ViaFacet.Title;
+import com.earth2me.essentials.libs.kyori.adventure.platform.viaversion.ViaFacet.BossBar.Builder;
+import com.earth2me.essentials.libs.kyori.adventure.platform.viaversion.ViaFacet.BossBar.Builder1_9_To_1_15;
+import com.viaversion.viaversion.api.connection.UserConnection;
+import java.util.Collection;
+import java.util.function.Function;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.util.Vector;
+import org.jetbrains.annotations.NotNull;
+
+final class BukkitAudience extends FacetAudience<CommandSender> {
+   static final ThreadLocal<Plugin> PLUGIN = new ThreadLocal<>();
+   private static final Function<Player, UserConnection> VIA = new BukkitFacet.ViaHook();
+   private static final Collection<Facet.Chat<? extends CommandSender, ?>> CHAT = Facet.of(
+      () -> new Chat(Player.class, VIA), () -> new CraftBukkitFacet.Chat1_19_3(), () -> new CraftBukkitFacet.Chat(), () -> new BukkitFacet.Chat()
+   );
+   private static final Collection<Facet.ActionBar<Player, ?>> ACTION_BAR = Facet.of(
+      () -> new ActionBarTitle(Player.class, VIA),
+      () -> new ActionBar(Player.class, VIA),
+      () -> new CraftBukkitFacet.ActionBar_1_17(),
+      () -> new CraftBukkitFacet.ActionBar(),
+      () -> new CraftBukkitFacet.ActionBarLegacy()
+   );
+   private static final Collection<Facet.Title<Player, ?, ?, ?>> TITLE = Facet.of(
+      () -> new Title(Player.class, VIA), () -> new CraftBukkitFacet.Title_1_17(), () -> new CraftBukkitFacet.Title()
+   );
+   private static final Collection<Facet.Sound<Player, Vector>> SOUND = Facet.of(() -> new BukkitFacet.SoundWithCategory(), () -> new BukkitFacet.Sound());
+   private static final Collection<Facet.EntitySound<Player, Object>> ENTITY_SOUND = Facet.of(
+      () -> new CraftBukkitFacet.EntitySound_1_19_3(), () -> new CraftBukkitFacet.EntitySound()
+   );
+   private static final Collection<Facet.Book<Player, ?, ?>> BOOK = Facet.of(
+      () -> new CraftBukkitFacet.Book_1_20_5(),
+      () -> new CraftBukkitFacet.BookPost1_13(),
+      () -> new CraftBukkitFacet.Book1_13(),
+      () -> new CraftBukkitFacet.BookPre1_13()
+   );
+   private static final Collection<Facet.BossBar.Builder<Player, ?>> BOSS_BAR = Facet.of(
+      () -> new Builder(Player.class, VIA),
+      () -> new Builder1_9_To_1_15(Player.class, VIA),
+      () -> new CraftBukkitFacet.BossBar.Builder(),
+      () -> new BukkitFacet.BossBarBuilder(),
+      () -> new CraftBukkitFacet.BossBarWither.Builder()
+   );
+   private static final Collection<Facet.TabList<Player, ?>> TAB_LIST = Facet.of(
+      () -> new TabList(Player.class, VIA), () -> new PaperFacet.TabList(), () -> new CraftBukkitFacet.TabList(), () -> new BukkitFacet.TabList()
+   );
+   private static final Collection<Facet.Pointers<? extends CommandSender>> POINTERS = Facet.of(
+      () -> new BukkitFacet.CommandSenderPointers(), () -> new BukkitFacet.ConsoleCommandSenderPointers(), () -> new BukkitFacet.PlayerPointers()
+   );
+   @NotNull
+   private final Plugin plugin;
+
+   BukkitAudience(@NotNull final Plugin plugin, final FacetAudienceProvider<?, ?> provider, @NotNull final Collection<CommandSender> viewers) {
+      super(provider, viewers, CHAT, ACTION_BAR, TITLE, SOUND, ENTITY_SOUND, BOOK, BOSS_BAR, TAB_LIST, POINTERS);
+      this.plugin = plugin;
+   }
+
+   @Override
+   public void showBossBar(@NotNull final BossBar bar) {
+      PLUGIN.set(this.plugin);
+      super.showBossBar(bar);
+      PLUGIN.set(null);
+   }
+}

@@ -1,0 +1,62 @@
+package com.oheers.fish.placeholders.impl.competition;
+
+import com.oheers.fish.api.fishing.items.IFish;
+import com.oheers.fish.competition.Competition;
+import com.oheers.fish.competition.CompetitionEntry;
+import com.oheers.fish.competition.CompetitionManager;
+import com.oheers.fish.messages.ConfigMessage;
+import com.oheers.fish.messages.abstracted.EMFMessage;
+import com.oheers.fish.placeholders.abstracted.EMFPlaceholder;
+import org.bukkit.OfflinePlayer;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
+public class CompetitionPlaceFishPlaceholder implements EMFPlaceholder {
+   private static final int PREFIX_LENGTH = "competition_place_fish_".length();
+
+   @Override
+   public boolean shouldProcess(@NonNull String identifier) {
+      return identifier.startsWith("competition_place_fish_");
+   }
+
+   @Nullable
+   @Override
+   public String parsePAPI(@Nullable OfflinePlayer player, @NonNull String identifier) {
+      Competition activeComp = CompetitionManager.getInstance().getActiveCompetition();
+      if (activeComp != null && activeComp.getCompetitionType() != null) {
+         CompetitionEntry entry = this.fetchEntry(activeComp, identifier, PREFIX_LENGTH);
+         if (entry == null) {
+            return ConfigMessage.PLACEHOLDER_NO_FISH_IN_PLACE.getMessage().getLegacyMessage(null);
+         } else if (activeComp.getCompetitionType().useFishLength()) {
+            return this.formatLengthFishMessage(entry.getFish());
+         } else {
+            float value = entry.getValue();
+            return value <= 0.0F ? ConfigMessage.PLACEHOLDER_NO_FISH_IN_PLACE.getMessage().getLegacyMessage(null) : this.formatNumFishMessage((int)value);
+         }
+      } else {
+         return ConfigMessage.PLACEHOLDER_NO_COMPETITION_RUNNING_FISH.getMessage().getLegacyMessage(null);
+      }
+   }
+
+   @Nullable
+   private String formatLengthFishMessage(@Nullable IFish fish) {
+      if (fish == null) {
+         return null;
+      } else {
+         EMFMessage message = fish.isLengthless()
+            ? ConfigMessage.PLACEHOLDER_FISH_LENGTHLESS_FORMAT.getMessage()
+            : ConfigMessage.PLACEHOLDER_FISH_FORMAT.getMessage();
+         message.setLength(Float.toString(fish.getLength()));
+         message.setFishCaught(fish.getDisplayName());
+         message.setRarity(fish.getRarity().getDisplayName());
+         return message.getLegacyMessage(null);
+      }
+   }
+
+   @NonNull
+   private String formatNumFishMessage(int amount) {
+      EMFMessage message = ConfigMessage.PLACEHOLDER_FISH_MOST_FORMAT.getMessage();
+      message.setAmount(amount);
+      return message.getLegacyMessage(null);
+   }
+}

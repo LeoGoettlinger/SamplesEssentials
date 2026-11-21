@@ -1,0 +1,147 @@
+package com.magmaguy.elitemobs.mobconstructor.custombosses;
+
+import com.magmaguy.elitemobs.config.custombosses.CustomBossesConfigFields;
+import com.magmaguy.elitemobs.config.powers.LuaPowerConfigFields;
+import com.magmaguy.elitemobs.config.powers.PowersConfig;
+import com.magmaguy.elitemobs.config.powers.PowersConfigFields;
+import com.magmaguy.elitemobs.instanced.dungeons.DifficultyResolver;
+import com.magmaguy.elitemobs.magmacore.util.Logger;
+import com.magmaguy.elitemobs.mobconstructor.EliteEntity;
+import com.magmaguy.elitemobs.powers.BonusCoins;
+import com.magmaguy.elitemobs.powers.lua.LuaElitePower;
+import com.magmaguy.elitemobs.powers.meta.CustomSummonPower;
+import com.magmaguy.elitemobs.powers.meta.ElitePower;
+import com.magmaguy.elitemobs.powers.scripts.EliteScript;
+import com.magmaguy.elitemobs.utils.MapListInterpreter;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class ElitePowerParser {
+   public static HashSet<ElitePower> parsePowers(CustomBossesConfigFields customBossesConfigFields, CustomBossEntity customBossEntity) {
+      HashSet<ElitePower> elitePowers = new LinkedHashSet<>(EliteScript.generateBossScripts(customBossesConfigFields.getEliteScript(), customBossEntity));
+      elitePowers.forEach(power -> power.setOwnerEntity(customBossEntity));
+      if (customBossesConfigFields.getPowers() == null) {
+         return elitePowers;
+      } else {
+         CustomSummonPower customSummonPower = null;
+         List<Object> powers = new ArrayList<>(customBossesConfigFields.getPowers());
+         if (powers == null) {
+            return elitePowers;
+         } else {
+            for (Object powerObject : powers) {
+               if (powerObject instanceof String powerName) {
+                  if (!powerName.split(":")[0].equalsIgnoreCase("summon") && !powerName.split(":")[0].equalsIgnoreCase("summonable")) {
+                     String[] parsedPowerName = powerName.split(":");
+                     ElitePower elitePower = addPower(parsedPowerName[0], elitePowers, customBossesConfigFields, customBossEntity);
+                     if (elitePower != null && elitePower.getPowersConfigFields().getFilename().equals("bonus_coins.yml") && parsedPowerName.length > 1) {
+                        try {
+                           ((BonusCoins)elitePower).setCoinMultiplier(Double.parseDouble(parsedPowerName[1]));
+                        } catch (Exception var14) {
+                           Logger.warn("Multiplier " + parsedPowerName[1] + " for Bonus Coins power is not a valid multiplier!");
+                        }
+                     }
+                  } else if (customSummonPower == null) {
+                     customSummonPower = new CustomSummonPower(powerName, customBossesConfigFields);
+                     customSummonPower.setOwnerEntity(customBossEntity);
+                     elitePowers.add(customSummonPower);
+                  } else {
+                     customSummonPower.addEntry(powerName, customBossesConfigFields.getFilename());
+                  }
+               } else if (powerObject instanceof Map<?, ?> map) {
+                  boolean isReinforcementsConfig = false;
+
+                  for (Object key : map.keySet()) {
+                     if (((String)key).equalsIgnoreCase("summontype")) {
+                        isReinforcementsConfig = true;
+                        break;
+                     }
+                  }
+
+                  if (customBossEntity instanceof InstancedBossEntity instancedBossEntity) {
+                     List<String> difficulties = null;
+
+                     for (Entry<?, ?> entry : map.entrySet()) {
+                        if (((String)entry.getKey()).equalsIgnoreCase("difficultyID")) {
+                           difficulties = DifficultyResolver.parseFilter(entry.getValue(), customBossesConfigFields.getFilename());
+                           break;
+                        }
+                     }
+
+                     if (difficulties != null && !instancedBossEntity.matchesDifficulty(difficulties, customBossesConfigFields.getFilename())) {
+                        continue;
+                     }
+                  }
+
+                  if (isReinforcementsConfig) {
+                     if (customSummonPower == null) {
+                        customSummonPower = new CustomSummonPower(powerObject, customBossesConfigFields);
+                        customSummonPower.setOwnerEntity(customBossEntity);
+                        elitePowers.add(customSummonPower);
+                     } else {
+                        customSummonPower.addEntry(powerObject, customBossesConfigFields.getFilename());
+                     }
+                  } else {
+                     String string = MapListInterpreter.parseString("filename", map.get("filename"), customBossesConfigFields.getFilename());
+                     if (string != null && !string.isEmpty()) {
+                        PowersConfigFields powersConfigFields = PowersConfig.getPower(string);
+                        if (powersConfigFields == null) {
+                           Logger.warn("Invalid power name " + string + " in file " + customBossesConfigFields.getFilename());
+                        } else {
+                           addPower(string, elitePowers, customBossesConfigFields, customBossEntity);
+                        }
+                     } else {
+                        Logger.warn("No valid power name in boss config " + customBossesConfigFields.getFilename());
+                     }
+                  }
+               }
+            }
+
+            return elitePowers;
+         }
+      }
+   }
+
+   private static ElitePower addPower(
+      String powerName, HashSet<ElitePower> elitePowers, CustomBossesConfigFields customBossesConfigFields, EliteEntity eliteEntity
+   ) {
+      PowersConfigFields powersConfigFields = PowersConfig.getPower(powerName);
+      if (powersConfigFields != null) {
+         if (!powersConfigFields.getEliteScriptBlueprints().isEmpty()) {
+            EliteScript.generateBossScripts(powersConfigFields.getEliteScriptBlueprints(), eliteEntity).forEach(script -> {
+               script.setOwnerEntity(eliteEntity);
+               elitePowers.add(script);
+            });
+            return null;
+         } else {
+            try {
+               ElitePower elitePower;
+               if (powersConfigFields instanceof LuaPowerConfigFields luaPowerConfigFields) {
+                  elitePower = new LuaElitePower(luaPowerConfigFields);
+               } else {
+                  elitePower = powersConfigFields.getElitePowerClass().newInstance();
+               }
+
+               elitePower.setOwnerEntity(eliteEntity);
+               elitePowers.add(elitePower);
+               return elitePower;
+            } catch (Exception var7) {
+               Logger.warn("Could not process power " + powerName);
+               return null;
+            }
+         }
+      } else {
+         Logger.warn(
+            "Warning: power name "
+               + powerName
+               + " for boss "
+               + customBossesConfigFields.getFilename()
+               + " is not registered! Skipping it for custom mob construction..."
+         );
+         return null;
+      }
+   }
+}

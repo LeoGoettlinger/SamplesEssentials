@@ -1,0 +1,87 @@
+package com.oheers.fish.competition.configs;
+
+import com.oheers.fish.EvenMoreFish;
+import com.oheers.fish.api.Logging;
+import com.oheers.fish.config.ConfigBase;
+import java.io.File;
+import java.util.List;
+import org.evenmorefish.fish.libs.boostedyaml.YamlDocument;
+import org.evenmorefish.fish.libs.boostedyaml.block.implementation.Section;
+import org.evenmorefish.fish.libs.daisylib.messages.message.ComponentMessage;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
+public class CompetitionConversions {
+   public void performCheck() {
+      File competitionFile = new File(EvenMoreFish.getInstance().getDataFolder(), "competitions.yml");
+      if (competitionFile.exists() && competitionFile.isFile()) {
+         EvenMoreFish.getInstance().getLogger().info("Performing automatic conversion of competition configs.");
+         File competitionsDir = this.getCompetitionsDirectory();
+         if (!competitionsDir.exists()) {
+            competitionsDir.mkdirs();
+         }
+
+         ConfigBase config = new ConfigBase(competitionFile, EvenMoreFish.getInstance(), false);
+         Section competitionSection = config.getConfig().getSection("competitions");
+         if (competitionSection == null) {
+            this.finalizeConversion(config);
+         } else {
+            Section rewards = config.getConfig().getSection("rewards");
+            List<String> leaderboard = config.getConfig().getStringList("leaderboard.position-colours");
+            Section general = config.getConfig().getSection("general");
+
+            for (String competitionKey : competitionSection.getRoutesAsStrings(false)) {
+               Section section = competitionSection.getSection(competitionKey);
+               if (section != null) {
+                  this.convertSectionToFile(section, general, leaderboard, rewards);
+               }
+            }
+
+            this.finalizeConversion(config);
+         }
+      }
+   }
+
+   private void finalizeConversion(@NonNull ConfigBase competitionsConfig) {
+      File file = competitionsConfig.getFile();
+      file.renameTo(new File(EvenMoreFish.getInstance().getDataFolder(), "competitions.yml.old"));
+      file.delete();
+      Logging.info(ComponentMessage.componentMessage("<yellow>Your competition configs have been automatically converted to the new format.").get());
+   }
+
+   private File getCompetitionsDirectory() {
+      return new File(EvenMoreFish.getInstance().getDataFolder(), "competitions");
+   }
+
+   private void convertSectionToFile(@NonNull Section section, @Nullable Section general, @NonNull List<String> leaderboard, @Nullable Section rewards) {
+      String id = section.getNameAsString();
+      if (id != null) {
+         File file = new File(EvenMoreFish.getInstance().getDataFolder(), "competitions/" + id + ".yml");
+         ConfigBase configBase = new ConfigBase(file, EvenMoreFish.getInstance(), false);
+         YamlDocument config = configBase.getConfig();
+         config.setAll(section.getRouteMappedValues(true));
+         config.set("id", id);
+         config.set("disabled", false);
+         this.applyGeneralSection(config, general, leaderboard, rewards);
+         configBase.save();
+      }
+   }
+
+   private void applyGeneralSection(@NonNull YamlDocument config, @Nullable Section general, @NonNull List<String> leaderboard, @Nullable Section rewards) {
+      if (general != null) {
+         for (String key : general.getRoutesAsStrings(true)) {
+            if (!config.contains(key)) {
+               config.set(key, general.get(key));
+            }
+         }
+      }
+
+      if (rewards != null && !config.contains("rewards")) {
+         config.set("rewards", rewards);
+      }
+
+      if (!leaderboard.isEmpty() && !config.contains("leaderboard")) {
+         config.set("leaderboard", leaderboard);
+      }
+   }
+}

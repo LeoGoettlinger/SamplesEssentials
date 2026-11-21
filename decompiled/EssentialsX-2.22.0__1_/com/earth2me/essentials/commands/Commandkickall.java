@@ -1,0 +1,28 @@
+package com.earth2me.essentials.commands;
+
+import com.earth2me.essentials.CommandSource;
+import com.earth2me.essentials.I18n;
+import com.earth2me.essentials.utils.FormatUtil;
+import org.bukkit.Server;
+import org.bukkit.entity.Player;
+
+public class Commandkickall extends EssentialsCommand {
+   public Commandkickall() {
+      super("kickall");
+   }
+
+   @Override
+   public void run(final Server server, final CommandSource sender, final String commandLabel, final String[] args) throws Exception {
+      String kickReason = args.length > 0 ? getFinalArg(args, 0) : this.ess.getAdventureFacet().miniToLegacy(I18n.tlLiteral("kickDefault"));
+      kickReason = FormatUtil.replaceFormat(kickReason.replace("\\n", "\n").replace("|", "\n"));
+
+      for (Player onlinePlayer : this.ess.getOnlinePlayers()) {
+         if ((!sender.isPlayer() || !onlinePlayer.getName().equalsIgnoreCase(sender.getPlayer().getName()))
+            && !this.ess.getUser(onlinePlayer).isAuthorized("essentials.kickall.exempt")) {
+            onlinePlayer.kickPlayer(kickReason);
+         }
+      }
+
+      sender.sendTl("kickedAll");
+   }
+}

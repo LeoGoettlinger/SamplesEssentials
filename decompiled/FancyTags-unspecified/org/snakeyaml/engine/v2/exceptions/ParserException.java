@@ -1,0 +1,13 @@
+package org.snakeyaml.engine.v2.exceptions;
+
+import java.util.Optional;
+
+public class ParserException extends MarkedYamlEngineException {
+   public ParserException(String context, Optional<Mark> contextMark, String problem, Optional<Mark> problemMark) {
+      super(context, contextMark, problem, problemMark, null);
+   }
+
+   public ParserException(String problem, Optional<Mark> problemMark) {
+      super(null, Optional.empty(), problem, problemMark, null);
+   }
+}

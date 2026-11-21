@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.skyblockexp</groupId>
+    <artifactId>ezrtp-parent</artifactId>
+    <version>3.4.3</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <groupId>com.skyblockexp</groupId>
+  <artifactId>ezrtp-common</artifactId>
+  <version>3.4.3</version>
+  <packaging>jar</packaging>
+  <name>EzRTP Common</name>
+  <description>Shared utilities for EzRTP (platform-independent)</description>
+
+  <dependencies>
+    <!-- API module providing the public plugin API used by external plugins and tests -->
+    <dependency>
+      <groupId>com.skyblockexp</groupId>
+      <artifactId>ezrtp-api</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.kyori</groupId>
+      <artifactId>adventure-api</artifactId>
+      <version>${kyori.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.kyori</groupId>
+      <artifactId>adventure-text-minimessage</artifactId>
+      <version>${minimessage.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.kyori</groupId>
+      <artifactId>adventure-text-serializer-legacy</artifactId>
+      <version>${kyori.version}</version>
+    </dependency>
+
+    <!-- Provide server API types at compile time so modules depending on ezrtp-common
+             (like ezrtp-paper) can resolve Bukkit/Paper classes referenced in shared code. -->
+    <dependency>
+      <groupId>io.papermc.paper</groupId>
+      <artifactId>paper-api</artifactId>
+      <version>${paper.api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.MilkBowl</groupId>
+      <artifactId>VaultAPI</artifactId>
+      <version>1.7.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Chunky integration is runtime-optional; handled by ChunkyRuntimeProvider -->
+    <dependency>
+      <groupId>org.bstats</groupId>
+      <artifactId>bstats-bukkit</artifactId>
+      <version>3.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sk89q.worldguard</groupId>
+      <artifactId>worldguard-bukkit</artifactId>
+      <version>7.0.17</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>me.clip</groupId>
+      <artifactId>placeholderapi</artifactId>
+      <version>2.12.3</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.ez-plugins</groupId>
+      <artifactId>teams-api</artifactId>
+      <version>2.5.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- EzCountdown integration — optional soft-dependency; classes only loaded when plugin is present -->
+    <dependency>
+      <groupId>com.github.ez-plugins</groupId>
+      <artifactId>EzCountdown</artifactId>
+      <version>v1.4.2</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.ez-plugins</groupId>
+      <artifactId>mc-plugin-update-notifier</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <!-- HikariCP connection pool — used by MySqlHotspotStorage for the persistent
+             hotspot write path. The basic DriverManager pattern in MySqlRtpUsageStorage is
+             sufficient for low-frequency usage-stat writes, but hotspot saves happen on every
+             discovered rare biome and benefit from a managed pool. -->
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>7.1.0</version>
+    </dependency>
+
+    <!-- CombatLogX integration — optional soft-dependency; classes only loaded when plugin is present -->
+    <dependency>
+      <groupId>com.github.sirblobman.api</groupId>
+      <artifactId>core</artifactId>
+      <version>2.9-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.sirblobman.combatlogx</groupId>
+      <artifactId>api</artifactId>
+      <version>11.6-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- PvPManager integration — optional soft-dependency; classes only loaded when plugin is present -->
+    <dependency>
+      <groupId>me.chancesd.pvpmanager</groupId>
+      <artifactId>pvpmanager</artifactId>
+      <version>4.0.9</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Simple Combat Log integration — optional soft-dependency; Modrinth: simple-combatlog -->
+    <dependency>
+      <groupId>com.github.NikeyV1</groupId>
+      <artifactId>CombatLog</artifactId>
+      <version>master-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>ezrtp-common-${project.version}</finalName>
+    <resources>
+      <resource>
+        <filtering>false</filtering>
+        <directory>${project.basedir}/../src/main/resources</directory>
+      </resource>
+      <resource>
+        <filtering>false</filtering>
+        <directory>${project.basedir}/src/main/resources</directory>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <release>${maven.compiler.release}</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

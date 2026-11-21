@@ -1,0 +1,33 @@
+package de.oliver.fancynpcs.v1_21_11.attributes;
+
+import de.oliver.fancynpcs.api.Npc;
+import de.oliver.fancynpcs.api.NpcAttribute;
+import de.oliver.fancynpcs.v1_21_11.ReflectionHelper;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import net.minecraft.world.entity.Display;
+import net.minecraft.world.entity.Display.BillboardConstraints;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Display.Billboard;
+
+public class DisplayAttributes {
+   public static List<NpcAttribute> getAllAttributes() {
+      List<NpcAttribute> attributes = new ArrayList<>();
+      attributes.add(
+         new NpcAttribute(
+            "billboard",
+            Arrays.stream(Billboard.values()).map(Enum::name).toList(),
+            List.of(EntityType.TEXT_DISPLAY, EntityType.BLOCK_DISPLAY, EntityType.ITEM_DISPLAY),
+            DisplayAttributes::setBillboard
+         )
+      );
+      return attributes;
+   }
+
+   private static void setBillboard(Npc npc, String value) {
+      Display display = ReflectionHelper.getEntity(npc);
+      BillboardConstraints billboard = BillboardConstraints.valueOf(value.toUpperCase());
+      display.setBillboardConstraints(billboard);
+   }
+}

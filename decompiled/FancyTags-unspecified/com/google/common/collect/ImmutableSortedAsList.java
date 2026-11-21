@@ -1,0 +1,56 @@
+package com.google.common.collect;
+
+import com.google.common.annotations.GwtCompatible;
+import com.google.common.annotations.GwtIncompatible;
+import java.util.Comparator;
+import java.util.Spliterator;
+import javax.annotation.CheckForNull;
+
+@ElementTypesAreNonnullByDefault
+@GwtCompatible(
+   emulated = true
+)
+final class ImmutableSortedAsList<E> extends RegularImmutableAsList<E> implements SortedIterable<E> {
+   ImmutableSortedAsList(ImmutableSortedSet<E> backingSet, ImmutableList<E> backingList) {
+      super(backingSet, backingList);
+   }
+
+   ImmutableSortedSet<E> delegateCollection() {
+      return (ImmutableSortedSet<E>)super.delegateCollection();
+   }
+
+   @Override
+   public Comparator<? super E> comparator() {
+      return this.delegateCollection().comparator();
+   }
+
+   @GwtIncompatible
+   @Override
+   public int indexOf(@CheckForNull Object target) {
+      int index = this.delegateCollection().indexOf(target);
+      return index >= 0 && this.get(index).equals(target) ? index : -1;
+   }
+
+   @GwtIncompatible
+   @Override
+   public int lastIndexOf(@CheckForNull Object target) {
+      return this.indexOf(target);
+   }
+
+   @Override
+   public boolean contains(@CheckForNull Object target) {
+      return this.indexOf(target) >= 0;
+   }
+
+   @GwtIncompatible
+   @Override
+   ImmutableList<E> subListUnchecked(int fromIndex, int toIndex) {
+      ImmutableList<E> parentSubList = super.subListUnchecked(fromIndex, toIndex);
+      return new RegularImmutableSortedSet<>(parentSubList, this.comparator()).asList();
+   }
+
+   @Override
+   public Spliterator<E> spliterator() {
+      return CollectSpliterators.indexed(this.size(), 1301, this.delegateList()::get, this.comparator());
+   }
+}

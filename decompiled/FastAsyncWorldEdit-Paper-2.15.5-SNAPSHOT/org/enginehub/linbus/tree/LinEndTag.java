@@ -1,0 +1,38 @@
+package org.enginehub.linbus.tree;
+
+import org.enginehub.linbus.stream.LinStream;
+
+public final class LinEndTag extends LinTag<Void> {
+   private static final LinEndTag INSTANCE = new LinEndTag();
+
+   public static LinEndTag instance() {
+      return INSTANCE;
+   }
+
+   private LinEndTag() {
+   }
+
+   @Override
+   public LinTagType<LinEndTag> type() {
+      return LinTagType.endTag();
+   }
+
+   public Void value() {
+      return null;
+   }
+
+   @Override
+   public LinStream linStream() {
+      return LinStream.of();
+   }
+
+   @Override
+   public int hashCode() {
+      return System.identityHashCode(this);
+   }
+
+   @Override
+   public String toString() {
+      return this.getClass().getSimpleName();
+   }
+}

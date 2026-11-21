@@ -1,0 +1,30 @@
+package com.earth2me.essentials.commands;
+
+import com.earth2me.essentials.commands.essentials.CleanupCommand;
+import com.earth2me.essentials.commands.essentials.CommandMapCommand;
+import com.earth2me.essentials.commands.essentials.DebugCommand;
+import com.earth2me.essentials.commands.essentials.DumpCommand;
+import com.earth2me.essentials.commands.essentials.HomesCommand;
+import com.earth2me.essentials.commands.essentials.ItemTestCommand;
+import com.earth2me.essentials.commands.essentials.MooCommand;
+import com.earth2me.essentials.commands.essentials.NyanCommand;
+import com.earth2me.essentials.commands.essentials.ReloadCommand;
+import com.earth2me.essentials.commands.essentials.UsermapCommand;
+import com.earth2me.essentials.commands.essentials.VersionCommand;
+
+public class Commandessentials extends EssentialsTreeCommand {
+   public Commandessentials() {
+      super("essentials");
+      this.registerNode(new VersionCommand());
+      this.registerNode(new DebugCommand());
+      this.registerNode(new CommandMapCommand());
+      this.registerNode(new DumpCommand());
+      this.registerNode(new ReloadCommand());
+      this.registerNode(new CleanupCommand());
+      this.registerNode(new HomesCommand());
+      this.registerNode(new UsermapCommand());
+      this.registerNode(new ItemTestCommand());
+      this.registerNode(new NyanCommand());
+      this.registerNode(new MooCommand());
+   }
+}

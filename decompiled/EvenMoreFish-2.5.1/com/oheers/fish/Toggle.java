@@ -1,0 +1,93 @@
+package com.oheers.fish;
+
+import com.oheers.fish.competition.Competition;
+import com.oheers.fish.competition.CompetitionBossbar;
+import com.oheers.fish.competition.CompetitionManager;
+import com.oheers.fish.messages.ConfigMessage;
+import org.bukkit.NamespacedKey;
+import org.bukkit.entity.Player;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
+import org.jspecify.annotations.NonNull;
+
+public class Toggle {
+   private final EvenMoreFish plugin;
+   private final NamespacedKey fishToggleKey;
+   private final NamespacedKey bossBarToggleKey;
+   private final NamespacedKey catchMessageToggleKey;
+
+   public Toggle(@NonNull EvenMoreFish plugin) {
+      this.plugin = plugin;
+      this.fishToggleKey = new NamespacedKey(plugin, "fish-disabled");
+      this.bossBarToggleKey = new NamespacedKey(plugin, "bossbar-disabled");
+      this.catchMessageToggleKey = new NamespacedKey(plugin, "catch-message-disabled");
+   }
+
+   public void performFishToggle(@NonNull Player player) {
+      if (!player.hasPermission("emf.toggle.fishing")) {
+         ConfigMessage.TOGGLE_FISHING_NO_PERMISSION.send(player);
+      } else {
+         PersistentDataContainer pdc = player.getPersistentDataContainer();
+         if (this.isCustomFishingDisabled(player)) {
+            pdc.set(this.fishToggleKey, PersistentDataType.BOOLEAN, false);
+            ConfigMessage.TOGGLE_FISHING_ON.send(player);
+         } else {
+            pdc.set(this.fishToggleKey, PersistentDataType.BOOLEAN, true);
+            ConfigMessage.TOGGLE_FISHING_OFF.send(player);
+         }
+      }
+   }
+
+   public boolean isCustomFishingDisabled(@NonNull Player player) {
+      PersistentDataContainer pdc = player.getPersistentDataContainer();
+      return (Boolean)pdc.getOrDefault(this.fishToggleKey, PersistentDataType.BOOLEAN, false);
+   }
+
+   public void performBossBarToggle(@NonNull Player player) {
+      if (!player.hasPermission("emf.toggle.bossbar")) {
+         ConfigMessage.TOGGLE_BOSSBAR_NO_PERMISSION.send(player);
+      } else {
+         PersistentDataContainer pdc = player.getPersistentDataContainer();
+         Competition activeComp = CompetitionManager.getInstance().getActiveCompetition();
+         CompetitionBossbar activeBar = activeComp == null ? null : activeComp.getStatusBar();
+         if (this.isBossBarDisabled(player)) {
+            pdc.set(this.bossBarToggleKey, PersistentDataType.BOOLEAN, false);
+            ConfigMessage.TOGGLE_BOSSBAR_ON.send(player);
+            if (activeBar != null) {
+               activeBar.addPlayer(player);
+            }
+         } else {
+            pdc.set(this.bossBarToggleKey, PersistentDataType.BOOLEAN, true);
+            ConfigMessage.TOGGLE_BOSSBAR_OFF.send(player);
+            if (activeBar != null) {
+               activeBar.removePlayer(player);
+            }
+         }
+      }
+   }
+
+   public boolean isBossBarDisabled(@NonNull Player player) {
+      PersistentDataContainer pdc = player.getPersistentDataContainer();
+      return (Boolean)pdc.getOrDefault(this.bossBarToggleKey, PersistentDataType.BOOLEAN, false);
+   }
+
+   public void performCatchMessageToggle(@NonNull Player player) {
+      if (!player.hasPermission("emf.toggle.catchmessage")) {
+         ConfigMessage.TOGGLE_CATCH_MESSAGE_NO_PERMISSION.send(player);
+      } else {
+         PersistentDataContainer pdc = player.getPersistentDataContainer();
+         if (this.isCatchMessageDisabled(player)) {
+            pdc.set(this.catchMessageToggleKey, PersistentDataType.BOOLEAN, false);
+            ConfigMessage.TOGGLE_CATCH_MESSAGE_ON.send(player);
+         } else {
+            pdc.set(this.catchMessageToggleKey, PersistentDataType.BOOLEAN, true);
+            ConfigMessage.TOGGLE_CATCH_MESSAGE_OFF.send(player);
+         }
+      }
+   }
+
+   public boolean isCatchMessageDisabled(@NonNull Player player) {
+      PersistentDataContainer pdc = player.getPersistentDataContainer();
+      return (Boolean)pdc.getOrDefault(this.catchMessageToggleKey, PersistentDataType.BOOLEAN, false);
+   }
+}

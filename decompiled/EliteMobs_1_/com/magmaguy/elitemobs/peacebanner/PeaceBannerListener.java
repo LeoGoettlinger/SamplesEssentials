@@ -1,0 +1,63 @@
+package com.magmaguy.elitemobs.peacebanner;
+
+import com.magmaguy.elitemobs.config.PeaceBannerConfig;
+import com.magmaguy.elitemobs.magmacore.util.ChatColorConverter;
+import org.bukkit.block.Block;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.world.ChunkLoadEvent;
+import org.bukkit.event.world.WorldLoadEvent;
+
+public class PeaceBannerListener implements Listener {
+   @EventHandler(
+      priority = EventPriority.MONITOR,
+      ignoreCancelled = true
+   )
+   public void onBlockPlace(BlockPlaceEvent event) {
+      if (PeaceBannerConfig.isEnabled()) {
+         if (PeaceBannerItem.isPeaceBanner(event.getItemInHand())) {
+            PeaceBannerManager.registerBanner(event.getBlock().getLocation());
+            event.getPlayer()
+               .sendMessage(
+                  ChatColorConverter.convert(PeaceBannerConfig.getPlacedMessage().replace("$radius", String.valueOf(PeaceBannerConfig.getChunkRadius())))
+               );
+         }
+      }
+   }
+
+   @EventHandler(
+      priority = EventPriority.MONITOR,
+      ignoreCancelled = true
+   )
+   public void onBlockBreak(BlockBreakEvent event) {
+      if (PeaceBannerConfig.isEnabled()) {
+         Block block = event.getBlock();
+         if (block.getType().name().contains("BANNER")) {
+            if (PeaceBannerManager.unregisterBanner(block.getLocation())) {
+               event.getPlayer().sendMessage(ChatColorConverter.convert(PeaceBannerConfig.getRemovedMessage()));
+            }
+         }
+      }
+   }
+
+   @EventHandler(
+      priority = EventPriority.MONITOR
+   )
+   public void onChunkLoad(ChunkLoadEvent event) {
+      if (PeaceBannerConfig.isEnabled()) {
+         PeaceBannerManager.validateChunk(event.getChunk());
+      }
+   }
+
+   @EventHandler(
+      priority = EventPriority.MONITOR
+   )
+   public void onWorldLoad(WorldLoadEvent event) {
+      if (PeaceBannerConfig.isEnabled()) {
+         PeaceBannerManager.activateWorld(event.getWorld());
+      }
+   }
+}

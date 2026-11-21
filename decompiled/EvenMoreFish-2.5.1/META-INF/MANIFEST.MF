@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Specification-Title: EvenMoreFish
+Specification-Version: 2.5.1
+Implementation-Title: master
+Implementation-Version: RELEASE
+Database-Baseline-Version: 8.0
+Multi-Release: true
+

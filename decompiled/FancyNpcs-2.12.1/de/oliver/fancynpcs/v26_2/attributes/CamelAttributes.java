@@ -1,0 +1,43 @@
+package de.oliver.fancynpcs.v26_2.attributes;
+
+import de.oliver.fancynpcs.api.FancyNpcsPlugin;
+import de.oliver.fancynpcs.api.Npc;
+import de.oliver.fancynpcs.api.NpcAttribute;
+import de.oliver.fancynpcs.v26_2.ReflectionHelper;
+import java.util.ArrayList;
+import java.util.List;
+import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.animal.camel.Camel;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.EntityType;
+
+public class CamelAttributes {
+   public static List<NpcAttribute> getAllAttributes() {
+      List<NpcAttribute> attributes = new ArrayList<>();
+      attributes.add(new NpcAttribute("pose", List.of("standing", "sitting", "dashing"), List.of(EntityType.CAMEL), CamelAttributes::setPose));
+      return attributes;
+   }
+
+   private static void setPose(Npc npc, String value) {
+      Camel camel = ReflectionHelper.getEntity(npc);
+      Bukkit.getGlobalRegionScheduler().run(FancyNpcsPlugin.get().getPlugin(), var2x -> {
+         String s0$ = value.toLowerCase();
+         switch (s0$) {
+            case "standing":
+               camel.setPose(Pose.STANDING);
+               camel.setDashing(false);
+               camel.resetLastPoseChangeTick(camel.level().getGameTime());
+               break;
+            case "sitting":
+               camel.setPose(Pose.SITTING);
+               camel.setDashing(false);
+               camel.resetLastPoseChangeTick(-camel.level().getGameTime());
+               break;
+            case "dashing":
+               camel.setPose(Pose.STANDING);
+               camel.setDashing(true);
+               camel.resetLastPoseChangeTick(camel.level().getGameTime());
+         }
+      });
+   }
+}

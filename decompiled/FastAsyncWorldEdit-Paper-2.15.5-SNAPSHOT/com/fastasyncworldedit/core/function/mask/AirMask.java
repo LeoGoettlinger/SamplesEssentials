@@ -1,0 +1,22 @@
+package com.fastasyncworldedit.core.function.mask;
+
+import com.sk89q.worldedit.extent.Extent;
+import com.sk89q.worldedit.function.mask.BlockMask;
+import com.sk89q.worldedit.function.mask.Mask;
+
+public class AirMask extends BlockMask {
+   public AirMask(Extent extent) {
+      super(extent);
+      this.add(state -> state.getMaterial().isAir());
+   }
+
+   @Override
+   public Mask copy() {
+      return new AirMask(this.getExtent());
+   }
+
+   @Override
+   public boolean replacesAir() {
+      return true;
+   }
+}

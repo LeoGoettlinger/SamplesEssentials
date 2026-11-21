@@ -1,0 +1,715 @@
+name: EliteMobs
+version: 10.9.8
+author: MagmaGuy
+main: com.magmaguy.elitemobs.EliteMobs
+api-version: '1.21.4'
+softdepend:
+- Multiverse-Core
+- WorldGuard
+- WorldEdit
+- Vault
+- PlaceholderAPI
+- HolographicDisplays
+- DiscordSRV
+- LibsDisguises
+- ModelEngine
+- Geyser-Spigot
+- floodgate
+- MythicMobs
+- LevelledMobs
+- InfernalMobs
+- FreeMinecraftModels
+
+commands:
+  elitemobs:
+    description: Main command
+    aliases:
+      - em
+  adventurersguild:
+    description: Main command
+    aliases:
+      - ag
+permissions:
+  elitemobs.instanced.teleport.within:
+    description: Allows command and plugin teleports within the same ongoing dungeon or arena instance
+    default: false
+  elitemobs.*:
+    description: Gives access to all elitemobs commands
+    default: op
+  elitemobs.adventurersguild.command:
+    description: Allows players to open the Adventurer's Guild menu
+    default: true
+  elitemobs.adventurersguild.teleport:
+    description: Allows players to teleport to the Adventurer's Guild
+    default: true
+  elitemobs.alt:
+    description: Allows players to switch menu styles
+    default: true
+  elitemobs.arena.start:
+    description: Allows players to start an arena
+    default: true
+  elitemobs.discord.link:
+    description: Gives the link to EliteMobs' discord server
+    default: true
+  elitemobs.discord.message:
+    description: Allows sending debug messages to discord via DiscordSRV for testing purposes
+    default: op
+  elitemobs.dismiss:
+    description: Allows admins to dismiss the initial setup message
+    default: op
+  elitemobs.dungeon.tp:
+    description: Allows players to teleport to a dungeon
+    default: true
+  elitemobs.dungeon.resetlockout:
+    description: Allows admins to clear a player's dungeon boss lockouts
+    default: op
+  elitemobs.command:
+    description: Allows players to use the main command of the plugin
+    default: true
+  elitemobs.enchant.command:
+    description: Allows players to use the enchant command
+    default: true
+  elitemobs.scroll.command:
+    description: Allows players to use the scroll command
+    default: true
+  elitemobs.event.start:
+    description: Allows admins to manually launch an event
+    default: op
+  elitemobs.advancedcombat.admin:
+    description: Allows admins to prepare exact class branch levels for [Alpha] Advanced Combat System testing
+    default: op
+  elitemobs.fireball:
+    description: Allows admins to fire an elite fireball for terrain destruction testing purposes
+    default: op
+  elitemobs.help:
+    description: Allows players to run the help command
+    default: true
+  elitemobs.kill.command:
+    description: Allows admins to run the kill commands to kill elites
+    default: op
+  elitemobs.language:
+    description: Allows admins to set the translation used server-wide for EliteMobs
+    default: op
+  elitemobs.loot.command:
+    description: Opens the loot menu for EliteMobs group looting
+    default: true
+  elitemobs.loot.debug:
+    description: Gives admins a set of gear of a specific level for testing purposes
+    default: op
+  elitemobs.loot.admin:
+    description: Lets admins give or obtain EliteMobs loot via command
+    default: op
+  elitemobs.loot.stats:
+    description: Gives the elite stats of gear, for debugging purposes
+    default: op
+  elitemobs.money.admin:
+    description: Allows admins to manually manipulate player elite currency
+    default: op
+  elitemobs.money.check.self:
+    description: Allows users to check their balance
+    default: true
+  elitemobs.money.check.others:
+    description: Allows users to check their balance
+    default: op
+  elitemobs.dungeon.package:
+    description: Allows admins to package EliteMobs content for distribution
+    default: op
+  elitemobs.money.pay:
+    description: Allows users to check their balance
+    default: true
+  elitemobs.party:
+    description: Allows players to use EliteMobs party commands, including dungeon ready checks
+    default: true
+  elitemobs.place.admin:
+    description: Allows admins to run all commands related to placing and spawning npcs, bosses, treasure chests and more
+    default: op
+  elitemobs.quest.accept:
+    description: Allows users to accept a quest
+    default: true
+  elitemobs.quest.bypass:
+    description: Allows users to accept a quest
+    default: op
+  elitemobs.quest.complete.force:
+    description: Allows admins to force complete all pending quests
+    default: op
+  elitemobs.quest.complete:
+    description: Allows players to complete quests
+    default: true
+  elitemobs.quest.leave:
+    description: Allows users to leave a quest
+    default: true
+  elitemobs.quest.reset.all:
+    description: Allows admins to reset all quests for a specific player
+    default: op
+  elitemobs.quest.reset:
+    description: Allows admins to reset a quest for a specific player
+    default: op
+  elitemobs.quest.track:
+    description: Allows players to track the objectives of a quest
+    default: true
+  elitemobs.quest.npc:
+    description: Allows players to talk to quest npcs
+    default: true
+  elitemobs.quit:
+    description: Allows players to quit instanced content
+    default: true
+  elitemobs.rank.command:
+    description: Allows players to join open the rank menu of EliteMobs
+    default: true
+  elitemobs.rank.set:
+    description: Allows admins to set a specific EliteMobs rank for a specific player
+    default: op
+  elitemobs.reload:
+    description: Allows admins to reload EliteMobs
+    default: op
+  elitemobs.downloadall:
+    description: Allows admins to download EliteMobs content and plugin updates
+    default: op
+  elitemobs.updatecontent:
+    description: Allows admins to update installed EliteMobs content
+    default: op
+  elitemobs.remove:
+    description: Allows admins to use the remove command
+    default: op
+  elitemobs.repair.command:
+    description: Allows users to use the repair command
+    default: true
+  elitemobs.respawn.force:
+    description: Allows admins to force respawn all regional bosses
+    default: op
+  elitemobs.scrap.command:
+    description: Allows players to use the scrap command
+    default: true
+  elitemobs.setup:
+    description: Allows admins to use the setup commands
+    default: op
+  elitemobs.shareitem:
+    description: Allows players to use the share item command
+    default: true
+  elitemobs.shop.custom:
+    description: Allows players to use custom shop command
+    default: true
+  elitemobs.shop.custom.other:
+    description: Allows admins to open the custom shop for other people
+    default: op
+  elitemobs.shop.dynamic:
+    description: Allows players to use dynamic shop command
+    default: true
+  elitemobs.shop.dynamic.other:
+    description: Allows admins to open the dynamic shop for other people
+    default: op
+  elitemobs.shop.sell.other:
+    description: Allows admins to open the sell shop for other people
+    default: op
+  elitemobs.teleport.spawn:
+    description: Allows players to use the spawn teleport command
+    default: true
+  elitemobs.instance.start:
+    description: Allows players to use the start command in instances
+    default: true
+  elitemobs.stats:
+    description: Allows admins to get stats related to EliteMobs
+    default: op
+  elitemobs.boss.track:
+    description: Allows players to track trackable bosses
+    default: true
+  elitemobs.transitiveblocks:
+    description: Allows admins to run commands related to setting up transitive blocks
+    default: op
+  elitemobs.unbind.command:
+    description: Allows players to run the unbind command (which opens the menu to unbind with a scroll)
+    default: true
+  elitemobs.unbind.force:
+    description: Allows admins to force unbind a held item via command
+    default: op
+  elitemobs.version:
+    description: Allows admins to check the plugin version of EliteMobs
+    default: op
+  elitemobs.rank.npc:
+    description: Allows players to talk to the rank npc
+    default: true
+  elitemobs.shop.dynamic.npc:
+    description: Allows players to talk to the dynamic shop npc
+    default: true
+  elitemobs.shop.custom.npc:
+    description: Allows players to talk to the custom shop npc
+    default: true
+  elitemobs.shop.sell.npc:
+    description: Allows players to talk to the sell shop npc
+    default: true
+  elitemobs.back.npc:
+    description: Allows players to talk to the back teleport npc
+    default: true
+  elitemobs.scrap.npc:
+    description: Allows players to talk to the scrap npc
+    default: true
+  elitemobs.repair.npc:
+    description: Allows players to talk to the repair npc
+    default: true
+  elitemobs.unbind.npc:
+    description: Allows players to talk to the unbind npc
+    default: true
+  elitemobs.enchant.npc:
+    description: Allows players to talk to the enchant npc
+    default: true
+  elitemobs.scroll.npc:
+    description: Allows players to talk to the elite scroll npc
+    default: true
+  elitemobs.shop.arrow.npc:
+    description: Allows players to talk to the arrow shop npc
+    default: true
+  elitemobs.gambling.npc:
+    description: Allows players to use the gambling NPCs
+    default: true
+  elitemobs.skill.npc:
+    description: Allows players to use the skill bonus NPC
+    default: true
+  elitemobs.protection.bypass:
+    description: Allows players to run the bypass command to toggle bypassing dungeon protections
+    default: op
+  elitemobs.initialize:
+    description: Allows players to run first time setup command
+    default: op
+  elitemobs.user:
+    description: All recommended permissions
+    children:
+      elitemobs.adventurersguild.command: true
+      elitemobs.adventurersguild.teleport: true
+      elitemobs.alt: true
+      elitemobs.discord.link: true
+      elitemobs.dungeon.tp: true
+      elitemobs.command: true
+      elitemobs.enchant.command: true
+      elitemobs.help: true
+      elitemobs.loot.command: true
+      elitemobs.money.check.self: true
+      elitemobs.money.pay: true
+      elitemobs.party: true
+      elitemobs.quest.accept: true
+      elitemobs.quest.complete: true
+      elitemobs.quest.leave: true
+      elitemobs.quest.track: true
+      elitemobs.quest.npc: true
+      elitemobs.quit: true
+      elitemobs.rank.command: true
+      elitemobs.repair.command: true
+      elitemobs.scrap.command: true
+      elitemobs.shareitem: true
+      elitemobs.shop.custom: true
+      elitemobs.shop.dynamic: true
+      elitemobs.teleport.spawn: true
+      elitemobs.instance.start: true
+      elitemobs.boss.track: true
+      elitemobs.unbind.command: true
+      elitemobs.rank.npc: true
+      elitemobs.shop.dynamic.npc: true
+      elitemobs.shop.custom.npc: true
+      elitemobs.shop.sell.npc: true
+      elitemobs.back.npc: true
+      elitemobs.scrap.npc: true
+      elitemobs.repair.npc: true
+      elitemobs.unbind.npc: true
+      elitemobs.enchant.npc: true
+      elitemobs.scroll.npc: true
+      elitemobs.shop.arrow.npc: true
+      elitemobs.gambling.npc: true
+      elitemobs.skill.npc: true
+    default: true
+  elitemobs.scroll.get:
+    description: Gives the player a specified number of elite scrolls at a given level
+    default: op
+  elitemobs.scroll.give:
+    description: Gives a target player an elite scroll scaled to their combat level
+    default: op
+
+  elitemobs.perks.xp.10percentboost.all:
+    description: Applies the 1.1 XP multiplier to all weapon and armor skills
+    default: false
+    children:
+      elitemobs.perks.xp.10percentboost.armor: true
+      elitemobs.perks.xp.10percentboost.swords: true
+      elitemobs.perks.xp.10percentboost.axes: true
+      elitemobs.perks.xp.10percentboost.bows: true
+      elitemobs.perks.xp.10percentboost.crossbows: true
+      elitemobs.perks.xp.10percentboost.tridents: true
+      elitemobs.perks.xp.10percentboost.hoes: true
+      elitemobs.perks.xp.10percentboost.maces: true
+      elitemobs.perks.xp.10percentboost.spears: true
+      elitemobs.perks.xp.10percentboost.staves: true
+      elitemobs.perks.xp.10percentboost.wands: true
+  elitemobs.perks.xp.10percentboost.armor:
+    description: Applies the 1.1 XP multiplier to armor
+    default: false
+  elitemobs.perks.xp.10percentboost.swords:
+    description: Applies the 1.1 XP multiplier to swords
+    default: false
+  elitemobs.perks.xp.10percentboost.axes:
+    description: Applies the 1.1 XP multiplier to axes
+    default: false
+  elitemobs.perks.xp.10percentboost.bows:
+    description: Applies the 1.1 XP multiplier to bows
+    default: false
+  elitemobs.perks.xp.10percentboost.crossbows:
+    description: Applies the 1.1 XP multiplier to crossbows
+    default: false
+  elitemobs.perks.xp.10percentboost.tridents:
+    description: Applies the 1.1 XP multiplier to tridents
+    default: false
+  elitemobs.perks.xp.10percentboost.hoes:
+    description: Applies the 1.1 XP multiplier to hoes
+    default: false
+  elitemobs.perks.xp.10percentboost.maces:
+    description: Applies the 1.1 XP multiplier to maces
+    default: false
+  elitemobs.perks.xp.10percentboost.spears:
+    description: Applies the 1.1 XP multiplier to spears
+    default: false
+  elitemobs.perks.xp.10percentboost.staves:
+    description: Applies the 1.1 XP multiplier to staves
+    default: false
+  elitemobs.perks.xp.10percentboost.wands:
+    description: Applies the 1.1 XP multiplier to wands
+    default: false
+
+  elitemobs.perks.xp.25percentboost.all:
+    description: Applies the 1.25 XP multiplier to all weapon and armor skills
+    default: false
+    children:
+      elitemobs.perks.xp.25percentboost.armor: true
+      elitemobs.perks.xp.25percentboost.swords: true
+      elitemobs.perks.xp.25percentboost.axes: true
+      elitemobs.perks.xp.25percentboost.bows: true
+      elitemobs.perks.xp.25percentboost.crossbows: true
+      elitemobs.perks.xp.25percentboost.tridents: true
+      elitemobs.perks.xp.25percentboost.hoes: true
+      elitemobs.perks.xp.25percentboost.maces: true
+      elitemobs.perks.xp.25percentboost.spears: true
+      elitemobs.perks.xp.25percentboost.staves: true
+      elitemobs.perks.xp.25percentboost.wands: true
+  elitemobs.perks.xp.25percentboost.armor:
+    description: Applies the 1.25 XP multiplier to armor
+    default: false
+  elitemobs.perks.xp.25percentboost.swords:
+    description: Applies the 1.25 XP multiplier to swords
+    default: false
+  elitemobs.perks.xp.25percentboost.axes:
+    description: Applies the 1.25 XP multiplier to axes
+    default: false
+  elitemobs.perks.xp.25percentboost.bows:
+    description: Applies the 1.25 XP multiplier to bows
+    default: false
+  elitemobs.perks.xp.25percentboost.crossbows:
+    description: Applies the 1.25 XP multiplier to crossbows
+    default: false
+  elitemobs.perks.xp.25percentboost.tridents:
+    description: Applies the 1.25 XP multiplier to tridents
+    default: false
+  elitemobs.perks.xp.25percentboost.hoes:
+    description: Applies the 1.25 XP multiplier to hoes
+    default: false
+  elitemobs.perks.xp.25percentboost.maces:
+    description: Applies the 1.25 XP multiplier to maces
+    default: false
+  elitemobs.perks.xp.25percentboost.spears:
+    description: Applies the 1.25 XP multiplier to spears
+    default: false
+  elitemobs.perks.xp.25percentboost.staves:
+    description: Applies the 1.25 XP multiplier to staves
+    default: false
+  elitemobs.perks.xp.25percentboost.wands:
+    description: Applies the 1.25 XP multiplier to wands
+    default: false
+
+  elitemobs.perks.xp.50percentboost.all:
+    description: Applies the 1.5 XP multiplier to all weapon and armor skills
+    default: false
+    children:
+      elitemobs.perks.xp.50percentboost.armor: true
+      elitemobs.perks.xp.50percentboost.swords: true
+      elitemobs.perks.xp.50percentboost.axes: true
+      elitemobs.perks.xp.50percentboost.bows: true
+      elitemobs.perks.xp.50percentboost.crossbows: true
+      elitemobs.perks.xp.50percentboost.tridents: true
+      elitemobs.perks.xp.50percentboost.hoes: true
+      elitemobs.perks.xp.50percentboost.maces: true
+      elitemobs.perks.xp.50percentboost.spears: true
+      elitemobs.perks.xp.50percentboost.staves: true
+      elitemobs.perks.xp.50percentboost.wands: true
+  elitemobs.perks.xp.50percentboost.armor:
+    description: Applies the 1.5 XP multiplier to armor
+    default: false
+  elitemobs.perks.xp.50percentboost.swords:
+    description: Applies the 1.5 XP multiplier to swords
+    default: false
+  elitemobs.perks.xp.50percentboost.axes:
+    description: Applies the 1.5 XP multiplier to axes
+    default: false
+  elitemobs.perks.xp.50percentboost.bows:
+    description: Applies the 1.5 XP multiplier to bows
+    default: false
+  elitemobs.perks.xp.50percentboost.crossbows:
+    description: Applies the 1.5 XP multiplier to crossbows
+    default: false
+  elitemobs.perks.xp.50percentboost.tridents:
+    description: Applies the 1.5 XP multiplier to tridents
+    default: false
+  elitemobs.perks.xp.50percentboost.hoes:
+    description: Applies the 1.5 XP multiplier to hoes
+    default: false
+  elitemobs.perks.xp.50percentboost.maces:
+    description: Applies the 1.5 XP multiplier to maces
+    default: false
+  elitemobs.perks.xp.50percentboost.spears:
+    description: Applies the 1.5 XP multiplier to spears
+    default: false
+  elitemobs.perks.xp.50percentboost.staves:
+    description: Applies the 1.5 XP multiplier to staves
+    default: false
+  elitemobs.perks.xp.50percentboost.wands:
+    description: Applies the 1.5 XP multiplier to wands
+    default: false
+
+  elitemobs.perks.xp.double.all:
+    description: Applies the 2 XP multiplier to all weapon and armor skills
+    default: false
+    children:
+      elitemobs.perks.xp.double.armor: true
+      elitemobs.perks.xp.double.swords: true
+      elitemobs.perks.xp.double.axes: true
+      elitemobs.perks.xp.double.bows: true
+      elitemobs.perks.xp.double.crossbows: true
+      elitemobs.perks.xp.double.tridents: true
+      elitemobs.perks.xp.double.hoes: true
+      elitemobs.perks.xp.double.maces: true
+      elitemobs.perks.xp.double.spears: true
+      elitemobs.perks.xp.double.staves: true
+      elitemobs.perks.xp.double.wands: true
+  elitemobs.perks.xp.double.armor:
+    description: Applies the 2 XP multiplier to armor
+    default: false
+  elitemobs.perks.xp.double.swords:
+    description: Applies the 2 XP multiplier to swords
+    default: false
+  elitemobs.perks.xp.double.axes:
+    description: Applies the 2 XP multiplier to axes
+    default: false
+  elitemobs.perks.xp.double.bows:
+    description: Applies the 2 XP multiplier to bows
+    default: false
+  elitemobs.perks.xp.double.crossbows:
+    description: Applies the 2 XP multiplier to crossbows
+    default: false
+  elitemobs.perks.xp.double.tridents:
+    description: Applies the 2 XP multiplier to tridents
+    default: false
+  elitemobs.perks.xp.double.hoes:
+    description: Applies the 2 XP multiplier to hoes
+    default: false
+  elitemobs.perks.xp.double.maces:
+    description: Applies the 2 XP multiplier to maces
+    default: false
+  elitemobs.perks.xp.double.spears:
+    description: Applies the 2 XP multiplier to spears
+    default: false
+  elitemobs.perks.xp.double.staves:
+    description: Applies the 2 XP multiplier to staves
+    default: false
+  elitemobs.perks.xp.double.wands:
+    description: Applies the 2 XP multiplier to wands
+    default: false
+
+  elitemobs.perks.xp.150percentboost.all:
+    description: Applies the 2.5 XP multiplier to all weapon and armor skills
+    default: false
+    children:
+      elitemobs.perks.xp.150percentboost.armor: true
+      elitemobs.perks.xp.150percentboost.swords: true
+      elitemobs.perks.xp.150percentboost.axes: true
+      elitemobs.perks.xp.150percentboost.bows: true
+      elitemobs.perks.xp.150percentboost.crossbows: true
+      elitemobs.perks.xp.150percentboost.tridents: true
+      elitemobs.perks.xp.150percentboost.hoes: true
+      elitemobs.perks.xp.150percentboost.maces: true
+      elitemobs.perks.xp.150percentboost.spears: true
+      elitemobs.perks.xp.150percentboost.staves: true
+      elitemobs.perks.xp.150percentboost.wands: true
+  elitemobs.perks.xp.150percentboost.armor:
+    description: Applies the 2.5 XP multiplier to armor
+    default: false
+  elitemobs.perks.xp.150percentboost.swords:
+    description: Applies the 2.5 XP multiplier to swords
+    default: false
+  elitemobs.perks.xp.150percentboost.axes:
+    description: Applies the 2.5 XP multiplier to axes
+    default: false
+  elitemobs.perks.xp.150percentboost.bows:
+    description: Applies the 2.5 XP multiplier to bows
+    default: false
+  elitemobs.perks.xp.150percentboost.crossbows:
+    description: Applies the 2.5 XP multiplier to crossbows
+    default: false
+  elitemobs.perks.xp.150percentboost.tridents:
+    description: Applies the 2.5 XP multiplier to tridents
+    default: false
+  elitemobs.perks.xp.150percentboost.hoes:
+    description: Applies the 2.5 XP multiplier to hoes
+    default: false
+  elitemobs.perks.xp.150percentboost.maces:
+    description: Applies the 2.5 XP multiplier to maces
+    default: false
+  elitemobs.perks.xp.150percentboost.spears:
+    description: Applies the 2.5 XP multiplier to spears
+    default: false
+  elitemobs.perks.xp.150percentboost.staves:
+    description: Applies the 2.5 XP multiplier to staves
+    default: false
+  elitemobs.perks.xp.150percentboost.wands:
+    description: Applies the 2.5 XP multiplier to wands
+    default: false
+
+  elitemobs.perks.xp.triple.all:
+    description: Applies the 3 XP multiplier to all weapon and armor skills
+    default: false
+    children:
+      elitemobs.perks.xp.triple.armor: true
+      elitemobs.perks.xp.triple.swords: true
+      elitemobs.perks.xp.triple.axes: true
+      elitemobs.perks.xp.triple.bows: true
+      elitemobs.perks.xp.triple.crossbows: true
+      elitemobs.perks.xp.triple.tridents: true
+      elitemobs.perks.xp.triple.hoes: true
+      elitemobs.perks.xp.triple.maces: true
+      elitemobs.perks.xp.triple.spears: true
+      elitemobs.perks.xp.triple.staves: true
+      elitemobs.perks.xp.triple.wands: true
+  elitemobs.perks.xp.triple.armor:
+    description: Applies the 3 XP multiplier to armor
+    default: false
+  elitemobs.perks.xp.triple.swords:
+    description: Applies the 3 XP multiplier to swords
+    default: false
+  elitemobs.perks.xp.triple.axes:
+    description: Applies the 3 XP multiplier to axes
+    default: false
+  elitemobs.perks.xp.triple.bows:
+    description: Applies the 3 XP multiplier to bows
+    default: false
+  elitemobs.perks.xp.triple.crossbows:
+    description: Applies the 3 XP multiplier to crossbows
+    default: false
+  elitemobs.perks.xp.triple.tridents:
+    description: Applies the 3 XP multiplier to tridents
+    default: false
+  elitemobs.perks.xp.triple.hoes:
+    description: Applies the 3 XP multiplier to hoes
+    default: false
+  elitemobs.perks.xp.triple.maces:
+    description: Applies the 3 XP multiplier to maces
+    default: false
+  elitemobs.perks.xp.triple.spears:
+    description: Applies the 3 XP multiplier to spears
+    default: false
+  elitemobs.perks.xp.triple.staves:
+    description: Applies the 3 XP multiplier to staves
+    default: false
+  elitemobs.perks.xp.triple.wands:
+    description: Applies the 3 XP multiplier to wands
+    default: false
+
+  elitemobs.perks.xp.quadruple.all:
+    description: Applies the 4 XP multiplier to all weapon and armor skills
+    default: false
+    children:
+      elitemobs.perks.xp.quadruple.armor: true
+      elitemobs.perks.xp.quadruple.swords: true
+      elitemobs.perks.xp.quadruple.axes: true
+      elitemobs.perks.xp.quadruple.bows: true
+      elitemobs.perks.xp.quadruple.crossbows: true
+      elitemobs.perks.xp.quadruple.tridents: true
+      elitemobs.perks.xp.quadruple.hoes: true
+      elitemobs.perks.xp.quadruple.maces: true
+      elitemobs.perks.xp.quadruple.spears: true
+      elitemobs.perks.xp.quadruple.staves: true
+      elitemobs.perks.xp.quadruple.wands: true
+  elitemobs.perks.xp.quadruple.armor:
+    description: Applies the 4 XP multiplier to armor
+    default: false
+  elitemobs.perks.xp.quadruple.swords:
+    description: Applies the 4 XP multiplier to swords
+    default: false
+  elitemobs.perks.xp.quadruple.axes:
+    description: Applies the 4 XP multiplier to axes
+    default: false
+  elitemobs.perks.xp.quadruple.bows:
+    description: Applies the 4 XP multiplier to bows
+    default: false
+  elitemobs.perks.xp.quadruple.crossbows:
+    description: Applies the 4 XP multiplier to crossbows
+    default: false
+  elitemobs.perks.xp.quadruple.tridents:
+    description: Applies the 4 XP multiplier to tridents
+    default: false
+  elitemobs.perks.xp.quadruple.hoes:
+    description: Applies the 4 XP multiplier to hoes
+    default: false
+  elitemobs.perks.xp.quadruple.maces:
+    description: Applies the 4 XP multiplier to maces
+    default: false
+  elitemobs.perks.xp.quadruple.spears:
+    description: Applies the 4 XP multiplier to spears
+    default: false
+  elitemobs.perks.xp.quadruple.staves:
+    description: Applies the 4 XP multiplier to staves
+    default: false
+  elitemobs.perks.xp.quadruple.wands:
+    description: Applies the 4 XP multiplier to wands
+    default: false
+
+  elitemobs.perks.xp.customboost.all:
+    description: Applies the the configured custom XP multiplier to all weapon and armor skills
+    default: false
+    children:
+      elitemobs.perks.xp.customboost.armor: true
+      elitemobs.perks.xp.customboost.swords: true
+      elitemobs.perks.xp.customboost.axes: true
+      elitemobs.perks.xp.customboost.bows: true
+      elitemobs.perks.xp.customboost.crossbows: true
+      elitemobs.perks.xp.customboost.tridents: true
+      elitemobs.perks.xp.customboost.hoes: true
+      elitemobs.perks.xp.customboost.maces: true
+      elitemobs.perks.xp.customboost.spears: true
+      elitemobs.perks.xp.customboost.staves: true
+      elitemobs.perks.xp.customboost.wands: true
+  elitemobs.perks.xp.customboost.armor:
+    description: Applies the the configured custom XP multiplier to armor
+    default: false
+  elitemobs.perks.xp.customboost.swords:
+    description: Applies the the configured custom XP multiplier to swords
+    default: false
+  elitemobs.perks.xp.customboost.axes:
+    description: Applies the the configured custom XP multiplier to axes
+    default: false
+  elitemobs.perks.xp.customboost.bows:
+    description: Applies the the configured custom XP multiplier to bows
+    default: false
+  elitemobs.perks.xp.customboost.crossbows:
+    description: Applies the the configured custom XP multiplier to crossbows
+    default: false
+  elitemobs.perks.xp.customboost.tridents:
+    description: Applies the the configured custom XP multiplier to tridents
+    default: false
+  elitemobs.perks.xp.customboost.hoes:
+    description: Applies the the configured custom XP multiplier to hoes
+    default: false
+  elitemobs.perks.xp.customboost.maces:
+    description: Applies the the configured custom XP multiplier to maces
+    default: false
+  elitemobs.perks.xp.customboost.spears:
+    description: Applies the the configured custom XP multiplier to spears
+    default: false
+  elitemobs.perks.xp.customboost.staves:
+    description: Applies the the configured custom XP multiplier to staves
+    default: false
+  elitemobs.perks.xp.customboost.wands:
+    description: Applies the the configured custom XP multiplier to wands
+    default: false

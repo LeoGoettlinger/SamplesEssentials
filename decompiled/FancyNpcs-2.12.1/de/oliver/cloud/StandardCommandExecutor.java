@@ -1,0 +1,73 @@
+package de.oliver.cloud;
+
+import de.oliver.cloud.context.CommandContext;
+import de.oliver.cloud.context.CommandContextFactory;
+import de.oliver.cloud.context.CommandInput;
+import de.oliver.cloud.exception.handling.ExceptionController;
+import de.oliver.cloud.execution.CommandExecutor;
+import de.oliver.cloud.execution.CommandResult;
+import de.oliver.cloud.execution.ExecutionCoordinator;
+import de.oliver.cloud.services.State;
+import de.oliver.cloud.util.CompletableFutures;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
+import java.util.function.Consumer;
+import org.checkerframework.checker.nullness.qual.NonNull;
+
+final class StandardCommandExecutor<C> implements CommandExecutor<C> {
+   private final CommandManager<C> commandManager;
+   private final ExecutionCoordinator<C> executionCoordinator;
+   private final CommandContextFactory<C> commandContextFactory;
+
+   StandardCommandExecutor(
+      @NonNull final CommandManager<C> commandManager,
+      @NonNull final ExecutionCoordinator<C> executionCoordinator,
+      @NonNull final CommandContextFactory<C> commandContextFactory
+   ) {
+      this.commandManager = commandManager;
+      this.executionCoordinator = executionCoordinator;
+      this.commandContextFactory = commandContextFactory;
+   }
+
+   @NonNull
+   @Override
+   public CompletableFuture<CommandResult<C>> executeCommand(
+      @NonNull final C commandSender, @NonNull final String input, @NonNull final Consumer<CommandContext<C>> contextConsumer
+   ) {
+      CommandContext<C> context = this.commandContextFactory.create(false, commandSender);
+      contextConsumer.accept(context);
+      CommandInput commandInput = CommandInput.of(input);
+      return this.executeCommand(context, commandInput).whenComplete((result, throwable) -> {
+         if (throwable != null) {
+            try {
+               this.commandManager.exceptionController().handleException(context, ExceptionController.unwrapCompletionException(throwable));
+            } catch (RuntimeException var5x) {
+               throw var5x;
+            } catch (Throwable var6) {
+               throw new CompletionException(var6);
+            }
+         }
+      });
+   }
+
+   @NonNull
+   private CompletableFuture<CommandResult<C>> executeCommand(@NonNull final CommandContext<C> context, @NonNull final CommandInput commandInput) {
+      context.store("__raw_input__", commandInput.copy());
+
+      try {
+         if (this.commandManager.preprocessContext(context, commandInput) == State.ACCEPTED) {
+            return this.executionCoordinator().coordinateExecution(this.commandManager.commandTree(), context, commandInput);
+         }
+      } catch (Exception var4) {
+         return CompletableFutures.failedFuture(var4);
+      }
+
+      return CompletableFuture.completedFuture(null);
+   }
+
+   @NonNull
+   @Override
+   public ExecutionCoordinator<C> executionCoordinator() {
+      return this.executionCoordinator;
+   }
+}

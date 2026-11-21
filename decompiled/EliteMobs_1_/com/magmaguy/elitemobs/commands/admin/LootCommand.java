@@ -1,0 +1,78 @@
+package com.magmaguy.elitemobs.commands.admin;
+
+import com.magmaguy.elitemobs.config.CommandMessagesConfig;
+import com.magmaguy.elitemobs.items.customitems.CustomItem;
+import com.magmaguy.elitemobs.skills.CombatLevelCalculator;
+import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+
+public class LootCommand {
+   public static void get(Player player, String args1) {
+      CustomItem customItem = CustomItem.getCustomItem(args1);
+      if (customItem == null) {
+         player.sendMessage(CommandMessagesConfig.getInvalidItemFilenameMessage().replace("$filename", args1));
+      } else {
+         giveItem(player, customItem.generateDefaultsItemStack(player, false, null, true));
+      }
+   }
+
+   public static void give(CommandSender commandSender, String playerString, String args1) {
+      CustomItem customItem = CustomItem.getCustomItem(args1);
+      if (customItem == null) {
+         commandSender.sendMessage(CommandMessagesConfig.getInvalidItemFilenameMessage().replace("$filename", args1));
+      } else {
+         Player player = Bukkit.getPlayer(playerString);
+         if (player == null) {
+            commandSender.sendMessage(CommandMessagesConfig.getInvalidPlayerForItemMessage());
+         } else {
+            if (!giveItem(player, customItem.generateDefaultsItemStack(player, false, null))) {
+               return;
+            }
+
+            commandSender.sendMessage(
+               CommandMessagesConfig.getGaveItemMessage()
+                  .replace("$player", player.getName())
+                  .replace("$item", customItem.getCustomItemsConfigFields().getName())
+            );
+         }
+      }
+   }
+
+   public static void reward(CommandSender commandSender, String playerString, String args1) {
+      CustomItem customItem = CustomItem.getCustomItem(args1);
+      if (customItem == null) {
+         commandSender.sendMessage(CommandMessagesConfig.getInvalidItemFilenameMessage().replace("$filename", args1));
+      } else {
+         Player player = Bukkit.getPlayer(playerString);
+         if (player == null) {
+            commandSender.sendMessage(CommandMessagesConfig.getInvalidPlayerForItemMessage());
+         } else {
+            int combatLevel = CombatLevelCalculator.calculateCombatLevel(player.getUniqueId());
+            ItemStack itemStack = customItem.generateItemStackExact(combatLevel, player, null);
+            if (!giveItem(player, itemStack)) {
+               return;
+            }
+
+            commandSender.sendMessage(
+               CommandMessagesConfig.getGaveItemMessage()
+                  .replace("$player", player.getName())
+                  .replace("$item", customItem.getCustomItemsConfigFields().getName())
+            );
+         }
+      }
+   }
+
+   private static boolean giveItem(Player player, ItemStack itemStack) {
+      if (itemStack == null) {
+         return false;
+      } else {
+         for (ItemStack overflow : player.getInventory().addItem(new ItemStack[]{itemStack}).values()) {
+            player.getWorld().dropItem(player.getLocation(), overflow);
+         }
+
+         return true;
+      }
+   }
+}

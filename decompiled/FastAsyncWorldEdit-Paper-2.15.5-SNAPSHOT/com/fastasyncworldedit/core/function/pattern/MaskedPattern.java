@@ -1,0 +1,36 @@
+package com.fastasyncworldedit.core.function.pattern;
+
+import com.sk89q.worldedit.WorldEditException;
+import com.sk89q.worldedit.extent.Extent;
+import com.sk89q.worldedit.function.mask.Mask;
+import com.sk89q.worldedit.function.pattern.AbstractPattern;
+import com.sk89q.worldedit.function.pattern.Pattern;
+import com.sk89q.worldedit.math.BlockVector3;
+import com.sk89q.worldedit.world.block.BaseBlock;
+
+public class MaskedPattern extends AbstractPattern {
+   private final Pattern primary;
+   private final Pattern secondary;
+   private final Mask mask;
+
+   public MaskedPattern(Mask mask, Pattern primary, Pattern secondary) {
+      this.mask = mask;
+      this.primary = primary;
+      this.secondary = secondary;
+   }
+
+   @Override
+   public BaseBlock applyBlock(BlockVector3 position) {
+      return this.mask.test(position) ? this.primary.applyBlock(position) : this.secondary.applyBlock(position);
+   }
+
+   @Override
+   public boolean apply(Extent extent, BlockVector3 get, BlockVector3 set) throws WorldEditException {
+      return this.mask.test(get) ? this.primary.apply(extent, get, set) : this.secondary.apply(extent, get, set);
+   }
+
+   @Override
+   public Pattern fork() {
+      return new MaskedPattern(this.mask.copy(), this.primary.fork(), this.secondary.fork());
+   }
+}

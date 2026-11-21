@@ -1,0 +1,57 @@
+package com.fastasyncworldedit.bukkit.regions;
+
+import com.fastasyncworldedit.core.regions.FaweMask;
+import com.fastasyncworldedit.core.regions.FaweMaskManager;
+import com.fastasyncworldedit.core.util.TaskManager;
+import com.sk89q.worldedit.bukkit.BukkitAdapter;
+import com.sk89q.worldedit.internal.util.LogManagerCompat;
+import com.sk89q.worldedit.math.BlockVector3;
+import com.sk89q.worldedit.regions.CuboidRegion;
+import me.ryanhamshire.GriefPrevention.Claim;
+import me.ryanhamshire.GriefPrevention.GriefPrevention;
+import org.apache.logging.log4j.Logger;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.bukkit.plugin.Plugin;
+
+public class GriefPreventionFeature extends BukkitMaskManager implements Listener {
+   private static final Logger LOGGER = LogManagerCompat.getLogger();
+
+   public GriefPreventionFeature(final Plugin griefpreventionPlugin) {
+      super(griefpreventionPlugin.getName());
+      LOGGER.info("Plugin 'GriefPrevention' found. Using it now.");
+   }
+
+   public boolean isAllowed(Player player, Claim claim, FaweMaskManager.MaskType type) {
+      return claim != null
+         && (
+            claim.getOwnerName().equalsIgnoreCase(player.getName())
+               || claim.getOwnerName().equals(player.getUniqueId())
+               || TaskManager.taskManager().sync(() -> type == FaweMaskManager.MaskType.MEMBER && claim.allowBuild(player, Material.AIR) == null)
+         );
+   }
+
+   @Override
+   public FaweMask getMask(final com.sk89q.worldedit.entity.Player wePlayer, FaweMaskManager.MaskType type, boolean isWhitelist) {
+      final Player player = BukkitAdapter.adapt(wePlayer);
+      final Claim claim = GriefPrevention.instance.dataStore.getClaimAt(player.getLocation(), true, null);
+      if (claim != null && this.isAllowed(player, claim, type)) {
+         claim.getGreaterBoundaryCorner().getBlockX();
+         BlockVector3 pos1 = BlockVector3.at(
+            claim.getLesserBoundaryCorner().getBlockX(), wePlayer.getWorld().getMinY(), claim.getLesserBoundaryCorner().getBlockZ()
+         );
+         BlockVector3 pos2 = BlockVector3.at(
+            claim.getGreaterBoundaryCorner().getBlockX(), wePlayer.getWorld().getMaxY(), claim.getGreaterBoundaryCorner().getBlockZ()
+         );
+         return new FaweMask(new CuboidRegion(pos1, pos2)) {
+            @Override
+            public boolean isValid(com.sk89q.worldedit.entity.Player wePlayer, FaweMaskManager.MaskType typex) {
+               return GriefPreventionFeature.this.isAllowed(player, claim, typex);
+            }
+         };
+      } else {
+         return null;
+      }
+   }
+}

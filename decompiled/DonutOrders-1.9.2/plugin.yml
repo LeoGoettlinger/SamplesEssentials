@@ -1,0 +1,40 @@
+name: DonutOrders
+version: '1.9.2'
+main: com.donutorders.DonutOrders
+# Minimum API version. Keep 1.20 so 1.20.x servers still load; 26.3 accepts this.
+api-version: '1.20'
+description: Player-driven buy-order marketplace.
+author: NightBeam
+website: https://github.com/MeherBenSalem/DonutOrders
+
+# Required so that Folia loads this plugin.
+# Without this flag Folia silently disables the plugin.
+folia-supported: true
+
+softdepend:
+  - Vault
+  - LuckPerms
+  - PlaceholderAPI
+
+commands:
+  order:
+    description: View and manage your buy orders.
+    usage: /order [history]
+    permission: donutorders.use
+  orders:
+    description: Browse the public order marketplace.
+    usage: /orders
+    permission: donutorders.use
+    aliases: [market, donutorders]
+  orderadmin:
+    description: DonutOrders administration.
+    usage: /orderadmin <reload|history|simulate> [player]
+    permission: donutorders.admin
+
+permissions:
+  donutorders.use:
+    description: Allows players to use /order and /orders.
+    default: true
+  donutorders.admin:
+    description: Allows /orderadmin commands (reload, history, simulate).
+    default: op

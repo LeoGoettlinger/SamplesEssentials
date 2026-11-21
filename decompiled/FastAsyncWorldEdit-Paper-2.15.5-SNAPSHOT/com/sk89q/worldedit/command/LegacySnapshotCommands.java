@@ -1,0 +1,161 @@
+package com.sk89q.worldedit.command;
+
+import com.fastasyncworldedit.core.configuration.Caption;
+import com.sk89q.worldedit.LocalConfiguration;
+import com.sk89q.worldedit.LocalSession;
+import com.sk89q.worldedit.WorldEdit;
+import com.sk89q.worldedit.WorldEditException;
+import com.sk89q.worldedit.extension.platform.Actor;
+import com.sk89q.worldedit.util.formatting.component.PaginationBox;
+import com.sk89q.worldedit.util.formatting.text.Component;
+import com.sk89q.worldedit.util.formatting.text.TextComponent;
+import com.sk89q.worldedit.util.formatting.text.event.ClickEvent;
+import com.sk89q.worldedit.util.formatting.text.event.HoverEvent;
+import com.sk89q.worldedit.util.formatting.text.format.TextColor;
+import com.sk89q.worldedit.world.World;
+import com.sk89q.worldedit.world.snapshot.InvalidSnapshotException;
+import com.sk89q.worldedit.world.snapshot.Snapshot;
+import com.sk89q.worldedit.world.storage.MissingWorldException;
+import java.io.File;
+import java.io.IOException;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
+class LegacySnapshotCommands {
+   private static final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss z");
+   private final WorldEdit we;
+
+   LegacySnapshotCommands(WorldEdit we) {
+      this.we = we;
+   }
+
+   void list(Actor actor, World world, int page) throws WorldEditException {
+      LocalConfiguration config = this.we.getConfiguration();
+
+      try {
+         List<Snapshot> snapshots = config.snapshotRepo.getSnapshots(true, world.getName());
+         if (!snapshots.isEmpty()) {
+            actor.print(new LegacySnapshotCommands.SnapshotListBox(world.getName(), snapshots).create(page));
+         } else {
+            actor.print(Caption.of("worldedit.restore.none-found-console"));
+            File dir = config.snapshotRepo.getDirectory();
+
+            try {
+               WorldEdit.logger.info("WorldEdit found no snapshots: looked in: " + dir.getCanonicalPath());
+            } catch (IOException var8) {
+               WorldEdit.logger.info("WorldEdit found no snapshots: looked in (NON-RESOLVABLE PATH - does it exist?): " + dir.getPath());
+            }
+         }
+      } catch (MissingWorldException var9) {
+         actor.print(Caption.of("worldedit.restore.none-for-world"));
+      }
+   }
+
+   void use(Actor actor, World world, LocalSession session, String name) {
+      LocalConfiguration config = this.we.getConfiguration();
+      if (name.equalsIgnoreCase("latest")) {
+         try {
+            Snapshot snapshot = config.snapshotRepo.getDefaultSnapshot(world.getName());
+            if (snapshot != null) {
+               session.setSnapshot(null);
+               actor.print(Caption.of("worldedit.snapshot.use.newest"));
+            } else {
+               actor.print(Caption.of("worldedit.restore.none-found"));
+            }
+         } catch (MissingWorldException var8) {
+            actor.print(Caption.of("worldedit.restore.none-for-world"));
+         }
+      } else {
+         try {
+            session.setSnapshot(config.snapshotRepo.getSnapshot(name));
+            actor.print(Caption.of("worldedit.snapshot.use", TextComponent.of(name)));
+         } catch (InvalidSnapshotException var7) {
+            actor.print(Caption.of("worldedit.restore.not-available"));
+         }
+      }
+   }
+
+   void sel(Actor actor, World world, LocalSession session, int index) {
+      LocalConfiguration config = this.we.getConfiguration();
+      if (index < 1) {
+         actor.print(Caption.of("worldedit.snapshot.index-above-0"));
+      } else {
+         try {
+            List<Snapshot> snapshots = config.snapshotRepo.getSnapshots(true, world.getName());
+            if (snapshots.size() < index) {
+               actor.print(Caption.of("worldedit.snapshot.index-oob", TextComponent.of(snapshots.size())));
+               return;
+            }
+
+            Snapshot snapshot = snapshots.get(index - 1);
+            if (snapshot == null) {
+               actor.print(Caption.of("worldedit.restore.not-available"));
+               return;
+            }
+
+            session.setSnapshot(snapshot);
+            actor.print(Caption.of("worldedit.snapshot.use", TextComponent.of(snapshot.getName())));
+         } catch (MissingWorldException var8) {
+            actor.print(Caption.of("worldedit.restore.none-for-world"));
+         }
+      }
+   }
+
+   void before(Actor actor, World world, LocalSession session, ZonedDateTime date) {
+      LocalConfiguration config = this.we.getConfiguration();
+
+      try {
+         Snapshot snapshot = config.snapshotRepo.getSnapshotBefore(date, world.getName());
+         if (snapshot == null) {
+            actor.print(Caption.of("worldedit.snapshot.none-before", TextComponent.of(dateFormat.withZone(session.getTimeZone()).format(date))));
+         } else {
+            session.setSnapshot(snapshot);
+            actor.print(Caption.of("worldedit.snapshot.use", TextComponent.of(snapshot.getName())));
+         }
+      } catch (MissingWorldException var7) {
+         actor.print(Caption.of("worldedit.restore.none-for-world"));
+      }
+   }
+
+   void after(Actor actor, World world, LocalSession session, ZonedDateTime date) {
+      LocalConfiguration config = this.we.getConfiguration();
+
+      try {
+         Snapshot snapshot = config.snapshotRepo.getSnapshotAfter(date, world.getName());
+         if (snapshot == null) {
+            actor.print(Caption.of("worldedit.snapshot.none-after", TextComponent.of(dateFormat.withZone(session.getTimeZone()).format(date))));
+         } else {
+            session.setSnapshot(snapshot);
+            actor.print(Caption.of("worldedit.snapshot.use", TextComponent.of(snapshot.getName())));
+         }
+      } catch (MissingWorldException var7) {
+         actor.print(Caption.of("worldedit.restore.none-for-world"));
+      }
+   }
+
+   private static class SnapshotListBox extends PaginationBox {
+      private final List<Snapshot> snapshots;
+
+      SnapshotListBox(String world, List<Snapshot> snapshots) {
+         super("Snapshots for: " + world, "/snap list -p %page%");
+         this.snapshots = snapshots;
+      }
+
+      @Override
+      public Component getComponent(int number) {
+         Snapshot snapshot = this.snapshots.get(number);
+         return TextComponent.of(number + 1 + ". ", TextColor.GOLD)
+            .append(
+               ((TextComponent)TextComponent.of(snapshot.getName(), TextColor.LIGHT_PURPLE)
+                     .hoverEvent(HoverEvent.of(HoverEvent.Action.SHOW_TEXT, TextComponent.of("Click to use"))))
+                  .clickEvent(ClickEvent.of(ClickEvent.Action.RUN_COMMAND, "/snap use " + snapshot.getName()))
+            );
+      }
+
+      @Override
+      public int getComponentsSize() {
+         return this.snapshots.size();
+      }
+   }
+}

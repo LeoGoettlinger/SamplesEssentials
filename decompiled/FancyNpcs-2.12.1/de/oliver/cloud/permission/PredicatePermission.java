@@ -1,0 +1,51 @@
+package de.oliver.cloud.permission;
+
+import de.oliver.cloud.key.CloudKey;
+import de.oliver.cloud.key.CloudKeyHolder;
+import java.util.function.Predicate;
+import org.apiguardian.api.API;
+import org.apiguardian.api.API.Status;
+import org.checkerframework.checker.nullness.qual.NonNull;
+
+@FunctionalInterface
+@API(
+   status = Status.STABLE
+)
+public interface PredicatePermission<C> extends Permission, CloudKeyHolder<Void> {
+   static <C> PredicatePermission<C> of(@NonNull final CloudKey<Void> key, @NonNull final Predicate<C> predicate) {
+      return new WrappingPredicatePermission<>(key, predicate);
+   }
+
+   static <C> PredicatePermission<C> of(@NonNull final Predicate<C> predicate) {
+      return new PredicatePermission<C>() {
+         @NonNull
+         @Override
+         public PermissionResult testPermission(@NonNull final C sender) {
+            return PermissionResult.of(predicate.test(sender), this);
+         }
+      };
+   }
+
+   @NonNull
+   @Override
+   default CloudKey<Void> key() {
+      return CloudKey.of(this.getClass().getSimpleName());
+   }
+
+   @NonNull
+   @Override
+   default String permissionString() {
+      return this.key().name();
+   }
+
+   @API(
+      status = Status.STABLE
+   )
+   @NonNull
+   PermissionResult testPermission(@NonNull C sender);
+
+   @Override
+   default boolean isEmpty() {
+      return false;
+   }
+}

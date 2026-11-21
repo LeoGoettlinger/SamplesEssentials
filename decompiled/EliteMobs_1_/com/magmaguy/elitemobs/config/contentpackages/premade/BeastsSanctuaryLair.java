@@ -1,0 +1,42 @@
+package com.magmaguy.elitemobs.config.contentpackages.premade;
+
+import com.magmaguy.elitemobs.config.contentpackages.ContentPackagesConfigFields;
+import java.util.List;
+import java.util.Map;
+import org.bukkit.World.Environment;
+
+public class BeastsSanctuaryLair extends ContentPackagesConfigFields {
+   public BeastsSanctuaryLair() {
+      super(
+         "beasts_sanctuary_lair",
+         true,
+         "&2[Dynamic] &cThe Beast's Sanctuary",
+         List.of("&fA dark sanctuary corrupted by", "&fthe terrifying Beast."),
+         "https://nightbreak.io/plugin/elitemobs/#the-beasts-sanctuary",
+         ContentPackagesConfigFields.DungeonSizeCategory.LAIR,
+         "em_beasts_sanctuary",
+         Environment.NORMAL,
+         true,
+         "em_beasts_sanctuary,35.5,88.2,20.5,46,23",
+         "em_beasts_sanctuary,32.5,88.2,36.5,0,0",
+         1,
+         "&aDynamic Lair\n$bossCount boss encounters\n&cA dark sanctuary corrupted\n&cby the terrifying Beast.",
+         "&8[EM] &aYou have entered the Beast Sanctuary! Beware of what prowls here!",
+         "&8[EM] &aYou've left the Beast Sanctuary! Did you take trophies?",
+         List.of("filename=the_beasts_sanctuary_beast_human_p1.yml"),
+         "the_beasts_sanctuary",
+         -1,
+         false
+      );
+      this.contentType = ContentPackagesConfigFields.ContentType.DYNAMIC_DUNGEON;
+      this.setDifficulties(
+         List.of(
+            Map.of("name", "normal", "levelSync", "+5", "id", 0),
+            Map.of("name", "hard", "levelSync", "+0", "id", 1),
+            Map.of("name", "mythic", "levelSync", "-5", "id", 2)
+         )
+      );
+      this.setSetupMenuDescription(List.of("&2A Dynamic Lair where you choose the level!"));
+      this.setNightbreakSlug("the-beasts-sanctuary");
+   }
+}

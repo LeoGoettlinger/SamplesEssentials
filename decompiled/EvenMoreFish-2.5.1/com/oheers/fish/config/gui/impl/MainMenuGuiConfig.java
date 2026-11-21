@@ -1,0 +1,22 @@
+package com.oheers.fish.config.gui.impl;
+
+import com.oheers.fish.config.gui.GuiConfig;
+import org.jspecify.annotations.NonNull;
+
+public class MainMenuGuiConfig extends GuiConfig {
+   private static final MainMenuGuiConfig INSTANCE = new MainMenuGuiConfig();
+
+   private MainMenuGuiConfig() {
+      super("main.yml");
+   }
+
+   @NonNull
+   public static MainMenuGuiConfig getInstance() {
+      return INSTANCE;
+   }
+
+   @Override
+   public boolean isPaginated() {
+      return false;
+   }
+}

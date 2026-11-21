@@ -1,0 +1,29 @@
+name: FriendZ
+version: 1.1
+main: com.yourname.friendz.FriendZ
+api-version: 1.21
+description: A comprehensive friend management system for Minecraft with GUI interface
+author: Mateitaa1
+commands:
+  friend:
+    description: Open the FriendZ GUI to manage your friends
+    usage: /friend
+    aliases: [f, friends]
+  msf:
+    description: Message a friend (command version)
+    usage: /msf <player> <message> | /msf r <message>
+    aliases: [fmsg, fm]
+  friendz:
+    description: Plugin information and admin commands
+    usage: /friendz [reload]
+
+permissions:
+  friendz.use:
+    description: Allows use of basic FriendZ commands and GUI
+    default: true
+  friendz.admin:
+    description: Allows use of admin commands
+    default: op
+  friendz.bypasslimit:
+    description: Bypass friend limit
+    default: op

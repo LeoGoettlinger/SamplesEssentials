@@ -1,0 +1,27 @@
+package com.magmaguy.elitemobs.config.skillbonuses.premade;
+
+import com.magmaguy.elitemobs.config.skillbonuses.SkillBonusConfigFields;
+import com.magmaguy.elitemobs.skills.SkillType;
+import java.util.List;
+import org.bukkit.Material;
+
+public class SpearsVanguardConfig extends SkillBonusConfigFields {
+   public SpearsVanguardConfig() {
+      super(
+         "spears_vanguard.yml",
+         true,
+         "&bVanguard",
+         List.of("&7Charge forward, damaging", "&7enemies in your path. 20s CD."),
+         SkillType.SPEARS,
+         3,
+         1.0,
+         0.02,
+         0.0,
+         20.0,
+         Material.FEATHER,
+         true
+      );
+      this.loreTemplates = List.of("&7Damage: &f$damage%", "&7Distance: &f$distance blocks", "&7Cooldown: &f$cooldowns");
+      this.formattedBonusTemplate = "Charge $damage% (CD: $cooldowns)";
+   }
+}

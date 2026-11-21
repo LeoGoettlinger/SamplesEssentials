@@ -1,0 +1,12 @@
+name: DragonEggEnhancements
+version: 1.0.0
+main: com.jordan.mods.dragonEggEnhancements.DragonEggEnhancements
+api-version: 1.21
+author: WolfJTA
+description: Makes the Dragon Egg a powerful and useful item
+
+commands:
+  dragoneggcoords:
+    description: Shows the coordinates of the dropped Dragon Egg
+    usage: /dragoneggcoords
+    aliases: [eggcoords]

@@ -1,0 +1,41 @@
+package com.fastasyncworldedit.core.extension.factory.parser.pattern;
+
+import com.fastasyncworldedit.core.configuration.Caption;
+import com.fastasyncworldedit.core.extension.factory.parser.RichParser;
+import com.fastasyncworldedit.core.function.pattern.AverageColorPattern;
+import com.sk89q.worldedit.WorldEdit;
+import com.sk89q.worldedit.command.util.SuggestionHelper;
+import com.sk89q.worldedit.extension.input.InputParseException;
+import com.sk89q.worldedit.extension.input.ParserContext;
+import com.sk89q.worldedit.function.pattern.Pattern;
+import com.sk89q.worldedit.util.formatting.text.TextComponent;
+import java.util.stream.Stream;
+import javax.annotation.Nonnull;
+
+public class AverageColorPatternParser extends RichParser<Pattern> {
+   public AverageColorPatternParser(WorldEdit worldEdit) {
+      super(worldEdit, "#averagecolor", "#averagecolour");
+   }
+
+   @Override
+   public Stream<String> getSuggestions(String argumentInput, int index, ParserContext context) {
+      return index > 4 ? Stream.empty() : SuggestionHelper.suggestPositiveIntegers(argumentInput);
+   }
+
+   public Pattern parseFromInput(@Nonnull String[] input, ParserContext context) throws InputParseException {
+      if (input.length != 4) {
+         throw new InputParseException(
+            Caption.of("fawe.error.command.syntax", TextComponent.of(this.getPrefix() + "[r][g][b][a] (e.g. " + this.getPrefix() + "[156][100][0][120])"))
+         );
+      } else {
+         return new AverageColorPattern(
+            context.requireExtent(),
+            context.requireSession(),
+            Integer.parseInt(input[0]),
+            Integer.parseInt(input[1]),
+            Integer.parseInt(input[2]),
+            Integer.parseInt(input[3])
+         );
+      }
+   }
+}

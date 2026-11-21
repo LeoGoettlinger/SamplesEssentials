@@ -1,0 +1,23 @@
+package de.oliver.fancynpcs.v1_21_11.attributes;
+
+import de.oliver.fancynpcs.api.Npc;
+import de.oliver.fancynpcs.api.NpcAttribute;
+import de.oliver.fancynpcs.v1_21_11.ReflectionHelper;
+import java.util.ArrayList;
+import java.util.List;
+import net.minecraft.world.entity.animal.allay.Allay;
+import org.bukkit.entity.EntityType;
+
+public class AllayAttributes {
+   public static List<NpcAttribute> getAllAttributes() {
+      List<NpcAttribute> attributes = new ArrayList<>();
+      attributes.add(new NpcAttribute("dancing", List.of("true", "false"), List.of(EntityType.ALLAY), AllayAttributes::setDancing));
+      return attributes;
+   }
+
+   private static void setDancing(Npc npc, String value) {
+      Allay allay = ReflectionHelper.getEntity(npc);
+      boolean dancing = Boolean.parseBoolean(value);
+      allay.setDancing(dancing);
+   }
+}

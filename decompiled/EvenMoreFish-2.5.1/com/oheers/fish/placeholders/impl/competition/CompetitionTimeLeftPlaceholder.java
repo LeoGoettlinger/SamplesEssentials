@@ -1,0 +1,31 @@
+package com.oheers.fish.placeholders.impl.competition;
+
+import com.oheers.fish.FishUtils;
+import com.oheers.fish.competition.Competition;
+import com.oheers.fish.competition.CompetitionManager;
+import com.oheers.fish.messages.ConfigMessage;
+import com.oheers.fish.messages.abstracted.EMFMessage;
+import com.oheers.fish.placeholders.abstracted.EMFPlaceholder;
+import org.bukkit.OfflinePlayer;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
+public class CompetitionTimeLeftPlaceholder implements EMFPlaceholder {
+   @Override
+   public boolean shouldProcess(@NonNull String identifier) {
+      return identifier.equalsIgnoreCase("competition_time_left");
+   }
+
+   @Nullable
+   @Override
+   public String parsePAPI(@Nullable OfflinePlayer player, @NonNull String identifier) {
+      Competition competition = CompetitionManager.getInstance().getActiveCompetition();
+      if (competition == null) {
+         return CompetitionManager.getInstance().getNextCompetitionMessage().getLegacyMessage(null);
+      } else {
+         EMFMessage message = ConfigMessage.PLACEHOLDER_TIME_REMAINING_ACTIVE.getMessage();
+         message.setVariable("{time-left}", FishUtils.timeFormat(competition.getTimeLeft()));
+         return message.getLegacyMessage(null);
+      }
+   }
+}

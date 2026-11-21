@@ -1,0 +1,87 @@
+package com.oheers.fish.baits.configs;
+
+import com.oheers.fish.FishUtils;
+import com.oheers.fish.baits.BaitHandler;
+import com.oheers.fish.baits.model.WeightModifier;
+import com.oheers.fish.config.MainConfig;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import org.evenmorefish.fish.libs.boostedyaml.YamlDocument;
+import org.evenmorefish.fish.libs.boostedyaml.block.implementation.Section;
+import org.jspecify.annotations.NonNull;
+
+public class BaitFileUpdates {
+   public static void update(@NonNull BaitHandler bait) {
+      YamlDocument config = bait.getConfig();
+      boolean changed = false;
+      if (config.contains("bait-theme")) {
+         String theme = config.getString("bait-theme");
+         String format = FishUtils.getFormat(theme);
+         config.set("format", format);
+         config.remove("bait-theme");
+         changed = true;
+      }
+
+      changed |= migrateLegacyBaitModifiers(config, MainConfig.getInstance().getBaitBoostRate());
+      if (changed) {
+         bait.save();
+      }
+   }
+
+   static boolean migrateLegacyBaitModifiers(@NonNull YamlDocument config, double baitBoostRate) {
+      boolean changed = false;
+      String legacyModifier = WeightModifier.multiply(baitBoostRate).describe();
+      changed |= migrateLegacyRarityModifiers(config, legacyModifier);
+      return changed | migrateLegacyFishModifiers(config, legacyModifier);
+   }
+
+   private static boolean migrateLegacyRarityModifiers(@NonNull YamlDocument config, @NonNull String legacyModifier) {
+      List<String> legacyRarities = config.getStringList("rarities");
+      if (legacyRarities.isEmpty()) {
+         return false;
+      } else {
+         if (!config.contains("rarity-modifiers")) {
+            Map<String, Object> migrated = new LinkedHashMap<>();
+
+            for (String rarity : legacyRarities) {
+               migrated.put(rarity, legacyModifier);
+            }
+
+            config.set("rarity-modifiers", migrated);
+         }
+
+         config.remove("rarities");
+         return true;
+      }
+   }
+
+   private static boolean migrateLegacyFishModifiers(@NonNull YamlDocument config, @NonNull String legacyModifier) {
+      Section legacyFish = config.getSection("fish");
+      if (legacyFish == null) {
+         return false;
+      } else {
+         if (!config.contains("fish-modifiers")) {
+            Map<String, Object> migrated = new LinkedHashMap<>();
+
+            for (String rarity : legacyFish.getRoutesAsStrings(false)) {
+               List<String> fishList = config.getStringList("fish." + rarity);
+               if (!fishList.isEmpty()) {
+                  Map<String, Object> rarityFish = new LinkedHashMap<>();
+
+                  for (String fishName : fishList) {
+                     rarityFish.put(fishName, legacyModifier);
+                  }
+
+                  migrated.put(rarity, rarityFish);
+               }
+            }
+
+            config.set("fish-modifiers", migrated);
+         }
+
+         config.remove("fish");
+         return true;
+      }
+   }
+}
