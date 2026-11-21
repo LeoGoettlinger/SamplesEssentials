@@ -1,0 +1,32 @@
+prefix: "&6AxAFKZone &8» &7"
+# 1 - HH:MM:SS, 2 - short (20m), 3 - text (01h 25m 35s)
+timer-format: 1
+# Should the timer reset after a player receives rewards? (display only)
+reset-after-reward: false
+# How many players from one IP may earn rewards at once (-1 = unlimited)
+zone-per-ip-limit: -1
+# 0 - bar starts full and drains, 1 - bar starts empty and fills
+bossbar-direction: 0
+
+help:
+  - " "
+  - "&6&lAxAFKZone &eHelp"
+  - " &e➤ &f/axafkzone reload &8| &6Reload all zones"
+  - " &e➤ &f/axafkzone wand &8| &6Receive the selection wand"
+  - " &e➤ &f/axafkzone create <zone> &8| &6Create a zone from your selection"
+  - " &e➤ &f/axafkzone delete <zone> &8| &6Delete a zone"
+  - " &e➤ &f/axafkzone redefine <zone> &8| &6Update a zone's area"
+  - " &e➤ &f/axafkzone tp <zone> &8| &6Teleport to the zone's centre"
+  - " "
+
+selection-wand:
+  material: GOLDEN_AXE
+  name: "&6&lSELECTION WAND"
+  lore:
+    - " "
+    - "&6ʟᴇғᴛ ᴄʟɪᴄᴋ"
+    - " &7- &fSelect position #1"
+    - " "
+    - "&6ʀɪɢʜᴛ ᴄʟɪᴄᴋ"
+    - " &7- &fSelect position #2"
+    - " "

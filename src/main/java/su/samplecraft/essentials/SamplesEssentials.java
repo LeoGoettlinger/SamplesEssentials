@@ -20,6 +20,7 @@ import su.samplecraft.essentials.modules.gameplay.BiggerEnderChestModule;
 import su.samplecraft.essentials.modules.gameplay.DarkDropModule;
 import su.samplecraft.essentials.modules.gameplay.DragonEggEnhancementsModule;
 import su.samplecraft.essentials.modules.gameplay.GravesModule;
+import su.samplecraft.essentials.modules.gameplay.AfkZoneModule;
 import su.samplecraft.essentials.modules.gameplay.LevelToolsModule;
 import su.samplecraft.essentials.modules.gameplay.OpenSitModule;
 import su.samplecraft.essentials.modules.gameplay.SpawnElytraModule;
@@ -113,6 +114,7 @@ public final class SamplesEssentials extends JavaPlugin {
         moduleManager.register(new LocalInventoryModule(this));
         moduleManager.register(new RewardsModule(this));
         // categoria: gameplay
+        moduleManager.register(new AfkZoneModule(this));
         moduleManager.register(new AmethystToolsModule(this));
         moduleManager.register(new BiggerEnderChestModule(this));
         moduleManager.register(new DarkDropModule(this));

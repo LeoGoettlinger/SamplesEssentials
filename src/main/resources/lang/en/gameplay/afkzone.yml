@@ -1,0 +1,28 @@
+prefix: "&6AxAFKZone &8» &7"
+reload:
+  success: "&aPlugin reloaded successfully!"
+  failed: "&cFailed to reload - check your zone files!"
+time:
+  second: "s"
+  minute: "m"
+  hour: "h"
+  day: "d"
+zone:
+  created: "&eYou created the zone &6%name%&e!"
+  deleted: "&eYou deleted the zone &6%name%&e!"
+  not-found: "&cCan't find a zone named &6%name%&c!"
+  already-exists: "&cA zone named &6%name% &calready exists!"
+  ip-limit: "&cYou can't have any more accounts in this zone from your IP address."
+  redefined: "&eYou redefined the zone &6%name%&e!"
+teleport:
+  success: "&eTeleported to the &6%name% &ezone!"
+  fail: "&cCan't teleport to &6%name%&c - the world is not loaded!"
+selection:
+  pos1: "&eSelected &6POSITION #1 &7- &f%location%"
+  pos2: "&eSelected &6POSITION #2 &7- &f%location%"
+  no-selection: "&cSelect two corners with /axafkzone wand first!"
+  small-selection: "&cThe selection is only one block high - did you select just the ground?"
+commands:
+  invalid-command: "&cInvalid command or subcommand!"
+  missing-argument: "&cMissing argument: &6%value%&c."
+  player-only: "&cYou must be a player to use this command!"

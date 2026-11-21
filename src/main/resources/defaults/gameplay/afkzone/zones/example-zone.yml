@@ -1,0 +1,45 @@
+# Copy this file to create further zones, or use /axafkzone wand + /axafkzone create <name>.
+messages:
+  entered: "&eYou have entered the AFK zone! You will receive a reward in &6%time%&e!"
+  left: "&eYou have left the AFK zone! You stayed for &6%time%&e!"
+  # %reward% lines are duplicated for every rolled reward
+  reward:
+    - "&eYou waited &6%time% &eand received:"
+    - "&8 - &f%reward%"
+
+# Set any of these to "" to disable that element
+in-zone:
+  title: "&6⌚ &7| &eʏᴏᴜ ᴀʀᴇ ᴀғᴋ &7| &6⌚"
+  subtitle: "&eNext reward in: &6%time%"
+  actionbar: ""
+  # remove the section to disable the boss bar
+  bossbar:
+    name: "&6⌚ &7| &eʏᴏᴜ ᴀʀᴇ ᴀғᴋ &7| &eNext reward in: &6%time%"
+    color: RED
+    style: NOTCHED_20
+
+# Permission required to earn rewards here ("" = everyone)
+permission: ""
+# Reward interval in seconds
+reward-time-seconds: 60
+# How many rewards are rolled per interval
+roll-amount: 3
+
+# Chances may exceed 100% (they are relative weights)
+rewards:
+  - chance: 50.0
+    permission: ""
+    minimum-time: 0
+    maximum-time: 100000
+    display: "&71x Iron Ingot"
+    commands:
+      - "give %player% iron_ingot 1"
+  - chance: 25.0
+    display: "&b1x Diamond"
+    items:
+      - amount: 1
+        material: diamond
+
+zone:
+  location1: "world,0,64,0"
+  location2: "world,10,74,10"
