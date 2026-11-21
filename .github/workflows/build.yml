@@ -14,6 +14,8 @@ jobs:
   build:
     name: Gradle build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,18 +30,25 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build jar
+        id: gradle
+        continue-on-error: true
         run: |
-          set +e
           ./gradlew --no-daemon --console=plain build 2>&1 | tee build-log.txt
-          status=${PIPESTATUS[0]}
-          if [ "$status" -ne 0 ] && [ "${{ github.event_name }}" = "push" ]; then
-            git config user.name "SamplesEssentials Bot"
-            git config user.email "bot@samplecraft.su"
-            git add -f build-log.txt
-            git commit -q -m "chore: build log (failed build) [skip ci]" || true
-            git push || true
-          fi
-          exit "$status"
+          exit ${PIPESTATUS[0]}
+
+      - name: Publish build log (so it can be read without Actions access)
+        if: always() && github.event_name == 'push'
+        run: |
+          git config user.name "SamplesEssentials Bot"
+          git config user.email "bot@samplecraft.su"
+          git add -f build-log.txt
+          git commit -m "chore: build log [skip ci]" || true
+          git pull --rebase || true
+          git push
+
+      - name: Fail when the build failed
+        if: steps.gradle.outcome == 'failure'
+        run: exit 1
 
       - name: Upload jar (artifact)
         uses: actions/upload-artifact@v4
