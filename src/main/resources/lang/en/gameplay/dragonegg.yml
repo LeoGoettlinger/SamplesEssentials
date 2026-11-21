@@ -1,0 +1,4 @@
+# categoria: gameplay - module: dragonegg (merged from DragonEggEnhancements-1.5.jar)
+# All player-facing texts live in gameplay/dragonegg/config.yml, exactly like
+# the original plugin, so this file only holds module status messages.
+enabled: "{prefix}<gray>The dragon egg is now being tracked."

@@ -63,6 +63,14 @@ commands:
   sit:
     description: Sit down where you are looking
     usage: /sit
+  dragoneggcoords:
+    description: Show where the dragon egg currently is
+    usage: /dragoneggcoords
+    permission: samplese.dragonegg
+  eggcoords:
+    description: Alias of /dragoneggcoords
+    usage: /eggcoords
+    permission: samplese.dragonegg
   spawnelytra:
     description: Configure the spawn elytra
     usage: /spawnelytra [give]
@@ -165,4 +173,7 @@ permissions:
     default: op
   samplese.biggerenderchest:
     description: Open your bigger ender chest
+    default: true
+  samplese.dragonegg:
+    description: Use /dragoneggcoords
     default: true
