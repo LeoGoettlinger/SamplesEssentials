@@ -129,10 +129,13 @@ public final class OrdersModule extends EssentialsModule {
                 try {
                     UUID id = UUID.fromString(key);
                     List<ItemStack> items = new ArrayList<>();
-                    for (Map<?, ?> raw : storage.yaml().getMapList("stashes." + key)) {
-                        ItemStack item = ItemStack.deserialize(raw);
-                        if (item != null) {
+                    for (Object raw : storage.yaml().getList("stashes." + key, List.of())) {
+                        if (raw instanceof ItemStack item) {
                             items.add(item);
+                        } else if (raw instanceof Map<?, ?> map) {
+                            @SuppressWarnings("unchecked")
+                            Map<String, Object> typed = (Map<String, Object>) map;
+                            items.add(ItemStack.deserialize(typed));
                         }
                     }
                     stashes.put(id, items);
@@ -161,13 +164,7 @@ public final class OrdersModule extends EssentialsModule {
             storage.yaml().set(path + ".status", order.status().name());
         });
         storage.yaml().set("stashes", null);
-        stashes.forEach((id, items) -> {
-            List<Map<String, Object>> serialized = new ArrayList<>();
-            for (ItemStack item : items) {
-                serialized.add(item.serialize());
-            }
-            storage.yaml().set("stashes." + id, serialized);
-        });
+        stashes.forEach((id, items) -> storage.yaml().set("stashes." + id, items));
         storage.save();
     }
 
