@@ -1,3 +1,4 @@
 # categoria: gameplay - module: biggerenderchest (merged from BiggerEnderChest1.2.1.jar)
 search-prompt: "{prefix}<green>Type the name of the player whose ender chest you want to open."
 world-disabled: "{prefix}<red>Ender chests are disabled in this world."
+cooldown: "{prefix}<red>Please wait <white>{seconds}s<red> before opening your ender chest again."
