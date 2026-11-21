@@ -1,0 +1,9 @@
+# categoria: general - module: localinventory (merged from LocalInventory-1.0.jar)
+saved: "{prefix}<green>Inventory saved and cleared!"
+loaded: "{prefix}<green>Inventory loaded!"
+no-save: "{prefix}<red>No save found."
+load-error: "{prefix}<red>Load error."
+overwrite-question: "{prefix}<yellow>You already have a save. Overwrite current save?"
+admin-usage: "{prefix}<red>Usage: /ali <player>"
+target-no-save: "{prefix}<red>{player} has no saved inventory."
+admin-saved: "{prefix}<green>Saved inventory updated."

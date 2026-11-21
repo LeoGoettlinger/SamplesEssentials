@@ -105,6 +105,22 @@ commands:
     description: Open the bounty menu, or add a bounty
     usage: /bounty [add <player> <amount>]
     permission: samplese.bounty
+  rewards:
+    description: Open the rewards menu
+    usage: /rewards [gui|claim|reload|edit-user|set-playtime]
+    permission: samplese.rewards
+  sli:
+    description: Save your inventory and clear it
+    usage: /sli [confirm]
+    permission: samplese.localinv
+  lli:
+    description: Load your saved inventory
+    usage: /lli
+    permission: samplese.localinv
+  ali:
+    description: Open another player's saved inventory
+    usage: /ali <player>
+    permission: samplese.localinv.admin
   openinv:
     description: Open a player inventory
     usage: /openinv [player]
@@ -258,6 +274,18 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.rewards:
+    description: Use /rewards
+    default: true
+  samplese.rewards.admin:
+    description: Edit reward data
+    default: op
+  samplese.localinv:
+    description: Use inventory saves
+    default: true
+  samplese.localinv.admin:
+    description: Open other players' inventory saves
+    default: op
   samplese.openinv:
     description: Open inventory views
     default: true

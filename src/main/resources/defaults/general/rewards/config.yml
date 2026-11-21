@@ -1,0 +1,25 @@
+# Merged from LushRewards-3.3.2.jar (config.yml)
+# Reward definitions live next to this file:
+#   daily-rewards.yml, playtime-rewards.yml
+playtime-ignore-afk: true
+reminder-period: 1800
+reminder-sound: BLOCK_NOTE_BLOCK_PLING
+
+# day -> day-config (default fallback included)
+reset-days-at: -1
+allow-reward-stacking: false
+upcoming-category: large
+default-redeem-sound: ENTITY_PLAYER_LEVELUP
+refresh-time: 1
+reset-playtime-at: 1
+
+gui-title: "&8Daily Rewards"
+admin-title: "&8Rewards: %player%"
+
+categories:
+  small:
+    material: player_head
+  medium:
+    material: player_head
+  large:
+    material: player_head

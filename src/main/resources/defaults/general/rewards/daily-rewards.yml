@@ -1,0 +1,673 @@
+# ============================================
+# Daily Rewards - Tägliche Login-Belohnungen
+# Streak-Modus: Verliert Fortschritt bei verpasstem Tag
+# ============================================
+type: daily-rewards
+enabled: true
+
+# Reward mode: streak = resets if a day is missed
+reward-mode: streak
+# Resets player back to day 1 (-1 to disable)
+reset-days-at: -1
+# Whether players will receive all rewards on a day or just the one with the highest priority
+allow-reward-stacking: false
+# Whether streaks will continue during maintenance
+streak-bypass: false
+
+# The redeem sound to play if unspecified
+default-redeem-sound: ENTITY_PLAYER_LEVELUP
+# Whether notifications should be sent when rewards are claimable
+enable-notifications: true
+
+# Upcoming category to display
+upcoming-category: large
+
+reward-placeholders:
+  claimed: "true"
+  unclaimed: "false"
+
+# ============================================
+# DAILY REWARDS - 30 Tage vollständige Progression
+# ============================================
+daily-rewards:
+  # --- DEFAULT (fallback für Tage ohne spezifische Belohnung) ---
+  default:
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards: &o(one of)"
+        - "&#bdbebf- 4 Iron Ingots"
+        - "&#bdbebf- 8 Bread"
+        - "&#bdbebf- 4 Coal"
+        - "&#bdbebf- 16 Oak Planks"
+    redeem-sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    rewards:
+      - type: random
+        rewards:
+          - type: item
+            material: iron_ingot
+            amount: 4
+          - type: item
+            material: bread
+            amount: 8
+          - type: item
+            material: coal
+            amount: 4
+          - type: item
+            material: oak_planks
+            amount: 16
+
+  # ===== WOCHE 1: Anfänger-Belohnungen =====
+  day-1:
+    on-day-num: 1
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 4 Cooked Beef"
+        - "&#bdbebf- 4 Cooked Porkchop"
+        - "&#bdbebf- 8 Apples"
+    rewards:
+      - type: item
+        material: cooked_beef
+        amount: 4
+      - type: item
+        material: cooked_porkchop
+        amount: 4
+      - type: item
+        material: apple
+        amount: 8
+
+  day-2:
+    on-day-num: 2
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 8 Cherry Saplings"
+        - "&#bdbebf- 12 Pink Petals"
+    rewards:
+      - type: item
+        material: cherry_sapling
+        amount: 8
+      - type: item
+        material: pink_petals
+        amount: 12
+
+  day-3:
+    on-day-num: 3
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 32 Oak Logs"
+        - "&#bdbebf- 32 Jungle Logs"
+        - "&#bdbebf- 8 Oak Saplings"
+    rewards:
+      - type: item
+        material: oak_log
+        amount: 32
+      - type: item
+        material: jungle_log
+        amount: 32
+      - type: item
+        material: oak_sapling
+        amount: 8
+
+  day-4:
+    on-day-num: 4
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 4 Dandelions"
+        - "&#bdbebf- 4 Red Tulips"
+        - "&#bdbebf- 4 Alliums"
+        - "&#bdbebf- 4 Blue Orchids"
+    rewards:
+      - type: item
+        material: dandelion
+        amount: 4
+      - type: item
+        material: red_tulip
+        amount: 4
+      - type: item
+        material: allium
+        amount: 4
+      - type: item
+        material: blue_orchid
+        amount: 4
+
+  day-5:
+    on-day-num: 5
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 1 Smithing Table"
+        - "&#bdbebf- 6 Lanterns"
+        - "&#bdbebf- 8 Iron Ingots"
+    rewards:
+      - type: item
+        material: smithing_table
+        amount: 1
+      - type: item
+        material: lantern
+        amount: 6
+      - type: item
+        material: iron_ingot
+        amount: 8
+
+  day-6:
+    on-day-num: 6
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 16 Glow Berries"
+        - "&#bdbebf- 16 Sweet Berries"
+        - "&#bdbebf- 8 Cocoa Beans"
+    rewards:
+      - type: item
+        material: glow_berries
+        amount: 16
+      - type: item
+        material: sweet_berries
+        amount: 16
+      - type: item
+        material: cocoa_beans
+        amount: 8
+
+  day-7:
+    on-day-num: 7
+    category: medium
+    display-item:
+      lore:
+        - "&#85eb73Week 1 Complete!"
+        - "&#85eb73Rewards:"
+        - "&#85eb73- 16 Iron Ingots"
+        - "&#85eb73- 4 Diamonds"
+        - "&#85eb73- 1 Shield"
+    rewards:
+      - type: item
+        material: iron_ingot
+        amount: 16
+      - type: item
+        material: diamond
+        amount: 4
+      - type: item
+        material: shield
+        amount: 1
+
+  # ===== WOCHE 2: Fortgeschritten =====
+  day-8:
+    on-day-num: 8
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 16 Glass"
+        - "&#bdbebf- 8 White Wool"
+        - "&#bdbebf- 4 Lapis Lazuli"
+    rewards:
+      - type: item
+        material: glass
+        amount: 16
+      - type: item
+        material: white_wool
+        amount: 8
+      - type: item
+        material: lapis_lazuli
+        amount: 4
+
+  day-9:
+    on-day-num: 9
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 8 Redstone"
+        - "&#bdbebf- 4 Repeaters"
+        - "&#bdbebf- 4 Comparators"
+    rewards:
+      - type: item
+        material: redstone
+        amount: 8
+      - type: item
+        material: repeater
+        amount: 4
+      - type: item
+        material: comparator
+        amount: 4
+
+  day-10:
+    on-day-num: 10
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 8 Gold Ingots"
+        - "&#bdbebf- 16 Glowstone Dust"
+        - "&#bdbebf- 4 Nether Quartz"
+    rewards:
+      - type: item
+        material: gold_ingot
+        amount: 8
+      - type: item
+        material: glowstone_dust
+        amount: 16
+      - type: item
+        material: quartz
+        amount: 4
+
+  day-11:
+    on-day-num: 11
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 1 Fishing Rod"
+        - "&#bdbebf- 1 Compass"
+        - "&#bdbebf- 1 Spyglass"
+    rewards:
+      - type: item
+        material: fishing_rod
+        amount: 1
+      - type: item
+        material: compass
+        amount: 1
+      - type: item
+        material: spyglass
+        amount: 1
+
+  day-12:
+    on-day-num: 12
+    category: medium
+    display-item:
+      lore:
+        - "&#85eb73Rewards:"
+        - "&#85eb73- 3 Diamonds"
+        - "&#85eb73- 1 Golden Apple"
+        - "&#85eb73- 16 Experience Bottles"
+    rewards:
+      - type: item
+        material: diamond
+        amount: 3
+      - type: item
+        material: golden_apple
+        amount: 1
+      - type: item
+        material: experience_bottle
+        amount: 16
+
+  # ===== WOCHE 3: Fortgeschritten+ =====
+  day-13:
+    on-day-num: 13
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 32 Netherrack"
+        - "&#bdbebf- 16 Soul Sand"
+        - "&#bdbebf- 8 Magma Cream"
+    rewards:
+      - type: item
+        material: netherrack
+        amount: 32
+      - type: item
+        material: soul_sand
+        amount: 16
+      - type: item
+        material: magma_cream
+        amount: 8
+
+  day-14:
+    on-day-num: 14
+    category: medium
+    display-item:
+      lore:
+        - "&#85eb73Week 2 Complete!"
+        - "&#85eb73Rewards:"
+        - "&#85eb73- 5 Diamonds"
+        - "&#85eb73- 1 Ender Chest"
+        - "&#85eb73- 8 Gold Ingots"
+    rewards:
+      - type: item
+        material: diamond
+        amount: 5
+      - type: item
+        material: ender_chest
+        amount: 1
+      - type: item
+        material: gold_ingot
+        amount: 8
+
+  day-15:
+    on-day-num: 15
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 1 Diamond Pickaxe"
+        - "&#bdbebf- 16 Torches"
+    rewards:
+      - type: item
+        material: diamond_pickaxe
+        amount: 1
+      - type: item
+        material: torch
+        amount: 16
+
+  day-16:
+    on-day-num: 16
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 16 Copper Ingots"
+        - "&#bdbebf- 8 Amethyst Shards"
+        - "&#bdbebf- 4 Iron Ingots"
+    rewards:
+      - type: item
+        material: copper_ingot
+        amount: 16
+      - type: item
+        material: amethyst_shard
+        amount: 8
+      - type: item
+        material: iron_ingot
+        amount: 4
+
+  day-17:
+    on-day-num: 17
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 8 Ender Pearls"
+        - "&#bdbebf- 4 Blaze Powder"
+    rewards:
+      - type: item
+        material: ender_pearl
+        amount: 8
+      - type: item
+        material: blaze_powder
+        amount: 4
+
+  day-18:
+    on-day-num: 18
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 16 Bookshelves"
+        - "&#bdbebf- 1 Enchanting Table"
+    rewards:
+      - type: item
+        material: bookshelf
+        amount: 16
+      - type: item
+        material: enchanting_table
+        amount: 1
+
+  day-19:
+    on-day-num: 19
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 4 Emeralds"
+        - "&#bdbebf- 8 Gold Ingots"
+        - "&#bdbebf- 1 Name Tag"
+    rewards:
+      - type: item
+        material: emerald
+        amount: 4
+      - type: item
+        material: gold_ingot
+        amount: 8
+      - type: item
+        material: name_tag
+        amount: 1
+
+  day-20:
+    on-day-num: 20
+    category: medium
+    display-item:
+      lore:
+        - "&#85eb73Rewards:"
+        - "&#85eb73- 6 Diamonds"
+        - "&#85eb73- 1 Diamond Sword"
+        - "&#85eb73- 16 Experience Bottles"
+    rewards:
+      - type: item
+        material: diamond
+        amount: 6
+      - type: item
+        material: diamond_sword
+        amount: 1
+      - type: item
+        material: experience_bottle
+        amount: 16
+
+  # ===== WOCHE 4: Premium =====
+  day-21:
+    on-day-num: 21
+    category: medium
+    display-item:
+      lore:
+        - "&#85eb73Week 3 Complete!"
+        - "&#85eb73Rewards:"
+        - "&#85eb73- 8 Diamonds"
+        - "&#85eb73- 2 Golden Apples"
+        - "&#85eb73- 1 Saddle"
+    rewards:
+      - type: item
+        material: diamond
+        amount: 8
+      - type: item
+        material: golden_apple
+        amount: 2
+      - type: item
+        material: saddle
+        amount: 1
+
+  day-22:
+    on-day-num: 22
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 4 Obsidian"
+        - "&#bdbebf- 1 Brewing Stand"
+        - "&#bdbebf- 8 Nether Wart"
+    rewards:
+      - type: item
+        material: obsidian
+        amount: 4
+      - type: item
+        material: brewing_stand
+        amount: 1
+      - type: item
+        material: nether_wart
+        amount: 8
+
+  day-23:
+    on-day-num: 23
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 1 Diamond Chestplate"
+    rewards:
+      - type: item
+        material: diamond_chestplate
+        amount: 1
+
+  day-24:
+    on-day-num: 24
+    category: medium
+    display-item:
+      lore:
+        - "&#85eb73Rewards:"
+        - "&#85eb73- 1 Diamond Block"
+        - "&#85eb73- 2 Golden Apples"
+        - "&#85eb73- 32 Experience Bottles"
+    rewards:
+      - type: item
+        material: diamond_block
+        amount: 1
+      - type: item
+        material: golden_apple
+        amount: 2
+      - type: item
+        material: experience_bottle
+        amount: 32
+
+  day-25:
+    on-day-num: 25
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 8 Emeralds"
+        - "&#bdbebf- 4 Diamonds"
+        - "&#bdbebf- 1 Lead"
+    rewards:
+      - type: item
+        material: emerald
+        amount: 8
+      - type: item
+        material: diamond
+        amount: 4
+      - type: item
+        material: lead
+        amount: 1
+
+  day-26:
+    on-day-num: 26
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 1 Trident"
+    rewards:
+      - type: item
+        material: trident
+        amount: 1
+
+  day-27:
+    on-day-num: 27
+    category: small
+    display-item:
+      lore:
+        - "&#bdbebfRewards:"
+        - "&#bdbebf- 1 Totem of Undying"
+    rewards:
+      - type: item
+        material: totem_of_undying
+        amount: 1
+
+  day-28:
+    on-day-num: 28
+    category: medium
+    display-item:
+      lore:
+        - "&#85eb73Week 4 Complete!"
+        - "&#85eb73Rewards:"
+        - "&#85eb73- 2 Diamond Blocks"
+        - "&#85eb73- 1 Elytra"
+        - "&#85eb73- 1 Beacon"
+    rewards:
+      - type: item
+        material: diamond_block
+        amount: 2
+      - type: item
+        material: elytra
+        amount: 1
+      - type: item
+        material: beacon
+        amount: 1
+
+  # ===== MONAT-ENDE: Mega-Belohnungen =====
+  day-29:
+    on-day-num: 29
+    category: medium
+    display-item:
+      lore:
+        - "&#85eb73Rewards:"
+        - "&#85eb73- 1 Netherite Ingot"
+        - "&#85eb73- 3 Golden Apples"
+        - "&#85eb73- 64 Experience Bottles"
+    rewards:
+      - type: item
+        material: netherite_ingot
+        amount: 1
+      - type: item
+        material: golden_apple
+        amount: 3
+      - type: item
+        material: experience_bottle
+        amount: 64
+
+  day-30:
+    on-day-num: 30
+    priority: 1
+    category: large
+    display-item:
+      lore:
+        - "&#f5e389&lMONTH COMPLETE!"
+        - "&#f5e389Rewards:"
+        - "&#f5e389- 1 Conduit"
+        - "&#f5e389- 3 Diamond Blocks"
+        - "&#f5e389- 2 Netherite Ingots"
+        - "&#f5e389- 1 Shulker Box"
+        - "&#f5e389- 64 Experience Bottles"
+    rewards:
+      - type: item
+        material: conduit
+        amount: 1
+      - type: item
+        material: diamond_block
+        amount: 3
+      - type: item
+        material: netherite_ingot
+        amount: 2
+      - type: item
+        material: shulker_box
+        amount: 1
+      - type: item
+        material: experience_bottle
+        amount: 64
+
+gui:
+  title: "          &#529bf2&lDaily Rewards"
+  date-as-amount: false
+  scroll-type: GRID
+  template: "DEFAULT"
+  item-templates:
+    default-reward:
+      display-name: "&#A5B8FEDay %day%"
+    redeemable-reward:
+      material: player_head
+      skull-texture: e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmI1N2Y0ODVlOWVjY2E1MzIzNDQ4NTBjNTFhYjQ0ZGQ2YWE1ZDQ1MTRiMzFjNmRmOWZjMjBlMzZiM2E4OWQ4YyJ9fX0=
+      display-name: "&#f5e389Day %day% - &#a5f5a5Redeemable!"
+      enchanted: true
+    collected-reward:
+      material: player_head
+      skull-texture: e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWZkNTEyY2NlNGU3OTUyOGI2MGIzNWRmZTZmN2JmYzg0M2IyOTY4NDIxMDViMWNkMjY4MjdiNTkwOGIxMzU0ZCJ9fX0=
+      display-name: "&#f5e389Day %day% - &#7d7d7dCollected"
+      enchanted: false
+    missed-reward:
+      material: player_head
+      skull-texture: e3RleHR1cmVzOntTS0lOOnt1cmw6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGRkMzBhYWMyYTFmMmQxOGM3NzU1Y2ZjYTJiYzYwOWZjMzkxZjQxOTg5YjA2NmNlOTMxNjA3NzY5MDZiZTg1YSJ9fX0=
+      display-name: "&7Day %day% &8(Missed)"
+    'P':
+      material: player_head
+      display-name: "&#A5B8FE&lProfile:"
+      skull-texture: mirror
+      lore:
+        - "&#c4f8ffDay Number: &f%lushrewards_daily-rewards_day_num%"
+        - "&#c4f8ffCollected: &f%lushrewards_daily-rewards_collected%"
+        - "&#c4f8ffCurrent Streak: &f%lushrewards_daily-rewards_streak%"
+        - "&#c4f8ffHighest Streak: &f%lushrewards_daily-rewards_highest_streak%"

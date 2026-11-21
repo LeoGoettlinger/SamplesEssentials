@@ -23,6 +23,8 @@ import su.samplecraft.essentials.modules.gameplay.GravesModule;
 import su.samplecraft.essentials.modules.gameplay.LevelToolsModule;
 import su.samplecraft.essentials.modules.gameplay.OpenSitModule;
 import su.samplecraft.essentials.modules.gameplay.SpawnElytraModule;
+import su.samplecraft.essentials.modules.general.LocalInventoryModule;
+import su.samplecraft.essentials.modules.general.RewardsModule;
 import su.samplecraft.essentials.modules.general.StarterKitModule;
 import su.samplecraft.essentials.modules.moderation.FreezeModule;
 import su.samplecraft.essentials.modules.moderation.StaffToolsModule;
@@ -104,6 +106,8 @@ public final class SamplesEssentials extends JavaPlugin {
         moduleManager.register(new OrdersModule(this));
         // categoria: general
         moduleManager.register(new StarterKitModule(this));
+        moduleManager.register(new LocalInventoryModule(this));
+        moduleManager.register(new RewardsModule(this));
         // categoria: gameplay
         moduleManager.register(new AmethystToolsModule(this));
         moduleManager.register(new BiggerEnderChestModule(this));
