@@ -14,6 +14,46 @@ To honour the JVM settings for this build a single-use Daemon process will be fo
 Daemon will be stopped at the end of the build 
 
 > Task :compileJava
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:625: error: cannot find symbol
+                                 @NotNull String label, String @NotNull [] args) {
+                                                                ^
+  symbol:   class NotNull
+  location: class LevelToolsModule.LevelToolsCommand
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:715: error: cannot find symbol
+                                          @NotNull String alias, String @NotNull [] args) {
+                                                                         ^
+  symbol:   class NotNull
+  location: class LevelToolsModule.LevelToolsCommand
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:623: error: cannot find symbol
+        public boolean onCommand(@NotNull org.bukkit.command.CommandSender sender,
+                                  ^
+  symbol:   class NotNull
+  location: class LevelToolsModule.LevelToolsCommand
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:624: error: cannot find symbol
+                                 @NotNull org.bukkit.command.Command command,
+                                  ^
+  symbol:   class NotNull
+  location: class LevelToolsModule.LevelToolsCommand
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:625: error: cannot find symbol
+                                 @NotNull String label, String @NotNull [] args) {
+                                  ^
+  symbol:   class NotNull
+  location: class LevelToolsModule.LevelToolsCommand
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:713: error: cannot find symbol
+        public List<String> onTabComplete(@NotNull org.bukkit.command.CommandSender sender,
+                                           ^
+  symbol:   class NotNull
+  location: class LevelToolsModule.LevelToolsCommand
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:714: error: cannot find symbol
+                                          @NotNull org.bukkit.command.Command command,
+                                           ^
+  symbol:   class NotNull
+  location: class LevelToolsModule.LevelToolsCommand
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:715: error: cannot find symbol
+                                          @NotNull String alias, String @NotNull [] args) {
+                                           ^
+  symbol:   class NotNull
+  location: class LevelToolsModule.LevelToolsCommand
 /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/social/FriendsModule.java:144: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
             player.playSound(player.getLocation(), Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
                                                         ^
@@ -23,24 +63,94 @@ Daemon will be stopped at the end of the build
 /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/BountyModule.java:413: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
             player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
                                                                    ^
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:401: error: cannot find symbol
+                        if (item.getItemMeta() instanceof org.bukkit.inventory.meta.AttributeModifiersMeta modifiers) {
+                                                                                   ^
+  symbol:   class AttributeModifiersMeta
+  location: package org.bukkit.inventory.meta
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:465: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+            player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(sound.toUpperCase(Locale.ROOT)),
+                                                                   ^
 Note: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
-3 warnings
+9 errors
+4 warnings
 
-> Task :processResources
-> Task :classes
-> Task :jar
-> Task :assemble
-> Task :compileTestJava NO-SOURCE
-> Task :processTestResources NO-SOURCE
-> Task :testClasses UP-TO-DATE
-> Task :test NO-SOURCE
-> Task :check UP-TO-DATE
-> Task :build
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795269917317.json
+> Task :compileJava FAILED
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795270115044.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/SamplesEssentials/SamplesEssentials/build/reports/problems/problems-report.html
 
-BUILD SUCCESSFUL in 45s
-3 actionable tasks: 3 executed
-Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.4.1/userguide/configuration_cache_enabling.html
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  Note: Recompile with -Xlint:deprecation for details.
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:625: error: cannot find symbol
+                                   @NotNull String label, String @NotNull [] args) {
+                                                                  ^
+    symbol:   class NotNull
+    location: class LevelToolsModule.LevelToolsCommand
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:715: error: cannot find symbol
+                                            @NotNull String alias, String @NotNull [] args) {
+                                                                           ^
+    symbol:   class NotNull
+    location: class LevelToolsModule.LevelToolsCommand
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:623: error: cannot find symbol
+          public boolean onCommand(@NotNull org.bukkit.command.CommandSender sender,
+                                    ^
+    symbol:   class NotNull
+    location: class LevelToolsModule.LevelToolsCommand
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:624: error: cannot find symbol
+                                   @NotNull org.bukkit.command.Command command,
+                                    ^
+    symbol:   class NotNull
+    location: class LevelToolsModule.LevelToolsCommand
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:625: error: cannot find symbol
+                                   @NotNull String label, String @NotNull [] args) {
+                                    ^
+    symbol:   class NotNull
+    location: class LevelToolsModule.LevelToolsCommand
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:713: error: cannot find symbol
+          public List<String> onTabComplete(@NotNull org.bukkit.command.CommandSender sender,
+                                             ^
+    symbol:   class NotNull
+    location: class LevelToolsModule.LevelToolsCommand
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:714: error: cannot find symbol
+                                            @NotNull org.bukkit.command.Command command,
+                                             ^
+    symbol:   class NotNull
+    location: class LevelToolsModule.LevelToolsCommand
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:715: error: cannot find symbol
+                                            @NotNull String alias, String @NotNull [] args) {
+                                             ^
+    symbol:   class NotNull
+    location: class LevelToolsModule.LevelToolsCommand
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:401: error: cannot find symbol
+                          if (item.getItemMeta() instanceof org.bukkit.inventory.meta.AttributeModifiersMeta modifiers) {
+                                                                                     ^
+    symbol:   class AttributeModifiersMeta
+    location: package org.bukkit.inventory.meta
+  Note: Some input files use or override a deprecated API.
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/social/FriendsModule.java:144: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+              player.playSound(player.getLocation(), Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
+                                                          ^
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/AuctionModule.java:425: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+              player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(raw.toUpperCase(Locale.ROOT)), 1f, 1f);
+                                                                     ^
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/BountyModule.java:413: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+              player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
+                                                                     ^
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:465: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
+              player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(sound.toUpperCase(Locale.ROOT)),
+                                                                     ^
+  9 errors
+  4 warnings
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 53s
+1 actionable task: 1 executed
