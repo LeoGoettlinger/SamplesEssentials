@@ -1,0 +1,64 @@
+package ac.grim.grimac.checks.impl.badpackets;
+
+import ac.grim.grimac.api.storage.verbose.Verbose;
+import ac.grim.grimac.checks.Check;
+import ac.grim.grimac.checks.CheckData;
+import ac.grim.grimac.checks.impl.verbose.VerboseCodecs;
+import ac.grim.grimac.checks.type.PacketCheck;
+import ac.grim.grimac.player.GrimPlayer;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.event.PacketReceiveEvent;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.event.PacketSendEvent;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.protocol.packettype.PacketType;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.wrapper.play.client.WrapperPlayClientClickWindow;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerOpenWindow;
+
+@CheckData(
+   name = "BadPacketsP",
+   stableKey = "grim.badpackets.invalid_click",
+   description = "Invalid window click packet",
+   experimental = true
+)
+public class BadPacketsP extends Check implements PacketCheck {
+   private static final Verbose V = Verbose.of("clickType={clicktype_lower}, button={sint}[, container={sint}]");
+   private int containerType = -1;
+   private int containerId = -1;
+
+   public BadPacketsP(GrimPlayer playerData) {
+      super(playerData);
+   }
+
+   @Override
+   public void onPacketSend(PacketSendEvent event) {
+      if (event.getPacketType() == PacketType.Play.Server.OPEN_WINDOW) {
+         WrapperPlayServerOpenWindow window = new WrapperPlayServerOpenWindow(event);
+         this.containerType = window.getType();
+         this.containerId = window.getContainerId();
+      }
+   }
+
+   @Override
+   public void onPacketReceive(PacketReceiveEvent event) {
+      if (event.getPacketType() == PacketType.Play.Client.CLICK_WINDOW) {
+         WrapperPlayClientClickWindow wrapper = new WrapperPlayClientClickWindow(event);
+         WrapperPlayClientClickWindow.WindowClickType clickType = wrapper.getWindowClickType();
+         int button = wrapper.getButton();
+
+         boolean flag = switch (clickType) {
+            case PICKUP, QUICK_MOVE, CLONE -> button > 2 || button < 0;
+            case SWAP -> (button > 8 || button < 0) && button != 40;
+            case THROW -> button != 0 && button != 1;
+            case QUICK_CRAFT -> button == 3 || button == 7 || button > 10 || button < 0;
+            case PICKUP_ALL -> button != 0;
+            case UNKNOWN -> true;
+         };
+         if (flag) {
+            boolean hasContainer = wrapper.getWindowId() == this.containerId;
+            if (this.flag(V.write(this.verbose()).uint(VerboseCodecs.enumId(clickType)).sint(button).bool(hasContainer).sint(this.containerType))
+               && this.shouldModifyPackets()) {
+               event.setCancelled(true);
+               this.player.onPacketCancel();
+            }
+         }
+      }
+   }
+}

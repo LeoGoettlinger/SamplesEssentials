@@ -1,0 +1,231 @@
+package com.github.retrooper.packetevents.protocol.world.biome;
+
+import com.github.retrooper.packetevents.manager.server.ServerVersion;
+import com.github.retrooper.packetevents.protocol.mapper.CopyableEntity;
+import com.github.retrooper.packetevents.protocol.mapper.DeepComparableEntity;
+import com.github.retrooper.packetevents.protocol.mapper.MappedEntity;
+import com.github.retrooper.packetevents.protocol.nbt.NBT;
+import com.github.retrooper.packetevents.protocol.nbt.NBTByte;
+import com.github.retrooper.packetevents.protocol.nbt.NBTCompound;
+import com.github.retrooper.packetevents.protocol.nbt.NBTFloat;
+import com.github.retrooper.packetevents.protocol.player.ClientVersion;
+import com.github.retrooper.packetevents.protocol.util.CodecNameable;
+import com.github.retrooper.packetevents.protocol.util.NbtCodec;
+import com.github.retrooper.packetevents.protocol.util.NbtCodecException;
+import com.github.retrooper.packetevents.protocol.util.NbtCodecs;
+import com.github.retrooper.packetevents.protocol.util.NbtMapCodec;
+import com.github.retrooper.packetevents.protocol.world.attributes.EnvironmentAttributeMap;
+import com.github.retrooper.packetevents.util.mappings.TypesBuilderData;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+import net.kyori.adventure.util.Index;
+import org.jetbrains.annotations.ApiStatus.Obsolete;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
+@NullMarked
+public interface Biome extends MappedEntity, CopyableEntity<Biome>, DeepComparableEntity {
+   NbtCodec<Biome> CODEC = (new NbtMapCodec<Biome>() {
+         public Biome decode(NBTCompound compound, PacketWrapper<?> wrapper) throws NbtCodecException {
+            float temperature = compound.getNumberTagOrThrow("temperature").getAsFloat();
+            Biome.TemperatureModifier temperatureModifier = compound.getOr(
+               "temperature_modifier", Biome.TemperatureModifier.CODEC, Biome.TemperatureModifier.NONE, wrapper
+            );
+            float downfall = compound.getNumberTagOrThrow("downfall").getAsFloat();
+            Biome.Category category = null;
+            Float depth = null;
+            Float scale = null;
+            boolean precipitation;
+            if (wrapper.getServerVersion().isNewerThanOrEquals(ServerVersion.V_1_19_3)) {
+               precipitation = compound.getBoolean("has_precipitation");
+            } else {
+               precipitation = compound.getOrThrow("precipitation", Biome.Precipitation.CODEC, wrapper) != Biome.Precipitation.NONE;
+               if (wrapper.getServerVersion().isOlderThan(ServerVersion.V_1_19)) {
+                  category = compound.getOrThrow("category", Biome.Category.CODEC, wrapper);
+                  if (wrapper.getServerVersion().isOlderThan(ServerVersion.V_1_18)) {
+                     depth = compound.getNumberTagOrThrow("depth").getAsFloat();
+                     scale = compound.getNumberTagOrThrow("scale").getAsFloat();
+                  }
+               }
+            }
+
+            EnvironmentAttributeMap attributes;
+            if (wrapper.getServerVersion().isNewerThanOrEquals(ServerVersion.V_1_21_11)) {
+               attributes = compound.getOr("attributes", EnvironmentAttributeMap.CODEC, EnvironmentAttributeMap.EMPTY, wrapper);
+            } else {
+               attributes = EnvironmentAttributeMap.EMPTY;
+            }
+
+            BiomeEffects effects = compound.getOrThrow("effects", BiomeEffects.codecWithAttributes(attributes), wrapper);
+            return new StaticBiome(null, precipitation, temperature, temperatureModifier, downfall, category, depth, scale, effects, attributes);
+         }
+
+         public void encode(NBTCompound compound, PacketWrapper<?> wrapper, Biome value) throws NbtCodecException {
+            compound.setTag("temperature", new NBTFloat(value.getTemperature()));
+            if (value.getTemperatureModifier() != Biome.TemperatureModifier.NONE) {
+               compound.set("temperature_modifier", value.getTemperatureModifier(), Biome.TemperatureModifier.CODEC, wrapper);
+            }
+
+            compound.setTag("downfall", new NBTFloat(value.getDownfall()));
+            compound.set("effects", value.getEffects(), BiomeEffects.CODEC, wrapper);
+            if (wrapper.getServerVersion().isNewerThanOrEquals(ServerVersion.V_1_19_3)) {
+               compound.setTag("has_precipitation", new NBTByte(value.hasPrecipitation()));
+               if (wrapper.getServerVersion().isNewerThanOrEquals(ServerVersion.V_1_21_11)) {
+                  compound.set("attributes", value.getAttributes(), EnvironmentAttributeMap.CODEC, wrapper);
+               }
+            } else {
+               compound.set("precipitation", value.getPrecipitation(), Biome.Precipitation.CODEC, wrapper);
+               if (wrapper.getServerVersion().isOlderThan(ServerVersion.V_1_19)) {
+                  if (value.getCategory() != null) {
+                     compound.set("category", value.getCategory(), Biome.Category.CODEC, wrapper);
+                  }
+
+                  if (wrapper.getServerVersion().isOlderThan(ServerVersion.V_1_18)) {
+                     if (value.getDepth() != null) {
+                        compound.setTag("depth", new NBTFloat(value.getDepth()));
+                     }
+
+                     if (value.getScale() != null) {
+                        compound.setTag("scale", new NBTFloat(value.getScale()));
+                     }
+                  }
+               }
+            }
+         }
+      })
+      .codec();
+
+   boolean hasPrecipitation();
+
+   @Obsolete(
+      since = "1.19.3"
+   )
+   Biome.Precipitation getPrecipitation();
+
+   float getTemperature();
+
+   Biome.TemperatureModifier getTemperatureModifier();
+
+   float getDownfall();
+
+   @Obsolete(
+      since = "1.19"
+   )
+   @Nullable
+   Biome.Category getCategory();
+
+   @Obsolete(
+      since = "1.18"
+   )
+   @Nullable
+   Float getDepth();
+
+   @Obsolete(
+      since = "1.18"
+   )
+   @Nullable
+   Float getScale();
+
+   BiomeEffects getEffects();
+
+   EnvironmentAttributeMap getAttributes();
+
+   @Deprecated
+   static Biome decode(NBT nbt, ClientVersion version, @Nullable TypesBuilderData data) {
+      return CODEC.decode(nbt, PacketWrapper.createDummyWrapper(version)).copy(data);
+   }
+
+   @Deprecated
+   static NBT encode(Biome biome, ClientVersion version) {
+      return CODEC.encode(PacketWrapper.createDummyWrapper(version), biome);
+   }
+
+   @Obsolete(
+      since = "1.19"
+   )
+   public static enum Category implements CodecNameable {
+      NONE("none"),
+      TAIGA("taiga"),
+      EXTREME_HILLS("extreme_hills"),
+      JUNGLE("jungle"),
+      MESA("mesa"),
+      PLAINS("plains"),
+      SAVANNA("savanna"),
+      ICY("icy"),
+      THE_END("the_end"),
+      BEACH("beach"),
+      FOREST("forest"),
+      OCEAN("ocean"),
+      DESERT("desert"),
+      RIVER("river"),
+      SWAMP("swamp"),
+      MUSHROOM("mushroom"),
+      NETHER("nether"),
+      UNDERGROUND("underground"),
+      MOUNTAIN("mountain");
+
+      public static final NbtCodec<Biome.Category> CODEC = NbtCodecs.forEnum(values());
+      public static final Index<String, Biome.Category> ID_INDEX = Index.create(Biome.Category.class, Biome.Category::getId);
+      private final String id;
+
+      private Category(String id) {
+         this.id = id;
+      }
+
+      public String getId() {
+         return this.id;
+      }
+
+      @Override
+      public String getCodecName() {
+         return this.id;
+      }
+   }
+
+   @Obsolete(
+      since = "1.19.3"
+   )
+   public static enum Precipitation implements CodecNameable {
+      NONE("none"),
+      RAIN("rain"),
+      SNOW("snow");
+
+      public static final NbtCodec<Biome.Precipitation> CODEC = NbtCodecs.forEnum(values());
+      public static final Index<String, Biome.Precipitation> ID_INDEX = Index.create(Biome.Precipitation.class, Biome.Precipitation::getId);
+      private final String id;
+
+      private Precipitation(String id) {
+         this.id = id;
+      }
+
+      public String getId() {
+         return this.id;
+      }
+
+      @Override
+      public String getCodecName() {
+         return this.id;
+      }
+   }
+
+   public static enum TemperatureModifier implements CodecNameable {
+      NONE("none"),
+      FROZEN("frozen");
+
+      public static final NbtCodec<Biome.TemperatureModifier> CODEC = NbtCodecs.forEnum(values());
+      public static final Index<String, Biome.TemperatureModifier> ID_INDEX = Index.create(Biome.TemperatureModifier.class, Biome.TemperatureModifier::getId);
+      private final String id;
+
+      private TemperatureModifier(String id) {
+         this.id = id;
+      }
+
+      public String getId() {
+         return this.id;
+      }
+
+      @Override
+      public String getCodecName() {
+         return this.id;
+      }
+   }
+}

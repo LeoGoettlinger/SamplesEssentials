@@ -1,0 +1,11 @@
+name: VRXClans
+version: '1.0.4'
+main: vrx.economy.vRXClans.VRXClans
+description: Clan system for Paper 1.20 up to future 1.26+ versions without NMS dependencies.
+api-version: '1.20'
+softdepend: [Vault, PlaceholderAPI, VRX_Economy, Essentials, CMI, TheNewEconomy, WorldGuard, DecentHolograms]
+permissions:
+  vrxclans.admin:
+    default: op
+  vrxclans.admin.bypass:
+    default: op

@@ -1,0 +1,53 @@
+package com.github.retrooper.packetevents.wrapper.play.server;
+
+import com.github.retrooper.packetevents.event.PacketSendEvent;
+import com.github.retrooper.packetevents.protocol.packettype.PacketType;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+
+public class WrapperPlayServerUpdateViewPosition extends PacketWrapper<WrapperPlayServerUpdateViewPosition> {
+   private int chunkX;
+   private int chunkZ;
+
+   public WrapperPlayServerUpdateViewPosition(PacketSendEvent event) {
+      super(event);
+   }
+
+   public WrapperPlayServerUpdateViewPosition(int chunkX, int chunkZ) {
+      super(PacketType.Play.Server.UPDATE_VIEW_POSITION);
+      this.chunkX = chunkX;
+      this.chunkZ = chunkZ;
+   }
+
+   @Override
+   public void read() {
+      this.chunkX = this.readVarInt();
+      this.chunkZ = this.readVarInt();
+   }
+
+   @Override
+   public void write() {
+      this.writeVarInt(this.chunkX);
+      this.writeVarInt(this.chunkZ);
+   }
+
+   public void copy(WrapperPlayServerUpdateViewPosition wrapper) {
+      this.chunkX = wrapper.chunkX;
+      this.chunkZ = wrapper.chunkZ;
+   }
+
+   public int getChunkX() {
+      return this.chunkX;
+   }
+
+   public void setChunkX(int chunkX) {
+      this.chunkX = chunkX;
+   }
+
+   public int getChunkZ() {
+      return this.chunkZ;
+   }
+
+   public void setChunkZ(int chunkZ) {
+      this.chunkZ = chunkZ;
+   }
+}

@@ -1,0 +1,55 @@
+enabled: true
+
+awakened_dragon_katana:
+  enabled: true
+  damage: 11.0
+  teleport_explosion_damage: 15.0
+  path_explosion_damage: 10.0
+  teleport_explosion_radius: 3.0
+  path_explosion_radius: 3.0
+  particle_sphere_duration: 2
+  path_explosion_interval: 5.0
+  teleport_cooldown: 20
+  swap_cooldown: 60
+
+awakened_wither_sickles:
+  enabled: true
+  damage: 13.0
+  attack_speed: -1.6
+  throw_cooldown_seconds: 12
+  throw_damage: 15.0
+  wither_chance_throw: 0.3
+  wither_duration_ticks: 80
+  fire_duration_ticks: 100
+  ignite_radius: 2.0
+  shield_duration_seconds: 10
+  shield_cooldown_seconds: 30
+  shield_flame_count: 6
+  shield_radius: 2.5
+  shield_damage_reduction: 0.2
+
+rework_elytra:
+  enabled: true
+  armor_bonus: 4.0
+  boost_cooldown_seconds: 50
+  explosion_landing_cooldown_seconds: 40
+  boost_power: 2.5
+  min_trigger_speed: 0.6
+  max_speed_for_explosion: 3.0
+  min_explosion_power: 0.5
+  max_explosion_power: 6.5
+  explosion_break_blocks: true
+  nether_wart_spread:
+    radius: 5
+    blocks_per_tick: 3
+    tick_delay: 2
+    replace_chance: 0.7
+  bleeding:
+    duration_seconds: 4
+    damage_per_tick: 2.0
+  crimson_spirits:
+    count: 3
+    duration_seconds: 4
+    damage: 5.0
+    speed: 0.4
+    spawn_radius: 1.5

@@ -1,0 +1,21 @@
+package io.github.retrooper.packetevents.adventure.serializer.json;
+
+import java.io.IOException;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.HoverEvent;
+import net.kyori.adventure.util.Codec;
+import org.jetbrains.annotations.NotNull;
+
+public interface LegacyHoverEventSerializer {
+   @NotNull
+   HoverEvent.ShowItem deserializeShowItem(@NotNull Component input) throws IOException;
+
+   @NotNull
+   Component serializeShowItem(@NotNull HoverEvent.ShowItem input) throws IOException;
+
+   @NotNull
+   HoverEvent.ShowEntity deserializeShowEntity(@NotNull Component input, Codec.Decoder<Component, String, ? extends RuntimeException> componentDecoder) throws IOException;
+
+   @NotNull
+   Component serializeShowEntity(@NotNull HoverEvent.ShowEntity input, Codec.Encoder<Component, String, ? extends RuntimeException> componentEncoder) throws IOException;
+}

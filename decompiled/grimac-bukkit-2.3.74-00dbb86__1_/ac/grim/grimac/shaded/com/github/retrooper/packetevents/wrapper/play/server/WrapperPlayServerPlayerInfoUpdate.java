@@ -1,0 +1,328 @@
+package ac.grim.grimac.shaded.com.github.retrooper.packetevents.wrapper.play.server;
+
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.event.PacketSendEvent;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.manager.server.ServerVersion;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.protocol.chat.RemoteChatSession;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.protocol.packettype.PacketType;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.protocol.player.GameMode;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.protocol.player.TextureProperty;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.protocol.player.UserProfile;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.wrapper.PacketWrapper;
+import ac.grim.grimac.shaded.jetbrains.annotations.Nullable;
+import ac.grim.grimac.shaded.kyori.adventure.text.Component;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.UUID;
+
+public class WrapperPlayServerPlayerInfoUpdate extends PacketWrapper<WrapperPlayServerPlayerInfoUpdate> {
+   private EnumSet<WrapperPlayServerPlayerInfoUpdate.Action> actions;
+   private List<WrapperPlayServerPlayerInfoUpdate.PlayerInfo> entries;
+
+   public WrapperPlayServerPlayerInfoUpdate(PacketSendEvent event) {
+      super(event);
+   }
+
+   public WrapperPlayServerPlayerInfoUpdate(
+      EnumSet<WrapperPlayServerPlayerInfoUpdate.Action> actions, List<WrapperPlayServerPlayerInfoUpdate.PlayerInfo> entries
+   ) {
+      super(PacketType.Play.Server.PLAYER_INFO_UPDATE);
+      this.actions = actions;
+      this.entries = entries;
+   }
+
+   public WrapperPlayServerPlayerInfoUpdate(EnumSet<WrapperPlayServerPlayerInfoUpdate.Action> actions, WrapperPlayServerPlayerInfoUpdate.PlayerInfo... entries) {
+      super(PacketType.Play.Server.PLAYER_INFO_UPDATE);
+      this.actions = actions;
+      this.entries = new ArrayList<>();
+      Collections.addAll(this.entries, entries);
+   }
+
+   public WrapperPlayServerPlayerInfoUpdate(WrapperPlayServerPlayerInfoUpdate.Action action, List<WrapperPlayServerPlayerInfoUpdate.PlayerInfo> entries) {
+      this(EnumSet.of(action), entries);
+   }
+
+   public WrapperPlayServerPlayerInfoUpdate(WrapperPlayServerPlayerInfoUpdate.Action action, WrapperPlayServerPlayerInfoUpdate.PlayerInfo... entries) {
+      this(EnumSet.of(action), entries);
+   }
+
+   @Override
+   public void read() {
+      this.actions = this.readEnumSet(WrapperPlayServerPlayerInfoUpdate.Action.class);
+      this.entries = this.readList(wrapper -> {
+         UUID uuid = wrapper.readUUID();
+         UserProfile gameProfile = new UserProfile(uuid, null);
+         GameMode gameMode = GameMode.defaultGameMode();
+         boolean listed = false;
+         int latency = 0;
+         RemoteChatSession chatSession = null;
+         Component displayName = null;
+         int listOrder = 0;
+         boolean showHat = false;
+
+         for (WrapperPlayServerPlayerInfoUpdate.Action action : this.actions) {
+            switch (action) {
+               case ADD_PLAYER:
+                  gameProfile.setUUID(uuid);
+                  gameProfile.setName(wrapper.readString(16));
+                  int propertyCount = wrapper.readVarInt();
+
+                  for (int j = 0; j < propertyCount; j++) {
+                     String propertyName = wrapper.readString();
+                     String propertyValue = wrapper.readString();
+                     String propertySignature = wrapper.readOptional(PacketWrapper::readString);
+                     TextureProperty textureProperty = new TextureProperty(propertyName, propertyValue, propertySignature);
+                     gameProfile.getTextureProperties().add(textureProperty);
+                  }
+                  break;
+               case INITIALIZE_CHAT:
+                  chatSession = wrapper.readOptional(PacketWrapper::readRemoteChatSession);
+                  break;
+               case UPDATE_GAME_MODE:
+                  gameMode = GameMode.getById(wrapper.readVarInt());
+                  break;
+               case UPDATE_LISTED:
+                  listed = wrapper.readBoolean();
+                  break;
+               case UPDATE_LATENCY:
+                  latency = wrapper.readVarInt();
+                  break;
+               case UPDATE_DISPLAY_NAME:
+                  displayName = wrapper.readOptional(PacketWrapper::readComponent);
+                  break;
+               case UPDATE_LIST_ORDER:
+                  if (this.serverVersion.isNewerThanOrEquals(ServerVersion.V_1_21_2)) {
+                     listOrder = wrapper.readVarInt();
+                  }
+                  break;
+               case UPDATE_HAT:
+                  if (this.serverVersion.isNewerThanOrEquals(ServerVersion.V_1_21_4)) {
+                     showHat = wrapper.readBoolean();
+                  }
+            }
+         }
+
+         return new WrapperPlayServerPlayerInfoUpdate.PlayerInfo(gameProfile, listed, latency, gameMode, displayName, chatSession, listOrder, showHat);
+      });
+   }
+
+   @Override
+   public void write() {
+      this.writeEnumSet(this.actions, WrapperPlayServerPlayerInfoUpdate.Action.class);
+      this.writeList(this.entries, (wrapper, playerInfo) -> {
+         wrapper.writeUUID(playerInfo.getProfileId());
+
+         for (WrapperPlayServerPlayerInfoUpdate.Action action : this.actions) {
+            switch (action) {
+               case ADD_PLAYER:
+                  wrapper.writeString(playerInfo.getGameProfile().getName(), 16);
+                  this.writeList(playerInfo.getGameProfile().getTextureProperties(), (w, textureProperty) -> {
+                     w.writeString(textureProperty.getName());
+                     w.writeString(textureProperty.getValue());
+                     w.writeOptional(textureProperty.getSignature(), PacketWrapper::writeString);
+                  });
+                  break;
+               case INITIALIZE_CHAT:
+                  wrapper.writeOptional(playerInfo.getChatSession(), PacketWrapper::writeRemoteChatSession);
+                  break;
+               case UPDATE_GAME_MODE:
+                  wrapper.writeVarInt(playerInfo.getGameMode().getId());
+                  break;
+               case UPDATE_LISTED:
+                  wrapper.writeBoolean(playerInfo.isListed());
+                  break;
+               case UPDATE_LATENCY:
+                  wrapper.writeVarInt(playerInfo.getLatency());
+                  break;
+               case UPDATE_DISPLAY_NAME:
+                  wrapper.writeOptional(playerInfo.getDisplayName(), PacketWrapper::writeComponent);
+                  break;
+               case UPDATE_LIST_ORDER:
+                  if (this.serverVersion.isNewerThanOrEquals(ServerVersion.V_1_21_2)) {
+                     wrapper.writeVarInt(playerInfo.getListOrder());
+                  }
+                  break;
+               case UPDATE_HAT:
+                  if (this.serverVersion.isNewerThanOrEquals(ServerVersion.V_1_21_4)) {
+                     wrapper.writeBoolean(playerInfo.isShowHat());
+                  }
+            }
+         }
+      });
+   }
+
+   public void copy(WrapperPlayServerPlayerInfoUpdate wrapper) {
+      this.actions = wrapper.actions;
+      this.entries = wrapper.entries;
+   }
+
+   public EnumSet<WrapperPlayServerPlayerInfoUpdate.Action> getActions() {
+      return this.actions;
+   }
+
+   public void setActions(EnumSet<WrapperPlayServerPlayerInfoUpdate.Action> actions) {
+      this.actions = actions;
+   }
+
+   public List<WrapperPlayServerPlayerInfoUpdate.PlayerInfo> getEntries() {
+      return this.entries;
+   }
+
+   public void setEntries(List<WrapperPlayServerPlayerInfoUpdate.PlayerInfo> entries) {
+      this.entries = entries;
+   }
+
+   public static enum Action {
+      ADD_PLAYER,
+      INITIALIZE_CHAT,
+      UPDATE_GAME_MODE,
+      UPDATE_LISTED,
+      UPDATE_LATENCY,
+      UPDATE_DISPLAY_NAME,
+      UPDATE_LIST_ORDER,
+      UPDATE_HAT;
+
+      public static final WrapperPlayServerPlayerInfoUpdate.Action[] VALUES = values();
+   }
+
+   public static class PlayerInfo {
+      private UserProfile profile;
+      private boolean listed = true;
+      private int latency;
+      private GameMode gameMode;
+      @Nullable
+      private Component displayName;
+      @Nullable
+      private RemoteChatSession chatSession;
+      private int listOrder;
+      private boolean showHat;
+
+      public PlayerInfo(WrapperPlayServerPlayerInfoUpdate.PlayerInfo other) {
+         this.profile = other.profile;
+         this.listed = other.listed;
+         this.latency = other.latency;
+         this.gameMode = other.gameMode;
+         this.displayName = other.displayName;
+         this.chatSession = other.chatSession;
+         this.listOrder = other.listOrder;
+         this.showHat = other.showHat;
+      }
+
+      public PlayerInfo(UUID profileId) {
+         this(new UserProfile(profileId, ""));
+      }
+
+      public PlayerInfo(UserProfile profile) {
+         this.profile = profile;
+      }
+
+      public PlayerInfo(
+         UserProfile profile, boolean listed, int latency, GameMode gameMode, @Nullable Component displayName, @Nullable RemoteChatSession chatSession
+      ) {
+         this(profile, listed, latency, gameMode, displayName, chatSession, 0);
+      }
+
+      public PlayerInfo(
+         UserProfile profile,
+         boolean listed,
+         int latency,
+         GameMode gameMode,
+         @Nullable Component displayName,
+         @Nullable RemoteChatSession chatSession,
+         int listOrder
+      ) {
+         this(profile, listed, latency, gameMode, displayName, chatSession, listOrder, false);
+      }
+
+      public PlayerInfo(
+         UserProfile profile,
+         boolean listed,
+         int latency,
+         GameMode gameMode,
+         @Nullable Component displayName,
+         @Nullable RemoteChatSession chatSession,
+         int listOrder,
+         boolean showHat
+      ) {
+         this.profile = profile;
+         this.listed = listed;
+         this.latency = latency;
+         this.gameMode = gameMode;
+         this.displayName = displayName;
+         this.chatSession = chatSession;
+         this.listOrder = listOrder;
+         this.showHat = showHat;
+      }
+
+      public UUID getProfileId() {
+         return this.profile.getUUID();
+      }
+
+      public UserProfile getGameProfile() {
+         return this.profile;
+      }
+
+      public boolean isListed() {
+         return this.listed;
+      }
+
+      public int getLatency() {
+         return this.latency;
+      }
+
+      public GameMode getGameMode() {
+         return this.gameMode;
+      }
+
+      @Nullable
+      public Component getDisplayName() {
+         return this.displayName;
+      }
+
+      @Nullable
+      public RemoteChatSession getChatSession() {
+         return this.chatSession;
+      }
+
+      public int getListOrder() {
+         return this.listOrder;
+      }
+
+      public boolean isShowHat() {
+         return this.showHat;
+      }
+
+      public void setGameProfile(UserProfile gameProfile) {
+         this.profile = gameProfile;
+      }
+
+      public void setListed(boolean listed) {
+         this.listed = listed;
+      }
+
+      public void setLatency(int latency) {
+         this.latency = latency;
+      }
+
+      public void setGameMode(GameMode gameMode) {
+         this.gameMode = gameMode;
+      }
+
+      public void setDisplayName(@Nullable Component displayName) {
+         this.displayName = displayName;
+      }
+
+      public void setChatSession(@Nullable RemoteChatSession chatSession) {
+         this.chatSession = chatSession;
+      }
+
+      public void setListOrder(int listOrder) {
+         this.listOrder = listOrder;
+      }
+
+      public void setShowHat(boolean showHat) {
+         this.showHat = showHat;
+      }
+   }
+}

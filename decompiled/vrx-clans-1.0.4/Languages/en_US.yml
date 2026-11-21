@@ -1,0 +1,303 @@
+prefix: "&8[&bVRX Clans&8] "
+
+msg:
+  only-players: "%prefix%&cOnly players can use this command!"
+  no-permission: "%prefix%&cYou don't have permission to do this!"
+  not-in-clan: "%prefix%&cYou are not in a clan!"
+  player-not-found: "%prefix%&cPlayer not found or not online."
+  invalid-args: "%prefix%&cInvalid arguments! Use: %usage%"
+  cooldown: "%prefix%&cYou are still on cooldown for &e%time% &cand cannot create/join a clan!"
+  invalid-name-length: "%prefix%&cClan name must be between &e%min% &cand &e%max% &ccharacters."
+  invalid-name-chars: "%prefix%&cClan name can only contain letters and numbers."
+  blocked-name: "%prefix%&cThis clan name is blocked on this server!"
+  need-money: "%prefix%&cYou need &e%amount%$ &cto do this."
+  clan-created: "%prefix%&aYou successfully created the clan &e%clan%&a!"
+  clan-exists: "%prefix%&cYou are already in a clan or the name is taken."
+  not-leader: "%prefix%&cOnly the &eLEADER &ccan do this!"
+  not-co-leader: "%prefix%&cYou do not have permission for this! (Requires higher rank)"
+  not-officer: "%prefix%&cYou do not have permission for this! (Requires higher rank)"
+  clan-renamed: "%prefix%&7The clan &e%old% &7was renamed to &b%new%&7!"
+  name-taken: "%prefix%&cThis name is already taken."
+  eco-deposit: "&8[&bClan-Bank&8] &aYou deposited &e%amount%$&a."
+  eco-withdraw: "&8[&bClan-Bank&8] &aYou withdrew &e%amount%$&a."
+  eco-not-enough: "%prefix%&cNot enough money in the bank/account."
+  eco-invalid-number: "%prefix%&cPlease enter a valid number!"
+  join-no-invite: "%prefix%&cYou have no pending invitations."
+  join-clan-missing: "%prefix%&cThis clan no longer exists."
+  join-clan-full: "%prefix%&cThis clan is full (&e%max% &cmembers)."
+  join-success: "%prefix%&aYou joined the clan &e%clan%&a!"
+  leave-leader: "%prefix%&cAs a leader, you must disband the clan."
+  leave-success: "%prefix%&aYou left the clan. You now have a cooldown of &e%time%&a."
+  disband-success: "%prefix%&cThe clan &e%clan% &cwas disbanded."
+  invite-already-in-clan: "%prefix%&cThis player is already in a clan."
+  invite-sent: "%prefix%&aYou invited &e%player%&a. (Valid for %time%)"
+  invite-received: "%prefix%&aYou were invited to &e%clan%&a!\n&7Use &e/clan join&7. You have &e%time% &7to accept."
+  kick-not-in-clan: "%prefix%&cThis player is not in your clan."
+  kick-cannot-kick: "%prefix%&cYou cannot kick this player!"
+  kick-success: "%prefix%&aYou kicked &e%player%&a."
+  kick-target: "%prefix%&cYou were kicked from the clan! Cooldown: &e%time%&c."
+  promote-max: "%prefix%&cThis player already has the highest rank."
+  promote-success: "%prefix%&aYou promoted &e%player% &ato &e%rank%&a."
+  promote-target: "%prefix%&aYou were promoted to &e%rank%&a!"
+  demote-min: "%prefix%&cThis player cannot be demoted further."
+  demote-success: "%prefix%&aYou demoted &e%player% &ato &e%rank%&a."
+  demote-target: "%prefix%&cYou were demoted to &e%rank%&c."
+  diplomacy-no-request: "%prefix%&cYou have no pending requests for this."
+  diplomacy-clan-missing: "%prefix%&cThe requesting clan no longer exists."
+  diplomacy-limit-reached-self: "%prefix%&cYour clan reached the limit of &e%limit% &crelations!"
+  diplomacy-limit-reached-target: "%prefix%&cThe target clan reached the limit of &e%limit% &crelations!"
+  diplomacy-ally-success: "%prefix%&e%clan1% &aand &e%clan2% &aare now allied!"
+  diplomacy-rival-success: "%prefix%&e%clan1% &aand &e%clan2% &care now official rivals!"
+  diplomacy-neutral-success: "%prefix%&e%clan1% &aand &e%clan2% &7are now neutral."
+  diplomacy-deny: "%prefix%&cYou denied the request."
+  diplomacy-cannot-self: "%prefix%&cYou cannot form pacts with your own clan."
+  diplomacy-already-allied: "%prefix%&cYou are already allied."
+  diplomacy-already-rivals: "%prefix%&cYou are already rivals."
+  diplomacy-already-neutral: "%prefix%&cYou are already neutral."
+  diplomacy-money-deducted: "%prefix%&cYou paid &e%amount%$ &cfor the request."
+  diplomacy-request-sent: "%prefix%&aRequest sent to &e%clan%&a."
+  diplomacy-request-received: "&8[&bDiplomacy&8] &e%clan% &aoffers the status: &e%type%\n&8[&bDiplomacy&8] &aUse &e/clan %type% accept &aor &cdeny"
+  base-not-set: "%prefix%&cYour clan has no base."
+  base-set: "%prefix%&aClan base set to your location!"
+  base-wg-error: "%prefix%&cYou cannot set a base here because this area is protected by WorldGuard!"
+  base-tp-already: "%prefix%&cYou are already teleporting!"
+  base-tp-delay: "%prefix%&eTeleporting in &c%time% &eseconds. Do not move!"
+  base-tp-cancel: "%prefix%&cTeleport cancelled!"
+  base-tp-paid: "%prefix%&7You paid &c%amount%$ &7for the teleport."
+  base-tp-welcome: "%prefix%&aWelcome to the base!"
+  base-protected: "%prefix%&cYou are in the protected area of clan &e%clan%&c!"
+  level-up-title: "&d&lLEVEL UP!"
+  level-up-sub: "&7Your clan is now Level &e%level%"
+  level-up-chat: "%prefix%&dYour clan reached Level %level%!"
+  level-vault-unlock: "%prefix%&aYou unlocked the Clan Vault!"
+  level-vault-upgrade: "%prefix%&aYour Clan Vault has been upgraded!"
+  ff-friendly: "%prefix%&cYou cannot hurt clan members!"
+  ff-ally: "%prefix%&eThis clan is allied with you!"
+  shop-radius-bought: "%prefix%&aRadius expanded by &e%amount% blocks&a!"
+  shop-booster-bought: "%prefix%&a%type% Booster bought successfully!"
+  shop-upgrade-bought: "%prefix%&aBase Upgrade &e%type% &abought successfully!"
+  tax-paid: "&8[&bClan-Tax&8] &aSuccessfully paid &e%amount%$ &atax."
+  tax-failed-level: "&8[&bClan-Tax&8] &cCould not pay taxes! Clan demoted to Level &e%level%&c!"
+  tax-failed-bankrupt: "&8[&bClan-Tax&8] &cCould not pay taxes! Bank is now empty."
+  quest-completed: "%prefix%&aYour clan completed the quest &e%quest% &aand received &d%reward% XP&a!"
+  quests-reset: "%prefix%&eThe daily clan quests have been reset! New missions are available."
+  war-already-in-war: "%prefix%&cYour clan is already in an active war!"
+  war-target-in-war: "%prefix%&cThe target clan is already in an active war!"
+  war-min-wager: "%prefix%&cThe wager must be at least &e%amount%$&c!"
+  war-req-sent: "%prefix%&aWar request sent to &e%clan% &awith a wager of &e%wager%$&a!"
+  war-req-received: "&8[&4Clan-War&8] &cClan &e%clan% &cdeclared war on you! Wager: &e%wager%$\n&8[&4Clan-War&8] &cUse &e/clan war accept &cor &e/clan war deny&c."
+  war-started: "&8[&4Clan-War&8] &e%clan1% &cand &e%clan2% &care now at war! First to &e%target% Kills &cwins the pot of &e%pot%$&c!"
+  war-kill: "&8[&4Clan-War&8] &e%killer% &ckilled &e%victim%&c! &8[&e%kills%&8/&e%target%&8]"
+  war-ended: "&8[&4Clan-War&8] &e%winner% &adefeated &c%loser% &aand won the pot of &e%pot%$&a!"
+
+quests:
+  name-zombies: "Zombie Hunter"
+  name-diamonds: "Diamond Miner"
+  name-bank: "Wealthy Clan"
+
+discord:
+  creation-title: "🆕 New Clan Created!"
+  creation-desc: "The clan **%clan%** has just been founded by **%player%**."
+  levelup-title: "⭐ Clan Level Up!"
+  levelup-desc: "The clan **%clan%** has reached **Level %level%**!"
+  war-title: "⚔️ Clan War Ended!"
+  war-desc: "The clan **%winner%** has defeated **%loser%** and won the pot of **%pot%$**!"
+
+admin:
+  reload: "%prefix%&aConfigs & Languages reloaded!"
+  save: "%prefix%&aData saved!"
+  spy-on: "%prefix%&aSpy enabled!"
+  spy-off: "%prefix%&cSpy disabled!"
+  disband: "%prefix%&cClan &e%clan% &cwas force-disbanded!"
+  rename: "%prefix%&7Clan &e%old% &7was force-renamed to &b%new%&7."
+  setleader: "%prefix%&aPlayer &e%player% &ais now leader of &e%clan%&a."
+  setleader-target: "%prefix%&aAn Admin made you leader of your clan!"
+  forcejoin: "%prefix%&aYou forced &e%player% &ainto &e%clan%&a."
+  forcejoin-target: "%prefix%&aAn Admin moved you into clan &e%clan%&a."
+  setlevel: "%prefix%&aLevel of &e%clan% &aset to &e%level%&a."
+  addxp: "%prefix%&aAdded &e%xp% XP &ato &e%clan%&a."
+  eco-add: "%prefix%&aAdded &e%amount%$ &ato clan."
+  eco-remove: "%prefix%&aRemoved &e%amount%$ &afrom clan."
+  eco-set: "%prefix%&aClan bank set to &e%amount%$&a."
+  vault: "%prefix%&aOpening vault of &e%clan%&a."
+
+gui:
+  title:
+    perms-ranks: "&8» &cPermissions"
+    perms-toggle: "&8» &cPerms: &e%rank%"
+    noclan: "&8» &bVRX Clans"
+    clan: "&8» &b%clan%"
+    shop: "&8» &aClan Shop"
+    list: "&8» &eAll Clans"
+    bank: "&8» &6Clan Bank"
+    members: "&8» &aMembers"
+    manage: "&8» &e%player%"
+    vault: "&8» &5Clan Vault"
+    quests: "&8» &6Clan Quests"
+  item:
+    create:
+      name: "&a&lCreate Clan"
+      lore: ["&7Click here to create", "&7a new clan."]
+    list:
+      name: "&e&lShow All Clans"
+      lore: ["&7Shows a list of all", "&7clans on the server."]
+    info:
+      name: "&b&lClan Info"
+      lore: ["&7Members: &f%members%", "&7Your Rank: &e%rank%", "", "&c⚔ Kills: &f%kills%", "&c☠ Deaths: &f%deaths%", "&c➗ KDR: &f%kdr%"]
+    level:
+      name: "&d&lClan Level: &f%level%"
+      lore: ["&7XP: &f%xp% &8/ &7%req%", "", "&aFarm and kill monsters", "&ato earn XP!"]
+    bank:
+      name: "&6&lClan Bank"
+      lore: ["&7Balance: &a%balance%$", "", "&eClick to open"]
+    vault-unlocked:
+      name: "&5&lClan Vault"
+      lore: ["&7Shared inventory.", "&eClick to open"]
+    vault-locked:
+      name: "&c&lClan Vault"
+      lore: ["&7Unlocks at &eLevel %level%&7."]
+    members:
+      name: "&a&lManage Members"
+      lore: ["&7Click to promote", "&7or kick members."]
+    setbase:
+      name: "&3&lSet Base"
+      lore: ["&7Sets the protected", "&7base to your", "&7current location."]
+    shop:
+      name: "&a&lClan Shop"
+      lore: ["&7Buy upgrades and", "&7boosters.", "", "&eClick to open"]
+    quests:
+      name: "&6&lClan Quests"
+      lore: ["&7Complete daily missions", "&7to earn Clan XP!", "", "&eClick to open"]
+    basetp:
+      name: "&d&lTP to Base"
+      lore: ["&7Teleport to base.", "", "&7Radius: &e%radius% Blocks", "&8(Grows per member)", "", "%cost%", "%delay%"]
+    nobase:
+      name: "&c&lNo Base"
+      lore: ["&7Your clan has not", "&7set a base yet."]
+    rename:
+      name: "&e&lRename Clan"
+      lore: ["&7Leader only."]
+    invite:
+      name: "&a&lInvite Player"
+      lore: ["&7Click to invite", "&7someone."]
+    disband:
+      name: "&c&lDisband Clan"
+      lore: ["&7Deletes the clan!"]
+    leave:
+      name: "&c&lLeave Clan"
+      lore: ["&7Leave the clan."]
+    back:
+      name: "&7Back"
+      lore: []
+    shop-radius:
+      name: "&3&lRadius Upgrade"
+      lore: ["&7Increases base radius.", "", "&7Bonus: &e+%add%", "&7Cost: &c%cost%$ &8(Bank)", "", "&eClick to buy"]
+    shop-xp:
+      name: "&d&lXP Booster"
+      lore: ["&7Double XP from kills.", "", "&7Duration: &e%hours% Hour(s)", "&7Cost: &c%cost%$ &8(Bank)", "", "%status%"]
+    shop-haste:
+      name: "&e&lHaste Booster"
+      lore: ["&7Mine faster.", "", "&7Duration: &e%hours% Hour(s)", "&7Cost: &c%cost%$ &8(Bank)", "", "%status%"]
+    shop-speed:
+      name: "&f&lSpeed Booster"
+      lore: ["&7Run faster.", "", "&7Duration: &e%hours% Hour(s)", "&7Cost: &c%cost%$ &8(Bank)", "", "%status%"]
+    shop-strength:
+      name: "&4&lStrength Booster"
+      lore: ["&7Deal more damage.", "", "&7Duration: &e%hours% Hour(s)", "&7Cost: &c%cost%$ &8(Bank)", "", "%status%"]
+    shop-baseregen:
+      name: "&d&lBase Regeneration"
+      lore: ["&7Heals players in the base.", "", "&7Cost: &c%cost%$ &8(Bank)", "", "%status%"]
+    shop-basesat:
+      name: "&6&lBase Saturation"
+      lore: ["&7No hunger in the base.", "", "&7Cost: &c%cost%$ &8(Bank)", "", "%status%"]
+    quest-zombies:
+      name: "&2&lZombie Hunter"
+      lore: ["&7Kill &e%target% &7Zombies together.", "", "&7Progress: &e%progress% &8/ &e%target%", "&7Reward: &d%reward% XP", "", "%status%"]
+    quest-diamonds:
+      name: "&b&lDiamond Miner"
+      lore: ["&7Mine &e%target% &7Diamond Ores together.", "", "&7Progress: &e%progress% &8/ &e%target%", "&7Reward: &d%reward% XP", "", "%status%"]
+    quest-bank:
+      name: "&6&lWealthy Clan"
+      lore: ["&7Deposit &e%target%$ &7into the bank.", "", "&7Progress: &e%progress% &8/ &e%target%", "&7Reward: &d%reward% XP", "", "%status%"]
+    bank-balance:
+      name: "&6&lBalance"
+      lore: ["&a%balance%$"]
+    bank-deposit-1:
+      name: "&a+ 100$ Deposit"
+      lore: ["&7Takes 100$ from you."]
+    bank-deposit-2:
+      name: "&a+ 1000$ Deposit"
+      lore: ["&7Takes 1000$ from you."]
+    bank-withdraw-1:
+      name: "&c- 100$ Withdraw"
+      lore: ["&7Gives you 100$."]
+    bank-withdraw-2:
+      name: "&c- 1000$ Withdraw"
+      lore: ["&7Gives you 1000$."]
+    member-head:
+      name: "&e%player%"
+      lore: ["&7Rank: &b%rank%", "", "&eClick to manage!"]
+    manage-promote:
+      name: "&a&lPromote"
+      lore: ["&7Give higher rank."]
+    manage-demote:
+      name: "&c&lDemote"
+      lore: ["&7Give lower rank."]
+    manage-kick:
+      name: "&4&lKick"
+      lore: ["&7Remove from clan."]
+    list-format:
+      name: "&b%clan%"
+      lore: ["&7Level: &d%level%", "&7Members: &f%members%", "&cKDR: &f%kdr%", "&7Allies: &a%allies%"]
+    main-perms:
+      name: "&c&lManage Permissions"
+      lore: ["&7Set what each rank", "&7is allowed to do.", "", "&cLeader only!"]
+    perms-rank:
+      name: "&eRank: &6%rank%"
+      lore: ["&7Left click: change permissions", "&7Right click: rename rank"]
+    perms-toggle:
+      name: "&bPermission: &f%perm%"
+      lore: ["&7Is this rank allowed?", "", "&7Status: %status%", "", "&eClick to toggle!"]
+
+    shop-more-members:
+      name: "&aMore Member Slots"
+      lore: ["&7Current bonus: &e%current%", "&7Cost: &a%cost%$"]
+    shop-more-homes:
+      name: "&bMore Clan Homes"
+      lore: ["&7Current bonus: &e%current%", "&7Cost: &a%cost%$"]
+    shop-more-vault:
+      name: "&6Vault Expansion"
+      lore: ["&7Extra rows: &e%current%", "&7Cost: &a%cost%$"]
+    shop-more-allies:
+      name: "&aMore Ally Slots"
+      lore: ["&7Current bonus: &e%current%", "&7Cost: &a%cost%$"]
+    shop-more-rivals:
+      name: "&cMore Rival Slots"
+      lore: ["&7Current bonus: &e%current%", "&7Cost: &a%cost%$"]
+    shop-teleport:
+      name: "&dBetter Base Teleport"
+      lore: ["&7Delay reduction: &e%current%s", "&7Cost: &a%cost%$"]
+
+misc:
+  booster-active: "&aActive (%h%h %m%m)"
+  booster-inactive: "&cInactive"
+  cost-free: "&aFree"
+  delay-none: "&aNone"
+  quest-progress: "&eIn Progress"
+  quest-done: "&aCompleted"
+  word-cost: "&7Cost: &c%amount%$"
+  word-delay: "&7Delay: &e%time%s"
+  status-unlocked: "&a✔ Unlocked"
+  status-locked: "&c✖ Not Unlocked"
+  info-header: "&8&m--------------------------------"
+  info-title: "&b&lClan: &e%clan%"
+  info-level: "&7Level: &d%level% &8(&7%xp%XP&8)"
+  info-members: "&7Members: &f%members%&8/&7%max%"
+  info-bank: "&7Bank: &a%balance%$"
+  info-stats: "&cKills: &f%kills% &8| &cDeaths: &f%deaths% &8| &cKDR: &f%kdr%"
+  info-war-active: "&4&lActive War: &cAgainst %enemy% &8(&e%kills%&8/&e%target% Kills&8)"
+  info-war-none: "&7Active War: &aNone"
+  info-radius: "&7Base Radius: &e%radius% Blocks"
+  info-nobase: "&7Base: &cNone"
+  info-allies: "&7Allies: &a%allies%"
+  info-rivals: "&7Rivals: &c%rivals%"

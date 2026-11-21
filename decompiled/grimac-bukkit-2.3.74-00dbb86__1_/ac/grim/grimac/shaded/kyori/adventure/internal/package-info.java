@@ -1,0 +1,4 @@
+@ApiStatus.Internal
+package ac.grim.grimac.shaded.kyori.adventure.internal;
+
+import ac.grim.grimac.shaded.jetbrains.annotations.ApiStatus;

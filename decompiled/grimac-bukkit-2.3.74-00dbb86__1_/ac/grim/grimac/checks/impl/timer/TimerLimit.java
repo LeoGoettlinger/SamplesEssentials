@@ -1,0 +1,52 @@
+package ac.grim.grimac.checks.impl.timer;
+
+import ac.grim.grimac.api.config.ConfigManager;
+import ac.grim.grimac.checks.CheckData;
+import ac.grim.grimac.player.GrimPlayer;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.event.PacketReceiveEvent;
+
+@CheckData(
+   name = "TimerLimit",
+   stableKey = "grim.timer.limit",
+   description = "The player has sent too many packets after high latency",
+   setback = 10.0
+)
+public class TimerLimit extends Timer {
+   private long limitAbuseOverPing;
+
+   public TimerLimit(GrimPlayer player) {
+      super(player);
+   }
+
+   @Override
+   public void doCheck(PacketReceiveEvent event) {
+      if (this.timerBalanceRealTime > System.nanoTime()) {
+         if (!event.isCancelled() && this.flag() && this.shouldSetback()) {
+            this.player.getSetbackTeleportUtil().executeNonSimulatingSetback();
+         }
+
+         this.timerBalanceRealTime = (long)(this.timerBalanceRealTime - 5.0E7);
+      }
+
+      this.limitFallBehind();
+   }
+
+   @Override
+   protected void limitFallBehind() {
+      long playerClock = this.lastMovementPlayerClock;
+      if (this.limitAbuseOverPing != -1L && System.nanoTime() - playerClock > this.limitAbuseOverPing) {
+         playerClock = System.nanoTime() - this.limitAbuseOverPing;
+      }
+
+      this.timerBalanceRealTime = Math.max(this.timerBalanceRealTime, playerClock - this.clockDrift);
+   }
+
+   @Override
+   public void onReload(ConfigManager config) {
+      super.onReload(config);
+      this.limitAbuseOverPing = config.getLongElse(this.getConfigName() + ".ping-abuse-limit-threshold", 1000L);
+      if (this.limitAbuseOverPing != -1L) {
+         this.limitAbuseOverPing *= 1000000L;
+      }
+   }
+}

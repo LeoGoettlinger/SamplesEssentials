@@ -1,0 +1,72 @@
+package su.nightexpress.nightcore.dialog;
+
+import java.util.HashSet;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+import org.jspecify.annotations.NonNull;
+import su.nightexpress.nightcore.NightCore;
+import su.nightexpress.nightcore.manager.AbstractListener;
+import su.nightexpress.nightcore.util.NumberUtil;
+
+@Deprecated
+public class DialogListener extends AbstractListener<NightCore> {
+   public DialogListener(@NonNull NightCore plugin) {
+      super(plugin);
+   }
+
+   @EventHandler(
+      priority = EventPriority.MONITOR
+   )
+   public void onQuit(PlayerQuitEvent event) {
+      Dialog.stop(event.getPlayer());
+   }
+
+   @EventHandler(
+      priority = EventPriority.LOWEST
+   )
+   public void onChatText(AsyncPlayerChatEvent event) {
+      Player player = event.getPlayer();
+      Dialog dialog = Dialog.get(player);
+      if (dialog != null) {
+         event.getRecipients().clear();
+         event.setCancelled(true);
+         WrappedInput input = new WrappedInput(event);
+         this.plugin.runTask(() -> {
+            if (input.getTextRaw().equalsIgnoreCase("#exit") || dialog.getHandler().onInput(dialog, input)) {
+               Dialog.stop(player);
+            }
+         });
+      }
+   }
+
+   @EventHandler(
+      priority = EventPriority.LOWEST
+   )
+   public void onChatCommand(PlayerCommandPreprocessEvent event) {
+      Player player = event.getPlayer();
+      Dialog dialog = Dialog.get(player);
+      if (dialog != null) {
+         event.setCancelled(true);
+         String raw = event.getMessage();
+         String text = raw.substring(1);
+         if (text.startsWith("#values")) {
+            String[] split = text.split(" ");
+            int page = split.length >= 2 ? NumberUtil.getIntegerAbs(split[1]) : 0;
+            boolean auto = split.length >= 3 && Boolean.parseBoolean(split[2]);
+            dialog.displaySuggestions(auto, page);
+         } else {
+            AsyncPlayerChatEvent chatEvent = new AsyncPlayerChatEvent(true, player, text, new HashSet());
+            WrappedInput input = new WrappedInput(chatEvent);
+            this.plugin.runTask(() -> {
+               if (input.getTextRaw().equalsIgnoreCase("#exit") || dialog.getHandler().onInput(dialog, input)) {
+                  Dialog.stop(player);
+               }
+            });
+         }
+      }
+   }
+}

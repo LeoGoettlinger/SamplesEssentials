@@ -1,0 +1,83 @@
+package com.github.retrooper.packetevents.protocol.item.instrument;
+
+import com.github.retrooper.packetevents.protocol.mapper.AbstractMappedEntity;
+import com.github.retrooper.packetevents.protocol.sound.Sound;
+import com.github.retrooper.packetevents.util.mappings.TypesBuilderData;
+import java.util.Objects;
+import net.kyori.adventure.text.Component;
+import org.jetbrains.annotations.ApiStatus.Internal;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
+@NullMarked
+public class StaticInstrument extends AbstractMappedEntity implements Instrument {
+   private final Sound sound;
+   private final float useSeconds;
+   private final float range;
+   private final Component description;
+
+   @Deprecated
+   public StaticInstrument(Sound sound, int useDuration, float range) {
+      this(sound, useDuration * 20.0F, range, Component.empty());
+   }
+
+   public StaticInstrument(Sound sound, float useSeconds, float range, Component description) {
+      this(null, sound, useSeconds, range, description);
+   }
+
+   @Internal
+   public StaticInstrument(@Nullable TypesBuilderData data, Sound sound, float useSeconds, float range, Component description) {
+      super(data);
+      this.sound = sound;
+      this.useSeconds = useSeconds;
+      this.range = range;
+      this.description = description;
+   }
+
+   public Instrument copy(@Nullable TypesBuilderData newData) {
+      return new StaticInstrument(newData, this.sound, this.useSeconds, this.range, this.description);
+   }
+
+   @Override
+   public Sound getSound() {
+      return this.sound;
+   }
+
+   @Override
+   public float getUseSeconds() {
+      return this.useSeconds;
+   }
+
+   @Override
+   public float getRange() {
+      return this.range;
+   }
+
+   @Override
+   public Component getDescription() {
+      return this.description;
+   }
+
+   @Override
+   public boolean deepEquals(@Nullable Object obj) {
+      if (this == obj) {
+         return true;
+      } else if (!(obj instanceof StaticInstrument)) {
+         return false;
+      } else {
+         StaticInstrument that = (StaticInstrument)obj;
+         if (this.useSeconds != that.useSeconds) {
+            return false;
+         } else if (Float.compare(that.range, this.range) != 0) {
+            return false;
+         } else {
+            return !this.sound.equals(that.sound) ? false : this.description.equals(that.description);
+         }
+      }
+   }
+
+   @Override
+   public int deepHashCode() {
+      return Objects.hash(this.sound, this.useSeconds, this.range, this.description);
+   }
+}

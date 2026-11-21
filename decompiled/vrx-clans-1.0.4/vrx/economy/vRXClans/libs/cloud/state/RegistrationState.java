@@ -1,0 +1,12 @@
+package vrx.economy.vRXClans.libs.cloud.state;
+
+import org.apiguardian.api.API;
+
+@API(
+   status = API.Status.STABLE
+)
+public enum RegistrationState implements State {
+   BEFORE_REGISTRATION,
+   REGISTERING,
+   AFTER_REGISTRATION;
+}

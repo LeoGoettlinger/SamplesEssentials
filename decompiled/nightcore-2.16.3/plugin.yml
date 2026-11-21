@@ -1,0 +1,10 @@
+name: nightcore
+main: su.nightexpress.nightcore.NightCore
+version: '2.16.3'
+description: Plugin core
+author: NightExpress
+api-version: 1.21
+load: STARTUP
+libraries:
+  - com.zaxxer:HikariCP:6.3.2
+  - it.unimi.dsi:fastutil-core:8.5.16

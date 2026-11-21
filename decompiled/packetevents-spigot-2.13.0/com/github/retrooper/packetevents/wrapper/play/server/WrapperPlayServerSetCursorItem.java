@@ -1,0 +1,41 @@
+package com.github.retrooper.packetevents.wrapper.play.server;
+
+import com.github.retrooper.packetevents.event.PacketSendEvent;
+import com.github.retrooper.packetevents.protocol.item.ItemStack;
+import com.github.retrooper.packetevents.protocol.packettype.PacketType;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+
+public class WrapperPlayServerSetCursorItem extends PacketWrapper<WrapperPlayServerSetCursorItem> {
+   private ItemStack stack;
+
+   public WrapperPlayServerSetCursorItem(PacketSendEvent event) {
+      super(event);
+   }
+
+   public WrapperPlayServerSetCursorItem(ItemStack stack) {
+      super(PacketType.Play.Server.SET_CURSOR_ITEM);
+      this.stack = stack;
+   }
+
+   @Override
+   public void read() {
+      this.stack = this.readItemStack();
+   }
+
+   @Override
+   public void write() {
+      this.writeItemStack(this.stack);
+   }
+
+   public void copy(WrapperPlayServerSetCursorItem wrapper) {
+      this.stack = wrapper.stack;
+   }
+
+   public ItemStack getStack() {
+      return this.stack;
+   }
+
+   public void setStack(ItemStack stack) {
+      this.stack = stack;
+   }
+}

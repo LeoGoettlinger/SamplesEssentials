@@ -1,0 +1,46 @@
+package su.nightexpress.nightcore.bridge.registry;
+
+import java.util.function.Consumer;
+import org.jspecify.annotations.NonNull;
+
+@Deprecated(
+   forRemoval = true
+)
+public class Holder<T> {
+   private T value;
+
+   public void set(@NonNull T value) {
+      if (this.value != null) {
+         throw new IllegalStateException("Holder value already set: " + value);
+      } else {
+         this.value = value;
+      }
+   }
+
+   @NonNull
+   public T get() {
+      if (this.value == null) {
+         throw new IllegalStateException("Holder value is not set");
+      } else {
+         return this.value;
+      }
+   }
+
+   public void clear() {
+      this.value = null;
+   }
+
+   public void ifPresent(@NonNull Consumer<T> consumer) {
+      if (this.value != null) {
+         consumer.accept(this.value);
+      }
+   }
+
+   public boolean isPresent() {
+      return this.value != null;
+   }
+
+   public boolean isEmpty() {
+      return this.value == null;
+   }
+}

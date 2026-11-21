@@ -1,0 +1,24 @@
+package net.thenextlvl.nbt.serialization.adapters;
+
+import net.thenextlvl.nbt.serialization.ParserException;
+import net.thenextlvl.nbt.serialization.TagAdapter;
+import net.thenextlvl.nbt.serialization.TagDeserializationContext;
+import net.thenextlvl.nbt.serialization.TagSerializationContext;
+import net.thenextlvl.nbt.tag.StringTag;
+import net.thenextlvl.nbt.tag.Tag;
+
+public final class EnumAdapter<T extends Enum<T>> implements TagAdapter<T> {
+   private final Class<T> enumClass;
+
+   public EnumAdapter(Class<T> enumClass) {
+      this.enumClass = enumClass;
+   }
+
+   public T deserialize(Tag tag, TagDeserializationContext context) throws ParserException {
+      return Enum.valueOf(this.enumClass, tag.getAsString());
+   }
+
+   public Tag serialize(T object, TagSerializationContext context) throws ParserException {
+      return StringTag.of(object.name());
+   }
+}

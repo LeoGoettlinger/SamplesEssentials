@@ -1,0 +1,72 @@
+package de.tr7zw.nbtapi.plugin.tests.items;
+
+import de.tr7zw.nbtapi.NBT;
+import de.tr7zw.nbtapi.NBTItem;
+import de.tr7zw.nbtapi.NbtApiException;
+import de.tr7zw.nbtapi.plugin.tests.Test;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+
+public class NBTModifyItemTest implements Test {
+   @Override
+   public void test() throws Exception {
+      ItemStack baseItem = new ItemStack(Material.STONE);
+      NBT.modify(baseItem, nbti -> nbti.setString("SomeKey", "SomeValue"));
+      if (!baseItem.equals(new ItemStack(Material.STONE)) && new NBTItem(baseItem).hasTag("SomeKey")) {
+         baseItem = new ItemStack(Material.STONE);
+         baseItem = NBT.itemStackFromNBT(NBT.itemStackToNBT(baseItem));
+         String inside = NBT.modify(baseItem, nbt -> {
+            nbt.setString("SomeKey", "SomeValue");
+            nbt.modifyMeta((r, meta) -> meta.setDisplayName("Test"));
+            nbt.getOrCreateCompound("sub").setInteger("val", 42);
+            return nbt.getString("SomeKey");
+         });
+         String outside = NBT.get(baseItem, nbt -> nbt.getString("SomeKey"));
+         if (baseItem == null) {
+            throw new NbtApiException("Base item was null!");
+         } else if (!new NBTItem(baseItem).hasTag("SomeKey")) {
+            throw new NbtApiException("The data was not applied!");
+         } else if (new NBTItem(baseItem).getOrCreateCompound("sub").getInteger("val") != 42) {
+            throw new NbtApiException("The sub value was not applied!");
+         } else if (!"SomeValue".equals(inside)) {
+            throw new NbtApiException("Inside returned the wrong value!");
+         } else if (!"SomeValue".equals(outside)) {
+            throw new NbtApiException("Outside returned the wrong value!");
+         } else if (!"Test".equals(baseItem.getItemMeta().getDisplayName())) {
+            throw new NbtApiException("The display name was not applied!");
+         } else {
+            baseItem = new ItemStack(Material.STONE);
+            inside = NBT.modify(baseItem, nbt -> {
+               nbt.setString("SomeKey", "SomeValue");
+               nbt.modifyMeta((r, meta) -> meta.setDisplayName("Test"));
+               nbt.getOrCreateCompound("sub").setInteger("val", 42);
+               return nbt.getString("SomeKey");
+            });
+            outside = NBT.get(baseItem, nbt -> nbt.getString("SomeKey"));
+            if (!new NBTItem(baseItem).hasTag("SomeKey")) {
+               throw new NbtApiException("The data was not applied!");
+            } else if (new NBTItem(baseItem).getOrCreateCompound("sub").getInteger("val") != 42) {
+               throw new NbtApiException("The sub value was not applied!");
+            } else if (!"SomeValue".equals(inside)) {
+               throw new NbtApiException("Inside returned the wrong value!");
+            } else if (!"SomeValue".equals(outside)) {
+               throw new NbtApiException("Outside returned the wrong value!");
+            } else if (!"Test".equals(baseItem.getItemMeta().getDisplayName())) {
+               throw new NbtApiException("The display name was not applied!");
+            } else {
+               baseItem = new ItemStack(Material.STONE);
+               NBT.modify(baseItem, nbti -> nbti.setString("a", "SomeValue"));
+               NBT.modify(baseItem, nbt -> {
+                  nbt.modifyMeta((r, meta) -> meta.setDisplayName("Test"));
+                  nbt.setInteger("b", 12);
+               });
+               if (!new NBTItem(baseItem).hasTag("a") || !new NBTItem(baseItem).hasTag("b") || !"Test".equals(baseItem.getItemMeta().getDisplayName())) {
+                  throw new NbtApiException("The data was not applied: " + new NBTItem(baseItem).toString());
+               }
+            }
+         }
+      } else {
+         throw new NbtApiException("The item's where not equal!");
+      }
+   }
+}

@@ -1,0 +1,56 @@
+package su.nightexpress.nightcore.ui.dialog;
+
+import org.bukkit.entity.Player;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+import su.nightexpress.nightcore.bridge.dialog.DialogViewer;
+import su.nightexpress.nightcore.bridge.dialog.wrap.WrappedDialog;
+import su.nightexpress.nightcore.util.Players;
+
+public class DialogUser implements DialogViewer {
+   private final Player player;
+   private final WrappedDialog dialog;
+   private final Runnable callback;
+
+   public DialogUser(@NonNull Player player, @NonNull WrappedDialog dialog, @Nullable Runnable callback) {
+      this.player = player;
+      this.dialog = dialog;
+      this.callback = callback;
+   }
+
+   @Override
+   public void close() {
+      Players.closeDialog(this.player);
+   }
+
+   @Override
+   public void closeFully() {
+      this.close();
+      this.callback();
+   }
+
+   @Override
+   public void callback() {
+      if (this.callback != null) {
+         this.callback.run();
+      }
+   }
+
+   @NonNull
+   @Override
+   public Player getPlayer() {
+      return this.player;
+   }
+
+   @NonNull
+   @Override
+   public WrappedDialog getDialog() {
+      return this.dialog;
+   }
+
+   @Nullable
+   @Override
+   public Runnable getCallback() {
+      return this.callback;
+   }
+}

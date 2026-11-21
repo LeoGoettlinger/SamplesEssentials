@@ -1,0 +1,93 @@
+package su.nightexpress.nightcore.ui.inventory.menu;
+
+import java.util.Optional;
+import java.util.function.Consumer;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.MenuType;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+import su.nightexpress.nightcore.NightCorePlugin;
+import su.nightexpress.nightcore.NightPlugin;
+import su.nightexpress.nightcore.ui.inventory.action.MenuItemAction;
+import su.nightexpress.nightcore.ui.inventory.action.ObjectAction;
+import su.nightexpress.nightcore.ui.inventory.action.ObjectActionContext;
+import su.nightexpress.nightcore.ui.inventory.viewer.MenuViewer;
+import su.nightexpress.nightcore.ui.inventory.viewer.ViewerContext;
+
+public abstract class AbstractObjectMenu<T> extends AbstractMenuBase {
+   protected final Class<T> type;
+
+   @Deprecated(
+      forRemoval = true
+   )
+   public AbstractObjectMenu(@NonNull MenuType defaultType, @NonNull String defaultTitle, @NonNull Class<T> type) {
+      super(defaultType, defaultTitle);
+      this.type = type;
+   }
+
+   @Deprecated
+   protected AbstractObjectMenu(@NonNull NightPlugin plugin, @NonNull MenuType defaultType, @NonNull String defaultTitle, @NonNull Class<T> type) {
+      super(plugin, defaultType, defaultTitle);
+      this.type = type;
+   }
+
+   protected AbstractObjectMenu(@NonNull NightCorePlugin plugin, @NonNull MenuType defaultType, @NonNull String defaultTitle, @NonNull Class<T> type) {
+      super(plugin, defaultType, defaultTitle);
+      this.type = type;
+   }
+
+   @Deprecated(
+      forRemoval = true
+   )
+   public boolean show(@NonNull NightPlugin plugin, @NonNull Player player, @NonNull T object) {
+      return this.show(plugin, player, object, null);
+   }
+
+   @Deprecated(
+      forRemoval = true
+   )
+   public boolean show(@NonNull NightPlugin plugin, @NonNull Player player, @NonNull T object, @Nullable Consumer<MenuViewer> preRender) {
+      return this.showMenu(plugin.getMenuRegistry(), player, viewer -> {
+         viewer.setCurrentObject(object);
+         if (preRender != null) {
+            preRender.accept(viewer);
+         }
+      });
+   }
+
+   public boolean show(@NonNull Player player, @NonNull T object) {
+      return this.show(player, object, null);
+   }
+
+   public boolean show(@NonNull Player player, @NonNull T object, @Nullable Consumer<MenuViewer> preRender) {
+      return this.showMenu(this.plugin.getMenuRegistry(), player, viewer -> {
+         viewer.setCurrentObject(object);
+         if (preRender != null) {
+            preRender.accept(viewer);
+         }
+      });
+   }
+
+   protected void registerObjectAction(@NonNull String id, @NonNull ObjectAction<T> action) {
+      this.dataRegistry.registerAction(id, this.createObjectAction(action));
+   }
+
+   @NonNull
+   protected MenuItemAction createObjectAction(@NonNull ObjectAction<T> action) {
+      return context -> {
+         T boundObject = this.getObject(context);
+         ObjectActionContext<T> objectContext = new ObjectActionContext<>(context.getViewer(), boundObject, context.getEvent());
+         action.execute(objectContext);
+      };
+   }
+
+   @NonNull
+   public Optional<T> object(@NonNull ViewerContext context) {
+      return context.object(this.type);
+   }
+
+   @NonNull
+   public T getObject(@NonNull ViewerContext context) {
+      return context.getObject(this.type);
+   }
+}

@@ -1,0 +1,182 @@
+package su.nightexpress.nightcore.util;
+
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import org.bukkit.entity.Player;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+import su.nightexpress.nightcore.config.ConfigValue;
+import su.nightexpress.nightcore.config.FileConfig;
+
+@Deprecated
+public class RankMap<T extends Number> {
+   private final RankMap.Mode mode;
+   private final String permissionPrefix;
+   private final T defaultValue;
+   private final Map<String, T> values;
+
+   public RankMap(@NonNull RankMap.Mode mode, @NonNull String permissionPrefix, @NonNull T defaultValue, @NonNull Map<String, T> values) {
+      this.mode = mode;
+      this.permissionPrefix = permissionPrefix;
+      this.defaultValue = defaultValue;
+      this.values = new HashMap<>(values);
+   }
+
+   @NonNull
+   public static RankMap<Integer> readInt(@NonNull FileConfig cfg, @NonNull String path, int defaultValue) {
+      return read(cfg, path, Integer.class, defaultValue);
+   }
+
+   @NonNull
+   public static RankMap<Double> readDouble(@NonNull FileConfig cfg, @NonNull String path, double defaultValue) {
+      return read(cfg, path, Double.class, defaultValue);
+   }
+
+   @NonNull
+   public static RankMap<Long> readLong(@NonNull FileConfig cfg, @NonNull String path, long defaultValue) {
+      return read(cfg, path, Long.class, defaultValue);
+   }
+
+   @NonNull
+   public static <T extends Number> RankMap<T> read(@NonNull FileConfig config, @NonNull String path, @NonNull Class<T> clazz, @NonNull T defaultValue) {
+      Map<String, T> oldMap = new HashMap<>();
+      if (!config.contains(path + ".Mode")) {
+         for (String rank : config.getSection(path)) {
+            T number;
+            if (clazz == Double.class) {
+               number = (T)clazz.cast(config.getDouble(path + "." + rank));
+            } else {
+               number = (T)clazz.cast(config.getInt(path + "." + rank));
+            }
+
+            oldMap.put(rank.toLowerCase(), number);
+         }
+
+         config.remove(path);
+      }
+
+      oldMap.forEach((rankx, numberx) -> {
+         if (rankx.equalsIgnoreCase("default")) {
+            config.set(path + ".Default_Value", numberx);
+         } else {
+            config.set(path + ".Values." + rankx, numberx);
+         }
+      });
+      RankMap.Mode mode = ConfigValue.create(
+            path + ".Mode",
+            RankMap.Mode.class,
+            RankMap.Mode.RANK,
+            "Available values: " + Enums.inline(RankMap.Mode.class),
+            "=".repeat(20) + " " + RankMap.Mode.RANK.name() + " MODE " + "=".repeat(20),
+            "Get value by player's permission group. All keys in 'Values' list will represent permission group names.",
+            "If player has none of specified groups, the 'Default_Value' setting will be used then",
+            "  Values:",
+            "    vip: 1 # -> Player must be in 'vip' permission group.",
+            "    gold: 2 # -> Player must be in 'gold' permission group.",
+            "    emerald: 3 # -> Player must be in 'emerald' permission group.",
+            "",
+            "=".repeat(20) + " " + RankMap.Mode.PERMISSION.name() + " MODE " + "=".repeat(20),
+            "Get value by player's permissions. All keys in 'Values' list will represent postfixes for the 'Permission_Prefix' setting (see below).",
+            "If player has none of specified permissions, the 'Default_Value' setting will be used then",
+            "  Permission_Prefix: 'example.prefix.'",
+            "  Values:",
+            "    vip: 1 # -> Player must have 'example.prefix.vip' permission.",
+            "    gold: 2 # -> Player must have 'example.prefix.gold' permission.",
+            "    emerald: 3 # -> Player must have 'example.prefix.emerald' permission."
+         )
+         .read(config);
+      String permissionPrefix = ConfigValue.create(
+            path + ".Permission_Prefix", "example.prefix.", "Sets permission prefix for the '" + RankMap.Mode.PERMISSION.name() + "' mode."
+         )
+         .read(config);
+      T fallback;
+      if (clazz == Double.class) {
+         fallback = (T)clazz.cast(ConfigValue.create(path + ".Default_Value", defaultValue.doubleValue()).read(config));
+      } else {
+         fallback = (T)clazz.cast(ConfigValue.create(path + ".Default_Value", defaultValue.intValue()).read(config));
+      }
+
+      Map<String, T> values = new HashMap<>();
+
+      for (String rank : config.getSection(path + ".Values")) {
+         T number;
+         if (clazz == Double.class) {
+            number = (T)clazz.cast(config.getDouble(path + ".Values." + rank));
+         } else {
+            number = (T)clazz.cast(config.getInt(path + ".Values." + rank));
+         }
+
+         values.put(rank.toLowerCase(), number);
+      }
+
+      return new RankMap<>(mode, permissionPrefix, fallback, values);
+   }
+
+   public void write(@NonNull FileConfig config, @NonNull String path) {
+      config.set(path + ".Mode", this.mode.name());
+      config.set(path + ".Permission_Prefix", this.permissionPrefix);
+      config.set(path + ".Default_Value", this.defaultValue);
+      this.values.forEach((rank, number) -> config.set(path + ".Values." + rank, number));
+   }
+
+   @NonNull
+   public T getRankValue(@NonNull Player player) {
+      String group = Players.getPermissionGroup(player);
+      return this.values.getOrDefault(group, this.defaultValue);
+   }
+
+   @NonNull
+   public T getGreatestOrNegative(@NonNull Player player) {
+      T best = this.getGreatest(player);
+      T lowest = this.getSmallest(player);
+      return lowest.doubleValue() < 0.0 ? lowest : best;
+   }
+
+   @NonNull
+   public T getGreatest(@NonNull Player player) {
+      return this.mode == RankMap.Mode.RANK
+         ? this.getRankValue(player)
+         : this.values
+            .entrySet()
+            .stream()
+            .filter(entry -> player.hasPermission(this.permissionPrefix + entry.getKey()))
+            .map(Entry::getValue)
+            .max(Comparator.comparingDouble(Number::doubleValue))
+            .orElse(this.defaultValue);
+   }
+
+   @NonNull
+   public T getSmallest(@NonNull Player player) {
+      return this.mode == RankMap.Mode.RANK
+         ? this.getRankValue(player)
+         : this.values
+            .entrySet()
+            .stream()
+            .filter(entry -> player.hasPermission(this.permissionPrefix + entry.getKey()))
+            .map(Entry::getValue)
+            .min(Comparator.comparingDouble(Number::doubleValue))
+            .orElse(this.defaultValue);
+   }
+
+   @NonNull
+   public RankMap.Mode getMode() {
+      return this.mode;
+   }
+
+   @Nullable
+   public String getPermissionPrefix() {
+      return this.permissionPrefix;
+   }
+
+   @NonNull
+   public T getDefaultValue() {
+      return this.defaultValue;
+   }
+
+   public static enum Mode {
+      RANK,
+      PERMISSION;
+   }
+}

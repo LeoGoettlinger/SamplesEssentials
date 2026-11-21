@@ -1,0 +1,204 @@
+package su.nightexpress.nightcore.database;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
+import java.util.function.Function;
+import org.bukkit.entity.Player;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+import su.nightexpress.nightcore.NightDataPlugin;
+import su.nightexpress.nightcore.database.sql.SQLColumn;
+import su.nightexpress.nightcore.database.sql.SQLCondition;
+import su.nightexpress.nightcore.database.sql.SQLQueries;
+import su.nightexpress.nightcore.database.sql.SQLValue;
+import su.nightexpress.nightcore.database.sql.column.ColumnType;
+import su.nightexpress.nightcore.database.sql.query.UpdateEntity;
+import su.nightexpress.nightcore.database.sql.query.UpdateQuery;
+import su.nightexpress.nightcore.util.Lists;
+import su.nightexpress.nightcore.util.TimeUtil;
+
+@Deprecated
+public abstract class AbstractUserDataHandler<P extends NightDataPlugin<U>, U extends DataUser> extends AbstractDataHandler<P> {
+   protected static final SQLColumn COLUMN_USER_ID = SQLColumn.of("uuid", ColumnType.STRING);
+   protected static final SQLColumn COLUMN_USER_NAME = SQLColumn.of("name", ColumnType.STRING);
+   protected static final SQLColumn COLUMN_USER_DATE_CREATED = SQLColumn.of("dateCreated", ColumnType.LONG);
+   protected static final SQLColumn COLUMN_USER_LAST_ONLINE = SQLColumn.of("last_online", ColumnType.LONG);
+   protected final String tableUsers = this.getTablePrefix() + "_users";
+   protected final Set<UUID> existIDs = new HashSet<>();
+   protected final Set<String> existNames = new HashSet<>();
+
+   public AbstractUserDataHandler(@NonNull P plugin) {
+      this(plugin, getDataConfig(plugin));
+   }
+
+   public AbstractUserDataHandler(@NonNull P plugin, @NonNull DatabaseConfig config) {
+      super(plugin, config);
+   }
+
+   @Override
+   protected void onLoad() {
+      super.onLoad();
+      this.createUserTable();
+      this.cacheNamesAndIds();
+   }
+
+   @Override
+   protected void onShutdown() {
+      super.onShutdown();
+   }
+
+   @Override
+   public void onSave() {
+   }
+
+   @Override
+   public void onPurge() {
+      if (SQLQueries.hasTable(this.getConnector(), this.tableUsers)) {
+         LocalDateTime deadline = LocalDateTime.now().minusDays(this.getConfig().getPurgePeriod());
+         long deadlineMs = TimeUtil.toEpochMillis(deadline);
+         this.delete(this.tableUsers, new SQLCondition[]{SQLCondition.smaller(COLUMN_USER_LAST_ONLINE.toValue(deadlineMs))});
+      }
+   }
+
+   protected void createUserTable() {
+      List<SQLColumn> columns = new ArrayList<>();
+      columns.add(COLUMN_USER_ID);
+      columns.add(COLUMN_USER_NAME);
+      columns.add(COLUMN_USER_DATE_CREATED);
+      columns.add(COLUMN_USER_LAST_ONLINE);
+      columns.addAll(this.getExtraColumns());
+      this.createTable(this.tableUsers, columns);
+   }
+
+   public boolean isNameIdCacheEnabled() {
+      return false;
+   }
+
+   public void cacheNamesAndIds() {
+      if (this.isNameIdCacheEnabled()) {
+         Function<ResultSet, Void> function = resultSet -> {
+            try {
+               this.existIDs.add(UUID.fromString(resultSet.getString(COLUMN_USER_ID.getName())));
+               this.existNames.add(resultSet.getString(COLUMN_USER_NAME.getName()).toLowerCase());
+            } catch (SQLException var3) {
+               var3.printStackTrace();
+            }
+
+            return null;
+         };
+         this.load(this.tableUsers, function, Arrays.asList(COLUMN_USER_ID, COLUMN_USER_NAME), Collections.emptyList(), -1);
+      }
+   }
+
+   @NonNull
+   protected abstract List<SQLColumn> getExtraColumns();
+
+   @NonNull
+   protected List<SQLColumn> getReadColumns() {
+      return Collections.emptyList();
+   }
+
+   @NonNull
+   protected abstract List<SQLValue> getSaveColumns(@NonNull U var1);
+
+   @NonNull
+   protected abstract Function<ResultSet, U> getUserFunction();
+
+   @NonNull
+   public List<U> getUsers() {
+      return this.load(this.tableUsers, this.getUserFunction(), Collections.emptyList(), Collections.emptyList(), -1);
+   }
+
+   @Nullable
+   public U getUser(@NonNull Player player) {
+      return this.getUser(player.getUniqueId());
+   }
+
+   @Nullable
+   public final U getUser(@NonNull String name) {
+      return this.load(
+            this.tableUsers,
+            this.getUserFunction(),
+            this.getReadColumns(),
+            Collections.singletonList(SQLCondition.equal(COLUMN_USER_NAME.asLowerCase().toValue(name.toLowerCase())))
+         )
+         .orElse(null);
+   }
+
+   @Nullable
+   public final U getUser(@NonNull UUID uuid) {
+      return this.load(
+            this.tableUsers, this.getUserFunction(), this.getReadColumns(), Collections.singletonList(SQLCondition.equal(COLUMN_USER_ID.toValue(uuid)))
+         )
+         .orElse(null);
+   }
+
+   public boolean isUserExists(@NonNull String name) {
+      return this.isNameIdCacheEnabled()
+         ? this.existNames.contains(name.toLowerCase())
+         : this.contains(
+            this.tableUsers,
+            Collections.singletonList(COLUMN_USER_NAME),
+            new SQLCondition[]{SQLCondition.equal(COLUMN_USER_NAME.asLowerCase().toValue(name.toLowerCase()))}
+         );
+   }
+
+   public boolean isUserExists(@NonNull UUID uuid) {
+      return this.isNameIdCacheEnabled()
+         ? this.existIDs.contains(uuid)
+         : this.contains(this.tableUsers, Collections.singletonList(COLUMN_USER_ID), new SQLCondition[]{SQLCondition.equal(COLUMN_USER_ID.toValue(uuid))});
+   }
+
+   public void saveUser(@NonNull U user) {
+      this.executeUpdate(UpdateQuery.create(this.tableUsers, this.createUpdateEntity(user)));
+   }
+
+   public void saveUsers(@NonNull Collection<U> users) {
+      this.executeUpdate(UpdateQuery.create(this.tableUsers, users.stream().map(this::createUpdateEntity).toList()));
+   }
+
+   @NonNull
+   public UpdateEntity createUpdateEntity(@NonNull U user) {
+      List<SQLValue> values = new ArrayList<>();
+      values.add(COLUMN_USER_NAME.toValue(user.getName()));
+      values.add(COLUMN_USER_DATE_CREATED.toValue(user.getDateCreated()));
+      values.add(COLUMN_USER_LAST_ONLINE.toValue(user.getLastOnline()));
+      values.addAll(this.getSaveColumns(user));
+      List<SQLCondition> conditions = Lists.newList(SQLCondition.equal(COLUMN_USER_ID.toValue(user.getId())));
+      return this.createUpdateEntity(values, conditions);
+   }
+
+   public void addUser(@NonNull U user) {
+      List<SQLValue> values = new ArrayList<>();
+      values.add(COLUMN_USER_ID.toValue(user.getId()));
+      values.add(COLUMN_USER_NAME.toValue(user.getName()));
+      values.add(COLUMN_USER_DATE_CREATED.toValue(user.getDateCreated()));
+      values.add(COLUMN_USER_LAST_ONLINE.toValue(user.getLastOnline()));
+      values.addAll(this.getSaveColumns(user));
+      this.insert(this.tableUsers, values);
+      this.existIDs.add(user.getId());
+      this.existNames.add(user.getName());
+   }
+
+   public void deleteUser(@NonNull UUID uuid) {
+      this.delete(this.tableUsers, new SQLCondition[]{SQLCondition.equal(COLUMN_USER_ID.toValue(uuid))});
+      this.existIDs.clear();
+      this.existNames.clear();
+      this.cacheNamesAndIds();
+   }
+
+   public void deleteUser(@NonNull DataUser user) {
+      this.delete(this.tableUsers, new SQLCondition[]{SQLCondition.equal(COLUMN_USER_ID.toValue(user.getId()))});
+      this.existIDs.remove(user.getId());
+      this.existNames.remove(user.getName());
+   }
+}

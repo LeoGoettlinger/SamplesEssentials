@@ -1,0 +1,46 @@
+package com.github.retrooper.packetevents.protocol.component.builtin;
+
+import com.github.retrooper.packetevents.protocol.entity.wolfvariant.WolfSoundVariant;
+import com.github.retrooper.packetevents.protocol.entity.wolfvariant.WolfSoundVariants;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+import java.util.Objects;
+
+public class WolfSoundVariantComponent {
+   private WolfSoundVariant soundVariant;
+
+   public WolfSoundVariantComponent(WolfSoundVariant soundVariant) {
+      this.soundVariant = soundVariant;
+   }
+
+   public static WolfSoundVariantComponent read(PacketWrapper<?> wrapper) {
+      WolfSoundVariant type = wrapper.readMappedEntity(WolfSoundVariants.getRegistry());
+      return new WolfSoundVariantComponent(type);
+   }
+
+   public static void write(PacketWrapper<?> wrapper, WolfSoundVariantComponent component) {
+      wrapper.writeMappedEntity(component.soundVariant);
+   }
+
+   public WolfSoundVariant getSoundVariant() {
+      return this.soundVariant;
+   }
+
+   public void setSoundVariant(WolfSoundVariant soundVariant) {
+      this.soundVariant = soundVariant;
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (!(obj instanceof WolfSoundVariantComponent)) {
+         return false;
+      } else {
+         WolfSoundVariantComponent that = (WolfSoundVariantComponent)obj;
+         return this.soundVariant.equals(that.soundVariant);
+      }
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hashCode(this.soundVariant);
+   }
+}

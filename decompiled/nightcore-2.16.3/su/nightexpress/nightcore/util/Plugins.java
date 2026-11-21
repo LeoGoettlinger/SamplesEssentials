@@ -1,0 +1,77 @@
+package su.nightexpress.nightcore.util;
+
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
+import org.jspecify.annotations.NonNull;
+import su.nightexpress.nightcore.Engine;
+import su.nightexpress.nightcore.NightCore;
+import su.nightexpress.nightcore.integration.permission.PermissionProvider;
+import su.nightexpress.nightcore.integration.placeholder.PAPI;
+
+public class Plugins {
+   @Deprecated
+   public static final String VAULT = "Vault";
+   @Deprecated
+   public static final String LUCK_PERMS = "LuckPerms";
+   @Deprecated
+   public static final String ECONOMY_BRIDGE = "EconomyBridge";
+   @Deprecated
+   public static final String PLACEHOLDER_API = "PlaceholderAPI";
+   public static final String FLOODGATE = "floodgate";
+   private static boolean hasFloodgate;
+
+   public static void detectPlugins() {
+      hasFloodgate = isInstalled("floodgate");
+   }
+
+   @Deprecated
+   @NonNull
+   public static NightCore getCore() {
+      return Engine.core();
+   }
+
+   public static boolean isInstalled(@NonNull String pluginName) {
+      Plugin plugin = Bukkit.getPluginManager().getPlugin(pluginName);
+      return plugin != null;
+   }
+
+   public static boolean isLoaded(@NonNull String pluginName) {
+      Plugin plugin = Bukkit.getPluginManager().getPlugin(pluginName);
+      return plugin != null && plugin.isEnabled();
+   }
+
+   @Deprecated
+   @NonNull
+   public static PermissionProvider getPermissionProvider() {
+      return Engine.getPermissions();
+   }
+
+   @Deprecated
+   public static boolean hasPermissionsProvider() {
+      return Engine.hasPermissions();
+   }
+
+   @Deprecated
+   public static boolean isSpigot() {
+      return Version.isSpigot();
+   }
+
+   @Deprecated
+   public static boolean hasPlaceholderAPI() {
+      return PAPI.isPresent();
+   }
+
+   @Deprecated
+   public static boolean hasVault() {
+      return isInstalled("Vault");
+   }
+
+   public static boolean hasFloodgate() {
+      return hasFloodgate;
+   }
+
+   @Deprecated
+   public static boolean hasEconomyBridge() {
+      return isInstalled("EconomyBridge");
+   }
+}

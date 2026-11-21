@@ -1,0 +1,9 @@
+name: Announcement
+version: '1.4'
+main: me.usainsrht.announcement.Announcement
+api-version: 1.18
+folia-supported: true
+prefix: Announcement
+softdepend: [ PlaceholderAPI ]
+authors: [ UsainSrht ]
+description: Simple announcement plugin.

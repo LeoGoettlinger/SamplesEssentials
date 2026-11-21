@@ -1,0 +1,45 @@
+package com.github.retrooper.packetevents.protocol.debug.struct;
+
+import com.github.retrooper.packetevents.protocol.debug.poi.PoiType;
+import com.github.retrooper.packetevents.protocol.debug.poi.PoiTypes;
+import com.github.retrooper.packetevents.util.Vector3i;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
+public final class DebugPoiInfo {
+   private final Vector3i pos;
+   private final PoiType poiType;
+   private final int freeTicketCount;
+
+   public DebugPoiInfo(Vector3i pos, PoiType poiType, int freeTicketCount) {
+      this.pos = pos;
+      this.poiType = poiType;
+      this.freeTicketCount = freeTicketCount;
+   }
+
+   public static DebugPoiInfo read(PacketWrapper<?> wrapper) {
+      Vector3i pos = wrapper.readBlockPosition();
+      PoiType poiType = wrapper.readMappedEntity(PoiTypes.getRegistry());
+      int freeTicketCount = wrapper.readVarInt();
+      return new DebugPoiInfo(pos, poiType, freeTicketCount);
+   }
+
+   public static void write(PacketWrapper<?> wrapper, DebugPoiInfo info) {
+      wrapper.writeBlockPosition(info.pos);
+      wrapper.writeMappedEntity(info.poiType);
+      wrapper.writeVarInt(info.freeTicketCount);
+   }
+
+   public Vector3i getPos() {
+      return this.pos;
+   }
+
+   public PoiType getPoiType() {
+      return this.poiType;
+   }
+
+   public int getFreeTicketCount() {
+      return this.freeTicketCount;
+   }
+}

@@ -1,0 +1,111 @@
+package su.nightexpress.nightcore.util.random;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Set;
+import org.jspecify.annotations.NonNull;
+import su.nightexpress.nightcore.util.Randomizer;
+
+@Deprecated
+public class Rnd {
+   public static final MTRandom RANDOM = new MTRandom();
+
+   public static float getChance() {
+      return nextFloat() * 100.0F;
+   }
+
+   public static int get(int n) {
+      return nextInt(n);
+   }
+
+   public static int get(int min, int max) {
+      return min + (int)Math.floor(RANDOM.nextDouble() * (max - min + 1));
+   }
+
+   public static double getDouble(double max) {
+      return getDouble(0.0, max);
+   }
+
+   public static double getDouble(double min, double max) {
+      return min + (max - min) * RANDOM.nextDouble();
+   }
+
+   @NonNull
+   public static <E> E get(E[] list) {
+      return list[get(list.length)];
+   }
+
+   public static int get(int[] list) {
+      return list[get(list.length)];
+   }
+
+   @NonNull
+   public static <E> E get(@NonNull List<E> list) {
+      if (list.isEmpty()) {
+         throw new NoSuchElementException("Empty list provided!");
+      } else {
+         return list.get(get(list.size()));
+      }
+   }
+
+   @NonNull
+   public static <E> E get(@NonNull Set<E> list) {
+      return get(new ArrayList<>(list));
+   }
+
+   @NonNull
+   public static <T> T getByWeight(@NonNull Map<T, Double> itemsMap) {
+      List<WeightedItem<T>> items = new ArrayList<>();
+      itemsMap.forEach((item, weight) -> items.add(WeightedItem.of((T)item, weight)));
+      return getByWeight(items);
+   }
+
+   @NonNull
+   public static <T> T getByWeight(@NonNull List<WeightedItem<T>> items) {
+      double totalWeight = items.stream().mapToDouble(WeightedItem::getWeight).sum();
+      double randomValue = Randomizer.nextDouble(totalWeight);
+
+      for (WeightedItem<T> entry : items) {
+         randomValue -= entry.getWeight();
+         if (randomValue <= 0.0) {
+            return entry.getItem();
+         }
+      }
+
+      throw new IllegalStateException("No element found");
+   }
+
+   public static boolean chance(int chance) {
+      return chance >= 1 && (chance > 99 || nextInt(99) + 1 <= chance);
+   }
+
+   public static boolean chance(double chance) {
+      return nextDouble() <= chance / 100.0;
+   }
+
+   public static int nextInt(int bound) {
+      return RANDOM.nextInt(bound);
+   }
+
+   public static int nextInt() {
+      return RANDOM.nextInt();
+   }
+
+   public static double nextDouble() {
+      return RANDOM.nextDouble();
+   }
+
+   public static float nextFloat() {
+      return RANDOM.nextFloat();
+   }
+
+   public static double nextGaussian() {
+      return RANDOM.nextGaussian();
+   }
+
+   public static boolean nextBoolean() {
+      return RANDOM.nextBoolean();
+   }
+}

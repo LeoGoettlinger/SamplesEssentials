@@ -1,0 +1,26 @@
+package com.github.retrooper.packetevents.protocol.dialog.body;
+
+import com.github.retrooper.packetevents.protocol.nbt.NBT;
+import com.github.retrooper.packetevents.protocol.nbt.NBTCompound;
+import com.github.retrooper.packetevents.resources.ResourceLocation;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
+public interface DialogBody {
+   static DialogBody decode(NBT nbt, PacketWrapper<?> wrapper) {
+      NBTCompound compound = (NBTCompound)nbt;
+      String typeName = compound.getStringTagValueOrThrow("type");
+      DialogBodyType<?> type = DialogBodyTypes.getRegistry().getByNameOrThrow(typeName);
+      return type.decode(compound, wrapper);
+   }
+
+   static NBT encode(PacketWrapper<?> wrapper, DialogBody body) {
+      NBTCompound compound = new NBTCompound();
+      compound.set("type", body.getType().getName(), ResourceLocation::encode, wrapper);
+      ((DialogBodyType<DialogBody>)body.getType()).encode(compound, wrapper, body);
+      return compound;
+   }
+
+   DialogBodyType<?> getType();
+}

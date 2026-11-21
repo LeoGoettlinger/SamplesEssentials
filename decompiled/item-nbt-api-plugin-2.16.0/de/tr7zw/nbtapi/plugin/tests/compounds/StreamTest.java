@@ -1,0 +1,29 @@
+package de.tr7zw.nbtapi.plugin.tests.compounds;
+
+import de.tr7zw.nbtapi.NBT;
+import de.tr7zw.nbtapi.NbtApiException;
+import de.tr7zw.nbtapi.iface.ReadWriteNBT;
+import de.tr7zw.nbtapi.plugin.tests.Test;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+
+public class StreamTest implements Test {
+   @Override
+   public void test() throws Exception {
+      ReadWriteNBT base = NBT.createNBTObject();
+      base.getOrCreateCompound("sub").setString("hello", "world");
+      ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+      base.getOrCreateCompound("sub").writeCompound(outStream);
+      byte[] data = outStream.toByteArray();
+      ByteArrayInputStream inputStream = new ByteArrayInputStream(data);
+      ReadWriteNBT container = NBT.readNBT(inputStream);
+      if (!container.toString().equals(base.getOrCreateCompound("sub").toString())) {
+         throw new NbtApiException("Component content did not match! " + base.getCompound("sub") + " " + container);
+      } else {
+         ItemStack item = new ItemStack(Material.STICK);
+         NBT.modify(item, nbt -> nbt.writeCompound(outStream));
+      }
+   }
+}

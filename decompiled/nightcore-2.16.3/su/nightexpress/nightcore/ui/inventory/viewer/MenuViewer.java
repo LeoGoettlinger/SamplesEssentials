@@ -1,0 +1,212 @@
+package su.nightexpress.nightcore.ui.inventory.viewer;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryView;
+import org.bukkit.inventory.ItemStack;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+import su.nightexpress.nightcore.ui.inventory.Menu;
+import su.nightexpress.nightcore.ui.inventory.action.ActionContext;
+import su.nightexpress.nightcore.ui.inventory.display.DisplayModifiers;
+import su.nightexpress.nightcore.ui.inventory.item.ItemState;
+import su.nightexpress.nightcore.ui.inventory.item.MenuItem;
+import su.nightexpress.nightcore.util.TimeUtil;
+import su.nightexpress.nightcore.util.bridge.Software;
+import su.nightexpress.nightcore.util.bukkit.NightItem;
+
+public class MenuViewer {
+   private final Player player;
+   private final Map<Integer, ItemState> currentDisplay;
+   private Menu currentMenu;
+   private Object currentObject;
+   private InventoryView currentView;
+   private int currentPage;
+   private int totalPages;
+   private long nextClickIn;
+   private boolean isRefreshing;
+
+   public MenuViewer(@NonNull Player player) {
+      this.player = player;
+      this.currentDisplay = new HashMap<>();
+      this.setCurrentPage(1);
+      this.setTotalPages(1);
+   }
+
+   public void renderMenu(@NonNull Menu menu) {
+      this.currentMenu = menu;
+      this.currentDisplay.clear();
+      this.isRefreshing = false;
+      ViewerContext context = this.createContext();
+      if (this.currentView == null) {
+         this.isRefreshing = true;
+         this.currentView = Software.get().createView(menu.getType(this), menu.getTitle(context), this.player);
+      } else {
+         this.currentView.getTopInventory().clear();
+      }
+
+      Inventory inventory = this.currentView.getTopInventory();
+      List<MenuItem> menuItems = new ArrayList<>(menu.getItemsToDisplay().values());
+      menu.onPrepare(context, this.currentView, inventory, menuItems);
+      menuItems.forEach(menuItem -> {
+         ItemState itemState = menuItem.resolveState(context);
+         if (itemState.isVisible()) {
+            NightItem icon = itemState.getIcon();
+            itemState.modifyDisplay(context, icon);
+            if (menu.isPlaceholderIntegrationEnabled()) {
+               DisplayModifiers.PAPI.modify(context, icon);
+            }
+
+            ItemStack itemStack = icon.getItemStack();
+
+            for (int slot : menuItem.getSlots()) {
+               if (slot >= 0 && slot < inventory.getSize()) {
+                  inventory.setItem(slot, itemStack);
+                  this.currentDisplay.put(slot, itemState);
+               }
+            }
+         }
+      });
+      menu.onReady(context, this.currentView, inventory);
+      if (this.isRefreshing) {
+         this.player.openInventory(this.currentView);
+         menu.onRender(context, this.currentView, inventory);
+         this.isRefreshing = false;
+      }
+   }
+
+   public void navigateForward() {
+      if (this.canNavigateForward()) {
+         this.setCurrentPage(this.currentPage + 1);
+         this.refresh();
+      }
+   }
+
+   public void navigateBackward() {
+      if (this.canNavigateBackward()) {
+         this.setCurrentPage(this.currentPage - 1);
+         this.refresh();
+      }
+   }
+
+   public void flushView() {
+      this.currentView = null;
+   }
+
+   public void refresh() {
+      if (this.currentMenu != null) {
+         this.flushView();
+         this.renderMenu(this.currentMenu);
+      }
+   }
+
+   public void closeMenu() {
+      if (this.currentMenu != null) {
+         this.player.closeInventory();
+      }
+   }
+
+   public void handleClose(@NonNull InventoryCloseEvent event) {
+      this.currentMenu = null;
+      this.currentObject = null;
+      this.currentView = null;
+      this.currentDisplay.clear();
+   }
+
+   public void handleClick(@NonNull InventoryClickEvent event) {
+      if (this.currentMenu != null) {
+         int slot = event.getRawSlot();
+         ItemState clickedState = this.currentDisplay.get(slot);
+         if (clickedState != null && clickedState.hasAction()) {
+            ActionContext context = new ActionContext(this, this.currentObject, event);
+            if (!clickedState.isVisibleFor(context)) {
+               this.refresh();
+               return;
+            }
+
+            clickedState.performAction(context);
+         }
+      }
+   }
+
+   public boolean canNavigateForward() {
+      return this.totalPages > 1 && this.currentPage < this.totalPages;
+   }
+
+   public boolean canNavigateBackward() {
+      return this.totalPages > 1 && this.currentPage > 1;
+   }
+
+   public boolean canClickAgain() {
+      return TimeUtil.isPassed(this.nextClickIn);
+   }
+
+   public boolean isRefreshing() {
+      return this.isRefreshing;
+   }
+
+   public void clearClickCooldown() {
+      this.setNextClickIn(0L);
+   }
+
+   public void setNextClickIn(long nextClickIn) {
+      this.nextClickIn = nextClickIn;
+   }
+
+   @NonNull
+   public ViewerContext createContext() {
+      return new ViewerContext(this, this.currentObject);
+   }
+
+   @NonNull
+   public Player getPlayer() {
+      return this.player;
+   }
+
+   @Nullable
+   public Menu getCurrentMenu() {
+      return this.currentMenu;
+   }
+
+   @NonNull
+   public Optional<Menu> menu() {
+      return Optional.ofNullable(this.currentMenu);
+   }
+
+   @Nullable
+   public InventoryView getCurrentView() {
+      return this.currentView;
+   }
+
+   public void setCurrentObject(@Nullable Object currentObject) {
+      this.currentObject = currentObject;
+   }
+
+   public int getCurrentPage() {
+      return this.currentPage;
+   }
+
+   public void setCurrentPage(int currentPage) {
+      this.currentPage = Math.max(1, currentPage);
+   }
+
+   public int getTotalPages() {
+      return this.totalPages;
+   }
+
+   public void setTotalPages(int totalPages) {
+      this.totalPages = Math.max(1, totalPages);
+   }
+
+   @Nullable
+   public ItemState getResolvedItemState(int slot) {
+      return this.currentDisplay.get(slot);
+   }
+}

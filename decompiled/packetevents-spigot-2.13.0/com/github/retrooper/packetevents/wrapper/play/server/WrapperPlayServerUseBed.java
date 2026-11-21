@@ -1,0 +1,70 @@
+package com.github.retrooper.packetevents.wrapper.play.server;
+
+import com.github.retrooper.packetevents.event.PacketSendEvent;
+import com.github.retrooper.packetevents.manager.server.ServerVersion;
+import com.github.retrooper.packetevents.protocol.packettype.PacketType;
+import com.github.retrooper.packetevents.util.Vector3i;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+
+public class WrapperPlayServerUseBed extends PacketWrapper<WrapperPlayServerUseBed> {
+   private int entityId;
+   private Vector3i position;
+
+   public WrapperPlayServerUseBed(PacketSendEvent event) {
+      super(event);
+   }
+
+   public WrapperPlayServerUseBed(int entityId, Vector3i position) {
+      super(PacketType.Play.Server.USE_BED);
+      this.entityId = entityId;
+      this.position = position;
+   }
+
+   @Override
+   public void read() {
+      if (this.serverVersion.isNewerThanOrEquals(ServerVersion.V_1_8)) {
+         this.entityId = this.readVarInt();
+         this.position = this.readBlockPosition();
+      } else {
+         this.entityId = this.readInt();
+         int x = this.readInt();
+         int y = this.readUnsignedByte();
+         int z = this.readInt();
+         this.position = new Vector3i(x, y, z);
+      }
+   }
+
+   @Override
+   public void write() {
+      if (this.serverVersion.isNewerThanOrEquals(ServerVersion.V_1_8)) {
+         this.writeVarInt(this.entityId);
+         this.writeBlockPosition(this.position);
+      } else {
+         this.writeInt(this.entityId);
+         this.writeInt(this.position.getX());
+         this.writeByte(this.position.getY());
+         this.writeInt(this.position.getZ());
+      }
+   }
+
+   public void copy(WrapperPlayServerUseBed wrapper) {
+      wrapper.entityId = this.entityId;
+      wrapper.position = this.position;
+   }
+
+   public int getEntityId() {
+      return this.entityId;
+   }
+
+   public void setEntityId(int entityId) {
+      this.entityId = entityId;
+   }
+
+   public Vector3i getPosition() {
+      return this.position;
+   }
+
+   public void setPosition(Vector3i position) {
+      this.position = position;
+   }
+}

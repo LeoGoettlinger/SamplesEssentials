@@ -1,0 +1,53 @@
+package com.github.retrooper.packetevents.wrapper.play.client;
+
+import com.github.retrooper.packetevents.event.PacketReceiveEvent;
+import com.github.retrooper.packetevents.protocol.packettype.PacketType;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+
+public class WrapperPlayClientChatPreview extends PacketWrapper<WrapperPlayClientChatPreview> {
+   private int queryId;
+   private String message;
+
+   public WrapperPlayClientChatPreview(PacketReceiveEvent event) {
+      super(event);
+   }
+
+   public WrapperPlayClientChatPreview(int queryId, String message) {
+      super(PacketType.Play.Client.CHAT_PREVIEW);
+      this.queryId = queryId;
+      this.message = message;
+   }
+
+   @Override
+   public void read() {
+      this.queryId = this.readInt();
+      this.message = this.readString(256);
+   }
+
+   @Override
+   public void write() {
+      this.writeInt(this.queryId);
+      this.writeString(this.message, 256);
+   }
+
+   public void copy(WrapperPlayClientChatPreview wrapper) {
+      this.queryId = wrapper.queryId;
+      this.message = wrapper.message;
+   }
+
+   public int getQueryId() {
+      return this.queryId;
+   }
+
+   public void setQueryId(int queryId) {
+      this.queryId = queryId;
+   }
+
+   public String getMessage() {
+      return this.message;
+   }
+
+   public void setMessage(String message) {
+      this.message = message;
+   }
+}

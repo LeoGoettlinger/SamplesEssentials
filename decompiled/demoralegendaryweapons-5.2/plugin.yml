@@ -1,0 +1,66 @@
+name: DemoraLegendaryWeapons
+version: '5.2'
+main: dev.demora.demoralegendaryweapons.DemoraLegendaryWeapons
+api-version: 1.21
+author: __DEMORA__
+description: Плагин на легендарные оружия by __DEMORA__
+folia-supported: true
+spigot-supported: false
+softdepend: [WorldGuard]
+commands:
+  demorahop:
+    description: Выдать оружие игроку или выбрать язык
+    usage: /demorahop give <weapon> <player> | /demorahop lang [ru|en|vn]
+    permission: demoralegendaryweapons.give
+    
+  dragonrework:
+    description: Пробуждение драконьей катаны
+    usage: /dragonrework
+    permission: demoralegendaryweapons.rework
+    
+  sicklesrework:
+    description: Пробуждение серпов визера
+    usage: /sicklesrework
+    permission: demoralegendaryweapons.rework
+    
+  demoramenu:
+    description: Открыть меню легендарных оружий
+    usage: /demoramenu
+    aliases: [dm]
+    permission: demoralegendaryweapons.menu
+    
+  dm:
+    description: Открыть меню легендарных оружий
+    usage: /dm
+    permission: demoralegendaryweapons.menu
+    
+  dmr:
+    description: Открыть меню пробуждённых оружий
+    usage: /dmr
+    permission: demoralegendaryweapons.menu
+
+permissions:
+  demoralegendaryweapons.*:
+    description: Все права плагина
+    default: op
+    children:
+      demoralegendaryweapons.give: true
+      demoralegendaryweapons.reload: true
+      demoralegendaryweapons.rework: true
+      demoralegendaryweapons.menu: true
+      demoralegendaryweapons.language: true
+  demoralegendaryweapons.give:
+    description: Выдача оружия
+    default: op
+  demoralegendaryweapons.reload:
+    description: Перезагрузка конфигурации
+    default: op
+  demoralegendaryweapons.rework:
+    description: Пробуждение драконьей катаны
+    default: true
+  demoralegendaryweapons.menu:
+    description: Открытие меню легендарных оружий
+    default: op
+  demoralegendaryweapons.language:
+    description: Выбор языка плагина
+    default: op

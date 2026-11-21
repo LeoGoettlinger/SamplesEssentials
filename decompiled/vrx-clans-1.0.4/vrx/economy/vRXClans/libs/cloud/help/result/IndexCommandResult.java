@@ -1,0 +1,39 @@
+package vrx.economy.vRXClans.libs.cloud.help.result;
+
+import java.util.Iterator;
+import java.util.List;
+import org.apiguardian.api.API;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.immutables.value.Value.Immutable;
+import org.immutables.value.Value.Parameter;
+import vrx.economy.vRXClans.libs.cloud.help.HelpQuery;
+
+@API(
+   status = API.Status.STABLE
+)
+@Immutable
+public interface IndexCommandResult<C> extends HelpQueryResult<C>, Iterable<CommandEntry<C>> {
+   @NonNull
+   static <C> IndexCommandResult<C> of(@NonNull final HelpQuery<C> query, @NonNull final List<CommandEntry<C>> entries) {
+      return IndexCommandResultImpl.of(query, entries);
+   }
+
+   @NonNull
+   @Override
+   HelpQuery<C> query();
+
+   @NonNull
+   List<CommandEntry<C>> entries();
+
+   @Parameter(false)
+   default boolean isEmpty() {
+      return this.entries().isEmpty();
+   }
+
+   @Parameter(false)
+   @NonNull
+   @Override
+   default Iterator<CommandEntry<C>> iterator() {
+      return this.entries().iterator();
+   }
+}

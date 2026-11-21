@@ -1,0 +1,22 @@
+package su.nightexpress.nightcore.ui.inventory.action;
+
+import java.util.List;
+import java.util.Map;
+import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.ClickType;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.jspecify.annotations.NonNull;
+import su.nightexpress.nightcore.util.Players;
+
+public record CommandsAction(@NonNull Map<ClickType, List<String>> commandMap) implements MenuItemAction {
+   @Override
+   public void execute(@NonNull ActionContext context) {
+      InventoryClickEvent event = context.getEvent();
+      ClickType type = event.getClick();
+      List<String> commands = this.commandMap.get(type);
+      if (commands != null) {
+         Player player = context.getPlayer();
+         Players.dispatchCommands(player, commands);
+      }
+   }
+}

@@ -1,0 +1,282 @@
+disable-legendary-enchanting: true
+
+language: "en"
+
+weapons:
+  sculk_crossbow:
+    cooldown: 20
+    explosion:
+      power: 6.0
+      break-blocks: true
+      set-fire: false
+    sculk-spread:
+      radius: 7
+      blocks-per-tick: 6
+      tick-delay: 1
+      replace-chance: 0.7
+    particles:
+      warden-particles: true
+      particles-per-tick: 5
+
+  midas_sword:
+    initial-damage: 7
+    max-damage: 25
+    damage-per-kill: 2
+    attack-speed: -2.4
+
+  mjolnir:
+    attribute_damage: 11.0
+    attack_speed: -2.4
+    damage:
+      melee_damage: 20.0
+      throw_damage: 15.0
+      area_damage: 12.0
+    cooldown:
+      throw_duration: 10
+      melee_duration: 5
+    animation:
+      flight_speed: 1.8
+      return_speed: 1.6
+      rotation_speed: 15.0
+      return_rotation_multiplier: 1.5
+
+  shadow_blade:
+    attribute_damage: 11.0
+    attack_speed: -2.4
+    duration: 200
+    cooldown: 30
+
+  reaper_scythe:
+    attribute_damage: 11.0
+    attack_speed: -2.4
+    cooldown: 40
+    heal_hearts: 2
+
+  villager_staff:
+    cooldown:
+      time: 40
+    explosion:
+      power: 3.0
+
+  dragon_katana:
+    attribute_damage: 11.0
+    attack_speed: -2.4
+    cooldown-seconds: 30
+    dash-distance-blocks: 30.0
+    dash-speed-multiplier: 1.0
+
+  awakened_dragon_katana:
+    attribute_damage: 11.0
+    attack_speed: -2.4
+
+  excalibur:
+    attribute_damage: 11.0
+    attack_speed: -2.4
+    duration: 7
+    cooldown: 20
+
+  void_staff:
+    portal_cooldown: 40
+    shulker_cooldown: 30
+    shulker_explosion_power: 2.5
+
+  magma_club:
+    cooldown: 15
+    attribute_damage: 11.0
+    attack_speed: -2.4
+    damage: 10.0
+
+  shrink_ray:
+    cooldown: 40
+    shrink_duration: 12
+    enlarge_duration: 12
+    ray_speed: 1.3
+
+  chainsaw_sword:
+    attribute_damage: 11.0
+    attack_speed: -2.4
+    curse-cooldown-seconds: 20
+    bleed-duration-seconds: 3
+    bleed-damage: 2.0
+
+  wither_sickles:
+    damage: 10.0
+    attack_speed: -2.4
+    wither_chance_hit: 0.1
+    wither_chance_throw: 0.2
+    wither_duration_ticks: 60
+    throw_cooldown: 10
+    throw_damage: 12.0
+
+  awakened_wither_sickles:
+    damage: 13.0
+    attack_speed: -1.6
+    wither_chance_hit: 0.15
+    wither_chance_throw: 0.3
+    wither_duration_ticks: 80
+    throw_cooldown_seconds: 12
+    throw_damage: 15.0
+    fire_duration_ticks: 100
+    ignite_radius: 2.0
+
+  cloud_sword:
+    attribute_damage: 11.0
+    attack_speed: -2.4
+    speed_boost: 0.15
+    ability_duration: 10
+    cooldown: 25
+    cloud_lifetime_ticks: 40
+
+  hypnosis_staff:
+    cooldown: 5
+    max_controlled_mobs: 10
+    max_distance: 30.0
+    beam_speed: 2.0
+    follow_speed: 1.0
+
+  emerald_blade:
+    base_damage: 7.0
+    attack_speed: -2.4
+    damage_per_upgrade: 2.0
+    emeralds_per_upgrade: 64
+    emeralds_per_player_kill: 20
+    emeralds_per_mob_kill: 1
+    max_damage: 40.0
+
+  golem_hammer:
+    attribute_damage: 12.0
+    attack_speed: -3.0
+    cooldown: 40
+    launch_height: 4.0
+    shockwave_radius: 6.0
+    shockwave_damage: 15.0
+    knockback_strength: 2.0
+    slow_duration_ticks: 100
+    slow_amplifier: 1
+
+  toxic_crossbow:
+    cooldown: 30
+    cloud_radius: 4.0
+    cloud_duration_seconds: 5
+    damage_per_tick: 4
+    poison_duration_seconds: 5
+
+  lich_staff:
+    ammo_count: 4
+    explosion_damage: 6.0
+    cooldown_seconds: 30
+
+  artemis_bow:
+    special_arrow_chance: 0.3
+    arrow_damage: 15.0
+    special_arrow_damage: 20.0
+
+  poseidon_trident:
+    throw_cooldown: 10
+    riptide_cooldown: 15
+    melee_damage: 2.0
+    throw_damage: 12.0
+    riptide_damage: 8.0
+
+  reinforced_elytra:
+    boost_cooldown_seconds: 50
+    explosion_landing_cooldown_seconds: 40
+    boost_power: 2.5
+    armor_bonus: 4.0
+    min_trigger_speed: 0.6
+    max_speed_for_explosion: 3.0
+    min_explosion_power: 0.5
+    max_explosion_power: 6.5
+    explosion_break_blocks: true
+
+  ravager_horn:
+    movement:
+      normal_speed: 0.25
+      sprint_speed: 0.40
+      jump_power: 0.5
+    health: 100.0
+    ride_duration_seconds: 30
+    cooldown_seconds: 40
+    auto_attack_damage: 6.0
+
+  freezing_chakram:
+    damage: 9.0
+    attack_speed: -2.0
+    throw_damage: 15.0
+    cooldown_seconds: 8
+    freeze_chance_hit: 0.15
+    freeze_duration_seconds: 5
+    flight_speed: 1.5
+    return_speed: 1.8
+    max_flight_distance: 28.0
+
+  sculkweavers_lantern:
+    damage: 8.0
+    attack_speed: -2.8
+    cooldown_seconds: 60
+    flight_speed: 1.2
+    max_flight_ticks: 60
+    sphere_radius: 12
+    build_speed_level: 50
+    sphere_lifetime_seconds: 12
+    warden_count: 5
+    enderman_count: 3
+    warden_damage_multiplier: 2.5
+    enderman_damage_multiplier: 2.0
+
+  war_pick:
+    damage: 8.0
+    attack_speed: -2.8
+    cooldown_seconds: 5
+    armor_durability_damage_percent: 0.05
+
+  beehive_blaster:
+    bee_health: 30.0
+    bee_damage: 10.0
+    bee_despawn_seconds: 20
+    cooldown_seconds: 25
+
+  elemental_staff:
+    throw_cooldown_seconds: 60
+    switch_cooldown_seconds: 5
+    projectile_speed: 1.2
+    darkness:
+      radius: 3.0
+      damage: 15.0
+      blindness_seconds: 5
+      wither_seconds: 7
+    water:
+      column_height: 6
+      column_width: 3
+      launch_power: 1.2
+      drowning_seconds: 4
+      drowning_damage: 2.0
+    chaos:
+      radius: 5.0
+      damage: 25.0
+    poison:
+      radius: 2.0
+      cloud_seconds: 6
+      poison_seconds: 6
+      poison_amplifier: 1
+      impact_damage: 2.0
+    fire:
+      radius: 3.0
+      damage: 8.0
+      burn_seconds: 6
+      place_fire_blocks: true
+      fire_block_lifetime_seconds: 8
+
+  fugu_cannon:
+    cooldown_seconds: 30
+    projectile_count: 3
+    flight_distance: 12.0
+    flight_speed: 0.9
+    spread: 0.18
+    touch_radius: 1.4
+    impact_damage: 3.0
+    poison_duration_seconds: 6
+    poison_amplifier: 1
+    hit_cooldown_seconds: 1
+    fish_health: 100.0
+    lifetime_seconds: 20

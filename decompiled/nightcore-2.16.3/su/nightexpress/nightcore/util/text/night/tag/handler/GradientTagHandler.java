@@ -1,0 +1,133 @@
+package su.nightexpress.nightcore.util.text.night.tag.handler;
+
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+import su.nightexpress.nightcore.util.text.night.ParserUtils;
+import su.nightexpress.nightcore.util.text.night.entry.ChildEntry;
+import su.nightexpress.nightcore.util.text.night.entry.Entry;
+import su.nightexpress.nightcore.util.text.night.entry.EntryGroup;
+import su.nightexpress.nightcore.util.text.night.entry.LangEntry;
+import su.nightexpress.nightcore.util.text.night.entry.TextEntry;
+
+public class GradientTagHandler extends ClassicTagHandler {
+   private Color[] colorStops;
+
+   private Color[] createGradient(Color[] colorStops, int length) {
+      Color[] gradient = new Color[length];
+      int segments = colorStops.length - 1;
+      int colorsPerSegment = length / segments;
+      int remainder = length % segments;
+      int index = 0;
+
+      for (int i = 0; i < segments; i++) {
+         Color start = colorStops[i];
+         Color end = colorStops[i + 1];
+         int segmentLength = colorsPerSegment + (i < remainder ? 1 : 0);
+
+         for (int j = 0; j < segmentLength; j++) {
+            double t = (double)j / segmentLength;
+            int r = (int)(start.getRed() + t * (end.getRed() - start.getRed()));
+            int g = (int)(start.getGreen() + t * (end.getGreen() - start.getGreen()));
+            int b = (int)(start.getBlue() + t * (end.getBlue() - start.getBlue()));
+            gradient[index++] = new Color(r, g, b);
+         }
+      }
+
+      return gradient;
+   }
+
+   @Override
+   protected void onHandleOpen(@NonNull EntryGroup group, @Nullable String tagContent) {
+      if (tagContent != null) {
+         String[] split = tagContent.split(String.valueOf(':'));
+         int length = split.length;
+         if (length >= 2) {
+            List<Color> colors = new ArrayList<>();
+
+            for (String string : split) {
+               Color stop = ParserUtils.colorFromSchemeOrHex(string);
+               if (stop != null) {
+                  colors.add(stop);
+               }
+            }
+
+            this.colorStops = colors.toArray(new Color[0]);
+         }
+      }
+   }
+
+   @Override
+   protected void onHandleClose(@NonNull EntryGroup group) {
+      AtomicInteger textLength = new AtomicInteger(0);
+      List<ChildEntry> gradientEntries = new ArrayList<>();
+      this.splitGroup(group, textLength, gradientEntries, true);
+      Color[] gradientColors = this.createGradient(this.colorStops, textLength.get());
+      if (gradientColors.length != 0) {
+         GradientTagHandler.Gradient gradient = new GradientTagHandler.Gradient(gradientColors);
+         gradientEntries.forEach(childEntry -> this.decorate(childEntry, gradient));
+      }
+   }
+
+   private void splitGroup(@NonNull EntryGroup group, @NonNull AtomicInteger textLength, @NonNull List<ChildEntry> gradientEntries, boolean root) {
+      List<Entry> childrens = new ArrayList<>();
+      List<Entry> oldChildrens = new ArrayList<>(group.getChildrens());
+      group.getChildrens().clear();
+      oldChildrens.forEach(entry -> {
+         if (entry instanceof EntryGroup other) {
+            childrens.add(other);
+            if (root && other.style().color() == group.style().color() && !other.isStyleLocked()) {
+               this.splitGroup(other, textLength, gradientEntries, false);
+            }
+         } else {
+            if (entry instanceof ChildEntry childEntry) {
+               textLength.addAndGet(childEntry.textLength());
+               if (childEntry instanceof TextEntry textEntry) {
+                  for (char c : textEntry.text().toCharArray()) {
+                     EntryGroup subGroup = group.downward(String.valueOf(c));
+                     TextEntry subText = subGroup.appendTextEntry(String.valueOf(c));
+                     childrens.add(subGroup);
+                     if (!Character.isWhitespace(c)) {
+                        gradientEntries.add(subText);
+                     }
+                  }
+               } else if (childEntry instanceof LangEntry langEntry) {
+                  EntryGroup subGroup = group.downward(langEntry.getKey());
+                  LangEntry subTrans = subGroup.appendLangEntry(langEntry.getKey(), langEntry.getFallback());
+                  childrens.add(subGroup);
+                  gradientEntries.add(subTrans);
+               }
+            }
+         }
+      });
+      group.setChildrens(childrens);
+   }
+
+   private void decorate(@NonNull ChildEntry entry, @NonNull GradientTagHandler.Gradient gradient) {
+      if (gradient.hasNextColor()) {
+         entry.getParent().setStyle(style -> style.color(gradient.nextColor()));
+      }
+   }
+
+   private static class Gradient {
+      private final Color[] colors;
+      private int colorIndex;
+
+      public Gradient(Color[] colors) {
+         this.colors = colors;
+         this.colorIndex = 0;
+      }
+
+      public boolean hasNextColor() {
+         return this.colorIndex < this.colors.length;
+      }
+
+      @NonNull
+      public Color nextColor() {
+         return this.colors[this.colorIndex++];
+      }
+   }
+}

@@ -1,0 +1,43 @@
+package su.nightexpress.nightcore.util.blocktracker;
+
+import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
+import it.unimi.dsi.fastutil.ints.IntSet;
+import it.unimi.dsi.fastutil.ints.IntSets;
+import org.bukkit.block.Block;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
+import org.jspecify.annotations.NonNull;
+
+public class TrackedChunk {
+   private final IntSet trackedBlockPositions;
+
+   protected TrackedChunk(@NonNull PersistentDataContainer container) {
+      int[] data = (int[])container.get(PlayerBlockTracker.TRACKED_DATA_KEY, PersistentDataType.INTEGER_ARRAY);
+      if (data == null) {
+         this.trackedBlockPositions = IntSets.synchronize(new IntOpenHashSet());
+      } else {
+         this.trackedBlockPositions = IntSets.synchronize(new IntOpenHashSet(data));
+      }
+   }
+
+   protected void add(@NonNull Block block) {
+      this.trackedBlockPositions.add(TrackUtil.getRelativeChunkPosition(block));
+   }
+
+   protected void remove(@NonNull Block block) {
+      this.trackedBlockPositions.remove(TrackUtil.getRelativeChunkPosition(block));
+   }
+
+   protected boolean isTracked(@NonNull Block block) {
+      return this.trackedBlockPositions.contains(TrackUtil.getRelativeChunkPosition(block));
+   }
+
+   protected void saveTo(@NonNull PersistentDataContainer container) {
+      int[] data = this.trackedBlockPositions.toIntArray();
+      container.set(PlayerBlockTracker.TRACKED_DATA_KEY, PersistentDataType.INTEGER_ARRAY, data);
+   }
+
+   protected boolean isEmpty() {
+      return this.trackedBlockPositions.isEmpty();
+   }
+}

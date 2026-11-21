@@ -1,0 +1,41 @@
+package com.github.retrooper.packetevents.wrapper.play.server;
+
+import com.github.retrooper.packetevents.event.PacketSendEvent;
+import com.github.retrooper.packetevents.protocol.packettype.PacketType;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+import java.util.Map;
+
+public class WrapperPlayServerStatistics extends PacketWrapper<WrapperPlayServerStatistics> {
+   private Map<String, Integer> statistics;
+
+   public WrapperPlayServerStatistics(PacketSendEvent event) {
+      super(event);
+   }
+
+   public WrapperPlayServerStatistics(Map<String, Integer> statistics) {
+      super(PacketType.Play.Server.STATISTICS);
+      this.statistics = statistics;
+   }
+
+   @Override
+   public void read() {
+      this.statistics = this.readMap(PacketWrapper::readString, PacketWrapper::readVarInt);
+   }
+
+   @Override
+   public void write() {
+      this.writeMap(this.statistics, PacketWrapper::writeString, PacketWrapper::writeVarInt);
+   }
+
+   public void copy(WrapperPlayServerStatistics wrapper) {
+      this.statistics = wrapper.statistics;
+   }
+
+   public Map<String, Integer> getStatistics() {
+      return this.statistics;
+   }
+
+   public void setStatistics(Map<String, Integer> statistics) {
+      this.statistics = statistics;
+   }
+}

@@ -1,0 +1,70 @@
+package com.github.retrooper.packetevents.protocol.world.chunk.reader;
+
+import com.github.retrooper.packetevents.netty.buffer.ByteBufHelper;
+import com.github.retrooper.packetevents.netty.buffer.UnpooledByteBufAllocationHelper;
+import com.github.retrooper.packetevents.protocol.stream.NetStreamInput;
+import com.github.retrooper.packetevents.protocol.world.Dimension;
+import com.github.retrooper.packetevents.protocol.world.chunk.BaseChunk;
+import com.github.retrooper.packetevents.protocol.world.dimension.DimensionType;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+import java.io.ByteArrayInputStream;
+import java.util.BitSet;
+
+public interface ChunkReader {
+   @Deprecated
+   default BaseChunk[] read(
+      Dimension dimension,
+      BitSet chunkMask,
+      BitSet secondaryChunkMask,
+      boolean fullChunk,
+      boolean hasBlockLight,
+      boolean hasSkyLight,
+      int chunkSize,
+      byte[] data,
+      NetStreamInput dataIn
+   ) {
+      DimensionType dimensionType = dimension.asDimensionType(null, null);
+      PacketWrapper<?> wrapper = PacketWrapper.createUniversalPacketWrapper(UnpooledByteBufAllocationHelper.wrappedBuffer(data));
+
+      BaseChunk[] var12;
+      try {
+         var12 = this.read(dimensionType, chunkMask, secondaryChunkMask, fullChunk, hasBlockLight, hasSkyLight, chunkSize, data.length, wrapper);
+      } finally {
+         ByteBufHelper.release(wrapper.buffer);
+      }
+
+      return var12;
+   }
+
+   @Deprecated
+   default BaseChunk[] read(
+      DimensionType dimensionType,
+      BitSet chunkMask,
+      BitSet secondaryChunkMask,
+      boolean fullChunk,
+      boolean hasBlockLight,
+      boolean hasSkyLight,
+      int chunkSize,
+      byte[] data,
+      NetStreamInput dataIn
+   ) {
+      Dimension dimension = Dimension.fromDimensionType(dimensionType, null, null);
+      return this.read(dimension, chunkMask, secondaryChunkMask, fullChunk, hasBlockLight, hasSkyLight, chunkSize, data, dataIn);
+   }
+
+   default BaseChunk[] read(
+      DimensionType dimensionType,
+      BitSet chunkMask,
+      BitSet secondaryChunkMask,
+      boolean fullChunk,
+      boolean hasBlockLight,
+      boolean hasSkyLight,
+      int chunkSize,
+      int arrayLength,
+      PacketWrapper<?> wrapper
+   ) {
+      byte[] data = wrapper.readByteArrayOfSize(arrayLength);
+      NetStreamInput dataIn = new NetStreamInput(new ByteArrayInputStream(data));
+      return this.read(dimensionType, chunkMask, secondaryChunkMask, fullChunk, hasBlockLight, hasSkyLight, chunkSize, data, dataIn);
+   }
+}

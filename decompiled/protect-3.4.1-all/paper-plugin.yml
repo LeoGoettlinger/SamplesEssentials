@@ -1,0 +1,191 @@
+api-version: 1.21.4
+name: Protect
+version: 3.4.1
+main: net.thenextlvl.protect.ProtectPlugin
+description: Protect certain areas or entire worlds
+load: STARTUP
+authors:
+  - NonSwag
+website: https://thenextlvl.net/docs/protect
+folia-supported: true
+permissions:
+  protect.admin:
+    description: Admin permissions for Protect
+    children:
+      protect.bypass.admin: true
+      protect.command.area.create: true
+      protect.command.area.delete: true
+      protect.command.area.info: true
+      protect.command.area.list: true
+      protect.command.area.priority: true
+      protect.commands.area.flag: true
+      protect.commands.area.group: true
+      protect.commands.area.members: true
+      protect.commands.area.owner: true
+      protect.commands.area.parent: true
+      protect.commands.area.schematic: true
+  protect.bypass.admin:
+    description: Allows players to bypass any restriction
+    children:
+      protect.bypass.attack: true
+      protect.bypass.destroy: true
+      protect.bypass.enter: true
+      protect.bypass.entity-interact: true
+      protect.bypass.entity-shear: true
+      protect.bypass.interact: true
+      protect.bypass.knockback: true
+      protect.bypass.leave: true
+      protect.bypass.physical-interact: true
+      protect.bypass.place: true
+      protect.bypass.trample: true
+  protect.command.area.create:
+    children:
+      protect.command.area: true
+  protect.command.area.delete:
+    children:
+      protect.command.area: true
+  protect.command.area.flag:
+    children:
+      protect.command.area: true
+  protect.command.area.flag.info:
+    children:
+      protect.command.area.flag: true
+  protect.command.area.flag.list:
+    children:
+      protect.command.area.flag: true
+  protect.command.area.flag.reset:
+    children:
+      protect.command.area.flag: true
+  protect.command.area.flag.set:
+    children:
+      protect.command.area.flag: true
+  protect.command.area.group:
+    children:
+      protect.command.area: true
+  protect.command.area.group.add:
+    children:
+      protect.command.area.group: true
+  protect.command.area.group.create:
+    children:
+      protect.command.area.group: true
+  protect.command.area.group.delete:
+    children:
+      protect.command.area.group: true
+  protect.command.area.group.list:
+    children:
+      protect.command.area.group: true
+  protect.command.area.group.redefine:
+    children:
+      protect.command.area.group: true
+  protect.command.area.group.remove:
+    children:
+      protect.command.area.group: true
+  protect.command.area.info:
+    children:
+      protect.command.area: true
+  protect.command.area.list:
+    children:
+      protect.command.area: true
+  protect.command.area.members:
+    children:
+      protect.command.area: true
+  protect.command.area.members.add:
+    children:
+      protect.command.area.members: true
+  protect.command.area.members.list:
+    children:
+      protect.command.area.members: true
+  protect.command.area.members.remove:
+    children:
+      protect.command.area.members: true
+  protect.command.area.owner:
+    children:
+      protect.command.area: true
+  protect.command.area.owner.remove:
+    children:
+      protect.command.area.owner: true
+  protect.command.area.owner.set:
+    children:
+      protect.command.area.owner: true
+  protect.command.area.parent:
+    children:
+      protect.command.area: true
+  protect.command.area.parent.remove:
+    children:
+      protect.command.area.parent: true
+  protect.command.area.parent.set:
+    children:
+      protect.command.area.parent: true
+  protect.command.area.priority:
+    children:
+      protect.command.area: true
+  protect.command.area.protect:
+    children:
+      protect.command.area: true
+  protect.command.area.redefine:
+    children:
+      protect.command.area: true
+  protect.command.area.schematic:
+    children:
+      protect.command.area: true
+  protect.command.area.schematic.delete:
+    children:
+      protect.command.area.schematic: true
+  protect.command.area.schematic.load:
+    children:
+      protect.command.area.schematic: true
+  protect.command.area.schematic.save:
+    children:
+      protect.command.area.schematic: true
+  protect.command.area.teleport:
+    children:
+      protect.command.area: true
+  protect.commands.area.flag:
+    description: Allows players to manage area flags
+    children:
+      protect.command.area.flag.info: true
+      protect.command.area.flag.list: true
+      protect.command.area.flag.reset: true
+      protect.command.area.flag.set: true
+      protect.command.area.protect: true
+  protect.commands.area.group:
+    description: Allows players to manage area groups
+    children:
+      protect.command.area.group.add: true
+      protect.command.area.group.create: true
+      protect.command.area.group.delete: true
+      protect.command.area.group.list: true
+      protect.command.area.group.redefine: true
+      protect.command.area.group.remove: true
+  protect.commands.area.members:
+    description: Allows players to manage area members
+    children:
+      protect.command.area.members.add: true
+      protect.command.area.members.list: true
+      protect.command.area.members.remove: true
+  protect.commands.area.owner:
+    description: Allows players to manage area owners
+    children:
+      protect.command.area.owner.remove: true
+      protect.command.area.owner.set: true
+  protect.commands.area.parent:
+    description: Allows players to manage area parents
+    children:
+      protect.command.area.parent.remove: true
+      protect.command.area.parent.set: true
+  protect.commands.area.schematic:
+    description: Allows players to manage area schematics
+    children:
+      protect.command.area.schematic.delete: true
+      protect.command.area.schematic.load: true
+      protect.command.area.schematic.save: true
+dependencies:
+  server:
+    FastAsyncWorldEdit:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    Nexo:
+      load: BEFORE
+      required: false
+      join-classpath: true

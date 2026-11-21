@@ -1,0 +1,55 @@
+package su.nightexpress.nightcore.db.connection;
+
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
+import org.jspecify.annotations.NonNull;
+import su.nightexpress.nightcore.NightPlugin;
+import su.nightexpress.nightcore.db.config.DatabaseConfig;
+import su.nightexpress.nightcore.db.config.DatabaseType;
+import su.nightexpress.nightcore.db.connection.impl.MySQLConnector;
+import su.nightexpress.nightcore.db.connection.impl.SQLiteConnector;
+
+public abstract class AbstractConnector {
+   protected final NightPlugin plugin;
+   protected final DatabaseType type;
+   protected final HikariConfig config;
+   protected final HikariDataSource dataSource;
+
+   public AbstractConnector(@NonNull NightPlugin plugin, @NonNull DatabaseConfig config) {
+      this.plugin = plugin;
+      this.type = config.getStorageType();
+      this.config = new HikariConfig();
+      this.config.setJdbcUrl(this.getURL(config));
+      this.setupConfig(config);
+      this.config.addDataSourceProperty("cachePrepStmts", "true");
+      this.config.addDataSourceProperty("prepStmtCacheSize", "250");
+      this.config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+      this.config.setPoolName(plugin.getName() + "Pool");
+      this.dataSource = new HikariDataSource(this.config);
+   }
+
+   @NonNull
+   public static AbstractConnector create(@NonNull NightPlugin plugin, @NonNull DatabaseConfig config) {
+      return (AbstractConnector)(config.getStorageType() == DatabaseType.SQLITE ? new SQLiteConnector(plugin, config) : new MySQLConnector(plugin, config));
+   }
+
+   protected abstract String getURL(@NonNull DatabaseConfig var1);
+
+   protected abstract void setupConfig(@NonNull DatabaseConfig var1);
+
+   public void close() {
+      this.dataSource.close();
+   }
+
+   @NonNull
+   public final Connection getConnection() throws SQLException {
+      return this.dataSource.getConnection();
+   }
+
+   @NonNull
+   public DatabaseType getType() {
+      return this.type;
+   }
+}

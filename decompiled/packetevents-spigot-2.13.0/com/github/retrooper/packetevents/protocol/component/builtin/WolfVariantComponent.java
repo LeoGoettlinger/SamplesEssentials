@@ -1,0 +1,46 @@
+package com.github.retrooper.packetevents.protocol.component.builtin;
+
+import com.github.retrooper.packetevents.protocol.entity.wolfvariant.WolfVariant;
+import com.github.retrooper.packetevents.protocol.entity.wolfvariant.WolfVariants;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+import java.util.Objects;
+
+public class WolfVariantComponent {
+   private WolfVariant variant;
+
+   public WolfVariantComponent(WolfVariant variant) {
+      this.variant = variant;
+   }
+
+   public static WolfVariantComponent read(PacketWrapper<?> wrapper) {
+      WolfVariant type = wrapper.readMappedEntity(WolfVariants.getRegistry());
+      return new WolfVariantComponent(type);
+   }
+
+   public static void write(PacketWrapper<?> wrapper, WolfVariantComponent component) {
+      wrapper.writeMappedEntity(component.variant);
+   }
+
+   public WolfVariant getVariant() {
+      return this.variant;
+   }
+
+   public void setVariant(WolfVariant variant) {
+      this.variant = variant;
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (!(obj instanceof WolfVariantComponent)) {
+         return false;
+      } else {
+         WolfVariantComponent that = (WolfVariantComponent)obj;
+         return this.variant.equals(that.variant);
+      }
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hashCode(this.variant);
+   }
+}

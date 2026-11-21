@@ -1,0 +1,190 @@
+package dev.demora.demoralegendaryweapons.weapons.dragonkatana;
+
+import dev.demora.demoralegendaryweapons.AttributeCompat;
+import dev.demora.demoralegendaryweapons.DemoraLegendaryWeapons;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
+import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.attribute.AttributeModifier.Operation;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemFlag;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+import org.bukkit.util.Vector;
+
+public class DragonKatana {
+   private final DemoraLegendaryWeapons plugin;
+   private final NamespacedKey katanaKey;
+   private final Map<UUID, Long> lastDash;
+   private final Map<UUID, Boolean> hasKatana;
+   private static final int SPEED_EFFECT_DURATION = 80;
+   private static final int SPEED_EFFECT_AMPLIFIER = 1;
+   private static final double COLLISION_STEP = 0.3;
+   private static final int PARTICLE_COUNT = 50;
+   private static final double PARTICLE_OFFSET = 0.5;
+   private static final double PARTICLE_SPEED = 0.1;
+
+   public DragonKatana(DemoraLegendaryWeapons plugin) {
+      this.plugin = plugin;
+      this.katanaKey = new NamespacedKey(plugin, "dragon_katana");
+      this.lastDash = new ConcurrentHashMap<>();
+      this.hasKatana = new ConcurrentHashMap<>();
+   }
+
+   public ItemStack createDragonKatana() {
+      ItemStack item = new ItemStack(Material.NETHERITE_SWORD);
+      ItemMeta meta = item.getItemMeta();
+      if (meta == null) {
+         return item;
+      } else {
+         String weaponName = this.plugin.getLanguageManager().getWeaponName("dragon_katana");
+         if (weaponName.isEmpty()) {
+            weaponName = "§5§lДраконья катана";
+         }
+
+         meta.setDisplayName(weaponName);
+         meta.setCustomModelData(1);
+         meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_UNBREAKABLE});
+         meta.setUnbreakable(true);
+         double damage = this.plugin.getConfig().getDouble("weapons.dragon_katana.attribute_damage", 11.0);
+         AttributeModifier damageModifier = new AttributeModifier(UUID.randomUUID(), "generic.attack_damage", damage, Operation.ADD_NUMBER, EquipmentSlot.HAND);
+         if (AttributeCompat.getAttackDamage() != null) {
+            meta.addAttributeModifier(AttributeCompat.getAttackDamage(), damageModifier);
+         }
+
+         double attackSpeed = this.plugin.getConfig().getDouble("weapons.dragon_katana.attack_speed", -2.4);
+         AttributeModifier attackSpeedModifier = new AttributeModifier(
+            UUID.randomUUID(), "generic.attack_speed", attackSpeed, Operation.ADD_NUMBER, EquipmentSlot.HAND
+         );
+         if (AttributeCompat.getAttackSpeed() != null) {
+            meta.addAttributeModifier(AttributeCompat.getAttackSpeed(), attackSpeedModifier);
+         }
+
+         PersistentDataContainer pdc = meta.getPersistentDataContainer();
+         pdc.set(this.katanaKey, PersistentDataType.BYTE, (byte)1);
+         if (meta instanceof Damageable damageable) {
+            damageable.setUnbreakable(true);
+         }
+
+         this.plugin.applyWeaponLore(meta, "dragon_katana");
+         item.setItemMeta(meta);
+         return item;
+      }
+   }
+
+   public boolean isKatana(ItemStack item) {
+      if (item != null && item.getType() == Material.NETHERITE_SWORD && item.hasItemMeta()) {
+         ItemMeta meta = item.getItemMeta();
+         PersistentDataContainer pdc = meta.getPersistentDataContainer();
+         Byte mark = (Byte)pdc.get(this.katanaKey, PersistentDataType.BYTE);
+         return mark != null && mark == 1;
+      } else {
+         return false;
+      }
+   }
+
+   public void updateSpeedEffects() {
+      for (Player p : Bukkit.getOnlinePlayers()) {
+         if (this.hasKatana.getOrDefault(p.getUniqueId(), false)) {
+            p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 80, 1, true, false, false));
+         }
+      }
+   }
+
+   public boolean isOnCooldown(Player player) {
+      long now = System.currentTimeMillis();
+      long last = this.lastDash.getOrDefault(player.getUniqueId(), 0L);
+      int cd = Math.max(0, this.plugin.getConfig().getInt("weapons.dragon_katana.cooldown-seconds", 5));
+      return now - last < cd * 1000L;
+   }
+
+   public long getRemainingCooldown(Player player) {
+      long now = System.currentTimeMillis();
+      long last = this.lastDash.getOrDefault(player.getUniqueId(), 0L);
+      int cd = Math.max(0, this.plugin.getConfig().getInt("weapons.dragon_katana.cooldown-seconds", 5));
+      return (cd * 1000L - (now - last)) / 1000L + 1L;
+   }
+
+   public void performDash(Player player) {
+      this.lastDash.put(player.getUniqueId(), System.currentTimeMillis());
+      double dist = Math.max(0.0, this.plugin.getConfig().getDouble("weapons.dragon_katana.dash-distance-blocks", 8.0));
+      Vector dir = player.getLocation().getDirection().normalize();
+      Location start = player.getLocation();
+      Location lastSafe = start.clone();
+
+      for (double s = 0.3; s <= dist; s += 0.3) {
+         Location candidate = start.clone().add(dir.clone().multiply(s));
+         if (!this.isSpaceFree(candidate)) {
+            break;
+         }
+
+         lastSafe = candidate.clone();
+      }
+
+      if (!lastSafe.equals(start)) {
+         lastSafe.setYaw(start.getYaw());
+         lastSafe.setPitch(start.getPitch());
+         player.teleport(lastSafe);
+         player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1.0F, 1.0F);
+         player.getWorld().spawnParticle(Particle.PORTAL, start, 50, 0.5, 0.5, 0.5, 0.1);
+         player.getWorld().spawnParticle(Particle.PORTAL, lastSafe, 50, 0.5, 0.5, 0.5, 0.1);
+      }
+   }
+
+   private boolean isSpaceFree(Location loc) {
+      double[][] offsets = new double[][]{{0.0, 0.0}, {0.3, 0.0}, {-0.3, 0.0}, {0.0, 0.3}, {0.0, -0.3}};
+
+      for (double[] off : offsets) {
+         Location feet = loc.clone().add(off[0], 0.0, off[1]);
+         Location head = loc.clone().add(off[0], 1.0, off[1]);
+         Block feetBlock = feet.getWorld().getBlockAt(feet);
+         Block headBlock = head.getWorld().getBlockAt(head);
+         if (!feetBlock.isPassable() || !headBlock.isPassable()) {
+            return false;
+         }
+      }
+
+      return true;
+   }
+
+   public void setHasKatana(UUID playerId, boolean hasKatana) {
+      this.hasKatana.put(playerId, hasKatana);
+   }
+
+   public void removePlayerData(UUID playerId) {
+      this.lastDash.remove(playerId);
+      this.hasKatana.remove(playerId);
+   }
+
+   public boolean isDragonKatana(ItemStack item) {
+      if (item != null && item.getType() == Material.NETHERITE_SWORD) {
+         ItemMeta meta = item.getItemMeta();
+         if (meta == null) {
+            return false;
+         } else {
+            PersistentDataContainer container = meta.getPersistentDataContainer();
+            return container.has(this.katanaKey, PersistentDataType.BYTE);
+         }
+      } else {
+         return false;
+      }
+   }
+
+   public Vector getDashLateral(Vector dir) {
+      return dir != null && !(dir.lengthSquared() < 1.0E-6) ? dir.clone().crossProduct(new Vector(0, 1, 0)).normalize() : null;
+   }
+}

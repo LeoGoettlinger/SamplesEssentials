@@ -1,0 +1,51 @@
+package su.nightexpress.nightcore.database.listener;
+
+import java.util.UUID;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result;
+import org.jspecify.annotations.NonNull;
+import su.nightexpress.nightcore.NightDataPlugin;
+import su.nightexpress.nightcore.database.AbstractUserManager;
+import su.nightexpress.nightcore.database.DataUser;
+import su.nightexpress.nightcore.manager.AbstractListener;
+
+@Deprecated
+public class UserListener<P extends NightDataPlugin<U>, U extends DataUser> extends AbstractListener<P> {
+   private final AbstractUserManager<? extends NightDataPlugin<U>, U> userManager;
+
+   public UserListener(@NonNull P plugin) {
+      super(plugin);
+      this.userManager = plugin.getUserManager();
+   }
+
+   @EventHandler(
+      priority = EventPriority.MONITOR
+   )
+   public void onUserLogin(AsyncPlayerPreLoginEvent event) {
+      if (event.getLoginResult() == Result.ALLOWED) {
+         UUID uuid = event.getUniqueId();
+         U user;
+         if (!this.userManager.isCreated(uuid)) {
+            user = this.userManager.createUserData(uuid, event.getName());
+            this.plugin.getData().addUser(user);
+            this.plugin.info("Created new data for: '" + uuid + "'");
+         } else {
+            user = this.userManager.getUserData(uuid);
+         }
+
+         if (user != null) {
+            this.userManager.cachePermanent(user);
+         }
+      }
+   }
+
+   @EventHandler(
+      priority = EventPriority.MONITOR
+   )
+   public void onUserQuit(PlayerQuitEvent event) {
+      this.userManager.unload(event.getPlayer());
+   }
+}

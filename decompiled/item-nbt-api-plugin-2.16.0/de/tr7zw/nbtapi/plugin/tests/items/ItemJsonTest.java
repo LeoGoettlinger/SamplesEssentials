@@ -1,0 +1,24 @@
+package de.tr7zw.nbtapi.plugin.tests.items;
+
+import com.google.gson.JsonElement;
+import de.tr7zw.nbtapi.NbtApiException;
+import de.tr7zw.nbtapi.plugin.tests.Test;
+import de.tr7zw.nbtapi.utils.NBTJsonUtil;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
+public class ItemJsonTest implements Test {
+   @Override
+   public void test() throws Exception {
+      ItemStack item = new ItemStack(Material.STONE);
+      ItemMeta meta = item.getItemMeta();
+      meta.setDisplayName("test");
+      meta.setUnbreakable(true);
+      item.setItemMeta(meta);
+      JsonElement elem = NBTJsonUtil.itemStackToJson(item);
+      if (elem == null) {
+         throw new NbtApiException("Getting the Json didn't work correctly! " + item);
+      }
+   }
+}

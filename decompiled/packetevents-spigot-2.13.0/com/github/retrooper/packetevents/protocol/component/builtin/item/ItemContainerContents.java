@@ -1,0 +1,53 @@
+package com.github.retrooper.packetevents.protocol.component.builtin.item;
+
+import com.github.retrooper.packetevents.protocol.item.ItemStack;
+import com.github.retrooper.packetevents.protocol.item.ItemStackSerialization;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+import java.util.List;
+import java.util.Objects;
+
+public class ItemContainerContents {
+   private List<ItemStack> items;
+
+   public ItemContainerContents(List<ItemStack> items) {
+      this.items = items;
+   }
+
+   public static ItemContainerContents read(PacketWrapper<?> wrapper) {
+      List<ItemStack> items = wrapper.readList(ItemStackSerialization::readOptionalTemplate);
+      return new ItemContainerContents(items);
+   }
+
+   public static void write(PacketWrapper<?> wrapper, ItemContainerContents contents) {
+      wrapper.writeList(contents.items, ItemStackSerialization::writeOptionalTemplate);
+   }
+
+   public void addItem(ItemStack itemStack) {
+      this.items.add(itemStack);
+   }
+
+   public List<ItemStack> getItems() {
+      return this.items;
+   }
+
+   public void setItems(List<ItemStack> items) {
+      this.items = items;
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (this == obj) {
+         return true;
+      } else if (!(obj instanceof ItemContainerContents)) {
+         return false;
+      } else {
+         ItemContainerContents that = (ItemContainerContents)obj;
+         return this.items.equals(that.items);
+      }
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hashCode(this.items);
+   }
+}

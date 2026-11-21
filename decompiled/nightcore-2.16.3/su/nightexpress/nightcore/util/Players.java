@@ -1,0 +1,517 @@
+package su.nightexpress.nightcore.util;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.World;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
+import org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.geysermc.floodgate.api.FloodgateApi;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+import su.nightexpress.nightcore.NightCore;
+import su.nightexpress.nightcore.bridge.wrap.NightProfile;
+import su.nightexpress.nightcore.integration.permission.PermissionBridge;
+import su.nightexpress.nightcore.util.bridge.Software;
+import su.nightexpress.nightcore.util.bridge.wrapper.NightComponent;
+import su.nightexpress.nightcore.util.profile.CachedProfile;
+import su.nightexpress.nightcore.util.profile.PlayerProfiles;
+import su.nightexpress.nightcore.util.text.TextRoot;
+import su.nightexpress.nightcore.util.text.night.NightMessage;
+
+public class Players {
+   @Deprecated
+   public static final String TEXTURES_HOST = "http://textures.minecraft.net/texture/";
+   public static final String PLAYER_COMMAND_PREFIX = "player:";
+
+   @NonNull
+   public static Stream<? extends Player> stream() {
+      return Bukkit.getServer().getOnlinePlayers().stream();
+   }
+
+   @NonNull
+   public static Set<Player> getOnline() {
+      return new HashSet<>(Bukkit.getServer().getOnlinePlayers());
+   }
+
+   @NonNull
+   public static List<String> playerNames() {
+      return playerNames(null);
+   }
+
+   @NonNull
+   public static List<String> playerNames(@Nullable Player viewer) {
+      return getOnline().stream().filter(player -> viewer == null || viewer.canSee(player)).<String>map(Player::getName).sorted(String::compareTo).toList();
+   }
+
+   @Deprecated
+   @NonNull
+   public static List<String> realPlayerNames() {
+      return realPlayerNames(null);
+   }
+
+   @Deprecated
+   @NonNull
+   public static List<String> realPlayerNames(@Nullable Player viewer) {
+      return playerNames(viewer, false);
+   }
+
+   @Deprecated
+   @NonNull
+   public static List<String> playerNames(@Nullable Player viewer, boolean includeCustom) {
+      return playerNames(viewer);
+   }
+
+   public static boolean isOnline(@NonNull UUID playerId) {
+      return getPlayer(playerId) != null;
+   }
+
+   @Deprecated
+   @NonNull
+   public static Optional<Player> find(@NonNull String nameOrNick) {
+      return Optional.ofNullable(getPlayer(nameOrNick));
+   }
+
+   @NonNull
+   public static Optional<Player> findById(@NonNull UUID playerId) {
+      return Optional.ofNullable(getPlayer(playerId));
+   }
+
+   @NonNull
+   public static Optional<Player> findByName(@NonNull String playerName) {
+      return Optional.ofNullable(getPlayer(playerName));
+   }
+
+   @Nullable
+   public static Player getPlayer(@NonNull String name) {
+      return Bukkit.getServer().getPlayer(name);
+   }
+
+   @Nullable
+   public static Player getExactPlayer(@NonNull String name) {
+      return Bukkit.getServer().getPlayerExact(name);
+   }
+
+   @Nullable
+   public static Player getPlayer(@NonNull UUID uuid) {
+      return Bukkit.getServer().getPlayer(uuid);
+   }
+
+   public static boolean isBedrock(@NonNull Player player) {
+      return Plugins.hasFloodgate() && FloodgateApi.getInstance().isFloodgatePlayer(player.getUniqueId());
+   }
+
+   @Deprecated
+   public static boolean isReal(@NonNull Player player) {
+      return player.isOnline();
+   }
+
+   public static void closeDialog(@NonNull Player player) {
+      Software.get().closeDialog(player);
+   }
+
+   @NonNull
+   public static String getDisplayNameSerialized(@NonNull Player player) {
+      return Software.get().getDisplayNameSerialized(player);
+   }
+
+   public static void setDisplayName(@NonNull Player player, @Nullable String name) {
+      setDisplayName(player, name == null ? null : NightMessage.parse(name));
+   }
+
+   public static void setDisplayName(@NonNull Player player, @Nullable NightComponent name) {
+      Software.get().setDisplayName(player, name);
+   }
+
+   @Nullable
+   public static String getPlayerListHeaderSerialized(@NonNull Player player) {
+      return Software.get().getPlayerListHeaderSerialized(player);
+   }
+
+   @Nullable
+   public static String getPlayerListFooterSerialized(@NonNull Player player) {
+      return Software.get().getPlayerListFooterSerialized(player);
+   }
+
+   public static void setPlayerListHeaderFooter(@NonNull Player player, @Nullable String header, @Nullable String footer) {
+      setPlayerListHeaderFooter(player, header == null ? null : NightMessage.parse(header), footer == null ? null : NightMessage.parse(footer));
+   }
+
+   public static void setPlayerListHeaderFooter(@NonNull Player player, @Nullable NightComponent header, @Nullable NightComponent footer) {
+      Software.get().setPlayerListHeaderFooter(player, header, footer);
+   }
+
+   @NonNull
+   public static String getPlayerListNameSerialized(@NonNull Player player) {
+      return Software.get().getPlayerListNameSerialized(player);
+   }
+
+   public static void setPlayerListName(@NonNull Player player, @NonNull String name) {
+      setPlayerListName(player, NightMessage.parse(name));
+   }
+
+   public static void setPlayerListName(@NonNull Player player, @NonNull NightComponent name) {
+      Software.get().setPlayerListName(player, name);
+   }
+
+   public static void kick(@NonNull Player player, @NonNull String reason) {
+      kick(player, NightMessage.parse(reason));
+   }
+
+   public static void kick(@NonNull Player player, @NonNull NightComponent reason) {
+      Software.get().kick(player, reason);
+   }
+
+   public static void disallowLogin(@NonNull AsyncPlayerPreLoginEvent event, @NonNull Result result, @NonNull String message) {
+      disallowLogin(event, result, NightMessage.parse(message));
+   }
+
+   public static void disallowLogin(@NonNull AsyncPlayerPreLoginEvent event, @NonNull Result result, @NonNull NightComponent message) {
+      Software.get().disallowLogin(event, result, message);
+   }
+
+   @NonNull
+   public static NightProfile getProfile(@NonNull OfflinePlayer player) {
+      return Software.get().getProfile(player);
+   }
+
+   @Deprecated
+   @NonNull
+   public static NightProfile createProfile(@NonNull UUID uuid) {
+      return PlayerProfiles.createProfile(uuid).query();
+   }
+
+   @Deprecated
+   @NonNull
+   public static NightProfile createProfile(@NonNull String name) {
+      return PlayerProfiles.createProfile(name);
+   }
+
+   @Deprecated
+   @NonNull
+   public static NightProfile createProfile(@NonNull UUID uuid, @Nullable String name) {
+      return PlayerProfiles.createProfile(uuid, name).query();
+   }
+
+   @Deprecated
+   @Nullable
+   public static NightProfile createProfileBySkinURL(@NonNull String urlData) {
+      CachedProfile profile = PlayerProfiles.createProfileBySkinURL(urlData);
+      return profile == null ? null : profile.query();
+   }
+
+   @Deprecated
+   @Nullable
+   public static String getProfileSkinURL(@NonNull NightProfile profile) {
+      return PlayerProfiles.getProfileSkinURL(profile);
+   }
+
+   @Deprecated
+   @NonNull
+   public static String getPermissionGroup(@NonNull Player player) {
+      return getPrimaryGroupOrDefault(player);
+   }
+
+   @Nullable
+   public static String getPrimaryGroup(@NonNull Player player) {
+      return PermissionBridge.provider().map(provider -> provider.getPrimaryGroup(player)).orElse(null);
+   }
+
+   @NonNull
+   public static String getPrimaryGroup(@NonNull Player player, @NonNull String fallback) {
+      String group = getPrimaryGroup(player);
+      return group == null ? fallback : group;
+   }
+
+   @NonNull
+   public static CompletableFuture<String> getPrimaryGroup(@NonNull UUID playerId) {
+      return PermissionBridge.provider().map(provider -> provider.getPrimaryGroup(playerId)).orElse(CompletableFuture.completedFuture(null));
+   }
+
+   @NonNull
+   public static String getPrimaryGroupOrDefault(@NonNull Player player) {
+      return getPrimaryGroup(player, "default");
+   }
+
+   @Deprecated
+   @NonNull
+   public static Set<String> getPermissionGroups(@NonNull Player player) {
+      return getInheritanceGroupsOrDefault(player);
+   }
+
+   @NonNull
+   public static Set<String> getInheritanceGroups(@NonNull Player player) {
+      return PermissionBridge.provider().map(provider -> provider.getPermissionGroups(player)).orElse(Collections.emptySet());
+   }
+
+   @NonNull
+   public static Set<String> getInheritanceGroups(@NonNull Player player, @NonNull Set<String> fallback) {
+      Set<String> groups = getInheritanceGroups(player);
+      return groups.isEmpty() ? fallback : groups;
+   }
+
+   @NonNull
+   public static CompletableFuture<Set<String>> getInheritanceGroups(@NonNull UUID playerId) {
+      return PermissionBridge.provider()
+         .map(provider -> provider.getPermissionGroups(playerId))
+         .orElse(CompletableFuture.completedFuture(Collections.emptySet()));
+   }
+
+   @NonNull
+   public static Set<String> getInheritanceGroupsOrDefault(@NonNull Player player) {
+      return getInheritanceGroups(player, Lists.newSet("default"));
+   }
+
+   @Deprecated
+   @NonNull
+   public static String getPrefix(@NonNull Player player) {
+      return getPrefixOrEmpty(player);
+   }
+
+   @NonNull
+   public static String getPrefixOrEmpty(@NonNull Player player) {
+      return getPrefix(player, "");
+   }
+
+   @Nullable
+   public static String getRawPrefix(@NonNull Player player) {
+      return PermissionBridge.provider().map(provider -> provider.getPrefix(player)).orElse(null);
+   }
+
+   @NonNull
+   public static CompletableFuture<String> getRawPrefix(@NonNull UUID playerId) {
+      return PermissionBridge.provider().map(provider -> provider.getPrefix(playerId)).orElse(CompletableFuture.completedFuture(null));
+   }
+
+   @NonNull
+   public static String getPrefix(@NonNull Player player, @NonNull String fallback) {
+      String prefix = getRawPrefix(player);
+      return prefix == null ? fallback : prefix;
+   }
+
+   @Deprecated
+   @NonNull
+   public static String getSuffix(@NonNull Player player) {
+      return getSuffixOrEmpty(player);
+   }
+
+   @NonNull
+   public static String getSuffixOrEmpty(@NonNull Player player) {
+      return getSuffix(player, "");
+   }
+
+   @Nullable
+   public static String getRawSuffix(@NonNull Player player) {
+      return PermissionBridge.provider().map(provider -> provider.getSuffix(player)).orElse(null);
+   }
+
+   @NonNull
+   public static CompletableFuture<String> getRawSuffix(@NonNull UUID playerId) {
+      return PermissionBridge.provider().map(provider -> provider.getSuffix(playerId)).orElse(CompletableFuture.completedFuture(null));
+   }
+
+   @NonNull
+   public static String getSuffix(@NonNull Player player, @NonNull String fallback) {
+      String suffix = getRawSuffix(player);
+      return suffix == null ? fallback : suffix;
+   }
+
+   @Deprecated
+   public static void sendModernMessage(@NonNull CommandSender sender, @NonNull String message) {
+      sendMessage(sender, message);
+   }
+
+   public static void sendMessage(@NonNull CommandSender sender, @NonNull String message) {
+      sendMessage(sender, NightMessage.parse(message));
+   }
+
+   public static void sendMessage(@NonNull CommandSender sender, @NonNull NightComponent component) {
+      Software.get().getTextComponentAdapter().send(sender, component);
+   }
+
+   @Deprecated
+   public static void sendActionBarText(@NonNull Player player, @NonNull String message) {
+      sendActionBar(player, message);
+   }
+
+   @Deprecated
+   public static void sendActionBar(@NonNull Player player, @NonNull TextRoot message) {
+      sendActionBar(player, message.getString());
+   }
+
+   public static void sendActionBar(@NonNull Player player, @NonNull String message) {
+      sendActionBar(player, NightMessage.parse(message));
+   }
+
+   public static void sendActionBar(@NonNull Player player, @NonNull NightComponent component) {
+      Software.get().getTextComponentAdapter().sendActionBar(player, component);
+   }
+
+   @Deprecated
+   public static void sendTitle(@NonNull Player player, @NonNull String title, @NonNull String subtitle, int fadeIn, int stay, int fadeOut) {
+      sendTitles(player, title, subtitle, fadeIn, stay, fadeOut);
+   }
+
+   public static void sendTitles(@NonNull Player player, @NonNull String title, @NonNull String subtitle, int fadeIn, int stay, int fadeOut) {
+      sendTitles(player, NightMessage.parse(title), NightMessage.parse(subtitle), fadeIn, stay, fadeOut);
+   }
+
+   public static void sendTitles(@NonNull Player player, @NonNull NightComponent title, @NonNull NightComponent subtitle, int fadeIn, int stay, int fadeOut) {
+      Software.get().sendTitles(player, title, subtitle, fadeIn, stay, fadeOut);
+   }
+
+   public static void dispatchCommands(@NonNull Player player, String... commands) {
+      for (String command : commands) {
+         dispatchCommand0(player, command);
+      }
+   }
+
+   public static void dispatchCommands(@NonNull Player player, @NonNull List<String> commands) {
+      for (String command : commands) {
+         dispatchCommand0(player, command);
+      }
+   }
+
+   public static void dispatchCommand(@NonNull Player player, @NonNull String command) {
+      dispatchCommand0(player, command);
+   }
+
+   private static void dispatchCommand0(@NonNull Player player, @NonNull String command) {
+      CommandSender sender = Bukkit.getConsoleSender();
+      boolean usePlayer = false;
+      if (command.startsWith("player:")) {
+         command = command.substring("player:".length());
+         sender = player;
+         usePlayer = true;
+      }
+
+      command = Placeholders.forPlayerWithPAPI(player).apply(command).trim();
+      if (Version.isFolia()) {
+         if (usePlayer) {
+            CommandSender playerSender = sender;
+            NightCore.get().runTask(player, () -> Bukkit.dispatchCommand(playerSender, command));
+         } else {
+            CommandSender consoleSender = sender;
+            NightCore.get().runTask(() -> Bukkit.dispatchCommand(consoleSender, command));
+         }
+      } else {
+         Bukkit.dispatchCommand(sender, command);
+      }
+   }
+
+   public static boolean hasEmptyInventory(@NonNull Player player) {
+      return Stream.of(player.getInventory().getContents()).allMatch(item -> item == null || item.getType().isAir());
+   }
+
+   public static boolean hasEmptyContents(@NonNull Player player) {
+      return Stream.of(player.getInventory().getContents()).allMatch(item -> item == null || item.getType().isAir());
+   }
+
+   public static int countItemSpace(@NonNull Player player, @NonNull ItemStack item) {
+      int stackSize = item.getType().getMaxStackSize();
+      return Stream.of(player.getInventory().getStorageContents()).mapToInt(itemHas -> {
+         if (itemHas == null || itemHas.getType().isAir()) {
+            return stackSize;
+         } else {
+            return itemHas.isSimilar(item) ? stackSize - itemHas.getAmount() : 0;
+         }
+      }).sum();
+   }
+
+   public static int countItem(@NonNull Player player, @NonNull Predicate<ItemStack> predicate) {
+      return Stream.of(player.getInventory().getContents()).filter(item -> item != null && predicate.test(item)).mapToInt(ItemStack::getAmount).sum();
+   }
+
+   public static int countItem(@NonNull Player player, @NonNull ItemStack item) {
+      return countItem(player, item::isSimilar);
+   }
+
+   public static int countItem(@NonNull Player player, @NonNull Material material) {
+      return countItem(player, (Predicate<ItemStack>)(itemHas -> itemHas.getType() == material));
+   }
+
+   public static void takeItem(@NonNull Player player, @NonNull ItemStack item) {
+      takeItem(player, item, -1);
+   }
+
+   public static void takeItem(@NonNull Player player, @NonNull ItemStack item, int amount) {
+      takeItem(player, (Predicate<ItemStack>)(itemHas -> itemHas.isSimilar(item)), amount);
+   }
+
+   public static void takeItem(@NonNull Player player, @NonNull Material material) {
+      takeItem(player, material, -1);
+   }
+
+   public static void takeItem(@NonNull Player player, @NonNull Material material, int amount) {
+      takeItem(player, (Predicate<ItemStack>)(itemHas -> itemHas.getType() == material), amount);
+   }
+
+   public static void takeItem(@NonNull Player player, @NonNull Predicate<ItemStack> predicate) {
+      takeItem(player, predicate, -1);
+   }
+
+   public static void takeItem(@NonNull Player player, @NonNull Predicate<ItemStack> predicate, int amount) {
+      int takenAmount = 0;
+      Inventory inventory = player.getInventory();
+
+      for (ItemStack itemHas : inventory.getContents()) {
+         if (itemHas != null && predicate.test(itemHas)) {
+            if (amount < 0) {
+               itemHas.setAmount(0);
+            } else {
+               int hasAmount = itemHas.getAmount();
+               if (takenAmount + hasAmount > amount) {
+                  int diff = takenAmount + hasAmount - amount;
+                  itemHas.setAmount(diff);
+                  break;
+               }
+
+               itemHas.setAmount(0);
+               if ((takenAmount += hasAmount) == amount) {
+                  break;
+               }
+            }
+         }
+      }
+   }
+
+   public static void addItem(@NonNull Player player, ItemStack... items) {
+      for (ItemStack item : items) {
+         addItem(player, item, item.getAmount());
+      }
+   }
+
+   public static void addItem(@NonNull Player player, @NonNull ItemStack itemStack, int amount) {
+      if (amount > 0 && !itemStack.getType().isAir()) {
+         ItemStack split = new ItemStack(itemStack);
+         int realAmount = Math.min(split.getMaxStackSize(), amount);
+         split.setAmount(realAmount);
+         ItemStack copy = split.clone();
+         World world = player.getWorld();
+         if (Version.isFolia()) {
+            NightCore.get()
+               .runTask(player, () -> player.getInventory().addItem(new ItemStack[]{copy}).values().forEach(left -> world.dropItem(player.getLocation(), left)));
+         } else {
+            player.getInventory().addItem(new ItemStack[]{copy}).values().forEach(left -> world.dropItem(player.getLocation(), left));
+         }
+
+         amount -= realAmount;
+         if (amount > 0) {
+            addItem(player, itemStack, amount);
+         }
+      }
+   }
+}

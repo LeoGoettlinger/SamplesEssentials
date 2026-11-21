@@ -1,0 +1,35 @@
+package vrx.economy.vRXClans.libs.cloud.permission;
+
+import org.apiguardian.api.API;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.immutables.value.Value.Immutable;
+
+@API(
+   status = API.Status.STABLE
+)
+@Immutable
+public interface PermissionResult {
+   boolean allowed();
+
+   default boolean denied() {
+      return !this.allowed();
+   }
+
+   @NonNull
+   Permission permission();
+
+   @NonNull
+   static PermissionResult of(final boolean result, @NonNull final Permission permission) {
+      return PermissionResultImpl.of(result, permission);
+   }
+
+   @NonNull
+   static PermissionResult allowed(@NonNull final Permission permission) {
+      return PermissionResultImpl.of(true, permission);
+   }
+
+   @NonNull
+   static PermissionResult denied(@NonNull final Permission permission) {
+      return PermissionResultImpl.of(false, permission);
+   }
+}

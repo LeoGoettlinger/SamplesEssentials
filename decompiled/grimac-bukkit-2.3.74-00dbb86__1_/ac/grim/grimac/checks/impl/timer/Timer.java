@@ -1,0 +1,80 @@
+package ac.grim.grimac.checks.impl.timer;
+
+import ac.grim.grimac.api.config.ConfigManager;
+import ac.grim.grimac.checks.Check;
+import ac.grim.grimac.checks.CheckData;
+import ac.grim.grimac.checks.type.PacketCheck;
+import ac.grim.grimac.player.GrimPlayer;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.event.PacketReceiveEvent;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.protocol.packettype.PacketType;
+import ac.grim.grimac.shaded.com.github.retrooper.packetevents.protocol.packettype.PacketTypeCommon;
+
+@CheckData(
+   name = "Timer",
+   stableKey = "grim.timer.timer",
+   configName = "TimerA",
+   description = "The players game is running faster than normal",
+   setback = 10.0
+)
+public class Timer extends Check implements PacketCheck {
+   protected long timerBalanceRealTime = 0L;
+   protected long knownPlayerClockTime = (long)(System.nanoTime() - 6.0E10);
+   protected long lastMovementPlayerClock = (long)(System.nanoTime() - 6.0E10);
+   protected long clockDrift;
+   protected boolean hasGottenMovementAfterTransaction = false;
+
+   public Timer(GrimPlayer player) {
+      super(player);
+   }
+
+   @Override
+   public void onPacketReceive(PacketReceiveEvent event) {
+      if (this.hasGottenMovementAfterTransaction && this.checkForTransaction(event.getPacketType())) {
+         this.knownPlayerClockTime = this.lastMovementPlayerClock;
+         this.lastMovementPlayerClock = this.player.getPlayerClockAtLeast();
+         this.hasGottenMovementAfterTransaction = false;
+      }
+
+      if (this.shouldCountPacketForTimer(event.getPacketType())) {
+         this.hasGottenMovementAfterTransaction = true;
+         this.timerBalanceRealTime = (long)(this.timerBalanceRealTime + 5.0E7);
+         this.doCheck(event);
+      }
+   }
+
+   public void doCheck(PacketReceiveEvent event) {
+      if (this.timerBalanceRealTime > System.nanoTime()) {
+         if (this.flag()) {
+            if (this.shouldModifyPackets()) {
+               event.setCancelled(true);
+               this.player.onPacketCancel();
+            }
+
+            if (this.shouldSetback()) {
+               this.player.getSetbackTeleportUtil().executeNonSimulatingSetback();
+            }
+         }
+
+         this.timerBalanceRealTime = (long)(this.timerBalanceRealTime - 5.0E7);
+      }
+
+      this.limitFallBehind();
+   }
+
+   protected void limitFallBehind() {
+      this.timerBalanceRealTime = Math.max(this.timerBalanceRealTime, this.lastMovementPlayerClock - this.clockDrift);
+   }
+
+   public boolean checkForTransaction(PacketTypeCommon packetType) {
+      return packetType == PacketType.Play.Client.PONG || packetType == PacketType.Play.Client.WINDOW_CONFIRMATION;
+   }
+
+   public boolean shouldCountPacketForTimer(PacketTypeCommon packetType) {
+      return this.isTickPacket(packetType);
+   }
+
+   @Override
+   public void onReload(ConfigManager config) {
+      this.clockDrift = (long)(config.getDoubleElse(this.getConfigName() + ".drift", 120.0) * 1000000.0);
+   }
+}

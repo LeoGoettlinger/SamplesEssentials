@@ -1,0 +1,41 @@
+package com.github.retrooper.packetevents.protocol.debug;
+
+import com.github.retrooper.packetevents.protocol.mapper.AbstractMappedEntity;
+import com.github.retrooper.packetevents.util.mappings.TypesBuilderData;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+import org.jetbrains.annotations.ApiStatus.Internal;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
+@NullMarked
+public class StaticDebugSubscription<T> extends AbstractMappedEntity implements DebugSubscription<T> {
+   @Nullable
+   private final PacketWrapper.Reader<T> reader;
+   @Nullable
+   private final PacketWrapper.Writer<T> writer;
+
+   @Internal
+   public StaticDebugSubscription(@Nullable TypesBuilderData data, @Nullable PacketWrapper.Reader<T> reader, @Nullable PacketWrapper.Writer<T> writer) {
+      super(data);
+      this.reader = reader;
+      this.writer = writer;
+   }
+
+   @Override
+   public T read(PacketWrapper<?> wrapper) {
+      if (this.reader == null) {
+         throw new IllegalStateException(this + " doesn't support network reading");
+      } else {
+         return this.reader.apply(wrapper);
+      }
+   }
+
+   @Override
+   public void write(PacketWrapper<?> wrapper, T value) {
+      if (this.writer == null) {
+         throw new IllegalStateException(this + " doesn't support network writing");
+      } else {
+         this.writer.accept(wrapper, value);
+      }
+   }
+}

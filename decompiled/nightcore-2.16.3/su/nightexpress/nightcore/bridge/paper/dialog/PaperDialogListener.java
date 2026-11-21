@@ -1,0 +1,46 @@
+package su.nightexpress.nightcore.bridge.paper.dialog;
+
+import com.google.gson.JsonElement;
+import io.papermc.paper.connection.PlayerGameConnection;
+import io.papermc.paper.event.player.PlayerCustomClickEvent;
+import net.kyori.adventure.key.Key;
+import net.kyori.adventure.nbt.api.BinaryTagHolder;
+import org.bukkit.NamespacedKey;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
+import org.jspecify.annotations.NonNull;
+import su.nightexpress.nightcore.bridge.common.NightNbtHolder;
+import su.nightexpress.nightcore.bridge.dialog.response.DialogClickHandler;
+import su.nightexpress.nightcore.bridge.dialog.response.DialogClickResult;
+import su.nightexpress.nightcore.util.nbt.NbtUtil;
+
+public class PaperDialogListener implements Listener {
+   private final DialogClickHandler handler;
+
+   public PaperDialogListener(@NonNull DialogClickHandler handler) {
+      this.handler = handler;
+   }
+
+   @EventHandler(
+      priority = EventPriority.NORMAL
+   )
+   public void onCustomClick(PlayerCustomClickEvent event) {
+      if (event.getCommonConnection() instanceof PlayerGameConnection gameConnection) {
+         NightNbtHolder var9 = null;
+         BinaryTagHolder tagHolder = event.getTag();
+         if (tagHolder != null) {
+            Object compound = NbtUtil.tagFromString(tagHolder.string());
+            JsonElement converted = compound == null ? null : NbtUtil.tagToJson(compound);
+            var9 = converted == null ? null : NightNbtHolder.fromJson(converted);
+         }
+
+         Key key = event.getIdentifier();
+         Player player = gameConnection.getPlayer();
+         NamespacedKey identifier = new NamespacedKey(key.namespace(), key.value());
+         DialogClickResult result = new DialogClickResult(player, identifier, var9);
+         this.handler.handleClick(result);
+      }
+   }
+}

@@ -1,0 +1,171 @@
+package su.nightexpress.nightcore.util;
+
+import java.util.Comparator;
+import java.util.stream.Stream;
+import org.bukkit.Bukkit;
+import org.jspecify.annotations.NonNull;
+
+public enum Version {
+   @Deprecated
+   V1_19_R3("1.19.4", 3337, Version.Status.DROPPED),
+   @Deprecated
+   V1_20_R1("1.20.1", 3465, Version.Status.DROPPED),
+   @Deprecated
+   V1_20_R2("1.20.2", 3578, Version.Status.DROPPED),
+   @Deprecated
+   V1_20_R3("1.20.4", 3700, Version.Status.DROPPED),
+   @Deprecated
+   MC_1_20_6("1.20.6", 3839, Version.Status.DROPPED),
+   @Deprecated
+   MC_1_21_0("1.21", 3953, Version.Status.DROPPED),
+   @Deprecated
+   MC_1_21("1.21.1", 3955, Version.Status.DROPPED),
+   @Deprecated
+   MC_1_21_2("1.21.2", 4080, Version.Status.DROPPED),
+   @Deprecated
+   MC_1_21_3("1.21.3", 4082, Version.Status.DROPPED),
+   @Deprecated
+   MC_1_21_4("1.21.4", 4189, Version.Status.DROPPED),
+   @Deprecated
+   MC_1_21_5("1.21.5", 4325, Version.Status.DROPPED),
+   @Deprecated
+   MC_1_21_6("1.21.6", 4435, Version.Status.DROPPED),
+   @Deprecated
+   MC_1_21_7("1.21.7", 4438, Version.Status.DROPPED),
+   MC_1_21_8("1.21.8", 4440),
+   MC_1_21_9("1.21.9", 4554, Version.Status.OUTDATED),
+   MC_1_21_10("1.21.10", 4556, Version.Status.OUTDATED),
+   MC_1_21_11("1.21.11", 4671),
+   MC_26_1("26.1", 4786, Version.Status.DROPPED),
+   MC_26_1_1("26.1.1", 4788),
+   MC_26_1_2("26.1.2", 4790),
+   MC_26_2("26.2", 4890),
+   UNKNOWN("Unknown", 10000);
+
+   private static final boolean IS_PAPER = checkPaper();
+   private static final boolean IS_FOLIA = checkFolia();
+   private static Version current;
+   private final Version.Status status;
+   private final int dataVersion;
+   private final String localized;
+
+   private Version(@NonNull String localized, int dataVersion) {
+      this(localized, dataVersion, Version.Status.SUPPORTED);
+   }
+
+   private Version(@NonNull String localized, int dataVersion, @NonNull Version.Status status) {
+      this.localized = localized;
+      this.dataVersion = dataVersion;
+      this.status = status;
+   }
+
+   @NonNull
+   public static Version detect() {
+      String bukkitVersion = isSpigot() ? Bukkit.getServer().getBukkitVersion() : Bukkit.getServer().getVersion();
+      String exact = bukkitVersion.split("-")[0];
+      current = Stream.of(values())
+         .sorted(Comparator.reverseOrder())
+         .filter(version -> exact.equalsIgnoreCase(version.getLocalized()))
+         .findFirst()
+         .orElse(UNKNOWN);
+      return current;
+   }
+
+   @NonNull
+   public static Version getCurrent() {
+      if (current == null) {
+         throw new IllegalStateException("Version is not initialized!");
+      } else {
+         return current;
+      }
+   }
+
+   @Deprecated
+   public static boolean withDialogs() {
+      return true;
+   }
+
+   public static boolean withCopperAge() {
+      return isAtLeast(MC_1_21_9);
+   }
+
+   public static boolean isSpigot() {
+      return !IS_PAPER;
+   }
+
+   public static boolean isPaper() {
+      return IS_PAPER;
+   }
+
+   public static boolean isFolia() {
+      return IS_FOLIA;
+   }
+
+   public boolean isDeprecated() {
+      return this.status == Version.Status.OUTDATED;
+   }
+
+   public boolean isDropped() {
+      return this.status == Version.Status.DROPPED;
+   }
+
+   public boolean isSupported() {
+      return this.status == Version.Status.SUPPORTED;
+   }
+
+   @NonNull
+   public Version.Status getStatus() {
+      return this.status;
+   }
+
+   public int getDataVersion() {
+      return this.dataVersion;
+   }
+
+   @NonNull
+   public String getLocalized() {
+      return this.localized;
+   }
+
+   public boolean isLower(@NonNull Version version) {
+      return this.ordinal() < version.ordinal();
+   }
+
+   public boolean isHigher(@NonNull Version version) {
+      return this.ordinal() > version.ordinal();
+   }
+
+   public static boolean isAtLeast(@NonNull Version version) {
+      return version.isCurrent() || getCurrent().isHigher(version);
+   }
+
+   public static boolean isAbove(@NonNull Version version) {
+      return getCurrent().isHigher(version);
+   }
+
+   public static boolean isBehind(@NonNull Version version) {
+      return getCurrent().isLower(version);
+   }
+
+   public static boolean isBehindOrEqual(@NonNull Version version) {
+      return getCurrent().isLower(version) || getCurrent() == version;
+   }
+
+   public boolean isCurrent() {
+      return this == getCurrent();
+   }
+
+   private static boolean checkPaper() {
+      return Reflex.classExists("com.destroystokyo.paper.ParticleBuilder");
+   }
+
+   private static boolean checkFolia() {
+      return Reflex.classExists("io.papermc.paper.threadedregions.RegionizedServer");
+   }
+
+   public static enum Status {
+      SUPPORTED,
+      OUTDATED,
+      DROPPED;
+   }
+}

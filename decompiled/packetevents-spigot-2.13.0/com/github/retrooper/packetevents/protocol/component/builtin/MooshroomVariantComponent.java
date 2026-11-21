@@ -1,0 +1,46 @@
+package com.github.retrooper.packetevents.protocol.component.builtin;
+
+import com.github.retrooper.packetevents.protocol.entity.mooshroom.MooshroomVariant;
+import com.github.retrooper.packetevents.protocol.entity.mooshroom.MooshroomVariants;
+import com.github.retrooper.packetevents.wrapper.PacketWrapper;
+import java.util.Objects;
+
+public class MooshroomVariantComponent {
+   private MooshroomVariant variant;
+
+   public MooshroomVariantComponent(MooshroomVariant variant) {
+      this.variant = variant;
+   }
+
+   public static MooshroomVariantComponent read(PacketWrapper<?> wrapper) {
+      MooshroomVariant type = wrapper.readMappedEntity(MooshroomVariants.getRegistry());
+      return new MooshroomVariantComponent(type);
+   }
+
+   public static void write(PacketWrapper<?> wrapper, MooshroomVariantComponent component) {
+      wrapper.writeMappedEntity(component.variant);
+   }
+
+   public MooshroomVariant getVariant() {
+      return this.variant;
+   }
+
+   public void setVariant(MooshroomVariant variant) {
+      this.variant = variant;
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (!(obj instanceof MooshroomVariantComponent)) {
+         return false;
+      } else {
+         MooshroomVariantComponent that = (MooshroomVariantComponent)obj;
+         return this.variant.equals(that.variant);
+      }
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hashCode(this.variant);
+   }
+}
