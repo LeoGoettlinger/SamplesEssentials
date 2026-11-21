@@ -1,0 +1,23 @@
+name: AxAFKZone
+version: '1.13.0'
+main: com.artillexstudios.axafkzone.AxAFKZone
+api-version: '1.20'
+folia-supported: true
+
+permissions:
+  axafkzone.bypass.iplimit:
+    default: false
+  axafkzone.help:
+    default: op
+  axafkzone.wand:
+    default: op
+  axafkzone.create:
+    default: op
+  axafkzone.delete:
+    default: op
+  axafkzone.redefine:
+    default: op
+  axafkzone.reload:
+    default: op
+  axafkzone.tp:
+    default: op

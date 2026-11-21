@@ -1,0 +1,62 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axrankmenu.html
+
+prefix: "<gradient:#FFDD00:#FFFF00><b>AxRankMenu</b></gradient> &7» "
+
+hooks:
+  Vault:
+    register: true
+  PlayerPoints:
+    register: true
+  RoyaleEconomy:
+    register: true
+  CoinsEngine:
+    register: true
+    currency-name: "coins"
+  ExcellentEconomy:
+    register: true
+    currency-name: "coins"
+  UltraEconomy:
+    register: true
+    currency-name: "coins"
+  BeastTokens:
+    register: true
+  PlaceholderAPI:
+    register: true
+
+# if true: every permission that applies will be shown
+# if false: only the permissions that have the right luckperms context will be shown
+# for example: if you have a network and you give a global permission and a permission with the server=serverName context then
+# the plugin will only show the global if this is set to true
+include-global-permissions: false
+
+# the plugin will stop players from buying worse ranks than their current one
+# you must set every rank a WEIGHT (weight.<VALUE> permission) to enable
+prevent-downgrading: true
+
+# if true: every rank's price will be calculated like this: new rank's price - current rank's price
+# NOTE: unless prevent-downgrading is true this will mean what players can freely downgrade their ranks
+discount-ranks: false
+
+# the plugin will not let the player buy ranks out of order
+# this uses the builtin track system of luckperms, you must define one to use it
+force-buy-order:
+  enabled: false
+  track: "trackName"
+
+# you must define at least 1
+# reloading will add new commands, however a restart is recommended when editing this
+command-aliases:
+  - "axrankmenu"
+  - "rankmenu"
+  - "rank"
+  - "ranks"
+
+# should be plugin notify you if there is a new update?
+update-notifier:
+  # if enabled, it will display the message in the console
+  enabled: true
+  # if enabled, it will broadcast the update message to all players who have the <plugin-name>.update-notify permission
+  on-join: true
+
+# do not change
+version: 7

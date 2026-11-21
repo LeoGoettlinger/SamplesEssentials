@@ -1,0 +1,7351 @@
+package com.mysql.cj.x.protobuf;
+
+import com.google.protobuf.AbstractParser;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.CodedInputStream;
+import com.google.protobuf.CodedOutputStream;
+import com.google.protobuf.ExtensionRegistry;
+import com.google.protobuf.ExtensionRegistryLite;
+import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
+import com.google.protobuf.MessageLite;
+import com.google.protobuf.MessageOrBuilder;
+import com.google.protobuf.Parser;
+import com.google.protobuf.ProtocolMessageEnum;
+import com.google.protobuf.RepeatedFieldBuilder;
+import com.google.protobuf.RuntimeVersion;
+import com.google.protobuf.SingleFieldBuilder;
+import com.google.protobuf.UninitializedMessageException;
+import com.google.protobuf.AbstractMessage.BuilderParent;
+import com.google.protobuf.Descriptors.Descriptor;
+import com.google.protobuf.Descriptors.EnumDescriptor;
+import com.google.protobuf.Descriptors.EnumValueDescriptor;
+import com.google.protobuf.Descriptors.FileDescriptor;
+import com.google.protobuf.GeneratedMessage.FieldAccessorTable;
+import com.google.protobuf.Internal.EnumLiteMap;
+import com.google.protobuf.RuntimeVersion.RuntimeDomain;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public final class MysqlxExpr {
+   private static final Descriptor internal_static_Mysqlx_Expr_Expr_descriptor = (Descriptor)getDescriptor().getMessageTypes().get(0);
+   private static final FieldAccessorTable internal_static_Mysqlx_Expr_Expr_fieldAccessorTable = new FieldAccessorTable(
+      internal_static_Mysqlx_Expr_Expr_descriptor,
+      new String[]{"Type", "Identifier", "Variable", "Literal", "FunctionCall", "Operator", "Position", "Object", "Array"}
+   );
+   private static final Descriptor internal_static_Mysqlx_Expr_Identifier_descriptor = (Descriptor)getDescriptor().getMessageTypes().get(1);
+   private static final FieldAccessorTable internal_static_Mysqlx_Expr_Identifier_fieldAccessorTable = new FieldAccessorTable(
+      internal_static_Mysqlx_Expr_Identifier_descriptor, new String[]{"Name", "SchemaName"}
+   );
+   private static final Descriptor internal_static_Mysqlx_Expr_DocumentPathItem_descriptor = (Descriptor)getDescriptor().getMessageTypes().get(2);
+   private static final FieldAccessorTable internal_static_Mysqlx_Expr_DocumentPathItem_fieldAccessorTable = new FieldAccessorTable(
+      internal_static_Mysqlx_Expr_DocumentPathItem_descriptor, new String[]{"Type", "Value", "Index"}
+   );
+   private static final Descriptor internal_static_Mysqlx_Expr_ColumnIdentifier_descriptor = (Descriptor)getDescriptor().getMessageTypes().get(3);
+   private static final FieldAccessorTable internal_static_Mysqlx_Expr_ColumnIdentifier_fieldAccessorTable = new FieldAccessorTable(
+      internal_static_Mysqlx_Expr_ColumnIdentifier_descriptor, new String[]{"DocumentPath", "Name", "TableName", "SchemaName"}
+   );
+   private static final Descriptor internal_static_Mysqlx_Expr_FunctionCall_descriptor = (Descriptor)getDescriptor().getMessageTypes().get(4);
+   private static final FieldAccessorTable internal_static_Mysqlx_Expr_FunctionCall_fieldAccessorTable = new FieldAccessorTable(
+      internal_static_Mysqlx_Expr_FunctionCall_descriptor, new String[]{"Name", "Param"}
+   );
+   private static final Descriptor internal_static_Mysqlx_Expr_Operator_descriptor = (Descriptor)getDescriptor().getMessageTypes().get(5);
+   private static final FieldAccessorTable internal_static_Mysqlx_Expr_Operator_fieldAccessorTable = new FieldAccessorTable(
+      internal_static_Mysqlx_Expr_Operator_descriptor, new String[]{"Name", "Param"}
+   );
+   private static final Descriptor internal_static_Mysqlx_Expr_Object_descriptor = (Descriptor)getDescriptor().getMessageTypes().get(6);
+   private static final FieldAccessorTable internal_static_Mysqlx_Expr_Object_fieldAccessorTable = new FieldAccessorTable(
+      internal_static_Mysqlx_Expr_Object_descriptor, new String[]{"Fld"}
+   );
+   private static final Descriptor internal_static_Mysqlx_Expr_Object_ObjectField_descriptor = (Descriptor)internal_static_Mysqlx_Expr_Object_descriptor.getNestedTypes()
+      .get(0);
+   private static final FieldAccessorTable internal_static_Mysqlx_Expr_Object_ObjectField_fieldAccessorTable = new FieldAccessorTable(
+      internal_static_Mysqlx_Expr_Object_ObjectField_descriptor, new String[]{"Key", "Value"}
+   );
+   private static final Descriptor internal_static_Mysqlx_Expr_Array_descriptor = (Descriptor)getDescriptor().getMessageTypes().get(7);
+   private static final FieldAccessorTable internal_static_Mysqlx_Expr_Array_fieldAccessorTable = new FieldAccessorTable(
+      internal_static_Mysqlx_Expr_Array_descriptor, new String[]{"Value"}
+   );
+   private static FileDescriptor descriptor;
+
+   private MysqlxExpr() {
+   }
+
+   public static void registerAllExtensions(ExtensionRegistryLite registry) {
+   }
+
+   public static void registerAllExtensions(ExtensionRegistry registry) {
+      registerAllExtensions((ExtensionRegistryLite)registry);
+   }
+
+   public static FileDescriptor getDescriptor() {
+      return descriptor;
+   }
+
+   static {
+      RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.class.getName());
+      String[] descriptorData = new String[]{
+         "\n\u0011mysqlx_expr.proto\u0012\u000bMysqlx.Expr\u001a\u0016mysqlx_datatypes.proto\"Ä\u0003\n\u0004Expr\u0012$\n\u0004type\u0018\u0001 \u0002(\u000e2\u0016.Mysqlx.Expr.Expr.Type\u00121\n\nidentifier\u0018\u0002 \u0001(\u000b2\u001d.Mysqlx.Expr.ColumnIdentifier\u0012\u0010\n\bvariable\u0018\u0003 \u0001(\t\u0012)\n\u0007literal\u0018\u0004 \u0001(\u000b2\u0018.Mysqlx.Datatypes.Scalar\u00120\n\rfunction_call\u0018\u0005 \u0001(\u000b2\u0019.Mysqlx.Expr.FunctionCall\u0012'\n\boperator\u0018\u0006 \u0001(\u000b2\u0015.Mysqlx.Expr.Operator\u0012\u0010\n\bposition\u0018\u0007 \u0001(\r\u0012#\n\u0006object\u0018\b \u0001(\u000b2\u0013.Mysqlx.Expr.Object\u0012!\n\u0005array\u0018\t \u0001(\u000b2\u0012.Mysqlx.Expr.Array\"q\n\u0004Type\u0012\t\n\u0005IDENT\u0010\u0001\u0012\u000b\n\u0007LITERAL\u0010\u0002\u0012\f\n\bVARIABLE\u0010\u0003\u0012\r\n\tFUNC_CALL\u0010\u0004\u0012\f\n\bOPERATOR\u0010\u0005\u0012\u000f\n\u000bPLACEHOLDER\u0010\u0006\u0012\n\n\u0006OBJECT\u0010\u0007\u0012\t\n\u0005ARRAY\u0010\b\"/\n\nIdentifier\u0012\f\n\u0004name\u0018\u0001 \u0002(\t\u0012\u0013\n\u000bschema_name\u0018\u0002 \u0001(\t\"Ë\u0001\n\u0010DocumentPathItem\u00120\n\u0004type\u0018\u0001 \u0002(\u000e2\".Mysqlx.Expr.DocumentPathItem.Type\u0012\r\n\u0005value\u0018\u0002 \u0001(\t\u0012\r\n\u0005index\u0018\u0003 \u0001(\r\"g\n\u0004Type\u0012\n\n\u0006MEMBER\u0010\u0001\u0012\u0013\n\u000fMEMBER_ASTERISK\u0010\u0002\u0012\u000f\n\u000bARRAY_INDEX\u0010\u0003\u0012\u0018\n\u0014ARRAY_INDEX_ASTERISK\u0010\u0004\u0012\u0013\n\u000fDOUBLE_ASTERISK\u0010\u0005\"\u007f\n\u0010ColumnIdentifier\u00124\n\rdocument_path\u0018\u0001 \u0003(\u000b2\u001d.Mysqlx.Expr.DocumentPathItem\u0012\f\n\u0004name\u0018\u0002 \u0001(\t\u0012\u0012\n\ntable_name\u0018\u0003 \u0001(\t\u0012\u0013\n\u000bschema_name\u0018\u0004 \u0001(\t\"W\n\fFunctionCall\u0012%\n\u0004name\u0018\u0001 \u0002(\u000b2\u0017.Mysqlx.Expr.Identifier\u0012 \n\u0005param\u0018\u0002 \u0003(\u000b2\u0011.Mysqlx.Expr.Expr\":\n\bOperator\u0012\f\n\u0004name\u0018\u0001 \u0002(\t\u0012 \n\u0005param\u0018\u0002 \u0003(\u000b2\u0011.Mysqlx.Expr.Expr\"t\n\u0006Object\u0012,\n\u0003fld\u0018\u0001 \u0003(\u000b2\u001f.Mysqlx.Expr.Object.ObjectField\u001a<\n\u000bObjectField\u0012\u000b\n\u0003key\u0018\u0001 \u0002(\t\u0012 \n\u0005value\u0018\u0002 \u0002(\u000b2\u0011.Mysqlx.Expr.Expr\")\n\u0005Array\u0012 \n\u0005value\u0018\u0001 \u0003(\u000b2\u0011.Mysqlx.Expr.ExprB\u0019\n\u0017com.mysql.cj.x.protobuf"
+      };
+      descriptor = FileDescriptor.internalBuildGeneratedFileFrom(descriptorData, new FileDescriptor[]{MysqlxDatatypes.getDescriptor()});
+      descriptor.resolveAllFeaturesImmutable();
+      MysqlxDatatypes.getDescriptor();
+   }
+
+   public static final class Array extends GeneratedMessage implements MysqlxExpr.ArrayOrBuilder {
+      private static final long serialVersionUID = 0L;
+      public static final int VALUE_FIELD_NUMBER = 1;
+      private List<MysqlxExpr.Expr> value_;
+      private byte memoizedIsInitialized = -1;
+      private static final MysqlxExpr.Array DEFAULT_INSTANCE = new MysqlxExpr.Array();
+      private static final Parser<MysqlxExpr.Array> PARSER = new AbstractParser<MysqlxExpr.Array>() {
+         public MysqlxExpr.Array parsePartialFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            MysqlxExpr.Array.Builder builder = MysqlxExpr.Array.newBuilder();
+
+            try {
+               builder.mergeFrom(input, extensionRegistry);
+            } catch (InvalidProtocolBufferException var5) {
+               throw var5.setUnfinishedMessage(builder.buildPartial());
+            } catch (UninitializedMessageException var6) {
+               throw var6.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (IOException var7) {
+               throw new InvalidProtocolBufferException(var7).setUnfinishedMessage(builder.buildPartial());
+            }
+
+            return builder.buildPartial();
+         }
+      };
+
+      private Array(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+         super(builder);
+      }
+
+      private Array() {
+         this.value_ = Collections.emptyList();
+      }
+
+      public static final Descriptor getDescriptor() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_Array_descriptor;
+      }
+
+      protected FieldAccessorTable internalGetFieldAccessorTable() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_Array_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(MysqlxExpr.Array.class, MysqlxExpr.Array.Builder.class);
+      }
+
+      @Override
+      public List<MysqlxExpr.Expr> getValueList() {
+         return this.value_;
+      }
+
+      @Override
+      public List<? extends MysqlxExpr.ExprOrBuilder> getValueOrBuilderList() {
+         return this.value_;
+      }
+
+      @Override
+      public int getValueCount() {
+         return this.value_.size();
+      }
+
+      @Override
+      public MysqlxExpr.Expr getValue(int index) {
+         return this.value_.get(index);
+      }
+
+      @Override
+      public MysqlxExpr.ExprOrBuilder getValueOrBuilder(int index) {
+         return this.value_.get(index);
+      }
+
+      public final boolean isInitialized() {
+         byte isInitialized = this.memoizedIsInitialized;
+         if (isInitialized == 1) {
+            return true;
+         } else if (isInitialized == 0) {
+            return false;
+         } else {
+            for (int i = 0; i < this.getValueCount(); i++) {
+               if (!this.getValue(i).isInitialized()) {
+                  this.memoizedIsInitialized = 0;
+                  return false;
+               }
+            }
+
+            this.memoizedIsInitialized = 1;
+            return true;
+         }
+      }
+
+      public void writeTo(CodedOutputStream output) throws IOException {
+         for (int i = 0; i < this.value_.size(); i++) {
+            output.writeMessage(1, (MessageLite)this.value_.get(i));
+         }
+
+         this.getUnknownFields().writeTo(output);
+      }
+
+      public int getSerializedSize() {
+         int size = this.memoizedSize;
+         if (size != -1) {
+            return size;
+         } else {
+            size = 0;
+
+            for (int i = 0; i < this.value_.size(); i++) {
+               size += CodedOutputStream.computeMessageSize(1, (MessageLite)this.value_.get(i));
+            }
+
+            size += this.getUnknownFields().getSerializedSize();
+            this.memoizedSize = size;
+            return size;
+         }
+      }
+
+      @Override
+      public boolean equals(java.lang.Object obj) {
+         if (obj == this) {
+            return true;
+         } else if (!(obj instanceof MysqlxExpr.Array)) {
+            return super.equals(obj);
+         } else {
+            MysqlxExpr.Array other = (MysqlxExpr.Array)obj;
+            return !this.getValueList().equals(other.getValueList()) ? false : this.getUnknownFields().equals(other.getUnknownFields());
+         }
+      }
+
+      @Override
+      public int hashCode() {
+         if (this.memoizedHashCode != 0) {
+            return this.memoizedHashCode;
+         } else {
+            int hash = 41;
+            hash = 19 * hash + getDescriptor().hashCode();
+            if (this.getValueCount() > 0) {
+               hash = 37 * hash + 1;
+               hash = 53 * hash + this.getValueList().hashCode();
+            }
+
+            hash = 29 * hash + this.getUnknownFields().hashCode();
+            this.memoizedHashCode = hash;
+            return hash;
+         }
+      }
+
+      public static MysqlxExpr.Array parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Array)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Array parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Array)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Array parseFrom(ByteString data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Array)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Array parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Array)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Array parseFrom(byte[] data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Array)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Array parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Array)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Array parseFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.Array)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Array parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Array)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Array parseDelimitedFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.Array)GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Array parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Array)GeneratedMessage.parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Array parseFrom(CodedInputStream input) throws IOException {
+         return (MysqlxExpr.Array)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Array parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Array)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public MysqlxExpr.Array.Builder newBuilderForType() {
+         return newBuilder();
+      }
+
+      public static MysqlxExpr.Array.Builder newBuilder() {
+         return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static MysqlxExpr.Array.Builder newBuilder(MysqlxExpr.Array prototype) {
+         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      public MysqlxExpr.Array.Builder toBuilder() {
+         return this == DEFAULT_INSTANCE ? new MysqlxExpr.Array.Builder() : new MysqlxExpr.Array.Builder().mergeFrom(this);
+      }
+
+      protected MysqlxExpr.Array.Builder newBuilderForType(BuilderParent parent) {
+         return new MysqlxExpr.Array.Builder(parent);
+      }
+
+      public static MysqlxExpr.Array getDefaultInstance() {
+         return DEFAULT_INSTANCE;
+      }
+
+      public static Parser<MysqlxExpr.Array> parser() {
+         return PARSER;
+      }
+
+      public Parser<MysqlxExpr.Array> getParserForType() {
+         return PARSER;
+      }
+
+      public MysqlxExpr.Array getDefaultInstanceForType() {
+         return DEFAULT_INSTANCE;
+      }
+
+      static {
+         RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.Array.class.getName());
+      }
+
+      public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<MysqlxExpr.Array.Builder> implements MysqlxExpr.ArrayOrBuilder {
+         private int bitField0_;
+         private List<MysqlxExpr.Expr> value_ = Collections.emptyList();
+         private RepeatedFieldBuilder<MysqlxExpr.Expr, MysqlxExpr.Expr.Builder, MysqlxExpr.ExprOrBuilder> valueBuilder_;
+
+         public static final Descriptor getDescriptor() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Array_descriptor;
+         }
+
+         protected FieldAccessorTable internalGetFieldAccessorTable() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Array_fieldAccessorTable
+               .ensureFieldAccessorsInitialized(MysqlxExpr.Array.class, MysqlxExpr.Array.Builder.class);
+         }
+
+         private Builder() {
+         }
+
+         private Builder(BuilderParent parent) {
+            super(parent);
+         }
+
+         public MysqlxExpr.Array.Builder clear() {
+            super.clear();
+            this.bitField0_ = 0;
+            if (this.valueBuilder_ == null) {
+               this.value_ = Collections.emptyList();
+            } else {
+               this.value_ = null;
+               this.valueBuilder_.clear();
+            }
+
+            this.bitField0_ &= -2;
+            return this;
+         }
+
+         public Descriptor getDescriptorForType() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Array_descriptor;
+         }
+
+         public MysqlxExpr.Array getDefaultInstanceForType() {
+            return MysqlxExpr.Array.getDefaultInstance();
+         }
+
+         public MysqlxExpr.Array build() {
+            MysqlxExpr.Array result = this.buildPartial();
+            if (!result.isInitialized()) {
+               throw newUninitializedMessageException(result);
+            } else {
+               return result;
+            }
+         }
+
+         public MysqlxExpr.Array buildPartial() {
+            MysqlxExpr.Array result = new MysqlxExpr.Array(this);
+            this.buildPartialRepeatedFields(result);
+            if (this.bitField0_ != 0) {
+               this.buildPartial0(result);
+            }
+
+            this.onBuilt();
+            return result;
+         }
+
+         private void buildPartialRepeatedFields(MysqlxExpr.Array result) {
+            if (this.valueBuilder_ == null) {
+               if ((this.bitField0_ & 1) != 0) {
+                  this.value_ = Collections.unmodifiableList(this.value_);
+                  this.bitField0_ &= -2;
+               }
+
+               result.value_ = this.value_;
+            } else {
+               result.value_ = this.valueBuilder_.build();
+            }
+         }
+
+         private void buildPartial0(MysqlxExpr.Array result) {
+            int from_bitField0_ = this.bitField0_;
+         }
+
+         public MysqlxExpr.Array.Builder mergeFrom(Message other) {
+            if (other instanceof MysqlxExpr.Array) {
+               return this.mergeFrom((MysqlxExpr.Array)other);
+            } else {
+               super.mergeFrom(other);
+               return this;
+            }
+         }
+
+         public MysqlxExpr.Array.Builder mergeFrom(MysqlxExpr.Array other) {
+            if (other == MysqlxExpr.Array.getDefaultInstance()) {
+               return this;
+            } else {
+               if (this.valueBuilder_ == null) {
+                  if (!other.value_.isEmpty()) {
+                     if (this.value_.isEmpty()) {
+                        this.value_ = other.value_;
+                        this.bitField0_ &= -2;
+                     } else {
+                        this.ensureValueIsMutable();
+                        this.value_.addAll(other.value_);
+                     }
+
+                     this.onChanged();
+                  }
+               } else if (!other.value_.isEmpty()) {
+                  if (this.valueBuilder_.isEmpty()) {
+                     this.valueBuilder_.dispose();
+                     this.valueBuilder_ = null;
+                     this.value_ = other.value_;
+                     this.bitField0_ &= -2;
+                     this.valueBuilder_ = MysqlxExpr.Array.alwaysUseFieldBuilders ? this.getValueFieldBuilder() : null;
+                  } else {
+                     this.valueBuilder_.addAllMessages(other.value_);
+                  }
+               }
+
+               this.mergeUnknownFields(other.getUnknownFields());
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public final boolean isInitialized() {
+            for (int i = 0; i < this.getValueCount(); i++) {
+               if (!this.getValue(i).isInitialized()) {
+                  return false;
+               }
+            }
+
+            return true;
+         }
+
+         public MysqlxExpr.Array.Builder mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            if (extensionRegistry == null) {
+               throw new NullPointerException();
+            } else {
+               try {
+                  boolean done = false;
+
+                  while (!done) {
+                     int tag = input.readTag();
+                     switch (tag) {
+                        case 0:
+                           done = true;
+                           break;
+                        case 10:
+                           MysqlxExpr.Expr m = (MysqlxExpr.Expr)input.readMessage(MysqlxExpr.Expr.parser(), extensionRegistry);
+                           if (this.valueBuilder_ == null) {
+                              this.ensureValueIsMutable();
+                              this.value_.add(m);
+                           } else {
+                              this.valueBuilder_.addMessage(m);
+                           }
+                           break;
+                        default:
+                           if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                              done = true;
+                           }
+                     }
+                  }
+               } catch (InvalidProtocolBufferException var9) {
+                  throw var9.unwrapIOException();
+               } finally {
+                  this.onChanged();
+               }
+
+               return this;
+            }
+         }
+
+         private void ensureValueIsMutable() {
+            if ((this.bitField0_ & 1) == 0) {
+               this.value_ = new ArrayList<>(this.value_);
+               this.bitField0_ |= 1;
+            }
+         }
+
+         @Override
+         public List<MysqlxExpr.Expr> getValueList() {
+            return this.valueBuilder_ == null ? Collections.unmodifiableList(this.value_) : this.valueBuilder_.getMessageList();
+         }
+
+         @Override
+         public int getValueCount() {
+            return this.valueBuilder_ == null ? this.value_.size() : this.valueBuilder_.getCount();
+         }
+
+         @Override
+         public MysqlxExpr.Expr getValue(int index) {
+            return this.valueBuilder_ == null ? this.value_.get(index) : (MysqlxExpr.Expr)this.valueBuilder_.getMessage(index);
+         }
+
+         public MysqlxExpr.Array.Builder setValue(int index, MysqlxExpr.Expr value) {
+            if (this.valueBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureValueIsMutable();
+               this.value_.set(index, value);
+               this.onChanged();
+            } else {
+               this.valueBuilder_.setMessage(index, value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Array.Builder setValue(int index, MysqlxExpr.Expr.Builder builderForValue) {
+            if (this.valueBuilder_ == null) {
+               this.ensureValueIsMutable();
+               this.value_.set(index, builderForValue.build());
+               this.onChanged();
+            } else {
+               this.valueBuilder_.setMessage(index, builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Array.Builder addValue(MysqlxExpr.Expr value) {
+            if (this.valueBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureValueIsMutable();
+               this.value_.add(value);
+               this.onChanged();
+            } else {
+               this.valueBuilder_.addMessage(value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Array.Builder addValue(int index, MysqlxExpr.Expr value) {
+            if (this.valueBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureValueIsMutable();
+               this.value_.add(index, value);
+               this.onChanged();
+            } else {
+               this.valueBuilder_.addMessage(index, value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Array.Builder addValue(MysqlxExpr.Expr.Builder builderForValue) {
+            if (this.valueBuilder_ == null) {
+               this.ensureValueIsMutable();
+               this.value_.add(builderForValue.build());
+               this.onChanged();
+            } else {
+               this.valueBuilder_.addMessage(builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Array.Builder addValue(int index, MysqlxExpr.Expr.Builder builderForValue) {
+            if (this.valueBuilder_ == null) {
+               this.ensureValueIsMutable();
+               this.value_.add(index, builderForValue.build());
+               this.onChanged();
+            } else {
+               this.valueBuilder_.addMessage(index, builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Array.Builder addAllValue(Iterable<? extends MysqlxExpr.Expr> values) {
+            if (this.valueBuilder_ == null) {
+               this.ensureValueIsMutable();
+               com.google.protobuf.AbstractMessageLite.Builder.addAll(values, this.value_);
+               this.onChanged();
+            } else {
+               this.valueBuilder_.addAllMessages(values);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Array.Builder clearValue() {
+            if (this.valueBuilder_ == null) {
+               this.value_ = Collections.emptyList();
+               this.bitField0_ &= -2;
+               this.onChanged();
+            } else {
+               this.valueBuilder_.clear();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Array.Builder removeValue(int index) {
+            if (this.valueBuilder_ == null) {
+               this.ensureValueIsMutable();
+               this.value_.remove(index);
+               this.onChanged();
+            } else {
+               this.valueBuilder_.remove(index);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder getValueBuilder(int index) {
+            return (MysqlxExpr.Expr.Builder)this.getValueFieldBuilder().getBuilder(index);
+         }
+
+         @Override
+         public MysqlxExpr.ExprOrBuilder getValueOrBuilder(int index) {
+            return this.valueBuilder_ == null ? this.value_.get(index) : (MysqlxExpr.ExprOrBuilder)this.valueBuilder_.getMessageOrBuilder(index);
+         }
+
+         @Override
+         public List<? extends MysqlxExpr.ExprOrBuilder> getValueOrBuilderList() {
+            return this.valueBuilder_ != null ? this.valueBuilder_.getMessageOrBuilderList() : Collections.unmodifiableList(this.value_);
+         }
+
+         public MysqlxExpr.Expr.Builder addValueBuilder() {
+            return (MysqlxExpr.Expr.Builder)this.getValueFieldBuilder().addBuilder(MysqlxExpr.Expr.getDefaultInstance());
+         }
+
+         public MysqlxExpr.Expr.Builder addValueBuilder(int index) {
+            return (MysqlxExpr.Expr.Builder)this.getValueFieldBuilder().addBuilder(index, MysqlxExpr.Expr.getDefaultInstance());
+         }
+
+         public List<MysqlxExpr.Expr.Builder> getValueBuilderList() {
+            return this.getValueFieldBuilder().getBuilderList();
+         }
+
+         private RepeatedFieldBuilder<MysqlxExpr.Expr, MysqlxExpr.Expr.Builder, MysqlxExpr.ExprOrBuilder> getValueFieldBuilder() {
+            if (this.valueBuilder_ == null) {
+               this.valueBuilder_ = new RepeatedFieldBuilder(this.value_, (this.bitField0_ & 1) != 0, this.getParentForChildren(), this.isClean());
+               this.value_ = null;
+            }
+
+            return this.valueBuilder_;
+         }
+      }
+   }
+
+   public interface ArrayOrBuilder extends MessageOrBuilder {
+      List<MysqlxExpr.Expr> getValueList();
+
+      MysqlxExpr.Expr getValue(int var1);
+
+      int getValueCount();
+
+      List<? extends MysqlxExpr.ExprOrBuilder> getValueOrBuilderList();
+
+      MysqlxExpr.ExprOrBuilder getValueOrBuilder(int var1);
+   }
+
+   public static final class ColumnIdentifier extends GeneratedMessage implements MysqlxExpr.ColumnIdentifierOrBuilder {
+      private static final long serialVersionUID = 0L;
+      private int bitField0_;
+      public static final int DOCUMENT_PATH_FIELD_NUMBER = 1;
+      private List<MysqlxExpr.DocumentPathItem> documentPath_;
+      public static final int NAME_FIELD_NUMBER = 2;
+      private volatile java.lang.Object name_ = "";
+      public static final int TABLE_NAME_FIELD_NUMBER = 3;
+      private volatile java.lang.Object tableName_ = "";
+      public static final int SCHEMA_NAME_FIELD_NUMBER = 4;
+      private volatile java.lang.Object schemaName_ = "";
+      private byte memoizedIsInitialized = -1;
+      private static final MysqlxExpr.ColumnIdentifier DEFAULT_INSTANCE = new MysqlxExpr.ColumnIdentifier();
+      private static final Parser<MysqlxExpr.ColumnIdentifier> PARSER = new AbstractParser<MysqlxExpr.ColumnIdentifier>() {
+         public MysqlxExpr.ColumnIdentifier parsePartialFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            MysqlxExpr.ColumnIdentifier.Builder builder = MysqlxExpr.ColumnIdentifier.newBuilder();
+
+            try {
+               builder.mergeFrom(input, extensionRegistry);
+            } catch (InvalidProtocolBufferException var5) {
+               throw var5.setUnfinishedMessage(builder.buildPartial());
+            } catch (UninitializedMessageException var6) {
+               throw var6.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (IOException var7) {
+               throw new InvalidProtocolBufferException(var7).setUnfinishedMessage(builder.buildPartial());
+            }
+
+            return builder.buildPartial();
+         }
+      };
+
+      private ColumnIdentifier(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+         super(builder);
+      }
+
+      private ColumnIdentifier() {
+         this.documentPath_ = Collections.emptyList();
+         this.name_ = "";
+         this.tableName_ = "";
+         this.schemaName_ = "";
+      }
+
+      public static final Descriptor getDescriptor() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_ColumnIdentifier_descriptor;
+      }
+
+      protected FieldAccessorTable internalGetFieldAccessorTable() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_ColumnIdentifier_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(MysqlxExpr.ColumnIdentifier.class, MysqlxExpr.ColumnIdentifier.Builder.class);
+      }
+
+      @Override
+      public List<MysqlxExpr.DocumentPathItem> getDocumentPathList() {
+         return this.documentPath_;
+      }
+
+      @Override
+      public List<? extends MysqlxExpr.DocumentPathItemOrBuilder> getDocumentPathOrBuilderList() {
+         return this.documentPath_;
+      }
+
+      @Override
+      public int getDocumentPathCount() {
+         return this.documentPath_.size();
+      }
+
+      @Override
+      public MysqlxExpr.DocumentPathItem getDocumentPath(int index) {
+         return this.documentPath_.get(index);
+      }
+
+      @Override
+      public MysqlxExpr.DocumentPathItemOrBuilder getDocumentPathOrBuilder(int index) {
+         return this.documentPath_.get(index);
+      }
+
+      @Override
+      public boolean hasName() {
+         return (this.bitField0_ & 1) != 0;
+      }
+
+      @Override
+      public String getName() {
+         java.lang.Object ref = this.name_;
+         if (ref instanceof String) {
+            return (String)ref;
+         } else {
+            ByteString bs = (ByteString)ref;
+            String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+               this.name_ = s;
+            }
+
+            return s;
+         }
+      }
+
+      @Override
+      public ByteString getNameBytes() {
+         java.lang.Object ref = this.name_;
+         if (ref instanceof String) {
+            ByteString b = ByteString.copyFromUtf8((String)ref);
+            this.name_ = b;
+            return b;
+         } else {
+            return (ByteString)ref;
+         }
+      }
+
+      @Override
+      public boolean hasTableName() {
+         return (this.bitField0_ & 2) != 0;
+      }
+
+      @Override
+      public String getTableName() {
+         java.lang.Object ref = this.tableName_;
+         if (ref instanceof String) {
+            return (String)ref;
+         } else {
+            ByteString bs = (ByteString)ref;
+            String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+               this.tableName_ = s;
+            }
+
+            return s;
+         }
+      }
+
+      @Override
+      public ByteString getTableNameBytes() {
+         java.lang.Object ref = this.tableName_;
+         if (ref instanceof String) {
+            ByteString b = ByteString.copyFromUtf8((String)ref);
+            this.tableName_ = b;
+            return b;
+         } else {
+            return (ByteString)ref;
+         }
+      }
+
+      @Override
+      public boolean hasSchemaName() {
+         return (this.bitField0_ & 4) != 0;
+      }
+
+      @Override
+      public String getSchemaName() {
+         java.lang.Object ref = this.schemaName_;
+         if (ref instanceof String) {
+            return (String)ref;
+         } else {
+            ByteString bs = (ByteString)ref;
+            String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+               this.schemaName_ = s;
+            }
+
+            return s;
+         }
+      }
+
+      @Override
+      public ByteString getSchemaNameBytes() {
+         java.lang.Object ref = this.schemaName_;
+         if (ref instanceof String) {
+            ByteString b = ByteString.copyFromUtf8((String)ref);
+            this.schemaName_ = b;
+            return b;
+         } else {
+            return (ByteString)ref;
+         }
+      }
+
+      public final boolean isInitialized() {
+         byte isInitialized = this.memoizedIsInitialized;
+         if (isInitialized == 1) {
+            return true;
+         } else if (isInitialized == 0) {
+            return false;
+         } else {
+            for (int i = 0; i < this.getDocumentPathCount(); i++) {
+               if (!this.getDocumentPath(i).isInitialized()) {
+                  this.memoizedIsInitialized = 0;
+                  return false;
+               }
+            }
+
+            this.memoizedIsInitialized = 1;
+            return true;
+         }
+      }
+
+      public void writeTo(CodedOutputStream output) throws IOException {
+         for (int i = 0; i < this.documentPath_.size(); i++) {
+            output.writeMessage(1, (MessageLite)this.documentPath_.get(i));
+         }
+
+         if ((this.bitField0_ & 1) != 0) {
+            GeneratedMessage.writeString(output, 2, this.name_);
+         }
+
+         if ((this.bitField0_ & 2) != 0) {
+            GeneratedMessage.writeString(output, 3, this.tableName_);
+         }
+
+         if ((this.bitField0_ & 4) != 0) {
+            GeneratedMessage.writeString(output, 4, this.schemaName_);
+         }
+
+         this.getUnknownFields().writeTo(output);
+      }
+
+      public int getSerializedSize() {
+         int size = this.memoizedSize;
+         if (size != -1) {
+            return size;
+         } else {
+            size = 0;
+
+            for (int i = 0; i < this.documentPath_.size(); i++) {
+               size += CodedOutputStream.computeMessageSize(1, (MessageLite)this.documentPath_.get(i));
+            }
+
+            if ((this.bitField0_ & 1) != 0) {
+               size += GeneratedMessage.computeStringSize(2, this.name_);
+            }
+
+            if ((this.bitField0_ & 2) != 0) {
+               size += GeneratedMessage.computeStringSize(3, this.tableName_);
+            }
+
+            if ((this.bitField0_ & 4) != 0) {
+               size += GeneratedMessage.computeStringSize(4, this.schemaName_);
+            }
+
+            size += this.getUnknownFields().getSerializedSize();
+            this.memoizedSize = size;
+            return size;
+         }
+      }
+
+      @Override
+      public boolean equals(java.lang.Object obj) {
+         if (obj == this) {
+            return true;
+         } else if (!(obj instanceof MysqlxExpr.ColumnIdentifier)) {
+            return super.equals(obj);
+         } else {
+            MysqlxExpr.ColumnIdentifier other = (MysqlxExpr.ColumnIdentifier)obj;
+            if (!this.getDocumentPathList().equals(other.getDocumentPathList())) {
+               return false;
+            } else if (this.hasName() != other.hasName()) {
+               return false;
+            } else if (this.hasName() && !this.getName().equals(other.getName())) {
+               return false;
+            } else if (this.hasTableName() != other.hasTableName()) {
+               return false;
+            } else if (this.hasTableName() && !this.getTableName().equals(other.getTableName())) {
+               return false;
+            } else if (this.hasSchemaName() != other.hasSchemaName()) {
+               return false;
+            } else {
+               return this.hasSchemaName() && !this.getSchemaName().equals(other.getSchemaName())
+                  ? false
+                  : this.getUnknownFields().equals(other.getUnknownFields());
+            }
+         }
+      }
+
+      @Override
+      public int hashCode() {
+         if (this.memoizedHashCode != 0) {
+            return this.memoizedHashCode;
+         } else {
+            int hash = 41;
+            hash = 19 * hash + getDescriptor().hashCode();
+            if (this.getDocumentPathCount() > 0) {
+               hash = 37 * hash + 1;
+               hash = 53 * hash + this.getDocumentPathList().hashCode();
+            }
+
+            if (this.hasName()) {
+               hash = 37 * hash + 2;
+               hash = 53 * hash + this.getName().hashCode();
+            }
+
+            if (this.hasTableName()) {
+               hash = 37 * hash + 3;
+               hash = 53 * hash + this.getTableName().hashCode();
+            }
+
+            if (this.hasSchemaName()) {
+               hash = 37 * hash + 4;
+               hash = 53 * hash + this.getSchemaName().hashCode();
+            }
+
+            hash = 29 * hash + this.getUnknownFields().hashCode();
+            this.memoizedHashCode = hash;
+            return hash;
+         }
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.ColumnIdentifier)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.ColumnIdentifier)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseFrom(ByteString data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.ColumnIdentifier)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.ColumnIdentifier)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseFrom(byte[] data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.ColumnIdentifier)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.ColumnIdentifier)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.ColumnIdentifier)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.ColumnIdentifier)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseDelimitedFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.ColumnIdentifier)GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.ColumnIdentifier)GeneratedMessage.parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseFrom(CodedInputStream input) throws IOException {
+         return (MysqlxExpr.ColumnIdentifier)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.ColumnIdentifier)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public MysqlxExpr.ColumnIdentifier.Builder newBuilderForType() {
+         return newBuilder();
+      }
+
+      public static MysqlxExpr.ColumnIdentifier.Builder newBuilder() {
+         return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static MysqlxExpr.ColumnIdentifier.Builder newBuilder(MysqlxExpr.ColumnIdentifier prototype) {
+         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      public MysqlxExpr.ColumnIdentifier.Builder toBuilder() {
+         return this == DEFAULT_INSTANCE ? new MysqlxExpr.ColumnIdentifier.Builder() : new MysqlxExpr.ColumnIdentifier.Builder().mergeFrom(this);
+      }
+
+      protected MysqlxExpr.ColumnIdentifier.Builder newBuilderForType(BuilderParent parent) {
+         return new MysqlxExpr.ColumnIdentifier.Builder(parent);
+      }
+
+      public static MysqlxExpr.ColumnIdentifier getDefaultInstance() {
+         return DEFAULT_INSTANCE;
+      }
+
+      public static Parser<MysqlxExpr.ColumnIdentifier> parser() {
+         return PARSER;
+      }
+
+      public Parser<MysqlxExpr.ColumnIdentifier> getParserForType() {
+         return PARSER;
+      }
+
+      public MysqlxExpr.ColumnIdentifier getDefaultInstanceForType() {
+         return DEFAULT_INSTANCE;
+      }
+
+      static {
+         RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.ColumnIdentifier.class.getName());
+      }
+
+      public static final class Builder
+         extends com.google.protobuf.GeneratedMessage.Builder<MysqlxExpr.ColumnIdentifier.Builder>
+         implements MysqlxExpr.ColumnIdentifierOrBuilder {
+         private int bitField0_;
+         private List<MysqlxExpr.DocumentPathItem> documentPath_ = Collections.emptyList();
+         private RepeatedFieldBuilder<MysqlxExpr.DocumentPathItem, MysqlxExpr.DocumentPathItem.Builder, MysqlxExpr.DocumentPathItemOrBuilder> documentPathBuilder_;
+         private java.lang.Object name_ = "";
+         private java.lang.Object tableName_ = "";
+         private java.lang.Object schemaName_ = "";
+
+         public static final Descriptor getDescriptor() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_ColumnIdentifier_descriptor;
+         }
+
+         protected FieldAccessorTable internalGetFieldAccessorTable() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_ColumnIdentifier_fieldAccessorTable
+               .ensureFieldAccessorsInitialized(MysqlxExpr.ColumnIdentifier.class, MysqlxExpr.ColumnIdentifier.Builder.class);
+         }
+
+         private Builder() {
+         }
+
+         private Builder(BuilderParent parent) {
+            super(parent);
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder clear() {
+            super.clear();
+            this.bitField0_ = 0;
+            if (this.documentPathBuilder_ == null) {
+               this.documentPath_ = Collections.emptyList();
+            } else {
+               this.documentPath_ = null;
+               this.documentPathBuilder_.clear();
+            }
+
+            this.bitField0_ &= -2;
+            this.name_ = "";
+            this.tableName_ = "";
+            this.schemaName_ = "";
+            return this;
+         }
+
+         public Descriptor getDescriptorForType() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_ColumnIdentifier_descriptor;
+         }
+
+         public MysqlxExpr.ColumnIdentifier getDefaultInstanceForType() {
+            return MysqlxExpr.ColumnIdentifier.getDefaultInstance();
+         }
+
+         public MysqlxExpr.ColumnIdentifier build() {
+            MysqlxExpr.ColumnIdentifier result = this.buildPartial();
+            if (!result.isInitialized()) {
+               throw newUninitializedMessageException(result);
+            } else {
+               return result;
+            }
+         }
+
+         public MysqlxExpr.ColumnIdentifier buildPartial() {
+            MysqlxExpr.ColumnIdentifier result = new MysqlxExpr.ColumnIdentifier(this);
+            this.buildPartialRepeatedFields(result);
+            if (this.bitField0_ != 0) {
+               this.buildPartial0(result);
+            }
+
+            this.onBuilt();
+            return result;
+         }
+
+         private void buildPartialRepeatedFields(MysqlxExpr.ColumnIdentifier result) {
+            if (this.documentPathBuilder_ == null) {
+               if ((this.bitField0_ & 1) != 0) {
+                  this.documentPath_ = Collections.unmodifiableList(this.documentPath_);
+                  this.bitField0_ &= -2;
+               }
+
+               result.documentPath_ = this.documentPath_;
+            } else {
+               result.documentPath_ = this.documentPathBuilder_.build();
+            }
+         }
+
+         private void buildPartial0(MysqlxExpr.ColumnIdentifier result) {
+            int from_bitField0_ = this.bitField0_;
+            int to_bitField0_ = 0;
+            if ((from_bitField0_ & 2) != 0) {
+               result.name_ = this.name_;
+               to_bitField0_ |= 1;
+            }
+
+            if ((from_bitField0_ & 4) != 0) {
+               result.tableName_ = this.tableName_;
+               to_bitField0_ |= 2;
+            }
+
+            if ((from_bitField0_ & 8) != 0) {
+               result.schemaName_ = this.schemaName_;
+               to_bitField0_ |= 4;
+            }
+
+            result.bitField0_ = result.bitField0_ | to_bitField0_;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder mergeFrom(Message other) {
+            if (other instanceof MysqlxExpr.ColumnIdentifier) {
+               return this.mergeFrom((MysqlxExpr.ColumnIdentifier)other);
+            } else {
+               super.mergeFrom(other);
+               return this;
+            }
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder mergeFrom(MysqlxExpr.ColumnIdentifier other) {
+            if (other == MysqlxExpr.ColumnIdentifier.getDefaultInstance()) {
+               return this;
+            } else {
+               if (this.documentPathBuilder_ == null) {
+                  if (!other.documentPath_.isEmpty()) {
+                     if (this.documentPath_.isEmpty()) {
+                        this.documentPath_ = other.documentPath_;
+                        this.bitField0_ &= -2;
+                     } else {
+                        this.ensureDocumentPathIsMutable();
+                        this.documentPath_.addAll(other.documentPath_);
+                     }
+
+                     this.onChanged();
+                  }
+               } else if (!other.documentPath_.isEmpty()) {
+                  if (this.documentPathBuilder_.isEmpty()) {
+                     this.documentPathBuilder_.dispose();
+                     this.documentPathBuilder_ = null;
+                     this.documentPath_ = other.documentPath_;
+                     this.bitField0_ &= -2;
+                     this.documentPathBuilder_ = MysqlxExpr.ColumnIdentifier.alwaysUseFieldBuilders ? this.getDocumentPathFieldBuilder() : null;
+                  } else {
+                     this.documentPathBuilder_.addAllMessages(other.documentPath_);
+                  }
+               }
+
+               if (other.hasName()) {
+                  this.name_ = other.name_;
+                  this.bitField0_ |= 2;
+                  this.onChanged();
+               }
+
+               if (other.hasTableName()) {
+                  this.tableName_ = other.tableName_;
+                  this.bitField0_ |= 4;
+                  this.onChanged();
+               }
+
+               if (other.hasSchemaName()) {
+                  this.schemaName_ = other.schemaName_;
+                  this.bitField0_ |= 8;
+                  this.onChanged();
+               }
+
+               this.mergeUnknownFields(other.getUnknownFields());
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public final boolean isInitialized() {
+            for (int i = 0; i < this.getDocumentPathCount(); i++) {
+               if (!this.getDocumentPath(i).isInitialized()) {
+                  return false;
+               }
+            }
+
+            return true;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            if (extensionRegistry == null) {
+               throw new NullPointerException();
+            } else {
+               try {
+                  boolean done = false;
+
+                  while (!done) {
+                     int tag = input.readTag();
+                     switch (tag) {
+                        case 0:
+                           done = true;
+                           break;
+                        case 10:
+                           MysqlxExpr.DocumentPathItem m = (MysqlxExpr.DocumentPathItem)input.readMessage(
+                              MysqlxExpr.DocumentPathItem.parser(), extensionRegistry
+                           );
+                           if (this.documentPathBuilder_ == null) {
+                              this.ensureDocumentPathIsMutable();
+                              this.documentPath_.add(m);
+                           } else {
+                              this.documentPathBuilder_.addMessage(m);
+                           }
+                           break;
+                        case 18:
+                           this.name_ = input.readBytes();
+                           this.bitField0_ |= 2;
+                           break;
+                        case 26:
+                           this.tableName_ = input.readBytes();
+                           this.bitField0_ |= 4;
+                           break;
+                        case 34:
+                           this.schemaName_ = input.readBytes();
+                           this.bitField0_ |= 8;
+                           break;
+                        default:
+                           if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                              done = true;
+                           }
+                     }
+                  }
+               } catch (InvalidProtocolBufferException var9) {
+                  throw var9.unwrapIOException();
+               } finally {
+                  this.onChanged();
+               }
+
+               return this;
+            }
+         }
+
+         private void ensureDocumentPathIsMutable() {
+            if ((this.bitField0_ & 1) == 0) {
+               this.documentPath_ = new ArrayList<>(this.documentPath_);
+               this.bitField0_ |= 1;
+            }
+         }
+
+         @Override
+         public List<MysqlxExpr.DocumentPathItem> getDocumentPathList() {
+            return this.documentPathBuilder_ == null ? Collections.unmodifiableList(this.documentPath_) : this.documentPathBuilder_.getMessageList();
+         }
+
+         @Override
+         public int getDocumentPathCount() {
+            return this.documentPathBuilder_ == null ? this.documentPath_.size() : this.documentPathBuilder_.getCount();
+         }
+
+         @Override
+         public MysqlxExpr.DocumentPathItem getDocumentPath(int index) {
+            return this.documentPathBuilder_ == null ? this.documentPath_.get(index) : (MysqlxExpr.DocumentPathItem)this.documentPathBuilder_.getMessage(index);
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder setDocumentPath(int index, MysqlxExpr.DocumentPathItem value) {
+            if (this.documentPathBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureDocumentPathIsMutable();
+               this.documentPath_.set(index, value);
+               this.onChanged();
+            } else {
+               this.documentPathBuilder_.setMessage(index, value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder setDocumentPath(int index, MysqlxExpr.DocumentPathItem.Builder builderForValue) {
+            if (this.documentPathBuilder_ == null) {
+               this.ensureDocumentPathIsMutable();
+               this.documentPath_.set(index, builderForValue.build());
+               this.onChanged();
+            } else {
+               this.documentPathBuilder_.setMessage(index, builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder addDocumentPath(MysqlxExpr.DocumentPathItem value) {
+            if (this.documentPathBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureDocumentPathIsMutable();
+               this.documentPath_.add(value);
+               this.onChanged();
+            } else {
+               this.documentPathBuilder_.addMessage(value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder addDocumentPath(int index, MysqlxExpr.DocumentPathItem value) {
+            if (this.documentPathBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureDocumentPathIsMutable();
+               this.documentPath_.add(index, value);
+               this.onChanged();
+            } else {
+               this.documentPathBuilder_.addMessage(index, value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder addDocumentPath(MysqlxExpr.DocumentPathItem.Builder builderForValue) {
+            if (this.documentPathBuilder_ == null) {
+               this.ensureDocumentPathIsMutable();
+               this.documentPath_.add(builderForValue.build());
+               this.onChanged();
+            } else {
+               this.documentPathBuilder_.addMessage(builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder addDocumentPath(int index, MysqlxExpr.DocumentPathItem.Builder builderForValue) {
+            if (this.documentPathBuilder_ == null) {
+               this.ensureDocumentPathIsMutable();
+               this.documentPath_.add(index, builderForValue.build());
+               this.onChanged();
+            } else {
+               this.documentPathBuilder_.addMessage(index, builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder addAllDocumentPath(Iterable<? extends MysqlxExpr.DocumentPathItem> values) {
+            if (this.documentPathBuilder_ == null) {
+               this.ensureDocumentPathIsMutable();
+               com.google.protobuf.AbstractMessageLite.Builder.addAll(values, this.documentPath_);
+               this.onChanged();
+            } else {
+               this.documentPathBuilder_.addAllMessages(values);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder clearDocumentPath() {
+            if (this.documentPathBuilder_ == null) {
+               this.documentPath_ = Collections.emptyList();
+               this.bitField0_ &= -2;
+               this.onChanged();
+            } else {
+               this.documentPathBuilder_.clear();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder removeDocumentPath(int index) {
+            if (this.documentPathBuilder_ == null) {
+               this.ensureDocumentPathIsMutable();
+               this.documentPath_.remove(index);
+               this.onChanged();
+            } else {
+               this.documentPathBuilder_.remove(index);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder getDocumentPathBuilder(int index) {
+            return (MysqlxExpr.DocumentPathItem.Builder)this.getDocumentPathFieldBuilder().getBuilder(index);
+         }
+
+         @Override
+         public MysqlxExpr.DocumentPathItemOrBuilder getDocumentPathOrBuilder(int index) {
+            return this.documentPathBuilder_ == null
+               ? this.documentPath_.get(index)
+               : (MysqlxExpr.DocumentPathItemOrBuilder)this.documentPathBuilder_.getMessageOrBuilder(index);
+         }
+
+         @Override
+         public List<? extends MysqlxExpr.DocumentPathItemOrBuilder> getDocumentPathOrBuilderList() {
+            return this.documentPathBuilder_ != null ? this.documentPathBuilder_.getMessageOrBuilderList() : Collections.unmodifiableList(this.documentPath_);
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder addDocumentPathBuilder() {
+            return (MysqlxExpr.DocumentPathItem.Builder)this.getDocumentPathFieldBuilder().addBuilder(MysqlxExpr.DocumentPathItem.getDefaultInstance());
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder addDocumentPathBuilder(int index) {
+            return (MysqlxExpr.DocumentPathItem.Builder)this.getDocumentPathFieldBuilder().addBuilder(index, MysqlxExpr.DocumentPathItem.getDefaultInstance());
+         }
+
+         public List<MysqlxExpr.DocumentPathItem.Builder> getDocumentPathBuilderList() {
+            return this.getDocumentPathFieldBuilder().getBuilderList();
+         }
+
+         private RepeatedFieldBuilder<MysqlxExpr.DocumentPathItem, MysqlxExpr.DocumentPathItem.Builder, MysqlxExpr.DocumentPathItemOrBuilder> getDocumentPathFieldBuilder() {
+            if (this.documentPathBuilder_ == null) {
+               this.documentPathBuilder_ = new RepeatedFieldBuilder(this.documentPath_, (this.bitField0_ & 1) != 0, this.getParentForChildren(), this.isClean());
+               this.documentPath_ = null;
+            }
+
+            return this.documentPathBuilder_;
+         }
+
+         @Override
+         public boolean hasName() {
+            return (this.bitField0_ & 2) != 0;
+         }
+
+         @Override
+         public String getName() {
+            java.lang.Object ref = this.name_;
+            if (!(ref instanceof String)) {
+               ByteString bs = (ByteString)ref;
+               String s = bs.toStringUtf8();
+               if (bs.isValidUtf8()) {
+                  this.name_ = s;
+               }
+
+               return s;
+            } else {
+               return (String)ref;
+            }
+         }
+
+         @Override
+         public ByteString getNameBytes() {
+            java.lang.Object ref = this.name_;
+            if (ref instanceof String) {
+               ByteString b = ByteString.copyFromUtf8((String)ref);
+               this.name_ = b;
+               return b;
+            } else {
+               return (ByteString)ref;
+            }
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder setName(String value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.name_ = value;
+               this.bitField0_ |= 2;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder clearName() {
+            this.name_ = MysqlxExpr.ColumnIdentifier.getDefaultInstance().getName();
+            this.bitField0_ &= -3;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder setNameBytes(ByteString value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.name_ = value;
+               this.bitField0_ |= 2;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         @Override
+         public boolean hasTableName() {
+            return (this.bitField0_ & 4) != 0;
+         }
+
+         @Override
+         public String getTableName() {
+            java.lang.Object ref = this.tableName_;
+            if (!(ref instanceof String)) {
+               ByteString bs = (ByteString)ref;
+               String s = bs.toStringUtf8();
+               if (bs.isValidUtf8()) {
+                  this.tableName_ = s;
+               }
+
+               return s;
+            } else {
+               return (String)ref;
+            }
+         }
+
+         @Override
+         public ByteString getTableNameBytes() {
+            java.lang.Object ref = this.tableName_;
+            if (ref instanceof String) {
+               ByteString b = ByteString.copyFromUtf8((String)ref);
+               this.tableName_ = b;
+               return b;
+            } else {
+               return (ByteString)ref;
+            }
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder setTableName(String value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.tableName_ = value;
+               this.bitField0_ |= 4;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder clearTableName() {
+            this.tableName_ = MysqlxExpr.ColumnIdentifier.getDefaultInstance().getTableName();
+            this.bitField0_ &= -5;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder setTableNameBytes(ByteString value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.tableName_ = value;
+               this.bitField0_ |= 4;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         @Override
+         public boolean hasSchemaName() {
+            return (this.bitField0_ & 8) != 0;
+         }
+
+         @Override
+         public String getSchemaName() {
+            java.lang.Object ref = this.schemaName_;
+            if (!(ref instanceof String)) {
+               ByteString bs = (ByteString)ref;
+               String s = bs.toStringUtf8();
+               if (bs.isValidUtf8()) {
+                  this.schemaName_ = s;
+               }
+
+               return s;
+            } else {
+               return (String)ref;
+            }
+         }
+
+         @Override
+         public ByteString getSchemaNameBytes() {
+            java.lang.Object ref = this.schemaName_;
+            if (ref instanceof String) {
+               ByteString b = ByteString.copyFromUtf8((String)ref);
+               this.schemaName_ = b;
+               return b;
+            } else {
+               return (ByteString)ref;
+            }
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder setSchemaName(String value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.schemaName_ = value;
+               this.bitField0_ |= 8;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder clearSchemaName() {
+            this.schemaName_ = MysqlxExpr.ColumnIdentifier.getDefaultInstance().getSchemaName();
+            this.bitField0_ &= -9;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder setSchemaNameBytes(ByteString value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.schemaName_ = value;
+               this.bitField0_ |= 8;
+               this.onChanged();
+               return this;
+            }
+         }
+      }
+   }
+
+   public interface ColumnIdentifierOrBuilder extends MessageOrBuilder {
+      List<MysqlxExpr.DocumentPathItem> getDocumentPathList();
+
+      MysqlxExpr.DocumentPathItem getDocumentPath(int var1);
+
+      int getDocumentPathCount();
+
+      List<? extends MysqlxExpr.DocumentPathItemOrBuilder> getDocumentPathOrBuilderList();
+
+      MysqlxExpr.DocumentPathItemOrBuilder getDocumentPathOrBuilder(int var1);
+
+      boolean hasName();
+
+      String getName();
+
+      ByteString getNameBytes();
+
+      boolean hasTableName();
+
+      String getTableName();
+
+      ByteString getTableNameBytes();
+
+      boolean hasSchemaName();
+
+      String getSchemaName();
+
+      ByteString getSchemaNameBytes();
+   }
+
+   public static final class DocumentPathItem extends GeneratedMessage implements MysqlxExpr.DocumentPathItemOrBuilder {
+      private static final long serialVersionUID = 0L;
+      private int bitField0_;
+      public static final int TYPE_FIELD_NUMBER = 1;
+      private int type_ = 1;
+      public static final int VALUE_FIELD_NUMBER = 2;
+      private volatile java.lang.Object value_ = "";
+      public static final int INDEX_FIELD_NUMBER = 3;
+      private int index_ = 0;
+      private byte memoizedIsInitialized = -1;
+      private static final MysqlxExpr.DocumentPathItem DEFAULT_INSTANCE = new MysqlxExpr.DocumentPathItem();
+      private static final Parser<MysqlxExpr.DocumentPathItem> PARSER = new AbstractParser<MysqlxExpr.DocumentPathItem>() {
+         public MysqlxExpr.DocumentPathItem parsePartialFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            MysqlxExpr.DocumentPathItem.Builder builder = MysqlxExpr.DocumentPathItem.newBuilder();
+
+            try {
+               builder.mergeFrom(input, extensionRegistry);
+            } catch (InvalidProtocolBufferException var5) {
+               throw var5.setUnfinishedMessage(builder.buildPartial());
+            } catch (UninitializedMessageException var6) {
+               throw var6.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (IOException var7) {
+               throw new InvalidProtocolBufferException(var7).setUnfinishedMessage(builder.buildPartial());
+            }
+
+            return builder.buildPartial();
+         }
+      };
+
+      private DocumentPathItem(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+         super(builder);
+      }
+
+      private DocumentPathItem() {
+         this.type_ = 1;
+         this.value_ = "";
+      }
+
+      public static final Descriptor getDescriptor() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_DocumentPathItem_descriptor;
+      }
+
+      protected FieldAccessorTable internalGetFieldAccessorTable() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_DocumentPathItem_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(MysqlxExpr.DocumentPathItem.class, MysqlxExpr.DocumentPathItem.Builder.class);
+      }
+
+      @Override
+      public boolean hasType() {
+         return (this.bitField0_ & 1) != 0;
+      }
+
+      @Override
+      public MysqlxExpr.DocumentPathItem.Type getType() {
+         MysqlxExpr.DocumentPathItem.Type result = MysqlxExpr.DocumentPathItem.Type.forNumber(this.type_);
+         return result == null ? MysqlxExpr.DocumentPathItem.Type.MEMBER : result;
+      }
+
+      @Override
+      public boolean hasValue() {
+         return (this.bitField0_ & 2) != 0;
+      }
+
+      @Override
+      public String getValue() {
+         java.lang.Object ref = this.value_;
+         if (ref instanceof String) {
+            return (String)ref;
+         } else {
+            ByteString bs = (ByteString)ref;
+            String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+               this.value_ = s;
+            }
+
+            return s;
+         }
+      }
+
+      @Override
+      public ByteString getValueBytes() {
+         java.lang.Object ref = this.value_;
+         if (ref instanceof String) {
+            ByteString b = ByteString.copyFromUtf8((String)ref);
+            this.value_ = b;
+            return b;
+         } else {
+            return (ByteString)ref;
+         }
+      }
+
+      @Override
+      public boolean hasIndex() {
+         return (this.bitField0_ & 4) != 0;
+      }
+
+      @Override
+      public int getIndex() {
+         return this.index_;
+      }
+
+      public final boolean isInitialized() {
+         byte isInitialized = this.memoizedIsInitialized;
+         if (isInitialized == 1) {
+            return true;
+         } else if (isInitialized == 0) {
+            return false;
+         } else if (!this.hasType()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else {
+            this.memoizedIsInitialized = 1;
+            return true;
+         }
+      }
+
+      public void writeTo(CodedOutputStream output) throws IOException {
+         if ((this.bitField0_ & 1) != 0) {
+            output.writeEnum(1, this.type_);
+         }
+
+         if ((this.bitField0_ & 2) != 0) {
+            GeneratedMessage.writeString(output, 2, this.value_);
+         }
+
+         if ((this.bitField0_ & 4) != 0) {
+            output.writeUInt32(3, this.index_);
+         }
+
+         this.getUnknownFields().writeTo(output);
+      }
+
+      public int getSerializedSize() {
+         int size = this.memoizedSize;
+         if (size != -1) {
+            return size;
+         } else {
+            size = 0;
+            if ((this.bitField0_ & 1) != 0) {
+               size += CodedOutputStream.computeEnumSize(1, this.type_);
+            }
+
+            if ((this.bitField0_ & 2) != 0) {
+               size += GeneratedMessage.computeStringSize(2, this.value_);
+            }
+
+            if ((this.bitField0_ & 4) != 0) {
+               size += CodedOutputStream.computeUInt32Size(3, this.index_);
+            }
+
+            size += this.getUnknownFields().getSerializedSize();
+            this.memoizedSize = size;
+            return size;
+         }
+      }
+
+      @Override
+      public boolean equals(java.lang.Object obj) {
+         if (obj == this) {
+            return true;
+         } else if (!(obj instanceof MysqlxExpr.DocumentPathItem)) {
+            return super.equals(obj);
+         } else {
+            MysqlxExpr.DocumentPathItem other = (MysqlxExpr.DocumentPathItem)obj;
+            if (this.hasType() != other.hasType()) {
+               return false;
+            } else if (this.hasType() && this.type_ != other.type_) {
+               return false;
+            } else if (this.hasValue() != other.hasValue()) {
+               return false;
+            } else if (this.hasValue() && !this.getValue().equals(other.getValue())) {
+               return false;
+            } else if (this.hasIndex() != other.hasIndex()) {
+               return false;
+            } else {
+               return this.hasIndex() && this.getIndex() != other.getIndex() ? false : this.getUnknownFields().equals(other.getUnknownFields());
+            }
+         }
+      }
+
+      @Override
+      public int hashCode() {
+         if (this.memoizedHashCode != 0) {
+            return this.memoizedHashCode;
+         } else {
+            int hash = 41;
+            hash = 19 * hash + getDescriptor().hashCode();
+            if (this.hasType()) {
+               hash = 37 * hash + 1;
+               hash = 53 * hash + this.type_;
+            }
+
+            if (this.hasValue()) {
+               hash = 37 * hash + 2;
+               hash = 53 * hash + this.getValue().hashCode();
+            }
+
+            if (this.hasIndex()) {
+               hash = 37 * hash + 3;
+               hash = 53 * hash + this.getIndex();
+            }
+
+            hash = 29 * hash + this.getUnknownFields().hashCode();
+            this.memoizedHashCode = hash;
+            return hash;
+         }
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.DocumentPathItem)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.DocumentPathItem)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseFrom(ByteString data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.DocumentPathItem)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.DocumentPathItem)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseFrom(byte[] data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.DocumentPathItem)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.DocumentPathItem)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.DocumentPathItem)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.DocumentPathItem)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseDelimitedFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.DocumentPathItem)GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.DocumentPathItem)GeneratedMessage.parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseFrom(CodedInputStream input) throws IOException {
+         return (MysqlxExpr.DocumentPathItem)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.DocumentPathItem parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.DocumentPathItem)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public MysqlxExpr.DocumentPathItem.Builder newBuilderForType() {
+         return newBuilder();
+      }
+
+      public static MysqlxExpr.DocumentPathItem.Builder newBuilder() {
+         return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static MysqlxExpr.DocumentPathItem.Builder newBuilder(MysqlxExpr.DocumentPathItem prototype) {
+         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      public MysqlxExpr.DocumentPathItem.Builder toBuilder() {
+         return this == DEFAULT_INSTANCE ? new MysqlxExpr.DocumentPathItem.Builder() : new MysqlxExpr.DocumentPathItem.Builder().mergeFrom(this);
+      }
+
+      protected MysqlxExpr.DocumentPathItem.Builder newBuilderForType(BuilderParent parent) {
+         return new MysqlxExpr.DocumentPathItem.Builder(parent);
+      }
+
+      public static MysqlxExpr.DocumentPathItem getDefaultInstance() {
+         return DEFAULT_INSTANCE;
+      }
+
+      public static Parser<MysqlxExpr.DocumentPathItem> parser() {
+         return PARSER;
+      }
+
+      public Parser<MysqlxExpr.DocumentPathItem> getParserForType() {
+         return PARSER;
+      }
+
+      public MysqlxExpr.DocumentPathItem getDefaultInstanceForType() {
+         return DEFAULT_INSTANCE;
+      }
+
+      static {
+         RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.DocumentPathItem.class.getName());
+      }
+
+      public static final class Builder
+         extends com.google.protobuf.GeneratedMessage.Builder<MysqlxExpr.DocumentPathItem.Builder>
+         implements MysqlxExpr.DocumentPathItemOrBuilder {
+         private int bitField0_;
+         private int type_ = 1;
+         private java.lang.Object value_ = "";
+         private int index_;
+
+         public static final Descriptor getDescriptor() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_DocumentPathItem_descriptor;
+         }
+
+         protected FieldAccessorTable internalGetFieldAccessorTable() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_DocumentPathItem_fieldAccessorTable
+               .ensureFieldAccessorsInitialized(MysqlxExpr.DocumentPathItem.class, MysqlxExpr.DocumentPathItem.Builder.class);
+         }
+
+         private Builder() {
+         }
+
+         private Builder(BuilderParent parent) {
+            super(parent);
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder clear() {
+            super.clear();
+            this.bitField0_ = 0;
+            this.type_ = 1;
+            this.value_ = "";
+            this.index_ = 0;
+            return this;
+         }
+
+         public Descriptor getDescriptorForType() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_DocumentPathItem_descriptor;
+         }
+
+         public MysqlxExpr.DocumentPathItem getDefaultInstanceForType() {
+            return MysqlxExpr.DocumentPathItem.getDefaultInstance();
+         }
+
+         public MysqlxExpr.DocumentPathItem build() {
+            MysqlxExpr.DocumentPathItem result = this.buildPartial();
+            if (!result.isInitialized()) {
+               throw newUninitializedMessageException(result);
+            } else {
+               return result;
+            }
+         }
+
+         public MysqlxExpr.DocumentPathItem buildPartial() {
+            MysqlxExpr.DocumentPathItem result = new MysqlxExpr.DocumentPathItem(this);
+            if (this.bitField0_ != 0) {
+               this.buildPartial0(result);
+            }
+
+            this.onBuilt();
+            return result;
+         }
+
+         private void buildPartial0(MysqlxExpr.DocumentPathItem result) {
+            int from_bitField0_ = this.bitField0_;
+            int to_bitField0_ = 0;
+            if ((from_bitField0_ & 1) != 0) {
+               result.type_ = this.type_;
+               to_bitField0_ |= 1;
+            }
+
+            if ((from_bitField0_ & 2) != 0) {
+               result.value_ = this.value_;
+               to_bitField0_ |= 2;
+            }
+
+            if ((from_bitField0_ & 4) != 0) {
+               result.index_ = this.index_;
+               to_bitField0_ |= 4;
+            }
+
+            result.bitField0_ = result.bitField0_ | to_bitField0_;
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder mergeFrom(Message other) {
+            if (other instanceof MysqlxExpr.DocumentPathItem) {
+               return this.mergeFrom((MysqlxExpr.DocumentPathItem)other);
+            } else {
+               super.mergeFrom(other);
+               return this;
+            }
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder mergeFrom(MysqlxExpr.DocumentPathItem other) {
+            if (other == MysqlxExpr.DocumentPathItem.getDefaultInstance()) {
+               return this;
+            } else {
+               if (other.hasType()) {
+                  this.setType(other.getType());
+               }
+
+               if (other.hasValue()) {
+                  this.value_ = other.value_;
+                  this.bitField0_ |= 2;
+                  this.onChanged();
+               }
+
+               if (other.hasIndex()) {
+                  this.setIndex(other.getIndex());
+               }
+
+               this.mergeUnknownFields(other.getUnknownFields());
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public final boolean isInitialized() {
+            return this.hasType();
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            if (extensionRegistry == null) {
+               throw new NullPointerException();
+            } else {
+               try {
+                  boolean done = false;
+
+                  while (!done) {
+                     int tag = input.readTag();
+                     switch (tag) {
+                        case 0:
+                           done = true;
+                           break;
+                        case 8:
+                           int tmpRaw = input.readEnum();
+                           MysqlxExpr.DocumentPathItem.Type tmpValue = MysqlxExpr.DocumentPathItem.Type.forNumber(tmpRaw);
+                           if (tmpValue == null) {
+                              this.mergeUnknownVarintField(1, tmpRaw);
+                           } else {
+                              this.type_ = tmpRaw;
+                              this.bitField0_ |= 1;
+                           }
+                           break;
+                        case 18:
+                           this.value_ = input.readBytes();
+                           this.bitField0_ |= 2;
+                           break;
+                        case 24:
+                           this.index_ = input.readUInt32();
+                           this.bitField0_ |= 4;
+                           break;
+                        default:
+                           if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                              done = true;
+                           }
+                     }
+                  }
+               } catch (InvalidProtocolBufferException var10) {
+                  throw var10.unwrapIOException();
+               } finally {
+                  this.onChanged();
+               }
+
+               return this;
+            }
+         }
+
+         @Override
+         public boolean hasType() {
+            return (this.bitField0_ & 1) != 0;
+         }
+
+         @Override
+         public MysqlxExpr.DocumentPathItem.Type getType() {
+            MysqlxExpr.DocumentPathItem.Type result = MysqlxExpr.DocumentPathItem.Type.forNumber(this.type_);
+            return result == null ? MysqlxExpr.DocumentPathItem.Type.MEMBER : result;
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder setType(MysqlxExpr.DocumentPathItem.Type value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.bitField0_ |= 1;
+               this.type_ = value.getNumber();
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder clearType() {
+            this.bitField0_ &= -2;
+            this.type_ = 1;
+            this.onChanged();
+            return this;
+         }
+
+         @Override
+         public boolean hasValue() {
+            return (this.bitField0_ & 2) != 0;
+         }
+
+         @Override
+         public String getValue() {
+            java.lang.Object ref = this.value_;
+            if (!(ref instanceof String)) {
+               ByteString bs = (ByteString)ref;
+               String s = bs.toStringUtf8();
+               if (bs.isValidUtf8()) {
+                  this.value_ = s;
+               }
+
+               return s;
+            } else {
+               return (String)ref;
+            }
+         }
+
+         @Override
+         public ByteString getValueBytes() {
+            java.lang.Object ref = this.value_;
+            if (ref instanceof String) {
+               ByteString b = ByteString.copyFromUtf8((String)ref);
+               this.value_ = b;
+               return b;
+            } else {
+               return (ByteString)ref;
+            }
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder setValue(String value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.value_ = value;
+               this.bitField0_ |= 2;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder clearValue() {
+            this.value_ = MysqlxExpr.DocumentPathItem.getDefaultInstance().getValue();
+            this.bitField0_ &= -3;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder setValueBytes(ByteString value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.value_ = value;
+               this.bitField0_ |= 2;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         @Override
+         public boolean hasIndex() {
+            return (this.bitField0_ & 4) != 0;
+         }
+
+         @Override
+         public int getIndex() {
+            return this.index_;
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder setIndex(int value) {
+            this.index_ = value;
+            this.bitField0_ |= 4;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.DocumentPathItem.Builder clearIndex() {
+            this.bitField0_ &= -5;
+            this.index_ = 0;
+            this.onChanged();
+            return this;
+         }
+      }
+
+      public static enum Type implements ProtocolMessageEnum {
+         MEMBER(1),
+         MEMBER_ASTERISK(2),
+         ARRAY_INDEX(3),
+         ARRAY_INDEX_ASTERISK(4),
+         DOUBLE_ASTERISK(5);
+
+         public static final int MEMBER_VALUE = 1;
+         public static final int MEMBER_ASTERISK_VALUE = 2;
+         public static final int ARRAY_INDEX_VALUE = 3;
+         public static final int ARRAY_INDEX_ASTERISK_VALUE = 4;
+         public static final int DOUBLE_ASTERISK_VALUE = 5;
+         private static final EnumLiteMap<MysqlxExpr.DocumentPathItem.Type> internalValueMap = new EnumLiteMap<MysqlxExpr.DocumentPathItem.Type>() {
+            public MysqlxExpr.DocumentPathItem.Type findValueByNumber(int number) {
+               return MysqlxExpr.DocumentPathItem.Type.forNumber(number);
+            }
+         };
+         private static final MysqlxExpr.DocumentPathItem.Type[] VALUES = values();
+         private final int value;
+
+         public final int getNumber() {
+            return this.value;
+         }
+
+         @Deprecated
+         public static MysqlxExpr.DocumentPathItem.Type valueOf(int value) {
+            return forNumber(value);
+         }
+
+         public static MysqlxExpr.DocumentPathItem.Type forNumber(int value) {
+            switch (value) {
+               case 1:
+                  return MEMBER;
+               case 2:
+                  return MEMBER_ASTERISK;
+               case 3:
+                  return ARRAY_INDEX;
+               case 4:
+                  return ARRAY_INDEX_ASTERISK;
+               case 5:
+                  return DOUBLE_ASTERISK;
+               default:
+                  return null;
+            }
+         }
+
+         public static EnumLiteMap<MysqlxExpr.DocumentPathItem.Type> internalGetValueMap() {
+            return internalValueMap;
+         }
+
+         public final EnumValueDescriptor getValueDescriptor() {
+            return (EnumValueDescriptor)getDescriptor().getValues().get(this.ordinal());
+         }
+
+         public final EnumDescriptor getDescriptorForType() {
+            return getDescriptor();
+         }
+
+         public static final EnumDescriptor getDescriptor() {
+            return (EnumDescriptor)MysqlxExpr.DocumentPathItem.getDescriptor().getEnumTypes().get(0);
+         }
+
+         public static MysqlxExpr.DocumentPathItem.Type valueOf(EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+               throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
+            } else {
+               return VALUES[desc.getIndex()];
+            }
+         }
+
+         private Type(int value) {
+            this.value = value;
+         }
+
+         static {
+            RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.DocumentPathItem.Type.class.getName());
+         }
+      }
+   }
+
+   public interface DocumentPathItemOrBuilder extends MessageOrBuilder {
+      boolean hasType();
+
+      MysqlxExpr.DocumentPathItem.Type getType();
+
+      boolean hasValue();
+
+      String getValue();
+
+      ByteString getValueBytes();
+
+      boolean hasIndex();
+
+      int getIndex();
+   }
+
+   public static final class Expr extends GeneratedMessage implements MysqlxExpr.ExprOrBuilder {
+      private static final long serialVersionUID = 0L;
+      private int bitField0_;
+      public static final int TYPE_FIELD_NUMBER = 1;
+      private int type_ = 1;
+      public static final int IDENTIFIER_FIELD_NUMBER = 2;
+      private MysqlxExpr.ColumnIdentifier identifier_;
+      public static final int VARIABLE_FIELD_NUMBER = 3;
+      private volatile java.lang.Object variable_ = "";
+      public static final int LITERAL_FIELD_NUMBER = 4;
+      private MysqlxDatatypes.Scalar literal_;
+      public static final int FUNCTION_CALL_FIELD_NUMBER = 5;
+      private MysqlxExpr.FunctionCall functionCall_;
+      public static final int OPERATOR_FIELD_NUMBER = 6;
+      private MysqlxExpr.Operator operator_;
+      public static final int POSITION_FIELD_NUMBER = 7;
+      private int position_ = 0;
+      public static final int OBJECT_FIELD_NUMBER = 8;
+      private MysqlxExpr.Object object_;
+      public static final int ARRAY_FIELD_NUMBER = 9;
+      private MysqlxExpr.Array array_;
+      private byte memoizedIsInitialized = -1;
+      private static final MysqlxExpr.Expr DEFAULT_INSTANCE = new MysqlxExpr.Expr();
+      private static final Parser<MysqlxExpr.Expr> PARSER = new AbstractParser<MysqlxExpr.Expr>() {
+         public MysqlxExpr.Expr parsePartialFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            MysqlxExpr.Expr.Builder builder = MysqlxExpr.Expr.newBuilder();
+
+            try {
+               builder.mergeFrom(input, extensionRegistry);
+            } catch (InvalidProtocolBufferException var5) {
+               throw var5.setUnfinishedMessage(builder.buildPartial());
+            } catch (UninitializedMessageException var6) {
+               throw var6.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (IOException var7) {
+               throw new InvalidProtocolBufferException(var7).setUnfinishedMessage(builder.buildPartial());
+            }
+
+            return builder.buildPartial();
+         }
+      };
+
+      private Expr(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+         super(builder);
+      }
+
+      private Expr() {
+         this.type_ = 1;
+         this.variable_ = "";
+      }
+
+      public static final Descriptor getDescriptor() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_Expr_descriptor;
+      }
+
+      protected FieldAccessorTable internalGetFieldAccessorTable() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_Expr_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(MysqlxExpr.Expr.class, MysqlxExpr.Expr.Builder.class);
+      }
+
+      @Override
+      public boolean hasType() {
+         return (this.bitField0_ & 1) != 0;
+      }
+
+      @Override
+      public MysqlxExpr.Expr.Type getType() {
+         MysqlxExpr.Expr.Type result = MysqlxExpr.Expr.Type.forNumber(this.type_);
+         return result == null ? MysqlxExpr.Expr.Type.IDENT : result;
+      }
+
+      @Override
+      public boolean hasIdentifier() {
+         return (this.bitField0_ & 2) != 0;
+      }
+
+      @Override
+      public MysqlxExpr.ColumnIdentifier getIdentifier() {
+         return this.identifier_ == null ? MysqlxExpr.ColumnIdentifier.getDefaultInstance() : this.identifier_;
+      }
+
+      @Override
+      public MysqlxExpr.ColumnIdentifierOrBuilder getIdentifierOrBuilder() {
+         return this.identifier_ == null ? MysqlxExpr.ColumnIdentifier.getDefaultInstance() : this.identifier_;
+      }
+
+      @Override
+      public boolean hasVariable() {
+         return (this.bitField0_ & 4) != 0;
+      }
+
+      @Override
+      public String getVariable() {
+         java.lang.Object ref = this.variable_;
+         if (ref instanceof String) {
+            return (String)ref;
+         } else {
+            ByteString bs = (ByteString)ref;
+            String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+               this.variable_ = s;
+            }
+
+            return s;
+         }
+      }
+
+      @Override
+      public ByteString getVariableBytes() {
+         java.lang.Object ref = this.variable_;
+         if (ref instanceof String) {
+            ByteString b = ByteString.copyFromUtf8((String)ref);
+            this.variable_ = b;
+            return b;
+         } else {
+            return (ByteString)ref;
+         }
+      }
+
+      @Override
+      public boolean hasLiteral() {
+         return (this.bitField0_ & 8) != 0;
+      }
+
+      @Override
+      public MysqlxDatatypes.Scalar getLiteral() {
+         return this.literal_ == null ? MysqlxDatatypes.Scalar.getDefaultInstance() : this.literal_;
+      }
+
+      @Override
+      public MysqlxDatatypes.ScalarOrBuilder getLiteralOrBuilder() {
+         return this.literal_ == null ? MysqlxDatatypes.Scalar.getDefaultInstance() : this.literal_;
+      }
+
+      @Override
+      public boolean hasFunctionCall() {
+         return (this.bitField0_ & 16) != 0;
+      }
+
+      @Override
+      public MysqlxExpr.FunctionCall getFunctionCall() {
+         return this.functionCall_ == null ? MysqlxExpr.FunctionCall.getDefaultInstance() : this.functionCall_;
+      }
+
+      @Override
+      public MysqlxExpr.FunctionCallOrBuilder getFunctionCallOrBuilder() {
+         return this.functionCall_ == null ? MysqlxExpr.FunctionCall.getDefaultInstance() : this.functionCall_;
+      }
+
+      @Override
+      public boolean hasOperator() {
+         return (this.bitField0_ & 32) != 0;
+      }
+
+      @Override
+      public MysqlxExpr.Operator getOperator() {
+         return this.operator_ == null ? MysqlxExpr.Operator.getDefaultInstance() : this.operator_;
+      }
+
+      @Override
+      public MysqlxExpr.OperatorOrBuilder getOperatorOrBuilder() {
+         return this.operator_ == null ? MysqlxExpr.Operator.getDefaultInstance() : this.operator_;
+      }
+
+      @Override
+      public boolean hasPosition() {
+         return (this.bitField0_ & 64) != 0;
+      }
+
+      @Override
+      public int getPosition() {
+         return this.position_;
+      }
+
+      @Override
+      public boolean hasObject() {
+         return (this.bitField0_ & 128) != 0;
+      }
+
+      @Override
+      public MysqlxExpr.Object getObject() {
+         return this.object_ == null ? MysqlxExpr.Object.getDefaultInstance() : this.object_;
+      }
+
+      @Override
+      public MysqlxExpr.ObjectOrBuilder getObjectOrBuilder() {
+         return this.object_ == null ? MysqlxExpr.Object.getDefaultInstance() : this.object_;
+      }
+
+      @Override
+      public boolean hasArray() {
+         return (this.bitField0_ & 256) != 0;
+      }
+
+      @Override
+      public MysqlxExpr.Array getArray() {
+         return this.array_ == null ? MysqlxExpr.Array.getDefaultInstance() : this.array_;
+      }
+
+      @Override
+      public MysqlxExpr.ArrayOrBuilder getArrayOrBuilder() {
+         return this.array_ == null ? MysqlxExpr.Array.getDefaultInstance() : this.array_;
+      }
+
+      public final boolean isInitialized() {
+         byte isInitialized = this.memoizedIsInitialized;
+         if (isInitialized == 1) {
+            return true;
+         } else if (isInitialized == 0) {
+            return false;
+         } else if (!this.hasType()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else if (this.hasIdentifier() && !this.getIdentifier().isInitialized()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else if (this.hasLiteral() && !this.getLiteral().isInitialized()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else if (this.hasFunctionCall() && !this.getFunctionCall().isInitialized()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else if (this.hasOperator() && !this.getOperator().isInitialized()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else if (this.hasObject() && !this.getObject().isInitialized()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else if (this.hasArray() && !this.getArray().isInitialized()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else {
+            this.memoizedIsInitialized = 1;
+            return true;
+         }
+      }
+
+      public void writeTo(CodedOutputStream output) throws IOException {
+         if ((this.bitField0_ & 1) != 0) {
+            output.writeEnum(1, this.type_);
+         }
+
+         if ((this.bitField0_ & 2) != 0) {
+            output.writeMessage(2, this.getIdentifier());
+         }
+
+         if ((this.bitField0_ & 4) != 0) {
+            GeneratedMessage.writeString(output, 3, this.variable_);
+         }
+
+         if ((this.bitField0_ & 8) != 0) {
+            output.writeMessage(4, this.getLiteral());
+         }
+
+         if ((this.bitField0_ & 16) != 0) {
+            output.writeMessage(5, this.getFunctionCall());
+         }
+
+         if ((this.bitField0_ & 32) != 0) {
+            output.writeMessage(6, this.getOperator());
+         }
+
+         if ((this.bitField0_ & 64) != 0) {
+            output.writeUInt32(7, this.position_);
+         }
+
+         if ((this.bitField0_ & 128) != 0) {
+            output.writeMessage(8, this.getObject());
+         }
+
+         if ((this.bitField0_ & 256) != 0) {
+            output.writeMessage(9, this.getArray());
+         }
+
+         this.getUnknownFields().writeTo(output);
+      }
+
+      public int getSerializedSize() {
+         int size = this.memoizedSize;
+         if (size != -1) {
+            return size;
+         } else {
+            size = 0;
+            if ((this.bitField0_ & 1) != 0) {
+               size += CodedOutputStream.computeEnumSize(1, this.type_);
+            }
+
+            if ((this.bitField0_ & 2) != 0) {
+               size += CodedOutputStream.computeMessageSize(2, this.getIdentifier());
+            }
+
+            if ((this.bitField0_ & 4) != 0) {
+               size += GeneratedMessage.computeStringSize(3, this.variable_);
+            }
+
+            if ((this.bitField0_ & 8) != 0) {
+               size += CodedOutputStream.computeMessageSize(4, this.getLiteral());
+            }
+
+            if ((this.bitField0_ & 16) != 0) {
+               size += CodedOutputStream.computeMessageSize(5, this.getFunctionCall());
+            }
+
+            if ((this.bitField0_ & 32) != 0) {
+               size += CodedOutputStream.computeMessageSize(6, this.getOperator());
+            }
+
+            if ((this.bitField0_ & 64) != 0) {
+               size += CodedOutputStream.computeUInt32Size(7, this.position_);
+            }
+
+            if ((this.bitField0_ & 128) != 0) {
+               size += CodedOutputStream.computeMessageSize(8, this.getObject());
+            }
+
+            if ((this.bitField0_ & 256) != 0) {
+               size += CodedOutputStream.computeMessageSize(9, this.getArray());
+            }
+
+            size += this.getUnknownFields().getSerializedSize();
+            this.memoizedSize = size;
+            return size;
+         }
+      }
+
+      @Override
+      public boolean equals(java.lang.Object obj) {
+         if (obj == this) {
+            return true;
+         } else if (!(obj instanceof MysqlxExpr.Expr)) {
+            return super.equals(obj);
+         } else {
+            MysqlxExpr.Expr other = (MysqlxExpr.Expr)obj;
+            if (this.hasType() != other.hasType()) {
+               return false;
+            } else if (this.hasType() && this.type_ != other.type_) {
+               return false;
+            } else if (this.hasIdentifier() != other.hasIdentifier()) {
+               return false;
+            } else if (this.hasIdentifier() && !this.getIdentifier().equals(other.getIdentifier())) {
+               return false;
+            } else if (this.hasVariable() != other.hasVariable()) {
+               return false;
+            } else if (this.hasVariable() && !this.getVariable().equals(other.getVariable())) {
+               return false;
+            } else if (this.hasLiteral() != other.hasLiteral()) {
+               return false;
+            } else if (this.hasLiteral() && !this.getLiteral().equals(other.getLiteral())) {
+               return false;
+            } else if (this.hasFunctionCall() != other.hasFunctionCall()) {
+               return false;
+            } else if (this.hasFunctionCall() && !this.getFunctionCall().equals(other.getFunctionCall())) {
+               return false;
+            } else if (this.hasOperator() != other.hasOperator()) {
+               return false;
+            } else if (this.hasOperator() && !this.getOperator().equals(other.getOperator())) {
+               return false;
+            } else if (this.hasPosition() != other.hasPosition()) {
+               return false;
+            } else if (this.hasPosition() && this.getPosition() != other.getPosition()) {
+               return false;
+            } else if (this.hasObject() != other.hasObject()) {
+               return false;
+            } else if (this.hasObject() && !this.getObject().equals(other.getObject())) {
+               return false;
+            } else if (this.hasArray() != other.hasArray()) {
+               return false;
+            } else {
+               return this.hasArray() && !this.getArray().equals(other.getArray()) ? false : this.getUnknownFields().equals(other.getUnknownFields());
+            }
+         }
+      }
+
+      @Override
+      public int hashCode() {
+         if (this.memoizedHashCode != 0) {
+            return this.memoizedHashCode;
+         } else {
+            int hash = 41;
+            hash = 19 * hash + getDescriptor().hashCode();
+            if (this.hasType()) {
+               hash = 37 * hash + 1;
+               hash = 53 * hash + this.type_;
+            }
+
+            if (this.hasIdentifier()) {
+               hash = 37 * hash + 2;
+               hash = 53 * hash + this.getIdentifier().hashCode();
+            }
+
+            if (this.hasVariable()) {
+               hash = 37 * hash + 3;
+               hash = 53 * hash + this.getVariable().hashCode();
+            }
+
+            if (this.hasLiteral()) {
+               hash = 37 * hash + 4;
+               hash = 53 * hash + this.getLiteral().hashCode();
+            }
+
+            if (this.hasFunctionCall()) {
+               hash = 37 * hash + 5;
+               hash = 53 * hash + this.getFunctionCall().hashCode();
+            }
+
+            if (this.hasOperator()) {
+               hash = 37 * hash + 6;
+               hash = 53 * hash + this.getOperator().hashCode();
+            }
+
+            if (this.hasPosition()) {
+               hash = 37 * hash + 7;
+               hash = 53 * hash + this.getPosition();
+            }
+
+            if (this.hasObject()) {
+               hash = 37 * hash + 8;
+               hash = 53 * hash + this.getObject().hashCode();
+            }
+
+            if (this.hasArray()) {
+               hash = 37 * hash + 9;
+               hash = 53 * hash + this.getArray().hashCode();
+            }
+
+            hash = 29 * hash + this.getUnknownFields().hashCode();
+            this.memoizedHashCode = hash;
+            return hash;
+         }
+      }
+
+      public static MysqlxExpr.Expr parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Expr)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Expr parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Expr)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Expr parseFrom(ByteString data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Expr)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Expr parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Expr)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Expr parseFrom(byte[] data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Expr)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Expr parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Expr)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Expr parseFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.Expr)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Expr parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Expr)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Expr parseDelimitedFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.Expr)GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Expr parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Expr)GeneratedMessage.parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Expr parseFrom(CodedInputStream input) throws IOException {
+         return (MysqlxExpr.Expr)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Expr parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Expr)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public MysqlxExpr.Expr.Builder newBuilderForType() {
+         return newBuilder();
+      }
+
+      public static MysqlxExpr.Expr.Builder newBuilder() {
+         return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static MysqlxExpr.Expr.Builder newBuilder(MysqlxExpr.Expr prototype) {
+         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      public MysqlxExpr.Expr.Builder toBuilder() {
+         return this == DEFAULT_INSTANCE ? new MysqlxExpr.Expr.Builder() : new MysqlxExpr.Expr.Builder().mergeFrom(this);
+      }
+
+      protected MysqlxExpr.Expr.Builder newBuilderForType(BuilderParent parent) {
+         return new MysqlxExpr.Expr.Builder(parent);
+      }
+
+      public static MysqlxExpr.Expr getDefaultInstance() {
+         return DEFAULT_INSTANCE;
+      }
+
+      public static Parser<MysqlxExpr.Expr> parser() {
+         return PARSER;
+      }
+
+      public Parser<MysqlxExpr.Expr> getParserForType() {
+         return PARSER;
+      }
+
+      public MysqlxExpr.Expr getDefaultInstanceForType() {
+         return DEFAULT_INSTANCE;
+      }
+
+      static {
+         RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.Expr.class.getName());
+      }
+
+      public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<MysqlxExpr.Expr.Builder> implements MysqlxExpr.ExprOrBuilder {
+         private int bitField0_;
+         private int type_ = 1;
+         private MysqlxExpr.ColumnIdentifier identifier_;
+         private SingleFieldBuilder<MysqlxExpr.ColumnIdentifier, MysqlxExpr.ColumnIdentifier.Builder, MysqlxExpr.ColumnIdentifierOrBuilder> identifierBuilder_;
+         private java.lang.Object variable_ = "";
+         private MysqlxDatatypes.Scalar literal_;
+         private SingleFieldBuilder<MysqlxDatatypes.Scalar, MysqlxDatatypes.Scalar.Builder, MysqlxDatatypes.ScalarOrBuilder> literalBuilder_;
+         private MysqlxExpr.FunctionCall functionCall_;
+         private SingleFieldBuilder<MysqlxExpr.FunctionCall, MysqlxExpr.FunctionCall.Builder, MysqlxExpr.FunctionCallOrBuilder> functionCallBuilder_;
+         private MysqlxExpr.Operator operator_;
+         private SingleFieldBuilder<MysqlxExpr.Operator, MysqlxExpr.Operator.Builder, MysqlxExpr.OperatorOrBuilder> operatorBuilder_;
+         private int position_;
+         private MysqlxExpr.Object object_;
+         private SingleFieldBuilder<MysqlxExpr.Object, MysqlxExpr.Object.Builder, MysqlxExpr.ObjectOrBuilder> objectBuilder_;
+         private MysqlxExpr.Array array_;
+         private SingleFieldBuilder<MysqlxExpr.Array, MysqlxExpr.Array.Builder, MysqlxExpr.ArrayOrBuilder> arrayBuilder_;
+
+         public static final Descriptor getDescriptor() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Expr_descriptor;
+         }
+
+         protected FieldAccessorTable internalGetFieldAccessorTable() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Expr_fieldAccessorTable
+               .ensureFieldAccessorsInitialized(MysqlxExpr.Expr.class, MysqlxExpr.Expr.Builder.class);
+         }
+
+         private Builder() {
+            this.maybeForceBuilderInitialization();
+         }
+
+         private Builder(BuilderParent parent) {
+            super(parent);
+            this.maybeForceBuilderInitialization();
+         }
+
+         private void maybeForceBuilderInitialization() {
+            if (MysqlxExpr.Expr.alwaysUseFieldBuilders) {
+               this.getIdentifierFieldBuilder();
+               this.getLiteralFieldBuilder();
+               this.getFunctionCallFieldBuilder();
+               this.getOperatorFieldBuilder();
+               this.getObjectFieldBuilder();
+               this.getArrayFieldBuilder();
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder clear() {
+            super.clear();
+            this.bitField0_ = 0;
+            this.type_ = 1;
+            this.identifier_ = null;
+            if (this.identifierBuilder_ != null) {
+               this.identifierBuilder_.dispose();
+               this.identifierBuilder_ = null;
+            }
+
+            this.variable_ = "";
+            this.literal_ = null;
+            if (this.literalBuilder_ != null) {
+               this.literalBuilder_.dispose();
+               this.literalBuilder_ = null;
+            }
+
+            this.functionCall_ = null;
+            if (this.functionCallBuilder_ != null) {
+               this.functionCallBuilder_.dispose();
+               this.functionCallBuilder_ = null;
+            }
+
+            this.operator_ = null;
+            if (this.operatorBuilder_ != null) {
+               this.operatorBuilder_.dispose();
+               this.operatorBuilder_ = null;
+            }
+
+            this.position_ = 0;
+            this.object_ = null;
+            if (this.objectBuilder_ != null) {
+               this.objectBuilder_.dispose();
+               this.objectBuilder_ = null;
+            }
+
+            this.array_ = null;
+            if (this.arrayBuilder_ != null) {
+               this.arrayBuilder_.dispose();
+               this.arrayBuilder_ = null;
+            }
+
+            return this;
+         }
+
+         public Descriptor getDescriptorForType() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Expr_descriptor;
+         }
+
+         public MysqlxExpr.Expr getDefaultInstanceForType() {
+            return MysqlxExpr.Expr.getDefaultInstance();
+         }
+
+         public MysqlxExpr.Expr build() {
+            MysqlxExpr.Expr result = this.buildPartial();
+            if (!result.isInitialized()) {
+               throw newUninitializedMessageException(result);
+            } else {
+               return result;
+            }
+         }
+
+         public MysqlxExpr.Expr buildPartial() {
+            MysqlxExpr.Expr result = new MysqlxExpr.Expr(this);
+            if (this.bitField0_ != 0) {
+               this.buildPartial0(result);
+            }
+
+            this.onBuilt();
+            return result;
+         }
+
+         private void buildPartial0(MysqlxExpr.Expr result) {
+            int from_bitField0_ = this.bitField0_;
+            int to_bitField0_ = 0;
+            if ((from_bitField0_ & 1) != 0) {
+               result.type_ = this.type_;
+               to_bitField0_ |= 1;
+            }
+
+            if ((from_bitField0_ & 2) != 0) {
+               result.identifier_ = this.identifierBuilder_ == null ? this.identifier_ : (MysqlxExpr.ColumnIdentifier)this.identifierBuilder_.build();
+               to_bitField0_ |= 2;
+            }
+
+            if ((from_bitField0_ & 4) != 0) {
+               result.variable_ = this.variable_;
+               to_bitField0_ |= 4;
+            }
+
+            if ((from_bitField0_ & 8) != 0) {
+               result.literal_ = this.literalBuilder_ == null ? this.literal_ : (MysqlxDatatypes.Scalar)this.literalBuilder_.build();
+               to_bitField0_ |= 8;
+            }
+
+            if ((from_bitField0_ & 16) != 0) {
+               result.functionCall_ = this.functionCallBuilder_ == null ? this.functionCall_ : (MysqlxExpr.FunctionCall)this.functionCallBuilder_.build();
+               to_bitField0_ |= 16;
+            }
+
+            if ((from_bitField0_ & 32) != 0) {
+               result.operator_ = this.operatorBuilder_ == null ? this.operator_ : (MysqlxExpr.Operator)this.operatorBuilder_.build();
+               to_bitField0_ |= 32;
+            }
+
+            if ((from_bitField0_ & 64) != 0) {
+               result.position_ = this.position_;
+               to_bitField0_ |= 64;
+            }
+
+            if ((from_bitField0_ & 128) != 0) {
+               result.object_ = this.objectBuilder_ == null ? this.object_ : (MysqlxExpr.Object)this.objectBuilder_.build();
+               to_bitField0_ |= 128;
+            }
+
+            if ((from_bitField0_ & 256) != 0) {
+               result.array_ = this.arrayBuilder_ == null ? this.array_ : (MysqlxExpr.Array)this.arrayBuilder_.build();
+               to_bitField0_ |= 256;
+            }
+
+            result.bitField0_ = result.bitField0_ | to_bitField0_;
+         }
+
+         public MysqlxExpr.Expr.Builder mergeFrom(Message other) {
+            if (other instanceof MysqlxExpr.Expr) {
+               return this.mergeFrom((MysqlxExpr.Expr)other);
+            } else {
+               super.mergeFrom(other);
+               return this;
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder mergeFrom(MysqlxExpr.Expr other) {
+            if (other == MysqlxExpr.Expr.getDefaultInstance()) {
+               return this;
+            } else {
+               if (other.hasType()) {
+                  this.setType(other.getType());
+               }
+
+               if (other.hasIdentifier()) {
+                  this.mergeIdentifier(other.getIdentifier());
+               }
+
+               if (other.hasVariable()) {
+                  this.variable_ = other.variable_;
+                  this.bitField0_ |= 4;
+                  this.onChanged();
+               }
+
+               if (other.hasLiteral()) {
+                  this.mergeLiteral(other.getLiteral());
+               }
+
+               if (other.hasFunctionCall()) {
+                  this.mergeFunctionCall(other.getFunctionCall());
+               }
+
+               if (other.hasOperator()) {
+                  this.mergeOperator(other.getOperator());
+               }
+
+               if (other.hasPosition()) {
+                  this.setPosition(other.getPosition());
+               }
+
+               if (other.hasObject()) {
+                  this.mergeObject(other.getObject());
+               }
+
+               if (other.hasArray()) {
+                  this.mergeArray(other.getArray());
+               }
+
+               this.mergeUnknownFields(other.getUnknownFields());
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public final boolean isInitialized() {
+            if (!this.hasType()) {
+               return false;
+            } else if (this.hasIdentifier() && !this.getIdentifier().isInitialized()) {
+               return false;
+            } else if (this.hasLiteral() && !this.getLiteral().isInitialized()) {
+               return false;
+            } else if (this.hasFunctionCall() && !this.getFunctionCall().isInitialized()) {
+               return false;
+            } else if (this.hasOperator() && !this.getOperator().isInitialized()) {
+               return false;
+            } else {
+               return this.hasObject() && !this.getObject().isInitialized() ? false : !this.hasArray() || this.getArray().isInitialized();
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            if (extensionRegistry == null) {
+               throw new NullPointerException();
+            } else {
+               try {
+                  boolean done = false;
+
+                  while (!done) {
+                     int tag = input.readTag();
+                     switch (tag) {
+                        case 0:
+                           done = true;
+                           break;
+                        case 8:
+                           int tmpRaw = input.readEnum();
+                           MysqlxExpr.Expr.Type tmpValue = MysqlxExpr.Expr.Type.forNumber(tmpRaw);
+                           if (tmpValue == null) {
+                              this.mergeUnknownVarintField(1, tmpRaw);
+                           } else {
+                              this.type_ = tmpRaw;
+                              this.bitField0_ |= 1;
+                           }
+                           break;
+                        case 18:
+                           input.readMessage(this.getIdentifierFieldBuilder().getBuilder(), extensionRegistry);
+                           this.bitField0_ |= 2;
+                           break;
+                        case 26:
+                           this.variable_ = input.readBytes();
+                           this.bitField0_ |= 4;
+                           break;
+                        case 34:
+                           input.readMessage(this.getLiteralFieldBuilder().getBuilder(), extensionRegistry);
+                           this.bitField0_ |= 8;
+                           break;
+                        case 42:
+                           input.readMessage(this.getFunctionCallFieldBuilder().getBuilder(), extensionRegistry);
+                           this.bitField0_ |= 16;
+                           break;
+                        case 50:
+                           input.readMessage(this.getOperatorFieldBuilder().getBuilder(), extensionRegistry);
+                           this.bitField0_ |= 32;
+                           break;
+                        case 56:
+                           this.position_ = input.readUInt32();
+                           this.bitField0_ |= 64;
+                           break;
+                        case 66:
+                           input.readMessage(this.getObjectFieldBuilder().getBuilder(), extensionRegistry);
+                           this.bitField0_ |= 128;
+                           break;
+                        case 74:
+                           input.readMessage(this.getArrayFieldBuilder().getBuilder(), extensionRegistry);
+                           this.bitField0_ |= 256;
+                           break;
+                        default:
+                           if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                              done = true;
+                           }
+                     }
+                  }
+               } catch (InvalidProtocolBufferException var10) {
+                  throw var10.unwrapIOException();
+               } finally {
+                  this.onChanged();
+               }
+
+               return this;
+            }
+         }
+
+         @Override
+         public boolean hasType() {
+            return (this.bitField0_ & 1) != 0;
+         }
+
+         @Override
+         public MysqlxExpr.Expr.Type getType() {
+            MysqlxExpr.Expr.Type result = MysqlxExpr.Expr.Type.forNumber(this.type_);
+            return result == null ? MysqlxExpr.Expr.Type.IDENT : result;
+         }
+
+         public MysqlxExpr.Expr.Builder setType(MysqlxExpr.Expr.Type value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.bitField0_ |= 1;
+               this.type_ = value.getNumber();
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder clearType() {
+            this.bitField0_ &= -2;
+            this.type_ = 1;
+            this.onChanged();
+            return this;
+         }
+
+         @Override
+         public boolean hasIdentifier() {
+            return (this.bitField0_ & 2) != 0;
+         }
+
+         @Override
+         public MysqlxExpr.ColumnIdentifier getIdentifier() {
+            if (this.identifierBuilder_ == null) {
+               return this.identifier_ == null ? MysqlxExpr.ColumnIdentifier.getDefaultInstance() : this.identifier_;
+            } else {
+               return (MysqlxExpr.ColumnIdentifier)this.identifierBuilder_.getMessage();
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder setIdentifier(MysqlxExpr.ColumnIdentifier value) {
+            if (this.identifierBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.identifier_ = value;
+            } else {
+               this.identifierBuilder_.setMessage(value);
+            }
+
+            this.bitField0_ |= 2;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder setIdentifier(MysqlxExpr.ColumnIdentifier.Builder builderForValue) {
+            if (this.identifierBuilder_ == null) {
+               this.identifier_ = builderForValue.build();
+            } else {
+               this.identifierBuilder_.setMessage(builderForValue.build());
+            }
+
+            this.bitField0_ |= 2;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder mergeIdentifier(MysqlxExpr.ColumnIdentifier value) {
+            if (this.identifierBuilder_ == null) {
+               if ((this.bitField0_ & 2) != 0 && this.identifier_ != null && this.identifier_ != MysqlxExpr.ColumnIdentifier.getDefaultInstance()) {
+                  this.getIdentifierBuilder().mergeFrom(value);
+               } else {
+                  this.identifier_ = value;
+               }
+            } else {
+               this.identifierBuilder_.mergeFrom(value);
+            }
+
+            if (this.identifier_ != null) {
+               this.bitField0_ |= 2;
+               this.onChanged();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder clearIdentifier() {
+            this.bitField0_ &= -3;
+            this.identifier_ = null;
+            if (this.identifierBuilder_ != null) {
+               this.identifierBuilder_.dispose();
+               this.identifierBuilder_ = null;
+            }
+
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.ColumnIdentifier.Builder getIdentifierBuilder() {
+            this.bitField0_ |= 2;
+            this.onChanged();
+            return (MysqlxExpr.ColumnIdentifier.Builder)this.getIdentifierFieldBuilder().getBuilder();
+         }
+
+         @Override
+         public MysqlxExpr.ColumnIdentifierOrBuilder getIdentifierOrBuilder() {
+            if (this.identifierBuilder_ != null) {
+               return (MysqlxExpr.ColumnIdentifierOrBuilder)this.identifierBuilder_.getMessageOrBuilder();
+            } else {
+               return this.identifier_ == null ? MysqlxExpr.ColumnIdentifier.getDefaultInstance() : this.identifier_;
+            }
+         }
+
+         private SingleFieldBuilder<MysqlxExpr.ColumnIdentifier, MysqlxExpr.ColumnIdentifier.Builder, MysqlxExpr.ColumnIdentifierOrBuilder> getIdentifierFieldBuilder() {
+            if (this.identifierBuilder_ == null) {
+               this.identifierBuilder_ = new SingleFieldBuilder(this.getIdentifier(), this.getParentForChildren(), this.isClean());
+               this.identifier_ = null;
+            }
+
+            return this.identifierBuilder_;
+         }
+
+         @Override
+         public boolean hasVariable() {
+            return (this.bitField0_ & 4) != 0;
+         }
+
+         @Override
+         public String getVariable() {
+            java.lang.Object ref = this.variable_;
+            if (!(ref instanceof String)) {
+               ByteString bs = (ByteString)ref;
+               String s = bs.toStringUtf8();
+               if (bs.isValidUtf8()) {
+                  this.variable_ = s;
+               }
+
+               return s;
+            } else {
+               return (String)ref;
+            }
+         }
+
+         @Override
+         public ByteString getVariableBytes() {
+            java.lang.Object ref = this.variable_;
+            if (ref instanceof String) {
+               ByteString b = ByteString.copyFromUtf8((String)ref);
+               this.variable_ = b;
+               return b;
+            } else {
+               return (ByteString)ref;
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder setVariable(String value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.variable_ = value;
+               this.bitField0_ |= 4;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder clearVariable() {
+            this.variable_ = MysqlxExpr.Expr.getDefaultInstance().getVariable();
+            this.bitField0_ &= -5;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder setVariableBytes(ByteString value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.variable_ = value;
+               this.bitField0_ |= 4;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         @Override
+         public boolean hasLiteral() {
+            return (this.bitField0_ & 8) != 0;
+         }
+
+         @Override
+         public MysqlxDatatypes.Scalar getLiteral() {
+            if (this.literalBuilder_ == null) {
+               return this.literal_ == null ? MysqlxDatatypes.Scalar.getDefaultInstance() : this.literal_;
+            } else {
+               return (MysqlxDatatypes.Scalar)this.literalBuilder_.getMessage();
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder setLiteral(MysqlxDatatypes.Scalar value) {
+            if (this.literalBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.literal_ = value;
+            } else {
+               this.literalBuilder_.setMessage(value);
+            }
+
+            this.bitField0_ |= 8;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder setLiteral(MysqlxDatatypes.Scalar.Builder builderForValue) {
+            if (this.literalBuilder_ == null) {
+               this.literal_ = builderForValue.build();
+            } else {
+               this.literalBuilder_.setMessage(builderForValue.build());
+            }
+
+            this.bitField0_ |= 8;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder mergeLiteral(MysqlxDatatypes.Scalar value) {
+            if (this.literalBuilder_ == null) {
+               if ((this.bitField0_ & 8) != 0 && this.literal_ != null && this.literal_ != MysqlxDatatypes.Scalar.getDefaultInstance()) {
+                  this.getLiteralBuilder().mergeFrom(value);
+               } else {
+                  this.literal_ = value;
+               }
+            } else {
+               this.literalBuilder_.mergeFrom(value);
+            }
+
+            if (this.literal_ != null) {
+               this.bitField0_ |= 8;
+               this.onChanged();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder clearLiteral() {
+            this.bitField0_ &= -9;
+            this.literal_ = null;
+            if (this.literalBuilder_ != null) {
+               this.literalBuilder_.dispose();
+               this.literalBuilder_ = null;
+            }
+
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxDatatypes.Scalar.Builder getLiteralBuilder() {
+            this.bitField0_ |= 8;
+            this.onChanged();
+            return (MysqlxDatatypes.Scalar.Builder)this.getLiteralFieldBuilder().getBuilder();
+         }
+
+         @Override
+         public MysqlxDatatypes.ScalarOrBuilder getLiteralOrBuilder() {
+            if (this.literalBuilder_ != null) {
+               return (MysqlxDatatypes.ScalarOrBuilder)this.literalBuilder_.getMessageOrBuilder();
+            } else {
+               return this.literal_ == null ? MysqlxDatatypes.Scalar.getDefaultInstance() : this.literal_;
+            }
+         }
+
+         private SingleFieldBuilder<MysqlxDatatypes.Scalar, MysqlxDatatypes.Scalar.Builder, MysqlxDatatypes.ScalarOrBuilder> getLiteralFieldBuilder() {
+            if (this.literalBuilder_ == null) {
+               this.literalBuilder_ = new SingleFieldBuilder(this.getLiteral(), this.getParentForChildren(), this.isClean());
+               this.literal_ = null;
+            }
+
+            return this.literalBuilder_;
+         }
+
+         @Override
+         public boolean hasFunctionCall() {
+            return (this.bitField0_ & 16) != 0;
+         }
+
+         @Override
+         public MysqlxExpr.FunctionCall getFunctionCall() {
+            if (this.functionCallBuilder_ == null) {
+               return this.functionCall_ == null ? MysqlxExpr.FunctionCall.getDefaultInstance() : this.functionCall_;
+            } else {
+               return (MysqlxExpr.FunctionCall)this.functionCallBuilder_.getMessage();
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder setFunctionCall(MysqlxExpr.FunctionCall value) {
+            if (this.functionCallBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.functionCall_ = value;
+            } else {
+               this.functionCallBuilder_.setMessage(value);
+            }
+
+            this.bitField0_ |= 16;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder setFunctionCall(MysqlxExpr.FunctionCall.Builder builderForValue) {
+            if (this.functionCallBuilder_ == null) {
+               this.functionCall_ = builderForValue.build();
+            } else {
+               this.functionCallBuilder_.setMessage(builderForValue.build());
+            }
+
+            this.bitField0_ |= 16;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder mergeFunctionCall(MysqlxExpr.FunctionCall value) {
+            if (this.functionCallBuilder_ == null) {
+               if ((this.bitField0_ & 16) != 0 && this.functionCall_ != null && this.functionCall_ != MysqlxExpr.FunctionCall.getDefaultInstance()) {
+                  this.getFunctionCallBuilder().mergeFrom(value);
+               } else {
+                  this.functionCall_ = value;
+               }
+            } else {
+               this.functionCallBuilder_.mergeFrom(value);
+            }
+
+            if (this.functionCall_ != null) {
+               this.bitField0_ |= 16;
+               this.onChanged();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder clearFunctionCall() {
+            this.bitField0_ &= -17;
+            this.functionCall_ = null;
+            if (this.functionCallBuilder_ != null) {
+               this.functionCallBuilder_.dispose();
+               this.functionCallBuilder_ = null;
+            }
+
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder getFunctionCallBuilder() {
+            this.bitField0_ |= 16;
+            this.onChanged();
+            return (MysqlxExpr.FunctionCall.Builder)this.getFunctionCallFieldBuilder().getBuilder();
+         }
+
+         @Override
+         public MysqlxExpr.FunctionCallOrBuilder getFunctionCallOrBuilder() {
+            if (this.functionCallBuilder_ != null) {
+               return (MysqlxExpr.FunctionCallOrBuilder)this.functionCallBuilder_.getMessageOrBuilder();
+            } else {
+               return this.functionCall_ == null ? MysqlxExpr.FunctionCall.getDefaultInstance() : this.functionCall_;
+            }
+         }
+
+         private SingleFieldBuilder<MysqlxExpr.FunctionCall, MysqlxExpr.FunctionCall.Builder, MysqlxExpr.FunctionCallOrBuilder> getFunctionCallFieldBuilder() {
+            if (this.functionCallBuilder_ == null) {
+               this.functionCallBuilder_ = new SingleFieldBuilder(this.getFunctionCall(), this.getParentForChildren(), this.isClean());
+               this.functionCall_ = null;
+            }
+
+            return this.functionCallBuilder_;
+         }
+
+         @Override
+         public boolean hasOperator() {
+            return (this.bitField0_ & 32) != 0;
+         }
+
+         @Override
+         public MysqlxExpr.Operator getOperator() {
+            if (this.operatorBuilder_ == null) {
+               return this.operator_ == null ? MysqlxExpr.Operator.getDefaultInstance() : this.operator_;
+            } else {
+               return (MysqlxExpr.Operator)this.operatorBuilder_.getMessage();
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder setOperator(MysqlxExpr.Operator value) {
+            if (this.operatorBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.operator_ = value;
+            } else {
+               this.operatorBuilder_.setMessage(value);
+            }
+
+            this.bitField0_ |= 32;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder setOperator(MysqlxExpr.Operator.Builder builderForValue) {
+            if (this.operatorBuilder_ == null) {
+               this.operator_ = builderForValue.build();
+            } else {
+               this.operatorBuilder_.setMessage(builderForValue.build());
+            }
+
+            this.bitField0_ |= 32;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder mergeOperator(MysqlxExpr.Operator value) {
+            if (this.operatorBuilder_ == null) {
+               if ((this.bitField0_ & 32) != 0 && this.operator_ != null && this.operator_ != MysqlxExpr.Operator.getDefaultInstance()) {
+                  this.getOperatorBuilder().mergeFrom(value);
+               } else {
+                  this.operator_ = value;
+               }
+            } else {
+               this.operatorBuilder_.mergeFrom(value);
+            }
+
+            if (this.operator_ != null) {
+               this.bitField0_ |= 32;
+               this.onChanged();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder clearOperator() {
+            this.bitField0_ &= -33;
+            this.operator_ = null;
+            if (this.operatorBuilder_ != null) {
+               this.operatorBuilder_.dispose();
+               this.operatorBuilder_ = null;
+            }
+
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Operator.Builder getOperatorBuilder() {
+            this.bitField0_ |= 32;
+            this.onChanged();
+            return (MysqlxExpr.Operator.Builder)this.getOperatorFieldBuilder().getBuilder();
+         }
+
+         @Override
+         public MysqlxExpr.OperatorOrBuilder getOperatorOrBuilder() {
+            if (this.operatorBuilder_ != null) {
+               return (MysqlxExpr.OperatorOrBuilder)this.operatorBuilder_.getMessageOrBuilder();
+            } else {
+               return this.operator_ == null ? MysqlxExpr.Operator.getDefaultInstance() : this.operator_;
+            }
+         }
+
+         private SingleFieldBuilder<MysqlxExpr.Operator, MysqlxExpr.Operator.Builder, MysqlxExpr.OperatorOrBuilder> getOperatorFieldBuilder() {
+            if (this.operatorBuilder_ == null) {
+               this.operatorBuilder_ = new SingleFieldBuilder(this.getOperator(), this.getParentForChildren(), this.isClean());
+               this.operator_ = null;
+            }
+
+            return this.operatorBuilder_;
+         }
+
+         @Override
+         public boolean hasPosition() {
+            return (this.bitField0_ & 64) != 0;
+         }
+
+         @Override
+         public int getPosition() {
+            return this.position_;
+         }
+
+         public MysqlxExpr.Expr.Builder setPosition(int value) {
+            this.position_ = value;
+            this.bitField0_ |= 64;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder clearPosition() {
+            this.bitField0_ &= -65;
+            this.position_ = 0;
+            this.onChanged();
+            return this;
+         }
+
+         @Override
+         public boolean hasObject() {
+            return (this.bitField0_ & 128) != 0;
+         }
+
+         @Override
+         public MysqlxExpr.Object getObject() {
+            if (this.objectBuilder_ == null) {
+               return this.object_ == null ? MysqlxExpr.Object.getDefaultInstance() : this.object_;
+            } else {
+               return (MysqlxExpr.Object)this.objectBuilder_.getMessage();
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder setObject(MysqlxExpr.Object value) {
+            if (this.objectBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.object_ = value;
+            } else {
+               this.objectBuilder_.setMessage(value);
+            }
+
+            this.bitField0_ |= 128;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder setObject(MysqlxExpr.Object.Builder builderForValue) {
+            if (this.objectBuilder_ == null) {
+               this.object_ = builderForValue.build();
+            } else {
+               this.objectBuilder_.setMessage(builderForValue.build());
+            }
+
+            this.bitField0_ |= 128;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder mergeObject(MysqlxExpr.Object value) {
+            if (this.objectBuilder_ == null) {
+               if ((this.bitField0_ & 128) != 0 && this.object_ != null && this.object_ != MysqlxExpr.Object.getDefaultInstance()) {
+                  this.getObjectBuilder().mergeFrom(value);
+               } else {
+                  this.object_ = value;
+               }
+            } else {
+               this.objectBuilder_.mergeFrom(value);
+            }
+
+            if (this.object_ != null) {
+               this.bitField0_ |= 128;
+               this.onChanged();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder clearObject() {
+            this.bitField0_ &= -129;
+            this.object_ = null;
+            if (this.objectBuilder_ != null) {
+               this.objectBuilder_.dispose();
+               this.objectBuilder_ = null;
+            }
+
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Object.Builder getObjectBuilder() {
+            this.bitField0_ |= 128;
+            this.onChanged();
+            return (MysqlxExpr.Object.Builder)this.getObjectFieldBuilder().getBuilder();
+         }
+
+         @Override
+         public MysqlxExpr.ObjectOrBuilder getObjectOrBuilder() {
+            if (this.objectBuilder_ != null) {
+               return (MysqlxExpr.ObjectOrBuilder)this.objectBuilder_.getMessageOrBuilder();
+            } else {
+               return this.object_ == null ? MysqlxExpr.Object.getDefaultInstance() : this.object_;
+            }
+         }
+
+         private SingleFieldBuilder<MysqlxExpr.Object, MysqlxExpr.Object.Builder, MysqlxExpr.ObjectOrBuilder> getObjectFieldBuilder() {
+            if (this.objectBuilder_ == null) {
+               this.objectBuilder_ = new SingleFieldBuilder(this.getObject(), this.getParentForChildren(), this.isClean());
+               this.object_ = null;
+            }
+
+            return this.objectBuilder_;
+         }
+
+         @Override
+         public boolean hasArray() {
+            return (this.bitField0_ & 256) != 0;
+         }
+
+         @Override
+         public MysqlxExpr.Array getArray() {
+            if (this.arrayBuilder_ == null) {
+               return this.array_ == null ? MysqlxExpr.Array.getDefaultInstance() : this.array_;
+            } else {
+               return (MysqlxExpr.Array)this.arrayBuilder_.getMessage();
+            }
+         }
+
+         public MysqlxExpr.Expr.Builder setArray(MysqlxExpr.Array value) {
+            if (this.arrayBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.array_ = value;
+            } else {
+               this.arrayBuilder_.setMessage(value);
+            }
+
+            this.bitField0_ |= 256;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder setArray(MysqlxExpr.Array.Builder builderForValue) {
+            if (this.arrayBuilder_ == null) {
+               this.array_ = builderForValue.build();
+            } else {
+               this.arrayBuilder_.setMessage(builderForValue.build());
+            }
+
+            this.bitField0_ |= 256;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder mergeArray(MysqlxExpr.Array value) {
+            if (this.arrayBuilder_ == null) {
+               if ((this.bitField0_ & 256) != 0 && this.array_ != null && this.array_ != MysqlxExpr.Array.getDefaultInstance()) {
+                  this.getArrayBuilder().mergeFrom(value);
+               } else {
+                  this.array_ = value;
+               }
+            } else {
+               this.arrayBuilder_.mergeFrom(value);
+            }
+
+            if (this.array_ != null) {
+               this.bitField0_ |= 256;
+               this.onChanged();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder clearArray() {
+            this.bitField0_ &= -257;
+            this.array_ = null;
+            if (this.arrayBuilder_ != null) {
+               this.arrayBuilder_.dispose();
+               this.arrayBuilder_ = null;
+            }
+
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Array.Builder getArrayBuilder() {
+            this.bitField0_ |= 256;
+            this.onChanged();
+            return (MysqlxExpr.Array.Builder)this.getArrayFieldBuilder().getBuilder();
+         }
+
+         @Override
+         public MysqlxExpr.ArrayOrBuilder getArrayOrBuilder() {
+            if (this.arrayBuilder_ != null) {
+               return (MysqlxExpr.ArrayOrBuilder)this.arrayBuilder_.getMessageOrBuilder();
+            } else {
+               return this.array_ == null ? MysqlxExpr.Array.getDefaultInstance() : this.array_;
+            }
+         }
+
+         private SingleFieldBuilder<MysqlxExpr.Array, MysqlxExpr.Array.Builder, MysqlxExpr.ArrayOrBuilder> getArrayFieldBuilder() {
+            if (this.arrayBuilder_ == null) {
+               this.arrayBuilder_ = new SingleFieldBuilder(this.getArray(), this.getParentForChildren(), this.isClean());
+               this.array_ = null;
+            }
+
+            return this.arrayBuilder_;
+         }
+      }
+
+      public static enum Type implements ProtocolMessageEnum {
+         IDENT(1),
+         LITERAL(2),
+         VARIABLE(3),
+         FUNC_CALL(4),
+         OPERATOR(5),
+         PLACEHOLDER(6),
+         OBJECT(7),
+         ARRAY(8);
+
+         public static final int IDENT_VALUE = 1;
+         public static final int LITERAL_VALUE = 2;
+         public static final int VARIABLE_VALUE = 3;
+         public static final int FUNC_CALL_VALUE = 4;
+         public static final int OPERATOR_VALUE = 5;
+         public static final int PLACEHOLDER_VALUE = 6;
+         public static final int OBJECT_VALUE = 7;
+         public static final int ARRAY_VALUE = 8;
+         private static final EnumLiteMap<MysqlxExpr.Expr.Type> internalValueMap = new EnumLiteMap<MysqlxExpr.Expr.Type>() {
+            public MysqlxExpr.Expr.Type findValueByNumber(int number) {
+               return MysqlxExpr.Expr.Type.forNumber(number);
+            }
+         };
+         private static final MysqlxExpr.Expr.Type[] VALUES = values();
+         private final int value;
+
+         public final int getNumber() {
+            return this.value;
+         }
+
+         @Deprecated
+         public static MysqlxExpr.Expr.Type valueOf(int value) {
+            return forNumber(value);
+         }
+
+         public static MysqlxExpr.Expr.Type forNumber(int value) {
+            switch (value) {
+               case 1:
+                  return IDENT;
+               case 2:
+                  return LITERAL;
+               case 3:
+                  return VARIABLE;
+               case 4:
+                  return FUNC_CALL;
+               case 5:
+                  return OPERATOR;
+               case 6:
+                  return PLACEHOLDER;
+               case 7:
+                  return OBJECT;
+               case 8:
+                  return ARRAY;
+               default:
+                  return null;
+            }
+         }
+
+         public static EnumLiteMap<MysqlxExpr.Expr.Type> internalGetValueMap() {
+            return internalValueMap;
+         }
+
+         public final EnumValueDescriptor getValueDescriptor() {
+            return (EnumValueDescriptor)getDescriptor().getValues().get(this.ordinal());
+         }
+
+         public final EnumDescriptor getDescriptorForType() {
+            return getDescriptor();
+         }
+
+         public static final EnumDescriptor getDescriptor() {
+            return (EnumDescriptor)MysqlxExpr.Expr.getDescriptor().getEnumTypes().get(0);
+         }
+
+         public static MysqlxExpr.Expr.Type valueOf(EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+               throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
+            } else {
+               return VALUES[desc.getIndex()];
+            }
+         }
+
+         private Type(int value) {
+            this.value = value;
+         }
+
+         static {
+            RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.Expr.Type.class.getName());
+         }
+      }
+   }
+
+   public interface ExprOrBuilder extends MessageOrBuilder {
+      boolean hasType();
+
+      MysqlxExpr.Expr.Type getType();
+
+      boolean hasIdentifier();
+
+      MysqlxExpr.ColumnIdentifier getIdentifier();
+
+      MysqlxExpr.ColumnIdentifierOrBuilder getIdentifierOrBuilder();
+
+      boolean hasVariable();
+
+      String getVariable();
+
+      ByteString getVariableBytes();
+
+      boolean hasLiteral();
+
+      MysqlxDatatypes.Scalar getLiteral();
+
+      MysqlxDatatypes.ScalarOrBuilder getLiteralOrBuilder();
+
+      boolean hasFunctionCall();
+
+      MysqlxExpr.FunctionCall getFunctionCall();
+
+      MysqlxExpr.FunctionCallOrBuilder getFunctionCallOrBuilder();
+
+      boolean hasOperator();
+
+      MysqlxExpr.Operator getOperator();
+
+      MysqlxExpr.OperatorOrBuilder getOperatorOrBuilder();
+
+      boolean hasPosition();
+
+      int getPosition();
+
+      boolean hasObject();
+
+      MysqlxExpr.Object getObject();
+
+      MysqlxExpr.ObjectOrBuilder getObjectOrBuilder();
+
+      boolean hasArray();
+
+      MysqlxExpr.Array getArray();
+
+      MysqlxExpr.ArrayOrBuilder getArrayOrBuilder();
+   }
+
+   public static final class FunctionCall extends GeneratedMessage implements MysqlxExpr.FunctionCallOrBuilder {
+      private static final long serialVersionUID = 0L;
+      private int bitField0_;
+      public static final int NAME_FIELD_NUMBER = 1;
+      private MysqlxExpr.Identifier name_;
+      public static final int PARAM_FIELD_NUMBER = 2;
+      private List<MysqlxExpr.Expr> param_;
+      private byte memoizedIsInitialized = -1;
+      private static final MysqlxExpr.FunctionCall DEFAULT_INSTANCE = new MysqlxExpr.FunctionCall();
+      private static final Parser<MysqlxExpr.FunctionCall> PARSER = new AbstractParser<MysqlxExpr.FunctionCall>() {
+         public MysqlxExpr.FunctionCall parsePartialFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            MysqlxExpr.FunctionCall.Builder builder = MysqlxExpr.FunctionCall.newBuilder();
+
+            try {
+               builder.mergeFrom(input, extensionRegistry);
+            } catch (InvalidProtocolBufferException var5) {
+               throw var5.setUnfinishedMessage(builder.buildPartial());
+            } catch (UninitializedMessageException var6) {
+               throw var6.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (IOException var7) {
+               throw new InvalidProtocolBufferException(var7).setUnfinishedMessage(builder.buildPartial());
+            }
+
+            return builder.buildPartial();
+         }
+      };
+
+      private FunctionCall(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+         super(builder);
+      }
+
+      private FunctionCall() {
+         this.param_ = Collections.emptyList();
+      }
+
+      public static final Descriptor getDescriptor() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_FunctionCall_descriptor;
+      }
+
+      protected FieldAccessorTable internalGetFieldAccessorTable() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_FunctionCall_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(MysqlxExpr.FunctionCall.class, MysqlxExpr.FunctionCall.Builder.class);
+      }
+
+      @Override
+      public boolean hasName() {
+         return (this.bitField0_ & 1) != 0;
+      }
+
+      @Override
+      public MysqlxExpr.Identifier getName() {
+         return this.name_ == null ? MysqlxExpr.Identifier.getDefaultInstance() : this.name_;
+      }
+
+      @Override
+      public MysqlxExpr.IdentifierOrBuilder getNameOrBuilder() {
+         return this.name_ == null ? MysqlxExpr.Identifier.getDefaultInstance() : this.name_;
+      }
+
+      @Override
+      public List<MysqlxExpr.Expr> getParamList() {
+         return this.param_;
+      }
+
+      @Override
+      public List<? extends MysqlxExpr.ExprOrBuilder> getParamOrBuilderList() {
+         return this.param_;
+      }
+
+      @Override
+      public int getParamCount() {
+         return this.param_.size();
+      }
+
+      @Override
+      public MysqlxExpr.Expr getParam(int index) {
+         return this.param_.get(index);
+      }
+
+      @Override
+      public MysqlxExpr.ExprOrBuilder getParamOrBuilder(int index) {
+         return this.param_.get(index);
+      }
+
+      public final boolean isInitialized() {
+         byte isInitialized = this.memoizedIsInitialized;
+         if (isInitialized == 1) {
+            return true;
+         } else if (isInitialized == 0) {
+            return false;
+         } else if (!this.hasName()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else if (!this.getName().isInitialized()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else {
+            for (int i = 0; i < this.getParamCount(); i++) {
+               if (!this.getParam(i).isInitialized()) {
+                  this.memoizedIsInitialized = 0;
+                  return false;
+               }
+            }
+
+            this.memoizedIsInitialized = 1;
+            return true;
+         }
+      }
+
+      public void writeTo(CodedOutputStream output) throws IOException {
+         if ((this.bitField0_ & 1) != 0) {
+            output.writeMessage(1, this.getName());
+         }
+
+         for (int i = 0; i < this.param_.size(); i++) {
+            output.writeMessage(2, (MessageLite)this.param_.get(i));
+         }
+
+         this.getUnknownFields().writeTo(output);
+      }
+
+      public int getSerializedSize() {
+         int size = this.memoizedSize;
+         if (size != -1) {
+            return size;
+         } else {
+            size = 0;
+            if ((this.bitField0_ & 1) != 0) {
+               size += CodedOutputStream.computeMessageSize(1, this.getName());
+            }
+
+            for (int i = 0; i < this.param_.size(); i++) {
+               size += CodedOutputStream.computeMessageSize(2, (MessageLite)this.param_.get(i));
+            }
+
+            size += this.getUnknownFields().getSerializedSize();
+            this.memoizedSize = size;
+            return size;
+         }
+      }
+
+      @Override
+      public boolean equals(java.lang.Object obj) {
+         if (obj == this) {
+            return true;
+         } else if (!(obj instanceof MysqlxExpr.FunctionCall)) {
+            return super.equals(obj);
+         } else {
+            MysqlxExpr.FunctionCall other = (MysqlxExpr.FunctionCall)obj;
+            if (this.hasName() != other.hasName()) {
+               return false;
+            } else if (this.hasName() && !this.getName().equals(other.getName())) {
+               return false;
+            } else {
+               return !this.getParamList().equals(other.getParamList()) ? false : this.getUnknownFields().equals(other.getUnknownFields());
+            }
+         }
+      }
+
+      @Override
+      public int hashCode() {
+         if (this.memoizedHashCode != 0) {
+            return this.memoizedHashCode;
+         } else {
+            int hash = 41;
+            hash = 19 * hash + getDescriptor().hashCode();
+            if (this.hasName()) {
+               hash = 37 * hash + 1;
+               hash = 53 * hash + this.getName().hashCode();
+            }
+
+            if (this.getParamCount() > 0) {
+               hash = 37 * hash + 2;
+               hash = 53 * hash + this.getParamList().hashCode();
+            }
+
+            hash = 29 * hash + this.getUnknownFields().hashCode();
+            this.memoizedHashCode = hash;
+            return hash;
+         }
+      }
+
+      public static MysqlxExpr.FunctionCall parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.FunctionCall)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.FunctionCall parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.FunctionCall)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.FunctionCall parseFrom(ByteString data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.FunctionCall)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.FunctionCall parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.FunctionCall)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.FunctionCall parseFrom(byte[] data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.FunctionCall)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.FunctionCall parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.FunctionCall)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.FunctionCall parseFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.FunctionCall)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.FunctionCall parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.FunctionCall)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.FunctionCall parseDelimitedFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.FunctionCall)GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.FunctionCall parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.FunctionCall)GeneratedMessage.parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.FunctionCall parseFrom(CodedInputStream input) throws IOException {
+         return (MysqlxExpr.FunctionCall)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.FunctionCall parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.FunctionCall)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public MysqlxExpr.FunctionCall.Builder newBuilderForType() {
+         return newBuilder();
+      }
+
+      public static MysqlxExpr.FunctionCall.Builder newBuilder() {
+         return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static MysqlxExpr.FunctionCall.Builder newBuilder(MysqlxExpr.FunctionCall prototype) {
+         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      public MysqlxExpr.FunctionCall.Builder toBuilder() {
+         return this == DEFAULT_INSTANCE ? new MysqlxExpr.FunctionCall.Builder() : new MysqlxExpr.FunctionCall.Builder().mergeFrom(this);
+      }
+
+      protected MysqlxExpr.FunctionCall.Builder newBuilderForType(BuilderParent parent) {
+         return new MysqlxExpr.FunctionCall.Builder(parent);
+      }
+
+      public static MysqlxExpr.FunctionCall getDefaultInstance() {
+         return DEFAULT_INSTANCE;
+      }
+
+      public static Parser<MysqlxExpr.FunctionCall> parser() {
+         return PARSER;
+      }
+
+      public Parser<MysqlxExpr.FunctionCall> getParserForType() {
+         return PARSER;
+      }
+
+      public MysqlxExpr.FunctionCall getDefaultInstanceForType() {
+         return DEFAULT_INSTANCE;
+      }
+
+      static {
+         RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.FunctionCall.class.getName());
+      }
+
+      public static final class Builder
+         extends com.google.protobuf.GeneratedMessage.Builder<MysqlxExpr.FunctionCall.Builder>
+         implements MysqlxExpr.FunctionCallOrBuilder {
+         private int bitField0_;
+         private MysqlxExpr.Identifier name_;
+         private SingleFieldBuilder<MysqlxExpr.Identifier, MysqlxExpr.Identifier.Builder, MysqlxExpr.IdentifierOrBuilder> nameBuilder_;
+         private List<MysqlxExpr.Expr> param_ = Collections.emptyList();
+         private RepeatedFieldBuilder<MysqlxExpr.Expr, MysqlxExpr.Expr.Builder, MysqlxExpr.ExprOrBuilder> paramBuilder_;
+
+         public static final Descriptor getDescriptor() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_FunctionCall_descriptor;
+         }
+
+         protected FieldAccessorTable internalGetFieldAccessorTable() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_FunctionCall_fieldAccessorTable
+               .ensureFieldAccessorsInitialized(MysqlxExpr.FunctionCall.class, MysqlxExpr.FunctionCall.Builder.class);
+         }
+
+         private Builder() {
+            this.maybeForceBuilderInitialization();
+         }
+
+         private Builder(BuilderParent parent) {
+            super(parent);
+            this.maybeForceBuilderInitialization();
+         }
+
+         private void maybeForceBuilderInitialization() {
+            if (MysqlxExpr.FunctionCall.alwaysUseFieldBuilders) {
+               this.getNameFieldBuilder();
+               this.getParamFieldBuilder();
+            }
+         }
+
+         public MysqlxExpr.FunctionCall.Builder clear() {
+            super.clear();
+            this.bitField0_ = 0;
+            this.name_ = null;
+            if (this.nameBuilder_ != null) {
+               this.nameBuilder_.dispose();
+               this.nameBuilder_ = null;
+            }
+
+            if (this.paramBuilder_ == null) {
+               this.param_ = Collections.emptyList();
+            } else {
+               this.param_ = null;
+               this.paramBuilder_.clear();
+            }
+
+            this.bitField0_ &= -3;
+            return this;
+         }
+
+         public Descriptor getDescriptorForType() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_FunctionCall_descriptor;
+         }
+
+         public MysqlxExpr.FunctionCall getDefaultInstanceForType() {
+            return MysqlxExpr.FunctionCall.getDefaultInstance();
+         }
+
+         public MysqlxExpr.FunctionCall build() {
+            MysqlxExpr.FunctionCall result = this.buildPartial();
+            if (!result.isInitialized()) {
+               throw newUninitializedMessageException(result);
+            } else {
+               return result;
+            }
+         }
+
+         public MysqlxExpr.FunctionCall buildPartial() {
+            MysqlxExpr.FunctionCall result = new MysqlxExpr.FunctionCall(this);
+            this.buildPartialRepeatedFields(result);
+            if (this.bitField0_ != 0) {
+               this.buildPartial0(result);
+            }
+
+            this.onBuilt();
+            return result;
+         }
+
+         private void buildPartialRepeatedFields(MysqlxExpr.FunctionCall result) {
+            if (this.paramBuilder_ == null) {
+               if ((this.bitField0_ & 2) != 0) {
+                  this.param_ = Collections.unmodifiableList(this.param_);
+                  this.bitField0_ &= -3;
+               }
+
+               result.param_ = this.param_;
+            } else {
+               result.param_ = this.paramBuilder_.build();
+            }
+         }
+
+         private void buildPartial0(MysqlxExpr.FunctionCall result) {
+            int from_bitField0_ = this.bitField0_;
+            int to_bitField0_ = 0;
+            if ((from_bitField0_ & 1) != 0) {
+               result.name_ = this.nameBuilder_ == null ? this.name_ : (MysqlxExpr.Identifier)this.nameBuilder_.build();
+               to_bitField0_ |= 1;
+            }
+
+            result.bitField0_ = result.bitField0_ | to_bitField0_;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder mergeFrom(Message other) {
+            if (other instanceof MysqlxExpr.FunctionCall) {
+               return this.mergeFrom((MysqlxExpr.FunctionCall)other);
+            } else {
+               super.mergeFrom(other);
+               return this;
+            }
+         }
+
+         public MysqlxExpr.FunctionCall.Builder mergeFrom(MysqlxExpr.FunctionCall other) {
+            if (other == MysqlxExpr.FunctionCall.getDefaultInstance()) {
+               return this;
+            } else {
+               if (other.hasName()) {
+                  this.mergeName(other.getName());
+               }
+
+               if (this.paramBuilder_ == null) {
+                  if (!other.param_.isEmpty()) {
+                     if (this.param_.isEmpty()) {
+                        this.param_ = other.param_;
+                        this.bitField0_ &= -3;
+                     } else {
+                        this.ensureParamIsMutable();
+                        this.param_.addAll(other.param_);
+                     }
+
+                     this.onChanged();
+                  }
+               } else if (!other.param_.isEmpty()) {
+                  if (this.paramBuilder_.isEmpty()) {
+                     this.paramBuilder_.dispose();
+                     this.paramBuilder_ = null;
+                     this.param_ = other.param_;
+                     this.bitField0_ &= -3;
+                     this.paramBuilder_ = MysqlxExpr.FunctionCall.alwaysUseFieldBuilders ? this.getParamFieldBuilder() : null;
+                  } else {
+                     this.paramBuilder_.addAllMessages(other.param_);
+                  }
+               }
+
+               this.mergeUnknownFields(other.getUnknownFields());
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public final boolean isInitialized() {
+            if (!this.hasName()) {
+               return false;
+            } else if (!this.getName().isInitialized()) {
+               return false;
+            } else {
+               for (int i = 0; i < this.getParamCount(); i++) {
+                  if (!this.getParam(i).isInitialized()) {
+                     return false;
+                  }
+               }
+
+               return true;
+            }
+         }
+
+         public MysqlxExpr.FunctionCall.Builder mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            if (extensionRegistry == null) {
+               throw new NullPointerException();
+            } else {
+               try {
+                  boolean done = false;
+
+                  while (!done) {
+                     int tag = input.readTag();
+                     switch (tag) {
+                        case 0:
+                           done = true;
+                           break;
+                        case 10:
+                           input.readMessage(this.getNameFieldBuilder().getBuilder(), extensionRegistry);
+                           this.bitField0_ |= 1;
+                           break;
+                        case 18:
+                           MysqlxExpr.Expr m = (MysqlxExpr.Expr)input.readMessage(MysqlxExpr.Expr.parser(), extensionRegistry);
+                           if (this.paramBuilder_ == null) {
+                              this.ensureParamIsMutable();
+                              this.param_.add(m);
+                           } else {
+                              this.paramBuilder_.addMessage(m);
+                           }
+                           break;
+                        default:
+                           if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                              done = true;
+                           }
+                     }
+                  }
+               } catch (InvalidProtocolBufferException var9) {
+                  throw var9.unwrapIOException();
+               } finally {
+                  this.onChanged();
+               }
+
+               return this;
+            }
+         }
+
+         @Override
+         public boolean hasName() {
+            return (this.bitField0_ & 1) != 0;
+         }
+
+         @Override
+         public MysqlxExpr.Identifier getName() {
+            if (this.nameBuilder_ == null) {
+               return this.name_ == null ? MysqlxExpr.Identifier.getDefaultInstance() : this.name_;
+            } else {
+               return (MysqlxExpr.Identifier)this.nameBuilder_.getMessage();
+            }
+         }
+
+         public MysqlxExpr.FunctionCall.Builder setName(MysqlxExpr.Identifier value) {
+            if (this.nameBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.name_ = value;
+            } else {
+               this.nameBuilder_.setMessage(value);
+            }
+
+            this.bitField0_ |= 1;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder setName(MysqlxExpr.Identifier.Builder builderForValue) {
+            if (this.nameBuilder_ == null) {
+               this.name_ = builderForValue.build();
+            } else {
+               this.nameBuilder_.setMessage(builderForValue.build());
+            }
+
+            this.bitField0_ |= 1;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder mergeName(MysqlxExpr.Identifier value) {
+            if (this.nameBuilder_ == null) {
+               if ((this.bitField0_ & 1) != 0 && this.name_ != null && this.name_ != MysqlxExpr.Identifier.getDefaultInstance()) {
+                  this.getNameBuilder().mergeFrom(value);
+               } else {
+                  this.name_ = value;
+               }
+            } else {
+               this.nameBuilder_.mergeFrom(value);
+            }
+
+            if (this.name_ != null) {
+               this.bitField0_ |= 1;
+               this.onChanged();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder clearName() {
+            this.bitField0_ &= -2;
+            this.name_ = null;
+            if (this.nameBuilder_ != null) {
+               this.nameBuilder_.dispose();
+               this.nameBuilder_ = null;
+            }
+
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Identifier.Builder getNameBuilder() {
+            this.bitField0_ |= 1;
+            this.onChanged();
+            return (MysqlxExpr.Identifier.Builder)this.getNameFieldBuilder().getBuilder();
+         }
+
+         @Override
+         public MysqlxExpr.IdentifierOrBuilder getNameOrBuilder() {
+            if (this.nameBuilder_ != null) {
+               return (MysqlxExpr.IdentifierOrBuilder)this.nameBuilder_.getMessageOrBuilder();
+            } else {
+               return this.name_ == null ? MysqlxExpr.Identifier.getDefaultInstance() : this.name_;
+            }
+         }
+
+         private SingleFieldBuilder<MysqlxExpr.Identifier, MysqlxExpr.Identifier.Builder, MysqlxExpr.IdentifierOrBuilder> getNameFieldBuilder() {
+            if (this.nameBuilder_ == null) {
+               this.nameBuilder_ = new SingleFieldBuilder(this.getName(), this.getParentForChildren(), this.isClean());
+               this.name_ = null;
+            }
+
+            return this.nameBuilder_;
+         }
+
+         private void ensureParamIsMutable() {
+            if ((this.bitField0_ & 2) == 0) {
+               this.param_ = new ArrayList<>(this.param_);
+               this.bitField0_ |= 2;
+            }
+         }
+
+         @Override
+         public List<MysqlxExpr.Expr> getParamList() {
+            return this.paramBuilder_ == null ? Collections.unmodifiableList(this.param_) : this.paramBuilder_.getMessageList();
+         }
+
+         @Override
+         public int getParamCount() {
+            return this.paramBuilder_ == null ? this.param_.size() : this.paramBuilder_.getCount();
+         }
+
+         @Override
+         public MysqlxExpr.Expr getParam(int index) {
+            return this.paramBuilder_ == null ? this.param_.get(index) : (MysqlxExpr.Expr)this.paramBuilder_.getMessage(index);
+         }
+
+         public MysqlxExpr.FunctionCall.Builder setParam(int index, MysqlxExpr.Expr value) {
+            if (this.paramBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureParamIsMutable();
+               this.param_.set(index, value);
+               this.onChanged();
+            } else {
+               this.paramBuilder_.setMessage(index, value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder setParam(int index, MysqlxExpr.Expr.Builder builderForValue) {
+            if (this.paramBuilder_ == null) {
+               this.ensureParamIsMutable();
+               this.param_.set(index, builderForValue.build());
+               this.onChanged();
+            } else {
+               this.paramBuilder_.setMessage(index, builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder addParam(MysqlxExpr.Expr value) {
+            if (this.paramBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureParamIsMutable();
+               this.param_.add(value);
+               this.onChanged();
+            } else {
+               this.paramBuilder_.addMessage(value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder addParam(int index, MysqlxExpr.Expr value) {
+            if (this.paramBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureParamIsMutable();
+               this.param_.add(index, value);
+               this.onChanged();
+            } else {
+               this.paramBuilder_.addMessage(index, value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder addParam(MysqlxExpr.Expr.Builder builderForValue) {
+            if (this.paramBuilder_ == null) {
+               this.ensureParamIsMutable();
+               this.param_.add(builderForValue.build());
+               this.onChanged();
+            } else {
+               this.paramBuilder_.addMessage(builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder addParam(int index, MysqlxExpr.Expr.Builder builderForValue) {
+            if (this.paramBuilder_ == null) {
+               this.ensureParamIsMutable();
+               this.param_.add(index, builderForValue.build());
+               this.onChanged();
+            } else {
+               this.paramBuilder_.addMessage(index, builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder addAllParam(Iterable<? extends MysqlxExpr.Expr> values) {
+            if (this.paramBuilder_ == null) {
+               this.ensureParamIsMutable();
+               com.google.protobuf.AbstractMessageLite.Builder.addAll(values, this.param_);
+               this.onChanged();
+            } else {
+               this.paramBuilder_.addAllMessages(values);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder clearParam() {
+            if (this.paramBuilder_ == null) {
+               this.param_ = Collections.emptyList();
+               this.bitField0_ &= -3;
+               this.onChanged();
+            } else {
+               this.paramBuilder_.clear();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.FunctionCall.Builder removeParam(int index) {
+            if (this.paramBuilder_ == null) {
+               this.ensureParamIsMutable();
+               this.param_.remove(index);
+               this.onChanged();
+            } else {
+               this.paramBuilder_.remove(index);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder getParamBuilder(int index) {
+            return (MysqlxExpr.Expr.Builder)this.getParamFieldBuilder().getBuilder(index);
+         }
+
+         @Override
+         public MysqlxExpr.ExprOrBuilder getParamOrBuilder(int index) {
+            return this.paramBuilder_ == null ? this.param_.get(index) : (MysqlxExpr.ExprOrBuilder)this.paramBuilder_.getMessageOrBuilder(index);
+         }
+
+         @Override
+         public List<? extends MysqlxExpr.ExprOrBuilder> getParamOrBuilderList() {
+            return this.paramBuilder_ != null ? this.paramBuilder_.getMessageOrBuilderList() : Collections.unmodifiableList(this.param_);
+         }
+
+         public MysqlxExpr.Expr.Builder addParamBuilder() {
+            return (MysqlxExpr.Expr.Builder)this.getParamFieldBuilder().addBuilder(MysqlxExpr.Expr.getDefaultInstance());
+         }
+
+         public MysqlxExpr.Expr.Builder addParamBuilder(int index) {
+            return (MysqlxExpr.Expr.Builder)this.getParamFieldBuilder().addBuilder(index, MysqlxExpr.Expr.getDefaultInstance());
+         }
+
+         public List<MysqlxExpr.Expr.Builder> getParamBuilderList() {
+            return this.getParamFieldBuilder().getBuilderList();
+         }
+
+         private RepeatedFieldBuilder<MysqlxExpr.Expr, MysqlxExpr.Expr.Builder, MysqlxExpr.ExprOrBuilder> getParamFieldBuilder() {
+            if (this.paramBuilder_ == null) {
+               this.paramBuilder_ = new RepeatedFieldBuilder(this.param_, (this.bitField0_ & 2) != 0, this.getParentForChildren(), this.isClean());
+               this.param_ = null;
+            }
+
+            return this.paramBuilder_;
+         }
+      }
+   }
+
+   public interface FunctionCallOrBuilder extends MessageOrBuilder {
+      boolean hasName();
+
+      MysqlxExpr.Identifier getName();
+
+      MysqlxExpr.IdentifierOrBuilder getNameOrBuilder();
+
+      List<MysqlxExpr.Expr> getParamList();
+
+      MysqlxExpr.Expr getParam(int var1);
+
+      int getParamCount();
+
+      List<? extends MysqlxExpr.ExprOrBuilder> getParamOrBuilderList();
+
+      MysqlxExpr.ExprOrBuilder getParamOrBuilder(int var1);
+   }
+
+   public static final class Identifier extends GeneratedMessage implements MysqlxExpr.IdentifierOrBuilder {
+      private static final long serialVersionUID = 0L;
+      private int bitField0_;
+      public static final int NAME_FIELD_NUMBER = 1;
+      private volatile java.lang.Object name_ = "";
+      public static final int SCHEMA_NAME_FIELD_NUMBER = 2;
+      private volatile java.lang.Object schemaName_ = "";
+      private byte memoizedIsInitialized = -1;
+      private static final MysqlxExpr.Identifier DEFAULT_INSTANCE = new MysqlxExpr.Identifier();
+      private static final Parser<MysqlxExpr.Identifier> PARSER = new AbstractParser<MysqlxExpr.Identifier>() {
+         public MysqlxExpr.Identifier parsePartialFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            MysqlxExpr.Identifier.Builder builder = MysqlxExpr.Identifier.newBuilder();
+
+            try {
+               builder.mergeFrom(input, extensionRegistry);
+            } catch (InvalidProtocolBufferException var5) {
+               throw var5.setUnfinishedMessage(builder.buildPartial());
+            } catch (UninitializedMessageException var6) {
+               throw var6.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (IOException var7) {
+               throw new InvalidProtocolBufferException(var7).setUnfinishedMessage(builder.buildPartial());
+            }
+
+            return builder.buildPartial();
+         }
+      };
+
+      private Identifier(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+         super(builder);
+      }
+
+      private Identifier() {
+         this.name_ = "";
+         this.schemaName_ = "";
+      }
+
+      public static final Descriptor getDescriptor() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_Identifier_descriptor;
+      }
+
+      protected FieldAccessorTable internalGetFieldAccessorTable() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_Identifier_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(MysqlxExpr.Identifier.class, MysqlxExpr.Identifier.Builder.class);
+      }
+
+      @Override
+      public boolean hasName() {
+         return (this.bitField0_ & 1) != 0;
+      }
+
+      @Override
+      public String getName() {
+         java.lang.Object ref = this.name_;
+         if (ref instanceof String) {
+            return (String)ref;
+         } else {
+            ByteString bs = (ByteString)ref;
+            String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+               this.name_ = s;
+            }
+
+            return s;
+         }
+      }
+
+      @Override
+      public ByteString getNameBytes() {
+         java.lang.Object ref = this.name_;
+         if (ref instanceof String) {
+            ByteString b = ByteString.copyFromUtf8((String)ref);
+            this.name_ = b;
+            return b;
+         } else {
+            return (ByteString)ref;
+         }
+      }
+
+      @Override
+      public boolean hasSchemaName() {
+         return (this.bitField0_ & 2) != 0;
+      }
+
+      @Override
+      public String getSchemaName() {
+         java.lang.Object ref = this.schemaName_;
+         if (ref instanceof String) {
+            return (String)ref;
+         } else {
+            ByteString bs = (ByteString)ref;
+            String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+               this.schemaName_ = s;
+            }
+
+            return s;
+         }
+      }
+
+      @Override
+      public ByteString getSchemaNameBytes() {
+         java.lang.Object ref = this.schemaName_;
+         if (ref instanceof String) {
+            ByteString b = ByteString.copyFromUtf8((String)ref);
+            this.schemaName_ = b;
+            return b;
+         } else {
+            return (ByteString)ref;
+         }
+      }
+
+      public final boolean isInitialized() {
+         byte isInitialized = this.memoizedIsInitialized;
+         if (isInitialized == 1) {
+            return true;
+         } else if (isInitialized == 0) {
+            return false;
+         } else if (!this.hasName()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else {
+            this.memoizedIsInitialized = 1;
+            return true;
+         }
+      }
+
+      public void writeTo(CodedOutputStream output) throws IOException {
+         if ((this.bitField0_ & 1) != 0) {
+            GeneratedMessage.writeString(output, 1, this.name_);
+         }
+
+         if ((this.bitField0_ & 2) != 0) {
+            GeneratedMessage.writeString(output, 2, this.schemaName_);
+         }
+
+         this.getUnknownFields().writeTo(output);
+      }
+
+      public int getSerializedSize() {
+         int size = this.memoizedSize;
+         if (size != -1) {
+            return size;
+         } else {
+            size = 0;
+            if ((this.bitField0_ & 1) != 0) {
+               size += GeneratedMessage.computeStringSize(1, this.name_);
+            }
+
+            if ((this.bitField0_ & 2) != 0) {
+               size += GeneratedMessage.computeStringSize(2, this.schemaName_);
+            }
+
+            size += this.getUnknownFields().getSerializedSize();
+            this.memoizedSize = size;
+            return size;
+         }
+      }
+
+      @Override
+      public boolean equals(java.lang.Object obj) {
+         if (obj == this) {
+            return true;
+         } else if (!(obj instanceof MysqlxExpr.Identifier)) {
+            return super.equals(obj);
+         } else {
+            MysqlxExpr.Identifier other = (MysqlxExpr.Identifier)obj;
+            if (this.hasName() != other.hasName()) {
+               return false;
+            } else if (this.hasName() && !this.getName().equals(other.getName())) {
+               return false;
+            } else if (this.hasSchemaName() != other.hasSchemaName()) {
+               return false;
+            } else {
+               return this.hasSchemaName() && !this.getSchemaName().equals(other.getSchemaName())
+                  ? false
+                  : this.getUnknownFields().equals(other.getUnknownFields());
+            }
+         }
+      }
+
+      @Override
+      public int hashCode() {
+         if (this.memoizedHashCode != 0) {
+            return this.memoizedHashCode;
+         } else {
+            int hash = 41;
+            hash = 19 * hash + getDescriptor().hashCode();
+            if (this.hasName()) {
+               hash = 37 * hash + 1;
+               hash = 53 * hash + this.getName().hashCode();
+            }
+
+            if (this.hasSchemaName()) {
+               hash = 37 * hash + 2;
+               hash = 53 * hash + this.getSchemaName().hashCode();
+            }
+
+            hash = 29 * hash + this.getUnknownFields().hashCode();
+            this.memoizedHashCode = hash;
+            return hash;
+         }
+      }
+
+      public static MysqlxExpr.Identifier parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Identifier)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Identifier parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Identifier)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Identifier parseFrom(ByteString data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Identifier)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Identifier parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Identifier)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Identifier parseFrom(byte[] data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Identifier)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Identifier parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Identifier)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Identifier parseFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.Identifier)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Identifier parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Identifier)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Identifier parseDelimitedFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.Identifier)GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Identifier parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Identifier)GeneratedMessage.parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Identifier parseFrom(CodedInputStream input) throws IOException {
+         return (MysqlxExpr.Identifier)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Identifier parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Identifier)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public MysqlxExpr.Identifier.Builder newBuilderForType() {
+         return newBuilder();
+      }
+
+      public static MysqlxExpr.Identifier.Builder newBuilder() {
+         return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static MysqlxExpr.Identifier.Builder newBuilder(MysqlxExpr.Identifier prototype) {
+         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      public MysqlxExpr.Identifier.Builder toBuilder() {
+         return this == DEFAULT_INSTANCE ? new MysqlxExpr.Identifier.Builder() : new MysqlxExpr.Identifier.Builder().mergeFrom(this);
+      }
+
+      protected MysqlxExpr.Identifier.Builder newBuilderForType(BuilderParent parent) {
+         return new MysqlxExpr.Identifier.Builder(parent);
+      }
+
+      public static MysqlxExpr.Identifier getDefaultInstance() {
+         return DEFAULT_INSTANCE;
+      }
+
+      public static Parser<MysqlxExpr.Identifier> parser() {
+         return PARSER;
+      }
+
+      public Parser<MysqlxExpr.Identifier> getParserForType() {
+         return PARSER;
+      }
+
+      public MysqlxExpr.Identifier getDefaultInstanceForType() {
+         return DEFAULT_INSTANCE;
+      }
+
+      static {
+         RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.Identifier.class.getName());
+      }
+
+      public static final class Builder
+         extends com.google.protobuf.GeneratedMessage.Builder<MysqlxExpr.Identifier.Builder>
+         implements MysqlxExpr.IdentifierOrBuilder {
+         private int bitField0_;
+         private java.lang.Object name_ = "";
+         private java.lang.Object schemaName_ = "";
+
+         public static final Descriptor getDescriptor() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Identifier_descriptor;
+         }
+
+         protected FieldAccessorTable internalGetFieldAccessorTable() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Identifier_fieldAccessorTable
+               .ensureFieldAccessorsInitialized(MysqlxExpr.Identifier.class, MysqlxExpr.Identifier.Builder.class);
+         }
+
+         private Builder() {
+         }
+
+         private Builder(BuilderParent parent) {
+            super(parent);
+         }
+
+         public MysqlxExpr.Identifier.Builder clear() {
+            super.clear();
+            this.bitField0_ = 0;
+            this.name_ = "";
+            this.schemaName_ = "";
+            return this;
+         }
+
+         public Descriptor getDescriptorForType() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Identifier_descriptor;
+         }
+
+         public MysqlxExpr.Identifier getDefaultInstanceForType() {
+            return MysqlxExpr.Identifier.getDefaultInstance();
+         }
+
+         public MysqlxExpr.Identifier build() {
+            MysqlxExpr.Identifier result = this.buildPartial();
+            if (!result.isInitialized()) {
+               throw newUninitializedMessageException(result);
+            } else {
+               return result;
+            }
+         }
+
+         public MysqlxExpr.Identifier buildPartial() {
+            MysqlxExpr.Identifier result = new MysqlxExpr.Identifier(this);
+            if (this.bitField0_ != 0) {
+               this.buildPartial0(result);
+            }
+
+            this.onBuilt();
+            return result;
+         }
+
+         private void buildPartial0(MysqlxExpr.Identifier result) {
+            int from_bitField0_ = this.bitField0_;
+            int to_bitField0_ = 0;
+            if ((from_bitField0_ & 1) != 0) {
+               result.name_ = this.name_;
+               to_bitField0_ |= 1;
+            }
+
+            if ((from_bitField0_ & 2) != 0) {
+               result.schemaName_ = this.schemaName_;
+               to_bitField0_ |= 2;
+            }
+
+            result.bitField0_ = result.bitField0_ | to_bitField0_;
+         }
+
+         public MysqlxExpr.Identifier.Builder mergeFrom(Message other) {
+            if (other instanceof MysqlxExpr.Identifier) {
+               return this.mergeFrom((MysqlxExpr.Identifier)other);
+            } else {
+               super.mergeFrom(other);
+               return this;
+            }
+         }
+
+         public MysqlxExpr.Identifier.Builder mergeFrom(MysqlxExpr.Identifier other) {
+            if (other == MysqlxExpr.Identifier.getDefaultInstance()) {
+               return this;
+            } else {
+               if (other.hasName()) {
+                  this.name_ = other.name_;
+                  this.bitField0_ |= 1;
+                  this.onChanged();
+               }
+
+               if (other.hasSchemaName()) {
+                  this.schemaName_ = other.schemaName_;
+                  this.bitField0_ |= 2;
+                  this.onChanged();
+               }
+
+               this.mergeUnknownFields(other.getUnknownFields());
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public final boolean isInitialized() {
+            return this.hasName();
+         }
+
+         public MysqlxExpr.Identifier.Builder mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            if (extensionRegistry == null) {
+               throw new NullPointerException();
+            } else {
+               try {
+                  boolean done = false;
+
+                  while (!done) {
+                     int tag = input.readTag();
+                     switch (tag) {
+                        case 0:
+                           done = true;
+                           break;
+                        case 10:
+                           this.name_ = input.readBytes();
+                           this.bitField0_ |= 1;
+                           break;
+                        case 18:
+                           this.schemaName_ = input.readBytes();
+                           this.bitField0_ |= 2;
+                           break;
+                        default:
+                           if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                              done = true;
+                           }
+                     }
+                  }
+               } catch (InvalidProtocolBufferException var8) {
+                  throw var8.unwrapIOException();
+               } finally {
+                  this.onChanged();
+               }
+
+               return this;
+            }
+         }
+
+         @Override
+         public boolean hasName() {
+            return (this.bitField0_ & 1) != 0;
+         }
+
+         @Override
+         public String getName() {
+            java.lang.Object ref = this.name_;
+            if (!(ref instanceof String)) {
+               ByteString bs = (ByteString)ref;
+               String s = bs.toStringUtf8();
+               if (bs.isValidUtf8()) {
+                  this.name_ = s;
+               }
+
+               return s;
+            } else {
+               return (String)ref;
+            }
+         }
+
+         @Override
+         public ByteString getNameBytes() {
+            java.lang.Object ref = this.name_;
+            if (ref instanceof String) {
+               ByteString b = ByteString.copyFromUtf8((String)ref);
+               this.name_ = b;
+               return b;
+            } else {
+               return (ByteString)ref;
+            }
+         }
+
+         public MysqlxExpr.Identifier.Builder setName(String value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.name_ = value;
+               this.bitField0_ |= 1;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public MysqlxExpr.Identifier.Builder clearName() {
+            this.name_ = MysqlxExpr.Identifier.getDefaultInstance().getName();
+            this.bitField0_ &= -2;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Identifier.Builder setNameBytes(ByteString value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.name_ = value;
+               this.bitField0_ |= 1;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         @Override
+         public boolean hasSchemaName() {
+            return (this.bitField0_ & 2) != 0;
+         }
+
+         @Override
+         public String getSchemaName() {
+            java.lang.Object ref = this.schemaName_;
+            if (!(ref instanceof String)) {
+               ByteString bs = (ByteString)ref;
+               String s = bs.toStringUtf8();
+               if (bs.isValidUtf8()) {
+                  this.schemaName_ = s;
+               }
+
+               return s;
+            } else {
+               return (String)ref;
+            }
+         }
+
+         @Override
+         public ByteString getSchemaNameBytes() {
+            java.lang.Object ref = this.schemaName_;
+            if (ref instanceof String) {
+               ByteString b = ByteString.copyFromUtf8((String)ref);
+               this.schemaName_ = b;
+               return b;
+            } else {
+               return (ByteString)ref;
+            }
+         }
+
+         public MysqlxExpr.Identifier.Builder setSchemaName(String value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.schemaName_ = value;
+               this.bitField0_ |= 2;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public MysqlxExpr.Identifier.Builder clearSchemaName() {
+            this.schemaName_ = MysqlxExpr.Identifier.getDefaultInstance().getSchemaName();
+            this.bitField0_ &= -3;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Identifier.Builder setSchemaNameBytes(ByteString value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.schemaName_ = value;
+               this.bitField0_ |= 2;
+               this.onChanged();
+               return this;
+            }
+         }
+      }
+   }
+
+   public interface IdentifierOrBuilder extends MessageOrBuilder {
+      boolean hasName();
+
+      String getName();
+
+      ByteString getNameBytes();
+
+      boolean hasSchemaName();
+
+      String getSchemaName();
+
+      ByteString getSchemaNameBytes();
+   }
+
+   public static final class Object extends GeneratedMessage implements MysqlxExpr.ObjectOrBuilder {
+      private static final long serialVersionUID = 0L;
+      public static final int FLD_FIELD_NUMBER = 1;
+      private List<MysqlxExpr.Object.ObjectField> fld_;
+      private byte memoizedIsInitialized = -1;
+      private static final MysqlxExpr.Object DEFAULT_INSTANCE = new MysqlxExpr.Object();
+      private static final Parser<MysqlxExpr.Object> PARSER = new AbstractParser<MysqlxExpr.Object>() {
+         public MysqlxExpr.Object parsePartialFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            MysqlxExpr.Object.Builder builder = MysqlxExpr.Object.newBuilder();
+
+            try {
+               builder.mergeFrom(input, extensionRegistry);
+            } catch (InvalidProtocolBufferException var5) {
+               throw var5.setUnfinishedMessage(builder.buildPartial());
+            } catch (UninitializedMessageException var6) {
+               throw var6.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (IOException var7) {
+               throw new InvalidProtocolBufferException(var7).setUnfinishedMessage(builder.buildPartial());
+            }
+
+            return builder.buildPartial();
+         }
+      };
+
+      private Object(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+         super(builder);
+      }
+
+      private Object() {
+         this.fld_ = Collections.emptyList();
+      }
+
+      public static final Descriptor getDescriptor() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_Object_descriptor;
+      }
+
+      protected FieldAccessorTable internalGetFieldAccessorTable() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_Object_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(MysqlxExpr.Object.class, MysqlxExpr.Object.Builder.class);
+      }
+
+      @Override
+      public List<MysqlxExpr.Object.ObjectField> getFldList() {
+         return this.fld_;
+      }
+
+      @Override
+      public List<? extends MysqlxExpr.Object.ObjectFieldOrBuilder> getFldOrBuilderList() {
+         return this.fld_;
+      }
+
+      @Override
+      public int getFldCount() {
+         return this.fld_.size();
+      }
+
+      @Override
+      public MysqlxExpr.Object.ObjectField getFld(int index) {
+         return this.fld_.get(index);
+      }
+
+      @Override
+      public MysqlxExpr.Object.ObjectFieldOrBuilder getFldOrBuilder(int index) {
+         return this.fld_.get(index);
+      }
+
+      public final boolean isInitialized() {
+         byte isInitialized = this.memoizedIsInitialized;
+         if (isInitialized == 1) {
+            return true;
+         } else if (isInitialized == 0) {
+            return false;
+         } else {
+            for (int i = 0; i < this.getFldCount(); i++) {
+               if (!this.getFld(i).isInitialized()) {
+                  this.memoizedIsInitialized = 0;
+                  return false;
+               }
+            }
+
+            this.memoizedIsInitialized = 1;
+            return true;
+         }
+      }
+
+      public void writeTo(CodedOutputStream output) throws IOException {
+         for (int i = 0; i < this.fld_.size(); i++) {
+            output.writeMessage(1, (MessageLite)this.fld_.get(i));
+         }
+
+         this.getUnknownFields().writeTo(output);
+      }
+
+      public int getSerializedSize() {
+         int size = this.memoizedSize;
+         if (size != -1) {
+            return size;
+         } else {
+            size = 0;
+
+            for (int i = 0; i < this.fld_.size(); i++) {
+               size += CodedOutputStream.computeMessageSize(1, (MessageLite)this.fld_.get(i));
+            }
+
+            size += this.getUnknownFields().getSerializedSize();
+            this.memoizedSize = size;
+            return size;
+         }
+      }
+
+      @Override
+      public boolean equals(java.lang.Object obj) {
+         if (obj == this) {
+            return true;
+         } else if (!(obj instanceof MysqlxExpr.Object)) {
+            return super.equals(obj);
+         } else {
+            MysqlxExpr.Object other = (MysqlxExpr.Object)obj;
+            return !this.getFldList().equals(other.getFldList()) ? false : this.getUnknownFields().equals(other.getUnknownFields());
+         }
+      }
+
+      @Override
+      public int hashCode() {
+         if (this.memoizedHashCode != 0) {
+            return this.memoizedHashCode;
+         } else {
+            int hash = 41;
+            hash = 19 * hash + getDescriptor().hashCode();
+            if (this.getFldCount() > 0) {
+               hash = 37 * hash + 1;
+               hash = 53 * hash + this.getFldList().hashCode();
+            }
+
+            hash = 29 * hash + this.getUnknownFields().hashCode();
+            this.memoizedHashCode = hash;
+            return hash;
+         }
+      }
+
+      public static MysqlxExpr.Object parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Object)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Object parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Object)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Object parseFrom(ByteString data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Object)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Object parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Object)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Object parseFrom(byte[] data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Object)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Object parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Object)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Object parseFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.Object)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Object parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Object)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Object parseDelimitedFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.Object)GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Object parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Object)GeneratedMessage.parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Object parseFrom(CodedInputStream input) throws IOException {
+         return (MysqlxExpr.Object)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Object parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Object)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public MysqlxExpr.Object.Builder newBuilderForType() {
+         return newBuilder();
+      }
+
+      public static MysqlxExpr.Object.Builder newBuilder() {
+         return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static MysqlxExpr.Object.Builder newBuilder(MysqlxExpr.Object prototype) {
+         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      public MysqlxExpr.Object.Builder toBuilder() {
+         return this == DEFAULT_INSTANCE ? new MysqlxExpr.Object.Builder() : new MysqlxExpr.Object.Builder().mergeFrom(this);
+      }
+
+      protected MysqlxExpr.Object.Builder newBuilderForType(BuilderParent parent) {
+         return new MysqlxExpr.Object.Builder(parent);
+      }
+
+      public static MysqlxExpr.Object getDefaultInstance() {
+         return DEFAULT_INSTANCE;
+      }
+
+      public static Parser<MysqlxExpr.Object> parser() {
+         return PARSER;
+      }
+
+      public Parser<MysqlxExpr.Object> getParserForType() {
+         return PARSER;
+      }
+
+      public MysqlxExpr.Object getDefaultInstanceForType() {
+         return DEFAULT_INSTANCE;
+      }
+
+      static {
+         RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.Object.class.getName());
+      }
+
+      public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<MysqlxExpr.Object.Builder> implements MysqlxExpr.ObjectOrBuilder {
+         private int bitField0_;
+         private List<MysqlxExpr.Object.ObjectField> fld_ = Collections.emptyList();
+         private RepeatedFieldBuilder<MysqlxExpr.Object.ObjectField, MysqlxExpr.Object.ObjectField.Builder, MysqlxExpr.Object.ObjectFieldOrBuilder> fldBuilder_;
+
+         public static final Descriptor getDescriptor() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Object_descriptor;
+         }
+
+         protected FieldAccessorTable internalGetFieldAccessorTable() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Object_fieldAccessorTable
+               .ensureFieldAccessorsInitialized(MysqlxExpr.Object.class, MysqlxExpr.Object.Builder.class);
+         }
+
+         private Builder() {
+         }
+
+         private Builder(BuilderParent parent) {
+            super(parent);
+         }
+
+         public MysqlxExpr.Object.Builder clear() {
+            super.clear();
+            this.bitField0_ = 0;
+            if (this.fldBuilder_ == null) {
+               this.fld_ = Collections.emptyList();
+            } else {
+               this.fld_ = null;
+               this.fldBuilder_.clear();
+            }
+
+            this.bitField0_ &= -2;
+            return this;
+         }
+
+         public Descriptor getDescriptorForType() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Object_descriptor;
+         }
+
+         public MysqlxExpr.Object getDefaultInstanceForType() {
+            return MysqlxExpr.Object.getDefaultInstance();
+         }
+
+         public MysqlxExpr.Object build() {
+            MysqlxExpr.Object result = this.buildPartial();
+            if (!result.isInitialized()) {
+               throw newUninitializedMessageException(result);
+            } else {
+               return result;
+            }
+         }
+
+         public MysqlxExpr.Object buildPartial() {
+            MysqlxExpr.Object result = new MysqlxExpr.Object(this);
+            this.buildPartialRepeatedFields(result);
+            if (this.bitField0_ != 0) {
+               this.buildPartial0(result);
+            }
+
+            this.onBuilt();
+            return result;
+         }
+
+         private void buildPartialRepeatedFields(MysqlxExpr.Object result) {
+            if (this.fldBuilder_ == null) {
+               if ((this.bitField0_ & 1) != 0) {
+                  this.fld_ = Collections.unmodifiableList(this.fld_);
+                  this.bitField0_ &= -2;
+               }
+
+               result.fld_ = this.fld_;
+            } else {
+               result.fld_ = this.fldBuilder_.build();
+            }
+         }
+
+         private void buildPartial0(MysqlxExpr.Object result) {
+            int from_bitField0_ = this.bitField0_;
+         }
+
+         public MysqlxExpr.Object.Builder mergeFrom(Message other) {
+            if (other instanceof MysqlxExpr.Object) {
+               return this.mergeFrom((MysqlxExpr.Object)other);
+            } else {
+               super.mergeFrom(other);
+               return this;
+            }
+         }
+
+         public MysqlxExpr.Object.Builder mergeFrom(MysqlxExpr.Object other) {
+            if (other == MysqlxExpr.Object.getDefaultInstance()) {
+               return this;
+            } else {
+               if (this.fldBuilder_ == null) {
+                  if (!other.fld_.isEmpty()) {
+                     if (this.fld_.isEmpty()) {
+                        this.fld_ = other.fld_;
+                        this.bitField0_ &= -2;
+                     } else {
+                        this.ensureFldIsMutable();
+                        this.fld_.addAll(other.fld_);
+                     }
+
+                     this.onChanged();
+                  }
+               } else if (!other.fld_.isEmpty()) {
+                  if (this.fldBuilder_.isEmpty()) {
+                     this.fldBuilder_.dispose();
+                     this.fldBuilder_ = null;
+                     this.fld_ = other.fld_;
+                     this.bitField0_ &= -2;
+                     this.fldBuilder_ = MysqlxExpr.Object.alwaysUseFieldBuilders ? this.getFldFieldBuilder() : null;
+                  } else {
+                     this.fldBuilder_.addAllMessages(other.fld_);
+                  }
+               }
+
+               this.mergeUnknownFields(other.getUnknownFields());
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public final boolean isInitialized() {
+            for (int i = 0; i < this.getFldCount(); i++) {
+               if (!this.getFld(i).isInitialized()) {
+                  return false;
+               }
+            }
+
+            return true;
+         }
+
+         public MysqlxExpr.Object.Builder mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            if (extensionRegistry == null) {
+               throw new NullPointerException();
+            } else {
+               try {
+                  boolean done = false;
+
+                  while (!done) {
+                     int tag = input.readTag();
+                     switch (tag) {
+                        case 0:
+                           done = true;
+                           break;
+                        case 10:
+                           MysqlxExpr.Object.ObjectField m = (MysqlxExpr.Object.ObjectField)input.readMessage(
+                              MysqlxExpr.Object.ObjectField.parser(), extensionRegistry
+                           );
+                           if (this.fldBuilder_ == null) {
+                              this.ensureFldIsMutable();
+                              this.fld_.add(m);
+                           } else {
+                              this.fldBuilder_.addMessage(m);
+                           }
+                           break;
+                        default:
+                           if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                              done = true;
+                           }
+                     }
+                  }
+               } catch (InvalidProtocolBufferException var9) {
+                  throw var9.unwrapIOException();
+               } finally {
+                  this.onChanged();
+               }
+
+               return this;
+            }
+         }
+
+         private void ensureFldIsMutable() {
+            if ((this.bitField0_ & 1) == 0) {
+               this.fld_ = new ArrayList<>(this.fld_);
+               this.bitField0_ |= 1;
+            }
+         }
+
+         @Override
+         public List<MysqlxExpr.Object.ObjectField> getFldList() {
+            return this.fldBuilder_ == null ? Collections.unmodifiableList(this.fld_) : this.fldBuilder_.getMessageList();
+         }
+
+         @Override
+         public int getFldCount() {
+            return this.fldBuilder_ == null ? this.fld_.size() : this.fldBuilder_.getCount();
+         }
+
+         @Override
+         public MysqlxExpr.Object.ObjectField getFld(int index) {
+            return this.fldBuilder_ == null ? this.fld_.get(index) : (MysqlxExpr.Object.ObjectField)this.fldBuilder_.getMessage(index);
+         }
+
+         public MysqlxExpr.Object.Builder setFld(int index, MysqlxExpr.Object.ObjectField value) {
+            if (this.fldBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureFldIsMutable();
+               this.fld_.set(index, value);
+               this.onChanged();
+            } else {
+               this.fldBuilder_.setMessage(index, value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Object.Builder setFld(int index, MysqlxExpr.Object.ObjectField.Builder builderForValue) {
+            if (this.fldBuilder_ == null) {
+               this.ensureFldIsMutable();
+               this.fld_.set(index, builderForValue.build());
+               this.onChanged();
+            } else {
+               this.fldBuilder_.setMessage(index, builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Object.Builder addFld(MysqlxExpr.Object.ObjectField value) {
+            if (this.fldBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureFldIsMutable();
+               this.fld_.add(value);
+               this.onChanged();
+            } else {
+               this.fldBuilder_.addMessage(value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Object.Builder addFld(int index, MysqlxExpr.Object.ObjectField value) {
+            if (this.fldBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureFldIsMutable();
+               this.fld_.add(index, value);
+               this.onChanged();
+            } else {
+               this.fldBuilder_.addMessage(index, value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Object.Builder addFld(MysqlxExpr.Object.ObjectField.Builder builderForValue) {
+            if (this.fldBuilder_ == null) {
+               this.ensureFldIsMutable();
+               this.fld_.add(builderForValue.build());
+               this.onChanged();
+            } else {
+               this.fldBuilder_.addMessage(builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Object.Builder addFld(int index, MysqlxExpr.Object.ObjectField.Builder builderForValue) {
+            if (this.fldBuilder_ == null) {
+               this.ensureFldIsMutable();
+               this.fld_.add(index, builderForValue.build());
+               this.onChanged();
+            } else {
+               this.fldBuilder_.addMessage(index, builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Object.Builder addAllFld(Iterable<? extends MysqlxExpr.Object.ObjectField> values) {
+            if (this.fldBuilder_ == null) {
+               this.ensureFldIsMutable();
+               com.google.protobuf.AbstractMessageLite.Builder.addAll(values, this.fld_);
+               this.onChanged();
+            } else {
+               this.fldBuilder_.addAllMessages(values);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Object.Builder clearFld() {
+            if (this.fldBuilder_ == null) {
+               this.fld_ = Collections.emptyList();
+               this.bitField0_ &= -2;
+               this.onChanged();
+            } else {
+               this.fldBuilder_.clear();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Object.Builder removeFld(int index) {
+            if (this.fldBuilder_ == null) {
+               this.ensureFldIsMutable();
+               this.fld_.remove(index);
+               this.onChanged();
+            } else {
+               this.fldBuilder_.remove(index);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Object.ObjectField.Builder getFldBuilder(int index) {
+            return (MysqlxExpr.Object.ObjectField.Builder)this.getFldFieldBuilder().getBuilder(index);
+         }
+
+         @Override
+         public MysqlxExpr.Object.ObjectFieldOrBuilder getFldOrBuilder(int index) {
+            return this.fldBuilder_ == null ? this.fld_.get(index) : (MysqlxExpr.Object.ObjectFieldOrBuilder)this.fldBuilder_.getMessageOrBuilder(index);
+         }
+
+         @Override
+         public List<? extends MysqlxExpr.Object.ObjectFieldOrBuilder> getFldOrBuilderList() {
+            return this.fldBuilder_ != null ? this.fldBuilder_.getMessageOrBuilderList() : Collections.unmodifiableList(this.fld_);
+         }
+
+         public MysqlxExpr.Object.ObjectField.Builder addFldBuilder() {
+            return (MysqlxExpr.Object.ObjectField.Builder)this.getFldFieldBuilder().addBuilder(MysqlxExpr.Object.ObjectField.getDefaultInstance());
+         }
+
+         public MysqlxExpr.Object.ObjectField.Builder addFldBuilder(int index) {
+            return (MysqlxExpr.Object.ObjectField.Builder)this.getFldFieldBuilder().addBuilder(index, MysqlxExpr.Object.ObjectField.getDefaultInstance());
+         }
+
+         public List<MysqlxExpr.Object.ObjectField.Builder> getFldBuilderList() {
+            return this.getFldFieldBuilder().getBuilderList();
+         }
+
+         private RepeatedFieldBuilder<MysqlxExpr.Object.ObjectField, MysqlxExpr.Object.ObjectField.Builder, MysqlxExpr.Object.ObjectFieldOrBuilder> getFldFieldBuilder() {
+            if (this.fldBuilder_ == null) {
+               this.fldBuilder_ = new RepeatedFieldBuilder(this.fld_, (this.bitField0_ & 1) != 0, this.getParentForChildren(), this.isClean());
+               this.fld_ = null;
+            }
+
+            return this.fldBuilder_;
+         }
+      }
+
+      public static final class ObjectField extends GeneratedMessage implements MysqlxExpr.Object.ObjectFieldOrBuilder {
+         private static final long serialVersionUID = 0L;
+         private int bitField0_;
+         public static final int KEY_FIELD_NUMBER = 1;
+         private volatile java.lang.Object key_ = "";
+         public static final int VALUE_FIELD_NUMBER = 2;
+         private MysqlxExpr.Expr value_;
+         private byte memoizedIsInitialized = -1;
+         private static final MysqlxExpr.Object.ObjectField DEFAULT_INSTANCE = new MysqlxExpr.Object.ObjectField();
+         private static final Parser<MysqlxExpr.Object.ObjectField> PARSER = new AbstractParser<MysqlxExpr.Object.ObjectField>() {
+            public MysqlxExpr.Object.ObjectField parsePartialFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+               MysqlxExpr.Object.ObjectField.Builder builder = MysqlxExpr.Object.ObjectField.newBuilder();
+
+               try {
+                  builder.mergeFrom(input, extensionRegistry);
+               } catch (InvalidProtocolBufferException var5) {
+                  throw var5.setUnfinishedMessage(builder.buildPartial());
+               } catch (UninitializedMessageException var6) {
+                  throw var6.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+               } catch (IOException var7) {
+                  throw new InvalidProtocolBufferException(var7).setUnfinishedMessage(builder.buildPartial());
+               }
+
+               return builder.buildPartial();
+            }
+         };
+
+         private ObjectField(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+            super(builder);
+         }
+
+         private ObjectField() {
+            this.key_ = "";
+         }
+
+         public static final Descriptor getDescriptor() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Object_ObjectField_descriptor;
+         }
+
+         protected FieldAccessorTable internalGetFieldAccessorTable() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Object_ObjectField_fieldAccessorTable
+               .ensureFieldAccessorsInitialized(MysqlxExpr.Object.ObjectField.class, MysqlxExpr.Object.ObjectField.Builder.class);
+         }
+
+         @Override
+         public boolean hasKey() {
+            return (this.bitField0_ & 1) != 0;
+         }
+
+         @Override
+         public String getKey() {
+            java.lang.Object ref = this.key_;
+            if (ref instanceof String) {
+               return (String)ref;
+            } else {
+               ByteString bs = (ByteString)ref;
+               String s = bs.toStringUtf8();
+               if (bs.isValidUtf8()) {
+                  this.key_ = s;
+               }
+
+               return s;
+            }
+         }
+
+         @Override
+         public ByteString getKeyBytes() {
+            java.lang.Object ref = this.key_;
+            if (ref instanceof String) {
+               ByteString b = ByteString.copyFromUtf8((String)ref);
+               this.key_ = b;
+               return b;
+            } else {
+               return (ByteString)ref;
+            }
+         }
+
+         @Override
+         public boolean hasValue() {
+            return (this.bitField0_ & 2) != 0;
+         }
+
+         @Override
+         public MysqlxExpr.Expr getValue() {
+            return this.value_ == null ? MysqlxExpr.Expr.getDefaultInstance() : this.value_;
+         }
+
+         @Override
+         public MysqlxExpr.ExprOrBuilder getValueOrBuilder() {
+            return this.value_ == null ? MysqlxExpr.Expr.getDefaultInstance() : this.value_;
+         }
+
+         public final boolean isInitialized() {
+            byte isInitialized = this.memoizedIsInitialized;
+            if (isInitialized == 1) {
+               return true;
+            } else if (isInitialized == 0) {
+               return false;
+            } else if (!this.hasKey()) {
+               this.memoizedIsInitialized = 0;
+               return false;
+            } else if (!this.hasValue()) {
+               this.memoizedIsInitialized = 0;
+               return false;
+            } else if (!this.getValue().isInitialized()) {
+               this.memoizedIsInitialized = 0;
+               return false;
+            } else {
+               this.memoizedIsInitialized = 1;
+               return true;
+            }
+         }
+
+         public void writeTo(CodedOutputStream output) throws IOException {
+            if ((this.bitField0_ & 1) != 0) {
+               GeneratedMessage.writeString(output, 1, this.key_);
+            }
+
+            if ((this.bitField0_ & 2) != 0) {
+               output.writeMessage(2, this.getValue());
+            }
+
+            this.getUnknownFields().writeTo(output);
+         }
+
+         public int getSerializedSize() {
+            int size = this.memoizedSize;
+            if (size != -1) {
+               return size;
+            } else {
+               size = 0;
+               if ((this.bitField0_ & 1) != 0) {
+                  size += GeneratedMessage.computeStringSize(1, this.key_);
+               }
+
+               if ((this.bitField0_ & 2) != 0) {
+                  size += CodedOutputStream.computeMessageSize(2, this.getValue());
+               }
+
+               size += this.getUnknownFields().getSerializedSize();
+               this.memoizedSize = size;
+               return size;
+            }
+         }
+
+         @Override
+         public boolean equals(java.lang.Object obj) {
+            if (obj == this) {
+               return true;
+            } else if (!(obj instanceof MysqlxExpr.Object.ObjectField)) {
+               return super.equals(obj);
+            } else {
+               MysqlxExpr.Object.ObjectField other = (MysqlxExpr.Object.ObjectField)obj;
+               if (this.hasKey() != other.hasKey()) {
+                  return false;
+               } else if (this.hasKey() && !this.getKey().equals(other.getKey())) {
+                  return false;
+               } else if (this.hasValue() != other.hasValue()) {
+                  return false;
+               } else {
+                  return this.hasValue() && !this.getValue().equals(other.getValue()) ? false : this.getUnknownFields().equals(other.getUnknownFields());
+               }
+            }
+         }
+
+         @Override
+         public int hashCode() {
+            if (this.memoizedHashCode != 0) {
+               return this.memoizedHashCode;
+            } else {
+               int hash = 41;
+               hash = 19 * hash + getDescriptor().hashCode();
+               if (this.hasKey()) {
+                  hash = 37 * hash + 1;
+                  hash = 53 * hash + this.getKey().hashCode();
+               }
+
+               if (this.hasValue()) {
+                  hash = 37 * hash + 2;
+                  hash = 53 * hash + this.getValue().hashCode();
+               }
+
+               hash = 29 * hash + this.getUnknownFields().hashCode();
+               this.memoizedHashCode = hash;
+               return hash;
+            }
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
+            return (MysqlxExpr.Object.ObjectField)PARSER.parseFrom(data);
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            return (MysqlxExpr.Object.ObjectField)PARSER.parseFrom(data, extensionRegistry);
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseFrom(ByteString data) throws InvalidProtocolBufferException {
+            return (MysqlxExpr.Object.ObjectField)PARSER.parseFrom(data);
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            return (MysqlxExpr.Object.ObjectField)PARSER.parseFrom(data, extensionRegistry);
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseFrom(byte[] data) throws InvalidProtocolBufferException {
+            return (MysqlxExpr.Object.ObjectField)PARSER.parseFrom(data);
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            return (MysqlxExpr.Object.ObjectField)PARSER.parseFrom(data, extensionRegistry);
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseFrom(InputStream input) throws IOException {
+            return (MysqlxExpr.Object.ObjectField)GeneratedMessage.parseWithIOException(PARSER, input);
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            return (MysqlxExpr.Object.ObjectField)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseDelimitedFrom(InputStream input) throws IOException {
+            return (MysqlxExpr.Object.ObjectField)GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            return (MysqlxExpr.Object.ObjectField)GeneratedMessage.parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseFrom(CodedInputStream input) throws IOException {
+            return (MysqlxExpr.Object.ObjectField)GeneratedMessage.parseWithIOException(PARSER, input);
+         }
+
+         public static MysqlxExpr.Object.ObjectField parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            return (MysqlxExpr.Object.ObjectField)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+         }
+
+         public MysqlxExpr.Object.ObjectField.Builder newBuilderForType() {
+            return newBuilder();
+         }
+
+         public static MysqlxExpr.Object.ObjectField.Builder newBuilder() {
+            return DEFAULT_INSTANCE.toBuilder();
+         }
+
+         public static MysqlxExpr.Object.ObjectField.Builder newBuilder(MysqlxExpr.Object.ObjectField prototype) {
+            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+         }
+
+         public MysqlxExpr.Object.ObjectField.Builder toBuilder() {
+            return this == DEFAULT_INSTANCE ? new MysqlxExpr.Object.ObjectField.Builder() : new MysqlxExpr.Object.ObjectField.Builder().mergeFrom(this);
+         }
+
+         protected MysqlxExpr.Object.ObjectField.Builder newBuilderForType(BuilderParent parent) {
+            return new MysqlxExpr.Object.ObjectField.Builder(parent);
+         }
+
+         public static MysqlxExpr.Object.ObjectField getDefaultInstance() {
+            return DEFAULT_INSTANCE;
+         }
+
+         public static Parser<MysqlxExpr.Object.ObjectField> parser() {
+            return PARSER;
+         }
+
+         public Parser<MysqlxExpr.Object.ObjectField> getParserForType() {
+            return PARSER;
+         }
+
+         public MysqlxExpr.Object.ObjectField getDefaultInstanceForType() {
+            return DEFAULT_INSTANCE;
+         }
+
+         static {
+            RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.Object.ObjectField.class.getName());
+         }
+
+         public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<MysqlxExpr.Object.ObjectField.Builder>
+            implements MysqlxExpr.Object.ObjectFieldOrBuilder {
+            private int bitField0_;
+            private java.lang.Object key_ = "";
+            private MysqlxExpr.Expr value_;
+            private SingleFieldBuilder<MysqlxExpr.Expr, MysqlxExpr.Expr.Builder, MysqlxExpr.ExprOrBuilder> valueBuilder_;
+
+            public static final Descriptor getDescriptor() {
+               return MysqlxExpr.internal_static_Mysqlx_Expr_Object_ObjectField_descriptor;
+            }
+
+            protected FieldAccessorTable internalGetFieldAccessorTable() {
+               return MysqlxExpr.internal_static_Mysqlx_Expr_Object_ObjectField_fieldAccessorTable
+                  .ensureFieldAccessorsInitialized(MysqlxExpr.Object.ObjectField.class, MysqlxExpr.Object.ObjectField.Builder.class);
+            }
+
+            private Builder() {
+               this.maybeForceBuilderInitialization();
+            }
+
+            private Builder(BuilderParent parent) {
+               super(parent);
+               this.maybeForceBuilderInitialization();
+            }
+
+            private void maybeForceBuilderInitialization() {
+               if (MysqlxExpr.Object.ObjectField.alwaysUseFieldBuilders) {
+                  this.getValueFieldBuilder();
+               }
+            }
+
+            public MysqlxExpr.Object.ObjectField.Builder clear() {
+               super.clear();
+               this.bitField0_ = 0;
+               this.key_ = "";
+               this.value_ = null;
+               if (this.valueBuilder_ != null) {
+                  this.valueBuilder_.dispose();
+                  this.valueBuilder_ = null;
+               }
+
+               return this;
+            }
+
+            public Descriptor getDescriptorForType() {
+               return MysqlxExpr.internal_static_Mysqlx_Expr_Object_ObjectField_descriptor;
+            }
+
+            public MysqlxExpr.Object.ObjectField getDefaultInstanceForType() {
+               return MysqlxExpr.Object.ObjectField.getDefaultInstance();
+            }
+
+            public MysqlxExpr.Object.ObjectField build() {
+               MysqlxExpr.Object.ObjectField result = this.buildPartial();
+               if (!result.isInitialized()) {
+                  throw newUninitializedMessageException(result);
+               } else {
+                  return result;
+               }
+            }
+
+            public MysqlxExpr.Object.ObjectField buildPartial() {
+               MysqlxExpr.Object.ObjectField result = new MysqlxExpr.Object.ObjectField(this);
+               if (this.bitField0_ != 0) {
+                  this.buildPartial0(result);
+               }
+
+               this.onBuilt();
+               return result;
+            }
+
+            private void buildPartial0(MysqlxExpr.Object.ObjectField result) {
+               int from_bitField0_ = this.bitField0_;
+               int to_bitField0_ = 0;
+               if ((from_bitField0_ & 1) != 0) {
+                  result.key_ = this.key_;
+                  to_bitField0_ |= 1;
+               }
+
+               if ((from_bitField0_ & 2) != 0) {
+                  result.value_ = this.valueBuilder_ == null ? this.value_ : (MysqlxExpr.Expr)this.valueBuilder_.build();
+                  to_bitField0_ |= 2;
+               }
+
+               result.bitField0_ = result.bitField0_ | to_bitField0_;
+            }
+
+            public MysqlxExpr.Object.ObjectField.Builder mergeFrom(Message other) {
+               if (other instanceof MysqlxExpr.Object.ObjectField) {
+                  return this.mergeFrom((MysqlxExpr.Object.ObjectField)other);
+               } else {
+                  super.mergeFrom(other);
+                  return this;
+               }
+            }
+
+            public MysqlxExpr.Object.ObjectField.Builder mergeFrom(MysqlxExpr.Object.ObjectField other) {
+               if (other == MysqlxExpr.Object.ObjectField.getDefaultInstance()) {
+                  return this;
+               } else {
+                  if (other.hasKey()) {
+                     this.key_ = other.key_;
+                     this.bitField0_ |= 1;
+                     this.onChanged();
+                  }
+
+                  if (other.hasValue()) {
+                     this.mergeValue(other.getValue());
+                  }
+
+                  this.mergeUnknownFields(other.getUnknownFields());
+                  this.onChanged();
+                  return this;
+               }
+            }
+
+            public final boolean isInitialized() {
+               if (!this.hasKey()) {
+                  return false;
+               } else {
+                  return !this.hasValue() ? false : this.getValue().isInitialized();
+               }
+            }
+
+            public MysqlxExpr.Object.ObjectField.Builder mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+               if (extensionRegistry == null) {
+                  throw new NullPointerException();
+               } else {
+                  try {
+                     boolean done = false;
+
+                     while (!done) {
+                        int tag = input.readTag();
+                        switch (tag) {
+                           case 0:
+                              done = true;
+                              break;
+                           case 10:
+                              this.key_ = input.readBytes();
+                              this.bitField0_ |= 1;
+                              break;
+                           case 18:
+                              input.readMessage(this.getValueFieldBuilder().getBuilder(), extensionRegistry);
+                              this.bitField0_ |= 2;
+                              break;
+                           default:
+                              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                                 done = true;
+                              }
+                        }
+                     }
+                  } catch (InvalidProtocolBufferException var8) {
+                     throw var8.unwrapIOException();
+                  } finally {
+                     this.onChanged();
+                  }
+
+                  return this;
+               }
+            }
+
+            @Override
+            public boolean hasKey() {
+               return (this.bitField0_ & 1) != 0;
+            }
+
+            @Override
+            public String getKey() {
+               java.lang.Object ref = this.key_;
+               if (!(ref instanceof String)) {
+                  ByteString bs = (ByteString)ref;
+                  String s = bs.toStringUtf8();
+                  if (bs.isValidUtf8()) {
+                     this.key_ = s;
+                  }
+
+                  return s;
+               } else {
+                  return (String)ref;
+               }
+            }
+
+            @Override
+            public ByteString getKeyBytes() {
+               java.lang.Object ref = this.key_;
+               if (ref instanceof String) {
+                  ByteString b = ByteString.copyFromUtf8((String)ref);
+                  this.key_ = b;
+                  return b;
+               } else {
+                  return (ByteString)ref;
+               }
+            }
+
+            public MysqlxExpr.Object.ObjectField.Builder setKey(String value) {
+               if (value == null) {
+                  throw new NullPointerException();
+               } else {
+                  this.key_ = value;
+                  this.bitField0_ |= 1;
+                  this.onChanged();
+                  return this;
+               }
+            }
+
+            public MysqlxExpr.Object.ObjectField.Builder clearKey() {
+               this.key_ = MysqlxExpr.Object.ObjectField.getDefaultInstance().getKey();
+               this.bitField0_ &= -2;
+               this.onChanged();
+               return this;
+            }
+
+            public MysqlxExpr.Object.ObjectField.Builder setKeyBytes(ByteString value) {
+               if (value == null) {
+                  throw new NullPointerException();
+               } else {
+                  this.key_ = value;
+                  this.bitField0_ |= 1;
+                  this.onChanged();
+                  return this;
+               }
+            }
+
+            @Override
+            public boolean hasValue() {
+               return (this.bitField0_ & 2) != 0;
+            }
+
+            @Override
+            public MysqlxExpr.Expr getValue() {
+               if (this.valueBuilder_ == null) {
+                  return this.value_ == null ? MysqlxExpr.Expr.getDefaultInstance() : this.value_;
+               } else {
+                  return (MysqlxExpr.Expr)this.valueBuilder_.getMessage();
+               }
+            }
+
+            public MysqlxExpr.Object.ObjectField.Builder setValue(MysqlxExpr.Expr value) {
+               if (this.valueBuilder_ == null) {
+                  if (value == null) {
+                     throw new NullPointerException();
+                  }
+
+                  this.value_ = value;
+               } else {
+                  this.valueBuilder_.setMessage(value);
+               }
+
+               this.bitField0_ |= 2;
+               this.onChanged();
+               return this;
+            }
+
+            public MysqlxExpr.Object.ObjectField.Builder setValue(MysqlxExpr.Expr.Builder builderForValue) {
+               if (this.valueBuilder_ == null) {
+                  this.value_ = builderForValue.build();
+               } else {
+                  this.valueBuilder_.setMessage(builderForValue.build());
+               }
+
+               this.bitField0_ |= 2;
+               this.onChanged();
+               return this;
+            }
+
+            public MysqlxExpr.Object.ObjectField.Builder mergeValue(MysqlxExpr.Expr value) {
+               if (this.valueBuilder_ == null) {
+                  if ((this.bitField0_ & 2) != 0 && this.value_ != null && this.value_ != MysqlxExpr.Expr.getDefaultInstance()) {
+                     this.getValueBuilder().mergeFrom(value);
+                  } else {
+                     this.value_ = value;
+                  }
+               } else {
+                  this.valueBuilder_.mergeFrom(value);
+               }
+
+               if (this.value_ != null) {
+                  this.bitField0_ |= 2;
+                  this.onChanged();
+               }
+
+               return this;
+            }
+
+            public MysqlxExpr.Object.ObjectField.Builder clearValue() {
+               this.bitField0_ &= -3;
+               this.value_ = null;
+               if (this.valueBuilder_ != null) {
+                  this.valueBuilder_.dispose();
+                  this.valueBuilder_ = null;
+               }
+
+               this.onChanged();
+               return this;
+            }
+
+            public MysqlxExpr.Expr.Builder getValueBuilder() {
+               this.bitField0_ |= 2;
+               this.onChanged();
+               return (MysqlxExpr.Expr.Builder)this.getValueFieldBuilder().getBuilder();
+            }
+
+            @Override
+            public MysqlxExpr.ExprOrBuilder getValueOrBuilder() {
+               if (this.valueBuilder_ != null) {
+                  return (MysqlxExpr.ExprOrBuilder)this.valueBuilder_.getMessageOrBuilder();
+               } else {
+                  return this.value_ == null ? MysqlxExpr.Expr.getDefaultInstance() : this.value_;
+               }
+            }
+
+            private SingleFieldBuilder<MysqlxExpr.Expr, MysqlxExpr.Expr.Builder, MysqlxExpr.ExprOrBuilder> getValueFieldBuilder() {
+               if (this.valueBuilder_ == null) {
+                  this.valueBuilder_ = new SingleFieldBuilder(this.getValue(), this.getParentForChildren(), this.isClean());
+                  this.value_ = null;
+               }
+
+               return this.valueBuilder_;
+            }
+         }
+      }
+
+      public interface ObjectFieldOrBuilder extends MessageOrBuilder {
+         boolean hasKey();
+
+         String getKey();
+
+         ByteString getKeyBytes();
+
+         boolean hasValue();
+
+         MysqlxExpr.Expr getValue();
+
+         MysqlxExpr.ExprOrBuilder getValueOrBuilder();
+      }
+   }
+
+   public interface ObjectOrBuilder extends MessageOrBuilder {
+      List<MysqlxExpr.Object.ObjectField> getFldList();
+
+      MysqlxExpr.Object.ObjectField getFld(int var1);
+
+      int getFldCount();
+
+      List<? extends MysqlxExpr.Object.ObjectFieldOrBuilder> getFldOrBuilderList();
+
+      MysqlxExpr.Object.ObjectFieldOrBuilder getFldOrBuilder(int var1);
+   }
+
+   public static final class Operator extends GeneratedMessage implements MysqlxExpr.OperatorOrBuilder {
+      private static final long serialVersionUID = 0L;
+      private int bitField0_;
+      public static final int NAME_FIELD_NUMBER = 1;
+      private volatile java.lang.Object name_ = "";
+      public static final int PARAM_FIELD_NUMBER = 2;
+      private List<MysqlxExpr.Expr> param_;
+      private byte memoizedIsInitialized = -1;
+      private static final MysqlxExpr.Operator DEFAULT_INSTANCE = new MysqlxExpr.Operator();
+      private static final Parser<MysqlxExpr.Operator> PARSER = new AbstractParser<MysqlxExpr.Operator>() {
+         public MysqlxExpr.Operator parsePartialFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+            MysqlxExpr.Operator.Builder builder = MysqlxExpr.Operator.newBuilder();
+
+            try {
+               builder.mergeFrom(input, extensionRegistry);
+            } catch (InvalidProtocolBufferException var5) {
+               throw var5.setUnfinishedMessage(builder.buildPartial());
+            } catch (UninitializedMessageException var6) {
+               throw var6.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+            } catch (IOException var7) {
+               throw new InvalidProtocolBufferException(var7).setUnfinishedMessage(builder.buildPartial());
+            }
+
+            return builder.buildPartial();
+         }
+      };
+
+      private Operator(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+         super(builder);
+      }
+
+      private Operator() {
+         this.name_ = "";
+         this.param_ = Collections.emptyList();
+      }
+
+      public static final Descriptor getDescriptor() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_Operator_descriptor;
+      }
+
+      protected FieldAccessorTable internalGetFieldAccessorTable() {
+         return MysqlxExpr.internal_static_Mysqlx_Expr_Operator_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(MysqlxExpr.Operator.class, MysqlxExpr.Operator.Builder.class);
+      }
+
+      @Override
+      public boolean hasName() {
+         return (this.bitField0_ & 1) != 0;
+      }
+
+      @Override
+      public String getName() {
+         java.lang.Object ref = this.name_;
+         if (ref instanceof String) {
+            return (String)ref;
+         } else {
+            ByteString bs = (ByteString)ref;
+            String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+               this.name_ = s;
+            }
+
+            return s;
+         }
+      }
+
+      @Override
+      public ByteString getNameBytes() {
+         java.lang.Object ref = this.name_;
+         if (ref instanceof String) {
+            ByteString b = ByteString.copyFromUtf8((String)ref);
+            this.name_ = b;
+            return b;
+         } else {
+            return (ByteString)ref;
+         }
+      }
+
+      @Override
+      public List<MysqlxExpr.Expr> getParamList() {
+         return this.param_;
+      }
+
+      @Override
+      public List<? extends MysqlxExpr.ExprOrBuilder> getParamOrBuilderList() {
+         return this.param_;
+      }
+
+      @Override
+      public int getParamCount() {
+         return this.param_.size();
+      }
+
+      @Override
+      public MysqlxExpr.Expr getParam(int index) {
+         return this.param_.get(index);
+      }
+
+      @Override
+      public MysqlxExpr.ExprOrBuilder getParamOrBuilder(int index) {
+         return this.param_.get(index);
+      }
+
+      public final boolean isInitialized() {
+         byte isInitialized = this.memoizedIsInitialized;
+         if (isInitialized == 1) {
+            return true;
+         } else if (isInitialized == 0) {
+            return false;
+         } else if (!this.hasName()) {
+            this.memoizedIsInitialized = 0;
+            return false;
+         } else {
+            for (int i = 0; i < this.getParamCount(); i++) {
+               if (!this.getParam(i).isInitialized()) {
+                  this.memoizedIsInitialized = 0;
+                  return false;
+               }
+            }
+
+            this.memoizedIsInitialized = 1;
+            return true;
+         }
+      }
+
+      public void writeTo(CodedOutputStream output) throws IOException {
+         if ((this.bitField0_ & 1) != 0) {
+            GeneratedMessage.writeString(output, 1, this.name_);
+         }
+
+         for (int i = 0; i < this.param_.size(); i++) {
+            output.writeMessage(2, (MessageLite)this.param_.get(i));
+         }
+
+         this.getUnknownFields().writeTo(output);
+      }
+
+      public int getSerializedSize() {
+         int size = this.memoizedSize;
+         if (size != -1) {
+            return size;
+         } else {
+            size = 0;
+            if ((this.bitField0_ & 1) != 0) {
+               size += GeneratedMessage.computeStringSize(1, this.name_);
+            }
+
+            for (int i = 0; i < this.param_.size(); i++) {
+               size += CodedOutputStream.computeMessageSize(2, (MessageLite)this.param_.get(i));
+            }
+
+            size += this.getUnknownFields().getSerializedSize();
+            this.memoizedSize = size;
+            return size;
+         }
+      }
+
+      @Override
+      public boolean equals(java.lang.Object obj) {
+         if (obj == this) {
+            return true;
+         } else if (!(obj instanceof MysqlxExpr.Operator)) {
+            return super.equals(obj);
+         } else {
+            MysqlxExpr.Operator other = (MysqlxExpr.Operator)obj;
+            if (this.hasName() != other.hasName()) {
+               return false;
+            } else if (this.hasName() && !this.getName().equals(other.getName())) {
+               return false;
+            } else {
+               return !this.getParamList().equals(other.getParamList()) ? false : this.getUnknownFields().equals(other.getUnknownFields());
+            }
+         }
+      }
+
+      @Override
+      public int hashCode() {
+         if (this.memoizedHashCode != 0) {
+            return this.memoizedHashCode;
+         } else {
+            int hash = 41;
+            hash = 19 * hash + getDescriptor().hashCode();
+            if (this.hasName()) {
+               hash = 37 * hash + 1;
+               hash = 53 * hash + this.getName().hashCode();
+            }
+
+            if (this.getParamCount() > 0) {
+               hash = 37 * hash + 2;
+               hash = 53 * hash + this.getParamList().hashCode();
+            }
+
+            hash = 29 * hash + this.getUnknownFields().hashCode();
+            this.memoizedHashCode = hash;
+            return hash;
+         }
+      }
+
+      public static MysqlxExpr.Operator parseFrom(ByteBuffer data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Operator)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Operator parseFrom(ByteBuffer data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Operator)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Operator parseFrom(ByteString data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Operator)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Operator parseFrom(ByteString data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Operator)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Operator parseFrom(byte[] data) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Operator)PARSER.parseFrom(data);
+      }
+
+      public static MysqlxExpr.Operator parseFrom(byte[] data, ExtensionRegistryLite extensionRegistry) throws InvalidProtocolBufferException {
+         return (MysqlxExpr.Operator)PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Operator parseFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.Operator)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Operator parseFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Operator)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Operator parseDelimitedFrom(InputStream input) throws IOException {
+         return (MysqlxExpr.Operator)GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Operator parseDelimitedFrom(InputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Operator)GeneratedMessage.parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static MysqlxExpr.Operator parseFrom(CodedInputStream input) throws IOException {
+         return (MysqlxExpr.Operator)GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static MysqlxExpr.Operator parseFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+         return (MysqlxExpr.Operator)GeneratedMessage.parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public MysqlxExpr.Operator.Builder newBuilderForType() {
+         return newBuilder();
+      }
+
+      public static MysqlxExpr.Operator.Builder newBuilder() {
+         return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static MysqlxExpr.Operator.Builder newBuilder(MysqlxExpr.Operator prototype) {
+         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      public MysqlxExpr.Operator.Builder toBuilder() {
+         return this == DEFAULT_INSTANCE ? new MysqlxExpr.Operator.Builder() : new MysqlxExpr.Operator.Builder().mergeFrom(this);
+      }
+
+      protected MysqlxExpr.Operator.Builder newBuilderForType(BuilderParent parent) {
+         return new MysqlxExpr.Operator.Builder(parent);
+      }
+
+      public static MysqlxExpr.Operator getDefaultInstance() {
+         return DEFAULT_INSTANCE;
+      }
+
+      public static Parser<MysqlxExpr.Operator> parser() {
+         return PARSER;
+      }
+
+      public Parser<MysqlxExpr.Operator> getParserForType() {
+         return PARSER;
+      }
+
+      public MysqlxExpr.Operator getDefaultInstanceForType() {
+         return DEFAULT_INSTANCE;
+      }
+
+      static {
+         RuntimeVersion.validateProtobufGencodeVersion(RuntimeDomain.PUBLIC, 4, 26, 1, "", MysqlxExpr.Operator.class.getName());
+      }
+
+      public static final class Builder
+         extends com.google.protobuf.GeneratedMessage.Builder<MysqlxExpr.Operator.Builder>
+         implements MysqlxExpr.OperatorOrBuilder {
+         private int bitField0_;
+         private java.lang.Object name_ = "";
+         private List<MysqlxExpr.Expr> param_ = Collections.emptyList();
+         private RepeatedFieldBuilder<MysqlxExpr.Expr, MysqlxExpr.Expr.Builder, MysqlxExpr.ExprOrBuilder> paramBuilder_;
+
+         public static final Descriptor getDescriptor() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Operator_descriptor;
+         }
+
+         protected FieldAccessorTable internalGetFieldAccessorTable() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Operator_fieldAccessorTable
+               .ensureFieldAccessorsInitialized(MysqlxExpr.Operator.class, MysqlxExpr.Operator.Builder.class);
+         }
+
+         private Builder() {
+         }
+
+         private Builder(BuilderParent parent) {
+            super(parent);
+         }
+
+         public MysqlxExpr.Operator.Builder clear() {
+            super.clear();
+            this.bitField0_ = 0;
+            this.name_ = "";
+            if (this.paramBuilder_ == null) {
+               this.param_ = Collections.emptyList();
+            } else {
+               this.param_ = null;
+               this.paramBuilder_.clear();
+            }
+
+            this.bitField0_ &= -3;
+            return this;
+         }
+
+         public Descriptor getDescriptorForType() {
+            return MysqlxExpr.internal_static_Mysqlx_Expr_Operator_descriptor;
+         }
+
+         public MysqlxExpr.Operator getDefaultInstanceForType() {
+            return MysqlxExpr.Operator.getDefaultInstance();
+         }
+
+         public MysqlxExpr.Operator build() {
+            MysqlxExpr.Operator result = this.buildPartial();
+            if (!result.isInitialized()) {
+               throw newUninitializedMessageException(result);
+            } else {
+               return result;
+            }
+         }
+
+         public MysqlxExpr.Operator buildPartial() {
+            MysqlxExpr.Operator result = new MysqlxExpr.Operator(this);
+            this.buildPartialRepeatedFields(result);
+            if (this.bitField0_ != 0) {
+               this.buildPartial0(result);
+            }
+
+            this.onBuilt();
+            return result;
+         }
+
+         private void buildPartialRepeatedFields(MysqlxExpr.Operator result) {
+            if (this.paramBuilder_ == null) {
+               if ((this.bitField0_ & 2) != 0) {
+                  this.param_ = Collections.unmodifiableList(this.param_);
+                  this.bitField0_ &= -3;
+               }
+
+               result.param_ = this.param_;
+            } else {
+               result.param_ = this.paramBuilder_.build();
+            }
+         }
+
+         private void buildPartial0(MysqlxExpr.Operator result) {
+            int from_bitField0_ = this.bitField0_;
+            int to_bitField0_ = 0;
+            if ((from_bitField0_ & 1) != 0) {
+               result.name_ = this.name_;
+               to_bitField0_ |= 1;
+            }
+
+            result.bitField0_ = result.bitField0_ | to_bitField0_;
+         }
+
+         public MysqlxExpr.Operator.Builder mergeFrom(Message other) {
+            if (other instanceof MysqlxExpr.Operator) {
+               return this.mergeFrom((MysqlxExpr.Operator)other);
+            } else {
+               super.mergeFrom(other);
+               return this;
+            }
+         }
+
+         public MysqlxExpr.Operator.Builder mergeFrom(MysqlxExpr.Operator other) {
+            if (other == MysqlxExpr.Operator.getDefaultInstance()) {
+               return this;
+            } else {
+               if (other.hasName()) {
+                  this.name_ = other.name_;
+                  this.bitField0_ |= 1;
+                  this.onChanged();
+               }
+
+               if (this.paramBuilder_ == null) {
+                  if (!other.param_.isEmpty()) {
+                     if (this.param_.isEmpty()) {
+                        this.param_ = other.param_;
+                        this.bitField0_ &= -3;
+                     } else {
+                        this.ensureParamIsMutable();
+                        this.param_.addAll(other.param_);
+                     }
+
+                     this.onChanged();
+                  }
+               } else if (!other.param_.isEmpty()) {
+                  if (this.paramBuilder_.isEmpty()) {
+                     this.paramBuilder_.dispose();
+                     this.paramBuilder_ = null;
+                     this.param_ = other.param_;
+                     this.bitField0_ &= -3;
+                     this.paramBuilder_ = MysqlxExpr.Operator.alwaysUseFieldBuilders ? this.getParamFieldBuilder() : null;
+                  } else {
+                     this.paramBuilder_.addAllMessages(other.param_);
+                  }
+               }
+
+               this.mergeUnknownFields(other.getUnknownFields());
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public final boolean isInitialized() {
+            if (!this.hasName()) {
+               return false;
+            } else {
+               for (int i = 0; i < this.getParamCount(); i++) {
+                  if (!this.getParam(i).isInitialized()) {
+                     return false;
+                  }
+               }
+
+               return true;
+            }
+         }
+
+         public MysqlxExpr.Operator.Builder mergeFrom(CodedInputStream input, ExtensionRegistryLite extensionRegistry) throws IOException {
+            if (extensionRegistry == null) {
+               throw new NullPointerException();
+            } else {
+               try {
+                  boolean done = false;
+
+                  while (!done) {
+                     int tag = input.readTag();
+                     switch (tag) {
+                        case 0:
+                           done = true;
+                           break;
+                        case 10:
+                           this.name_ = input.readBytes();
+                           this.bitField0_ |= 1;
+                           break;
+                        case 18:
+                           MysqlxExpr.Expr m = (MysqlxExpr.Expr)input.readMessage(MysqlxExpr.Expr.parser(), extensionRegistry);
+                           if (this.paramBuilder_ == null) {
+                              this.ensureParamIsMutable();
+                              this.param_.add(m);
+                           } else {
+                              this.paramBuilder_.addMessage(m);
+                           }
+                           break;
+                        default:
+                           if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                              done = true;
+                           }
+                     }
+                  }
+               } catch (InvalidProtocolBufferException var9) {
+                  throw var9.unwrapIOException();
+               } finally {
+                  this.onChanged();
+               }
+
+               return this;
+            }
+         }
+
+         @Override
+         public boolean hasName() {
+            return (this.bitField0_ & 1) != 0;
+         }
+
+         @Override
+         public String getName() {
+            java.lang.Object ref = this.name_;
+            if (!(ref instanceof String)) {
+               ByteString bs = (ByteString)ref;
+               String s = bs.toStringUtf8();
+               if (bs.isValidUtf8()) {
+                  this.name_ = s;
+               }
+
+               return s;
+            } else {
+               return (String)ref;
+            }
+         }
+
+         @Override
+         public ByteString getNameBytes() {
+            java.lang.Object ref = this.name_;
+            if (ref instanceof String) {
+               ByteString b = ByteString.copyFromUtf8((String)ref);
+               this.name_ = b;
+               return b;
+            } else {
+               return (ByteString)ref;
+            }
+         }
+
+         public MysqlxExpr.Operator.Builder setName(String value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.name_ = value;
+               this.bitField0_ |= 1;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         public MysqlxExpr.Operator.Builder clearName() {
+            this.name_ = MysqlxExpr.Operator.getDefaultInstance().getName();
+            this.bitField0_ &= -2;
+            this.onChanged();
+            return this;
+         }
+
+         public MysqlxExpr.Operator.Builder setNameBytes(ByteString value) {
+            if (value == null) {
+               throw new NullPointerException();
+            } else {
+               this.name_ = value;
+               this.bitField0_ |= 1;
+               this.onChanged();
+               return this;
+            }
+         }
+
+         private void ensureParamIsMutable() {
+            if ((this.bitField0_ & 2) == 0) {
+               this.param_ = new ArrayList<>(this.param_);
+               this.bitField0_ |= 2;
+            }
+         }
+
+         @Override
+         public List<MysqlxExpr.Expr> getParamList() {
+            return this.paramBuilder_ == null ? Collections.unmodifiableList(this.param_) : this.paramBuilder_.getMessageList();
+         }
+
+         @Override
+         public int getParamCount() {
+            return this.paramBuilder_ == null ? this.param_.size() : this.paramBuilder_.getCount();
+         }
+
+         @Override
+         public MysqlxExpr.Expr getParam(int index) {
+            return this.paramBuilder_ == null ? this.param_.get(index) : (MysqlxExpr.Expr)this.paramBuilder_.getMessage(index);
+         }
+
+         public MysqlxExpr.Operator.Builder setParam(int index, MysqlxExpr.Expr value) {
+            if (this.paramBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureParamIsMutable();
+               this.param_.set(index, value);
+               this.onChanged();
+            } else {
+               this.paramBuilder_.setMessage(index, value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Operator.Builder setParam(int index, MysqlxExpr.Expr.Builder builderForValue) {
+            if (this.paramBuilder_ == null) {
+               this.ensureParamIsMutable();
+               this.param_.set(index, builderForValue.build());
+               this.onChanged();
+            } else {
+               this.paramBuilder_.setMessage(index, builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Operator.Builder addParam(MysqlxExpr.Expr value) {
+            if (this.paramBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureParamIsMutable();
+               this.param_.add(value);
+               this.onChanged();
+            } else {
+               this.paramBuilder_.addMessage(value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Operator.Builder addParam(int index, MysqlxExpr.Expr value) {
+            if (this.paramBuilder_ == null) {
+               if (value == null) {
+                  throw new NullPointerException();
+               }
+
+               this.ensureParamIsMutable();
+               this.param_.add(index, value);
+               this.onChanged();
+            } else {
+               this.paramBuilder_.addMessage(index, value);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Operator.Builder addParam(MysqlxExpr.Expr.Builder builderForValue) {
+            if (this.paramBuilder_ == null) {
+               this.ensureParamIsMutable();
+               this.param_.add(builderForValue.build());
+               this.onChanged();
+            } else {
+               this.paramBuilder_.addMessage(builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Operator.Builder addParam(int index, MysqlxExpr.Expr.Builder builderForValue) {
+            if (this.paramBuilder_ == null) {
+               this.ensureParamIsMutable();
+               this.param_.add(index, builderForValue.build());
+               this.onChanged();
+            } else {
+               this.paramBuilder_.addMessage(index, builderForValue.build());
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Operator.Builder addAllParam(Iterable<? extends MysqlxExpr.Expr> values) {
+            if (this.paramBuilder_ == null) {
+               this.ensureParamIsMutable();
+               com.google.protobuf.AbstractMessageLite.Builder.addAll(values, this.param_);
+               this.onChanged();
+            } else {
+               this.paramBuilder_.addAllMessages(values);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Operator.Builder clearParam() {
+            if (this.paramBuilder_ == null) {
+               this.param_ = Collections.emptyList();
+               this.bitField0_ &= -3;
+               this.onChanged();
+            } else {
+               this.paramBuilder_.clear();
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Operator.Builder removeParam(int index) {
+            if (this.paramBuilder_ == null) {
+               this.ensureParamIsMutable();
+               this.param_.remove(index);
+               this.onChanged();
+            } else {
+               this.paramBuilder_.remove(index);
+            }
+
+            return this;
+         }
+
+         public MysqlxExpr.Expr.Builder getParamBuilder(int index) {
+            return (MysqlxExpr.Expr.Builder)this.getParamFieldBuilder().getBuilder(index);
+         }
+
+         @Override
+         public MysqlxExpr.ExprOrBuilder getParamOrBuilder(int index) {
+            return this.paramBuilder_ == null ? this.param_.get(index) : (MysqlxExpr.ExprOrBuilder)this.paramBuilder_.getMessageOrBuilder(index);
+         }
+
+         @Override
+         public List<? extends MysqlxExpr.ExprOrBuilder> getParamOrBuilderList() {
+            return this.paramBuilder_ != null ? this.paramBuilder_.getMessageOrBuilderList() : Collections.unmodifiableList(this.param_);
+         }
+
+         public MysqlxExpr.Expr.Builder addParamBuilder() {
+            return (MysqlxExpr.Expr.Builder)this.getParamFieldBuilder().addBuilder(MysqlxExpr.Expr.getDefaultInstance());
+         }
+
+         public MysqlxExpr.Expr.Builder addParamBuilder(int index) {
+            return (MysqlxExpr.Expr.Builder)this.getParamFieldBuilder().addBuilder(index, MysqlxExpr.Expr.getDefaultInstance());
+         }
+
+         public List<MysqlxExpr.Expr.Builder> getParamBuilderList() {
+            return this.getParamFieldBuilder().getBuilderList();
+         }
+
+         private RepeatedFieldBuilder<MysqlxExpr.Expr, MysqlxExpr.Expr.Builder, MysqlxExpr.ExprOrBuilder> getParamFieldBuilder() {
+            if (this.paramBuilder_ == null) {
+               this.paramBuilder_ = new RepeatedFieldBuilder(this.param_, (this.bitField0_ & 2) != 0, this.getParentForChildren(), this.isClean());
+               this.param_ = null;
+            }
+
+            return this.paramBuilder_;
+         }
+      }
+   }
+
+   public interface OperatorOrBuilder extends MessageOrBuilder {
+      boolean hasName();
+
+      String getName();
+
+      ByteString getNameBytes();
+
+      List<MysqlxExpr.Expr> getParamList();
+
+      MysqlxExpr.Expr getParam(int var1);
+
+      int getParamCount();
+
+      List<? extends MysqlxExpr.ExprOrBuilder> getParamOrBuilderList();
+
+      MysqlxExpr.ExprOrBuilder getParamOrBuilder(int var1);
+   }
+}

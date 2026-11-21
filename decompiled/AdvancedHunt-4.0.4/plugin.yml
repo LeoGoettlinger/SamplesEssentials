@@ -1,0 +1,92 @@
+name: AdvancedHunt
+version: '4.0.4'
+main: de.theredend2000.advancedhunt.Main
+api-version: '1.13'
+authors: [ GrafterCrafter, TheRedEnd2000 ]
+softdepend: [ ItemsAdder, packetevents, NBTAPI, PlaceholderAPI ]
+
+permissions:
+  advancedhunt.help:
+    description: Allows access to the help command
+    default: true
+  advancedhunt.admin.list:
+    description: Allows opening the treasure list menu
+    default: op
+  advancedhunt.leaderboard:
+    description: Allows viewing the leaderboard
+    default: true
+  advancedhunt.progress:
+    description: Allows viewing collection progress
+    default: true
+  advancedhunt.admin.collection.info:
+    description: Allows viewing collection information and UUID
+    default: op
+  advancedhunt.hint:
+    description: Allows requesting hints via minigame
+    default: true
+  advancedhunt.admin:
+    description: Grants all administrative permissions
+    default: op
+    children:
+      advancedhunt.admin.reload: true
+      advancedhunt.admin.list: true
+      advancedhunt.admin.show: true
+      advancedhunt.admin.collection.editor: true
+      advancedhunt.admin.collection.rename: true
+      advancedhunt.admin.collection.create: true
+      advancedhunt.admin.collection.edit: true
+      advancedhunt.admin.collection.delete: true
+      advancedhunt.admin.collection.info: true
+      advancedhunt.admin.migrate: true
+      advancedhunt.admin.place: true
+      advancedhunt.admin.place_items: true
+      advancedhunt.admin.reset: true
+      advancedhunt.admin.teleport: true
+      advancedhunt.admin.view_finders: true
+      advancedhunt.admin.rewards: true
+      advancedhunt.treasure.bypass: true
+  advancedhunt.admin.show:
+    description: Allows showing a temporary hologram via PacketEvents
+    default: op
+  advancedhunt.admin.rewards:
+    description: Allows viewing and editing treasure rewards
+    default: op
+  advancedhunt.admin.reload:
+    description: Allows reloading the plugin
+    default: op
+  advancedhunt.admin.collection.editor:
+    description: Allows opening the collection editor
+    default: op
+  advancedhunt.admin.collection.rename:
+    description: Allows renaming collections
+    default: op
+  advancedhunt.admin.collection.create:
+    description: Allows creating collections
+    default: op
+  advancedhunt.admin.collection.edit:
+    description: Allows opening collection settings directly
+    default: op
+  advancedhunt.admin.collection.delete:
+    description: Allows deleting collections
+    default: op
+  advancedhunt.admin.place:
+    description: Allows entering place mode
+    default: op
+  advancedhunt.admin.migrate:
+    description: Allows migrating data between storage backends
+    default: op
+  advancedhunt.admin.place_items:
+    description: Allows managing place items
+    default: op
+  advancedhunt.admin.reset:
+    description: Allows resetting player data
+    default: op
+  advancedhunt.admin.teleport:
+    description: Allows teleporting to treasures
+    default: op
+  advancedhunt.admin.view_finders:
+    description: Allows viewing who found a treasure
+    default: op
+  advancedhunt.treasure.bypass:
+    description: Allows toggling treasure visibility bypass
+    default: op

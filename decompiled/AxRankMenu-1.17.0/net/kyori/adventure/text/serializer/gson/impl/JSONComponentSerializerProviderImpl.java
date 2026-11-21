@@ -1,0 +1,30 @@
+package net.kyori.adventure.text.serializer.gson.impl;
+
+import com.google.auto.service.AutoService;
+import java.util.function.Supplier;
+import net.kyori.adventure.text.serializer.gson.GsonComponentSerializer;
+import net.kyori.adventure.text.serializer.json.JSONComponentSerializer;
+import net.kyori.adventure.util.Services.Fallback;
+import org.jetbrains.annotations.ApiStatus;
+import org.jetbrains.annotations.NotNull;
+
+@ApiStatus.Internal
+@AutoService({JSONComponentSerializer.Provider.class})
+public final class JSONComponentSerializerProviderImpl implements JSONComponentSerializer.Provider, Fallback {
+   @NotNull
+   @Override
+   public JSONComponentSerializer instance() {
+      return GsonComponentSerializer.gson();
+   }
+
+   @NotNull
+   @Override
+   public Supplier<JSONComponentSerializer.Builder> builder() {
+      return GsonComponentSerializer::builder;
+   }
+
+   @Override
+   public String toString() {
+      return "JSONComponentSerializerProviderImpl[GsonComponentSerializer]";
+   }
+}

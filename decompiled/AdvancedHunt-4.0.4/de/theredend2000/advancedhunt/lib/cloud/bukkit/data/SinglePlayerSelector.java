@@ -1,0 +1,11 @@
+package de.theredend2000.advancedhunt.lib.cloud.bukkit.data;
+
+import org.apiguardian.api.API;
+import org.bukkit.entity.Player;
+
+@API(
+   status = API.Status.STABLE,
+   since = "2.0.0"
+)
+public interface SinglePlayerSelector extends Selector.Single<Player> {
+}

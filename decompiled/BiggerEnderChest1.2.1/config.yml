@@ -1,0 +1,98 @@
+messages:
+  no-permission: "&cYou don't have permission."
+  search-prompt: "&aType a player name or '&ccancel&a'."
+  search-cancel: "&cSearch cancelled."
+  cooldown: "&cPlease wait %seconds%s before opening your Ender Chest again."
+  world-disabled: "&cYou cannot use Ender Chests in this world."
+gui:
+  enderchest-title: "&5Ender Chest"
+  selector-title: "&dSelect Player"
+
+  border:
+    enabled: true
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+
+selector:
+  players-per-page: 45
+  sort-alphabetically: true
+
+features:
+  enable-ec-command: true
+  enable-ecsee-command: true
+  enable-search: true
+  enable-vanilla-hook: true
+
+enderchest:
+  default-size: 27
+
+# 🔥 FULLY DYNAMIC SLOT SYSTEM
+slots:
+  enderchest.slot.27: 27
+  enderchest.slot.36: 36
+  enderchest.slot.45: 45
+  enderchest.slot.54: 54
+
+items:
+  next-page:
+    material: ARROW
+    name: "&aNext Page"
+  previous-page:
+    material: ARROW
+    name: "&cPrevious Page"
+  search:
+    material: OAK_SIGN
+    name: "&aSearch Player"
+
+blacklisted-items:
+  - BEDROCK
+  - BARRIER
+  - COMMAND_BLOCK
+  - CHAIN_COMMAND_BLOCK
+  - REPEATING_COMMAND_BLOCK
+
+cooldown:
+  enabled: true
+  seconds: 5
+
+sounds:
+  enabled: true
+
+  open:
+    sound: BLOCK_ENDER_CHEST_OPEN
+    volume: 1.0
+    pitch: 1.0
+
+  close:
+    sound: BLOCK_ENDER_CHEST_CLOSE
+    volume: 1.0
+    pitch: 1.0
+
+storage:
+  save-on-click: true
+  save-on-close: true
+
+  # Where ender chest data is stored:
+  #   yaml  - local files, one per player (default; single server)
+  #   mysql - a shared MySQL database, so ender chests sync across a whole
+  #           network of servers (BungeeCord/Velocity). Only enable this if you
+  #           actually run MySQL - it needs the settings below.
+  type: yaml
+
+# Only used when storage.type is "mysql".
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  database: minecraft
+  username: root
+  password: ""
+  useSSL: false
+  table: bigenderchest_chests
+
+disabled-worlds:
+  - pvp
+
+ecsee:
+  read-only: false
+
+debug: false

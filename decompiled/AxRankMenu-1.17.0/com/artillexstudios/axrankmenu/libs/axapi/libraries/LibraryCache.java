@@ -1,0 +1,105 @@
+package com.artillexstudios.axrankmenu.libs.axapi.libraries;
+
+import com.artillexstudios.axrankmenu.libs.axapi.config.YamlConfiguration;
+import com.artillexstudios.axrankmenu.libs.axapi.config.adapters.TypeAdapterHolder;
+import com.artillexstudios.axrankmenu.libs.axapi.libraries.config.CacheConfiguration;
+import com.artillexstudios.axrankmenu.libs.axapi.libraries.config.LibraryAdapter;
+import com.artillexstudios.axrankmenu.libs.axapi.libraries.config.RelocationAdapter;
+import com.artillexstudios.axrankmenu.libs.axapi.libraries.config.RepositoryAdapter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Objects;
+
+public final class LibraryCache {
+   private final YamlConfiguration<?> configuration;
+   private boolean isCacheCreated = false;
+
+   public LibraryCache(Path path) {
+      Path cacheFilePath = path.resolve("cache.yml");
+      this.isCacheCreated = Files.exists(cacheFilePath);
+      TypeAdapterHolder.registerExtraAdapter(Library.class, new LibraryAdapter());
+      TypeAdapterHolder.registerExtraAdapter(Relocation.class, new RelocationAdapter());
+      TypeAdapterHolder.registerExtraAdapter(Repository.class, new RepositoryAdapter());
+      this.configuration = YamlConfiguration.of(cacheFilePath, CacheConfiguration.class).build();
+   }
+
+   public void load() {
+      this.configuration.load();
+   }
+
+   public boolean cache(Library library) {
+      Library cachedLibrary = this.getCachedLibrary(library);
+      boolean contains = CacheConfiguration.libraries.contains(library);
+      if (!contains) {
+         CacheConfiguration.libraries.add(library);
+         this.save();
+      }
+
+      if (cachedLibrary != null && !cachedLibrary.equals(library)) {
+         CacheConfiguration.libraries.remove(cachedLibrary);
+         this.save();
+      }
+
+      return contains;
+   }
+
+   public Library getCachedLibrary(Library library) {
+      for (Library loaded : CacheConfiguration.libraries) {
+         Library found = this.checkLibrary(loaded, library);
+         if (found != null) {
+            return found;
+         }
+      }
+
+      return null;
+   }
+
+   public Library checkLibrary(Library loaded, Library other) {
+      if (checkWithoutVersion(loaded, other)) {
+         return loaded;
+      } else {
+         for (Library transitiveDependency : loaded.transitiveDependencies()) {
+            Library foundTransitive = this.checkLibrary(transitiveDependency, other);
+            if (foundTransitive != null) {
+               return foundTransitive;
+            }
+         }
+
+         return null;
+      }
+   }
+
+   public static boolean checkWithoutVersion(Library library1, Library library2) {
+      return library1.group().equals(library2.group())
+         && Objects.equals(library1.classifier(), library2.classifier())
+         && library1.artifactId().equals(library2.artifactId());
+   }
+
+   public boolean cache(Repository repository) {
+      boolean contains = CacheConfiguration.repositories.contains(repository);
+      if (!contains) {
+         CacheConfiguration.repositories.add(repository);
+         this.save();
+      }
+
+      return contains;
+   }
+
+   public boolean cache(Relocation relocation) {
+      boolean contains = CacheConfiguration.relocations.contains(relocation);
+      if (!contains) {
+         CacheConfiguration.relocations.add(relocation);
+         this.save();
+      }
+
+      return contains;
+   }
+
+   public void save() {
+      this.configuration.save();
+   }
+
+   public boolean isCacheCreated() {
+      return this.isCacheCreated;
+   }
+}

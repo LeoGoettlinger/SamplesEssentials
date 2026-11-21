@@ -1,0 +1,49 @@
+package com.artillexstudios.axtrade.trade;
+
+import com.artillexstudios.axtrade.AxTrade;
+import com.artillexstudios.axtrade.libs.axapi.utils.PaperUtils;
+import com.artillexstudios.axtrade.utils.SoundUtils;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.Nullable;
+
+public class Trades {
+   private static final List<Trade> trades = (List<Trade>)(PaperUtils.isFolia() ? Collections.synchronizedList(new ArrayList<>()) : new ArrayList<>());
+
+   public static void addTrade(Player p1, Player p2) {
+      Trade trade = new Trade(p1, p2);
+      trades.add(trade);
+      AxTrade.MESSAGEUTILS.sendLang(p1, "trade.started", Map.of("%player%", p2.getName()));
+      AxTrade.MESSAGEUTILS.sendLang(p2, "trade.started", Map.of("%player%", p1.getName()));
+      SoundUtils.playSound(p1, "started");
+      SoundUtils.playSound(p2, "started");
+   }
+
+   public static void removeTrade(Trade trade) {
+      trades.remove(trade);
+   }
+
+   public static List<Trade> getTrades() {
+      return trades;
+   }
+
+   public static boolean isTrading(Player player) {
+      return getTrade(player) != null;
+   }
+
+   @Nullable
+   public static Trade getTrade(Player player) {
+      synchronized (trades) {
+         for (Trade trade : trades) {
+            if (trade.player1.getPlayer().equals(player) || trade.player2.getPlayer().equals(player)) {
+               return trade;
+            }
+         }
+
+         return null;
+      }
+   }
+}

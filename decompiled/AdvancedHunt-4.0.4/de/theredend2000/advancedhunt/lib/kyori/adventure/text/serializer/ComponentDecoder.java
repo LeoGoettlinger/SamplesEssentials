@@ -1,0 +1,27 @@
+package de.theredend2000.advancedhunt.lib.kyori.adventure.text.serializer;
+
+import de.theredend2000.advancedhunt.lib.kyori.adventure.text.Component;
+import org.jetbrains.annotations.Contract;
+import org.jspecify.annotations.Nullable;
+
+public interface ComponentDecoder<S, O extends Component> {
+   O deserialize(final S input);
+
+   @Contract(
+      value = "!null -> !null; null -> null",
+      pure = true
+   )
+   @Nullable
+   default O deserializeOrNull(@Nullable final S input) {
+      return this.deserializeOr(input, null);
+   }
+
+   @Contract(
+      value = "!null, _ -> !null; null, _ -> param2",
+      pure = true
+   )
+   @Nullable
+   default O deserializeOr(@Nullable final S input, @Nullable final O fallback) {
+      return input == null ? fallback : this.deserialize(input);
+   }
+}

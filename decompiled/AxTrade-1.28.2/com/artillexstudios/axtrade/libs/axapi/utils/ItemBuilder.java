@@ -1,0 +1,593 @@
+package com.artillexstudios.axtrade.libs.axapi.utils;
+
+import com.artillexstudios.axtrade.libs.axapi.config.adapters.ConfigurationGetter;
+import com.artillexstudios.axtrade.libs.axapi.config.adapters.MapConfigurationGetter;
+import com.artillexstudios.axtrade.libs.axapi.items.WrappedItemStack;
+import com.artillexstudios.axtrade.libs.axapi.items.component.type.ProfileProperties;
+import com.artillexstudios.axtrade.libs.axapi.items.component.type.Unit;
+import com.artillexstudios.axtrade.libs.axapi.items.components.DataComponents;
+import com.artillexstudios.axtrade.libs.axapi.items.components.data.CustomModelData;
+import com.artillexstudios.axtrade.libs.axapi.items.components.data.DyedItemColor;
+import com.artillexstudios.axtrade.libs.axapi.items.components.data.ItemEnchantments;
+import com.artillexstudios.axtrade.libs.axapi.items.components.data.ItemLore;
+import com.artillexstudios.axtrade.libs.axapi.items.components.data.PotionContents;
+import com.artillexstudios.axtrade.libs.axapi.items.components.data.TooltipDisplay;
+import com.artillexstudios.axtrade.libs.axapi.libs.boostedyaml.block.implementation.Section;
+import com.artillexstudios.axtrade.libs.axapi.placeholders.PaperPlaceholderHandler;
+import com.artillexstudios.axtrade.libs.axapi.placeholders.PlaceholderParameters;
+import com.artillexstudios.axtrade.libs.axapi.utils.featureflags.FeatureFlags;
+import com.artillexstudios.axtrade.libs.axapi.utils.logging.LogUtils;
+import com.artillexstudios.axtrade.libs.axapi.utils.mutable.MutableObject;
+import com.google.common.collect.Lists;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+import java.util.UUID;
+import java.util.Map.Entry;
+import java.util.function.BiFunction;
+import net.kyori.adventure.key.Key;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+import org.bukkit.Color;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionType;
+import org.jetbrains.annotations.NotNull;
+
+public class ItemBuilder {
+   private static final BiFunction<String, PlaceholderParameters, String> PLACEHOLDER_PARSER = (line, parameters) -> FeatureFlags.PARSE_PLACEHOLDER_API_IN_ITEM_BUILDER
+         .get()
+      ? PaperPlaceholderHandler.parseWithPlaceholderAPI(line, parameters)
+      : PaperPlaceholderHandler.parse(line, parameters);
+   private static final UUID NIL_UUID = new UUID(0L, 0L);
+   private final WrappedItemStack stack;
+   private final TagResolver[] resolvers;
+   private final PlaceholderParameters parameters;
+
+   public ItemBuilder(ConfigurationGetter getter, PlaceholderParameters params, TagResolver[] resolvers) {
+      this.resolvers = resolvers;
+      this.parameters = params;
+      String snbt = getter.getString("snbt");
+      if (snbt != null) {
+         this.stack = WrappedItemStack.wrap(snbt);
+      } else {
+         String type = getter.anyOf(getter::getString, "material", "type");
+         this.stack = WrappedItemStack.wrap(new ItemStack(this.getMaterial(type)));
+      }
+
+      Optionals.ifPresent(getter.getStringList("item-flags"), this::setHiddenComponents);
+      Optionals.ifPresent(getter.getBoolean("hide-tooltip"), this::setHideTooltip);
+      Optionals.ifPresent(getter.getStringList("enchants"), enchants -> this.addEnchants(this.createEnchantmentsMap(enchants)));
+      Optionals.ifPresent(getter.getString("name"), this::setName);
+      Optionals.ifPresent(getter.getString("color"), this::setColor);
+      Optionals.ifPresent(getter.getString("texture"), this::setTextureValue);
+      Optionals.ifPresent(ExceptionUtils.catching(() -> getter.getInteger("amount")), this::amount);
+      Optionals.ifPresent(ExceptionUtils.catching(() -> getter.getString("amount")), amount -> {
+         amount = PLACEHOLDER_PARSER.apply(amount, this.parameters);
+         this.amount(Integer.parseInt(amount));
+      });
+      Optionals.ifPresent(getter.getBoolean("glow"), this::glow);
+      Optionals.ifPresent(getter.getStringList("lore"), this::setLore);
+      Optionals.ifPresent(getter.getString("potion"), this::setPotion);
+      Optionals.ifPresent(getter.getBoolean("unbreakable"), this::unbreakable);
+      Optionals.ifPresent(getter.getString("item-model"), this::itemModel);
+      Optionals.ifPresent(getter.getString("tooltip-style"), this::tooltipStyle);
+      Optionals.ifPresent(ExceptionUtils.catching(() -> getter.getInteger("custom-model-data")), this::legacyModelData);
+      Optionals.ifPresent(ExceptionUtils.catching(() -> getter.getMap("custom-model-data")), this::customModelData);
+   }
+
+   public ItemBuilder(WrappedItemStack stack, PlaceholderParameters parameters, TagResolver... resolvers) {
+      this.stack = stack;
+      this.parameters = parameters;
+      this.resolvers = resolvers;
+   }
+
+   public static ItemBuilder create(WrappedItemStack stack) {
+      return create(stack, (PlaceholderParameters)null);
+   }
+
+   public static ItemBuilder create(WrappedItemStack stack, TagResolver... resolvers) {
+      return create(stack, null, resolvers);
+   }
+
+   public static ItemBuilder create(WrappedItemStack stack, Map<String, String> replacements) {
+      return create(stack, null, replacements);
+   }
+
+   public static ItemBuilder create(WrappedItemStack stack, PlaceholderParameters parameters) {
+      return create(stack, parameters, TagResolver.resolver());
+   }
+
+   public static ItemBuilder create(WrappedItemStack stack, PlaceholderParameters parameters, Map<String, String> replacements) {
+      return create(stack, parameters, mapResolvers(replacements));
+   }
+
+   public static ItemBuilder create(WrappedItemStack stack, PlaceholderParameters parameters, TagResolver... resolvers) {
+      return new ItemBuilder(stack, parameters, resolvers);
+   }
+
+   public static ItemBuilder create(ItemStack stack) {
+      return create(stack, (PlaceholderParameters)null);
+   }
+
+   public static ItemBuilder create(ItemStack stack, TagResolver... resolvers) {
+      return create(stack, null, resolvers);
+   }
+
+   public static ItemBuilder create(ItemStack stack, Map<String, String> replacements) {
+      return create(stack, null, replacements);
+   }
+
+   public static ItemBuilder create(ItemStack stack, PlaceholderParameters parameters) {
+      return create(stack, parameters, TagResolver.resolver());
+   }
+
+   public static ItemBuilder create(ItemStack stack, PlaceholderParameters parameters, Map<String, String> replacements) {
+      return create(stack, parameters, mapResolvers(replacements));
+   }
+
+   public static ItemBuilder create(ItemStack stack, PlaceholderParameters parameters, TagResolver... resolvers) {
+      return create(WrappedItemStack.wrap(stack), parameters, resolvers);
+   }
+
+   public static ItemBuilder create(Material material) {
+      return create(material, (PlaceholderParameters)null);
+   }
+
+   public static ItemBuilder create(Material material, TagResolver... resolvers) {
+      return create(material, null, resolvers);
+   }
+
+   public static ItemBuilder create(Material material, Map<String, String> replacements) {
+      return create(material, null, replacements);
+   }
+
+   public static ItemBuilder create(Material material, PlaceholderParameters parameters) {
+      return create(material, parameters, TagResolver.resolver());
+   }
+
+   public static ItemBuilder create(Material material, PlaceholderParameters parameters, Map<String, String> replacements) {
+      return create(material, parameters, mapResolvers(replacements));
+   }
+
+   public static ItemBuilder create(Material stack, PlaceholderParameters parameters, TagResolver... resolvers) {
+      return create(new ItemStack(stack), parameters, resolvers);
+   }
+
+   public static ItemBuilder create(Section section) {
+      return create(section, (PlaceholderParameters)null);
+   }
+
+   public static ItemBuilder create(Section section, TagResolver... resolvers) {
+      return create(section, null, resolvers);
+   }
+
+   public static ItemBuilder create(Section section, Map<String, String> replacements) {
+      return create(section, null, replacements);
+   }
+
+   public static ItemBuilder create(Section section, PlaceholderParameters parameters) {
+      return create(section, parameters, TagResolver.resolver());
+   }
+
+   public static ItemBuilder create(Section section, PlaceholderParameters parameters, Map<String, String> replacements) {
+      return create(section, parameters, mapResolvers(replacements));
+   }
+
+   public static ItemBuilder create(Section section, PlaceholderParameters parameters, TagResolver... resolvers) {
+      return create(mapSection(section), parameters, resolvers);
+   }
+
+   public static <T, Z> ItemBuilder create(Map<T, Z> section) {
+      return create(section, (PlaceholderParameters)null);
+   }
+
+   public static <T, Z> ItemBuilder create(Map<T, Z> section, Map<String, String> replacements) {
+      return create(section, null, replacements);
+   }
+
+   public static <T, Z> ItemBuilder create(Map<T, Z> section, TagResolver... resolvers) {
+      return create(section, null, resolvers);
+   }
+
+   public static <T, Z> ItemBuilder create(Map<T, Z> section, PlaceholderParameters parameters) {
+      return create(section, parameters, TagResolver.resolver());
+   }
+
+   public static <T, Z> ItemBuilder create(Map<T, Z> section, PlaceholderParameters parameters, Map<String, String> replacements) {
+      return create(section, parameters, mapResolvers(replacements));
+   }
+
+   public static <T, Z> ItemBuilder create(Map<T, Z> section, PlaceholderParameters parameters, TagResolver... resolvers) {
+      return create(new MapConfigurationGetter(section), parameters, resolvers);
+   }
+
+   public static ItemBuilder create(ConfigurationGetter getter) {
+      return create(getter, (PlaceholderParameters)null);
+   }
+
+   public static ItemBuilder create(ConfigurationGetter getter, TagResolver... resolvers) {
+      return create(getter, null, resolvers);
+   }
+
+   public static ItemBuilder create(ConfigurationGetter getter, Map<String, String> replacements) {
+      return create(getter, null, replacements);
+   }
+
+   public static ItemBuilder create(ConfigurationGetter getter, PlaceholderParameters parameters) {
+      return create(getter, parameters, TagResolver.resolver());
+   }
+
+   public static ItemBuilder create(ConfigurationGetter getter, PlaceholderParameters parameters, Map<String, String> replacements) {
+      return create(getter, parameters, mapResolvers(replacements));
+   }
+
+   public static ItemBuilder create(ConfigurationGetter getter, PlaceholderParameters parameters, TagResolver... resolvers) {
+      return new ItemBuilder(getter, parameters, resolvers);
+   }
+
+   private Material getMaterial(String name) {
+      Material material = Material.matchMaterial(name.toUpperCase(Locale.ENGLISH));
+      return material != null ? material : Material.BEDROCK;
+   }
+
+   public static TagResolver[] mapResolvers(Map<String, String> replacements) {
+      TagResolver[] resolvers = new TagResolver[replacements.size()];
+      int i = 0;
+
+      for (Entry<String, String> entry : replacements.entrySet()) {
+         resolvers[i] = Placeholder.parsed(entry.getKey().replace("%", ""), StringUtils.translateToMiniMessage(entry.getValue()));
+         i++;
+      }
+
+      return resolvers;
+   }
+
+   private static Map<Object, Object> mapSection(Section section) {
+      Set<Object> keys = section.getKeys();
+      Map<Object, Object> map = new HashMap<>(keys.size());
+
+      for (Object key : keys) {
+         map.put(key.toString(), section.get(key.toString()));
+      }
+
+      return map;
+   }
+
+   @NotNull
+   private Map<Enchantment, Integer> createEnchantmentsMap(@NotNull List<String> enchantments) {
+      Map<Enchantment, Integer> enchantsMap = new HashMap<>(enchantments.size());
+
+      for (String enchantment : enchantments) {
+         String[] enchant = enchantment.split(":");
+         Enchantment ench = Enchantment.getByKey(NamespacedKey.minecraft(enchant[0]));
+         if (ench != null) {
+            int level;
+            try {
+               level = Integer.parseInt(enchant[1]);
+            } catch (Exception var9) {
+               continue;
+            }
+
+            enchantsMap.put(ench, level);
+         }
+      }
+
+      return enchantsMap;
+   }
+
+   public ItemBuilder setHideTooltip(boolean hideTooltip) {
+      TooltipDisplay tooltipDisplay = this.stack.get(DataComponents.TOOLTIP_DISPLAY);
+      if (tooltipDisplay == null) {
+         return this;
+      } else {
+         this.setHiddenComponents(hideTooltip, tooltipDisplay.hiddenComponents());
+         return this;
+      }
+   }
+
+   public ItemBuilder setHiddenComponents(boolean hideTooltip, Collection<String> hiddenComponents) {
+      ExceptionUtils.catching(() -> this.stack.set(DataComponents.TOOLTIP_DISPLAY, new TooltipDisplay(hideTooltip, hiddenComponents)));
+      return this;
+   }
+
+   public ItemBuilder setHiddenComponents(Collection<String> hiddenComponents) {
+      TooltipDisplay tooltipDisplay = this.stack.get(DataComponents.TOOLTIP_DISPLAY);
+      if (tooltipDisplay == null) {
+         return this;
+      } else {
+         this.setHiddenComponents(tooltipDisplay.hideTooltip(), hiddenComponents);
+         return this;
+      }
+   }
+
+   public static String toTagResolver(String string, TagResolver... resolvers) {
+      if (!string.contains("%")) {
+         return string;
+      } else {
+         char[] chars = string.toCharArray();
+         int start = -1;
+
+         for (int i = 0; i < chars.length; i++) {
+            char ch = chars[i];
+            if (ch == '%') {
+               if (start == -1) {
+                  start = i;
+               } else {
+                  StringBuilder builder = new StringBuilder();
+
+                  for (int j = start; j <= i; j++) {
+                     builder.append(chars[j]);
+                  }
+
+                  if (contains(builder.toString(), resolvers)) {
+                     chars[start] = '<';
+                     chars[i] = '>';
+                  }
+
+                  start = -1;
+               }
+            }
+         }
+
+         return new String(chars);
+      }
+   }
+
+   public static boolean contains(String string, TagResolver... resolvers) {
+      for (TagResolver resolver : resolvers) {
+         if (resolver instanceof TagResolver.Single s && string.contains(s.key())) {
+            return true;
+         }
+      }
+
+      return false;
+   }
+
+   public static <T> List<String> toTagResolver(List<T> lore, TagResolver... resolvers) {
+      List<String> newLore = new ArrayList<>(lore.size());
+
+      for (int i = 0; i < lore.size(); i++) {
+         if (lore.get(i) instanceof String string) {
+            newLore.add(toTagResolver(string, resolvers));
+         } else {
+            LogUtils.warn("Failed to turn {} into TagResolvers, because it was not a string, but a {}!", lore.get(i), lore.get(i).getClass());
+         }
+      }
+
+      return newLore;
+   }
+
+   public ItemBuilder setPotion(String potion) {
+      this.stack
+         .set(
+            DataComponents.POTION_CONTENTS,
+            new PotionContents(Optional.of(PotionType.valueOf(potion.toUpperCase(Locale.ENGLISH))), Optional.empty(), List.of(), Optional.empty())
+         );
+      return this;
+   }
+
+   public ItemBuilder setName(String name) {
+      this.setName(name, this.resolvers);
+      return this;
+   }
+
+   public ItemBuilder setName(String name, Map<String, String> replacements) {
+      MutableObject<String> toFormat = new MutableObject<>(name);
+      replacements.forEach((pattern, replacement) -> toFormat.set(toFormat.get().replace(pattern, replacement)));
+      this.setName(toFormat.get(), TagResolver.resolver());
+      return this;
+   }
+
+   public ItemBuilder setName(String name, TagResolver... resolvers) {
+      this.stack
+         .set(
+            DataComponents.CUSTOM_NAME,
+            StringUtils.format(toTagResolver(Optionals.applyIfPresent(this.parameters, name, PLACEHOLDER_PARSER), resolvers), resolvers)
+         );
+      return this;
+   }
+
+   public ItemBuilder setColor(String colorString) {
+      String[] rgb = colorString.replace(" ", "").split(",");
+      Color color = Color.fromRGB(Integer.parseInt(rgb[0]), Integer.parseInt(rgb[1]), Integer.parseInt(rgb[2]));
+      this.stack.set(DataComponents.DYED_COLOR, new DyedItemColor(color.asRGB()));
+      return this;
+   }
+
+   public ItemBuilder glow(boolean glow) {
+      if (glow) {
+         this.stack.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true);
+      }
+
+      return this;
+   }
+
+   public ItemBuilder unbreakable(boolean unbreakable) {
+      if (unbreakable) {
+         this.stack.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+      } else {
+         this.stack.set(DataComponents.UNBREAKABLE, null);
+      }
+
+      return this;
+   }
+
+   public ItemBuilder itemModel(String model) {
+      this.stack.set(DataComponents.ITEM_MODEL, model == null ? null : Key.key(model));
+      return this;
+   }
+
+   public ItemBuilder tooltipStyle(String model) {
+      this.stack.set(DataComponents.TOOLTIP_STYLE, model == null ? null : Key.key(model));
+      return this;
+   }
+
+   public ItemBuilder addEnchantment(Enchantment enchantment, int level) {
+      ItemEnchantments enchants = this.stack.get(DataComponents.ENCHANTMENTS);
+      enchants = enchants.setLevel(enchantment, level);
+      this.stack.set(DataComponents.ENCHANTMENTS, enchants);
+      return this;
+   }
+
+   public ItemBuilder legacyModelData(Integer modelData) {
+      this.stack
+         .set(
+            DataComponents.CUSTOM_MODEL_DATA,
+            new CustomModelData(modelData == null ? List.of() : List.of(modelData.floatValue()), List.of(), List.of(), List.of())
+         );
+      return this;
+   }
+
+   public ItemBuilder customModelData(Map<Object, Object> modelData) {
+      this.stack
+         .set(
+            DataComponents.CUSTOM_MODEL_DATA,
+            new CustomModelData(
+               Lists.transform((List)modelData.getOrDefault("floats", List.of()), num -> num.floatValue()),
+               (List<Boolean>)modelData.getOrDefault("flags", List.of()),
+               (List<String>)modelData.getOrDefault("strings", List.of()),
+               Lists.transform((List)modelData.getOrDefault("colors", List.of()), a -> {
+                  String[] rgb = a.replace(" ", "").split(",");
+                  Color color = Color.fromRGB(Integer.parseInt(rgb[0]), Integer.parseInt(rgb[1]), Integer.parseInt(rgb[2]));
+                  return color.asRGB();
+               })
+            )
+         );
+      return this;
+   }
+
+   public ItemBuilder setLore(List<String> lore) {
+      this.setLore(lore, this.resolvers);
+      return this;
+   }
+
+   public ItemBuilder setLore(List<String> lore, Map<String, String> replacements) {
+      List<String> newList = new ArrayList<>(replacements.size());
+
+      for (String line : lore) {
+         MutableObject<String> toFormat = new MutableObject<>(line);
+         replacements.forEach((pattern, replacement) -> toFormat.set(toFormat.get().replace(pattern, replacement)));
+         newList.add(toFormat.get());
+      }
+
+      this.setLore(newList, TagResolver.resolver());
+      return this;
+   }
+
+   public ItemBuilder setLore(List<String> lore, TagResolver... resolvers) {
+      List<String> multiLineLore = new ArrayList<>(lore.size());
+
+      for (String line : lore) {
+         line = line.replace("<br>", "\n");
+         if (!line.contains("\n")) {
+            multiLineLore.add(line);
+         } else {
+            multiLineLore.addAll(Arrays.asList(line.split("\n")));
+         }
+      }
+
+      this.stack
+         .set(
+            DataComponents.LORE,
+            ItemLore.create(
+               StringUtils.formatList(
+                  toTagResolver(Lists.transform(multiLineLore, linex -> Optionals.applyIfPresent(this.parameters, linex, PLACEHOLDER_PARSER)), resolvers),
+                  resolvers
+               )
+            )
+         );
+      return this;
+   }
+
+   public ItemBuilder setTextureValue(String texture) {
+      ProfileProperties properties = new ProfileProperties(NIL_UUID, "axapi");
+      texture = StringUtils.formatToString(toTagResolver(texture), this.resolvers);
+      properties.put("textures", new ProfileProperties.Property("textures", texture, null));
+      this.stack
+         .set(
+            DataComponents.PROFILE,
+            new ResolvableProfile(
+               new GameProfile("axapi", NIL_UUID, properties), new PlayerSkin.Patch(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty())
+            )
+         );
+      return this;
+   }
+
+   public ItemBuilder amount(int amount) {
+      this.stack.setAmount(amount);
+      return this;
+   }
+
+   public ItemBuilder addEnchants(Map<Enchantment, Integer> enchantments) {
+      enchantments.forEach(this::addEnchantment);
+      return this;
+   }
+
+   public WrappedItemStack wrapped() {
+      return this.stack;
+   }
+
+   public Map<Object, Object> serialize(boolean snbt) {
+      HashMap<Object, Object> map = new HashMap<>();
+      if (snbt) {
+         map.put("snbt", this.stack.toSNBT());
+      } else {
+         map.put("type", this.stack.get(DataComponents.MATERIAL).name());
+         Component name = this.stack.get(DataComponents.CUSTOM_NAME);
+         if (name != Component.empty()) {
+            map.put("name", MiniMessage.miniMessage().serialize(name));
+         }
+
+         List<Component> lore = this.stack.get(DataComponents.LORE).lines();
+         if (!lore.isEmpty()) {
+            map.put("lore", Lists.transform(lore, a -> (String)MiniMessage.miniMessage().serialize(a)));
+         }
+
+         map.put("amount", this.stack.getAmount());
+         CustomModelData modelData = this.stack.get(DataComponents.CUSTOM_MODEL_DATA);
+         if (!modelData.floats().isEmpty() && modelData.colors().isEmpty() && modelData.flags().isEmpty() && modelData.strings().isEmpty()) {
+            int data = modelData.floats().get(0).intValue();
+            if (data != 0) {
+               map.put("custom-model-data", data);
+            }
+         }
+
+         ResolvableProfile profileProperties = this.stack.get(DataComponents.PROFILE);
+         if (profileProperties != null) {
+            map.put(
+               "texture",
+               profileProperties.getPartialProfile()
+                  .properties()
+                  .properties()
+                  .get("textures")
+                  .stream()
+                  .findFirst()
+                  .orElse(new ProfileProperties.Property("", "", null))
+                  .value()
+            );
+         }
+      }
+
+      return map;
+   }
+
+   public ItemStack get() {
+      this.stack.finishEdit();
+      return this.stack.toBukkit();
+   }
+
+   public ItemStack clonedGet() {
+      return this.get().clone();
+   }
+}

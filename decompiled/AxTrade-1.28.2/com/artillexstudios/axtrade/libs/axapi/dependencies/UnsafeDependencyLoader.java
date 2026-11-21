@@ -1,0 +1,60 @@
+package com.artillexstudios.axtrade.libs.axapi.dependencies;
+
+import com.artillexstudios.axtrade.libs.axapi.reflection.FieldAccessor;
+import com.artillexstudios.axtrade.libs.axapi.utils.UncheckedUtils;
+import com.artillexstudios.axtrade.libs.axapi.utils.logging.LogUtils;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.nio.file.Path;
+import java.util.ArrayDeque;
+import java.util.List;
+import sun.misc.Unsafe;
+
+public final class UnsafeDependencyLoader {
+   private final Unsafe unsafe = FieldAccessor.builder().withClass(Unsafe.class).withField("theUnsafe").build().get(null, Unsafe.class);
+   private final FieldAccessor urlClassPathAccessor = FieldAccessor.builder().disableAccessChecking().withClass(URLClassLoader.class).withField("ucp").build();
+   private final FieldAccessor unopenedUrlsAccessor = FieldAccessor.builder()
+      .disableAccessChecking()
+      .silent()
+      .withClass("jdk.internal.loader.URLClassPath")
+      .withField("unopenedUrls")
+      .build();
+   private final FieldAccessor pathAccessor = FieldAccessor.builder()
+      .disableAccessChecking()
+      .silent()
+      .withClass("jdk.internal.loader.URLClassPath")
+      .withField("path")
+      .build();
+   private final FieldAccessor searchPathAccessor = FieldAccessor.builder()
+      .disableAccessChecking()
+      .silent()
+      .withClass("jdk.internal.loader.URLClassPath")
+      .withField("searchPath")
+      .build();
+
+   private void addURL(URLClassLoader classLoader, URL url) {
+      long urlClassPathOffset = this.unsafe.objectFieldOffset(this.urlClassPathAccessor.getReflectedField());
+      Object classPath = this.unsafe.getObject(classLoader, urlClassPathOffset);
+      if (this.searchPathAccessor != null) {
+         long searchPathOffset = this.unsafe.objectFieldOffset(this.searchPathAccessor.getReflectedField());
+         List<URL> searchPath = UncheckedUtils.unsafeCast(this.unsafe.getObject(classPath, searchPathOffset));
+         searchPath.add(url);
+      } else {
+         long unopenedUrlsOffset = this.unsafe.objectFieldOffset(this.unopenedUrlsAccessor.getReflectedField());
+         ArrayDeque<URL> unopenedUrls = UncheckedUtils.unsafeCast(this.unsafe.getObject(classPath, unopenedUrlsOffset));
+         long pathOffset = this.unsafe.objectFieldOffset(this.pathAccessor.getReflectedField());
+         List<URL> path = UncheckedUtils.unsafeCast(this.unsafe.getObject(classPath, pathOffset));
+         unopenedUrls.add(url);
+         path.add(url);
+      }
+   }
+
+   public void loadUnsafeLibrary(URLClassLoader classLoader, Path path) {
+      try {
+         this.addURL(classLoader, path.toUri().toURL());
+      } catch (MalformedURLException var4) {
+         LogUtils.error("An exception occurred while loading library!", var4);
+      }
+   }
+}

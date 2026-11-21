@@ -1,0 +1,25 @@
+name: AxRankMenu
+version: '1.17.0'
+main: com.artillexstudios.axrankmenu.AxRankMenu
+api-version: '1.20'
+folia-supported: true
+
+depend:
+  - LuckPerms
+
+softdepend:
+  - PlaceholderAPI
+  - CoinsEngine
+  - ExcellentEconomy
+  - PlayerPoints
+  - RoyaleEconomy
+  - UltraEconomy
+  - BeastTokens
+
+permissions:
+  axrankmenu.use:
+    default: true
+  axrankmenu.reload:
+    default: op
+  axrankmenu.addrank:
+    default: op

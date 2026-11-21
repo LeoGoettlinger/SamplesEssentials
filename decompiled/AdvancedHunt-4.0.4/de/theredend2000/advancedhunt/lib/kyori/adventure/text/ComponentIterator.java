@@ -1,0 +1,40 @@
+package de.theredend2000.advancedhunt.lib.kyori.adventure.text;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Set;
+
+final class ComponentIterator implements Iterator<Component> {
+   private Component component;
+   private final ComponentIteratorType type;
+   private final Set<ComponentIteratorFlag> flags;
+   private final Deque<Component> deque;
+
+   ComponentIterator(final Component component, final ComponentIteratorType type, final Set<ComponentIteratorFlag> flags) {
+      this.component = component;
+      this.type = type;
+      this.flags = flags;
+      this.deque = new ArrayDeque<>();
+   }
+
+   @Override
+   public boolean hasNext() {
+      return this.component != null || !this.deque.isEmpty();
+   }
+
+   public Component next() {
+      if (this.component != null) {
+         Component next = this.component;
+         this.component = null;
+         this.type.populate(next, this.deque, this.flags);
+         return next;
+      } else if (this.deque.isEmpty()) {
+         throw new NoSuchElementException();
+      } else {
+         this.component = this.deque.poll();
+         return this.next();
+      }
+   }
+}

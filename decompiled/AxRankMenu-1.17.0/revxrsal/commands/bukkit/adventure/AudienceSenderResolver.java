@@ -1,0 +1,30 @@
+package revxrsal.commands.bukkit.adventure;
+
+import java.util.function.Function;
+import net.kyori.adventure.audience.Audience;
+import org.bukkit.command.CommandSender;
+import org.jetbrains.annotations.NotNull;
+import revxrsal.commands.bukkit.BukkitCommandActor;
+import revxrsal.commands.command.CommandActor;
+import revxrsal.commands.command.ExecutableCommand;
+import revxrsal.commands.process.SenderResolver;
+
+public final class AudienceSenderResolver implements SenderResolver {
+   private final Function<CommandSender, Audience> audiences;
+
+   public AudienceSenderResolver(Function<CommandSender, Audience> audiences) {
+      this.audiences = audiences;
+   }
+
+   @Override
+   public boolean isCustomType(Class<?> type) {
+      return Audience.class.isAssignableFrom(type);
+   }
+
+   @NotNull
+   @Override
+   public Object getSender(@NotNull Class<?> customSenderType, @NotNull CommandActor actor, @NotNull ExecutableCommand command) {
+      BukkitCommandActor bActor = (BukkitCommandActor)actor;
+      return this.audiences.apply(bActor.getSender());
+   }
+}

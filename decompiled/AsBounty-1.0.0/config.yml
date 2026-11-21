@@ -1,0 +1,53 @@
+# ###################################################################
+# ###################################################################
+# ###################################################################
+#       _        ____                    _         
+#      / \   ___| __ )  ___  _   _ _ __ | |_ _   _ 
+#     / _ \ / __|  _ \ / _ \| | | | '_ \| __| | | |
+#    / ___ \\__ \ |_) | (_) | |_| | | | | |_| |_| |
+#   /_/   \_\___/____/ \___/ \__,_|_| |_|\__|\__, |
+#                                            |___/ 
+# ###################################################################
+# ###################################################################
+# ###################################################################
+
+# Plugin developed by itzazeem
+# AsBounty Plugin for Minecraft 1.21.x
+
+# Economy Settings
+economy:
+  provider: VAULT
+  currency-format: '#,##0.##'
+  abbreviations:
+    enabled: true # Accept 100k, 10k, 1m, etc... in the sign of price.
+    formats:
+      - K
+      - M
+      - B
+      - T
+
+if-kill-myself-get-reward: false
+limits:
+  min-amount: 10
+  max-amount: 1000000000
+
+chat-input:
+  SignAPI: true
+  ChatAPI: false
+
+sign-gui:
+  - ''
+  - '^^^^^^^^^^^^^'
+  - '   Name    '
+  - '             '
+
+sounds:
+  bounty-added:
+    enabled: true
+    sound: ENTITY_PLAYER_LEVELUP
+  no-perm:
+    enabled: true
+    sound: BLOCK_ANVIL_LAND
+  gui-click:
+    enabled: true
+    sound: UI_BUTTON_CLICK

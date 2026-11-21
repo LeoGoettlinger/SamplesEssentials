@@ -1,0 +1,12 @@
+package de.theredend2000.advancedhunt.lib.cloud.brigadier.suggestion;
+
+import org.apiguardian.api.API;
+
+@API(
+   status = API.Status.INTERNAL,
+   since = "2.0.0"
+)
+public enum SuggestionsType {
+   BRIGADIER_SUGGESTIONS,
+   CLOUD_SUGGESTIONS;
+}

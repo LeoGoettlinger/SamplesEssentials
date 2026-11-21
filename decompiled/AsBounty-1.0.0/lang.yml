@@ -1,0 +1,26 @@
+# Here you can change all the messages and action bars of the plugin
+
+# Here you can change the prefix of the plugin (only chat messages)
+prefix-enable: true
+prefix: '&#00fc88&lAsBounty &7»'
+
+messages:
+  no-permission: '&cYou do not have permission to use this command!'
+  player-only: '&cYou must be a player to use this command!'
+  reload: "&aConfiguration reloaded successfully."
+  bounty-added: "&fYou added &#fb0000$%amount_format% &fto &#00fc88%target_name%'s &fbounty."
+  bounty-added-on-you: "&#00fc88%user_name% &fadded &#fb0000$%amount_format% &fto your bounty."
+  u-got-bounty-kill: "&#00fc88%user_name% &fjust killed you and claimed your bounty!"
+  player-not-found: '&cPlayer not found!'
+  cannot-add-bounty-to-yourself: '&cYou cannot add a bounty to yourself!'
+  invalid-amount: '&cInvalid bounty amount!'
+  amount-below-min: "&fMinimum amount is &#fb0000$%min_amount_format%."
+  amount-above-max: "&fMaximum amount is &#fb0000$%max_amount_format%."
+  not-enough-balance: "&cYou do not have enough balance to add this bounty."
+  search-prompt: '&cType the name of the player you want to search for!'
+  search-cancelled: '&cSearch cancelled!'
+
+action-bars:
+  bounty-added: "&fYou added &#fb0000$%amount_format% &fto &#00fc88%target_name%'s &fbounty."
+  bounty-added-on-you: "&#00fc88%user_name% &fadded &#fb0000$%amount_format% &fto your bounty."
+  u-got-bounty-kill: "&#00fc88%user_name% &fjust killed you and claimed your bounty!"

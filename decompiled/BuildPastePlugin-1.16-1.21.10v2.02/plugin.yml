@@ -1,0 +1,29 @@
+name: BuildPaste
+version: 1.11.1
+main: de.mistrx.buildpaste.main.Main
+api-version: 1.13
+
+commands:
+  buildpaste:
+  paste:
+  connectaccounts:
+  pos1:
+  pos2:
+  undopaste:
+  selector:
+  removepos:
+  upload:
+  setbuild:
+  sharebuild:
+  construct:
+ 
+permissions:
+  paste:
+    description: Allows pasting structures selected on buildpaste.net
+    default: op
+  upload:
+    description: Allows uploading structures to buildpaste.net or for private use
+    default: op
+  construct:
+    description: Paste structures using the resources in the inventory
+    default: op

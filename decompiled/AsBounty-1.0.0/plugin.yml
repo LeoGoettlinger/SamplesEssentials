@@ -1,0 +1,39 @@
+name: AsBounty
+version: '1.0.0'
+main: com.itzazeem.asbounty.AsBounty
+api-version: '1.21'
+author: ItzAzeem (itzazeem.as)
+website: https://discord.gg/xRW5rdAvs5
+description: Premium and high-performance bounty hunting plugin with interactive GUIs, head caching, and seamless Vault economy integration.
+depend:
+  - Vault
+softdepend:
+  - Essentials
+  - EssentialsX
+  - CMI
+  - TheNewEconomy
+  - CoinsEngine
+  - UltraEconomy
+folia-supported: true
+
+commands:
+  bounty:
+    description: Open the bounty board or manage bounties
+    aliases:
+      - asbounty
+    usage: /<command> [add <player> <amount> | reload]
+    permission: asbounty.use
+
+permissions:
+  asbounty.use:
+    description: Allows player to view and place bounties
+    default: true
+  asbounty.reload:
+    description: Allows administrators to reload AsBounty configuration
+    default: op
+  bounty.use:
+    description: Compatibility permission for asbounty.use
+    default: true
+  bounty.reload:
+    description: Compatibility permission for asbounty.reload
+    default: op

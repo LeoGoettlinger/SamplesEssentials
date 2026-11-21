@@ -1,0 +1,284 @@
+package com.artillexstudios.axtrade.libs.axapi.utils;
+
+import com.artillexstudios.axtrade.libs.axapi.libs.caffeine.caffeine.cache.Cache;
+import com.artillexstudios.axtrade.libs.axapi.libs.caffeine.caffeine.cache.Caffeine;
+import com.artillexstudios.axtrade.libs.axapi.utils.featureflags.FeatureFlags;
+import it.unimi.dsi.fastutil.chars.CharImmutableList;
+import it.unimi.dsi.fastutil.objects.ObjectImmutableList;
+import it.unimi.dsi.fastutil.objects.ObjectListIterator;
+import java.text.DecimalFormat;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.StyleBuilderApplicable;
+import net.kyori.adventure.text.format.TextDecoration;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import org.bukkit.ChatColor;
+import org.jspecify.annotations.NonNull;
+
+public final class StringUtils {
+   private static final TagResolver EMPTY_RESOLVER = TagResolver.empty();
+   private static final Pattern HEX_PATTERN = Pattern.compile("&#([0-9a-fA-F]{6})");
+   private static final Pattern UNUSUAL_LEGACY_HEX_PATTERN = Pattern.compile(
+      "&x&([a-fA-F0-9])&([a-fA-F0-9])&([a-fA-F0-9])&([a-fA-F0-9])&([a-fA-F0-9])&([a-fA-F0-9])"
+   );
+   private static final ObjectImmutableList<Pair<String, String>> COLOR_FORMATS = ObjectImmutableList.of(
+      new Pair[]{
+         Pair.of("&0", "<black>"),
+         Pair.of("&1", "<dark_blue>"),
+         Pair.of("&2", "<dark_green>"),
+         Pair.of("&3", "<dark_aqua>"),
+         Pair.of("&4", "<dark_red>"),
+         Pair.of("&5", "<dark_purple>"),
+         Pair.of("&6", "<gold>"),
+         Pair.of("&7", "<gray>"),
+         Pair.of("&8", "<dark_gray>"),
+         Pair.of("&9", "<blue>"),
+         Pair.of("&a", "<green>"),
+         Pair.of("&b", "<aqua>"),
+         Pair.of("&c", "<red>"),
+         Pair.of("&d", "<light_purple>"),
+         Pair.of("&e", "<yellow>"),
+         Pair.of("&f", "<white>"),
+         Pair.of("&r", "<reset>"),
+         Pair.of("\n", "<br>")
+      }
+   );
+   private static final CharImmutableList COLOR_CHARS = CharImmutableList.of(
+      new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', '#'}
+   );
+   private static final Cache<String, String> COLOR_CACHE = Caffeine.newBuilder()
+      .expireAfterAccess(Duration.ofMinutes(1L))
+      .maximumSize(FeatureFlags.COLOR_CACHE_SIZE.get().intValue())
+      .build();
+   public static final MiniMessage MINI_MESSAGE = MiniMessage.builder().tags(StandardTags.defaults()).build();
+   public static final LegacyComponentSerializer LEGACY_COMPONENT_SERIALIZER = LegacyComponentSerializer.builder()
+      .useUnusualXRepeatedCharacterHexFormat()
+      .character('§')
+      .hexColors()
+      .build();
+
+   public static Component format(@NonNull String input, @NonNull Map<String, String> replacements) {
+      return format(input, ItemBuilder.mapResolvers(replacements));
+   }
+
+   public static Component format(@NonNull String input, TagResolver... resolvers) {
+      if (FeatureFlags.USE_LEGACY_HEX_FORMATTER.get()) {
+         input = ItemBuilder.toTagResolver(input, resolvers);
+         return LEGACY_COMPONENT_SERIALIZER.deserialize(formatToString(input, resolvers))
+            .applyFallbackStyle(new StyleBuilderApplicable[]{TextDecoration.ITALIC.withState(false)});
+      } else {
+         String formatted = translateToMiniMessage(input);
+         if (formatted == null) {
+            return Component.empty();
+         } else {
+            formatted = ItemBuilder.toTagResolver(formatted, resolvers);
+            return MINI_MESSAGE.deserialize(formatted, resolvers.length == 0 ? EMPTY_RESOLVER : TagResolver.resolver(resolvers))
+               .applyFallbackStyle(new StyleBuilderApplicable[]{TextDecoration.ITALIC.withState(false)});
+         }
+      }
+   }
+
+   public static String translateToMiniMessage(@NonNull String input) {
+      return (String)COLOR_CACHE.get(
+         input,
+         str -> {
+            String toFormat = str.replace('§', '&');
+            CachingSupplier<Map<Integer, List<StringUtils.InsertData>>> orderedInsert = CachingSupplier.create(HashMap::new);
+            toFormat = replaceLegacyFormat(toFormat, "&l", "<b>", "</b>", orderedInsert);
+            toFormat = replaceLegacyFormat(toFormat, "&m", "<st>", "</st>", orderedInsert);
+            toFormat = replaceLegacyFormat(toFormat, "&n", "<u>", "</u>", orderedInsert);
+            toFormat = replaceLegacyFormat(toFormat, "&o", "<i>", "</i>", orderedInsert);
+            toFormat = replaceLegacyFormat(toFormat, "&k", "<obf>", "</obf>", orderedInsert);
+            toFormat = doInserts(toFormat, orderedInsert);
+            toFormat = HEX_PATTERN.matcher(toFormat).replaceAll(fo -> "<#" + fo.group(1) + ">");
+            toFormat = UNUSUAL_LEGACY_HEX_PATTERN.matcher(toFormat)
+               .replaceAll(fo -> "<#" + fo.group(1) + fo.group(2) + fo.group(3) + fo.group(4) + fo.group(5) + fo.group(6) + ">");
+            toFormat = UNUSUAL_LEGACY_HEX_PATTERN.matcher(toFormat).replaceAll(fo -> "");
+            ObjectListIterator var3 = COLOR_FORMATS.iterator();
+
+            while (var3.hasNext()) {
+               Pair<String, String> placeholder = (Pair<String, String>)var3.next();
+               toFormat = toFormat.replace(placeholder.first(), placeholder.second());
+            }
+
+            return toFormat;
+         }
+      );
+   }
+
+   public static String formatToString(@NonNull String string, TagResolver... resolvers) {
+      if (FeatureFlags.USE_LEGACY_HEX_FORMATTER.get()) {
+         String changed = string.replace("§", "&");
+         changed = ItemBuilder.toTagResolver(changed, resolvers);
+         return ChatColor.translateAlternateColorCodes(
+            '&', legacyHexFormat(LEGACY_COMPONENT_SERIALIZER.serialize(MINI_MESSAGE.deserialize(changed, resolvers)))
+         );
+      } else {
+         return LEGACY_COMPONENT_SERIALIZER.serialize(format(string, resolvers));
+      }
+   }
+
+   public static String formatToString(@NonNull String string, @NonNull Map<String, String> replacements) {
+      return formatToString(string, ItemBuilder.mapResolvers(replacements));
+   }
+
+   @NonNull
+   public static List<Component> formatList(@NonNull List<String> list, TagResolver... resolvers) {
+      List<Component> newList = new ArrayList<>(list.size());
+
+      for (String line : list) {
+         newList.add(format(line, resolvers));
+      }
+
+      return newList;
+   }
+
+   @NonNull
+   public static List<Component> formatList(@NonNull List<String> list, Map<String, String> replacements) {
+      return formatList(list, ItemBuilder.mapResolvers(replacements));
+   }
+
+   @NonNull
+   public static List<String> formatListToString(@NonNull List<String> list, TagResolver... resolvers) {
+      List<String> newList = new ArrayList<>(list.size());
+
+      for (String line : list) {
+         newList.add(formatToString(line, resolvers));
+      }
+
+      return newList;
+   }
+
+   @NonNull
+   public static List<String> formatListToString(@NonNull List<String> list, Map<String, String> replacements) {
+      return formatListToString(list, ItemBuilder.mapResolvers(replacements));
+   }
+
+   public static String formatNumber(String pattern, double number) {
+      DecimalFormat formatter = new DecimalFormat(pattern);
+      return formatter.format(number);
+   }
+
+   @NonNull
+   public static String formatTime(long time) {
+      Duration remainingTime = Duration.ofMillis(time);
+      long total = remainingTime.getSeconds();
+      long hours = total / 3600L;
+      long minutes = total % 3600L / 60L;
+      long seconds = total % 60L;
+      return String.format("%02d:%02d:%02d", hours, minutes, seconds);
+   }
+
+   private static String doInserts(String toFormat, CachingSupplier<Map<Integer, List<StringUtils.InsertData>>> insertsGetter) {
+      if (!insertsGetter.hasValue()) {
+         return toFormat;
+      } else {
+         StringBuilder stringBuilder = new StringBuilder(toFormat);
+         Map<Integer, List<StringUtils.InsertData>> inserts = insertsGetter.get();
+         List<Integer> sorted = new ArrayList<>(inserts.keySet());
+         sorted.sort(Comparator.<Integer>comparingInt(a -> a).reversed());
+
+         for (Integer key : sorted) {
+            List<StringUtils.InsertData> value = inserts.get(key);
+            value.sort(Comparator.<StringUtils.InsertData>comparingInt(insertDatax -> ((StringUtils.InsertData)insertDatax).basePosition).reversed());
+            int offset = 0;
+
+            for (StringUtils.InsertData insertData : value) {
+               stringBuilder.insert(insertData.whereToInsert + offset, insertData.text);
+               offset += insertData.text.length();
+            }
+         }
+
+         return stringBuilder.toString();
+      }
+   }
+
+   private static String replaceLegacyFormat(
+      String toFormat, String search, String start, String close, CachingSupplier<Map<Integer, List<StringUtils.InsertData>>> inserts
+   ) {
+      int index;
+      while ((index = toFormat.indexOf(search)) != -1) {
+         toFormat = org.apache.commons.lang3.StringUtils.replaceOnce(toFormat, search, start);
+         shift(inserts, start.length() - search.length(), index);
+
+         for (int i = index; i < toFormat.length(); i++) {
+            char firstChar = toFormat.charAt(i);
+            if (firstChar == '\n') {
+               inserts.get().computeIfAbsent(i, q -> new ArrayList<>()).add(new StringUtils.InsertData(index, i, close));
+               break;
+            }
+
+            if (firstChar == '&' && i + 1 < toFormat.length()) {
+               char c = toFormat.charAt(i + 1);
+               if (c == 'x') {
+                  i += 13;
+               } else {
+                  if (c == 'r') {
+                     break;
+                  }
+
+                  if (COLOR_CHARS.contains(c)) {
+                     inserts.get().computeIfAbsent(i, q -> new ArrayList<>()).add(new StringUtils.InsertData(index, i, close));
+                     break;
+                  }
+               }
+            }
+         }
+      }
+
+      return toFormat;
+   }
+
+   private static void shift(CachingSupplier<Map<Integer, List<StringUtils.InsertData>>> mapGetter, int amount, int fromIndex) {
+      if (mapGetter.hasValue()) {
+         Map<Integer, List<StringUtils.InsertData>> map = mapGetter.get();
+
+         for (Integer i : map.keySet().stream().sorted(Comparator.reverseOrder()).toList()) {
+            move(map, i, i < fromIndex ? i : i + amount, amount, fromIndex);
+         }
+      }
+   }
+
+   private static void move(Map<Integer, List<StringUtils.InsertData>> map, Integer key, Integer newKey, int shift, int fromIndex) {
+      List<StringUtils.InsertData> object = map.remove(key);
+      List<StringUtils.InsertData> shifted = map.getOrDefault(key, new ArrayList<>());
+
+      for (StringUtils.InsertData insertData : object) {
+         shifted.add(
+            new StringUtils.InsertData(
+               insertData.basePosition, insertData.whereToInsert < fromIndex ? insertData.whereToInsert : insertData.whereToInsert + shift, insertData.text
+            )
+         );
+      }
+
+      map.put(newKey, shifted);
+   }
+
+   public static String legacyHexFormat(String message) {
+      Matcher matcher = HEX_PATTERN.matcher(message);
+      StringBuilder builder = new StringBuilder(message.length() + 32);
+
+      while (matcher.find()) {
+         String group = matcher.group(1);
+         matcher.appendReplacement(
+            builder,
+            "§x§" + group.charAt(0) + "§" + group.charAt(1) + "§" + group.charAt(2) + "§" + group.charAt(3) + "§" + group.charAt(4) + "§" + group.charAt(5)
+         );
+      }
+
+      return matcher.appendTail(builder).toString();
+   }
+
+   record InsertData(int basePosition, int whereToInsert, String text) {
+   }
+}

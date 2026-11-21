@@ -1,0 +1,22 @@
+package de.theredend2000.advancedhunt.lib.cloud.caption;
+
+import java.util.Map;
+import org.apiguardian.api.API;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
+import org.immutables.value.Value.Immutable;
+
+@API(
+   status = API.Status.STABLE
+)
+@Immutable
+public abstract class ConstantCaptionProvider<C> implements CaptionProvider<C> {
+   @NonNull
+   public abstract Map<Caption, String> captions();
+
+   @Nullable
+   @Override
+   public final String provide(@NonNull final Caption caption, @NonNull final C recipient) {
+      return this.captions().get(caption);
+   }
+}

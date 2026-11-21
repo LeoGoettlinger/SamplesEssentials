@@ -1,0 +1,26 @@
+name: DarkDrop
+version: '1.0.0'
+main: com.samplecraft.darkdrop.DarkDrop
+api-version: '1.21'
+author: SampleCraft
+description: Lootdrop-Event-Plugin mit GUI-Konfiguration, sinkendem Drop und zufaelligen oder koordinatenbasierten Landepositionen.
+website: https://example.com/samplecraft
+commands:
+  darkdrop:
+    description: Hauptbefehl fuer DarkDrop Lootdrop-Events.
+    usage: |
+      /darkdrop spawn - oeffnet das Einstellungsmenue (Position = Spieler)
+      /darkdrop spawn random - zufaellige Landeposition
+      /darkdrop spawn <x> <y> <z> - exakte Landeposition (auch relativ mit ~)
+      /darkdrop spawn random menu - zufaellige Position mit Menue
+      /darkdrop spawn <x> <y> <z> menu - exakte Position mit Menue
+      /darkdrop reload - laedt die Konfiguration neu
+    aliases: [dd, darkd]
+    permission: darkdrop.use
+permissions:
+  darkdrop.use:
+    description: Erlaubt die Nutzung des DarkDrop-Befehls.
+    default: true
+  darkdrop.admin:
+    description: Erlaubt administrative Aktionen wie Reload.
+    default: op

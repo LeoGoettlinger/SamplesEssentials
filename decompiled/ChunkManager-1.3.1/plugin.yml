@@ -1,0 +1,137 @@
+name: ChunkManager
+version: '1.3.1'
+main: cm.chunkManager.ChunkManager
+api-version: '1.21'
+folia-supported: true
+softdepend: [WorldGuard, dynmap, BlueMap]
+description: Chunk management with optimization and predictive loading
+author: 'TheeCobra'
+
+commands:
+  chunkstatus:
+    description: View detailed server performance metrics
+    usage: /chunkstatus
+    permission: chunkmanager.admin
+
+  chunkreload:
+    description: Reload configuration settings
+    usage: /chunkreload
+    permission: chunkmanager.admin
+
+  optimizechunks:
+    description: Optimize loaded chunks for better performance
+    usage: /optimizechunks
+    permission: chunkmanager.admin
+
+  chunkgc:
+    description: Run memory cleanup process
+    usage: /chunkgc
+    permission: chunkmanager.admin
+
+  chunksummary:
+    description: Generate comprehensive world statistics
+    usage: /chunksummary
+    permission: chunkmanager.admin
+
+  maintenance:
+    description: Manage server performance modes
+    usage: /maintenance <on|off|auto|status>
+    permission: chunkmanager.admin
+
+  chunklang:
+    description: Change plugin language
+    usage: /chunklang [language-code]
+    permission: chunkmanager.admin
+    aliases: [cmlang]
+  
+  chunkanalyze:
+    description: Analyze chunk complexity and content
+    usage: /chunkanalyze [world]
+    permission: chunkmanager.admin
+    aliases: [cmanalyze]
+  
+  chunkregions:
+    description: Display region optimization statistics
+    usage: /chunkregions
+    permission: chunkmanager.admin
+    aliases: [cmregions]
+  
+  chunkmetrics:
+    description: Show advanced performance metrics
+    usage: /chunkmetrics
+    permission: chunkmanager.admin
+    aliases: [cmmetrics]
+
+  cm:
+    description: Open ChunkManager GUI
+    usage: /cm
+    permission: chunkmanager.admin
+    aliases: [chunkgui, cmgui]
+
+  cmfreeze:
+    description: Freeze or unfreeze chunks
+    usage: /cmfreeze <add|remove|list|clear>
+    permission: chunkmanager.admin
+    aliases: [chunkfreeze]
+
+  cmviz:
+    description: Toggle chunk border visualization
+    usage: /cmviz
+    permission: chunkmanager.admin
+    aliases: [chunkviz]
+
+  cmpregen:
+    description: Pre-generate chunks in a radius
+    usage: /cmpregen <start|stop|status> [radius]
+    permission: chunkmanager.admin
+    aliases: [chunkpregen]
+
+  cmtop:
+    description: Show top expensive chunks
+    usage: /cmtop
+    permission: chunkmanager.admin
+    aliases: [chunktop]
+
+  cmrtps:
+    description: Show per-region TPS/MSPT (Folia)
+    usage: /cmrtps
+    permission: chunkmanager.admin
+    aliases: [chunkrtps]
+
+  cmmap:
+    description: Control Dynmap/BlueMap hot-chunk overlay
+    usage: /cmmap <refresh|on|off>
+    permission: chunkmanager.admin
+    aliases: [chunkmap]
+
+permissions:
+  chunkmanager.admin:
+    description: Access to all ChunkManager commands and features
+    default: op
+  
+  chunkmanager.notify:
+    description: Receive performance notifications
+    default: op
+  
+  chunkmanager.bypass:
+    description: Bypass chunk loading restrictions
+    default: false
+
+  chunkmanager.radius.1:
+    description: Chunk loading radius tier 1
+    default: false
+  chunkmanager.radius.2:
+    description: Chunk loading radius tier 2
+    default: false
+  chunkmanager.radius.3:
+    description: Chunk loading radius tier 3
+    default: false
+  chunkmanager.radius.4:
+    description: Chunk loading radius tier 4
+    default: false
+  chunkmanager.radius.5:
+    description: Chunk loading radius tier 5
+    default: false
+  chunkmanager.radius.6:
+    description: Chunk loading radius tier 6
+    default: false

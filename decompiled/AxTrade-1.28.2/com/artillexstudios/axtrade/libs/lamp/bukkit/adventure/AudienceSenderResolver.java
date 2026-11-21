@@ -1,0 +1,30 @@
+package com.artillexstudios.axtrade.libs.lamp.bukkit.adventure;
+
+import com.artillexstudios.axtrade.libs.lamp.bukkit.BukkitCommandActor;
+import com.artillexstudios.axtrade.libs.lamp.command.CommandActor;
+import com.artillexstudios.axtrade.libs.lamp.command.ExecutableCommand;
+import com.artillexstudios.axtrade.libs.lamp.process.SenderResolver;
+import java.util.function.Function;
+import net.kyori.adventure.audience.Audience;
+import org.bukkit.command.CommandSender;
+import org.jetbrains.annotations.NotNull;
+
+public final class AudienceSenderResolver implements SenderResolver {
+   private final Function<CommandSender, Audience> audiences;
+
+   public AudienceSenderResolver(Function<CommandSender, Audience> audiences) {
+      this.audiences = audiences;
+   }
+
+   @Override
+   public boolean isCustomType(Class<?> type) {
+      return Audience.class.isAssignableFrom(type);
+   }
+
+   @NotNull
+   @Override
+   public Object getSender(@NotNull Class<?> customSenderType, @NotNull CommandActor actor, @NotNull ExecutableCommand command) {
+      BukkitCommandActor bActor = (BukkitCommandActor)actor;
+      return this.audiences.apply(bActor.getSender());
+   }
+}

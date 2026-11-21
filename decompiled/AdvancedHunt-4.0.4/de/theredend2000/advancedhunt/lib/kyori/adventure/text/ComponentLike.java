@@ -1,0 +1,59 @@
+package de.theredend2000.advancedhunt.lib.kyori.adventure.text;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.function.Predicate;
+import org.jetbrains.annotations.Contract;
+import org.jspecify.annotations.Nullable;
+
+@FunctionalInterface
+public interface ComponentLike {
+   static List<Component> asComponents(final List<? extends ComponentLike> likes) {
+      return asComponents(likes, null);
+   }
+
+   static List<Component> asComponents(final List<? extends ComponentLike> likes, @Nullable final Predicate<? super Component> filter) {
+      Objects.requireNonNull(likes, "likes");
+      int size = likes.size();
+      if (size == 0) {
+         return List.of();
+      } else {
+         ArrayList<Component> components = null;
+
+         for (int i = 0; i < size; i++) {
+            ComponentLike like = likes.get(i);
+            if (like == null) {
+               throw new NullPointerException("likes[" + i + "]");
+            }
+
+            Component component = like.asComponent();
+            if (filter == null || filter.test(component)) {
+               if (components == null) {
+                  components = new ArrayList<>(size);
+               }
+
+               components.add(component);
+            }
+         }
+
+         if (components == null) {
+            return List.of();
+         } else {
+            components.trimToSize();
+            return List.copyOf(components);
+         }
+      }
+   }
+
+   @Contract("null -> null; !null -> !null")
+   @Nullable
+   static Component unbox(@Nullable final ComponentLike like) {
+      return like != null ? like.asComponent() : null;
+   }
+
+   @Contract(
+      pure = true
+   )
+   Component asComponent();
+}

@@ -1,0 +1,6 @@
+package com.artillexstudios.axafkzone.libs.axapi.particle.option;
+
+import com.artillexstudios.axafkzone.libs.axapi.particle.ParticleOption;
+
+public record SpellParticleOption(int color, float power) implements ParticleOption {
+}

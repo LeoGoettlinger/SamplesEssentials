@@ -1,0 +1,122 @@
+package de.theredend2000.advancedhunt.menu.reward;
+
+import de.theredend2000.advancedhunt.Main;
+import de.theredend2000.advancedhunt.lib.xseries.XMaterial;
+import de.theredend2000.advancedhunt.menu.PagedMenu;
+import de.theredend2000.advancedhunt.model.Collection;
+import de.theredend2000.advancedhunt.model.RewardPreset;
+import de.theredend2000.advancedhunt.model.RewardPresetType;
+import de.theredend2000.advancedhunt.util.ItemBuilder;
+import java.util.Comparator;
+import java.util.List;
+import java.util.function.Consumer;
+import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.ItemStack;
+
+public class RewardPresetListMenu extends PagedMenu {
+   private final RewardPresetType type;
+   private final Consumer<RewardPreset> onSelect;
+   private final Collection collectionContext;
+   private boolean fromCollection = false;
+
+   public RewardPresetListMenu(Player player, Main plugin, RewardPresetType type, Consumer<RewardPreset> onSelect) {
+      super(player, plugin);
+      this.type = type;
+      this.onSelect = onSelect;
+      this.collectionContext = null;
+      this.maxItemsPerPage = 28;
+   }
+
+   public RewardPresetListMenu(
+      Player player, Main plugin, RewardPresetType type, Consumer<RewardPreset> onSelect, Collection collectionContext, boolean fromCollection
+   ) {
+      super(player, plugin);
+      this.type = type;
+      this.onSelect = onSelect;
+      this.collectionContext = collectionContext;
+      this.maxItemsPerPage = 28;
+      this.fromCollection = fromCollection;
+   }
+
+   public RewardPresetListMenu(Player player, Main plugin, RewardPresetType type, Consumer<RewardPreset> onSelect, Collection collectionContext) {
+      super(player, plugin);
+      this.type = type;
+      this.onSelect = onSelect;
+      this.collectionContext = collectionContext;
+      this.maxItemsPerPage = 28;
+   }
+
+   @Override
+   public String getMenuName() {
+      String key = this.type == RewardPresetType.COLLECTION ? "gui.presets.collection.title" : "gui.presets.treasure.title";
+      return this.plugin.getMessageManager().getMessage(key, false);
+   }
+
+   @Override
+   public int getSlots() {
+      return 54;
+   }
+
+   @Override
+   public void handleMenu(InventoryClickEvent e) {
+   }
+
+   @Override
+   public void setMenuItems() {
+      this.index = 0;
+      this.addMenuBorder();
+      List<RewardPreset> presets = this.plugin.getRewardPresetManager().getPresets(this.type);
+      presets.sort(Comparator.comparing(RewardPreset::getName, String.CASE_INSENSITIVE_ORDER));
+      if (presets.isEmpty()) {
+         this.addStaticItem(
+            22,
+            this.getWarningIcon(
+               this.plugin.getMessageManager().getMessage("gui.presets.none.name", false),
+               this.plugin.getMessageManager().getMessageList("gui.presets.none.lore", false)
+            )
+         );
+      } else {
+         this.addPagedButtons(presets.size());
+         int startIndex = this.page * this.maxItemsPerPage;
+         int endIndex = Math.min(startIndex + this.maxItemsPerPage, presets.size());
+         this.hasNextPage = endIndex < presets.size();
+
+         for (int i = startIndex; i < endIndex; i++) {
+            RewardPreset preset = presets.get(i);
+            ItemStack icon = new ItemBuilder(XMaterial.WRITTEN_BOOK)
+               .setDisplayName(this.plugin.getMessageManager().getMessage("gui.presets.preset.name", false, "%name%", preset.getName()))
+               .setLore(
+                  this.plugin
+                     .getMessageManager()
+                     .getMessageList(
+                        "gui.presets.preset.lore",
+                        false,
+                        "%count%",
+                        String.valueOf(preset.getRewards().size()),
+                        "%action%",
+                        this.onSelect != null
+                           ? this.plugin.getMessageManager().getMessage("gui.presets.preset.action." + (this.fromCollection ? "select" : "load"), false)
+                           : this.plugin.getMessageManager().getMessage("gui.presets.preset.action.edit", false)
+                     )
+               )
+               .build();
+            this.addPagedItem(this.index++, icon, click -> {
+               if (this.onSelect != null) {
+                  if (click.isRightClick()) {
+                     if (!this.playerMenuUtility.hasPermission("advancedhunt.admin")) {
+                        this.playerMenuUtility.sendMessage(this.plugin.getMessageManager().getMessage("error.no_permission"));
+                     } else {
+                        new RewardPresetActionsMenu(this.playerMenuUtility, this.plugin, preset, this.collectionContext).setPreviousMenu(this).open();
+                     }
+                  } else {
+                     this.onSelect.accept(preset);
+                  }
+               } else {
+                  new RewardPresetActionsMenu(this.playerMenuUtility, this.plugin, preset, this.collectionContext).setPreviousMenu(this).open();
+               }
+            });
+         }
+      }
+   }
+}

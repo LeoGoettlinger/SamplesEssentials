@@ -1,0 +1,14 @@
+package com.artillexstudios.axtrade.libs.axapi.nms.v1_21_R1.items.datacomponents.impl;
+
+import com.artillexstudios.axtrade.libs.axapi.items.components.data.CustomModelData;
+import java.util.List;
+
+public final class CustomModelDataDataComponent implements DataComponentHandler<CustomModelData, net.minecraft.world.item.component.CustomModelData> {
+   public net.minecraft.world.item.component.CustomModelData toNMS(CustomModelData from) {
+      return new net.minecraft.world.item.component.CustomModelData(from.floats().stream().findFirst().orElseThrow().intValue());
+   }
+
+   public CustomModelData fromNMS(net.minecraft.world.item.component.CustomModelData data) {
+      return new CustomModelData(List.of((float)data.a()), List.of(), List.of(), List.of());
+   }
+}

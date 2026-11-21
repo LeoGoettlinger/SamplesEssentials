@@ -1,0 +1,39 @@
+name: BiggerEnderChest
+version: 1.2
+main: com.Sw3ys.bigenderchest.BiggerEnderChest
+api-version: '1.21'
+folia-supported: true
+
+commands:
+  ec:
+    description: Open your ender chest
+    usage: /ec [reload|import]
+
+  ecsee:
+    description: Admin ender chest viewer
+    usage: /ecsee [player]
+
+permissions:
+  enderchest.admin:
+    default: op
+
+  enderchest.bypass:
+    default: false
+
+  enderchest.cooldown.bypass:
+    default: false
+
+  enderchest.world.bypass:
+    default: false
+
+  enderchest.slot.27:
+    default: false
+
+  enderchest.slot.36:
+    default: false
+
+  enderchest.slot.45:
+    default: false
+
+  enderchest.slot.54:
+    default: true

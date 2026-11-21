@@ -1,0 +1,107 @@
+package com.artillexstudios.axtrade.hooks.currency;
+
+import com.artillexstudios.axtrade.libs.axapi.utils.StringUtils;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
+import java.util.Map.Entry;
+import java.util.concurrent.CompletableFuture;
+import me.TechsCode.UltraEconomy.UltraEconomy;
+import me.TechsCode.UltraEconomy.objects.Account;
+import me.TechsCode.UltraEconomy.objects.Currency;
+import org.bukkit.Bukkit;
+import org.jetbrains.annotations.NotNull;
+
+public class UltraEconomyHook implements CurrencyHook {
+   private Currency currency = null;
+   private final Map<String, Object> settings;
+   private final String internal;
+
+   public UltraEconomyHook(Map<Object, Object> settings) {
+      Map<String, Object> map = new HashMap<>();
+
+      for (Entry<Object, Object> entry : settings.entrySet()) {
+         map.put((String)entry.getKey(), entry.getValue());
+      }
+
+      this.settings = map;
+      this.internal = (String)settings.get("currency-name");
+   }
+
+   @Override
+   public void setup() {
+      Optional<Currency> currencyOptional = UltraEconomy.getAPI().getCurrencies().name(this.internal);
+      if (currencyOptional.isEmpty()) {
+         Bukkit.getConsoleSender()
+            .sendMessage(
+               StringUtils.formatToString(
+                  "&#FF0000[AxTrade] UltraEconomy currency named &#DD0000"
+                     + this.internal
+                     + " &#FF0000not found! Change the currency-name or disable the hook to get rid of this warning!"
+               )
+            );
+      } else {
+         this.currency = currencyOptional.get();
+      }
+   }
+
+   @Override
+   public String getName() {
+      return "UltraEconomy-" + this.internal;
+   }
+
+   @Override
+   public Map<String, Object> getSettings() {
+      return this.settings;
+   }
+
+   @Override
+   public boolean worksOffline() {
+      return true;
+   }
+
+   @Override
+   public boolean usesDouble() {
+      return true;
+   }
+
+   @Override
+   public boolean isPersistent() {
+      return false;
+   }
+
+   @Override
+   public double getBalance(@NotNull UUID player) {
+      if (this.currency == null) {
+         return 0.0;
+      } else {
+         Optional<Account> account = UltraEconomy.getAPI().getAccounts().uuid(player);
+         return account.<Double>map(value -> value.getBalance(this.currency).getOnHand()).orElse(0.0);
+      }
+   }
+
+   @Override
+   public CompletableFuture<Boolean> giveBalance(@NotNull UUID player, double amount) {
+      if (this.currency == null) {
+         return CompletableFuture.completedFuture(false);
+      } else {
+         Optional<Account> account = UltraEconomy.getAPI().getAccounts().uuid(player);
+         return account.isEmpty()
+            ? CompletableFuture.completedFuture(false)
+            : CompletableFuture.completedFuture(account.get().addBalance(this.currency, amount));
+      }
+   }
+
+   @Override
+   public CompletableFuture<Boolean> takeBalance(@NotNull UUID player, double amount) {
+      if (this.currency == null) {
+         return CompletableFuture.completedFuture(false);
+      } else {
+         Optional<Account> account = UltraEconomy.getAPI().getAccounts().uuid(player);
+         return account.isEmpty()
+            ? CompletableFuture.completedFuture(false)
+            : CompletableFuture.completedFuture(account.get().removeBalance(this.currency, amount));
+      }
+   }
+}

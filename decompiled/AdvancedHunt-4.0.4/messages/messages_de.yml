@@ -1,0 +1,1928 @@
+config-version: 2.2
+
+common:
+  treasure: "Treasure"
+  collection: "Sammlung"
+  chance: "Wahrscheinlichkeit"
+  message: "Nachrichten"
+  broadcast: "Broadcast"
+  value: "Wert"
+
+feedback:
+  gui:
+    first_page: "%prefix%&cDu bist bereits auf der ersten Seite."
+    last_page: "%prefix%&cDu bist bereits auf der letzten Seite."
+  rewards:
+    prompt:
+      command: "%prefix%&aGebe einen Befehl an (ohne /):"
+      chat_message: "%prefix%&aGebe eine Nachricht an (nutze & für Farben):"
+      broadcast_message: "%prefix%&aGebe einen Broadcast an, die an alle gesendet wird (nutze & für Farben):"
+      new_chance: "%prefix%&aGebe eine neue Wahrscheinlichkeit an (aktuell: %current%%):"
+      new_message: "%prefix%&aGebe eine neue Nachricht an (aktuell: %current%):"
+      new_broadcast: "%prefix%&aGebe einen neuen Broadcast an (aktuell: %current%):"
+      new_value: "%prefix%&aGebe einen neuen Wert an (aktuell: %current%):"
+    added: "%prefix%&aReward erfolgreich hinzugefügt!"
+    deleted: "%prefix%&cReward gelöscht."
+    instance_given: "%prefix%&aDas Reward-Item wurde zu deinem Inventar hinzugefügt."
+    instance_dropped: "%prefix%&eInventory voll — Das Item wurde an deinen Füßen fallen gelassen."
+    instance_invalid: "%prefix%&cDas Reward-Item ist ungültig und konnte nicht geladen werden."
+    command_preview: "%prefix%&eBefehl: &f/%command%"
+    chat_message_preview: "%prefix%&eNachricht: &f%message%"
+    broadcast_message_preview: "%prefix%&eBroadcast: &f%message%"
+    updated: "%prefix%&a%type% erfolgreich aktualisiert!"
+    reset: "%prefix%&a%type% erfolgreich zurückgesetzt!"
+  teleport:
+    success: "%prefix%&aZur Treasure teleportiert!"
+    unsafe: "%prefix%&cEs konnte keine Sichere Teleport-Location gefunden werden!"
+    invalid_location: "%prefix%&cUngültige Treasure-Location!"
+    adjusted: "%prefix%&aZu einer nahegelegenen, sicheren Location teleportiert."
+  settings:
+    delete:
+      success: "%prefix%&aErfolgreich die Sammlung &e%collection%&a und all Ihre Treasures gelöscht."
+  act:
+    applied: "%prefix%&aACT-Regeln erfolgreich aktualisiert!"
+
+    components:
+      date_range:
+        prompt: "%prefix%&aGebe einen Datumsbereich an (Beispiel: YYYY-MM-DD:YYYY-MM-DD oder * für immer):"
+      duration:
+        prompt: "%prefix%&aGebe eine Dauer an (Beispiel:, 2h, 30m, 1d oder * für immer):"
+      act_format:
+        prompt: "%prefix%&aGebe das ACT-FORMAT an: [DATE_RANGE] [DURATION] [CRON] (Beispiel: [*] [2h] [0 0 9 * * ?])"
+
+    presets:
+      applied: "%prefix%&aVorlage angewandt: &e%preset%"
+
+    rules:
+      rule_deleted: "%prefix%&cRegel gelöscht: &e%name%"
+
+    date_range:
+      success: "%prefix%&aDatumsbereich erfolgreich aktualisiert!"
+    duration:
+      success: "%prefix%&aDauer erfolgreich aktualisiert!"
+  cron:
+    applied: "%prefix%&aZeitplan erfolgreich aktualisiert!"
+    cleared: "%prefix%&aZeitplan gelöscht."
+    preset_applied: "%prefix%&aVorlage angewendet: &e%preset%"
+    preset:
+      daily:
+        name: "&eTäglich"
+      weekly:
+        name: "&eWöchentlich"
+      monthly:
+        name: "&eMonatlich"
+      yearly:
+        name: "&eJährlich"
+  preset:
+    prompt_name: "%prefix%&eGebe ein Name für diese %type%-Vorlage an:"
+    prompt_rename: "%prefix%&eGebe einen neuen Name für die Vorlage '&f%name%&e' an:"
+    saved: "%prefix%&aErfolgreich die %type%-Vorlage '&f%name%&a' gespeichert!"
+    renamed: "%prefix%&aUmbenannt zu '&f%name%&a'."
+    loaded: "%prefix%&aErfolgreich die %type%-Vorlage '&f%name%&a' geladen!"
+    deleted: "%prefix%&cVorlage '&f%name%&c' gelöscht."
+    set_default: "%prefix%&aDie Standartvorlage für &e%collection%&a wurde zu '&f%name%&a' gesetzt."
+    override:
+      none: "%prefix%&cKeine Treasures in dieser Sammlung gefunden."
+      started: "%prefix%&eÜberschreibe &f%count%&e Treasures mit dem Preset '&f%name%&e'..."
+      progress: "&eÜberschreibungs-Fortschritt: &f%percent%% &7(%current%/%total%)"
+      done: "%prefix%&aEs wurden &f%count%&a Treasures mit dem Preset '&f%name%&a' überschrieben."
+      failed: "%prefix%&cFehler beim Überschreiben. Bitte überprüfe die Konsole für mehr Informationen."
+
+  place_items:
+    prompt_group: "%prefix%&7Schreibe den &eGruppennamen&7 in Chat (oder 'cancel')."
+    prompt_rename_group: "%prefix%&7Gebe einen neuen Namen für die Gruppe &e%group%&7 an (oder 'cancel')."
+    group_created: "%prefix%&aGruppe &e%group%&a erstellt."
+    group_renamed: "%prefix%&aGruppe &e%old%&a wurde zu &e%group%&a umbenannt."
+    group_deleted: "%prefix%&aGruppe &e%group%&a gelöscht."
+    created: "%prefix%&aNeues Place-Item &e%name%&a in Gruppe &e%group%&a erstellt."
+    given: "%prefix%&aItem &e%name%&a gegeben (&7%group%&a)."
+    deleted: "%prefix%&aItem &e%name%&a gelöscht (&7%group%&a)."
+
+prefix: "&6AdvancedHunt &8>> &7"
+
+error:
+  no_permission: "%prefix%&cDu hast keine Berechtigung um dies zu tun!"
+  generic: "%prefix%&cEin Fehler ist aufgetreten. Bitte prüfe die Konsole."
+  place_items:
+    no_item: "%prefix%&cSetzte zuerst ein Block in den Vorgesehenen Slot dafür."
+    not_a_block: "%prefix%&cDieses Item ist kein Block und kann deswegen nicht hierfür genutzt werden."
+    invalid_group: "%prefix%&cUngültiger Gruppenname."
+    duplicate_group: "%prefix%&cDiese Gruppe existiert bereits."
+    serialize_failed: "%prefix%&cDas speichern des Items ist fehlgeschlagen."
+    deserialize_failed: "%prefix%&cDas laden des Items ist fehlgeschlagen."
+    create_failed: "%prefix%&cDas erstellen des Items ist fehlgeschlagen."
+    create_group_failed: "%prefix%&cDas erstellen der Gruppe ist fehlgeschlagen."
+    rename_group_failed: "%prefix%&cDas umbenennen der Gruppe ist fehlgeschlagen."
+
+  feature_disabled: "%prefix%&cDieses Feature ist aktuell deaktiviert."
+
+  validation:
+    date_range: "%prefix%&cUngültiger Datumsbereich! Nutze ISO-Daten (2024-01-01:2024-12-31) oder * für immer."
+    duration: "%prefix%&cUngültige Dauer! Nutze Formatierungen wie 90s, 2h, 30m, oder * für immer aktiv."
+  rewards:
+    invalid_chance: "%prefix%&cUngültige Wahrscheinlichkeit! Es muss eine Zahl zwischen 0 und 100 sein."
+    command_blacklisted: "%prefix%&cDiese Befehl ist blockiert und kann nicht benutzt werden!"
+    add:
+      item:
+        no_item: "%prefix%&cSetzte zuerst ein Item in den Vorgesehenen Slot dafür."
+  cron:
+    invalid: "%prefix%&cUngültige Cron-Ausdruck! Bitte überprüfe das Format."
+  act:
+    format:
+      invalid_format: "%prefix%&cUngültiges ACT-Format! Erwartet: [DATUMSBEREICH] [DAUER] [CRON]"
+  preset:
+    invalid_name: "%prefix%&cUngültiger Vorlagenname! Bitte gebe einen gültigen Namen an."
+    duplicate_name: "%prefix%&cEine Vorlage mit dem Name existiert bereits."
+    save_failed: "%prefix%&cSpeichern der %type%-Vorlage ist fehlgeschlagen!"
+
+command:
+  help:
+    descriptions:
+      help: "Zeigt dieses Hilfe Menu"
+      reload: "Läd die Plugin-Config neu"
+      show: "Zeigt nahegelegene Treasures mit einem Hologramm"
+      bypass: "Schaltet die Treasure-Bypass-Ansicht um"
+      list: "Zeigt eine Liste aller verfügbaren Sammlungen"
+      list_collection: "Zeigt eine Liste alle Treasures in einer Sammlung"
+      leaderboard: "Öffnet das Leaderboard für eine Sammlung"
+      progress: "Zeigt den Fortschritt in einer Sammlung"
+      collection: "Öffnet den Sammlung-Editor"
+      collection_create: "Erstellt eine neue Sammlung"
+      collection_edit: "Bearbeitet eine Sammlung"
+      collection_delete: "Löscht eine Sammlung"
+      collection_rename: "Benennt eine Sammlung um"
+      collection_info: "Zeigt detaillierte Informationen über eine Sammlung"
+      rewards: "Zeigt dir die Belohnungen einer Treasure, die du Anschaust"
+      placeitems: "Öffnet das Place-Item Menu"
+      place: "Toggelt den Place-Mode (wird beendet wenn aktiv)"
+      place_collection: "Toggelt den Place-Mode für eine bestimmte Sammlung"
+      reset_all: "Setzt den Fortschritt für alle Spieler und Sammlungen zurück"
+      reset_collection: "Setzt den Fortschritt für eine Sammlung zurück"
+      reset_player: "Setzt den Fortschritt für einen Spieler zurück"
+      reset_player_collection: "Setzt den Fortschritt für einen Spieler in einer bestimmten Sammlung zurück"
+      hint: "Fragt einen Hinweis an um eine nahegelegene Treasure zu finden"
+      migrate: "Migriert Daten zwischen Speichersystemen (yaml/sqlite/mysql)"
+      debug_hint: "Debug: Testet das Hint-System"
+      debug_placecollection: "Debug: Platziert random Treasures"
+      debug_placecollection_random: "Debug: Platziert random Treasures"
+      debug_placecollection_plane: "Debug: Platziert Treasures in einem Quadrat"
+      debug_removecollectionplaced: "Debug: Entfernt alle platzierten Treasures in einer Sammlung"
+      debug_minigame: "Debug: Testet das Minigame-System"
+      debug_inspect: "Debug: Zeigt die gespeicherten Blockdaten der angeschauten Treasure"
+    minecraft:
+      help: "&6AdvancedHunt &8- &7Hilfe"
+      command: "Befehl"
+      description: "Beschreibung"
+      no_description: "Keine Beschreibung"
+      arguments: "Argumente"
+      optional: "Optional"
+      showing_results_for_query: "&7Zeigt folgende Ergebnisse für die Anfrage"
+      no_results_for_query: "Keine Ergebnisse für die Anfrage"
+      available_commands: "Verfügbare Befehle"
+      click_to_show_help: "Klicke um Hilfe für diesen Befehl zu erhalten"
+      page_out_of_range: "Fehler: Diese Seite ist außerhalb des verfügbaren Bereichs."
+      click_for_next_page: "Klicke um auf die nächste Seite zu kommen"
+      click_for_previous_page: "Klicke um auf die vorherige Seite zu kommen"
+
+  reload:
+    success: "%prefix%&aConfig und Nachrichten neu geladen!"
+    failed: "%prefix%&cNeu laden fehlgeschlagen. Bitte überprüfe die Konsole für mehr Informationen."
+
+  show:
+    success: "%prefix%&aZeigt &e%count%&a Treasure-Location(s) in einem &e%radius%&a Blöck(e) Radius für &e%seconds%s&a."
+    success_truncated: "%prefix%&aZeigt &e%count%&a Treasure-Location(s) in einem &e%radius%&a Blöck(e) Radius für &e%seconds%s&a. &7(Zeigt die ersten %max%)"
+    none_found: "%prefix%&eKeine Treasures in einem &6%radius%&e Block Radius gefunden."
+    invalid_radius: "%prefix%&cRadius muss zwischen &e1&c und &e500&c Blöcken sein."
+    invalid_duration: "%prefix%&cDauer muss zwischen &e1s&c und &e300s&c sein."
+    packetevents_missing: "%prefix%&cMarkierung nicht möglich anzuzeigen. Bitte Installiere oder Aktiviere &ePacketEvents&c."
+  bypass:
+    enabled: "%prefix%&aTreasure-Bypass aktiviert."
+    disabled: "%prefix%&cTreasure-Bypass deaktiviert."
+    usage: "%prefix%&eNutzung: /ah bypass [on|off]"
+  list:
+    header: "&6Verfügbare Sammlungen:"
+    format: "&7- &e%collection%"
+    hint: "&eNutze /ah list <collection> um die Treasures für diese Sammlung anzuzeigen."
+  collection_not_found: "%prefix%&cSammlung konnte nicht gefunden werden."
+
+  direction:
+    east: "Östlich"
+    southeast: "Süd-Östlich"
+    south: "Südlich"
+    southwest: "Süd-Westlich"
+    west: "Westlich"
+    northwest: "Nord-Westlich"
+    north: "Nördlich"
+    northeast: "Nord-Östlich"
+  rewards:
+    no_block: "%prefix%&cDu musst einen Block anschauen!"
+    not_treasure: "%prefix%&cDieser Block ist keine Treasure!"
+  rename:
+    success: "%prefix%&aDie Sammlung wurde erfolgreich von &e%old_name% &azu &e%new_name%&a umbenannt."
+    failed: "%prefix%&cFehler beim Umbenennen der Sammlung. Prüfe ob der alte Name vorhanden ist, und der neue noch nicht Existiert."
+  create:
+    success: "%prefix%&aDie Sammlung &e%name%&a wurde erfolgreich erstellt."
+    failed: "%prefix%&cFehler beim Erstellen der Sammlung. Eine Sammlung mit dem Name existiert vielleicht schon."
+  info:
+    lines:
+      - "&6━━━━━━ Sammlung Information: &e%collection% &6━━━━━━"
+      - "%uuid%"
+      - "&7Treasures: &f%count%"
+      - "%status%"
+      - "%timing%"
+      - "%reset%"
+      - "&7Nutze diese UUID in PlaceholderAPI: &e%advancedhunt_found_treasures_<uuid>%"
+    uuid: "&7UUID: &f%uuid%"
+    click_to_copy: "&eKlicke um die UUID zu kopieren"
+    status_available: "&7Status: &aAktuell Verfügbar"
+    status_unavailable: "&7Status: &cAktuell nicht Verfügbar"
+    active_until_note: "&7  &8(Aktiv für die ACT gesetzte Dauer)"
+    next_activation: "&7Nächste Aktivierung: &f%time%"
+    next_reset: "&7Nächste Zurücksetzung: &f%time%"
+    no_reset: "&7Nächste Zurücksetzung: &fNie &8(kein Zeitplan gesetzt)"
+    invalid_reset_schedule: "&7Nächste Zurücksetzung: &cUngültiger Zeitplan"
+  place_mode:
+    disabled: "%prefix%&aPlace-Mode deaktiviert."
+    enabled: "%prefix%&aPlace-Mode aktiviert für die Sammlung &e%collection%&a. Platziere Blöcke um Treasures hinzuzufügen."
+    not_in_place_mode: "%prefix%&cDu bist aktuell nicht im Place-Mode."
+    no_break: "%prefix%&cDu kannst keine Blöcke im Place-Mode zerstören!"
+    use_command: "%prefix%&eNutze /ah placeitems &eum deine gespeicherten Treasures zu bekommen."
+  reset:
+    all_success: "%prefix%&aSetzte &e%count% &aTreasure(s) für alle Spieler über alle Sammlungen zurück!"
+    collection_success: "%prefix%&aSetzte &e%count% &aTreasure(s) für die Sammlung &e%collection%&a zurück!"
+    player_success: "%prefix%&aSetzte &e%count% &aTreasure(s) für den Spieler &e%player%&a zurück!"
+    player_collection_success: "%prefix%&aSetzte &e%count% &aTreasure(s) für den Spieler &e%player% &ain der Sammlung &e%collection%&a zurück!"
+    player_not_found: "%prefix%&cSpieler konnte nicht gefunden werden."
+  migration:
+    started: "%prefix%&aSpeichermigration gestartet (alle Daten werden in den Zielspeicher kopiert)..."
+    progress: "%prefix%&eMigration Fortschritt: &f%percent%% &7(%current%/%total%) &8- &7%stage%"
+    progress_actionbar: "&eMigration: &f%percent%% &7(%current%/%total%) &8- &7%stage%"
+    success: "%prefix%&aSpeichermigration erfolgreich! Alle Daten wurden an den Zielspeicher kopiert."
+    failed: "%prefix%&cSpeichermigration fehlgeschlagen. Bitte überprüfe die Konsole für mehr Informationen."
+    mysql_not_configured: "%prefix%&cMySQL-Migrationseinstellungen wurden nicht konfiguriert! Bitte bearbeite die config.yml unter 'migration.target' mit deiner Ziel-Datenbank."
+    mysql_config_reset: "%prefix%&eDie MySQL-Migrationseinstellungen wurden in der config.yml zurückgesetzt.  Konfiguriere sie erneuert wenn du eine neue Migration brauchst."
+    existing_data_abort: "%prefix%&c&lMigration abgebrochen! Der Zielspeicher enthält bereits vorhandene Daten: %collections% Sammlungen, %treasures% Treasures, %players% Spieler. Nutze '--purge' um die Zieldaten zuerst zu löschen, oder '--force' (nicht empfohlen) um sie zu überschreiben: /ah migrate <type> --purge"
+    warning_existing_data: "%prefix%&e&lWARNUNG: Zielspeicher enthält bereits vorhandene Daten! (%collections% Sammlungen, %treasures% Treasures, %players% Spieler). Migration wird Fortgesetzt... (--force ist nicht empfohlen)"
+
+treasure:
+  found: "%prefix%&aDu hast eine Treasure gefunden!"
+  already_found: "%prefix%&cDu hast diese Treasure bereits gefunden!"
+  already_claimed_global: "%prefix%&cDiese Treasure wurde bereits von einem anderen Spieler gefunden!"
+  added: "%prefix%&aDie Treasure wurde zur Sammlung hinzugefügt!"
+  removed: "%prefix%&cDie Treasure wurde von der Sammlung entfernt."
+  protected: "%prefix%&cDu kannst keine Treasures zerstören!"
+  placemode: "%prefix%&cDu kannst keine Treasures in Place-Mode sammeln!"
+
+collection:
+  unavailable: "%prefix%&cDie Sammlung &e%collection% &cist aktuell nicht verfügbar!"
+  available_at: "%prefix%&eNächste Verfügbarkeit: &f%time%"
+  available: "&a✓ Verfügbar"
+  not_available: "&c✗ Nicht Verfügbar"
+  completed: "%prefix%&6Du hast die Sammlung &e%collection% &6abgeschlossen!"
+
+chat_input:
+  request: "%prefix%&aBitte gebe deine Eingabe in Chat ein."
+  canceled: "%prefix%&cEingabe abgebrochen."
+  timeout: "%prefix%&cEingabe abgelaufen."
+
+gui:
+  common:
+    back: "&7« Zurück zu %menu%"
+    close: "&cSchließen"
+    previous_page: "&aVorherige Seite"
+    next_page: "&aNächste Seite"
+    page_indicator: "&7(%page%/%total%)"
+    confirm: "&aBestätigen"
+    cancel: "&cAbbrechen"
+    enabled: "&aAktiviert"
+    disabled: "&cDeaktiviert"
+    none: "&cKeinen"
+  place_items:
+    groups:
+      title: "&8Place-Item Gruppen"
+      none:
+        name: "&cKeine Gruppen"
+        lore:
+          - "&7Es existiert keine Gruppe."
+          - "&7Erstelle welche mit dem Knopf unten."
+      group:
+        name: "&e%group%"
+        lore:
+          - "&7Item Anzahl: &f%count%"
+          - ""
+          - "&a%action%"
+          - "&7%action2%"
+        action:
+          open: "Linksklick zum Öffnen"
+          manage: "Rechtsklick zum verwalten"
+
+    group_actions:
+      title: "&8Gruppe: &e%group%"
+      rename:
+        name: "&eBenne die Gruppe um"
+        lore:
+          - "&7Aktuell: &f%current%"
+          - ""
+          - "&eKlicke zum Umbenennen"
+      delete:
+        name: "&cGruppe löschen"
+        lore:
+          - "&7Items in dieser Gruppe: &f%count%"
+          - ""
+          - "&c&lWARNUNG: Löscht alle Items in dieser Gruppe!"
+          - ""
+          - "&cKlicke zum Löschen"
+        confirm_title: "&8Lösche Gruppe &c%group%&8?"
+
+    list:
+      title: "&8Place-Items: &e%group%"
+      none:
+        name: "&cKeine Items"
+        lore:
+          - "&7Es existieren keine Items in dieser Gruppe."
+          - "&7Erstelle welche mit dem Knopf unten."
+      preset:
+        name: "&e%name%"
+        lore:
+          - "&a%action%"
+          - "&7%action2%"
+        action:
+          give: "Linksklick um das Item zu bekommen"
+          manage: "Rechtsklick zum verwalten"
+
+    actions:
+      title: "&8Item: &e%name%"
+      give:
+        name: "&aItem erhalten"
+        lore:
+          - "&7Fügt das Item zu deinem Inventar hinzu."
+      delete:
+        name: "&cLöschen"
+        lore:
+          - "&7Löscht dieses Item für immer."
+        confirm_title: "&8Lösche Item &c%name%&8?"
+
+    create:
+      name: "&aGruppe erstellen"
+      lore:
+        - "&7Erstellt eine neue leere Gruppe."
+    create_in_group:
+      name: "&aFüge ein Item hinzu"
+      lore:
+        - "&7Fügt ein Block-Item zu Gruppe &e%group%&7 hinzu."
+        - "&7Setzte ein Block-Item in den Slot"
+        - "&7und bestätige es um zu speichern."
+
+    add:
+      title: "&8Place-Item hinzufügen: &e%group%"
+      placeholder:
+        name: "&7Setzte das Item hier"
+        lore:
+          - "&7Ziehe ein Item in den Slot"
+          - "&7in der Mitte."
+      info:
+        name: "&eWie es Funktioniert"
+        lore:
+          - "&7Setzte jedes &eBlock-Item&7 in den Slot."
+          - "&7Das Item wird gespeichert als &f1 Block&7."
+          - "&7Das Item wird&a nicht konsumiert&7."
+      confirm:
+        name: "&aItem speichern"
+        lore:
+          - "&7Speicher den Block als ein Item"
+          - "&7in der ausgewählten Gruppe."
+      cancel:
+        name: "&cAbbrechen"
+        lore:
+          - "&7Kehre ohne Speichern zurück."
+  rewards:
+    title: "&8Treasure Belohnungen"
+    collection_title: "&8Abschließung-Belohnungen"
+    preset_title: "&8Belohnung-Vorlagen"
+    treasure_info:
+      name: "&eTreasure Informationen"
+      lore:
+        - "&8▸ &7Diese Treasure hat viele Daten."
+        - "&8▸ &7Nutze die UUID in der PlaceholderAPI."
+        - ""
+        - "&8┌ &7UUID"
+        - "&8└ &b%uuid%"
+        - ""
+        - "&e▶ Klicke für mehr Details."
+      info:
+        lines:
+          - ""
+          - "&6&l━━━━━━ Treasure Info ━━━━━━"
+          - ""
+          - "&8▸ &7UUID"
+          - "&f  %uuid%"
+          - ""
+          - "&8▸ &7Belohnungen: &e%count%"
+          - "&8▸ &7Material: &e%block%"
+          - "&8▸ &7BlockState: &e%blockStateLine%"
+          - "&8▸ &7Ort: &e%location%"
+          - ""
+          - "&8▸ &7NBT-Daten"
+          - "&f  %nbtData%"
+          - ""
+          - "&8▸ &7PlaceholderAPI: &e%advancedhunt_has_found_<treasure_id>%"
+          - ""
+          - "&8▸ &6&l[Alle Daten Kopieren]"
+        uuid: "%uuid%"
+        nbt: "%nbtData%"
+        block_states: "&8(%block_states%)"
+        block_states_line: "%block_states%"
+        location: "%x%, %y%, %z% &8: &7%world%"
+        click_to_copy_uuid: "&eClick to copy UUID"
+        click_to_copy_nbt: "&eClick to copy NBT"
+        click_to_copy_blockstate: "&eClick to copy BlockState"
+        click_to_copy_all: "&eClick to copy all data"
+    open_reward_option_menu:
+      title: "&8Belohnungsoptionen"
+      name: "&6+ Belohnung hinzufügen"
+      lore:
+        - ""
+        - "&7Wähle die Art der Belohnung,"
+        - "&7die du hinzufügen möchtest:"
+        - ""
+        - "&e► Item-Belohnung"
+        - "&f  Gib einen physisches Item"
+        - ""
+        - "&e► Befehl-Belohnung"
+        - "&f  Führe einen Server-Befehl aus"
+        - ""
+        - "&e► Chat-Nachricht"
+        - "&f  Sende eine Nachricht an den Spieler"
+        - ""
+        - "&e► Broadcast-Nachricht"
+        - "&f  Sende eine Nachricht an alle Spieler"
+        - ""
+        - "&aKlicke zum Öffnen der Optionen"
+    switch_to_collection:
+      name: "&eSammlung Belohnungen anzeigen"
+      lore:
+        - "&7Klicke zum Anzeigen der Belohnungen,"
+        - "&7die beim Abschließen der gesamten"
+        - "&7Sammlung vergeben werden."
+    switch_to_treasure:
+      name: "&eTreasure Belohnungen anzeigen"
+      lore:
+        - "&7Klicke zum Anzeigen der Belohnungen,"
+        - "&7die beim Finden dieser"
+        - "&7Belohnung vergeben wird."
+    no_rewards:
+      name: "&7Keine Belohnungen"
+      lore:
+        - "&7Diese Treasure hat keine"
+        - "&7Belohnungen konfiguriert."
+    reward_number: "&7Belohnung #%number%"
+    chance_lore: "&7Wahrscheinlichkeit: &e%chance%%"
+    message_lore: "&7Nachricht: &e%message%"
+    broadcast_lore: "&7Broadcast: &e%broadcast%"
+    amount_lore: "&7Anzahl: &fx%amount%"
+    command_name: "&6Befehl Belohnung"
+    command_label: "&7Führt folgenden Befehl aus:"
+    chat_message_name: "&bChat-Nachricht Belohnung"
+    chat_message_label: "&7Führt folgende Nachricht aus:"
+    broadcast_message_name: "&dBroadcast Belohnung"
+    broadcast_message_label: "&7Führt folgenden Broadcast aus:"
+    truncated:
+      command: "&8(Befehl gekürzt)"
+      message: "&8(Nachricht gekürzt)"
+    invalid_item:
+      name: "&cUngültiges Item"
+      lore:
+        - "&7Dieses Item konnte nicht geladen werden"
+        - ""
+        - "&8─────────────"
+        - "&7Wahrscheinlichkeit: &e%chance%%"
+    # Edit mode
+    click_to_edit: "&e&lLinksklick &7zum bearbeiten  &8|  &e&lRechtsklick &7um %action%"
+    save_preset:
+      name: "&aErstelle %Type%-Vorlage"
+      lore:
+        - "&7Speichere die aktuelle Belohnungskonfiguration"
+        - "&7als wiederverwendbare Vorlage für %type%s"
+        - ""
+        - "&7Dies ermöglicht es dir, die gleichen"
+        - "&7Belohnungen schnell auf andere %type%s anzuwenden"
+        - ""
+        - "&eKlicke zum Erstellen der Vorlage"
+    load_preset:
+      name: "&bLade %Type%-Vorlage"
+      lore:
+        - "&7Lade eine gespeicherte Belohnungskonfiguration"
+        - "&7aus deinen %type%-Vorlagen"
+        - ""
+        - "&7Ersetze aktuelle Belohnungen durch"
+        - "&7eine zuvor gespeicherte Vorlage"
+        - ""
+        - "&eKlicke zum Anzeigen der Vorlagen"
+    quick_action:
+      delete: "&czu löschen"
+      get_instance: "&aum das Item zu bekommen"
+    quick_mode:
+      name: "&bSchnelle Aktion"
+      mode_delete: "&cLöschen"
+      mode_get_instance: "&aItem bekommen"
+      lore:
+        - "&7Modus: %mode%"
+        - "&7Rechtsklicke Belohnungen um %action%"
+        - ""
+        - "&eKlicke zum Wechseln des Modus"
+    add_item:
+      name: "&a+ Item-Belohnung hinzufügen"
+      lore:
+        - "&7Klicke um ein Item"
+        - "&7als Belohnung für diese Treasure festzulegen."
+        - ""
+        - "&7Verfügbare Placeholder:"
+        - "&f  %player% &8- &7Spielername"
+        - "&f  %found_treasures% &8- &7Gefundene Treasures"
+        - "&f  %max_treasures% &8- &7Gesamte Treasures"
+        - "&f  %remaining_treasures% &8- &7Übrige Treasures"
+        - "&f  %chance% &8- &7Belohnungschance"
+        - "&f  %item% &8- &7Itemname"
+        - "&f  \\n &8- &7Neue Zeile" # displays \n in menus
+        - "&f  & &8- &7Color-Codes und Hex-Colors"
+    add_command:
+      name: "&a+ Befehl-Belohnung hinzufügen"
+      lore:
+        - "&7Klicke um einen Befehl"
+        - "&7als Belohnung für diese Treasure festzulegen."
+        - ""
+        - "&7Verfügbare Placeholder:"
+        - "&f  %player% &8- &7Spielername"
+        - "&f  %found_treasures% &8- &7Gefundene Treasures"
+        - "&f  %max_treasures% &8- &7Gesamte Treasures"
+        - "&f  %remaining_treasures% &8- &7Übrige Treasures"
+        - "&f  %chance% &8- &7Belohnungschance"
+        - "&f  \\n &8- &7Neue Zeile" # displays \n in menus
+        - "&f  & &8- &7Color-Codes und Hex-Colors"
+    add_chat_message:
+      name: "&a+ Nachricht-Belohnung hinzufügen"
+      lore:
+        - "&7Klicke um eine Nachricht"
+        - "&7als Belohnung für diese Treasure festzulegen."
+        - ""
+        - "&7Verfügbare Placeholder:"
+        - "&f  %player% &8- &7Spielername"
+        - "&f  %found_treasures% &8- &7Gefundene Treasures"
+        - "&f  %max_treasures% &8- &7Gesamte Treasures"
+        - "&f  %remaining_treasures% &8- &7Übrige Treasures"
+        - "&f  %chance% &8- &7Belohnungschance"
+        - "&f  \\n &8- &7Neue Zeile" # displays \n in menus
+        - "&f  & &8- &7Color-Codes und Hex-Colors"
+    add_broadcast_message:
+      name: "&a+ Broadcast-Belohnung hinzufügen"
+      lore:
+        - "&7Klicke um einen Broadcast hinzuzufügen,"
+        - "&7den alle Spieler sehen werden."
+        - ""
+        - "&7Verfügbare Placeholder:"
+        - "&f  %player% &8- &7Spielername"
+        - "&f  %found_treasures% &8- &7Gefundene Treasures"
+        - "&f  %max_treasures% &8- &7Gesamte Treasures"
+        - "&f  %remaining_treasures% &8- &7Übrige Treasures"
+        - "&f  %chance% &8- &7Belohnungschance"
+        - "&f  \\n &8- &7Neue Zeile" # displays \n in menus
+        - "&f  & &8- &7Color-Codes und Hex-Colors"
+    # Chat prompts
+    editor:
+      title: "&8Belohnung #%number%"
+      edit_chance:
+        name: "&eWahrscheinlichkeit bearbeiten"
+        lore:
+          - "&7Aktuell: &f%chance%%"
+          - ""
+          - "&7Klicke um die Drop-Change"
+          - "&7für diese Belohnung zu ändern."
+      edit_message:
+        name: "&eNachricht bearbeiten"
+        lore:
+          - "&8Nur für diese Belohnung!"
+          - "&7Aktuell: &f%message%"
+          - ""
+          - "&eLinksklick &7zum ändern"
+          - "&eRechtsklick &7zum zurücksetzten"
+          - ""
+          - "&8&m                    "
+          - "&7Verfügbare Placeholder:"
+          - "&f  %player% &8- &7Spielername"
+          - "&f  %found_treasures% &8- &7Gefundene Treasures"
+          - "&f  %max_treasures% &8- &7Gesamte Treasures"
+          - "&f  %remaining_treasures% &8- &7Übrige Treasures"
+          - "&f  %chance% &8- &7Belohnungschance"
+          - "&f  %item% &8- &7Itemname &c(Nur bei Item-Belohnungen)"
+          - "&f  \\n &8- &7Neue Zeile" # displays \n in menus
+          - "&f  & &8- &7Color-Codes und Hex-Colors"
+      edit_broadcast:
+        name: "&eBroadcast bearbeiten"
+        lore:
+          - "&8Nur für diese Belohnung!"
+          - "&7Aktuell: &f%broadcast%"
+          - ""
+          - "&eLinksklick &7zum ändern"
+          - "&eRechtsklick &7zum zurücksetzten"
+          - ""
+          - "&8&m                    "
+          - "&7Verfügbare Placeholder:"
+          - "&f  %player% &8- &7Spielername"
+          - "&f  %found_treasures% &8- &7Gefundene Treasures"
+          - "&f  %max_treasures% &8- &7Gesamte Treasures"
+          - "&f  %remaining_treasures% &8- &7Übrige Treasures"
+          - "&f  %chance% &8- &7Belohnungschance"
+          - "&f  %item% &8- &7Itemname &c(Nur bei Item-Belohnungen)"
+          - "&f  \\n &8- &7Neue Zeile" # displays \n in menus
+          - "&f  & &8- &7Color-Codes und Hex-Colors"
+      edit_value:
+        name: "&eWert bearbeiten"
+        lore:
+          - "&7Aktuell: &f%value%"
+          - ""
+          - "&7Klicke um den Wert"
+          - "&7von dieser Belohnung zu ändern."
+          - ""
+          - "&8&m                    "
+          - "&7Verfügbare Placeholder:"
+          - "&f  %player% &8- &7Spielername"
+          - "&f  %found_treasures% &8- &7Gefundene Treasures"
+          - "&f  %max_treasures% &8- &7Gesamte Treasures"
+          - "&f  %remaining_treasures% &8- &7Übrige Treasures"
+          - "&f  %chance% &8- &7Belohnungschance"
+          - "&f  \\n &8- &7Neue Zeile" # displays \n in menus
+          - "&f  & &8- &7Color-Codes und Hex-Colors"
+      delete:
+        name: "&cBelohnung löschen"
+        lore:
+          - "&7Klicke um diese Belohnung"
+          - "&7von der Treasure zu entfernen."
+      confirm_delete:
+        title: "&8Löschen Bestätigen"
+
+    add:
+      item:
+        title: "&8Item-Belohnung hinzufügen"
+        placeholder:
+          name: "&7Setzte das Item hier"
+          lore:
+            - "&7Setze das Item, was du"
+            - "&7als Belohnung hinzufügen willst."
+        info:
+          name: "&eSo fügst du Item-Belohnungen hinzu"
+          lore:
+            - "&7Platziere das Item in den"
+            - "&7Mittleren Slot unten."
+            - ""
+            - "&7Das genau gleiche Item (mit"
+            - "&7Verzauberungen, Name, Lore) wird"
+            - "&7dann als Belohnung gegeben."
+            - ""
+            - "&7Klicke zum &aBestätigen &7wenn du Bereit bist."
+        confirm:
+          name: "&aBestätigen"
+          lore:
+            - "&7Klicke um das Item"
+            - "&7als Belohnung zu setzten."
+        cancel:
+          name: "&cAbbrechen"
+          lore:
+            - "&7Klicke um abzubrechen und"
+            - "&7kehre in das Belohnungsmenu zurück."
+  collection_content:
+    title: "&8Sammlung Inhalt"
+    no_treasures:
+      name: "&7Keine Treasures"
+      lore:
+        - "&7Diese Sammlung besitzt"
+        - "&7noch keine Treasures."
+    treasure_item:
+      name: "&6Treasure #%number%"
+      lore:
+        - "&7Spieler gefunden: &f%count%"
+        - ""
+        - "&7Ort:"
+        - "&7X: &f%x%"
+        - "&7Y: &f%y%"
+        - "&7Z: &f%z%"
+        - "&7Welt: &f%world%"
+        - ""
+      lore_teleport: "&eLinksklick &7zum Teleportieren"
+      lore_reward: "&eShift+Linksklick &7um das Belohnungsmenu zu öffnen"
+      lore_who_found: "&eRechtsklick &7um zu sehen wer es gefunden hat"
+      lore_action_menu_bedrock: "&8Bedrock/Geyser: &7Drücke &eDrop (Q) &7um das Aktionsmenu zu öffnen"
+  minigame:
+    reaction:
+      title: "&8Reaktionsspiel"
+      click:
+        name: "&aKlick mich!"
+        lore:
+          - "&6%current%&7/&6%required%"
+    memory:
+      title: "&8Erinnerungsspiel"
+      button:
+        name: "&fKnopf %number%"
+    spot:
+      title: "&bFinde die Items"
+      item:
+        name: "&e&l★ Erinnere dich an mich!"
+        found: "&a&l✔ Gefunden!"
+    oddoneout:
+      title: "&dFalsche Items raus"
+      odd:
+        name: "&c&l? Ich bin anders!"
+      timer: "&e%seconds%s"
+    order:
+      title: "&5Abfolge"
+      sequence:
+        name: "&ePosition %pos%"
+      empty:
+        name: "&8[ Leer ]"
+      palette:
+        name: "&a&l➤ Wähle mich"
+      placed:
+        name: "&f&l✔ Platziert (#%pos%)"
+    sliderpuzzle:
+      title: "&9Schiebepuzzle"
+      tile:
+        name: "&fKachel %number%"
+      empty:
+        name: "&8[ Leer ]"
+    higherlower:
+      title: "&6Höher oder Niedriger?"
+      number:
+        active: "&a%n% &7— Klicke zum Raten"
+        eliminated: "&c%n% &7— Ausgeschieden"
+      guesses:
+        remaining: "&e%left% Versuche übrig."
+      feedback:
+        neutral: "&7Rate eine Zahl!"
+        higher: "&a&l▲ Höher!"
+        lower: "&c&l▼ Niedriger!"
+  treasure_action:
+    title: "&8Treasure Aktionen"
+    teleport:
+      name: "&aZur Treasure teleportieren"
+      lore:
+        - "&7Klicke um dich zu dieser"
+        - "&7Treasure zu teleportieren."
+    view_finders:
+      name: "&eSiehe wer es gefunden hat"
+      lore:
+        - "&7Klicke um zu sehen, wer"
+        - "&7diese Treasure gefunden hat."
+    rewards:
+      name: "&6Belohnungen"
+      lore:
+        - "&7Klicke um die Belohnungen"
+        - "&7für diese Treasure zu sehen."
+  finders:
+    title: "&8Wer hat diese Treasure gefunden"
+    loading: "&7Lade die Spielerdaten..."
+    empty:
+      name: "&7Keine Daten"
+      lore:
+        - "&7Diese Treasure wurde noch"
+        - "&7von keinem Gefunden."
+    entry:
+      name: "&e%player%"
+      lore:
+        - "&7Hat die Treasure gefunden"
+  leaderboard:
+    title: "&8Rangliste: %collection%"
+    loading:
+      name: "&7Lade die Rangliste..."
+      lore:
+        - "&7Bitte warte bis die Daten"
+        - "&7zusammengefasst werden..."
+    empty:
+      name: "&7Keine Daten"
+      lore:
+        - "&7Keine Spieler haben bisher die"
+        - "&7Treasure in der Sammlung gefunden."
+    player_entry:
+      name: "&e#%rank% %player%"
+      lore:
+        - "&7Treasures gefunden: &f%score%"
+    player_entry_highlighted:
+      name: "&6&l#%rank% %player% &7(Du)"
+      lore:
+        - "&7Treasures gefunden: &f%score%"
+        - ""
+        - "&6⭐ Dies ist deine Position!"
+    your_rank:
+      name: "&aDeine Position"
+      lore:
+        - "&7Rang: &f#%rank%"
+        - "&7Gefunden: &f%score%/%total%"
+        - "&7Fortschritt: &e%percentage%%"
+    not_ranked:
+      name: "&cKeine Platzierung"
+      lore:
+        - "&7Du hast noch keine Treasures in"
+        - "&7in dieser Sammlung gefunden."
+        - ""
+        - "&7Erkunde um Platziert zu werden!"
+    view_button:
+      name: "&eTreasure Rangliste"
+      lore:
+        - "&7Klicke um die besten Spieler,"
+        - "&7die am meisten Treasures in der"
+        - "&7Sammlung gefunden haben, zu sehen."
+    info:
+      name: "&bRanglisten Info"
+      lore:
+        - "&7Maximale Einträge die Angezeigt werden: &f%display_limit%"
+        - "&7Datenspeicher Aktualisierung: &f%refresh_interval%s &8(%minutes%m)"
+        - ""
+        - "&8Das Leaderboard aktualisiert von selber"
+  progress:
+    title: "&8Fortschritt: %collection%"
+    loading: "&7Dein Fortschritt wird geladen..."
+    no_treasures:
+      name: "&7Keine Treasures"
+      lore:
+        - "&7Diese Sammlung besitzt"
+        - "&7noch keine Treasures."
+    stats:
+      name: "&aDeine Fortschritt Statistiken"
+      lore:
+        - "&7Sammlung: &e%collection%"
+        - "&7Gefunden: &a%found%&7/&e%total%"
+        - "&7Abgeschlossen: &e%percentage%&7%"
+        - ""
+        - "&7Suche weiter um alle"
+        - "&7Treasures zu finden!"
+    treasure:
+      name: "&7Treasure #%number% &7- %status%"
+      status_found: "&aGefunden"
+      status_not_found: "&cNicht Gefunden"
+      lore_found:
+        - "&a✓ Du hast diese Treasure gefunden!"
+        - ""
+        - "&7Ort:"
+        - "&7  X: &f%x%"
+        - "&7  Y: &f%y%"
+        - "&7  Z: &f%z%"
+        - "&7  Welt: &f%world%"
+      lore_not_found:
+        - "&c✗ Du hast diese Treasure noch nicht gefunden!"
+        - ""
+        - "&7Sucher weiter um den Ort"
+        - "&7diese Treasure zu finden!"
+  editor:
+    title: "Sammlung-Editor"
+    collection_item:
+      name: "&6%collection%"
+      lore:
+        - "&7Status: %status%"
+        - "&7Verfügbarkeit: %availability%"
+        - "&7Treasures: &f%treasures%"
+        - "&7Cron Zurücksetzung: %cron%"
+        - ""
+        - "&eKlicke um die Einstellungen zu ändern"
+    create:
+      name: "&aSammlung erstellen"
+      lore:
+        - "&7Klicke um eine neue Sammlung zu erstellen"
+  settings:
+    title: "Einstellungen: %collection%"
+    rename:
+      name: "&eSammlung umbenennen"
+      lore:
+        - "&7Aktuell: &f%name%"
+        - ""
+        - "&eKlicke zum umbenennen"
+    status:
+      name: "&eStatus wechseln"
+      lore:
+        - "&7Aktuell: %status%"
+        - ""
+        - "&eKlicke zum wechseln"
+    rewards:
+      name: "&eBelohnungen fürs Abschließen"
+      lore:
+        - "&7Klicke um Belohnungen zu konfigurieren,"
+        - "&7die der Spieler erhält, wenn er"
+        - "&7alle Treasures in der Sammlung gefunden hat."
+        - ""
+        - "&eKlicke zum öffnen"
+    default_treasure_preset:
+      name: "&eStandard Treasure Belohnungsvorlage"
+      lore:
+        - "&7Aktuell: %preset%"
+        - ""
+        - "&7Wendet sich Automatisch an neu platzierte"
+        - "&7Treasures in der Sammlung an (Place-Mode)."
+        - ""
+        - "&eLinksklick zum setzten"
+        - "&eRechtsklick zum löschen"
+    override_treasure_rewards:
+      name: "&cÜberschreibe alle Treasure Belohnungen"
+      lore:
+        - "&7Ersetzt alle Belohnungen für alle Treasures"
+        - "&7in der Sammlung, die die Vorlage nutzen."
+        - ""
+        - "&c&lWARNUNG: Dies ersetzt auch bereits existierende Rewards!"
+        - ""
+        - "&eKlicke um die Vorlage auszuwählen"
+      confirm_title: "Überschreibe alle Belohnungen mit '%name%'?"
+    act_rules:
+      name: "&eZeitplanregeln"
+      lore:
+        - "&7Verwalte verfügbare Zeitpläne,"
+        - "&7mit den ACT-Format regeln."
+        - ""
+        - "&7Aktuelle Regel: &f%count%"
+        - ""
+        - "&eKlicke zum verwalten"
+    progress_reset_cron:
+      name: "&eZeitplan zum Fortschritt zurücksetzten"
+      lore:
+        - "&7Aktuell: %cron%"
+        - ""
+        - "&7Setzt den Fortschritt der Spieler"
+        - "&7zu einem bestimmten Zeitplan zurück."
+        - ""
+        - "&eKlicke zum konfigurieren"
+    single_player_find:
+      name: "&eEinzelspielersuche"
+      lore:
+        - "&7Aktuell: %status%"
+        - ""
+        - "&7Wenn aktiviert, nur ein Spieler"
+        - "&7auf dem Server kann jede Treasure finden."
+        - "&7Setzt sich nur durch CRON zurück."
+        - ""
+        - "&eKlicke zum wechseln"
+    delete:
+      name: "&cSammlung löschen"
+      lore:
+        - "&7Lösche diese Sammlung und alle"
+        - "&7Treasures in ihr Dauerhaft."
+        - ""
+        - "&c&lWARNUNG: Dies kann nicht rückgängig gemacht werden!"
+        - ""
+        - "&cKlicke zum löschen"
+    delete_handling:
+      title: "Löschen: Treasure-Behandlung"
+      keep:
+        name: "&aTreasures platziert lassen"
+        lore:
+          - "&7Löscht die Sammlungsdaten,"
+          - "&7aber lässt alle Treasure-Blöcke"
+          - "&7an ihrem Platz."
+          - ""
+          - "&7Stellt auch Treasures wieder her,"
+          - "&7die aktuell versteckt sind."
+          - ""
+          - "&eKlicke zum Auswählen"
+        confirm_title: "Löschen & alle Treasures behalten?"
+      remove_heads:
+        name: "&eKöpfe/Schädel entfernen"
+        lore:
+          - "&7Löscht die Sammlungsdaten,"
+          - "&7entfernt nur Spieler-Köpfe/Schädel,"
+          - "&7andere Treasures bleiben."
+          - ""
+          - "&7Stellt Nicht-Kopf-Treasures wieder her,"
+          - "&7wenn sie aktuell versteckt sind."
+          - ""
+          - "&eKlicke zum Auswählen"
+        confirm_title: "Löschen & Köpfe/Schädel entfernen?"
+      remove_blocks:
+        name: "&cBlöcke & Möbel entfernen"
+        lore:
+          - "&7Löscht die Sammlungsdaten"
+          - "&7und entfernt alle Treasure-Blöcke"
+          - "&7und ItemsAdder-Möbel."
+          - ""
+          - "&c&lWARNUNG: Welt-Blöcke werden entfernt!"
+          - ""
+          - "&cKlicke zum Auswählen"
+        confirm_title: "Löschen & alle Treasure-Blöcke entfernen?"
+    hide_after_found:
+      name: "&eVerstecke gefundene Treasures"
+      lore:
+        - "&7Aktuell: %status%"
+        - ""
+        - "&7Wenn aktiviert, Treasures die"
+        - "&7bereits gefunden wurden"
+        - "&7werden Client-Side versteckt."
+        - ""
+        - "&7Aktueller Ersetzungsblock: &f%block%"
+        - "&8Einstellbar in der config.yml!"
+        - ""
+        - "&8&m                    "
+        - "&7Dies Hilft sich darauf zu Fokussieren,"
+        - "&7Treasures zu finden, die man noch nicht gefunden hat."
+        - ""
+        - "&eKlicke zum wechseln"
+    hide_when_not_available:
+      name: "&eVerstecke wenn nicht verfügbar"
+      lore:
+        - "&7Aktuell: %status%"
+        - ""
+        - "&7Wenn aktiviert, alle Treasures"
+        - "&7in der Sammlung werden versteckt"
+        - "&7sein, wenn die Sammlung nicht"
+        - "&7verfügbar ist (deaktiviert oder"
+        - "&7nicht verfügbar durch ACT-Regeln)."
+        - ""
+        - "&8&m                    "
+        - "&7Dies hindert Spieler daran,"
+        - "&7nicht verfügbare Dinge zu sehen."
+        - ""
+        - "&eKlicke zum wechseln"
+    reset_schedule:
+      title: "Fortschritt-Zurücksetzungsplan"
+    categories:
+      basic:
+        name: "&6&lGrundeinstellungen &8------>"
+        lore:
+          - ""
+          - "&7Konfiguriere grundlegende"
+          - "&7Sammlung-Eigenschaften."
+          - ""
+          - "&8&m                    "
+          - "&7• Sammlung umbenennen"
+          - "&7• Aktivieren / Deaktivieren"
+          - "&7• Einzelspieler-Modus"
+          - "&7• Sammlung löschen"
+      rewards:
+        name: "&6&lZeitplan-Konfiguration &8------>"
+        lore:
+          - ""
+          - "&7Verwalte Abschlussbelohnungen"
+          - "&7und Zeitplan der Sammlung."
+          - ""
+          - "&8&m                    "
+          - "&7• Sammlung-Belohnungen"
+          - "&7• Zeitplanregeln"
+          - "&7• Fortschritt-Zurücksetzung"
+      presets:
+        name: "&6&lVorlagen &8------>"
+        lore:
+          - ""
+          - "&7Konfiguriere Standardvorlage"
+          - "&7für die Sammlung und das"
+          - "&7Laden einer Vorlage in alle"
+          - "&7Treasures."
+          - ""
+          - "&8&m                    "
+          - "&7• Standardvorlage"
+          - "&7• Belohnungen massenweise überschreiben"
+      visibility:
+        name: "&6&lSichtbarkeitsoptionen &8------>"
+        lore:
+          - ""
+          - "&7Steuere, wie Treasures für den Spieler"
+          - "&7oder bei Nichtverfügbarkeit versteckt werden."
+          - ""
+          - "&8&m                    "
+          - "&7• Gefundene Treasures verstecken"
+          - "&7• Verstecken wenn deaktiviert"
+
+  presets:
+    treasure:
+      title: "Treasure Vorlage"
+    collection:
+      title: "Sammlung Vorlage"
+    unknown: "&cUnbekannt"
+    none:
+      name: "&7Keine Vorlagen"
+      lore:
+        - "&7Es wurden noch keine Vorlagen erstellt."
+    preset:
+      name: "&6%name%"
+      lore:
+        - ""
+        - "&7Gesamte Belohnungen: &f%count%"
+        - ""
+        - "&eLinksklick zum %action%"
+        - "&eRechtsklick zum bearbeiten"
+      action:
+        select: "auswählen"
+        load: "laden"
+        edit: "bearbeiten"
+
+    actions:
+      title: "Vorlage: %name%"
+      rename:
+        name: "&eVorlage umbenennen"
+        lore:
+          - "&7Aktueller Name: &f%current%"
+          - ""
+          - "&7Ändere den Name dieser"
+          - "&7Belohnungsvorlage."
+          - ""
+          - "&eKlicke zum umbenennen"
+      load_all:
+        name: "&eFür alle Treasures laden"
+        lore:
+          - ""
+          - "&7Überschreibe alle Treasures"
+          - "&7in dieser Sammlung mit den"
+          - "&7Belohnungen dieser Vorlage."
+          - ""
+          - "&cDies ersetzt bestehende Belohnungen!"
+          - ""
+          - "&eKlicke zum Fortfahren"
+        lore_disabled:
+          - ""
+          - "&7Diese Aktion ist nur verfügbar,"
+          - "&7wenn eine Treasure-Vorlage bearbeitet wird."
+          - "&8Nicht möglich für Sammlung-Vorlagen!"
+        confirm_title: "Alle Treasures überschreiben?"
+      set_default:
+        option:
+          available: "&eKlicke um es als Standard zu setzten"
+          already_selected: "&a✓ Bereits als Standard festgelegt"
+        name: "&eAls Standard Festlegen"
+        lore:
+          - ""
+          - "&7Aktuell: &f%current%"
+          - ""
+          - "&7Setzte diese Vorlage als"
+          - "&7Standard Vorlage für diese Sammlung"
+          - ""
+          - "%option%"
+        lore_disabled:
+          - ""
+          - "&7Diese Aktion ist nur verfügbar,"
+          - "&7wenn eine Treasure-Vorlage bearbeitet wird."
+          - "&8Nicht möglich für Sammlung-Vorlagen!"
+      edit_rewards:
+        name: "&aBelohnungen bearbeiten"
+        lore:
+          - ""
+          - "&7Bearbeite die in dieser"
+          - "&7Vorlage gespeicherten Belohnungen."
+          - ""
+          - "&eKlicke zum Bearbeiten"
+      delete:
+        name: "&cLöschen"
+        lore:
+          - ""
+          - "&7Diese Vorlage dauerhaft löschen"
+          - ""
+          - "&cDies kann nicht rückgängig gemacht werden!"
+          - ""
+          - "&eKlicke zum Löschen"
+        confirm_title: "Vorlage '%name%' löschen?"
+  cron:
+    common:
+      invalid_expression: "&c&l⚠ Ungültiges Format"
+    type:
+      act: "ACT"
+      reset: "Zurücksetzung"
+    editor:
+      title: "%cron_type% Cron Zeitplan-Editor"
+      current:
+        name: "&e&lAktueller Zeitplan"
+        expression: "&7Format:"
+        next_runs: "&7Nächste Ausführung:"
+        none: "&7Keinen Zeitplan gesetzt"
+    preset:
+      information:
+        name: "&e---------->"
+        lore:
+          - "&6⏰ Schnellvorlagen"
+          - ""
+          - "&7Vorkonfigurierte Zeitplan-Vorlagen"
+          - "&7für gängige %cron_type%-Zeitpläne."
+          - ""
+          - "&e► Täglich &7- Jeden Tag um 00:00"
+          - "&e► Wöchentlich &7- Jeden Montag um 00:00"
+          - "&e► Monatlich &7- Am 1. jeden Monats"
+          - "&e► Jährlich &7- Am 1. Januar"
+          - "&e► Mehr... &7- Weitere Optionen"
+          - ""
+          - "&a✓ &7Sicher und einfach zu nutzen"
+          - "&8Perfekt für Anfänger!"
+      daily:
+        name: "&eTäglich"
+        lore:
+          - "&7Wird jeden Tag um Mitternacht ausgeführt"
+          - "&7Ausdruck: &f0 0 0 * * ? *"
+          - ""
+          - "&aKlicke zum Anwenden"
+      weekly:
+        name: "&eWöchentlich"
+        lore:
+          - "&7Wird jeden Montag um Mitternacht ausgeführt"
+          - "&7Ausdruck: &f0 0 0 ? * MON *"
+          - ""
+          - "&aKlicke zum Anwenden"
+      monthly:
+        name: "&eMonatlich"
+        lore:
+          - "&7Wird am 1. jedes Monats ausgeführt"
+          - "&7Ausdruck: &f0 0 0 1 * ? *"
+          - ""
+          - "&aKlicke zum Anwenden"
+      yearly:
+        name: "&eJährlich"
+        lore:
+          - "&7Wird am 1. Januar ausgeführt"
+          - "&7Ausdruck: &f0 0 0 1 1 ? *"
+          - ""
+          - "&aKlicke zum Anwenden"
+      more:
+        name: "&6Weitere Vorlagen"
+        lore:
+          - "&7Weitere vorgefertigte Zeitpläne anzeigen"
+          - "&7Einschließlich stündlich, Wochentage,"
+          - "&7saisonal und besondere Termine"
+          - ""
+          - "&eKlicke zum Durchsuchen"
+    presets:
+      title: "%cron_type% Cron Vorlagen"
+      item:
+        name: "&e%name%"
+      list:
+        hourly:
+          name: "Jede Stunde"
+          lore:
+            - "&7Wird zu Beginn jeder Stunde ausgeführt"
+            - "&7Beispiel: 1:00, 2:00, 3:00..."
+            - ""
+            - "&aKlicke zum Anwenden"
+        every_6_hours:
+          name: "Alle 6 Stunden"
+          lore:
+            - "&7Wird alle 6 Stunden ausgeführt"
+            - "&7Beispiel: 00:00, 06:00, 12:00, 18:00"
+            - ""
+            - "&aKlicke zum Anwenden"
+        every_12_hours:
+          name: "Alle 12 Stunden"
+          lore:
+            - "&7Wird zweimal täglich ausgeführt"
+            - "&7Beispiel: 00:00, 12:00"
+            - ""
+            - "&aKlicke zum Anwenden"
+        daily_midnight:
+          name: "Täglich um Mitternacht"
+          lore:
+            - "&7Wird jeden Tag um 00:00 ausgeführt"
+            - ""
+            - "&aKlicke zum Anwenden"
+        daily_noon:
+          name: "Täglich um Mittag"
+          lore:
+            - "&7Wird jeden Tag um 12:00 ausgeführt"
+            - ""
+            - "&aKlicke zum Anwenden"
+        daily_6am:
+          name: "Täglich um 6 Uhr"
+          lore:
+            - "&7Wird jeden Tag um 06:00 ausgeführt"
+            - ""
+            - "&aKlicke zum Anwenden"
+        weekdays_9am:
+          name: "Wochentags um 9 Uhr"
+          lore:
+            - "&7Wird Montag-Freitag um 09:00 ausgeführt"
+            - "&7Perfekt für Wochentags-Events"
+            - ""
+            - "&aKlicke zum Anwenden"
+        monday_midnight:
+          name: "Jeden Montag um Mitternacht"
+          lore:
+            - "&7Wöchentlicher Zeitplan montags"
+            - "&7Wird montags um 00:00 ausgeführt"
+            - ""
+            - "&aKlicke zum Anwenden"
+        friday_6pm:
+          name: "Jeden Freitag um 18 Uhr"
+          lore:
+            - "&7Wochenend-Event Starter"
+            - "&7Wird freitags um 18:00 ausgeführt"
+            - ""
+            - "&aKlicke zum Anwenden"
+        sunday_midnight:
+          name: "Jeden Sonntag um Mitternacht"
+          lore:
+            - "&7Wöchentlicher Zeitplan sonntags"
+            - "&7Wird sonntags um 00:00 ausgeführt"
+            - ""
+            - "&aKlicke zum Anwenden"
+        first_day_month:
+          name: "Erster Tag des Monats"
+          lore:
+            - "&7Monatlicher Zeitplan"
+            - "&7Wird am 1. um 00:00 ausgeführt"
+            - ""
+            - "&aKlicke zum Anwenden"
+        last_day_month:
+          name: "Letzter Tag des Monats"
+          lore:
+            - "&7Monatsende-Zeitplan"
+            - "&7Wird am letzten Tag um 00:00 ausgeführt"
+            - ""
+            - "&aKlicke zum Anwenden"
+        first_monday_month:
+          name: "Erster Montag des Monats"
+          lore:
+            - "&7Erster Montag im Monat Zeitplan"
+            - "&7Wird um 00:00 ausgeführt"
+            - ""
+            - "&aKlicke zum Anwenden"
+        new_year:
+          name: "Neujahr (1. Januar)"
+          lore:
+            - "&7Jährlicher Zeitplan an Neujahr"
+            - "&7Wird am 1. Januar um 00:00 ausgeführt"
+            - ""
+            - "&aKlicke zum Anwenden"
+        christmas:
+          name: "Weihnachten (25. Dezember)"
+          lore:
+            - "&7Weihnachts-Spezial-Event"
+            - "&7Wird am 25. Dezember um 00:00 ausgeführt"
+            - ""
+            - "&aKlicke zum Anwenden"
+        quarterly:
+          name: "Vierteljährlich (1. Jan/Apr/Jul/Okt)"
+          lore:
+            - "&7Saisonale Zeitpläne"
+            - "&7Wird am 1. um 00:00 ausgeführt"
+            - "&7in Jan, Apr, Jul und Okt"
+            - ""
+            - "&aKlicke zum Anwenden"
+    custom:
+      information:
+        name: "&e---------->"
+        lore:
+          - "&6⚙ Erweiterte Optionen"
+          - ""
+          - "&7Für Benutzer, die präzise Kontrolle"
+          - "&7über ihre Zeitplankonfiguration benötigen."
+          - ""
+          - "&e► Feld-Editor"
+          - "&f  Konfiguriere jedes Zeitfeld einzeln"
+          - ""
+          - "&e► Manuelle Eingabe"
+          - "&f  Schreibe Cron-Ausdrücke direkt"
+          - ""
+          - "&c⚠ &7Erfordert Kenntnisse der Cron-Syntax"
+          - "&8Verwende Vorlagen, wenn du unsicher bist!"
+      builder:
+        name: "&dErweiterter Editor"
+        lore:
+          - "&7Erstelle deinen Cron-Ausdruck"
+          - "&7Feld für Feld mit einer"
+          - "&7visuellen Oberfläche"
+          - ""
+          - "&eKlicken zum Öffne des Editors"
+      manual:
+        name: "&bManuelle Eingabe"
+        lore:
+          - "&7Gib einen Cron-Ausdruck manuell ein"
+          - "&7Format: SEK MIN STUNDE TAG MONAT WOCHENTAG JAHR"
+          - "&7Beispiel: &f0 0 12 * * ? *"
+          - ""
+          - "&eKlicken zum Eingeben"
+    builder:
+      title: "%cron_type% Cron-Ausdruck-Editor"
+      fields:
+        second:
+          name: "Sekunde"
+          description: "Sekunden in Minute"
+          values:
+            0: "Am Anfang"
+            wildcard: "Jede Sekunde"
+            every_interval: "Alle %interval% Sekunden"
+        minute:
+          name: "Minute"
+          description: "Minuten in Stunde"
+          values:
+            0: "Am Anfang"
+            wildcard: "Jede Minute"
+            every_interval: "Alle %interval% Minuten"
+        hour:
+          name: "Stunde"
+          description: "Stunden am Tag (0-23)"
+          values:
+            0: "Mitternacht"
+            6: "6 Uhr morgens"
+            12: "Mittag"
+            18: "18 Uhr"
+            wildcard: "Jede Stunde"
+            every_interval: "Alle %interval% Stunden"
+        day:
+          name: "Tag"
+          description: "Tag des Monats (1-31)"
+          values:
+            1: "Erster Tag des Monats"
+            15: "Monatsmitte"
+            last: "Letzter Tag des Monats"
+            wildcard: "Jeden Tag"
+            none: "Kein spezifischer Tag"
+        month:
+          name: "Monat"
+          description: "Monat des Jahres (1-12 oder JAN-DEZ)"
+          values:
+            wildcard: "Jeden Monat"
+            1: "Januar"
+            6: "Juni"
+            12: "Dezember"
+            "1_4_7_10": "Vierteljährlich (Jan/Apr/Jul/Okt)"
+        day_of_week:
+          name: "Wochentag"
+          description: "Tag der Woche (1-7 oder SON-SAM)"
+          values:
+            none: "Kein spezifischer Tag"
+            wildcard: "Jeden Tag"
+            mon: "Montag"
+            fri: "Freitag"
+            sat: "Samstag"
+            sun: "Sonntag"
+            mon_fri: "Werktage"
+        year:
+          name: "Jahr"
+          description: "Jahr (optional, lasse * für beliebig)"
+          values:
+            wildcard: "Jedes Jahr"
+            specific_year: "Jahr %year%"
+        custom_value: "Benutzerdefinierter Wert"
+      preview:
+        name: "&e&lVorschau"
+        current_expression: "&7Aktueller Ausdruck:"
+        next_runs: "&7Nächste Ausführungen:"
+      field:
+        selected_name: "&a&l► %name%"
+        unselected_name: "&7%name%"
+        lore:
+          - "&7Wert: &f%value%"
+          - ""
+          - "&7%description%"
+          - ""
+          - "&e&lKlicke zum Bearbeiten"
+      preset:
+        current_name: "&a✓ %value%"
+        set_name: "&f%value%"
+        current_lore:
+          - "&aAktueller Wert"
+          - ""
+          - "&7%description%"
+        set_lore:
+          - "&7Klicke zum Festlegen"
+          - ""
+          - "&7%description%"
+      custom_input:
+        name: "&e&lBenutzerdefinierter Wert"
+        lore:
+          - "&7Gib einen benutzerdefinierten Wert"
+          - "&7für %field% ein"
+          - ""
+          - "&7Beispiele:"
+          - "&7  - Platzhalter: *"
+          - "&7  - Bereich: 1-5"
+          - "&7  - Liste: 1,3,5"
+          - "&7  - Inkrement: */15"
+          - ""
+          - "&eKlicke zum Eingeben"
+      decrease:
+        name: "&c&l- Verringern"
+        lore:
+          - "&7Verringere numerischen Wert um 1"
+      increase:
+        name: "&a&l+ Erhöhen"
+        lore:
+          - "&7Erhöhe numerischen Wert um 1"
+      save:
+        name: "&a&lSpeichern & Anwenden"
+        lore:
+          - "&7Wende diesen Cron-Ausdruck"
+          - "&7auf die Sammlung an"
+          - ""
+          - "&fAusdruck: &7%expression%"
+    clear:
+      name: "&cZeitplan löschen"
+      lore:
+        - "&7Entferne den Zurücksetzungszeitplan."
+        - "&7Sammlung wird nicht automatisch zurückgesetzt"
+        - ""
+        - "&cKlicke zum Löschen"
+  act:
+    setup:
+      title: "&8ACT Einrichtung"
+      date_window:
+        name: "&aZeitfenster (Immer aktiv)"
+        lore:
+          - "&7Den ganzen Tag aktiv zwischen"
+          - "&7einem Start- und Enddatum."
+          - ""
+          - "&7Du wählst den Datumsbereich."
+          - "&7Kein Zeitplan erforderlich."
+          - ""
+          - "&eKlicke zum Konfigurieren"
+      repeating_schedule:
+        name: "&eWiederkehrender Zeitplan"
+        lore:
+          - "&7Aktiv für X Stunden"
+          - "&7zu festgelegten Zeiten."
+          - ""
+          - "&7Du wählst die Dauer"
+          - "&7und dann den Zeitplan."
+          - ""
+          - "&eKlicke zum Konfigurieren"
+      advanced:
+        name: "&cErweitert"
+        lore:
+          - "&7Volle Kontrolle über"
+          - "&7Datumsbereich, Dauer"
+          - "&7und Zeitplan."
+          - ""
+          - "&eKlicke zum Öffnen"
+
+    editor:
+      title: "ACT Regel-Editor: %name%"
+      guided_setup:
+        name: "&bGeführte Einrichtung"
+        lore:
+          - "&7Öffne den Einrichtungsassistenten"
+          - "&7für diese Regel erneut."
+          - ""
+          - "&eKlicke zum Öffnen"
+      manual_input:
+        name: "&bManuelle ACT-Eingabe"
+        lore:
+          - "&7Gib das ACT-Format"
+          - "&7direkt im Chat ein."
+          - ""
+          - "&eKlicke zum Eingeben"
+      current:
+        name: "&e&lAktuelle Regelkonfiguration"
+        date_range: "&7Datumsbereich: &f%date_range%"
+        duration: "&7Dauer: &f%duration%"
+        cron: "&7Cron: &f%cron%"
+        next_activation: "&7Nächste Aktivierung:"
+        validation: "&7Validierung: %status%"
+        valid: "&a✓ Gültig"
+        invalid: "&c✗ Ungültig"
+    preset:
+      apply:
+        name: "&6Schnelleinrichtung (Vorlagen)"
+        lore:
+          - "&7Wähle einen gängigen Zeitplan"
+          - "&7(kein ACT-Format erforderlich)"
+          - ""
+          - "&eKlicke zum Durchsuchen der Vorlagen"
+    presets:
+      title: "ACT Regel-Vorlagen"
+      list:
+        always_available:
+          name: "Immer verfügbar"
+          lore:
+            - "&7Sammlung ist dauerhaft verfügbar"
+            - "&7Keine Datums-, Dauer- oder Zeitplanlimits"
+            - ""
+            - "&7Format: &f[*] [*] [NONE]"
+            - ""
+            - "&aKlicke zum Anwenden"
+        daily_2h:
+          name: "Täglich 2 Stunden (Morgens)"
+          lore:
+            - "&7Jeden Tag für 2 Stunden verfügbar"
+            - "&7Startet um 9:00 Uhr"
+            - ""
+            - "&7Format: &f[*] [2h] [0 0 9 * * ?]"
+            - ""
+            - "&aKlicke zum Anwenden"
+        daily_4h:
+          name: "Täglich 4 Stunden (Nachmittags)"
+          lore:
+            - "&7Jeden Tag für 4 Stunden verfügbar"
+            - "&7Startet um 14:00 Uhr"
+            - ""
+            - "&7Format: &f[*] [4h] [0 0 14 * * ?]"
+            - ""
+            - "&aKlicke zum Anwenden"
+        weekend_8h:
+          name: "Wochenend-Event (8 Stunden)"
+          lore:
+            - "&7Verfügbar an Samstagen und Sonntagen"
+            - "&7Für 8 Stunden ab 10:00 Uhr"
+            - ""
+            - "&7Format: &f[*] [8h] [0 0 10 ? * SAT,SUN]"
+            - ""
+            - "&aKlicke zum Anwenden"
+        weekly_24h:
+          name: "Wöchentliches Event (24 Stunden)"
+          lore:
+            - "&7Jeden Montag verfügbar"
+            - "&7Den ganzen Tag über"
+            - ""
+            - "&7Format: &f[*] [24h] [0 0 0 ? * MON]"
+            - ""
+            - "&aKlicke zum Anwenden"
+        holiday_special:
+          name: "Feiertagsspezial (Weihnachten)"
+          lore:
+            - "&7Verfügbar während der Weihnachtswoche"
+            - "&7Dauerhafte Verfügbarkeit in diesem Zeitraum"
+            - "&7Vom 20. bis 26. Dezember"
+            - ""
+            - "&7Format: &f[2025-12-20:2025-12-26] [*] [0 0 0 * * ?]"
+            - ""
+            - "&aKlicke zum Anwenden"
+        seasonal_summer:
+          name: "Sommersaison"
+          lore:
+            - "&7Verfügbar während der Sommermonate"
+            - "&7Dauerhafte Verfügbarkeit Juni-August"
+            - ""
+            - "&7Format: &f[2025-06-01:2025-08-31] [*] [NONE]"
+            - ""
+            - "&aKlicke zum Anwenden"
+        hourly_30m:
+          name: "Stündlich (30 Minuten)"
+          lore:
+            - "&7Startet jede Stunde"
+            - "&7Verfügbar für 30 Minuten pro Durchgang"
+            - ""
+            - "&7Format: &f[*] [30m] [0 0 * * * ?]"
+            - ""
+            - "&aKlicke zum Anwenden"
+        twice_daily_3h:
+          name: "Zweimal täglich (Je 3 Stunden)"
+          lore:
+            - "&7Zweimal pro Tag verfügbar"
+            - "&7Um 9:00 Uhr und 18:00 Uhr"
+            - "&7Jeweils für 3 Stunden"
+            - ""
+            - "&7Format: &f[*] [3h] [0 0 9,18 * * ?]"
+            - ""
+            - "&aKlicke zum Anwenden"
+        monthly_week:
+          name: "Monatlich (Erste Woche)"
+          lore:
+            - "&7Verfügbar in der ersten Woche jeden Monats"
+            - "&7Vom 1. bis zum 7."
+            - "&7Dauerhaft in diesem Zeitraum"
+            - ""
+            - "&7Format: &f[*-*-01:*-*-07] [*] [NONE]"
+            - ""
+            - "&aKlicke zum Anwenden"
+    component:
+      date_range:
+        name: "&eDatumsbereich"
+        lore:
+          - "&7Aktuell: &f%value%"
+          - "&7%description%"
+          - ""
+          - "&7Optional: auf bestimmte Daten begrenzen"
+          - ""
+          - "&eKlicke zum Bearbeiten"
+      duration:
+        name: "&eDauer"
+        lore:
+          - "&7Aktuell: &f%value%"
+          - "&7%description%"
+          - ""
+          - "&7Optional: begrenze wie lange es aktiv ist"
+          - ""
+          - "&eKlicke zum Bearbeiten"
+      cron:
+        name: "&eZeitplan"
+        description:
+          none: "Kein Zeitplan"
+          invalid: "Ungültiger Zeitplan"
+        lore:
+          - "&7Aktuell: &f%value%"
+          - "&7%description%"
+          - ""
+          - "&7Optional: mit wiederholendem Zeitplan ausführen"
+          - ""
+          - "&eKlicke zum Bearbeiten"
+    rules:
+      list:
+        title: "Zeitplanregeln: %collection%"
+        rule_item:
+          name: "&6%name%"
+          lore:
+            - "&7Status: %status%"
+            - "&7Datumsbereich: &f%date_range%"
+            - "&7Dauer: &f%duration%"
+            - "&7Cron: &f%cron%"
+            - "&7Nächster Trigger: %next_trigger%"
+            - ""
+            - "&eLinksklick zum Bearbeiten"
+            - "&eRechtsklick zum Umschalten"
+            - "&cShift+Linksklick zum Löschen"
+        add_rule:
+          name: "&aNeue Regel hinzufügen"
+          lore:
+            - "&7Erstellt eine neue Regel"
+            - "&7und öffnet die Einrichtung"
+      editor:
+        name:
+          name: "&eName"
+          lore:
+            - "&7Aktuell: &f%name%"
+            - ""
+            - "&eKlicke zum Umbenennen"
+        enabled:
+          name: "&eAktiviert"
+          lore:
+            - "&7Aktuell: %status%"
+            - ""
+            - "&eKlicke zum Umschalten"
+        delete:
+          name: "&cRegel löschen"
+          lore:
+            - "&7Entfernt diese Regel dauerhaft"
+            - ""
+            - "&cKlicke zum Löschen"
+    components:
+      duration:
+        editor:
+          title: "Dauer bearbeiten"
+          current:
+            name: "&e&lAktuelle Dauer"
+            value: "&f%duration%"
+            description: "&7%description%"
+        preset:
+          permanent:
+            name: "&aDauerhaft"
+            lore:
+              - "&7Sammlung bleibt für immer verfügbar,"
+              - "&7sobald sie ausgelöst wurde (bis zum Reset)"
+              - ""
+              - "&7Wert: &f*"
+              - ""
+              - "&eKlicke zum Anwenden"
+          30_minutes:
+            name: "&e30 Minuten"
+            lore:
+              - "&7Verfügbar für eine halbe Stunde"
+              - ""
+              - "&7Wert: &f30m"
+              - ""
+              - "&eKlicke zum Anwenden"
+          1_hour:
+            name: "&e1 Stunde"
+            lore:
+              - "&7Verfügbar für eine Stunde"
+              - ""
+              - "&7Wert: &f1h"
+              - ""
+              - "&eKlicke zum Anwenden"
+          2_hours:
+            name: "&e2 Stunden"
+            lore:
+              - "&7Verfügbar für zwei Stunden"
+              - ""
+              - "&7Wert: &f2h"
+              - ""
+              - "&eKlicke zum Anwenden"
+          4_hours:
+            name: "&e4 Stunden"
+            lore:
+              - "&7Verfügbar für vier Stunden"
+              - ""
+              - "&7Wert: &f4h"
+              - ""
+              - "&eKlicke zum Anwenden"
+          8_hours:
+            name: "&e8 Stunden"
+            lore:
+              - "&7Verfügbar für acht Stunden"
+              - ""
+              - "&7Wert: &f8h"
+              - ""
+              - "&eKlicke zum Anwenden"
+          24_hours:
+            name: "&e24 Stunden (1 Tag)"
+            lore:
+              - "&7Verfügbar für einen vollen Tag"
+              - ""
+              - "&7Wert: &f24h"
+              - ""
+              - "&eKlicke zum Anwenden"
+          7_days:
+            name: "&e7 Tage (1 Woche)"
+            lore:
+              - "&7Verfügbar für eine Woche"
+              - ""
+              - "&7Wert: &f7d"
+              - ""
+              - "&eKlicke zum Anwenden"
+        custom:
+          name: "&dBenutzerdefinierte Dauer"
+          lore:
+            - "&7Gib eine benutzerdefinierte Dauer ein"
+            - "&7Format: <Zahl><Einheit>"
+            - "&7Einheiten: s, m, h, d"
+            - "&7Beispiel: 90s, 90m, 12h, 3d"
+            - ""
+            - "&eKlicke zum manuellen Eingeben"
+        increase:
+          name: "&a&l+ Erhöhen"
+          lore:
+            - "&7Füge 1 zum Dauerwert hinzu"
+            - "&7(nur numerische Dauern)"
+        decrease:
+          name: "&c&l- Verringern"
+          lore:
+            - "&7Ziehe 1 vom Dauerwert ab"
+            - "&7(nur numerische Dauern, min: 1)"
+      date_range:
+        manual:
+          name: "&dManuelle Datumsbereichseingabe"
+          lore:
+            - "&7Gib einen benutzerdefinierten Datumsbereich ein"
+            - "&7Format: JJJJ-MM-TT:JJJJ-MM-TT"
+            - "&7Beispiel: 2025-12-24:2025-12-31"
+            - "&7Verwende &f* &7für immer aktiv"
+            - ""
+            - "&eKlicke zum manuellen Eingeben"
+        editor:
+          title: "Datumsbereich bearbeiten"
+          current:
+            name: "&e&lAktueller Datumsbereich"
+            value: "&f%date_range%"
+            description: "&7%description%"
+        preset:
+          always:
+            name: "&aImmer aktiv"
+            lore:
+              - "&7Keine Datumsbeschränkungen"
+              - "&7Die Regel kann an jedem Tag ausgelöst werden"
+              - ""
+              - "&7Wert: &f*"
+              - ""
+              - "&eKlicke zum Anwenden"
+          this_year:
+            name: "&eDieses Jahr (%year%)"
+            lore:
+              - "&7Nur während des aktuellen Jahres aktiv"
+              - "&7Vom 1. Januar bis 31. Dezember"
+              - ""
+              - "&7Wert: &f%year%-01-01:%year%-12-31"
+              - ""
+              - "&eKlicke zum Anwenden"
+          this_month:
+            name: "&eDieser Monat"
+            lore:
+              - "&7Während des aktuellen Monats aktiv"
+              - ""
+              - "&7Wert: &f%start%:%end%"
+              - ""
+              - "&eKlicke zum Anwenden"
+          next_month:
+            name: "&eNächster Monat"
+            lore:
+              - "&7Während des nächsten Monats aktiv"
+              - ""
+              - "&7Wert: &f%start%:%end%"
+              - ""
+              - "&eKlicke zum Anwenden"
+minigame:
+  success: "%prefix%&aMinigame erfolgreich abgeschlossen!"
+  failed: "%prefix%&cMinigame fehlgeschlagen."
+  reaction:
+    timeout: "%prefix%&cDu warst zu langsam! Spiel vorbei."
+    wrong_click: "%prefix%&cFalscher Block! Spiel vorbei."
+  memory:
+    watch: "%prefix%&eBeobachte die Sequenz aufmerksam!"
+    repeat: "%prefix%&aJetzt wiederhole die Sequenz!"
+    wrong: "%prefix%&cFalsche Sequenz! Spiel vorbei."
+  spot:
+    memorise: "%prefix%&eMerke dir die Position der Items!"
+    find: "%prefix%&aFinde alle versteckten Items!"
+    wrong: "%prefix%&cFalscher Slot! Dies war nicht das versteckte Item."
+  oddoneout:
+    find: "%prefix%&eRunde &f%round%&e/&f%max% &8— &aFinde das Item, welches nicht passt!"
+    timeout: "%prefix%&cZu langsam! Die Zeit ist ausgelaufen."
+    wrong: "%prefix%&cFalsch! Das war nicht das passende Items."
+  order:
+    memorise: "%prefix%&eRunde &f%round%&e/&f%max% &8— &eMerke dir die Abfolge!"
+    recreate: "%prefix%&aStellen Sie die Abfolge mithilfe der untenstehenden Items nach!"
+    wrong: "%prefix%&cFalsch! Das war nicht das korrekte Item."
+  sliderpuzzle:
+    start: "%prefix%&eSchiebe die Kacheln in die richtige Reihenfolge (1–8)!"
+  higherlower:
+    start: "%prefix%&eIch denke an eine Zahl zwischen &f1&e und &f%max%&e. Du hast &f%guesses% &eVersuche!"
+    correct: "%prefix%&a&lRichtig! &7Die Zahl war &f%n%&7."
+    higher: "%prefix%&a▲ Höher! &7&f%left% &7Versuch(e) übrig."
+    lower: "%prefix%&c▼ Niedriger! &7&f%left% &7Versuch(e) übrig."
+    lose: "%prefix%&c&lSpiel vorbei! &7Die Zahl war &f%n%&7."
+  error:
+    invalid_type: "%prefix%&cUngültiger Minigame-Typ. Verfügbar: REACTION, MEMORY, SPOT, ADDONEOUT, ORDER, SLIDERPUZZLE, HIGHERLOWER"
+
+proximity:
+  near_treasure: "&eDu bist in der Nähe einer Treasure!"
+  in_place_mode: "&eDu bist derzeit im Place-Mode!"
+
+hint:
+  no_unfound_nearby: "%prefix%&cKeine ungefundenen Treasures in der Nähe!"
+  cooldown: "%prefix%&cDu musst &e%time% Sekunden &cwarten, bevor du einen weiteren Hinweis anfordern kannst."
+  coordinate_x: "%prefix%&aHinweis: X-Koordinate ist &e%value% &a(&e%distance%m &a%direction%)"
+  coordinate_z: "%prefix%&aHinweis: Z-Koordinate ist &e%value% &a(&e%distance%m &a%direction%)"
+  success: "%prefix%&aDu hast dir einen Hinweis verdient!"
+  visual_active: "%prefix%&eVisueller Hinweis aktiviert!"
+  minigame_failed: "%prefix%&cMinigame fehlgeschlagen. Kein Hinweis für dich!"

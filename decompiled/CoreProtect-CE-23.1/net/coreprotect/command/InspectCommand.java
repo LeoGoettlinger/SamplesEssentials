@@ -1,0 +1,40 @@
+package net.coreprotect.command;
+
+import net.coreprotect.config.ConfigHandler;
+import net.coreprotect.language.Phrase;
+import net.coreprotect.utility.Chat;
+import net.coreprotect.utility.Color;
+import org.bukkit.command.CommandSender;
+
+public class InspectCommand {
+   protected static void runCommand(CommandSender player, boolean permission, String[] args) {
+      if (permission) {
+         int command = -1;
+         ConfigHandler.inspecting.putIfAbsent(player.getName(), false);
+         if (args.length > 1) {
+            String action = args[1];
+            if (action.equalsIgnoreCase("on")) {
+               command = 1;
+            } else if (action.equalsIgnoreCase("off")) {
+               command = 0;
+            }
+         }
+
+         if (!ConfigHandler.inspecting.get(player.getName())) {
+            if (command == 0) {
+               Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.INSPECTOR_ERROR, "{2}"));
+            } else {
+               Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.INSPECTOR_TOGGLED, "{1}"));
+               ConfigHandler.inspecting.put(player.getName(), true);
+            }
+         } else if (command == 1) {
+            Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.INSPECTOR_ERROR, "{1}"));
+         } else {
+            Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.INSPECTOR_TOGGLED, "{2}"));
+            ConfigHandler.inspecting.put(player.getName(), false);
+         }
+      } else {
+         Chat.sendMessage(player, Color.DARK_AQUA + "CoreProtect " + Color.WHITE + "- " + Phrase.build(Phrase.NO_PERMISSION));
+      }
+   }
+}

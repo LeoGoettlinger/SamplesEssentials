@@ -1,0 +1,11 @@
+package de.theredend2000.advancedhunt.lib.kyori.adventure.text.serializer.gson;
+
+import com.google.gson.TypeAdapter;
+import de.theredend2000.advancedhunt.lib.kyori.adventure.text.event.HoverEvent;
+
+final class HoverEventActionSerializer {
+   static final TypeAdapter<HoverEvent.Action<?>> INSTANCE = IndexedSerializer.lenient("hover action", HoverEvent.Action.NAMES);
+
+   private HoverEventActionSerializer() {
+   }
+}

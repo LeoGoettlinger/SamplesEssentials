@@ -1,0 +1,110 @@
+package de.theredend2000.advancedhunt.listeners;
+
+import de.theredend2000.advancedhunt.Main;
+import de.theredend2000.advancedhunt.lib.xseries.XMaterial;
+import de.theredend2000.advancedhunt.menu.Button;
+import de.theredend2000.advancedhunt.menu.Menu;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryDragEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+
+public class MenuListener implements Listener {
+   private final Main plugin;
+
+   public MenuListener(Main plugin) {
+      this.plugin = plugin;
+   }
+
+   @EventHandler(
+      priority = EventPriority.HIGH
+   )
+   public void onInventoryClick(InventoryClickEvent event) {
+      if (event.getWhoClicked() instanceof Player) {
+         Player player = (Player)event.getWhoClicked();
+         Inventory topInventory = event.getInventory();
+         if (topInventory.getHolder() instanceof Menu) {
+            Menu menu = (Menu)topInventory.getHolder();
+            event.setCancelled(true);
+            if (menu.isClosing()) {
+               player.updateInventory();
+            } else {
+               if (event.getClickedInventory() != null) {
+                  menu.performClick(event);
+               }
+
+               if (event.isCancelled()) {
+                  player.updateInventory();
+               }
+            }
+         }
+      }
+   }
+
+   @EventHandler(
+      priority = EventPriority.HIGH
+   )
+   public void onInventoryDrag(InventoryDragEvent event) {
+      if (event.getWhoClicked() instanceof Player) {
+         Player player = (Player)event.getWhoClicked();
+         Inventory topInventory = event.getInventory();
+         if (topInventory.getHolder() instanceof Menu) {
+            Menu menu = (Menu)topInventory.getHolder();
+            if (menu.isClosing()) {
+               event.setCancelled(true);
+               player.updateInventory();
+            } else {
+               menu.handleDrag(event);
+            }
+         }
+      }
+   }
+
+   @EventHandler(
+      priority = EventPriority.LOWEST
+   )
+   public void onInventoryClose(InventoryCloseEvent event) {
+      if (event.getPlayer() instanceof Player) {
+         Player player = (Player)event.getPlayer();
+         Inventory inventory = event.getInventory();
+         if (inventory.getHolder() instanceof Menu) {
+            Menu menu = (Menu)inventory.getHolder();
+            menu.markClosing();
+            menu.onClose(event);
+            ItemStack cursorItem = player.getItemOnCursor();
+            if (cursorItem != null && cursorItem.getType() != XMaterial.AIR.get()) {
+               player.setItemOnCursor(null);
+
+               for (ItemStack leftover : player.getInventory().addItem(new ItemStack[]{cursorItem}).values()) {
+                  player.getWorld().dropItem(player.getLocation(), leftover);
+               }
+            }
+         }
+      }
+   }
+
+   @EventHandler(
+      priority = EventPriority.MONITOR
+   )
+   public void onInventoryOpen(InventoryOpenEvent event) {
+      if (!event.isCancelled()) {
+         if (event.getInventory().getHolder() instanceof Menu) {
+            ((Menu)event.getInventory().getHolder()).onOpen(event);
+         }
+      }
+   }
+
+   @EventHandler(
+      priority = EventPriority.MONITOR
+   )
+   public void onPlayerQuit(PlayerQuitEvent event) {
+      Button.removeClickCooldown(event.getPlayer().getUniqueId());
+   }
+}

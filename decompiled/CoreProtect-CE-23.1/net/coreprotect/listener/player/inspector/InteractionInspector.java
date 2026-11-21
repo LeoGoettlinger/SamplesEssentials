@@ -1,0 +1,45 @@
+package net.coreprotect.listener.player.inspector;
+
+import java.sql.Connection;
+import java.sql.Statement;
+import net.coreprotect.database.lookup.InteractionLookup;
+import net.coreprotect.utility.Chat;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
+
+public class InteractionInspector extends BaseInspector {
+   public void performInteractionLookup(final Player player, final Block finalInteractBlock) {
+      class BasicThread implements Runnable {
+         @Override
+         public void run() {
+            try {
+               InteractionInspector.this.checkPreconditions(player);
+
+               try (Connection connection = InteractionInspector.this.getDatabaseConnection(player)) {
+                  Statement statement = connection.createStatement();
+                  String blockData = InteractionLookup.performLookup(null, statement, finalInteractBlock, player, 0, 1, 7);
+                  if (blockData.contains("\n")) {
+                     for (String splitData : blockData.split("\n")) {
+                        Chat.sendComponent(player, splitData);
+                     }
+                  } else {
+                     Chat.sendComponent(player, blockData);
+                  }
+
+                  statement.close();
+               }
+            } catch (BaseInspector.InspectionException var16) {
+               Chat.sendMessage(player, var16.getMessage());
+            } catch (Exception var17) {
+               var17.printStackTrace();
+            } finally {
+               InteractionInspector.this.finishInspection(player);
+            }
+         }
+      }
+
+      Runnable runnable = new BasicThread();
+      Thread thread = new Thread(runnable);
+      thread.start();
+   }
+}

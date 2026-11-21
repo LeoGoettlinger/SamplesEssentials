@@ -1,0 +1,74 @@
+package de.theredend2000.advancedhunt.lib.cloud.parser;
+
+import de.theredend2000.advancedhunt.lib.cloud.context.CommandContext;
+import de.theredend2000.advancedhunt.lib.cloud.context.CommandInput;
+import de.theredend2000.advancedhunt.lib.cloud.suggestion.SuggestionProvider;
+import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
+import org.apiguardian.api.API;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
+
+@API(
+   status = API.Status.INTERNAL
+)
+public final class MappedArgumentParserImpl<C, I, O> implements MappedArgumentParser<C, I, O>, ArgumentParser.FutureArgumentParser<C, O> {
+   private final ArgumentParser<C, I> base;
+   private final MappedArgumentParser.Mapper<C, I, O> mapper;
+
+   MappedArgumentParserImpl(final ArgumentParser<C, I> base, final MappedArgumentParser.Mapper<C, I, O> mapper) {
+      this.base = base;
+      this.mapper = mapper;
+   }
+
+   @NonNull
+   @Override
+   public ArgumentParser<C, I> baseParser() {
+      return this.base;
+   }
+
+   @NonNull
+   @Override
+   public CompletableFuture<ArgumentParseResult<O>> parseFuture(@NonNull final CommandContext<C> commandContext, @NonNull final CommandInput commandInput) {
+      return this.base.parseFuture(commandContext, commandInput).thenCompose(result -> this.mapper.map(commandContext, (ArgumentParseResult<I>)result));
+   }
+
+   @NonNull
+   @Override
+   public SuggestionProvider<C> suggestionProvider() {
+      return this.base.suggestionProvider();
+   }
+
+   @NonNull
+   @Override
+   public <O1> ArgumentParser.FutureArgumentParser<C, O1> flatMap(final MappedArgumentParser.Mapper<C, O, O1> mapper) {
+      Objects.requireNonNull(mapper, "mapper");
+      return new MappedArgumentParserImpl<>(
+         this.base,
+         (ctx, orig) -> this.mapper
+            .map(ctx, orig)
+            .thenCompose(mapped -> (CompletionStage<ArgumentParseResult<O>>)mapper.map(ctx, (ArgumentParseResult<O>)mapped))
+      );
+   }
+
+   @Override
+   public int hashCode() {
+      return 31 + this.base.hashCode() + 7 * this.mapper.hashCode();
+   }
+
+   @Override
+   public boolean equals(@Nullable final Object other) {
+      if (!(other instanceof MappedArgumentParserImpl)) {
+         return false;
+      } else {
+         MappedArgumentParserImpl<?, ?, ?> that = (MappedArgumentParserImpl<?, ?, ?>)other;
+         return this.base.equals(that.base) && this.mapper.equals(that.mapper);
+      }
+   }
+
+   @Override
+   public String toString() {
+      return "MappedArgumentParserImpl{base=" + this.base + ',' + "mapper=" + this.mapper + '}';
+   }
+}

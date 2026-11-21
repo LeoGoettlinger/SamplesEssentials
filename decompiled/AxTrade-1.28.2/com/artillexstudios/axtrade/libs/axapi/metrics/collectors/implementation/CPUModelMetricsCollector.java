@@ -1,0 +1,37 @@
+package com.artillexstudios.axtrade.libs.axapi.metrics.collectors.implementation;
+
+import com.artillexstudios.axtrade.libs.axapi.metrics.collectors.MetricsCollector;
+import com.artillexstudios.axtrade.libs.axapi.utils.logging.LogUtils;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import java.lang.reflect.Method;
+
+public final class CPUModelMetricsCollector implements MetricsCollector {
+   private String cpuModel;
+
+   public CPUModelMetricsCollector(Object systemInfo) {
+      try {
+         Method hardwareInfoGetter = Class.forName("oshi.SystemInfo").getDeclaredMethod("getHardware");
+         Object hardwareInfo = hardwareInfoGetter.invoke(systemInfo);
+         Method processorGetter = Class.forName("oshi.hardware.HardwareAbstractionLayer").getDeclaredMethod("getProcessor");
+         Object centralProcessingUnit = processorGetter.invoke(hardwareInfo);
+         Method processorIdentifierGetter = Class.forName("oshi.hardware.CentralProcessor").getDeclaredMethod("getProcessorIdentifier");
+         Object processorIdentifier = processorIdentifierGetter.invoke(centralProcessingUnit);
+         Method processorNameGetter = Class.forName("oshi.hardware.CentralProcessor$ProcessorIdentifier").getDeclaredMethod("getName");
+         Method vendorNameGetter = Class.forName("oshi.hardware.CentralProcessor$ProcessorIdentifier").getDeclaredMethod("getVendor");
+         this.cpuModel = processorNameGetter.invoke(processorIdentifier) + "|" + vendorNameGetter.invoke(processorIdentifier);
+      } catch (Exception var10) {
+         LogUtils.error("Failed to load CPU model!");
+      }
+   }
+
+   @Override
+   public void collect(JsonArray data) {
+      if (this.cpuModel != null) {
+         JsonObject object = new JsonObject();
+         object.addProperty("@type", "cpu-model");
+         object.addProperty("cpu-model", this.cpuModel);
+         data.add(object);
+      }
+   }
+}

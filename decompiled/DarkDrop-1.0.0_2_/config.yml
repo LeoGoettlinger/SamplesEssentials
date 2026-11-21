@@ -1,0 +1,75 @@
+# DarkDrop Konfiguration
+# Alle Texte koennen hier angepasst werden. Standardmaessig deutsch.
+# Farben mit & (z.B. &c rot, &a gruen, &e gelb).
+
+settings:
+  # Standard-Spawn-Hoehe ueber der Zielposition in Bloecken
+  spawn-height: 100
+  # Sinkgeschwindigkeit in Bloecken pro Sekunde (kleiner = langsamer)
+  descend-speed: 5.0
+  # Update-Intervall in Ticks (20 Ticks = 1 Sekunde)
+  update-interval-ticks: 4
+  # Hoehe ab der die Sinkphase mit Actionbar beginnt (in Bloecken ueber Ziel)
+  announce-height: 100
+
+random-spawn:
+  # Mindestabstand vom Spieler fuer zufaellige Drops
+  min-distance: 30
+  # Maximaler Abstand vom Spieler fuer zufaellige Drops
+  max-distance: 200
+  # Sicherheitsabstand zur Weltgrenze in Bloecken
+  world-border-margin: 64
+  # Minimale Hoehe ueber dem Boden fuer die Landung
+  min-safe-y: 60
+  # Maximale Hoehe ueber dem Boden fuer die Landung
+  max-safe-y: 200
+
+bad-loot:
+  # Schaden fuer die kleine Explosion (0.0 = kein Schaden, 1.0 = 1 halbes Herz)
+  explosion-damage: 4.0
+  # Feuer-Dauer in Sekunden
+  fire-duration-seconds: 3
+  # Feuer-Radius um die Landeposition
+  fire-radius: 2
+  # Blitz-Schaden (0 = kein Schaden)
+  lightning-damage: 0.0
+  # Negative Effekt-Dauer in Sekunden
+  effect-duration-seconds: 8
+  # Effekt-Amplifikator (0 = Stufe 1)
+  effect-amplifier: 1
+
+messages:
+  prefix: "&8[&5DarkDrop&8] &7"
+  no-permission: "&cDu hast keine Berechtigung fuer diesen Befehl."
+  player-only: "&cDieser Befehl kann nur von einem Spieler ausgefuehrt werden."
+  invalid-coordinates: "&cUngueltige Koordinaten. Verwendung: /darkdrop spawn <x> <y> <z>"
+  invalid-number: "&cUngueltige Zahl: &e{value}&c."
+  random-failed: "&cKonnte keine sichere Zufallsposition finden. Versuche es erneut."
+  drop-start-title: "&5&lDARKDROP"
+  drop-start-subtitle: "&7Ein mysterioeser Drop sinkt herab..."
+  drop-start-chat: "&5&lDarkDrop &7startet! Ein Drop sinkt &5100 Bloecke &7ueber dir herab."
+  drop-land-title: "&5&lEINSCHLAG"
+  drop-land-subtitle: "&7Der DarkDrop ist gelandet!"
+  drop-land-chat: "&5&lDarkDrop &7ist eingeschlagen! &7Oeffne die Kiste, um deinen Loot zu erhalten."
+  actionbar-descending: "&5DarkDrop &7sinkt... &eHoehe: &f{height} &7Bloecke &8| &eRestzeit: &f{seconds}s"
+  loot-good-chat: "&a&lGlueckwunsch! &7Der DarkDrop enthielt guten Loot!"
+  loot-good-commands-info: "&7Dieser DarkDrop enthielt zusaetzlich &e{count} &7Commands, die fuer dich ausgefuehrt wurden."
+  loot-bad-chat: "&c&lPech! &7Der DarkDrop hatte eine schlechte ueberraschung..."
+  chest-protected: "&cDiese DarkDrop-Kiste ist geschuetzt, bis sie geoeffnet wurde."
+  settings-saved: "&aEinstellungen gespeichert und DarkDrop gestartet!"
+  settings-cancelled: "&cDarkDrop-Abbruch: Einstellungen verworfen."
+  bad-loot-saved: "&aSchlechte Loot-Auswahl aktualisiert."
+  good-loot-saved: "&aGute Loot-Vorlagen gespeichert ({count} Items)."
+  reload-success: "&aKonfiguration neu geladen."
+  menu-title: "&5DarkDrop &7Einstellungen"
+  menu-good-loot-title: "&5Gute Loot &7Vorlagen"
+  menu-commands-title: "&5Commands &7als guter Loot"
+  click-increase: "&a+ {amount}&7 ({key})"
+  click-decrease: "&c- {amount}&7 ({key})"
+  shift-increase: "&7Shift-Klick: &a+1"
+  current-value: "&7Aktuell: &e{value}"
+  commands-saved: "&aCommands gespeichert ({count} Commands)."
+  commands-cancelled: "&cCommand-Eingabe abgebrochen."
+  commands-prompt-add: "&7Tippe den neuen Command im Chat ein. Abbruch mit &c'cancel'&7. Platzhalter: &f{player} {x} {y} {z} {world} {amount}"
+  commands-prompt-edit: "&7Aktueller Wert: &e{old} &7- Tippe den neuen Command im Chat. Abbruch mit &c'cancel'&7."
+  commands-max-reached: "&cMaximale Command-Anzahl erreicht."

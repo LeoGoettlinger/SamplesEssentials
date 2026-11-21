@@ -1,0 +1,51 @@
+package com.artillexstudios.axafkzone.libs.lamp.core;
+
+import com.artillexstudios.axafkzone.libs.lamp.command.ArgumentStack;
+import com.artillexstudios.axafkzone.libs.lamp.command.CommandParameter;
+import com.artillexstudios.axafkzone.libs.lamp.process.ParameterResolver;
+import com.artillexstudios.axafkzone.libs.lamp.process.ValueResolver;
+import com.artillexstudios.axafkzone.libs.lamp.process.ValueResolverFactory;
+import com.artillexstudios.axafkzone.libs.lamp.util.Either;
+import java.lang.reflect.Type;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+enum EitherValueResolverFactory implements ValueResolverFactory {
+   INSTANCE;
+
+   @Nullable
+   @Override
+   public ValueResolver<?> create(@NotNull CommandParameter parameter) {
+      Class<?> rawType = parameter.getType();
+      if (!Either.class.isAssignableFrom(rawType)) {
+         return null;
+      } else {
+         Type[] types = EitherParameter.getTypes(parameter);
+         EitherParameter first = generate(parameter, types[0]);
+         EitherParameter second = generate(parameter, types[1]);
+         return context -> {
+            ArgumentStack original = context.arguments().copy();
+
+            try {
+               return Either.first(first.getResolver().resolve(context));
+            } catch (Throwable var5x) {
+               ((BaseCommandDispatcher.ValueContextR)context).argumentStack = original;
+               return Either.second(second.getResolver().resolve(context));
+            }
+         };
+      }
+   }
+
+   private static EitherParameter generate(CommandParameter parameter, Type type) {
+      EitherParameter either = new EitherParameter(parameter, type);
+      ParameterResolver<Object> resolver = ((BaseCommandHandler)parameter.getCommandHandler()).getResolver(either);
+      if (resolver == null) {
+         throw new IllegalStateException("Unable to find a resolver for parameter type " + either.getType());
+      } else if (!resolver.mutatesArguments()) {
+         throw new IllegalStateException("Only value-based arguments are allowed in the Either type (found " + either.getType() + ")");
+      } else {
+         either.setResolver(resolver);
+         return either;
+      }
+   }
+}
