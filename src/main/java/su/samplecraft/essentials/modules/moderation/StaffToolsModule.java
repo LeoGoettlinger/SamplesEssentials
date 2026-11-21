@@ -126,10 +126,10 @@ public final class StaffToolsModule extends EssentialsModule implements Listener
     @EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)
     public void onCommand(PlayerCommandPreprocessEvent event) {
         String raw = event.getMessage().substring(1);
-        String label = raw.split(" ")[0].toLowerCase(Locale.ROOT);
-        if (label.contains(":")) {
-            label = label.substring(label.indexOf(':') + 1);
-        }
+        String firstToken = raw.split(" ")[0].toLowerCase(Locale.ROOT);
+        String label = firstToken.contains(":")
+                ? firstToken.substring(firstToken.indexOf(':') + 1)
+                : firstToken;
         if (cfgBool("features.socialspy", true) && socialSpy.size() > 0
                 && cfgStringList("socialspy-commands").stream().anyMatch(c -> c.equalsIgnoreCase(label))) {
             net.kyori.adventure.text.Component spy = msgComponent("socialspy-format",
