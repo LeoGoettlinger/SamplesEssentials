@@ -1,0 +1,40 @@
+# Treasure hunt (merged AdvancedHunt port)
+
+place-mode:
+  # keep place mode active until /treasure cancel
+  stay: true
+
+treasure-settings:
+  # block placed where a treasure was found when hide-after-found is enabled (AIR/BARRIER)
+  replace-block: BARRIER
+
+particles:
+  enabled: true
+  # how often marker particles are drawn
+  interval-ticks: 20
+  view-distance: 32
+
+hint:
+  enabled: true
+  cooldown-seconds: 300
+  # maximum distance to search for an unfound treasure
+  proximity-range: 50
+  # X, Z or RANDOM
+  reveal-coordinate: RANDOM
+
+leaderboard:
+  display-limit: 10
+
+broadcast-found: true
+
+help-lines:
+  - "&6Treasure hunt &7- commands"
+  - " &f/treasure list &8- &7list collections"
+  - " &f/treasure info [collection] &8- &7collection info"
+  - " &f/treasure stats [player] &8- &7your progress"
+  - " &f/treasure top <collection> &8- &7leaderboard"
+  - " &f/treasure hint &8- &7reveal a coordinate of a nearby treasure"
+  - " &f/treasure particles &8- &7toggle marker particles"
+  - " &f/treasure create|delete|enable|disable <collection> &8- &7admin"
+  - " &f/treasure place <collection> &8- &7turn looked-at blocks into treasures"
+  - " &f/treasure addreward <collection> <command|message> <value>"

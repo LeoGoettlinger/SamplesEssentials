@@ -117,6 +117,10 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  treasure:
+    description: Treasure hunt player and admin commands
+    usage: /treasure help
+    aliases: [ah, ahunt]
   area:
     description: Manage protected land claims
     usage: /area <create|delete|list|info|select|redefine|tp|priority|owner|member|flag|rename>
@@ -368,6 +372,12 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.treasure:
+    description: Play the treasure hunt
+    default: true
+  samplese.treasure.admin:
+    description: Manage treasure collections
+    default: op
   samplese.protect:
     description: Use /area
     default: true
