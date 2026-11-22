@@ -12,113 +12,26 @@ For more details see https://docs.gradle.org/9.4.1/release-notes.html
 
 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.4.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
 Daemon will be stopped at the end of the build 
-
-> Task :compileJava
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/PvPModule.java:382: error: cannot find symbol
-    public void onGlide(org.bukkit.event.player.PlayerToggleGlideEvent event) {
-                                               ^
-  symbol:   class PlayerToggleGlideEvent
-  location: package org.bukkit.event.player
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/PvPModule.java:351: warning: [removal] CHORUS_FRUIT in TeleportCause has been deprecated and marked for removal
-        if (cause == PlayerTeleportEvent.TeleportCause.CHORUS_FRUIT
-                                                      ^
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/PvPModule.java:356: warning: [removal] CHORUS_FRUIT in TeleportCause has been deprecated and marked for removal
-                || cause == PlayerTeleportEvent.TeleportCause.CHORUS_FRUIT
-                                                             ^
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/PvPModule.java:664: error: send(CommandSender,String,String...) in PvPModule cannot override send(CommandSender,String,String...) in EssentialsModule
-    private void send(CommandSender target, String key, String... kv) {
-                 ^
-  attempting to assign weaker access privileges; was protected
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/social/FriendsModule.java:144: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-            player.playSound(player.getLocation(), Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
-                                                        ^
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/general/RewardsModule.java:327: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-            player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(raw.toUpperCase(Locale.ROOT)), 1f, 1f);
-                                                                   ^
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/TradeModule.java:184: error: incompatible types: UUID cannot be converted to Player
-        inv.setItem(OWN_CONFIRM_SLOT, confirmIcon(trade.firstConfirmed, trade.first, true));
-                                                                             ^
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/TradeModule.java:185: error: incompatible types: UUID cannot be converted to Player
-        inv.setItem(PARTNER_CONFIRM_SLOT, confirmIcon(trade.secondConfirmed, trade.second, false));
-                                                                                  ^
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/TradeModule.java:868: error: send(CommandSender,String,String...) in TradeModule cannot override send(CommandSender,String,String...) in EssentialsModule
-    private void send(CommandSender target, String key, String... kv) {
-                 ^
-  attempting to assign weaker access privileges; was protected
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/AuctionModule.java:425: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-            player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(raw.toUpperCase(Locale.ROOT)), 1f, 1f);
-                                                                   ^
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/BountyModule.java:413: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-            player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
-                                                                   ^
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:470: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-            player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(sound.toUpperCase(Locale.ROOT)),
-                                                                   ^
-Note: Some input files use or override a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-5 errors
-7 warnings
-
 > Task :compileJava FAILED
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795333231952.json
-
-[Incubating] Problems report is available at: file:///home/runner/work/SamplesEssentials/SamplesEssentials/build/reports/problems/problems-report.html
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795333429176.json
 
 FAILURE: Build failed with an exception.
 
 * What went wrong:
 Execution failed for task ':compileJava'.
-> Compilation failed; see the compiler output below.
-  Note: Recompile with -Xlint:deprecation for details.
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/TradeModule.java:184: error: incompatible types: UUID cannot be converted to Player
-          inv.setItem(OWN_CONFIRM_SLOT, confirmIcon(trade.firstConfirmed, trade.first, true));
-                                                                               ^
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/TradeModule.java:185: error: incompatible types: UUID cannot be converted to Player
-          inv.setItem(PARTNER_CONFIRM_SLOT, confirmIcon(trade.secondConfirmed, trade.second, false));
-                                                                                    ^
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/PvPModule.java:664: error: send(CommandSender,String,String...) in PvPModule cannot override send(CommandSender,String,String...) in EssentialsModule
-      private void send(CommandSender target, String key, String... kv) {
-                   ^
-    attempting to assign weaker access privileges; was protected
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/TradeModule.java:868: error: send(CommandSender,String,String...) in TradeModule cannot override send(CommandSender,String,String...) in EssentialsModule
-      private void send(CommandSender target, String key, String... kv) {
-                   ^
-    attempting to assign weaker access privileges; was protected
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/PvPModule.java:382: error: cannot find symbol
-      public void onGlide(org.bukkit.event.player.PlayerToggleGlideEvent event) {
-                                                 ^
-    symbol:   class PlayerToggleGlideEvent
-    location: package org.bukkit.event.player
-  Note: Some input files use or override a deprecated API.
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/PvPModule.java:351: warning: [removal] CHORUS_FRUIT in TeleportCause has been deprecated and marked for removal
-          if (cause == PlayerTeleportEvent.TeleportCause.CHORUS_FRUIT
-                                                        ^
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/PvPModule.java:356: warning: [removal] CHORUS_FRUIT in TeleportCause has been deprecated and marked for removal
-                  || cause == PlayerTeleportEvent.TeleportCause.CHORUS_FRUIT
-                                                               ^
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/social/FriendsModule.java:144: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-              player.playSound(player.getLocation(), Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
-                                                          ^
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/general/RewardsModule.java:327: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-              player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(raw.toUpperCase(Locale.ROOT)), 1f, 1f);
-                                                                     ^
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/AuctionModule.java:425: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-              player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(raw.toUpperCase(Locale.ROOT)), 1f, 1f);
-                                                                     ^
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/economy/BountyModule.java:413: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-              player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(name.toUpperCase(Locale.ROOT)), 1f, 1f);
-                                                                     ^
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:470: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
-              player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(sound.toUpperCase(Locale.ROOT)),
-                                                                     ^
-  Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-  5 errors
-  7 warnings
+> Could not resolve all files for configuration ':compileClasspath'.
+   > Could not resolve io.papermc.paper:paper-api:26.2.build.+.
+     Required by:
+         root project 'SamplesEssentials'
+      > Failed to list versions for io.papermc.paper:paper-api.
+         > Unable to load Maven meta-data from https://repo.maven.apache.org/maven2/io/papermc/paper/paper-api/maven-metadata.xml.
+            > Could not GET 'https://repo.maven.apache.org/maven2/io/papermc/paper/paper-api/maven-metadata.xml'. Received status code 429 from server: Too Many Requests
 
 * Try:
-> Check your code and dependencies to fix the compilation error(s)
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
 
-BUILD FAILED in 29s
+BUILD FAILED in 31s
 1 actionable task: 1 executed
