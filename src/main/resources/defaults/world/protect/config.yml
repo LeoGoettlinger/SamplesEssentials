@@ -1,0 +1,20 @@
+# Protect areas (merged port)
+# Notify players when an area flag blocks an action (areas may override this flag)
+notify-failed-interactions: true
+# How many areas a player may own (samplese.protect.unlimited bypasses this)
+max-areas-per-player: 5
+
+help-lines:
+  - "&6Protect &7- area commands"
+  - " &f/area select &8- &7get the selection wand"
+  - " &f/area create <name> &8- &7claim your selection"
+  - " &f/area delete <name> &8- &7remove a claim"
+  - " &f/area list &8- &7list all claims"
+  - " &f/area info [name] &8- &7inspect a claim"
+  - " &f/area redefine <name> &8- &7re-claim with a new selection"
+  - " &f/area tp <name> &8- &7teleport to a claim"
+  - " &f/area priority <name> <n> &8- &7overlap priority"
+  - " &f/area owner <name> <player> &8- &7transfer ownership"
+  - " &f/area member <name> <add|remove|list> [player]"
+  - " &f/area flag <name> [flag] [true|false|unset]"
+  - " &f/area rename <name> <new>"
