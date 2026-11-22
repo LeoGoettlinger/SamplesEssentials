@@ -30,6 +30,7 @@ import su.samplecraft.essentials.modules.gameplay.LevelToolsModule;
 import su.samplecraft.essentials.modules.gameplay.OpenSitModule;
 import su.samplecraft.essentials.modules.gameplay.SpawnElytraModule;
 import su.samplecraft.essentials.modules.world.XaeroModule;
+import su.samplecraft.essentials.modules.general.InventorySaveModule;
 import su.samplecraft.essentials.modules.general.SignItemModule;
 import su.samplecraft.essentials.modules.general.LocalInventoryModule;
 import su.samplecraft.essentials.modules.general.RewardsModule;
@@ -118,6 +119,7 @@ public final class SamplesEssentials extends JavaPlugin {
         moduleManager.register(new AuctionModule(this));
         moduleManager.register(new BountyModule(this));
         moduleManager.register(new JobsModule(this));
+        moduleManager.register(new InventorySaveModule(this));
         moduleManager.register(new RankMenuModule(this));
         moduleManager.register(new LegendaryWeaponsModule(this));
         moduleManager.register(new ClansModule(this));

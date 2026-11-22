@@ -1,0 +1,3 @@
+# InventorySave (merged port)
+# Inventories are stored as one YAML file per id inside inventories/.
+# Ids may only contain letters, numbers and underscores.

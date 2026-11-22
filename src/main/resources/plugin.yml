@@ -117,6 +117,11 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  inventory:
+    description: Save and load inventories
+    usage: /inventory <save|load|delete|list>
+    aliases: [inv]
+    permission: samplese.inventorysave
   rankmenu:
     description: Open the rank shop
     usage: /rankmenu
@@ -387,6 +392,12 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.inventorysave:
+    description: Use /inventory
+    default: op
+  samplese.inventorysave.others:
+    description: Load inventories onto other players
+    default: op
   samplese.rankmenu:
     description: Open the rank menu
     default: true
