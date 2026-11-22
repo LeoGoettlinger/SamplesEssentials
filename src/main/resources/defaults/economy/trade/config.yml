@@ -1,0 +1,37 @@
+# AxTrade settings (merged port)
+gui:
+  title: "&0Trading with: %player%"
+  money-name: "&b&lMONEY"
+  xp-name: "&b&lEXPERIENCE"
+  confirm-name: "&c&lCLICK TO CONFIRM"
+  confirmed-name: "&a&lCONFIRMED"
+
+# Seconds between both players confirming and the trade finishing
+trade-confirm-seconds: 5
+# Seconds until trade requests expire
+trade-request-expire-seconds: 60
+# Maximum distance between the two players (-1 = unlimited)
+trade-max-distance: 10
+# Shift + right-click a player to send a trade request
+shift-click-send-request: true
+# Send a summary after the trade
+enable-trade-summaries: true
+# Block adding items when the inventory is full
+prevent-adding-items-when-inventory-full: true
+# Disallow trades between players on the same IP
+disallow-same-ip-trade: false
+# Percent tax taken from money offers (0-99)
+tax: 0
+
+blacklisted-worlds:
+  - example_world
+
+# Items that may not be traded. Supported name wildcards: name, name*, *name, *name*
+blacklist-items:
+  - material: BARRIER
+    name: "*Some custom item*"
+
+abort:
+  move: true
+  interact: true
+  command: true

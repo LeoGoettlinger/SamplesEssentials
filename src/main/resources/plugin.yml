@@ -117,6 +117,11 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  trade:
+    description: Trade items, money and XP with another player
+    usage: /trade [player|accept|deny|toggle|reload]
+    aliases: [axtrade]
+    permission: samplese.trade
   pvp:
     description: Toggle PvP for yourself or others
     usage: /pvp [player] [on|off]
@@ -312,6 +317,15 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.trade:
+    description: Use player trading
+    default: true
+  samplese.trade.bypass.blacklist:
+    description: Trade blacklisted items
+    default: false
+  samplese.trade.admin:
+    description: Administer trading
+    default: op
   samplese.pvp:
     description: Toggle PvP
     default: true
