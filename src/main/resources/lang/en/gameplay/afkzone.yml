@@ -17,6 +17,8 @@ zone:
 teleport:
   success: "&eTeleported to the &6%name% &ezone!"
   fail: "&cCan't teleport to &6%name%&c - the world is not loaded!"
+selection-wand:
+  name: "&6AFK zone selector"
 selection:
   pos1: "&eSelected &6POSITION #1 &7- &f%location%"
   pos2: "&eSelected &6POSITION #2 &7- &f%location%"
