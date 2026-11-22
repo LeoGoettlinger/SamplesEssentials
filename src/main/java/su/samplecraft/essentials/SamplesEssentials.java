@@ -29,6 +29,7 @@ import su.samplecraft.essentials.modules.general.SignItemModule;
 import su.samplecraft.essentials.modules.general.LocalInventoryModule;
 import su.samplecraft.essentials.modules.general.RewardsModule;
 import su.samplecraft.essentials.modules.general.StarterKitModule;
+import su.samplecraft.essentials.modules.moderation.PvPModule;
 import su.samplecraft.essentials.modules.moderation.FreezeModule;
 import su.samplecraft.essentials.modules.moderation.StaffToolsModule;
 import su.samplecraft.essentials.modules.rtp.EzRtpModule;
@@ -126,6 +127,7 @@ public final class SamplesEssentials extends JavaPlugin {
         moduleManager.register(new SpawnElytraModule(this));
         // categoria: moderation
         moduleManager.register(new StaffToolsModule(this));
+        moduleManager.register(new PvPModule(this));
         moduleManager.register(new FreezeModule(this));
         moduleManager.register(new MaintenanceModule(this));
         moduleManager.register(new InventoryAccessModule(this));

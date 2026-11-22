@@ -1,0 +1,86 @@
+# PvPManager settings (merged port).
+# Keys the port does not support (scoreboard nametags, WorldGuard flags, TAB
+# placeholders) are accepted but ignored so the file stays copy-paste compatible.
+
+general:
+  # Worlds where all PvP features are disabled
+  world-exclusions:
+    - 'minigames'
+
+combat-tag:
+  enabled: true
+  # Seconds the tag lasts; every hit renews it
+  time: 20
+  glowing: true
+  untag-on-kill: true
+  self-tag: false
+  ender-pearl-renews-tag: false
+  # Only the current opponent may hit a tagged player
+  duel-mode: false
+  display:
+    action-bar:
+      enabled: true
+      message: '&8[&c&lCombat&8]: &r<time>'
+      symbol: '▊'
+      total-bars: 20
+    boss-bar:
+      enabled: false
+      message: '&8&l[&c&lCombat&8&l] &e&l<time>'
+      color: RED
+      style: SOLID
+  actions-blocked:
+    ender-pearls: false
+    chorus-fruits: false
+    teleport: true
+    unsafe-teleports: false
+    eat: false
+    totem-of-undying: false
+    place-blocks: false
+    break-blocks: false
+    open-inventory: false
+    elytra:
+      block-gliding: true
+    commands:
+      enabled: true
+      # true = only listed commands are allowed, false = listed commands are blocked
+      whitelist: true
+      command-list:
+        - 'msg'
+        - 'r'
+        - 'reply'
+        - 'tell'
+        - 'w'
+        - 'whisper'
+        - 'shop'
+        - 'ah'
+        - 'ec'
+        - 'enderchest'
+
+combat-log:
+  kill-on-logout:
+    enabled: true
+  commands-on-combat-log:
+    - 'say &c{player} &7logged out during combat!'
+
+pvp-toggle:
+  default-pvp: true
+  cooldown: 15
+  commands:
+    pvp-on: []
+    pvp-off: []
+
+newbie:
+  enabled: true
+  # Protection time in seconds
+  time: 600
+  allow-player-disable: true
+  protect-from-everything: false
+  boss-bar:
+    enabled: true
+    message: '&a&lNEWBIE PROTECTION: &f<time>'
+    color: GREEN
+    style: SOLID
+
+player-kills:
+  commands-on-kill:
+    commands: []
