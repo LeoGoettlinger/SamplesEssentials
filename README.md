@@ -57,6 +57,90 @@ plugins/SamplesEssentials/
 Add another language by creating `lang/<locale>/` mirroring the English tree;
 missing keys fall back to English.
 
+## Modules
+
+40 modules, all toggled from `config.yml` and `/samplese toggle`.
+
+### chat
+
+| Module | Merged from | What it does |
+| --- | --- | --- |
+| `announcement` | announcement-1.4.jar | Rotating MiniMessage announcements with template |
+| `chatclear` | ChatClear.jar | Clears the server chat with a reason |
+| `chatformatter` | LPC - Chat Formatter.jar | LuckPerms-style chat format with prefix/suffix, groups and colours |
+| `fancytags` | FancyTags-unspecified.jar | Player-head chat tags rendered through object components |
+
+### economy
+
+| Module | Merged from | What it does |
+| --- | --- | --- |
+| `auction` | CrazyAuctions-1.7.0.jar | Auction house with selling, bidding, expired items and categories |
+| `bounty` | AsBounty-1.0.0.jar | Bounty GUI with sorting, search and Vault payouts |
+| `jobs` | UJobs-1.0.7.jar | Jobs with per-action XP/money rewards, levels and leaderboards |
+| `orders` | DonutOrders-1.9.2.jar | Buy-order market with delivery, stash, tax and expiry |
+| `trade` | AxTrade-1.28.2.jar | Secure player-to-player trading with items, money and XP |
+| `vaultbridge` | VaultUnlocked-2.20.2.jar | Vault economy bridge with optional balance-on-join |
+
+### gameplay
+
+| Module | Merged from | What it does |
+| --- | --- | --- |
+| `afkzone` | AxAFKZone-1.13.0.jar | Cuboid AFK zones with timed, chance-based rewards and scoreboard-style HUD |
+| `amethysttools` | amethysttools-1.2.1.jar | Area-mining amethyst tools that expire after a few days |
+| `biggerenderchest` | BiggerEnderChest1.2.1.jar | Per-player bigger ender chests with /ec, /ecsee and selector GUI |
+| `darkdrop` | DarkDrop-1.0.0(2).jar | Descending chest loot drop with good/bad outcome on open |
+| `dragoneggenhancements` | DragonEggEnhancements-1.5.jar | Dragon egg powers, container/void/explosion protection and /dragoneggcoords |
+| `graves` | GravesX-2026.4.9.1.jar | Death graves with holograms, protection, teleport and expiry |
+| `leveltools` | LevelTools-2.1.2.jar | Items gain XP/levels from mining, combat and fishing with rewards |
+| `opensit` | OpenSit-1.0.6.jar | Sit on stairs and slabs with an invisible seat entity |
+| `spawnelytra` | spawnelytra-1.5.jar | Elytra gliding inside configured spawn areas with boosts |
+
+### general
+
+| Module | Merged from | What it does |
+| --- | --- | --- |
+| `localinventory` | LocalInventory-1.0.jar | Save, clear and restore your inventory (/sli, /lli, /ali) |
+| `rewards` | LushRewards-3.3.2.jar | Daily streak rewards and playtime reward goals with GUI |
+| `signitem` | RHSignItem-Paper-1.21_R9.jar | Signs, locks and renames items (lore signature with signer + date) |
+| `starterkit` | StarterKitV2.jar | First-join starter kit with /starterkit |
+
+### moderation
+
+| Module | Merged from | What it does |
+| --- | --- | --- |
+| `freeze` | SimplePlayerFreeze-2.3.0.jar | Freeze players, with /freezeall and /freezelist |
+| `inventoryaccess` | OpenInv.jar | View and edit other players' inventories and ender chests |
+| `maintenance` | Maintenance-Paper-5.1.0.jar | Maintenance mode with whitelist, timers and MOTD |
+| `pvp` | PvPManager.jar | Combat tagging with punishments, PvP toggle and newbie protection |
+| `stafftools` | SModeration.jar | Vanish, socialspy and staff chat |
+
+### rtp
+
+| Module | Merged from | What it does |
+| --- | --- | --- |
+| `ezrtp` | EzRTP-3.4.3.jar | Random teleport with limits, countdown, search patterns and /forcertp |
+| `premiumrtp` | RexonRTP.jar | Premium random teleport with cost and own world bounds |
+| `simplertp` | Simple_RTP.jar | Lightweight /tpr random teleport without cooldown |
+
+### social
+
+| Module | Merged from | What it does |
+| --- | --- | --- |
+| `friends` | FriendZ-1.1.jar | Friends, friend requests, /msf direct messages and friendship levels |
+
+### world
+
+| Module | Merged from | What it does |
+| --- | --- | --- |
+| `buildpaste` | BuildPastePlugin-2.02.jar | Save cuboid builds to files, share them by id and paste them back with undo |
+| `chunkmanager` | ChunkManager-1.3.1.jar | World unload, chunk GC and memory diagnostics |
+| `chunky` | Chunky-Bukkit-1.4.40.jar | Pre-generates chunks around a centre with progress and ETA |
+| `homes` | SetHome_GUI-3.0.5.jar | Homes with GUI menu, chat prompt, limits, cooldown and /homeadmin |
+| `lagfixer` | LagFixer-1.7.1.jar | Entity/redstone limits, instant leaf decay, trash disposal and ability cooldowns |
+| `protect` | protect-3.4.1-all.jar | Cuboid land claims with owners, members and per-area flags |
+| `smartspawner` | SmartSpawner-1.8.3.jar | Spawner editing with eggs and accelerated spawn timing |
+| `xaero` | XaeroForceDisabler-1.5.jar | Forces fair-mode / disables the Xaero minimap per world |
+
 ## Commands
 
 | Command | Purpose |
