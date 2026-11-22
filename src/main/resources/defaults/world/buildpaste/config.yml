@@ -1,0 +1,7 @@
+# BuildPaste settings (merged port)
+# Maximum size per axis when saving a build
+max-size: 64
+# Paste at the player's feet (true) or one block below (false)
+place-at-player: true
+# How many pastes can be undone per player
+undo-history-size: 5

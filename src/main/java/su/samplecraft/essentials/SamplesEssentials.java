@@ -38,6 +38,7 @@ import su.samplecraft.essentials.modules.rtp.EzRtpModule;
 import su.samplecraft.essentials.modules.social.FriendsModule;
 import su.samplecraft.essentials.modules.rtp.PremiumRtpModule;
 import su.samplecraft.essentials.modules.rtp.SimpleRtpModule;
+import su.samplecraft.essentials.modules.world.BuildPasteModule;
 import su.samplecraft.essentials.modules.world.LagFixerModule;
 import su.samplecraft.essentials.modules.world.ChunkyModule;
 import su.samplecraft.essentials.modules.world.ChunkManagerModule;
@@ -144,6 +145,7 @@ public final class SamplesEssentials extends JavaPlugin {
         moduleManager.register(new FriendsModule(this));
         // categoria: world
         moduleManager.register(new ChunkManagerModule(this));
+        moduleManager.register(new BuildPasteModule(this));
         moduleManager.register(new LagFixerModule(this));
         moduleManager.register(new ChunkyModule(this));
         moduleManager.register(new HomesModule(this));

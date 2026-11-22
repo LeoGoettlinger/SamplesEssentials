@@ -117,6 +117,38 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  setfirstpos:
+    description: Set the first build corner
+    usage: /setfirstpos
+    permission: samplese.buildpaste.setbuild
+  setsecondpos:
+    description: Set the second build corner
+    usage: /setsecondpos
+    permission: samplese.buildpaste.setbuild
+  setbuild:
+    description: Save your selection as a build
+    usage: /setbuild <id>
+    permission: samplese.buildpaste.setbuild
+  paste:
+    description: Paste a saved build
+    usage: /paste <id> [direction]
+    permission: samplese.buildpaste.paste
+  sharebuild:
+    description: Share a build id with the server
+    usage: /sharebuild <id>
+    permission: samplese.buildpaste.share
+  removepos:
+    description: Clear your build selection
+    usage: /removepos
+    permission: samplese.buildpaste.setbuild
+  undo:
+    description: Undo your last paste
+    usage: /undo
+    permission: samplese.buildpaste.undo
+  construct:
+    description: List the saved builds
+    usage: /construct
+    permission: samplese.buildpaste.paste
   lagfixer:
     description: Inspect and clean up server lag sources
     usage: /lagfixer <status|clear|reload>
@@ -331,6 +363,21 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.buildpaste.paste:
+    description: Paste builds
+    default: op
+  samplese.buildpaste.setbuild:
+    description: Save builds
+    default: op
+  samplese.buildpaste.share:
+    description: Share builds
+    default: op
+  samplese.buildpaste.undo:
+    description: Undo pastes
+    default: op
+  samplese.buildpaste.admin:
+    description: Manage builds
+    default: op
   samplese.lagfixer:
     description: Use /lagfixer
     default: op
