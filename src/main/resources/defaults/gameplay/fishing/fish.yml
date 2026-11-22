@@ -32,7 +32,7 @@ Pufferfish:
   base-worth: 220
 GoldenCarp:
   rarity: Legendary
-  material: GOLDEN_CARP
+  material: COD
   min-length: 40
   max-length: 90
   base-worth: 900
