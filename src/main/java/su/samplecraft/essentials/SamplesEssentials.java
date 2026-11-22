@@ -13,6 +13,7 @@ import su.samplecraft.essentials.modules.moderation.InventoryAccessModule;
 import su.samplecraft.essentials.modules.moderation.MaintenanceModule;
 import su.samplecraft.essentials.modules.economy.AuctionModule;
 import su.samplecraft.essentials.modules.economy.BountyModule;
+import su.samplecraft.essentials.modules.economy.JobsModule;
 import su.samplecraft.essentials.modules.economy.TradeModule;
 import su.samplecraft.essentials.modules.economy.OrdersModule;
 import su.samplecraft.essentials.modules.economy.VaultBridgeModule;
@@ -109,6 +110,7 @@ public final class SamplesEssentials extends JavaPlugin {
         moduleManager.register(new VaultBridgeModule(this));
         moduleManager.register(new AuctionModule(this));
         moduleManager.register(new BountyModule(this));
+        moduleManager.register(new JobsModule(this));
         moduleManager.register(new TradeModule(this));
         moduleManager.register(new OrdersModule(this));
         // categoria: general

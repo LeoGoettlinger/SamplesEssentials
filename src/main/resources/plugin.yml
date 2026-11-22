@@ -117,6 +117,11 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  jobs:
+    description: Join jobs and earn money and XP
+    usage: /jobs [list|join|leave|stats|top|reload]
+    aliases: [ujobs, job]
+    permission: samplese.jobs
   trade:
     description: Trade items, money and XP with another player
     usage: /trade [player|accept|deny|toggle|reload]
@@ -317,6 +322,12 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.jobs:
+    description: Use jobs
+    default: true
+  samplese.jobs.admin:
+    description: Administer jobs
+    default: op
   samplese.trade:
     description: Use player trading
     default: true

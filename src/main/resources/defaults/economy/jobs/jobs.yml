@@ -1,0 +1,711 @@
+# UJobs jobs.yml (merged port).
+#
+# Supported action types in this build: kill, break, place, breed, tame, fish,
+# enchant, harvest, smelt. A "*" key inside an action table matches any entity or
+# material. Level requirements come from level_equation (<next_level>).
+#
+# The original also listened for anvil_merge, craft, trade, raid and
+# generate_loot. Those are not captured by this port, so no job here claims
+# rewards for them.
+
+jobs:
+  hunter:
+    name: <gradient:#FF0000:#A20000>Hunter
+    icon: NETHERITE_SWORD
+    level_equation: <next_level>*<next_level>*5
+    levelup_message:
+      sound: entity.player.levelup
+    levelup_commands:
+    - cheatcoins give <player> <level>*1000
+    bossbar:
+      title: <yellow><level> <gray>level <job> <gradient:#6D6666:#938B8B:#777676>+<gained_exp><symbol_exp> <exp>/<next_exp>
+      overlay: NOTCHED_10
+      color: RED
+    actions:
+      kill:
+        zombie:
+          exp: 2
+          money: 0.1
+        skeleton:
+          exp: 2
+          money: 0.1
+        spider:
+          exp: 2
+          money: 0.1
+        creeper:
+          exp: 2
+          money: 0.1
+        cave_spider:
+          exp: 2.1
+          money: 0.12
+        husk:
+          exp: 2.05
+          money: 0.11
+        stray:
+          exp: 2.2
+          money: 0.15
+        drowned:
+          exp: 2.1
+          money: 0.13
+        enderman:
+          exp: 2.5
+          money: 0.15
+        blaze:
+          exp: 2.5
+          money: 0.15
+        elder_guardian:
+          exp: 20
+          money: 5
+        endermite:
+          exp: 3
+          money: 0.3
+        evoker:
+          exp: 5
+          money: 1
+        guardian:
+          exp: 2.3
+          money: 0.17
+        vindicator:
+          exp: 2.9
+          money: 0.14
+        piglin:
+          exp: 2.2
+          money: 0.12
+        piglin_brute:
+          exp: 10
+          money: 7
+        pillager:
+          exp: 2.1
+          money: 0.11
+        ravager:
+          exp: 5
+          money: 2.5
+        silverfish:
+          exp: 1
+          money: 0.01
+        vex:
+          exp: 2
+          money: 0.1
+        warden:
+          exp: 100
+          money: 10
+        witch:
+          exp: 3
+          money: 0.3
+        wither:
+          exp: 50
+          money: 5
+        wither_skeleton:
+          exp: 2.5
+          money: 0.15
+        zoglin:
+          exp: 2.3
+          money: 0.13
+        zombie_villager:
+          exp: 2.3
+          money: 0.13
+        ender_dragon:
+          exp: 250
+          money: 25
+        pig:
+          exp: 1
+          money: 0.01
+        chicken:
+          exp: 1
+          money: 0.01
+        sheep:
+          exp: 1
+          money: 0.01
+        cow:
+          exp: 1
+          money: 0.01
+        cod:
+          exp: 2.2
+          money: 0.18
+        salmon:
+          exp: 2.2
+          money: 0.18
+        pufferfish:
+          exp: 2.9
+          money: 0.29
+        tropical_fish:
+          exp: 2.7
+          money: 0.27
+        horse:
+          exp: 2.1
+          money: 0.12
+        donkey:
+          exp: 2.1
+          money: 0.12
+        wolf:
+          exp: 2.4
+          money: 0.24
+        fox:
+          exp: 4
+          money: 0.4
+        rabbit:
+          exp: 3
+          money: 0.35
+        iron_golem:
+          exp: 5
+          money: 0.5
+        goat:
+          exp: 2.3
+          money: 0.3
+        llama:
+          exp: 2.1
+          money: 0.21
+        squid:
+          exp: 2.7
+          money: 0.27
+        glow_squid:
+          exp: 2.8
+          money: 0.28
+        mooshroom:
+          exp: 5
+          money: 0.5
+        strider:
+          exp: 2.5
+          money: 0.15
+  miner:
+    name: <gradient:#9B9B9B:#646464>Miner
+    icon: NETHERITE_PICKAXE
+    level_equation: <next_level>*<next_level>*5
+    levelup_message:
+      sound: entity.player.levelup
+    levelup_commands:
+    - cheatcoins give <player> <level>*1000
+    bossbar:
+      title: <yellow><level> <gray>level <job> <gradient:#6D6666:#938B8B:#777676>+<gained_exp><symbol_exp> <exp>/<next_exp>
+      overlay: NOTCHED_10
+      color: WHITE
+    actions:
+      break:
+        stone:
+          exp: 0.1
+          money: 0.01
+        deepslate:
+          exp: 0.11
+          money: 0.011
+        coal_ore:
+          exp: 1
+          money: 0.1
+        deepslate_coal_ore:
+          exp: 1.1
+          money: 0.11
+        iron_ore:
+          exp: 1.1
+          money: 0.11
+        deepslate_iron_ore:
+          exp: 1.2
+          money: 0.12
+        copper_ore:
+          exp: 1.2
+          money: 0.12
+        deepslate_copper_ore:
+          exp: 1.3
+          money: 0.13
+        gold_ore:
+          exp: 1.4
+          money: 0.14
+        deepslate_gold_ore:
+          exp: 1.5
+          money: 0.15
+        redstone_ore:
+          exp: 1.3
+          money: 0.13
+        deepslate_redstone_ore:
+          exp: 1.4
+          money: 0.14
+        emerald_ore:
+          exp: 1.6
+          money: 0.16
+        deepslate_emerald_ore:
+          exp: 1.7
+          money: 0.17
+        lapis_ore:
+          exp: 1.5
+          money: 0.15
+        deepslate_lapis_ore:
+          exp: 1.6
+          money: 0.16
+        diamond_ore:
+          exp: 1.7
+          money: 0.17
+        deepslate_diamond_ore:
+          exp: 1.8
+          money: 0.18
+        nether_gold_ore:
+          exp: 1
+          money: 0.1
+        nether_quartz_ore:
+          exp: 1.1
+          money: 0.11
+        netherrack:
+          exp: 0.08
+          money: 0.008
+        gilded_blackstone:
+          exp: 1.2
+          money: 0.12
+        blackstone:
+          exp: 0.1
+          money: 0.01
+        basalt:
+          exp: 0.1
+          money: 0.01
+        end_stone:
+          exp: 0.1
+          money: 0.01
+        diorite:
+          exp: 0.1
+          money: 0.01
+        andesite:
+          exp: 0.1
+          money: 0.01
+        granite:
+          exp: 0.1
+          money: 0.01
+        sandstone:
+          exp: 0.1
+          money: 0.01
+        tuff:
+          exp: 0.1
+          money: 0.01
+        calcite:
+          exp: 0.1
+          money: 0.01
+        smooth_basalt:
+          exp: 0.1
+          money: 0.01
+        amethyst_block:
+          exp: 0.1
+          money: 0.01
+        amethyst_cluster:
+          exp: 0.1
+          money: 0.01
+  farmer:
+    name: <gradient:#FFD500:#FF9B00>Farmer
+    icon: NETHERITE_HOE
+    level_equation: <next_level>*<next_level>*5
+    levelup_message:
+      sound: entity.player.levelup
+    levelup_commands:
+    - cheatcoins give <player> <level>*1000
+    bossbar:
+      title: <yellow><level> <gray>level <job> <gradient:#6D6666:#938B8B:#777676>+<gained_exp><symbol_exp> <exp>/<next_exp>
+      overlay: NOTCHED_10
+      color: YELLOW
+    actions:
+      break:
+        wheat7:
+          exp: 1
+          money: 0.01
+        potatoes7:
+          exp: 1
+          money: 0.01
+        carrots7:
+          exp: 1
+          money: 0.01
+        beetroots3:
+          exp: 1.1
+          money: 0.011
+        melon:
+          exp: 1
+          money: 0.01
+      harvest:
+        glow_berries:
+          exp: 1
+          money: 0.01
+        sweet_berries:
+          exp: 1
+          money: 0.01
+  husbandry:
+    name: <gradient:#FF00BD:#AA4B00>Husbandry
+    icon: LEAD
+    level_equation: <next_level>*<next_level>*5
+    levelup_message:
+      sound: entity.player.levelup
+    levelup_commands:
+    - cheatcoins give <player> <level>*1000
+    bossbar:
+      title: <yellow><level> <gray>level <job> <gradient:#6D6666:#938B8B:#777676>+<gained_exp><symbol_exp> <exp>/<next_exp>
+      overlay: NOTCHED_10
+      color: PINK
+    actions:
+      breed:
+        pig:
+          exp: 1
+          money: 0.01
+        chicken:
+          exp: 1
+          money: 0.01
+        cow:
+          exp: 1
+          money: 0.01
+        sheep:
+          exp: 1
+          money: 0.01
+        horse:
+          exp: 1
+          money: 0.01
+        donkey:
+          exp: 1
+          money: 0.01
+        mule:
+          exp: 1
+          money: 0.01
+        llama:
+          exp: 1
+          money: 0.01
+        trader_llama:
+          exp: 1
+          money: 0.01
+        rabbit:
+          exp: 1
+          money: 0.01
+        fox:
+          exp: 1
+          money: 0.01
+        wolf:
+          exp: 1
+          money: 0.01
+        cat:
+          exp: 1
+          money: 0.01
+        turtle:
+          exp: 1
+          money: 0.01
+        bee:
+          exp: 1
+          money: 0.01
+        camel:
+          exp: 1
+          money: 0.01
+        panda:
+          exp: 1
+          money: 0.01
+        parrot:
+          exp: 1
+          money: 0.01
+        polar_bear:
+          exp: 1
+          money: 0.01
+        frog:
+          exp: 1
+          money: 0.01
+        axolotl:
+          exp: 1
+          money: 0.01
+        mooshroom:
+          exp: 1
+          money: 0.01
+        ocelot:
+          exp: 1
+          money: 0.01
+        strider:
+          exp: 1
+          money: 0.01
+        sniffer:
+          exp: 1
+          money: 0.01
+      tame:
+        wolf:
+          exp: 1
+          money: 0.01
+        cat:
+          exp: 1
+          money: 0.01
+        camel:
+          exp: 1
+          money: 0.01
+        horse:
+          exp: 1
+          money: 0.01
+        mule:
+          exp: 1
+          money: 0.01
+        donkey:
+          exp: 1
+          money: 0.01
+        trader_llama:
+          exp: 1
+          money: 0.01
+        llama:
+          exp: 1
+          money: 0.01
+        parrot:
+          exp: 1
+          money: 0.01
+  fisher:
+    name: <gradient:#00D8FF:#0A75C8>Fisher
+    icon: FISHING_ROD
+    level_equation: <next_level>*<next_level>*5
+    levelup_message:
+      sound: entity.player.levelup
+    levelup_commands:
+    - cheatcoins give <player> <level>*1000
+    bossbar:
+      title: <yellow><level> <gray>level <job> <gradient:#6D6666:#938B8B:#777676>+<gained_exp><symbol_exp> <exp>/<next_exp>
+      overlay: NOTCHED_10
+      color: BLUE
+    actions:
+      fish:
+        cod:
+          exp: 1
+          money: 1
+        salmon:
+          exp: 1
+          money: 1
+        tropical_fish:
+          exp: 3
+          money: 3
+        pufferfish:
+          exp: 2.5
+          money: 2.5
+  witcher:
+    name: <gradient:#FF00FB:#9B00FF>Witcher
+    icon: ENCHANTING_TABLE
+    level_equation: <next_level>*<next_level>*5
+    levelup_message:
+      sound: entity.player.levelup
+    levelup_commands:
+    - cheatcoins give <player> <level>*1000
+    bossbar:
+      title: <yellow><level> <gray>level <job> <gradient:#6D6666:#938B8B:#777676>+<gained_exp><symbol_exp> <exp>/<next_exp>
+      overlay: NOTCHED_10
+      color: PURPLE
+    actions:
+      enchant:
+        1:
+          exp: 1
+          money: 0.1
+        2:
+          exp: 2
+          money: 0.2
+        3:
+          exp: 3
+          money: 0.3
+        4:
+          exp: 4
+          money: 0.4
+        5:
+          exp: 5
+          money: 0.5
+        6:
+          exp: 6
+          money: 0.6
+        7:
+          exp: 7
+          money: 0.7
+        8:
+          exp: 8
+          money: 0.8
+        9:
+          exp: 9
+          money: 0.9
+        10:
+          exp: 10
+          money: 1
+        11:
+          exp: 11
+          money: 1.1
+        12:
+          exp: 12
+          money: 1.2
+        13:
+          exp: 13
+          money: 1.3
+        14:
+          exp: 14
+          money: 1.4
+        15:
+          exp: 15
+          money: 1.5
+        16:
+          exp: 16
+          money: 1.6
+        17:
+          exp: 17
+          money: 1.7
+        18:
+          exp: 18
+          money: 1.8
+        19:
+          exp: 19
+          money: 1.9
+        20:
+          exp: 20
+          money: 2
+        21:
+          exp: 21
+          money: 2.1
+        22:
+          exp: 22
+          money: 2.2
+        23:
+          exp: 23
+          money: 2.3
+        24:
+          exp: 24
+          money: 2.4
+        25:
+          exp: 25
+          money: 2.5
+        26:
+          exp: 26
+          money: 2.6
+        27:
+          exp: 27
+          money: 2.7
+        28:
+          exp: 28
+          money: 2.8
+        29:
+          exp: 29
+          money: 2.9
+        30:
+          exp: 30
+          money: 3
+  lumberjack:
+    name: <gradient:#CB7800:#00B503>Lumberjack
+    icon: NETHERITE_AXE
+    level_equation: <next_level>*<next_level>*5
+    levelup_message:
+      sound: entity.player.levelup
+    levelup_commands:
+    - cheatcoins give <player> <level>*1000
+    bossbar:
+      title: <yellow><level> <gray>level <job> <gradient:#6D6666:#938B8B:#777676>+<gained_exp><symbol_exp> <exp>/<next_exp>
+      overlay: NOTCHED_10
+      color: GREEN
+    actions:
+      break:
+        oak_log:
+          exp: 1
+          money: 0.1
+        birch_log:
+          exp: 1
+          money: 0.1
+        spruce_log:
+          exp: 1
+          money: 0.1
+        dark_oak_log:
+          exp: 1
+          money: 0.1
+        jungle_log:
+          exp: 1
+          money: 0.1
+        acacia_log:
+          exp: 1
+          money: 0.1
+        mangrove_log:
+          exp: 1
+          money: 0.1
+        mangrove_roots:
+          exp: 0.7
+          money: 0.07
+        warped_stem:
+          exp: 1.5
+          money: 0.15
+        crimson_stem:
+          exp: 1.5
+          money: 0.15
+        cherry_log:
+          exp: 1
+          money: 0.1
+        pale_oak_log:
+          exp: 1
+          money: 0.1
+  digger:
+    name: <gradient:#69A5E8:#AE69E8>Digger
+    icon: NETHERITE_SHOVEL
+    level_equation: <next_level>*<next_level>*5
+    levelup_message:
+      sound: entity.player.levelup
+    levelup_commands:
+    - cheatcoins give <player> <level>*1000
+    bossbar:
+      title: <yellow><level> <gray>level <job> <gradient:#6D6666:#938B8B:#777676>+<gained_exp><symbol_exp> <exp>/<next_exp>
+      overlay: NOTCHED_10
+      color: BLUE
+    actions:
+      break:
+        sand:
+          exp: 1
+          money: 0.01
+        red_sand:
+          exp: 1.1
+          money: 0.011
+        clay:
+          exp: 2
+          money: 0.02
+        mud:
+          exp: 1.5
+          money: 0.015
+        gravel:
+          exp: 1.25
+          money: 0.0125
+        mycelium:
+          exp: 2
+          money: 0.02
+        podzol:
+          exp: 1.1
+          money: 0.011
+        coarse_dirt:
+          exp: 1.1
+          money: 0.011
+        dirt:
+          exp: 1
+          money: 0.01
+        grass_block:
+          exp: 1
+          money: 0.01
+        soul_sand:
+          exp: 2
+          money: 0.02
+  gladiator:
+    name: <gradient:#FF0000:#FFFF00>Gladiator
+    icon: NETHERITE_HELMET
+    level_equation: <next_level>*<next_level>*5
+    levelup_message:
+      sound: entity.player.levelup
+    levelup_commands:
+    - cheatcoins give <player> <level>*1000
+    bossbar:
+      title: <yellow><level> <gray>level <job> <gradient:#6D6666:#938B8B:#777676>+<gained_exp><symbol_exp> <exp>/<next_exp>
+      overlay: NOTCHED_10
+      color: RED
+    actions:
+      kill:
+        player:
+          exp: 1
+          money: 0.01
+  guardian:
+    name: <gradient:#00A6FF:#0047FF>Guardian
+    icon: SHIELD
+    level_equation: <next_level>*<next_level>*10
+    levelup_message:
+      chat: <gradient:#00A6FF:#0047FF>You reached level <level> as Guardian!
+    bossbar:
+      title: <aqua><level> <gray>level <job> <aqua>+<gained_exp><exp>/<next_exp>
+      overlay: NOTIFY
+      color: BLUE
+    actions:
+      enchant:
+        '*':
+          exp: 4
+          money: 0.2
+  producer:
+    name: <gradient:#FFB300:#FF6F00>Producer
+    icon: FURNACE
+    level_equation: <next_level>*<next_level>*8
+    levelup_message:
+      chat: <gold>You reached level <level> as Producer!
+    actions:
+      smelt:
+        '*':
+          exp: 1
+          money: 0.05
+      place:
+        '*':
+          exp: 0.2

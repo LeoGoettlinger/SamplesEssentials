@@ -1,0 +1,6 @@
+# UJobs settings (merged port)
+# Show a boss bar with job progress after gaining XP
+progress-bossbars: true
+# Player progress is stored in data/jobs.yml (UUID -> job -> level/exp)
+storage:
+  type: yml
