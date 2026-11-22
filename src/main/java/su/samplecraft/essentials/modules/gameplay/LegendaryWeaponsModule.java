@@ -373,17 +373,17 @@ public final class LegendaryWeaponsModule extends EssentialsModule implements Li
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onHit(EntityDamageByEntityEvent event) {
-        Player source = null;
+        Player damager = null;
         if (event.getDamager() instanceof Player player) {
-            source = player;
+            damager = player;
         } else if (event.getDamager() instanceof Projectile projectile
                 && projectile.getShooter() instanceof Player shooter) {
-            source = shooter;
+            damager = shooter;
         }
-        if (source == null) {
+        if (damager == null) {
             return;
         }
-        final Player source = source;
+        final Player source = damager;
         Weapon weapon = weaponOf(source.getInventory().getItemInMainHand());
         if (weapon == null) {
             return;
