@@ -538,7 +538,7 @@ public final class JobsModule extends EssentialsModule implements Listener {
                                  @NotNull String label, String @NotNull [] args) {
             if (args.length == 0) {
                 if (!(sender instanceof Player player)) {
-                    send(sender, "player-only");
+                    reply(sender, "player-only");
                     return true;
                 }
                 list(player);
@@ -552,33 +552,33 @@ public final class JobsModule extends EssentialsModule implements Listener {
                         return true;
                     }
                     loadJobs();
-                    send(sender, "reloaded", "jobs", String.valueOf(jobs.size()));
+                    reply(sender, "reloaded", "jobs", String.valueOf(jobs.size()));
                 }
                 case "list" -> {
                     if (sender instanceof Player player) {
                         list(player);
                     } else {
-                        send(sender, "list-console", "jobs", String.join(", ", jobs.keySet()));
+                        reply(sender, "list-console", "jobs", String.join(", ", jobs.keySet()));
                     }
                 }
                 case "join" -> {
                     if (!(sender instanceof Player player)) {
-                        send(sender, "player-only");
+                        reply(sender, "player-only");
                         return true;
                     }
                     if (args.length < 2) {
-                        send(player, "usage-join");
+                        reply(player, "usage-join");
                         return true;
                     }
                     join(player, args[1]);
                 }
                 case "leave", "quit" -> {
                     if (!(sender instanceof Player player)) {
-                        send(sender, "player-only");
+                        reply(sender, "player-only");
                         return true;
                     }
                     if (args.length < 2) {
-                        send(player, "usage-leave");
+                        reply(player, "usage-leave");
                         return true;
                     }
                     leave(player, args[1]);
@@ -590,7 +590,7 @@ public final class JobsModule extends EssentialsModule implements Listener {
                         if (args.length > 1) {
                             sender.sendMessage(plugin.getLang().component("player-not-found", "player", args[1]));
                         } else {
-                            send(sender, "player-only");
+                            reply(sender, "player-only");
                         }
                         return true;
                     }
@@ -598,7 +598,7 @@ public final class JobsModule extends EssentialsModule implements Listener {
                 }
                 case "top", "leaderboard" -> {
                     if (args.length < 2) {
-                        send(sender, "usage-top");
+                        reply(sender, "usage-top");
                         return true;
                     }
                     top(sender, args[1]);
@@ -609,7 +609,7 @@ public final class JobsModule extends EssentialsModule implements Listener {
                         return true;
                     }
                     if (args.length < 4) {
-                        send(sender, "usage-addexp");
+                        reply(sender, "usage-addexp");
                         return true;
                     }
                     Player target = plugin.getServer().getPlayer(args[1]);
@@ -619,17 +619,17 @@ public final class JobsModule extends EssentialsModule implements Listener {
                     }
                     Job job = jobs.get(args[2].toLowerCase(Locale.ROOT));
                     if (job == null) {
-                        send(sender, "unknown-job", "job", args[2]);
+                        reply(sender, "unknown-job", "job", args[2]);
                         return true;
                     }
                     Double amount = parseDouble(args[3]);
                     if (amount == null) {
-                        send(sender, "usage-addexp");
+                        reply(sender, "usage-addexp");
                         return true;
                     }
                     grant(target, job, amount, 0);
                     saveProgress();
-                    send(sender, "exp-added", "player", target.getName(),
+                    reply(sender, "exp-added", "player", target.getName(),
                             "job", job.name, "amount", formatNumber(amount));
                 }
                 case "setlevel" -> {
@@ -638,7 +638,7 @@ public final class JobsModule extends EssentialsModule implements Listener {
                         return true;
                     }
                     if (args.length < 4) {
-                        send(sender, "usage-setlevel");
+                        reply(sender, "usage-setlevel");
                         return true;
                     }
                     Player target = plugin.getServer().getPlayer(args[1]);
@@ -648,28 +648,28 @@ public final class JobsModule extends EssentialsModule implements Listener {
                     }
                     Job job = jobs.get(args[2].toLowerCase(Locale.ROOT));
                     if (job == null) {
-                        send(sender, "unknown-job", "job", args[2]);
+                        reply(sender, "unknown-job", "job", args[2]);
                         return true;
                     }
                     Double level = parseDouble(args[3]);
                     if (level == null) {
-                        send(sender, "usage-setlevel");
+                        reply(sender, "usage-setlevel");
                         return true;
                     }
                     Map<String, double[]> data = progress.computeIfAbsent(target.getUniqueId(),
                             uuid -> new LinkedHashMap<>());
                     data.put(job.id, new double[]{Math.max(1, level), 0});
                     saveProgress();
-                    send(sender, "level-set", "player", target.getName(),
+                    reply(sender, "level-set", "player", target.getName(),
                             "job", job.name, "level", formatNumber(level));
                 }
-                default -> send(sender, "usage");
+                default -> reply(sender, "usage");
             }
             return true;
         }
 
         private void list(Player player) {
-            send(player, "list-header", "jobs", String.valueOf(jobs.size()));
+            reply(player, "list-header", "jobs", String.valueOf(jobs.size()));
             Map<String, double[]> data = progress.getOrDefault(player.getUniqueId(), Map.of());
             for (Job job : jobs.values()) {
                 double[] state = data.get(job.id);
@@ -685,38 +685,38 @@ public final class JobsModule extends EssentialsModule implements Listener {
         private void join(Player player, String rawJob) {
             Job job = jobs.get(rawJob.toLowerCase(Locale.ROOT));
             if (job == null) {
-                send(player, "unknown-job", "job", rawJob);
+                reply(player, "unknown-job", "job", rawJob);
                 return;
             }
             Map<String, double[]> data = progress.computeIfAbsent(player.getUniqueId(),
                     uuid -> new LinkedHashMap<>());
             data.computeIfAbsent(job.id, id -> new double[]{1, 0});
             saveProgress();
-            send(player, "joined", "job", job.name);
+            reply(player, "joined", "job", job.name);
         }
 
         private void leave(Player player, String rawJob) {
             Job job = jobs.get(rawJob.toLowerCase(Locale.ROOT));
             if (job == null) {
-                send(player, "unknown-job", "job", rawJob);
+                reply(player, "unknown-job", "job", rawJob);
                 return;
             }
             Map<String, double[]> data = progress.get(player.getUniqueId());
             if (data == null || data.remove(job.id) == null) {
-                send(player, "not-in-job", "job", job.name);
+                reply(player, "not-in-job", "job", job.name);
                 return;
             }
             saveProgress();
-            send(player, "left", "job", job.name);
+            reply(player, "left", "job", job.name);
         }
 
         private void stats(CommandSender sender, Player target) {
             Map<String, double[]> data = progress.getOrDefault(target.getUniqueId(), Map.of());
             if (data.isEmpty()) {
-                send(sender, "stats-empty", "player", target.getName());
+                reply(sender, "stats-empty", "player", target.getName());
                 return;
             }
-            send(sender, "stats-header", "player", target.getName());
+            reply(sender, "stats-header", "player", target.getName());
             for (Job job : jobs.values()) {
                 double[] state = data.get(job.id);
                 if (state == null) {
@@ -733,7 +733,7 @@ public final class JobsModule extends EssentialsModule implements Listener {
         private void top(CommandSender sender, String rawJob) {
             Job job = jobs.get(rawJob.toLowerCase(Locale.ROOT));
             if (job == null) {
-                send(sender, "unknown-job", "job", rawJob);
+                reply(sender, "unknown-job", "job", rawJob);
                 return;
             }
             record Entry(String name, double level, double exp) {
@@ -750,7 +750,7 @@ public final class JobsModule extends EssentialsModule implements Listener {
             }
             entries.sort(Comparator.comparingDouble(Entry::level).reversed()
                     .thenComparing(Comparator.comparingDouble(Entry::exp).reversed()));
-            send(sender, "top-header", "job", job.name);
+            reply(sender, "top-header", "job", job.name);
             int rank = 1;
             for (Entry entry : entries) {
                 if (rank > 10) {
@@ -764,7 +764,7 @@ public final class JobsModule extends EssentialsModule implements Listener {
                 rank++;
             }
             if (entries.isEmpty()) {
-                send(sender, "top-empty");
+                reply(sender, "top-empty");
             }
         }
 
@@ -812,7 +812,7 @@ public final class JobsModule extends EssentialsModule implements Listener {
         return String.format(Locale.ROOT, "%.2f", value);
     }
 
-    private void send(CommandSender target, String key, String... kv) {
+    private void reply(CommandSender target, String key, String... kv) {
         target.sendMessage(Text.parse(msg(key, kv)));
     }
 }
