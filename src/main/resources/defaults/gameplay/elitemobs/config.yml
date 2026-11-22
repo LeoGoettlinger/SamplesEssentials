@@ -1,0 +1,19 @@
+# Elite mobs (merged EliteMobs port)
+debug: false
+base-health: 20
+health-per-level: 2
+dynamic-level-radius: 32
+dynamic-level-offset: 0
+alwaysShowEliteMobNameTags: false
+level-format: '&6[Lv.$level]'
+# elite coins dropped by bosses
+drop-elite-coins: true
+coins-per-level: 1.5
+announce-kills: true
+
+help-lines:
+  - "&6EliteMobs &7- commands"
+  - " &f/em spawn <boss> [amount] &8- &7spawn a custom boss"
+  - " &f/em list &8- &7list all bosses"
+  - " &f/em killall &8- &7remove all active bosses"
+  - " &f/em reload &8- &7reload custombosses/"

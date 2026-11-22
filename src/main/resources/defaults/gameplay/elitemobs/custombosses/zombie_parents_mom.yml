@@ -1,0 +1,8 @@
+name: $reinforcementLevel &7Zombie Mom
+isEnabled: true
+entityType: SKELETON
+level: dynamic
+healthMultiplier: 0.5
+damageMultiplier: 0.5
+dropsVanillaLoot: false
+bossType: NORMAL

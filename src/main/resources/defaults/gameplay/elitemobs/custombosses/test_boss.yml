@@ -1,0 +1,16 @@
+name: $eventBossLevel &6Test boss
+onDamageMessages:
+- I've hit you!
+onDamagedMessages:
+- I've been hit!
+isEnabled: true
+entityType: ZOMBIE
+level: dynamic
+healthMultiplier: 2.0
+damageMultiplier: 0.5
+powers:
+- invulnerability_knockback.yml
+trails:
+- BLOCK_MARKER
+timeout: 10
+bossType: NORMAL

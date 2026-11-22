@@ -1,0 +1,14 @@
+name: $normalLevel Wolfy
+onDamageMessages:
+- Woof!
+onDamagedMessages:
+- Woof!
+isEnabled: true
+entityType: WOLF
+level: dynamic
+healthMultiplier: 3.0
+dropsVanillaLoot: false
+trails:
+- BONE
+timeout: 3
+bossType: NORMAL

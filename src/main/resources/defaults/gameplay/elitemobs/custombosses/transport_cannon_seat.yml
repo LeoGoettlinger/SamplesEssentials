@@ -1,0 +1,6 @@
+isEnabled: true
+entityType: PIG
+name: ''
+level: '1'
+dropsVanillaLoot: false
+bossType: NORMAL

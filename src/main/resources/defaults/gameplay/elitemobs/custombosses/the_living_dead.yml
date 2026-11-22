@@ -1,0 +1,9 @@
+name: $reinforcementLevel <g:#808080:#D3D3D3>The Living Dead</g>
+isEnabled: true
+entityType: HUSK
+level: dynamic
+powers:
+- attack_fire.lua
+- corpse.lua
+- ground_pound.yml
+bossType: NORMAL

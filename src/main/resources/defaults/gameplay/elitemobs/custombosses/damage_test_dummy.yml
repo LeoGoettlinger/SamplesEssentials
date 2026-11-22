@@ -1,0 +1,9 @@
+name: '&8[&6Lv.50 &7Damage Test Dummy&8]'
+isEnabled: true
+entityType: HUSK
+level: '50'
+healthMultiplier: 1000.0
+dropsVanillaLoot: false
+bossType: NORMAL
+silent: true
+ai: false
