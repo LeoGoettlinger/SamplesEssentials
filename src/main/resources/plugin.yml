@@ -117,6 +117,15 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  lagfixer:
+    description: Inspect and clean up server lag sources
+    usage: /lagfixer <status|clear|reload>
+    aliases: [lf, antilag]
+    permission: samplese.lagfixer
+  trash:
+    description: Open the trash can
+    usage: /trash
+    permission: samplese.lagfixer.trash
   jobs:
     description: Join jobs and earn money and XP
     usage: /jobs [list|join|leave|stats|top|reload]
@@ -321,6 +330,15 @@ permissions:
     default: true
   samplese.bounty:
     description: Use the bounty system
+    default: true
+  samplese.lagfixer:
+    description: Use /lagfixer
+    default: op
+  samplese.lagfixer.alerts:
+    description: Receive redstone alerts
+    default: op
+  samplese.lagfixer.trash:
+    description: Use /trash
     default: true
   samplese.jobs:
     description: Use jobs

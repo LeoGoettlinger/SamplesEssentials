@@ -1,0 +1,9 @@
+# LagFixer settings (merged port).
+# The individual optimiser modules live in modules/<name>.yml and are copied
+# from the original server configuration.
+main:
+  # Show the entity/chunk status lines in /lagfixer status
+  monitor:
+    worlds:
+      enabled: true
+      interval: 30
