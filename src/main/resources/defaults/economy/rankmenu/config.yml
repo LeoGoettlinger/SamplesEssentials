@@ -1,0 +1,10 @@
+# Rank menu (merged AxRankMenu port)
+# Ranks, icons, prices and buy actions live in ranks.yml.
+
+title: '&0&lʀᴀɴᴋs'
+rows: 3
+
+# stop players from buying a rank below their current weight
+prevent-downgrading: true
+# price = target rank price - owned rank price
+discount-ranks: false

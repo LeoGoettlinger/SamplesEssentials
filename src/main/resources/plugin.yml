@@ -117,6 +117,10 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  rankmenu:
+    description: Open the rank shop
+    usage: /rankmenu
+    aliases: [rank, ranks, axrankmenu]
   demorahop:
     description: Give and list legendary weapons
     usage: /demorahop <give|list|reload>
@@ -383,6 +387,12 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.rankmenu:
+    description: Open the rank menu
+    default: true
+  samplese.rankmenu.admin:
+    description: Reload the rank menu
+    default: op
   samplese.legendaryweapons:
     description: Hold legendary weapons
     default: true

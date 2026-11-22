@@ -1,0 +1,183 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axrankmenu.html
+# ITEM BUILDER: https://docs.artillex-studios.com/item-builder.html
+
+# ----- GUI SETTINGS -----
+title: '&0&lʀᴀɴᴋs'
+# a gui can only have 1-6 rows
+rows: 3
+# valid values: CHEST, WORKBENCH, HOPPER, DISPENSER, BREWING
+type: CHEST
+
+# ----- ITEMS -----
+
+Leather:
+  # the name of the rank
+  rank: leather
+  # set to "" to use the current server
+  server: ''
+  # the price of the rank (check the hooks section)
+  price: 10000.0
+  # check the hooks section
+  currency: Vault
+  # where the item should be in the /ranks gui?
+  slot: 2
+  item:
+    type: LEATHER
+    name: '&8&lLeather &fRANK'
+    lore:
+      # this line will be repeated and replaced for every permission of the rank
+      - ' '
+      - ' &7- &fPrice: &#00AA00$%price%'
+      - ' '
+      - '&#00FF00ᴠᴏʀᴛᴇɪʟᴇ'
+      - ' &7- &64 Homes'
+      - ' &7- &63 Orders'
+      - ' &7- &6Better Postion in Tablist'
+      - ' &7- &6Leather Prefix'
+      - ' '
+      - '&#00FF00&l(!) &#00FF00Click here to purchase!'
+  buy-actions:
+  - '[MESSAGE] &#00EE00You have purchased the &f%name%&#00EE00! &7(%rank%)'
+  - '[CONSOLE] lp user %player% parent set leather'
+  - '[CLOSE] menu'
+
+Stone:
+  rank: stone
+  server: ''
+  price: 100000.0
+  currency: Vault
+  slot: 6
+  item:
+    type: STONE
+    name: '&7&lStone &fRANK'
+    lore:
+    - ' '
+    - ' &7- &fPrice: &#00AA00$%price%'
+    - ' '
+    - '&#00FFFFᴠᴏʀᴛᴇɪʟᴇ'
+    - ' &7- &65 Homes'
+    - ' &7- &64 Orders'
+    - ' &7- &6Better Postion in Tablist'
+    - ' &7- &6Stone Prefix'
+    - ' '
+    - '&#00FFFF&l(!) &#00FFFFClick here to purchase!'
+  buy-actions:
+  - '[MESSAGE] &#00EE00You have purchased the &f%name%&#00EE00! &7(%rank%)'
+  - '[CONSOLE] lp user %player% parent set stone'
+  - '[CLOSE] menu'
+
+Iron:
+  rank: eisen
+  server: ''
+  price: 500000.0
+  currency: Vault
+  slot: 12
+  item:
+    type: IRON_INGOT
+    name: '&f&lIron &fRANK'
+    lore:
+    - ' '
+    - ' &7- &fPrice: &#00AA00$%price%'
+    - ' '
+    - '&#00FFFFᴠᴏʀᴛᴇɪʟᴇ'
+    - ' &7- &66 Homes'
+    - ' &7- &65 Orders'
+    - ' &7- &6Better Postion in Tablist'
+    - ' &7- &6Eisen Prefix'
+    - ' '
+    - '&#00FFFF&l(!) &#00FFFFClick here to purchase!'
+  buy-actions:
+  - '[MESSAGE] &#00EE00You have purchased the &f%name%&#00EE00! &7(%rank%)'
+  - '[CONSOLE] lp user %player% parent set eisen'
+  - '[CLOSE] menu'
+
+Gold:
+  rank: gold
+  server: ''
+  price: 1000000.0
+  currency: Vault
+  slot: 14
+  item:
+    type: GOLD_INGOT
+    name: '&e&lGold &fRANK'
+    lore:
+    - ' '
+    - ' &7- &fPrice: &#00AA00$%price%'
+    - ' '
+    - '&#00FFFFᴠᴏʀᴛᴇɪʟᴇ'
+    - ' &7- &67 Homes'
+    - ' &7- &66 Orders'
+    - ' &7- &6Better Postion in Tablist'
+    - ' &7- &6Gold Prefix'
+    - ' '
+    - '&#00FFFF&l(!) &#00FFFFClick here to purchase!'
+  buy-actions:
+  - '[MESSAGE] &#00EE00You have purchased the &f%name%&#00EE00! &7(%rank%)'
+  - '[CONSOLE] lp user %player% parent set gold'
+  - '[CLOSE] menu'
+
+Diamond:
+  rank: diamond
+  server: ''
+  price: 2000000.0
+  currency: Vault
+  slot: 20
+  item:
+    type: DIAMOND
+    name: '&3&lDiamond &fRANK'
+    lore:
+    - ' '
+    - ' &7- &fPrice: &#00AA00$%price%'
+    - ' '
+    - '&#00FFFFᴠᴏʀᴛᴇɪʟᴇ'
+    - ' &7- &68 Homes'
+    - ' &7- &67 Orders'
+    - ' &7- &6Better Postion in Tablist'
+    - ' &7- &6Diamond Prefix'
+    - ' '
+    - '&#00FFFF&l(!) &#00FFFFClick here to purchase!'
+  buy-actions:
+  - '[MESSAGE] &#00EE00You have purchased the &f%name%&#00EE00! &7(%rank%)'
+  - '[CONSOLE] lp user %player% parent set diamond'
+  - '[CLOSE] menu'
+
+Netherite:
+  rank: netherite
+  server: ''
+  price: 10000000.0
+  currency: Vault
+  slot: 24
+  item:
+    type: NETHERITE_INGOT
+    name: '&0&lNetherite &fRANK'
+    lore:
+    - ' '
+    - ' &7- &fPrice: &#00AA00$%price%'
+    - ' '
+    - '&#00FFFFᴠᴏʀᴛᴇɪʟᴇ'
+    - ' &7- &610 Homes'
+    - ' &7- &610 Orders'
+    - ' &7- &6Better Postion in Tablist'
+    - ' &7- &6Netherite Prefix'
+    - ' '
+    - '&#00FFFF&l(!) &#00FFFFClick here to purchase!'
+  buy-actions:
+  - '[MESSAGE] &#00EE00You have purchased the &f%name%&#00EE00! &7(%rank%)'
+  - '[CONSOLE] lp user %player% parent set netherite'
+  - '[CLOSE] menu'
+
+# you can add as many decorations as you would like
+SOME-DECORATION:
+  slot:
+  - 0
+  - 9
+  - 18
+  - 8
+  - 17
+  - 26
+  item:
+    type: WHITE_STAINED_GLASS_PANE
+    name: ' '
+
+# do not change
+version: 1

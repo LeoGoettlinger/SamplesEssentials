@@ -14,6 +14,7 @@ import su.samplecraft.essentials.modules.moderation.MaintenanceModule;
 import su.samplecraft.essentials.modules.economy.AuctionModule;
 import su.samplecraft.essentials.modules.economy.BountyModule;
 import su.samplecraft.essentials.modules.economy.JobsModule;
+import su.samplecraft.essentials.modules.economy.RankMenuModule;
 import su.samplecraft.essentials.modules.gameplay.LegendaryWeaponsModule;
 import su.samplecraft.essentials.modules.economy.ClansModule;
 import su.samplecraft.essentials.modules.economy.TradeModule;
@@ -117,6 +118,7 @@ public final class SamplesEssentials extends JavaPlugin {
         moduleManager.register(new AuctionModule(this));
         moduleManager.register(new BountyModule(this));
         moduleManager.register(new JobsModule(this));
+        moduleManager.register(new RankMenuModule(this));
         moduleManager.register(new LegendaryWeaponsModule(this));
         moduleManager.register(new ClansModule(this));
         moduleManager.register(new TradeModule(this));
