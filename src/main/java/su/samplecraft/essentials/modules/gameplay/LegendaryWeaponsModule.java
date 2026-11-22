@@ -373,27 +373,28 @@ public final class LegendaryWeaponsModule extends EssentialsModule implements Li
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onHit(EntityDamageByEntityEvent event) {
-        Player attacker = null;
+        Player source = null;
         if (event.getDamager() instanceof Player player) {
-            attacker = player;
+            source = player;
         } else if (event.getDamager() instanceof Projectile projectile
                 && projectile.getShooter() instanceof Player shooter) {
-            attacker = shooter;
+            source = shooter;
         }
-        if (attacker == null) {
+        if (source == null) {
             return;
         }
-        Weapon weapon = weaponOf(attacker.getInventory().getItemInMainHand());
+        final Player source = source;
+        Weapon weapon = weaponOf(source.getInventory().getItemInMainHand());
         if (weapon == null) {
             return;
         }
         switch (weapon.ability()) {
             case "heal" -> {
                 double hearts = cfgDouble("weapons.reaper_scythe.heal_hearts", 2);
-                var maxHealth = attacker.getAttribute(Attribute.MAX_HEALTH);
+                var maxHealth = source.getAttribute(Attribute.MAX_HEALTH);
                 double max = maxHealth == null ? 20 : maxHealth.getValue();
-                attacker.setHealth(Math.min(max, attacker.getHealth() + hearts * 2));
-                attacker.getWorld().spawnParticle(Particle.HEART, attacker.getLocation().add(0, 2, 0),
+                source.setHealth(Math.min(max, source.getHealth() + hearts * 2));
+                source.getWorld().spawnParticle(Particle.HEART, source.getLocation().add(0, 2, 0),
                         3, 0.4, 0.4, 0.4, 0.01);
             }
             case "wither" -> {
@@ -406,7 +407,7 @@ public final class LegendaryWeaponsModule extends EssentialsModule implements Li
                     double bleed = cfgDouble("weapons.chainsaw_sword.bleed-damage", 2);
                     syncLater(20L, () -> {
                         if (living.isValid()) {
-                            living.damage(bleed, attacker);
+                            living.damage(bleed, source);
                             living.getWorld().spawnParticle(Particle.DUST, living.getLocation().add(0, 1, 0),
                                     8, 0.3, 0.3, 0.3, 0.01);
                         }
@@ -414,12 +415,7 @@ public final class LegendaryWeaponsModule extends EssentialsModule implements Li
                 }
             }
             case "grow" -> {
-                double bonus = midasBonus.merge(attacker.getUniqueId(), 2.0, Double::sum);
-                double max = cfgDouble("weapons.midas_sword.max-damage", 25);
-                if (bonus > max) {
-                    midasBonus.put(attacker.getUniqueId(), max);
-                }
-                event.setDamage(event.getDamage() + Math.min(bonus, max) - 2.0);
+                // growth is awarded on kill (see onDeath) so hits keep the base damage
             }
             default -> {
                 // no on-hit ability
