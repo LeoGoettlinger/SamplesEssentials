@@ -117,6 +117,9 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  demorahop:
+    description: Give and list legendary weapons
+    usage: /demorahop <give|list|reload>
   clan:
     description: Clans with ranks, bank, levels, diplomacy and base
     usage: /clan help
@@ -380,6 +383,12 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.legendaryweapons:
+    description: Hold legendary weapons
+    default: true
+  samplese.legendaryweapons.admin:
+    description: Give legendary weapons
+    default: op
   samplese.clans:
     description: Use /clan
     default: true
@@ -469,6 +478,9 @@ permissions:
     default: op
   samplese.afkzone:
     description: Manage AFK zones
+    default: op
+  samplese.afkzone.admin:
+    description: Manage AFK zones (create, delete, configure)
     default: op
   samplese.afkzone.bypass.iplimit:
     description: Bypass the per-IP limit in AFK zones
