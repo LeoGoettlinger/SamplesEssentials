@@ -1,0 +1,26 @@
+# NPCs (merged FancyNpcs port)
+debug: false
+glowing-by-default: false
+# default visibility distance in blocks (-1 = always visible)
+visibility_distance: 20
+disable_interaction_cooldown_message: false
+# how often NPC visibility and turning is refreshed (ticks)
+npc_update_visibility_interval: 20
+
+help-lines:
+  - "&6NPCs &7- commands"
+  - " &f/npc create <name> [type] &8- &7spawn an NPC where you stand"
+  - " &f/npc list &8- &7list all NPCs"
+  - " &f/npc remove <name> &8- &7delete an NPC"
+  - " &f/npc tp|here <name> &8- &7teleport to / move an NPC"
+  - " &f/npc displayName <name> <text> &8- &7change the name tag"
+  - " &f/npc type <name> <entitytype>"
+  - " &f/npc glowing|collidable <name> [true|false]"
+  - " &f/npc cooldown <name> <seconds> &8- &7anti-spam cooldown"
+  - " &f/npc turnToPlayer <name> <distance>"
+  - " &f/npc visibilityDistance <name> <blocks>"
+  - " &f/npc scale <name> <0.2-4>"
+  - " &f/npc action <name> <add|remove|list> [trigger] [type] [value]"
+  - " &8triggers: ANY_CLICK, RIGHT_CLICK, LEFT_CLICK"
+  - " &8types: player_command, console_command, message, sound"
+  - " &f/npc save|reload"

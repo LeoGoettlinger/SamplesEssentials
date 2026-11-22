@@ -117,6 +117,10 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  npc:
+    description: Manage NPCs
+    usage: /npc help
+    aliases: [fancynpcs, npcs]
   emf:
     description: Fishing competitions and custom fish
     usage: /emf <start|stop|status|fish|reload>
@@ -396,6 +400,12 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.npcs:
+    description: Use NPCs
+    default: true
+  samplese.npcs.admin:
+    description: Manage NPCs
+    default: op
   samplese.fishing:
     description: Participate in fishing competitions
     default: true
