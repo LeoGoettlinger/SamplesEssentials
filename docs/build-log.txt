@@ -35,16 +35,16 @@ Daemon will be stopped at the end of the build
 /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:470: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
             player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(sound.toUpperCase(Locale.ROOT)),
                                                                    ^
-/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LegendaryWeaponsModule.java:409: error: local variables referenced from a lambda expression must be final or effectively final
-                            living.damage(bleed, attacker);
-                                                 ^
+/home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LegendaryWeaponsModule.java:386: error: variable source is already defined in method onHit(EntityDamageByEntityEvent)
+        final Player source = source;
+                     ^
 Note: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 1 error
 7 warnings
 
 > Task :compileJava FAILED
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795335672724.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/gradle-1795335869098.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/SamplesEssentials/SamplesEssentials/build/reports/problems/problems-report.html
 
@@ -53,9 +53,6 @@ FAILURE: Build failed with an exception.
 * What went wrong:
 Execution failed for task ':compileJava'.
 > Compilation failed; see the compiler output below.
-  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LegendaryWeaponsModule.java:409: error: local variables referenced from a lambda expression must be final or effectively final
-                              living.damage(bleed, attacker);
-                                                   ^
   Note: Recompile with -Xlint:deprecation for details.
   Note: Some input files use or override a deprecated API.
   /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/moderation/PvPModule.java:351: warning: [removal] CHORUS_FRUIT in TeleportCause has been deprecated and marked for removal
@@ -79,6 +76,9 @@ Execution failed for task ':compileJava'.
   /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LevelToolsModule.java:470: warning: [removal] valueOf(@org.jetbrains.annotations.NotNull String) in Sound has been deprecated and marked for removal
               player.playSound(player.getLocation(), org.bukkit.Sound.valueOf(sound.toUpperCase(Locale.ROOT)),
                                                                      ^
+  /home/runner/work/SamplesEssentials/SamplesEssentials/src/main/java/su/samplecraft/essentials/modules/gameplay/LegendaryWeaponsModule.java:386: error: variable source is already defined in method onHit(EntityDamageByEntityEvent)
+          final Player source = source;
+                       ^
   1 error
   7 warnings
 
@@ -86,5 +86,5 @@ Execution failed for task ':compileJava'.
 > Check your code and dependencies to fix the compilation error(s)
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
 
-BUILD FAILED in 32s
+BUILD FAILED in 37s
 1 actionable task: 1 executed
