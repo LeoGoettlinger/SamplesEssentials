@@ -1,0 +1,38 @@
+# Custom fish per rarity (merged EvenMoreFish port)
+# min-length / max-length are in cm, base-worth is the pre-multiplier value.
+Cod:
+  rarity: Common
+  material: COD
+  min-length: 10
+  max-length: 45
+  base-worth: 12
+Salmon:
+  rarity: Common
+  material: SALMON
+  min-length: 15
+  max-length: 60
+  base-worth: 15
+Boot:
+  rarity: Junk
+  material: LEATHER_BOOTS
+  min-length: 5
+  max-length: 30
+  base-worth: 1
+TropicalFish:
+  rarity: Rare
+  material: TROPICAL_FISH
+  min-length: 5
+  max-length: 25
+  base-worth: 90
+Pufferfish:
+  rarity: Epic
+  material: PUFFERFISH
+  min-length: 8
+  max-length: 30
+  base-worth: 220
+GoldenCarp:
+  rarity: Legendary
+  material: GOLDEN_CARP
+  min-length: 40
+  max-length: 90
+  base-worth: 900

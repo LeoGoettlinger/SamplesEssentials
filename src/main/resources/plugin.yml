@@ -117,6 +117,10 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  emf:
+    description: Fishing competitions and custom fish
+    usage: /emf <start|stop|status|fish|reload>
+    aliases: [evenmorefish]
   inventory:
     description: Save and load inventories
     usage: /inventory <save|load|delete|list>
@@ -392,6 +396,15 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.fishing:
+    description: Participate in fishing competitions
+    default: true
+  samplese.fishing.admin:
+    description: Manage fishing competitions
+    default: op
+  samplese.fishing.competition.start:
+    description: Start fishing competitions
+    default: op
   samplese.inventorysave:
     description: Use /inventory
     default: op

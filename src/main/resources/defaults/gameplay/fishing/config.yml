@@ -1,0 +1,5 @@
+# Fishing (merged EvenMoreFish port)
+fishing:
+  catch-enabled: true
+  # send the fisher a message with fish name, length and rarity
+  announce-catches: true
