@@ -146,7 +146,7 @@ public final class PvPModule extends EssentialsModule implements Listener {
         if (cfgBool("combat-tag.action-bar.enabled", true)) {
             player.sendActionBar(Component.empty());
         }
-        send(player, "untagged");
+        reply(player, "untagged");
     }
 
     private void tick() {
@@ -169,7 +169,7 @@ public final class PvPModule extends EssentialsModule implements Listener {
                     if (bar != null) {
                         player.hideBossBar(bar);
                     }
-                    send(player, "newbie.expired");
+                    reply(player, "newbie.expired");
                 } else {
                     showNewbieHud(player, newbie - now);
                 }
@@ -253,7 +253,7 @@ public final class PvPModule extends EssentialsModule implements Listener {
         pvpEnabled.put(player.getUniqueId(), state);
         toggleCooldown.put(player.getUniqueId(), System.currentTimeMillis()
                 + Math.max(0, cfgInt("pvp-toggle.cooldown", 15)) * 1000L);
-        send(player, state ? "pvp-toggle.enabled" : "pvp-toggle.disabled");
+        reply(player, state ? "pvp-toggle.enabled" : "pvp-toggle.disabled");
         runCommands(state ? "pvp-toggle.commands.pvp-on" : "pvp-toggle.commands.pvp-off", player);
     }
 
@@ -286,12 +286,12 @@ public final class PvPModule extends EssentialsModule implements Listener {
         // PvP toggle and newbie protection
         if (!pvpOn(attacker) || !pvpOn(victim)) {
             event.setCancelled(true);
-            send(attacker, "pvp-toggle.blocked-attack", "player", victim.getName());
+            reply(attacker, "pvp-toggle.blocked-attack", "player", victim.getName());
             return;
         }
         if (newbieProtected(victim)) {
             event.setCancelled(true);
-            send(attacker, "newbie.protected", "player", victim.getName());
+            reply(attacker, "newbie.protected", "player", victim.getName());
             return;
         }
         if (cfgBool("combat-tag.duel-mode", false) && tagged(victim)
@@ -330,7 +330,7 @@ public final class PvPModule extends EssentialsModule implements Listener {
         boolean listed = list.contains(label);
         if ((whitelist && !listed) || (!whitelist && listed)) {
             event.setCancelled(true);
-            send(player, "command-blocked");
+            reply(player, "command-blocked");
         }
     }
 
@@ -356,7 +356,7 @@ public final class PvPModule extends EssentialsModule implements Listener {
                 || cause == PlayerTeleportEvent.TeleportCause.CHORUS_FRUIT
                 || cfgBool("combat-tag.actions-blocked.unsafe-teleports", false)) {
             event.setCancelled(true);
-            send(player, "teleport-blocked");
+            reply(player, "teleport-blocked");
         }
     }
 
@@ -365,7 +365,7 @@ public final class PvPModule extends EssentialsModule implements Listener {
         if (tagged(event.getPlayer()) && !event.getPlayer().hasPermission("samplese.pvp.bypass")
                 && cfgBool("combat-tag.actions-blocked.place-blocks", false)) {
             event.setCancelled(true);
-            send(event.getPlayer(), "place-blocked");
+            reply(event.getPlayer(), "place-blocked");
         }
     }
 
@@ -374,19 +374,21 @@ public final class PvPModule extends EssentialsModule implements Listener {
         if (tagged(event.getPlayer()) && !event.getPlayer().hasPermission("samplese.pvp.bypass")
                 && cfgBool("combat-tag.actions-blocked.break-blocks", false)) {
             event.setCancelled(true);
-            send(event.getPlayer(), "break-blocked");
+            reply(event.getPlayer(), "break-blocked");
         }
     }
 
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
-    public void onGlide(org.bukkit.event.player.PlayerToggleGlideEvent event) {
-        Player player = event.getPlayer();
-        if (!event.isGliding() || !tagged(player) || player.hasPermission("samplese.pvp.bypass")) {
+    public void onGlide(org.bukkit.event.entity.EntityToggleGlideEvent event) {
+        if (!(event.getEntity() instanceof Player player) || !event.isGliding()) {
+            return;
+        }
+        if (!tagged(player) || player.hasPermission("samplese.pvp.bypass")) {
             return;
         }
         if (cfgBool("combat-tag.actions-blocked.elytra.block-gliding", true)) {
             event.setCancelled(true);
-            send(player, "elytra-blocked");
+            reply(player, "elytra-blocked");
         }
     }
 
@@ -427,7 +429,7 @@ public final class PvPModule extends EssentialsModule implements Listener {
             newbieUntil.put(player.getUniqueId(), until);
             syncLater(20L, () -> {
                 if (player.isOnline()) {
-                    send(player, "newbie.status",
+                    reply(player, "newbie.status",
                             "time", formatClock(Math.max(0, (until - System.currentTimeMillis()) / 1000L)));
                 }
             });
@@ -447,7 +449,7 @@ public final class PvPModule extends EssentialsModule implements Listener {
             }
             plugin.getServer().getOnlinePlayers().forEach(other -> {
                 if (other.hasPermission("samplese.pvp.status")) {
-                    send(other, "combat-log.broadcast", "player", player.getName());
+                    reply(other, "combat-log.broadcast", "player", player.getName());
                 }
             });
         }
@@ -473,15 +475,15 @@ public final class PvPModule extends EssentialsModule implements Listener {
                     }
                     Boolean state = parseState(args[1]);
                     if (state == null) {
-                        send(sender, "usage");
+                        reply(sender, "usage");
                         return true;
                     }
                     pvpEnabled.put(target.getUniqueId(), state);
-                    send(sender, "pvp-toggle.admin-changed", "player", target.getName(),
+                    reply(sender, "pvp-toggle.admin-changed", "player", target.getName(),
                             "state", state ? "on" : "off");
                     return true;
                 }
-                send(sender, "player-only");
+                reply(sender, "player-only");
                 return true;
             }
             if (args.length == 0) {
@@ -494,16 +496,16 @@ public final class PvPModule extends EssentialsModule implements Listener {
             }
             Player target = plugin.getServer().getPlayer(args[0]);
             if (target == null) {
-                send(sender, "player-not-found", "player", args[0]);
+                reply(sender, "player-not-found", "player", args[0]);
                 return true;
             }
             Boolean state = args.length > 1 ? parseState(args[1]) : !pvpOn(target);
             if (state == null) {
-                send(sender, "usage");
+                reply(sender, "usage");
                 return true;
             }
             pvpEnabled.put(target.getUniqueId(), state);
-            send(sender, "pvp-toggle.admin-changed", "player", target.getName(),
+            reply(sender, "pvp-toggle.admin-changed", "player", target.getName(),
                     "state", state ? "on" : "off");
             return true;
         }
@@ -511,12 +513,12 @@ public final class PvPModule extends EssentialsModule implements Listener {
         private void toggleSelf(Player player, boolean state) {
             Long cooldown = toggleCooldown.get(player.getUniqueId());
             if (cooldown != null && cooldown > System.currentTimeMillis()) {
-                send(player, "pvp-toggle.cooldown",
+                reply(player, "pvp-toggle.cooldown",
                         "seconds", String.valueOf((cooldown - System.currentTimeMillis()) / 1000L + 1));
                 return;
             }
             if (pvpOn(player) == state) {
-                send(player, state ? "pvp-toggle.already-enabled" : "pvp-toggle.already-disabled");
+                reply(player, state ? "pvp-toggle.already-enabled" : "pvp-toggle.already-disabled");
                 return;
             }
             setPvp(player, state);
@@ -554,7 +556,7 @@ public final class PvPModule extends EssentialsModule implements Listener {
             Player target = args.length > 0 ? plugin.getServer().getPlayer(args[0])
                     : sender instanceof Player player ? player : null;
             if (target == null) {
-                send(sender, "player-not-found", "player", args.length > 0 ? args[0] : "?");
+                reply(sender, "player-not-found", "player", args.length > 0 ? args[0] : "?");
                 return true;
             }
             boolean pvp = pvpOn(target);
@@ -576,32 +578,32 @@ public final class PvPModule extends EssentialsModule implements Listener {
         public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command,
                                  @NotNull String label, String @NotNull [] args) {
             if (!(sender instanceof Player player)) {
-                send(sender, "player-only");
+                reply(sender, "player-only");
                 return true;
             }
             if (!cfgBool("newbie.enabled", true)) {
-                send(player, "newbie.disabled-feature");
+                reply(player, "newbie.disabled-feature");
                 return true;
             }
             if (args.length == 0) {
                 if (newbieProtected(player)) {
                     long remaining = (newbieUntil.get(player.getUniqueId()) - System.currentTimeMillis()) / 1000L;
-                    send(player, "newbie.status", "time", formatClock(Math.max(0, remaining)));
+                    reply(player, "newbie.status", "time", formatClock(Math.max(0, remaining)));
                 } else {
-                    send(player, "newbie.none");
+                    reply(player, "newbie.none");
                 }
                 return true;
             }
             if (!args[0].equalsIgnoreCase("disable")) {
-                send(player, "newbie.usage");
+                reply(player, "newbie.usage");
                 return true;
             }
             if (!cfgBool("newbie.allow-player-disable", true)) {
-                send(player, "newbie.cannot-disable");
+                reply(player, "newbie.cannot-disable");
                 return true;
             }
             if (!newbieProtected(player)) {
-                send(player, "newbie.none");
+                reply(player, "newbie.none");
                 return true;
             }
             newbieUntil.remove(player.getUniqueId());
@@ -609,7 +611,7 @@ public final class PvPModule extends EssentialsModule implements Listener {
             if (bar != null) {
                 player.hideBossBar(bar);
             }
-            send(player, "newbie.disabled");
+            reply(player, "newbie.disabled");
             return true;
         }
     }
@@ -623,20 +625,20 @@ public final class PvPModule extends EssentialsModule implements Listener {
                 return true;
             }
             if (args.length == 0) {
-                send(sender, "tag.usage");
+                reply(sender, "tag.usage");
                 return true;
             }
             Player target = plugin.getServer().getPlayer(args[0]);
             if (target == null) {
-                send(sender, "player-not-found", "player", args[0]);
+                reply(sender, "player-not-found", "player", args[0]);
                 return true;
             }
             if (args.length > 1 && args[1].equalsIgnoreCase("off")) {
                 untag(target);
-                send(sender, "tag.removed", "player", target.getName());
+                reply(sender, "tag.removed", "player", target.getName());
             } else {
                 tag(target);
-                send(sender, "tag.added", "player", target.getName(),
+                reply(sender, "tag.added", "player", target.getName(),
                         "seconds", String.valueOf(tagSeconds()));
             }
             return true;
@@ -661,7 +663,7 @@ public final class PvPModule extends EssentialsModule implements Listener {
     /* helpers                                                            */
     /* ------------------------------------------------------------------ */
 
-    private void send(CommandSender target, String key, String... kv) {
+    private void reply(CommandSender target, String key, String... kv) {
         target.sendMessage(Text.parse(msg(key, kv)));
     }
 

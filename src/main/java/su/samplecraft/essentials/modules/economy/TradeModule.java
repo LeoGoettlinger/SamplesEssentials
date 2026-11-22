@@ -181,8 +181,8 @@ public final class TradeModule extends EssentialsModule implements Listener {
                 cfgString("gui.xp-name", "&b&lEXPERIENCE"), trade.firstXp, first));
         inv.setItem(PARTNER_XP_SLOT, currencyIcon(Material.EXPERIENCE_BOTTLE,
                 cfgString("gui.xp-name", "&b&lEXPERIENCE"), trade.secondXp, second));
-        inv.setItem(OWN_CONFIRM_SLOT, confirmIcon(trade.firstConfirmed, trade.first, true));
-        inv.setItem(PARTNER_CONFIRM_SLOT, confirmIcon(trade.secondConfirmed, trade.second, false));
+        inv.setItem(OWN_CONFIRM_SLOT, confirmIcon(trade.firstConfirmed, first, true));
+        inv.setItem(PARTNER_CONFIRM_SLOT, confirmIcon(trade.secondConfirmed, second, false));
     }
 
     private ItemStack currencyIcon(Material material, String name, double amount, Player owner) {
@@ -237,19 +237,19 @@ public final class TradeModule extends EssentialsModule implements Listener {
     private void start(Player first, Player second) {
         if (tradesByPlayer.containsKey(first.getUniqueId())
                 || tradesByPlayer.containsKey(second.getUniqueId())) {
-            send(first, "already-trading");
+            reply(first, "already-trading");
             return;
         }
         if (blockedWorld(first) || blockedWorld(second)) {
-            send(first, "world-blocked");
+            reply(first, "world-blocked");
             return;
         }
         if (cfgBool("disallow-same-ip-trade", false) && sameIp(first, second)) {
-            send(first, "same-ip", "player", second.getName());
+            reply(first, "same-ip", "player", second.getName());
             return;
         }
         if (!nearby(first, second)) {
-            send(first, "too-far", "player", second.getName());
+            reply(first, "too-far", "player", second.getName());
             return;
         }
         Trade trade = new Trade(first, second);
@@ -310,12 +310,12 @@ public final class TradeModule extends EssentialsModule implements Listener {
         for (ItemStack leftover : second.getInventory().addItem(toSecond.toArray(ItemStack[]::new)).values()) {
             second.getWorld().dropItem(second.getLocation(), leftover);
         }
-        send(first, "completed", "player", second.getName());
-        send(second, "completed", "player", first.getName());
+        reply(first, "completed", "player", second.getName());
+        reply(second, "completed", "player", first.getName());
         if (cfgBool("enable-trade-summaries", true)) {
-            send(first, "summary", "money", formatNumber(trade.secondMoney),
+            reply(first, "summary", "money", formatNumber(trade.secondMoney),
                     "items", String.valueOf(toFirst.size()));
-            send(second, "summary", "money", formatNumber(trade.firstMoney),
+            reply(second, "summary", "money", formatNumber(trade.firstMoney),
                     "items", String.valueOf(toSecond.size()));
         }
     }
@@ -538,7 +538,7 @@ public final class TradeModule extends EssentialsModule implements Listener {
                 ItemStack cursor = event.getCursor();
                 if (cursor != null && !cursor.getType().isAir()) {
                     if (blacklisted(cursor, player)) {
-                        send(player, "blacklisted");
+                        reply(player, "blacklisted");
                         return;
                     }
                     mine.put(storageKey, cursor.clone());
@@ -573,10 +573,10 @@ public final class TradeModule extends EssentialsModule implements Listener {
             Player second = plugin.getServer().getPlayer(trade.second);
             if (wait > 0) {
                 if (first != null) {
-                    send(first, "both-confirmed", "seconds", String.valueOf(wait));
+                    reply(first, "both-confirmed", "seconds", String.valueOf(wait));
                 }
                 if (second != null) {
-                    send(second, "both-confirmed", "seconds", String.valueOf(wait));
+                    reply(second, "both-confirmed", "seconds", String.valueOf(wait));
                 }
             }
         } else {
@@ -605,7 +605,7 @@ public final class TradeModule extends EssentialsModule implements Listener {
         next = Math.max(0, next);
         var economy = economy();
         if (economy == null) {
-            send(player, "no-economy");
+            reply(player, "no-economy");
             return;
         }
         if (next > economy.getBalance(player)) {
@@ -726,21 +726,21 @@ public final class TradeModule extends EssentialsModule implements Listener {
 
     private void request(Player sender, Player target) {
         if (!target.hasPermission("samplese.trade")) {
-            send(sender, "target-disabled", "player", target.getName());
+            reply(sender, "target-disabled", "player", target.getName());
             return;
         }
         if (toggledOff.contains(target.getUniqueId())) {
-            send(sender, "target-disabled", "player", target.getName());
+            reply(sender, "target-disabled", "player", target.getName());
             return;
         }
         if (tradesByPlayer.containsKey(target.getUniqueId())) {
-            send(sender, "already-trading", "player", target.getName());
+            reply(sender, "already-trading", "player", target.getName());
             return;
         }
         requests.put(target.getUniqueId(), new Request(sender.getUniqueId(), target.getUniqueId(),
                 System.currentTimeMillis()));
-        send(sender, "request-sent", "player", target.getName());
-        send(target, "request-received", "player", sender.getName());
+        reply(sender, "request-sent", "player", target.getName());
+        reply(target, "request-received", "player", sender.getName());
     }
 
     /* ------------------------------------------------------------------ */
@@ -753,10 +753,10 @@ public final class TradeModule extends EssentialsModule implements Listener {
                                  @NotNull String label, String @NotNull [] args) {
             if (args.length == 0) {
                 if (!(sender instanceof Player player)) {
-                    send(sender, "player-only");
+                    reply(sender, "player-only");
                     return true;
                 }
-                send(player, "usage");
+                reply(player, "usage");
                 return true;
             }
             String sub = args[0].toLowerCase(Locale.ROOT);
@@ -767,48 +767,48 @@ public final class TradeModule extends EssentialsModule implements Listener {
                         return true;
                     }
                     reloadConfig();
-                    send(sender, "reloaded");
+                    reply(sender, "reloaded");
                 }
                 case "toggle", "toggled" -> {
                     if (!(sender instanceof Player player)) {
-                        send(sender, "player-only");
+                        reply(sender, "player-only");
                         return true;
                     }
                     if (toggledOff.remove(player.getUniqueId())) {
                         saveConfigValue("toggled." + player.getUniqueId(), null);
-                        send(player, "toggle-on");
+                        reply(player, "toggle-on");
                     } else {
                         toggledOff.add(player.getUniqueId());
                         saveConfigValue("toggled." + player.getUniqueId(), true);
-                        send(player, "toggle-off");
+                        reply(player, "toggle-off");
                     }
                 }
                 case "accept" -> {
                     if (!(sender instanceof Player player)) {
-                        send(sender, "player-only");
+                        reply(sender, "player-only");
                         return true;
                     }
                     accept(player);
                 }
                 case "deny" -> {
                     if (!(sender instanceof Player player)) {
-                        send(sender, "player-only");
+                        reply(sender, "player-only");
                         return true;
                     }
                     Request request = requests.remove(player.getUniqueId());
                     if (request == null) {
-                        send(player, "no-request");
+                        reply(player, "no-request");
                         return true;
                     }
                     Player requester = plugin.getServer().getPlayer(request.sender());
-                    send(player, "denied");
+                    reply(player, "denied");
                     if (requester != null) {
-                        send(requester, "denied-sender", "player", player.getName());
+                        reply(requester, "denied-sender", "player", player.getName());
                     }
                 }
                 default -> {
                     if (!(sender instanceof Player player)) {
-                        send(sender, "player-only");
+                        reply(sender, "player-only");
                         return true;
                     }
                     if (!player.hasPermission("samplese.trade")) {
@@ -821,7 +821,7 @@ public final class TradeModule extends EssentialsModule implements Listener {
                         return true;
                     }
                     if (target.equals(player)) {
-                        send(player, "self-request");
+                        reply(player, "self-request");
                         return true;
                     }
                     request(player, target);
@@ -833,12 +833,12 @@ public final class TradeModule extends EssentialsModule implements Listener {
         private void accept(Player player) {
             Request request = requests.remove(player.getUniqueId());
             if (request == null) {
-                send(player, "no-request");
+                reply(player, "no-request");
                 return;
             }
             Player sender = plugin.getServer().getPlayer(request.sender());
             if (sender == null) {
-                send(player, "requester-offline");
+                reply(player, "requester-offline");
                 return;
             }
             start(sender, player);
@@ -865,7 +865,7 @@ public final class TradeModule extends EssentialsModule implements Listener {
         return String.format(Locale.ROOT, "%.2f", value);
     }
 
-    private void send(CommandSender target, String key, String... kv) {
+    private void reply(CommandSender target, String key, String... kv) {
         target.sendMessage(Text.parse(msg(key, kv)));
     }
 }
