@@ -60,7 +60,7 @@ public final class Lang {
         moduleFiles.clear();
         moduleFallbacks.clear();
 
-        common = loadFile("common.yml");
+        common = loadFile(locale, "common.yml");
         commonFallback = loadBundled("common.yml");
         if (common == null) {
             common = new YamlConfiguration();
@@ -68,7 +68,7 @@ public final class Lang {
 
         for (EssentialsModule module : plugin.getModules().all().values()) {
             String relative = module.getCategoria() + "/" + module.getName() + ".yml";
-            YamlConfiguration file = loadFile(relative);
+            YamlConfiguration file = loadFile(locale, relative);
             if (file == null) {
                 file = new YamlConfiguration();
             }
@@ -81,6 +81,7 @@ public final class Lang {
 
     /** Older builds wrote lang/<locale>.yml - keep those users working. */
     private void migrateFlatFiles() {
+        migrateLocaleLessModuleFiles();
         File legacy = new File(root, locale + ".yml");
         if (!legacy.isFile()) {
             return;
@@ -99,26 +100,55 @@ public final class Lang {
         legacy.renameTo(renamed);
     }
 
+    /**
+     * Older builds wrote module files without a locale folder
+     * ({@code lang/<categoria>/<module>.yml}). Move them into {@code lang/en/...}
+     * so upgraded servers keep their edits.
+     */
+    private void migrateLocaleLessModuleFiles() {
+        for (EssentialsModule module : plugin.getModules().all().values()) {
+            File legacy = new File(root, module.getCategoria() + "/" + module.getName() + ".yml");
+            if (!legacy.isFile()) {
+                continue;
+            }
+            File target = new File(new File(root, DEFAULT_LOCALE),
+                    module.getCategoria() + "/" + module.getName() + ".yml");
+            if (target.isFile()) {
+                continue;
+            }
+            ensureDir(target.getParentFile());
+            if (legacy.renameTo(target)) {
+                plugin.getLogger().info("Moved legacy lang file " + legacy.getName()
+                        + " into lang/" + DEFAULT_LOCALE + "/" + module.getCategoria() + "/");
+            }
+        }
+    }
+
     private static void ensureDir(File dir) {
         if (dir != null && !dir.isDirectory() && !dir.mkdirs()) {
             // best effort - the caller logs the concrete failure
         }
     }
 
-    private YamlConfiguration loadFile(String relative) {
-        File file = new File(root, relative);
+    /**
+     * Loads {@code lang/<locale>/<relative>}, seeding a missing file with the
+     * packaged English default. Lookup order ({@link #lookup(String)}) is the
+     * active locale file, then the jar's English copy, so a locale folder only
+     * needs the keys it actually translates.
+     */
+    private YamlConfiguration loadFile(String locale, String relative) {
+        File file = new File(new File(root, locale), relative);
         if (file.isFile()) {
             return YamlConfiguration.loadConfiguration(file);
         }
-        // extract packaged default into the server's lang folder
-        try (InputStream in = plugin.getResource("lang/" + relative)) {
+        try (InputStream in = plugin.getResource("lang/" + DEFAULT_LOCALE + "/" + relative)) {
             if (in == null) {
                 return null;
             }
             ensureDir(file.getParentFile());
             Files.copy(in, file.toPath());
         } catch (IOException e) {
-            plugin.getLogger().warning("Could not extract lang/" + relative + ": " + e.getMessage());
+            plugin.getLogger().warning("Could not extract lang/" + locale + "/" + relative + ": " + e.getMessage());
             return null;
         }
         return YamlConfiguration.loadConfiguration(file);
