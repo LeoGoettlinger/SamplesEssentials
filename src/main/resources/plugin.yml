@@ -117,6 +117,14 @@ commands:
     description: Rename the item in your hand
     usage: /rename <text>
     permission: samplese.signitem.rename
+  darkdrop:
+    description: Start a DarkDrop event
+    usage: /darkdrop [spawn <x> <y> <z> [world]]
+    permission: samplese.darkdrop
+  chatfmt:
+    description: Chat formatter admin commands
+    usage: /chatfmt [reload]
+    permission: samplese.admin
   elitemobs:
     description: Spawn and manage elite mobs
     usage: /elitemobs help
@@ -404,6 +412,24 @@ permissions:
   samplese.bounty:
     description: Use the bounty system
     default: true
+  samplese.darkdrop:
+    description: Start a DarkDrop
+    default: op
+  samplese.chunkmanager:
+    description: Use chunk manager tools
+    default: op
+  samplese.starterkit:
+    description: Claim the starter kit
+    default: true
+  samplese.chat.format.bypass:
+    description: Keep your own chat format
+    default: op
+  samplese.rtp.bypass:
+    description: Bypass RTP cooldowns
+    default: op
+  samplese.rtp.setcenter:
+    description: Set the RTP centre
+    default: op
   samplese.elitemobs:
     description: Fight elite mobs
     default: true
