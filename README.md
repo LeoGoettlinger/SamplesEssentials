@@ -6,9 +6,12 @@ Every plugin from the old server stack was merged into one plugin. Each former
 plugin is now a toggleable **module**, grouped in categorias, with its own
 config folder, and all texts live in a per-categoria language folder.
 
-## Excluded on purpose
+## What stays standalone
 
-These stay as separate jars on the server (never merged, never decompiled):
+Every jar from the old stack is either merged into a module here, or listed below
+with the reason it was not.
+
+### Excluded by decision (never merged, never decompiled)
 
 | Plugin | Reason |
 | --- | --- |
@@ -20,19 +23,37 @@ These stay as separate jars on the server (never merged, never decompiled):
 | LibertyBans | stays standalone |
 | **TAB** | stays standalone (scoreboard/tablist needs its own lifecycle) |
 
-## Deliberately not merged
+### Merged in part
 
-These jars stay standalone: merging them would mean re-implementing a rendering or
-networking stack the plugin cannot own. Each is still installed on the server.
+These are bigger than one module; the useful core was merged and the rest stays a
+separate jar.
 
-| Plugin | Why it stays a separate jar |
+| Plugin | Merged into | What was left out |
+| --- | --- | --- |
+| EliteMobs | `elitemobs` | instanced dungeons, procedural item generation, quests, NPC guilds |
+| FancyNpcs | `npcs` | packet-based player NPC rendering (needs packetevents); NPCs use real entities |
+| EvenMoreFish | `fishing` | item/requirement/reward addons and the journal GUI |
+
+### Covered by an equivalent module
+
+| Old jar | Module |
 | --- | --- |
-| EliteMobs (full framework) | instanced dungeons, procedural items, quests and NPC guilds; only the custom-boss core was merged (`elitemobs`) |
-| FancyNpcs (packet renderer) | packet-based player NPCs need packetevents; the NPC data model and action system were merged on real entities (`npcs`) |
-| EvenMoreFish (addons/journal) | item, requirement and reward addons plus the fish journal GUI; rarities, fish and competitions were merged (`fishing`) |
-| TAB, LibertyBans, Sentry, ExcellentEconomy, ExcellentCrates, AxInventoryRestore, Genius-Shop | own lifecycle / external service, kept standalone by decision |
-| VaultUnlocked, PlaceholderAPI, Skript, FAWE, Via*, packetevents, GrimAC, LuckPerms, CoreProtect, EssentialsX, nightcore | infrastructure or platform APIs the merged modules integrate with |
-| CrazyAuctions, AsBounty, StarterKitV2, SimplePlayerFreeze, Maintenance, OpenSit, LushRewards, SetHomeGUI, etc. | already covered by an equivalent merged module (`auction`, `bounty`, `starterkit`, `freeze`, `maintenance`, `opensit`, `rewards`, `homes`) |
+| CrazyAuctions | `auction` |
+| AsBounty | `bounty` |
+| StarterKitV2 | `starterkit` |
+| SimplePlayerFreeze | `freeze` |
+| Maintenance-Paper | `maintenance` |
+| OpenSit | `opensit` |
+| LushRewards | `rewards` |
+| SetHome_GUI | `homes` |
+| ChatClear, ChatFormatter (LPC) | `chatclear`, `chatformatter` |
+
+### Infrastructure / platform APIs
+
+Not merged - the modules integrate with them instead: VaultUnlocked,
+PlaceholderAPI, Skript, FastAsyncWorldEdit, ViaVersion/ViaBackwards,
+packetevents, GrimAC, LuckPerms, CoreProtect, EssentialsX, `nightcore`
+(NightExpress' plugin core library - it exposes no commands of its own).
 
 ## Build & download
 
